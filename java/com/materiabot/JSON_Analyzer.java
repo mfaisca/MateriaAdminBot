@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import com.materiabot.GameElements.Datamining.Ability;
 import com.materiabot.GameElements.Datamining.Ailment;
 import com.materiabot.IO.JSON.JSONParser;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
