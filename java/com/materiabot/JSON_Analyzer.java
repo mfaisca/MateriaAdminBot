@@ -26,13 +26,13 @@ public class JSON_Analyzer {
 			String unitName = in.nextLine();
 			if(unitName.equalsIgnoreCase("exit")) break;
 			int level = in.nextInt(); in.nextLine();
-			System.out.println(UnitParser.parseCharacter(unitName).getPassives().stream().filter(p -> p.getLevel() == level).findFirst().get().generateDescription());
+			//System.out.println(UnitParser.parseCharacter(unitName).getPassives().stream().filter(p -> p.getLevel() == level).findFirst().get().generateDescription());
 		}
 		in.close();
 	}
 	public static void mainAnalyzer(String[] args) throws IOException {
-		
-		File main = new File(JSONParser.JSON_PATH.CHARACTERS_PATH).getParentFile();
+		File main = null;
+//		File main = new File(JSONParser.JSON_PATH.CHARACTERS_PATH).getParentFile();
 //		for(File f : main.listFiles()){
 //			BufferedReader br = new BufferedReader(new FileReader(f));
 //			String name = f.getName().replace("raw_data_", "");

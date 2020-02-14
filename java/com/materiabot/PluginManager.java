@@ -29,9 +29,9 @@ public class PluginManager {
 	public static void loadUnits() throws Exception {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
-		//LoadCommands
 		_Library.GL.UNIT_LIST.clear();
 		_Library.JP.UNIT_LIST.clear();
+		//TODO Call Unit Parser HERE
 		manager.getAllPlugins().stream()
 			.filter(p -> p.getName().contains("Unit."))
 			.sorted((c1, c2) -> c1.getName().compareTo(c2.getName()))
