@@ -2,6 +2,7 @@ package com.materiabot;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import com.materiabot.commands._Listener;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;

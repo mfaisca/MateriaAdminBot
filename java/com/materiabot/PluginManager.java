@@ -4,6 +4,7 @@ import org.plugface.core.factory.PluginSources;
 
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements._Library;
+import com.materiabot.Utils.Constants;
 import com.materiabot.commands._BaseCommand;
 import com.materiabot.commands._Listener;
 
@@ -23,6 +24,7 @@ public class PluginManager {
 			.filter(p -> p.getName().contains("Command."))
 			.sorted((c1, c2) -> c1.getName().compareTo(c2.getName()))
 			.map(p -> (_BaseCommand)p.get())
+			.peek(c -> Constants.COMMANDS.add(c))
 			.forEach(c -> _Listener.COMMANDS.add(c));
 	}
 	
