@@ -81,6 +81,7 @@ public class _Listener extends ListenerAdapter{
 		BASE_COMMANDS.addAll(Arrays.asList(
 				new StatusCommand(),
 				new AuthorCommand(),
+				new HelpCommand(),
 				new PatreonCommand()
 				));
 		COMMANDS.addAll(BASE_COMMANDS);

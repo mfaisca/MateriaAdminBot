@@ -1,21 +1,21 @@
 package com.materiabot;
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-import com.materiabot.GameElements.Datamining.Ailment;
-import com.materiabot.IO.JSON.JSONParser;
-import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
-import com.materiabot.IO.JSON.UnitParser;
-import com.materiabot.Utils.BotException;
+//import java.io.File;
+//import java.io.IOException;
+//import java.util.Arrays;
+//import java.util.HashMap;
+//import java.util.LinkedList;
+//import java.util.List;
+//import java.util.Map.Entry;
+//import java.util.Scanner;
+//import java.util.stream.Collectors;
+//import com.materiabot.GameElements.Datamining.Ailment;
+//import com.materiabot.IO.JSON.JSONParser;
+//import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
+//import com.materiabot.IO.JSON.UnitParser;
+//import com.materiabot.Utils.BotException;
 
 public class JSON_Analyzer {
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		mainAnalyzer(args);
 		//testStuff(args);
 	}
@@ -180,5 +180,5 @@ public class JSON_Analyzer {
 			else
 				break;
 		return name.substring(i, name.indexOf("."));
-	}
+	}*/
 }
