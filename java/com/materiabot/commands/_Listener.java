@@ -12,6 +12,8 @@ import com.materiabot.commands.general.*;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.Event;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.guild.member.GuildMemberLeaveEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
@@ -95,6 +97,19 @@ public class _Listener extends ListenerAdapter{
 		Constants.COMMANDS.addAll(COMMANDS);
 	}
 
+	@Override
+	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
+		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
+		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
+			PatreonCommand.joinServerTonberryTroupeUpdate();
+	}
+	@Override
+    public void onGuildMemberLeave(GuildMemberLeaveEvent event) {
+		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
+		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
+			PatreonCommand.joinServerTonberryTroupeUpdate();
+	}
+	
 	@Override
 	public void onMessageReceived(final MessageReceivedEvent event) {
 		if(event.getAuthor().isBot()) return;
