@@ -1,9 +1,13 @@
 package com.materiabot.commands;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+import com.materiabot.IO.SQL.SQLAccess;
+import com.materiabot.Utils.BotException;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.CooldownManager;
 import com.materiabot.Utils.MessageUtils;
@@ -86,25 +90,34 @@ public class _Listener extends ListenerAdapter{
 				new HelpCommand(),
 				new PatreonCommand()
 				));
-		COMMANDS.addAll(BASE_COMMANDS);
-		Constants.COMMANDS.addAll(COMMANDS);
+		unloadPluginCommands();
 	}
 	
 	public static void unloadPluginCommands() {
 		COMMANDS.clear();
-		COMMANDS.addAll(BASE_COMMANDS);
 		Constants.COMMANDS.clear();
+		COMMANDS.addAll(BASE_COMMANDS);
+		try {
+			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
+			while(rs.next()) {
+				UpdateableSimpleCommand cmd = new UpdateableSimpleCommand(rs.getString("name").trim(), rs.getLong("guildId"), rs.getString("data"), rs.getString("owner"), rs.getString("help"));
+				COMMANDS.add(cmd);
+			}
+		} catch (BotException | SQLException e) {
+			MessageUtils.sendWhisper(Constants.QUETZ, "Unable to load simple commands");
+			MessageUtils.sendWhisper(Constants.QUETZ, e.getMessage());
+		}
 		Constants.COMMANDS.addAll(COMMANDS);
 	}
 
 	@Override
-	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
+	public final void onGuildMemberJoin(GuildMemberJoinEvent event) {
 		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
 		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
 			PatreonCommand.joinServerTonberryTroupeUpdate();
 	}
 	@Override
-    public void onGuildMemberLeave(GuildMemberLeaveEvent event) {
+    public final void onGuildMemberLeave(GuildMemberLeaveEvent event) {
 		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
 		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
 			PatreonCommand.joinServerTonberryTroupeUpdate();
@@ -112,7 +125,7 @@ public class _Listener extends ListenerAdapter{
 	
 	@Override
 	public void onMessageReceived(final MessageReceivedEvent event) {
-		if(event.getAuthor().isBot()) return;
+		//if(event.getAuthor().isBot()) return;
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 	@Override
