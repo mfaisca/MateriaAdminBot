@@ -94,7 +94,6 @@ public class _Listener extends ListenerAdapter{
 				new StatusCommand(),
 				new AuthorCommand(),
 				new HelpCommand(),
-				new PassiveCommand(), //TODO Remove after tested
 				new PatreonCommand()
 				));
 		unloadPluginCommands();
