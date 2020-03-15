@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import com.materiabot.IO.SQL.SQLAccess;
@@ -35,9 +37,13 @@ public class _Listener extends ListenerAdapter{
 								c.doStuff(event.getMessage());
 							else {
 								cd = (cd / 1000) + 1; cd = cd > 5 ? 5 : cd;
-								Message m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
+								CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
 								Constants.sleep(cd * 1000);
-								MessageUtils.deleteMessage(m);
+								try {
+									MessageUtils.deleteMessage(m.get());
+								} catch (InterruptedException | ExecutionException e1) {
+									e1.printStackTrace();
+								}
 							}
 							return;
 						}
@@ -88,6 +94,7 @@ public class _Listener extends ListenerAdapter{
 				new StatusCommand(),
 				new AuthorCommand(),
 				new HelpCommand(),
+				new PassiveCommand(), //TODO Remove after tested
 				new PatreonCommand()
 				));
 		unloadPluginCommands();
@@ -126,16 +133,19 @@ public class _Listener extends ListenerAdapter{
 	@Override
 	public void onMessageReceived(final MessageReceivedEvent event) {
 		//if(event.getAuthor().isBot()) return;
+		if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 	@Override
 	public void onMessageReactionAdd(MessageReactionAddEvent event) {
-		if(event.getUser().isBot()) return;
+		//if(event.getUser().isBot()) return;
+		if(event.getUser().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_ADDED, event));
 	}
 	@Override
 	public void onMessageReactionRemove(MessageReactionRemoveEvent event) {
-		if(event.getUser().isBot()) return;
+		//if(event.getUser().isBot()) return;
+		if(event.getUser().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_REMOVED, event));
 	}
 }

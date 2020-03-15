@@ -1,8 +1,6 @@
 package com.materiabot;
 import org.plugface.core.factory.PluginManagers;
 import org.plugface.core.factory.PluginSources;
-
-import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements._Library;
 import com.materiabot.IO.JSON.UnitParser;
 import com.materiabot.Utils.Constants;
@@ -35,13 +33,13 @@ public class PluginManager {
 		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		_Library.GL.UNIT_LIST.clear();
 		_Library.JP.UNIT_LIST.clear();
-		_Library.GL.UNIT_LIST.addAll(UnitParser.parseAllUnits("GL"));
-		_Library.JP.UNIT_LIST.addAll(UnitParser.parseAllUnits("JP"));
-		manager.getAllPlugins().stream()
-			.filter(p -> p.getName().contains("Unit.22222"))
-			.sorted((c1, c2) -> c1.getName().compareTo(c2.getName()))
-			.map(p -> (Unit)p.get())
-			.peek(c -> _Library.GL.UNIT_LIST.add(c))
-			.forEach(c -> _Library.JP.UNIT_LIST.add(c));
+		_Library.GL.UNIT_LIST.addAll(new UnitParser("GL").parseAllUnits());
+		_Library.JP.UNIT_LIST.addAll(new UnitParser("JP").parseAllUnits());
+//		manager.getAllPlugins().stream()
+//			.filter(p -> p.getName().contains("Unit."))
+//			.sorted((c1, c2) -> c1.getName().compareTo(c2.getName()))
+//			.map(p -> (Unit)p.get())
+//			.peek(c -> _Library.GL.UNIT_LIST.add(c))
+//			.forEach(c -> _Library.JP.UNIT_LIST.add(c));
 	}
 }
