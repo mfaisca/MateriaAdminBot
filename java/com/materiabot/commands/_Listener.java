@@ -2,12 +2,15 @@ package com.materiabot.commands;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+
+import com.materiabot.PluginManager;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.BotException;
 import com.materiabot.Utils.Constants;
@@ -29,7 +32,8 @@ public class _Listener extends ListenerAdapter{
 		public static enum Action{
 			MESSAGE_RECEIVED{public void run(Event e) {
 				MessageReceivedEvent event = (MessageReceivedEvent)e;
-				for(_BaseCommand c : COMMANDS)
+				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
+					_BaseCommand c = i.next();
 					if(c.validateCommand(event.getMessage()))
 						if(c.validatePermission(event.getMessage())) {
 							int cd = -1;
@@ -47,6 +51,7 @@ public class _Listener extends ListenerAdapter{
 							}
 							return;
 						}
+					}
 				}
 			},
 			REACTION_ADDED{public void run(Event e) {
@@ -54,21 +59,23 @@ public class _Listener extends ListenerAdapter{
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				if(!originalMessage.getAuthor().equals(Constants.getClient().getSelfUser()))
 					return;
-				for(_BaseCommand c : COMMANDS)
+				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
+					_BaseCommand c = i.next();
 					if(c.validateCommand(originalMessage))
 						new Thread(() -> c.doAddReactionStuff(event)).start();
 				}
-			},
+			}},
 			REACTION_REMOVED{public void run(Event e) {
 				MessageReactionRemoveEvent event = (MessageReactionRemoveEvent)e;
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				if(!originalMessage.getAuthor().equals(Constants.getClient().getSelfUser()))
 					return;
-				for(_BaseCommand c : COMMANDS)
+				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
+					_BaseCommand c = i.next();
 					if(c.validateCommand(originalMessage))
 						new Thread(() -> c.doRemoveReactionStuff(event)).start();
 				}
-			};
+			}};
 			public abstract void run(final Event event);
 		}
 		
@@ -86,7 +93,6 @@ public class _Listener extends ListenerAdapter{
 		}
 	}
 	private static final List<_BaseCommand> BASE_COMMANDS = new LinkedList<_BaseCommand>();
-	public static final List<_BaseCommand> COMMANDS = new LinkedList<_BaseCommand>();
 	private static final ThreadPoolExecutor THREAD_MANAGER = (ThreadPoolExecutor)Executors.newCachedThreadPool();
 
 	static {
@@ -94,44 +100,51 @@ public class _Listener extends ListenerAdapter{
 				new StatusCommand(),
 				new AuthorCommand(),
 				new HelpCommand(),
-				new PatreonCommand()
+				new PatreonCommand(),
+				new AdminCommand()
 				));
 		unloadPluginCommands();
 	}
 	
 	public static void unloadPluginCommands() {
-		COMMANDS.clear();
 		Constants.COMMANDS.clear();
-		COMMANDS.addAll(BASE_COMMANDS);
+		Constants.COMMANDS.addAll(BASE_COMMANDS);
 		try {
 			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
 			while(rs.next()) {
 				UpdateableSimpleCommand cmd = new UpdateableSimpleCommand(rs.getString("name").trim(), rs.getLong("guildId"), rs.getString("data"), rs.getString("owner"), rs.getString("help"));
-				COMMANDS.add(cmd);
+				Constants.COMMANDS.add(cmd);
 			}
 		} catch (BotException | SQLException e) {
 			MessageUtils.sendWhisper(Constants.QUETZ, "Unable to load simple commands");
 			MessageUtils.sendWhisper(Constants.QUETZ, e.getMessage());
 		}
-		Constants.COMMANDS.addAll(COMMANDS);
 	}
 
 	@Override
 	public final void onGuildMemberJoin(GuildMemberJoinEvent event) {
 		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
 		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
-			PatreonCommand.joinServerTonberryTroupeUpdate();
+			new Thread(() -> { PatreonCommand.joinServerTonberryTroupeUpdate(); }).start();
 	}
 	@Override
     public final void onGuildMemberLeave(GuildMemberLeaveEvent event) {
 		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
 		if(event.getGuild().equals(Constants.MATERIABOT_SERVER))
-			PatreonCommand.joinServerTonberryTroupeUpdate();
+			new Thread(() -> { PatreonCommand.joinServerTonberryTroupeUpdate(); }).start();
 	}
 	
 	@Override
 	public void onMessageReceived(final MessageReceivedEvent event) {
 		//if(event.getAuthor().isBot()) return;
+		if(Constants.COMMANDS.isEmpty()) {
+			try {
+				PluginManager.loadCommands();
+				PluginManager.loadUnits();
+			} catch(Exception e) {
+				System.out.println("Error loading plugins");
+			}
+		}
 		if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
