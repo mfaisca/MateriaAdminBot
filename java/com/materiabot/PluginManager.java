@@ -31,7 +31,6 @@ public class PluginManager {
 	@SuppressWarnings("rawtypes")
 	public static void loadUnits() throws Exception {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
-		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Override.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
 		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
