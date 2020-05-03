@@ -141,6 +141,9 @@ public class _Listener extends ListenerAdapter{
 				PluginManager.loadCommands();
 			} catch(Exception e) {
 				System.out.println("Error loading plugins");
+				MessageUtils.sendStatusMessageCrash(event.getChannel(), "Unknown unrecoverable Error. Quetz has been notified.");
+				MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error loading plugins.");
+				MessageUtils.sendWhisper(Constants.QUETZ_ID, e.getMessage());
 			}
 		}
 		if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
