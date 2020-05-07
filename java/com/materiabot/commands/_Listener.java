@@ -55,23 +55,29 @@ public class _Listener extends ListenerAdapter{
 			},
 			REACTION_ADDED{public void run(Event e) {
 				MessageReactionAddEvent event = (MessageReactionAddEvent)e;
+				if(event.getUserIdLong() == event.getJDA().getSelfUser().getIdLong()) return;
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
-				if(!originalMessage.getAuthor().equals(Constants.getClient().getSelfUser()))
+				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
+					return;
+				if(originalMessage.getReactions().stream()
+						.filter(r -> r.getReactionEmote().getIdLong() == event.getReactionEmote().getIdLong())
+						.noneMatch(r -> r.isSelf()))
 					return;
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
-					if(c.validateCommand(originalMessage))
+					if(c.validateEmbed(originalMessage))
 						new Thread(() -> c.doAddReactionStuff(event)).start();
 				}
 			}},
 			REACTION_REMOVED{public void run(Event e) {
 				MessageReactionRemoveEvent event = (MessageReactionRemoveEvent)e;
+				if(event.getUserIdLong() == event.getJDA().getSelfUser().getIdLong()) return;
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
-				if(!originalMessage.getAuthor().equals(Constants.getClient().getSelfUser()))
+				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
-					if(c.validateCommand(originalMessage))
+					if(c.validateEmbed(originalMessage))
 						new Thread(() -> c.doRemoveReactionStuff(event)).start();
 				}
 			}};
@@ -146,19 +152,17 @@ public class _Listener extends ListenerAdapter{
 				MessageUtils.sendWhisper(Constants.QUETZ_ID, e.getMessage());
 			}
 		}
-		if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
+		//if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 	@Override
 	public void onMessageReactionAdd(MessageReactionAddEvent event) {
-		if(event.getUser().isBot()) return;
-		if(event.getUser().getIdLong() == Constants.QUETZ_ID)
+		//if(event.getUser().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_ADDED, event));
 	}
 	@Override
 	public void onMessageReactionRemove(MessageReactionRemoveEvent event) {
-		if(event.getUser().isBot()) return;
-		if(event.getUser().getIdLong() == Constants.QUETZ_ID)
+		//if(event.getUserIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_REMOVED, event));
 	}
 }
