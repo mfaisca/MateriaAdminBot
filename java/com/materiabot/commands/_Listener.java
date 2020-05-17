@@ -65,8 +65,8 @@ public class _Listener extends ListenerAdapter{
 					return;
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
-					if(c.validateEmbed(originalMessage))
-						new Thread(() -> c.doAddReactionStuff(event)).start();
+					if(c.validateReaction(originalMessage))
+						c.doAddReactionStuff(event);
 				}
 			}},
 			REACTION_REMOVED{public void run(Event e) {
@@ -77,8 +77,8 @@ public class _Listener extends ListenerAdapter{
 					return;
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
-					if(c.validateEmbed(originalMessage))
-						new Thread(() -> c.doRemoveReactionStuff(event)).start();
+					if(c.validateReaction(originalMessage))
+						c.doRemoveReactionStuff(event);
 				}
 			}};
 			public abstract void run(final Event event);
@@ -103,7 +103,7 @@ public class _Listener extends ListenerAdapter{
 	static {
 		BASE_COMMANDS.addAll(Arrays.asList(
 				new StatusCommand(),
-				new AuthorCommand(),
+				new AboutCommand(),
 				new HelpCommand(),
 				new PatreonCommand(),
 				new AdminCommand()
@@ -140,7 +140,7 @@ public class _Listener extends ListenerAdapter{
 	}
 	
 	@Override
-	public void onMessageReceived(final MessageReceivedEvent event) {
+	public final void onMessageReceived(final MessageReceivedEvent event) {
 		if(event.getAuthor().isBot()) return;
 		if(Constants.COMMANDS.isEmpty()) {
 			try {
@@ -156,12 +156,12 @@ public class _Listener extends ListenerAdapter{
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 	@Override
-	public void onMessageReactionAdd(MessageReactionAddEvent event) {
+	public final void onMessageReactionAdd(MessageReactionAddEvent event) {
 		//if(event.getUser().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_ADDED, event));
 	}
 	@Override
-	public void onMessageReactionRemove(MessageReactionRemoveEvent event) {
+	public final void onMessageReactionRemove(MessageReactionRemoveEvent event) {
 		//if(event.getUserIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_REMOVED, event));
 	}

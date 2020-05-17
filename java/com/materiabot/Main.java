@@ -24,9 +24,12 @@ public class Main {
 		client.awaitReady();
 		client.addEventListener(new _Listener());
 		System.out.println("Bot is ready!!");
-		//TODO Test everything!!!
 		//TODO Make Skill command
 		//TODO Check missing commands (pull at least?)
 		//TODO Ignore parsing numbers on skills for now
+		
+//		client.getTextChannelById(671911192385552394l).getHistory().retrievePast(100).complete().forEach(m -> {
+//			System.out.println(m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
+//		});
 	}
 }
