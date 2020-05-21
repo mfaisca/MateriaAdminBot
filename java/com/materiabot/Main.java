@@ -15,6 +15,7 @@ public class Main {
 			System.out.println("Bot Token isn't inserted." + System.lineSeparator());
 			return;
 		} 
+		System.out.println("Connected to DB");
         JDA client = JDABuilder.createDefault(privateToken).setAutoReconnect(true)
 				.setStatus(OnlineStatus.ONLINE).setMemberCachePolicy(MemberCachePolicy.NONE)
 				.setActivity(Activity.playing("Opera Omnia")).build();
@@ -24,12 +25,17 @@ public class Main {
 		client.awaitReady();
 		client.addEventListener(new _Listener());
 		System.out.println("Bot is ready!!");
+		
 		//TODO Make Skill command
 		//TODO Check missing commands (pull at least?)
 		//TODO Ignore parsing numbers on skills for now
-		
-//		client.getTextChannelById(671911192385552394l).getHistory().retrievePast(100).complete().forEach(m -> {
-//			System.out.println(m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
+
+//		client.getTextChannelById(504366585163546654l).getHistoryBefore(711743132017885205L, 100).complete().getRetrievedHistory().forEach(m -> {
+//			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
+//		});
+//		System.out.println("---");
+//		client.getTextChannelById(504366585163546654l).getHistoryBefore(711738862346698803L, 100).complete().getRetrievedHistory().forEach(m -> {
+//			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 	}
 }
