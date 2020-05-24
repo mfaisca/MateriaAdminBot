@@ -27,7 +27,7 @@ public class Main {
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();
 		Constants.setClient(client);
-		PluginManager.loadCommands();
+		//PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		client.awaitReady();
 		client.addEventListener(new _Listener());
@@ -37,7 +37,7 @@ public class Main {
 		//TODO Check missing commands (pull at least?)
 		//TODO Ignore parsing numbers on skills for now
 
-//		client.getTextChannelById(504366585163546654l).getHistoryBefore(711743132017885205L, 100).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(593243550636834817L).getHistoryBefore(713911541639938100L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 //		System.out.println("---");

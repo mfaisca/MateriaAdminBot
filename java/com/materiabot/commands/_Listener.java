@@ -34,7 +34,7 @@ public class _Listener extends ListenerAdapter{
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
 					if(c.validateCommand(event.getMessage()))
-						if(c.validatePermission(event.getMessage())) {
+						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
 							int cd = -1;
 							if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
 								c.doStuff(event.getMessage());
@@ -108,7 +108,7 @@ public class _Listener extends ListenerAdapter{
 				new PatreonCommand(),
 				new AdminCommand()
 				));
-		unloadPluginCommands();
+		
 	}
 	
 	public static void unloadPluginCommands() {
