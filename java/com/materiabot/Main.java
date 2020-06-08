@@ -37,7 +37,7 @@ public class Main {
 		//TODO Check missing commands (pull at least?)
 		//TODO Ignore parsing numbers on skills for now
 
-//		client.getTextChannelById(593243550636834817L).getHistoryBefore(713911541639938100L, 100).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(465558346779459588L).getHistoryBefore(717718801365598258L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 //		System.out.println("---");

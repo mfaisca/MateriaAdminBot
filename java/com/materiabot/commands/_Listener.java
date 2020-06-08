@@ -108,7 +108,6 @@ public class _Listener extends ListenerAdapter{
 				new PatreonCommand(),
 				new AdminCommand()
 				));
-		
 	}
 	
 	public static void unloadPluginCommands() {
