@@ -32,6 +32,10 @@ public class Main {
 		client.awaitReady();
 		client.addEventListener(new _Listener());
 		System.out.println("Bot is ready!!");
+
+//		System.out.println(client.getGuildById(423915309523664898l).getTimeCreated().toString());
+//		client.getGuildById(423915309523664898l).retrieveMembers().get();
+//		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
 		//TODO Make Skill command
 		//TODO Check missing commands (pull at least?)

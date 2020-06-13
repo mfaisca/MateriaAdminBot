@@ -59,10 +59,16 @@ public class _Listener extends ListenerAdapter{
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
+				if(event.getReaction().getReactionEmote().isEmoji()){
+					MessageUtils.removeEmojiReaction(originalMessage, event.getUser(), event.getReactionEmote().getEmoji());
+					return;
+				}
 				if(originalMessage.getReactions().stream()
 						.filter(r -> r.getReactionEmote().getIdLong() == event.getReactionEmote().getIdLong())
-						.noneMatch(r -> r.isSelf()))
+						.noneMatch(r -> r.isSelf())) {
+					MessageUtils.removeReaction(originalMessage, event.getUser(), event.getReactionEmote().getEmote());
 					return;
+				}
 				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 					_BaseCommand c = i.next();
 					if(c.validateReaction(originalMessage))
