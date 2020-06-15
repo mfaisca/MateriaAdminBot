@@ -27,7 +27,7 @@ public class Main {
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();
 		Constants.setClient(client);
-		//PluginManager.loadCommands();
+		PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		client.awaitReady();
 		client.addEventListener(new _Listener());
@@ -37,10 +37,6 @@ public class Main {
 //		client.getGuildById(423915309523664898l).retrieveMembers().get();
 //		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
-		//TODO Make Skill command
-		//TODO Check missing commands (pull at least?)
-		//TODO Ignore parsing numbers on skills for now
-
 //		client.getTextChannelById(465558346779459588L).getHistoryBefore(717718801365598258L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});

@@ -2,7 +2,6 @@ package com.materiabot.commands;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -15,7 +14,6 @@ import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.CooldownManager;
 import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands.general.*;
-
 import Shared.BotException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.entities.Message;
@@ -31,8 +29,9 @@ public class _Listener extends ListenerAdapter{
 		public static enum Action{
 			MESSAGE_RECEIVED{public void run(Event e) {
 				MessageReceivedEvent event = (MessageReceivedEvent)e;
-				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
-					_BaseCommand c = i.next();
+//				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
+//					_BaseCommand c = i.next();
+				for(_BaseCommand c : Constants.COMMANDS) {
 					if(c.validateCommand(event.getMessage()))
 						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
 							int cd = -1;
@@ -69,8 +68,7 @@ public class _Listener extends ListenerAdapter{
 					MessageUtils.removeReaction(originalMessage, event.getUser(), event.getReactionEmote().getEmote());
 					return;
 				}
-				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
-					_BaseCommand c = i.next();
+				for(_BaseCommand c : Constants.COMMANDS) {
 					if(c.validateReaction(originalMessage))
 						c.doAddReactionStuff(event);
 				}
@@ -81,8 +79,7 @@ public class _Listener extends ListenerAdapter{
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
-				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
-					_BaseCommand c = i.next();
+				for(_BaseCommand c : Constants.COMMANDS) {
 					if(c.validateReaction(originalMessage))
 						c.doRemoveReactionStuff(event);
 				}
@@ -150,6 +147,7 @@ public class _Listener extends ListenerAdapter{
 		if(Constants.COMMANDS.isEmpty()) {
 			try {
 				PluginManager.loadCommands();
+				PluginManager.loadUnits();
 			} catch(Exception e) {
 				System.out.println("Error loading plugins");
 				MessageUtils.sendStatusMessageCrash(event.getChannel(), "Unknown unrecoverable Error. Quetz has been notified.");
@@ -157,17 +155,14 @@ public class _Listener extends ListenerAdapter{
 				MessageUtils.sendWhisper(Constants.QUETZ_ID, e.getMessage());
 			}
 		}
-		//if(event.getAuthor().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 	@Override
 	public final void onMessageReactionAdd(MessageReactionAddEvent event) {
-		//if(event.getUser().getIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_ADDED, event));
 	}
 	@Override
 	public final void onMessageReactionRemove(MessageReactionRemoveEvent event) {
-		//if(event.getUserIdLong() == Constants.QUETZ_ID)
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.REACTION_REMOVED, event));
 	}
 }
