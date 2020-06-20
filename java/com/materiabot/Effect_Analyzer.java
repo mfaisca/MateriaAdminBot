@@ -19,7 +19,7 @@ public class Effect_Analyzer {
 
 	private static void skillEffectAnalyzer() {
 		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-		File folder = new File("./resources/jp/");
+		File folder = new File("./resources/units/");
 		for(File f : folder.listFiles()) {
 			String uName = f.getName().substring(f.getName().indexOf("_")+1, f.getName().indexOf("."));
 			MyJSONObject obj = JSONParser.loadContent(f.getAbsolutePath(), false);
@@ -46,7 +46,7 @@ public class Effect_Analyzer {
 	}
 	private static void passiveEffectAnalyzer() {
 		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
-		File folder = new File("./resources/jpp/");
+		File folder = new File("./resources/units/");
 		for(File f : folder.listFiles()) {
 			String uName = f.getName().substring(f.getName().indexOf("_")+1, f.getName().indexOf("."));
 			MyJSONObject obj = JSONParser.loadContent(f.getAbsolutePath(), false);
