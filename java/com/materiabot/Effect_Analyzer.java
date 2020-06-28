@@ -1,9 +1,11 @@
 package com.materiabot;
 import Shared.Methods;
 import com.materiabot.GameElements.Passive;
+import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.IO.JSON.JSONParser;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
+import com.materiabot.IO.JSON.UnitParser;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,9 +14,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Effect_Analyzer {
-	public static void main(String[] args) {
-		skillEffectAnalyzer();
-		passiveEffectAnalyzer();
+	public static void main(String[] args) throws Exception {
+		//skillEffectAnalyzer();
+		//passiveEffectAnalyzer();
+		List<String> l = new LinkedList<String>();
+		PluginManager.loadUnits();
+		for(Unit u : UnitParser.UNITS) {
+			u = _Library.L.getUnit(u.getName());
+			for(int i : u.getPassives().keySet())
+				if(u.getPassive(i).getId() != u.getJPPassives().get(i).getId())
+					l.add(u.getName() + " has different CL" + i + " passives");
+		}
+		l.stream().forEach(System.out::println);
 	}
 
 	private static void skillEffectAnalyzer() {

@@ -32,12 +32,14 @@ public class Main {
 		client.awaitReady();
 		client.addEventListener(new _Listener());
 		System.out.println("Bot is ready!!");
-
+		
+//		com.materiabot.IO.JSON.UnitParser.UNITS.stream().forEach(c -> System.out.println(c.getName() + " - " + String.join(" / ", c.getNicknames())));
+		
 //		System.out.println(client.getGuildById(423915309523664898l).getTimeCreated().toString());
 //		client.getGuildById(423915309523664898l).retrieveMembers().get();
 //		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
-//		client.getTextChannelById(465558346779459588L).getHistoryBefore(717718801365598258L, 100).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(423915310072987650L).getHistoryBefore(725382384312123410L, 50).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 //		System.out.println("---");
