@@ -3,6 +3,7 @@ import Shared.Methods;
 import com.materiabot.GameElements.Passive;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Ability;
+import com.materiabot.GameElements.Ailment;
 import com.materiabot.IO.JSON.JSONParser;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.IO.JSON.UnitParser;
@@ -13,10 +14,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		//skillEffectAnalyzer();
 		//passiveEffectAnalyzer();
+		ailmentEffectAnalyzer();
+		//unitsWithDifferentGLJPPassives();
+	}
+	
+	private static void unitsWithDifferentGLJPPassives() throws Exception {
 		List<String> l = new LinkedList<String>();
 		PluginManager.loadUnits();
 		for(Unit u : UnitParser.UNITS) {
@@ -46,6 +53,49 @@ public class Effect_Analyzer {
 								eId + "(" + e.getInt("effect_value_type") + ")", 
 								uName + " | " + pName + "(" + id + ") | Type:" + e.getInt("type") + " | " + 
 								"Vals:(" + Arrays.toString(e.getIntArray("arguments")) + ")");
+				}
+			}
+		}
+		for(String key : map.keySet().stream().sorted().collect(Collectors.toList())) {
+			System.out.println(key + ":");
+			for(String v : map.get(key))
+				System.out.println("\t" + v);
+		}
+	}
+	private static void ailmentEffectAnalyzer() {
+		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+		File folder = new File("./resources/units/");
+		for(File f : folder.listFiles()) {
+			String uName = f.getName().substring(f.getName().indexOf("_")+1, f.getName().indexOf("."));
+			MyJSONObject obj = JSONParser.loadContent(f.getAbsolutePath(), false);
+			for(MyJSONObject p : obj.getObjectArray("completeListOfAbilities")) {
+				Integer skillId = p.getInt("id");
+				if(skillId == null) continue;
+				String sName = Methods.getBestText(p.getStringArray(p.getObject("name")));
+				for(MyJSONObject e : p.getObjectArray("ailments")) {
+					String aName = Methods.getBestText(e.getStringArray(e.getObject("name")));
+					int aId = e.getInt("id");
+					Integer[] effects = e.getObject("type_data").getIntArray("effects");
+					for(int i = 0; i < effects.length; i++) {
+						try {
+							if(effects[i] == -1) continue;
+							if(effects[i] > 40) continue;
+							Ailment.EffectType eff = Ailment.EffectType.get(effects[i]);
+							if(eff == null)
+								store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ")");
+							if(1 == 1) continue;
+							String rankData = "";
+							if(e.getObject("rank_data") != null && e.getObject("type_data") != null && e.getObject("type_data").getIntArray("rank_tables") != null)
+								rankData = "" + 
+									e.getObject("rank_data").getIntArray(
+											""+e.getObject("type_data").getIntArray("rank_tables")[i])
+									[e.getObject("meta_data").getInt("rank")];
+							if(eff == null)
+								store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ") | RankData:(" + rankData + ")");
+						} catch(Exception ee) {
+							store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ") | RankData:(???)");
+						}
+					}
 				}
 			}
 		}
