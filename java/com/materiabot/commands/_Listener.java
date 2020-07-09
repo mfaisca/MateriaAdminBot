@@ -36,9 +36,11 @@ public class _Listener extends ListenerAdapter{
 						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
 							int cd = -1;
 							if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
-								c.doStuff(event.getMessage());
+							//	if(event.getAuthor().getIdLong() == Constants.QUETZ_ID) //XXX Stress Test
+									c.doStuff(event.getMessage());
 							else {
 								cd = (cd / 1000) + 1; cd = cd > 5 ? 5 : cd;
+							//	if(event.getAuthor().getIdLong() != Constants.QUETZ_ID) return; //XXX Stress Test
 								CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
 								Constants.sleep(cd * 1000);
 								try {

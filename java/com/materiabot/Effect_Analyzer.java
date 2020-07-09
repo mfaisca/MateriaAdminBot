@@ -79,7 +79,7 @@ public class Effect_Analyzer {
 					for(int i = 0; i < effects.length; i++) {
 						try {
 							if(effects[i] == -1) continue;
-							if(effects[i] > 40) continue;
+							if(!Arrays.asList(331, 335, 327, 329, 58).contains(effects[i])) continue;
 							Ailment.EffectType eff = Ailment.EffectType.get(effects[i]);
 							if(eff == null)
 								store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ")");
