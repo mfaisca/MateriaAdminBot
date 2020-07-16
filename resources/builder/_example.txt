@@ -49,4 +49,13 @@ public class {cleanName} extends Unit{
 		else
 			return IntStream.of(ids).boxed().map(i -> this.getSpecificAbility(i)).collect(Collectors.toList());
 	}
+	
+	@Override
+	public Ability getSpecificAbility(int id){
+		Ability ret = super.getSpecificAbility(id);
+		switch(ret.getId()) {
+			
+		}
+		return ret;
+	}
 }

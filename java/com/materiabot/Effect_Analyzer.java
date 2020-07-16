@@ -24,7 +24,7 @@ public class Effect_Analyzer {
 	}
 	
 	private static void unitsWithDifferentGLJPPassives() throws Exception {
-		List<String> l = new LinkedList<String>();
+		List<String> l = new LinkedList<>();
 		PluginManager.loadUnits();
 		for(Unit u : UnitParser.UNITS) {
 			u = _Library.L.getUnit(u.getName());

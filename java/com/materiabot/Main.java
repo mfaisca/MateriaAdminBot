@@ -39,9 +39,10 @@ public class Main {
 //		client.getGuildById(423915309523664898l).retrieveMembers().get();
 //		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
-//		client.getTextChannelById(423915310072987650L).getHistoryBefore(725382384312123410L, 50).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(667648250416988173L).getHistoryAround(732630797739360399L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
+		
 //		System.out.println("---");
 //		client.getTextChannelById(504366585163546654l).getHistoryBefore(711738862346698803L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
