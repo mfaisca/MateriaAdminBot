@@ -14,6 +14,14 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
+		
+		/*
+		 * Weird Barret Avalanche Buff
+		 * Steiner BRV+ should be 4 hits
+		 * Agrias Aura is +10/20/30/40/60% instead of 20/30/40/50/70
+		 */
+		
+		
 		String privateToken = SQLAccess.getKeyValue(SQLAccess.BOT_TOKEN_KEY);
 		if(privateToken == null) {
 			System.out.println("Bot Token isn't inserted." + System.lineSeparator());
