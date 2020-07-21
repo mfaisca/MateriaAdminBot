@@ -19,6 +19,7 @@ public class Main {
 		 * Weird Barret Avalanche Buff
 		 * Steiner BRV+ should be 4 hits
 		 * Agrias Aura is +10/20/30/40/60% instead of 20/30/40/50/70
+		 * Aphmau Autonomize BRV Regen should be party-wide
 		 */
 		
 		
@@ -47,7 +48,7 @@ public class Main {
 //		client.getGuildById(423915309523664898l).retrieveMembers().get();
 //		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
-//		client.getTextChannelById(667648250416988173L).getHistoryAround(732630797739360399L, 100).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(732609891222683701L).getHistoryAround(734496613967462410L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 		
