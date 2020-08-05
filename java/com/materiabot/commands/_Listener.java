@@ -31,16 +31,14 @@ public class _Listener extends ListenerAdapter{
 				MessageReceivedEvent event = (MessageReceivedEvent)e;
 //				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
 //					_BaseCommand c = i.next();
-				for(_BaseCommand c : Constants.COMMANDS) {
+				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.validateCommand(event.getMessage()))
 						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
 							int cd = -1;
 							if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
-							//	if(event.getAuthor().getIdLong() == Constants.QUETZ_ID) //XXX Stress Test
 									c.doStuff(event.getMessage());
 							else {
 								cd = (cd / 1000) + 1; cd = cd > 5 ? 5 : cd;
-							//	if(event.getAuthor().getIdLong() != Constants.QUETZ_ID) return; //XXX Stress Test
 								CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
 								Constants.sleep(cd * 1000);
 								try {
@@ -51,7 +49,6 @@ public class _Listener extends ListenerAdapter{
 							}
 							return;
 						}
-					}
 				}
 			},
 			REACTION_ADDED{public void run(Event e) {
@@ -70,10 +67,9 @@ public class _Listener extends ListenerAdapter{
 					MessageUtils.removeReaction(originalMessage, event.getUser(), event.getReactionEmote().getEmote());
 					return;
 				}
-				for(_BaseCommand c : Constants.COMMANDS) {
+				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.validateReaction(originalMessage))
 						c.doAddReactionStuff(event);
-				}
 			}},
 			REACTION_REMOVED{public void run(Event e) {
 				MessageReactionRemoveEvent event = (MessageReactionRemoveEvent)e;
@@ -81,10 +77,9 @@ public class _Listener extends ListenerAdapter{
 				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
-				for(_BaseCommand c : Constants.COMMANDS) {
+				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.validateReaction(originalMessage))
 						c.doRemoveReactionStuff(event);
-				}
 			}};
 			public abstract void run(final Event event);
 		}
