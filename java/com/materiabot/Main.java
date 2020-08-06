@@ -25,6 +25,7 @@ public class Main {
 		 * Fang HP+Commando has bonus dmg vs ST
 		 * Celes Runic buff should be 40% instead of 60% ??
 		 * Locke EX Buff(speed) is 10% only
+		 * Deuce Note doesn't raise Speed
 		 */
 		
 		
