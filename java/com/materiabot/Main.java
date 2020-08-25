@@ -29,7 +29,7 @@ public class Main {
 		Constants.setClient(client);
 		PluginManager.loadCommands();
 		PluginManager.loadUnits();
-		client.awaitReady(); 
+		client.awaitReady();
 		client.addEventListener(new _Listener());
 		System.out.println("Bot is ready!!");
 		
