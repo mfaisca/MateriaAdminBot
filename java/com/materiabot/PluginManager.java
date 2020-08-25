@@ -17,7 +17,7 @@ public class PluginManager {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Command.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
-		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
+		manager.loadPlugins(PluginSources.jarSource("file:///" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		//LoadCommands
 		_Listener.unloadPluginCommands();
 		manager.getAllPlugins().stream()
@@ -32,7 +32,7 @@ public class PluginManager {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Override.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
-		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
+		manager.loadPlugins(PluginSources.jarSource("file:///" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		System.out.println("---");
 		manager.getAllPlugins().stream()
 			.filter(p -> p.getName().contains("Override."))
@@ -49,7 +49,7 @@ public class PluginManager {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Unit.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
-		manager.loadPlugins(PluginSources.jarSource("file:/" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
+		manager.loadPlugins(PluginSources.jarSource("file:///" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		//LoadUnits
 		List<Unit> lu = UnitParser.UNITS;
 		UnitParser.UNITS = manager.getAllPlugins().stream()

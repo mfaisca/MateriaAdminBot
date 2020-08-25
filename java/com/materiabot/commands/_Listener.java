@@ -8,6 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import com.materiabot.PluginManager;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
@@ -23,38 +24,48 @@ import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
+import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
 
 public class _Listener extends ListenerAdapter{
 	private static final class Analyze implements Runnable{
 		public static enum Action{
 			MESSAGE_RECEIVED{public void run(Event e) {
-				MessageReceivedEvent event = (MessageReceivedEvent)e;
-//				for(Iterator<_BaseCommand> i = Constants.COMMANDS.iterator(); i.hasNext();) {
-//					_BaseCommand c = i.next();
-				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.validateCommand(event.getMessage()))
-						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
-							int cd = -1;
-							if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
-									c.doStuff(event.getMessage());
-							else {
-								cd = (cd / 1000) + 1; cd = cd > 5 ? 5 : cd;
-								CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
-								Constants.sleep(cd * 1000);
-								try {
-									MessageUtils.deleteMessage(m.get());
-								} catch (InterruptedException | ExecutionException e1) {
-									e1.printStackTrace();
+					MessageReceivedEvent event = (MessageReceivedEvent)e;
+//					try {
+						for(_BaseCommand c : Constants.COMMANDS)
+							if(c.validateCommand(event.getMessage()))
+								if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
+									int cd = -1;
+									if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
+											c.doStuff(event.getMessage());
+									else {
+										cd = (cd / 1000) + 1; 
+										CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
+										Constants.sleep(cd * 1000);
+										try {
+											MessageUtils.deleteMessage(m.get());
+										} catch (InterruptedException | ExecutionException e1) {
+											e1.printStackTrace();
+										}
+									}
+									return;
 								}
-							}
-							return;
-						}
-				}
+//				} catch(InsufficientPermissionException ee) {
+//					MessageUtils.sendWhisper(event.getAuthor().getIdLong(), "Missing Permission on the channel \"" + event.getChannel().getName() + "\"");
+//				}
+			}
 			},
 			REACTION_ADDED{public void run(Event e) {
 				MessageReactionAddEvent event = (MessageReactionAddEvent)e;
 				if(event.getUserIdLong() == event.getJDA().getSelfUser().getIdLong()) return;
-				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
+				Message originalMessage = null;
+				try {
+					originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
+				} catch(InsufficientPermissionException ee) {
+					MessageUtils.sendStatusMessageError(event.getChannel(), "Missing Permission \"Read Message History\". "
+							+ "This permission is needed to obtain a message from the past to respond to clickable reactions").join().delete().queueAfter(30, TimeUnit.SECONDS);
+					return;
+				}
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
 				if(event.getReaction().getReactionEmote().isEmoji()){
@@ -74,7 +85,14 @@ public class _Listener extends ListenerAdapter{
 			REACTION_REMOVED{public void run(Event e) {
 				MessageReactionRemoveEvent event = (MessageReactionRemoveEvent)e;
 				if(event.getUserIdLong() == event.getJDA().getSelfUser().getIdLong()) return;
-				Message originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
+				Message originalMessage = null;
+				try {
+					originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
+				} catch(InsufficientPermissionException ee) {
+					MessageUtils.sendStatusMessageError(event.getChannel(), "Missing Permission \"Read Message History\". "
+							+ "This permission is needed to obtain a message from the past to respond to clickable reactions").join().delete().queueAfter(30, TimeUnit.SECONDS);
+					return;
+				}
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
 					return;
 				for(_BaseCommand c : Constants.COMMANDS)

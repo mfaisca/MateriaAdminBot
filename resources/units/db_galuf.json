@@ -612,7 +612,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -658,7 +660,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -704,7 +708,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -715,6 +721,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 2
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -843,7 +941,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -1091,7 +1191,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -1336,7 +1438,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -1347,6 +1451,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            542
+                        ],
+                        "duration": 5
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -1475,7 +1673,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -1486,6 +1686,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 4
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -1706,7 +1998,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -1717,6 +2011,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            544
+                        ],
+                        "duration": 7
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -1937,7 +2325,9 @@
                         "brv_rate": 200.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -1983,7 +2373,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -2029,7 +2421,9 @@
                         "brv_rate": 220.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -2077,7 +2471,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -2093,7 +2489,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -2340,7 +2738,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -2356,7 +2756,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -2601,7 +3003,9 @@
                         "brv_rate": 150.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -2647,7 +3051,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -2665,7 +3071,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -3042,7 +3450,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "111": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": []
                 }
             ]
@@ -3081,7 +3502,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -3099,7 +3522,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -3476,7 +3901,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "111": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": []
                 }
             ]
@@ -3515,7 +3953,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -3533,7 +3973,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -3551,7 +3993,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -3928,7 +4372,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "111": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": []
                 }
             ]
@@ -3967,7 +4424,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -3985,7 +4444,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4003,7 +4464,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4380,7 +4843,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "111": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": []
                 }
             ]
@@ -4419,7 +4895,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4435,7 +4913,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4481,7 +4961,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -4499,7 +4981,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4517,7 +5001,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4528,6 +5014,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 2
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -4656,7 +5234,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -4674,7 +5254,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4692,7 +5274,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4703,6 +5287,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            3104
+                        ],
+                        "duration": 5
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -4831,7 +5509,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -4849,7 +5529,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4867,7 +5549,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -4878,6 +5562,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 4
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -5098,7 +5874,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -5116,7 +5894,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5134,7 +5914,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5145,6 +5927,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            3105
+                        ],
+                        "duration": 7
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -5365,7 +6241,9 @@
                         "brv_rate": 180.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5411,7 +6289,9 @@
                         "brv_rate": 200.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5427,7 +6307,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5473,7 +6355,9 @@
                         "brv_rate": 220.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5489,7 +6373,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5535,7 +6421,9 @@
                         "brv_rate": 130.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5581,7 +6469,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5627,7 +6517,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -5645,7 +6537,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -5982,7 +6876,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -6000,7 +6896,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -6337,7 +7235,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -6355,7 +7255,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -6373,7 +7275,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -6710,7 +7614,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -6728,7 +7634,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -6746,7 +7654,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7083,7 +7993,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -7101,7 +8013,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7119,7 +8033,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7130,6 +8046,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 7
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -7350,7 +8358,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -7368,7 +8378,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7386,7 +8398,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7397,6 +8411,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            7337
+                        ],
+                        "duration": 10
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -7617,7 +8725,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -7635,7 +8745,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7653,7 +8765,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7664,6 +8778,98 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 4,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 9
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -7884,7 +9090,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -7902,7 +9110,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7920,7 +9130,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -7931,6 +9143,100 @@
             ],
             "arguments": [],
             "ailments": [
+                {
+                    "id": 98,
+                    "cast_id": 91,
+                    "name": {
+                        "en": "",
+                        "gl": "PHY Evasion Up",
+                        "jp": "物理回避率アップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "PHY Evasion Up: Raises physical evasion rate",
+                        "jp": "物理回避率アップ：物理攻撃の回避率が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 2,
+                        "arguments": [
+                            7338
+                        ],
+                        "duration": 12
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0
+                    },
+                    "rank_data": {
+                        "98": [
+                            60,
+                            60,
+                            60,
+                            75,
+                            100,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
                 {
                     "id": 56,
                     "cast_id": 12,
@@ -8151,7 +9457,9 @@
                         "brv_rate": 50.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8167,7 +9475,9 @@
                         "brv_rate": 50.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8183,7 +9493,9 @@
                         "brv_rate": 50.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8199,7 +9511,9 @@
                         "brv_rate": 50.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8215,7 +9529,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8233,7 +9549,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -8279,7 +9597,9 @@
                         "brv_rate": 55.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8295,7 +9615,9 @@
                         "brv_rate": 55.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8311,7 +9633,9 @@
                         "brv_rate": 55.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8327,7 +9651,9 @@
                         "brv_rate": 55.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8343,7 +9669,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8361,7 +9689,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -8407,7 +9737,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -8423,7 +9755,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8439,7 +9773,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8455,7 +9791,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8471,7 +9809,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8487,7 +9827,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8533,7 +9875,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -8549,7 +9893,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8565,7 +9911,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8581,7 +9929,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8597,7 +9947,9 @@
                         "brv_rate": 70.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 42
+                        "single_target_brv_rate": 42,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8613,7 +9965,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8843,7 +10197,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -8859,7 +10215,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8875,7 +10233,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8891,7 +10251,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8907,7 +10269,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -8923,7 +10287,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9153,7 +10519,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -9169,7 +10537,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9185,7 +10555,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9201,7 +10573,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9217,7 +10591,9 @@
                         "brv_rate": 120.0,
                         "max_brv_overflow": 200,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 72
+                        "single_target_brv_rate": 72,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9233,7 +10609,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9251,7 +10629,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -9481,7 +10861,9 @@
                         "brv_rate": 0.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -9497,7 +10879,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9513,7 +10897,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9529,7 +10915,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9545,7 +10933,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9561,7 +10951,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9577,7 +10969,9 @@
                         "brv_rate": 90.0,
                         "max_brv_overflow": 250,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 54
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9593,7 +10987,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9611,7 +11007,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -9841,7 +11239,9 @@
                         "brv_rate": 75.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9857,7 +11257,9 @@
                         "brv_rate": 75.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9903,7 +11305,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9919,7 +11323,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9967,7 +11373,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -9983,7 +11391,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -9999,7 +11409,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10047,7 +11459,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -10063,7 +11477,9 @@
                         "brv_rate": 60.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10079,7 +11495,9 @@
                         "brv_rate": 60.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10095,7 +11513,9 @@
                         "brv_rate": 60.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10111,7 +11531,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10129,7 +11551,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10175,7 +11599,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -10195,7 +11621,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10215,7 +11643,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10302,7 +11732,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "1421": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": [
                         {
                             "id": 529,
@@ -10372,7 +11815,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -10392,7 +11837,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10412,7 +11859,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10499,7 +11948,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "1421": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": [
                         {
                             "id": 529,
@@ -10569,7 +12031,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -10589,7 +12053,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10609,7 +12075,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10696,7 +12164,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "1421": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": [
                         {
                             "id": 529,
@@ -10766,7 +12247,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -10786,7 +12269,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10806,7 +12291,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10893,7 +12380,20 @@
                         "removable": 0,
                         "max_stacks": 0
                     },
-                    "rank_data": {},
+                    "rank_data": {
+                        "1421": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
                     "auras": [
                         {
                             "id": 529,
@@ -10963,7 +12463,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10979,7 +12481,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -10995,7 +12499,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 120,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11011,7 +12517,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11057,7 +12565,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11073,7 +12583,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11089,7 +12601,9 @@
                         "brv_rate": 80.0,
                         "max_brv_overflow": 150,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11105,7 +12619,9 @@
                         "brv_rate": 100.0,
                         "max_brv_overflow": 100,
                         "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -11263,6 +12779,23 @@
                         200,
                         1,
                         100
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "effect_id": -1,
+                    "effect_target": 2,
+                    "required_id": 45,
+                    "required_target": 2,
+                    "effect_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
                     "required_target_value": 0
                 }
@@ -11996,6 +13529,23 @@
                         200,
                         1,
                         100
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "effect_id": -1,
+                    "effect_target": 2,
+                    "required_id": 45,
+                    "required_target": 2,
+                    "effect_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
                     "required_target_value": 0
                 }
@@ -12914,7 +14464,21 @@
                         "required_target_value": 0
                     }
                 ],
-                "auras": []
+                "auras": [
+                    {
+                        "id": 1052,
+                        "required_passive": 1433,
+                        "effect_data": {
+                            "id": 1039,
+                            "ailment_effect": 106,
+                            "target_id": 1,
+                            "value_type": 1,
+                            "values": [
+                                5
+                            ]
+                        }
+                    }
+                ]
             },
             "passives": [
                 {
@@ -13749,7 +15313,20 @@
                 "removable": 0,
                 "max_stacks": 0
             },
-            "rank_data": {},
+            "rank_data": {
+                "1422": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
             "auras": []
         },
         {
@@ -14228,614 +15805,6 @@
     "enhancementBoard": {
         "passives": [
             {
-                "id": 5275,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりパワーII"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ10％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりパワーII：「しらはどり」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 39,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            10,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            482,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5273,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりBRVアタックアドバンス Lv9"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりBRVアタックアドバンス：「しらはどり」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 170,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            482,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            8,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5277,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "バフガードアップ"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "自身に強化効果が付与されている時\\n自身の防御力20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "バフガードアップ：防御力がアップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 30,
-                        "effect_target": 2,
-                        "required_id": 61,
-                        "required_target": 2,
-                        "effect_values": [
-                            20,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            1,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5272,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりパワー Lv9"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりパワー：「しらはどり」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 39,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            482,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            8,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5274,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "ブレイブ攻撃＋カウンターアップ Lv9"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「BRV攻撃＋」「カウンター」の\\n与えるBRVダメージ20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "ブレイブ攻撃＋カウンターアップ：「BRV攻撃＋」「カウンター」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 39,
-                        "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            204,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            8,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5276,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりBRVアタックアドバンスII"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "しらはどりBRVアタックアドバンスII：「しらはどり」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 170,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            10,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            482,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5270,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "かばうBRVアップアドバンス"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「かばう」「かばう＋」使用時\\n加算したBRVを最大BRVを超えて加算する上限10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "かばうBRVアップアドバンス：「かばう」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 192,
-                        "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
-                        "effect_values": [
-                            10,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            205,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
-                "id": 5268,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "HP攻撃＋アップ Lv9"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「HP攻撃＋」の\\n与えるBRVダメージ20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "HP攻撃＋アップ：「HP攻撃＋」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 39,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            7345,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            8,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
                 "id": 5266,
                 "name": {
                     "en": "",
@@ -14988,6 +15957,234 @@
                 "auras": []
             },
             {
+                "id": 5268,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "HP攻撃＋アップ Lv9"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「HP攻撃＋」の\\n与えるBRVダメージ20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "HP攻撃＋アップ：「HP攻撃＋」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            7345,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            8,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5269,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "かばうBRVアップ"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「かばう」「かばう＋」の\\nBRV加算量10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "かばうBRVアップ：「かばう」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 44,
+                        "effect_target": 2,
+                        "required_id": 77,
+                        "required_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            205,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5270,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "かばうBRVアップアドバンス"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「かばう」「かばう＋」使用時\\n加算したBRVを最大BRVを超えて加算する上限10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "かばうBRVアップアドバンス：「かばう」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 192,
+                        "effect_target": 2,
+                        "required_id": 77,
+                        "required_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            205,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
                 "id": 5271,
                 "name": {
                     "en": "",
@@ -15024,6 +16221,462 @@
                         "required_target": 2,
                         "effect_values": [
                             10,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            1,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5272,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりパワー Lv9"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりパワー：「しらはどり」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            482,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            8,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5273,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりBRVアタックアドバンス Lv9"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりBRVアタックアドバンス：「しらはどり」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 170,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            482,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            8,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5274,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "ブレイブ攻撃＋カウンターアップ Lv9"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「BRV攻撃＋」「カウンター」の\\n与えるBRVダメージ20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "ブレイブ攻撃＋カウンターアップ：「BRV攻撃＋」「カウンター」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "required_id": 77,
+                        "required_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            204,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            8,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5275,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりパワーII"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ10％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりパワーII：「しらはどり」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            482,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5276,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりBRVアタックアドバンスII"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "しらはどりBRVアタックアドバンスII：「しらはどり」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 170,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            482,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5277,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "バフガードアップ"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "自身に強化効果が付与されている時\\n自身の防御力20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "バフガードアップ：防御力がアップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 30,
+                        "effect_target": 2,
+                        "required_id": 61,
+                        "required_target": 2,
+                        "effect_values": [
+                            20,
                             0,
                             0
                         ],
@@ -15216,82 +16869,6 @@
                 "auras": []
             },
             {
-                "id": 5269,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "かばうBRVアップ"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「かばう」「かばう＋」の\\nBRV加算量10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "かばうBRVアップ：「かばう」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 44,
-                        "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
-                        "effect_values": [
-                            10,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            205,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
                 "id": 5280,
                 "name": {
                     "en": "",
@@ -15444,82 +17021,6 @@
                 "auras": []
             },
             {
-                "id": 5283,
-                "name": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "HP攻撃＋＋アップ"
-                },
-                "desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "「HP攻撃＋＋」の\\n与えるBRVダメージ20％アップ"
-                },
-                "short_desc": {
-                    "en": "",
-                    "gl": "",
-                    "jp": "HP攻撃＋＋アップ：「HP攻撃＋＋」の性能アップ"
-                },
-                "meta_data": {
-                    "cp": 10,
-                    "level": -1,
-                    "target": 2,
-                    "is_weapon_passive": -1,
-                    "required_passive": -1
-                },
-                "type_data": {
-                    "type": 3,
-                    "disp_type": 0,
-                    "condition_type": 1
-                },
-                "effects": [
-                    {
-                        "effect_id": 39,
-                        "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
-                        "effect_values": [
-                            20,
-                            0,
-                            0
-                        ],
-                        "required_values": [
-                            7346,
-                            0,
-                            0
-                        ],
-                        "required_target_value": 0
-                    }
-                ],
-                "param_data": {
-                    "params": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ],
-                    "values": [
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ],
-                        [
-                            -1,
-                            -1,
-                            -1
-                        ]
-                    ]
-                },
-                "auras": []
-            },
-            {
                 "id": 5282,
                 "name": {
                     "en": "",
@@ -15561,6 +17062,82 @@
                         ],
                         "required_values": [
                             7339,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 5283,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "HP攻撃＋＋アップ"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "「HP攻撃＋＋」の\\n与えるBRVダメージ20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "HP攻撃＋＋アップ：「HP攻撃＋＋」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "required_id": 14,
+                        "required_target": 2,
+                        "effect_values": [
+                            20,
+                            0,
+                            0
+                        ],
+                        "required_values": [
+                            7346,
                             0,
                             0
                         ],

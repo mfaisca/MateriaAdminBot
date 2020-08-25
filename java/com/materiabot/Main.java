@@ -14,21 +14,6 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		
-		/*
-		 * Weird Barret Avalanche Buff
-		 * Steiner BRV+ should be 4 hits
-		 * Agrias is +10/20/30/40/60% instead of 20/30/40/50/70
-		 * Aphmau Autonomize BRV Regen should be party-wide
-		 * Yuri ATK Aura is 20%
-		 * Fang BRV+ Saboteur has High Turn Rate
-		 * Fang HP+Commando has bonus dmg vs ST
-		 * Celes Runic buff should be 40% instead of 60% ??
-		 * Locke EX Buff(speed) is 10% only
-		 * Deuce Note doesn't raise Speed
-		 */
-		
-		
 		String privateToken = SQLAccess.getKeyValue(SQLAccess.BOT_TOKEN_KEY);
 		if(privateToken == null) {
 			System.out.println("Bot Token isn't inserted." + System.lineSeparator());
@@ -54,7 +39,7 @@ public class Main {
 //		client.getGuildById(423915309523664898l).retrieveMembers().get();
 //		client.getGuildById(423915309523664898l).getMembers().stream().sorted((m1, m2) -> m1.getTimeJoined().compareTo(m2.getTimeJoined())).limit(10).forEach(m -> System.out.println(m.getEffectiveName() + " - " + m.getTimeJoined()));
 		
-//		client.getTextChannelById(586848659447218198L).getHistoryAround(737364251056013373L, 100).complete().getRetrievedHistory().forEach(m -> {
+//		client.getTextChannelById(408967353276170242L).getHistoryAround(743903465587343390L, 100).complete().getRetrievedHistory().forEach(m -> {
 //			System.out.println(m.getId() + " - " + m.getTimeCreated().toString() + " " + m.getAuthor().getName() + ": " + m.getContentDisplay());
 //		});
 		

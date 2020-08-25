@@ -80,6 +80,8 @@ public class Effect_Analyzer {
 						try {
 							if(effects[i] == -1) continue;
 							if(!Arrays.asList(331, 335, 327, 329, 58).contains(effects[i])) continue;
+							if(effects[i] == 226)
+								System.out.println(226 + " - " + uName);
 							Ailment.EffectType eff = Ailment.EffectType.get(effects[i]);
 							if(eff == null)
 								store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ")");
