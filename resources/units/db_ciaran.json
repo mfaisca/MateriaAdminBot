@@ -78,25 +78,46 @@
             ],
             "gl": [
                 {
+                    "id": 2511,
+                    "text": "I wonder what happens to memories when they're completely forgotten...",
+                    "voice": 30,
+                    "type": 5,
+                    "sort": 10
+                },
+                {
                     "id": 2512,
                     "text": "The quest for myrrh means hope for the future.",
                     "voice": 31,
                     "type": 1,
-                    "sort": 2
+                    "sort": 1
                 },
                 {
                     "id": 2514,
                     "text": "Perhaps we should have knocked.",
                     "voice": 33,
                     "type": 1,
-                    "sort": 4
+                    "sort": 3
+                },
+                {
+                    "id": 2517,
+                    "text": "We're alive! We're still here! Hurrah!",
+                    "voice": 36,
+                    "type": 5,
+                    "sort": 11
+                },
+                {
+                    "id": 2520,
+                    "text": "Clavats are generous indeed!",
+                    "voice": 39,
+                    "type": 5,
+                    "sort": 12
                 },
                 {
                     "id": 2522,
                     "text": "Dull is best.",
                     "voice": 41,
                     "type": 1,
-                    "sort": 12
+                    "sort": 9
                 }
             ]
         },
@@ -874,9 +895,12 @@
                 "gl": "Melee attack\\nSteals enemy's BRV",
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -922,9 +946,12 @@
                 "gl": "Expends BRV to deal HP damage",
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -970,9 +997,12 @@
                 "gl": "Melee BRV attack + HP attack\\nSelf: 3 turns Crystal Caravan\\nIncreases special effect Drop of Myrrh by 1 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n自身に3ACTION「クリスタル・キャラバン」付与\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 9,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1106,6 +1136,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1154,10 +1190,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -1220,9 +1264,12 @@
                 "gl": "Melee BRV attack + HP attack\\nSelf: 6 turns Crystal Caravan\\nIncreases special effect Drop of Myrrh by 2 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n自身に6ACTION「クリスタル・キャラバン」付与\\n自身に特殊効果「ミルラの雫」2加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 9,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1356,6 +1403,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1404,10 +1457,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -1470,9 +1531,12 @@
                 "gl": "3-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nSelf: 3 turns Crystal Caravan\\nIncreases special effect Drop of Myrrh by 1 (limit 5)\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Crystal Caravan active\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack, HP Attack+ becomes Soulshot",
                 "jp": "A"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 9,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1642,6 +1706,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1690,10 +1760,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -1756,9 +1834,12 @@
                 "gl": "3-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nSelf: 6 turns Crystal Caravan\\nIncreases special effect Drop of Myrrh by 2 (limit 5)\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Crystal Caravan active\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack, HP Attack+ becomes Soulshot",
                 "jp": "A"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 9,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1928,6 +2009,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1976,10 +2063,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -2042,9 +2137,12 @@
                 "gl": "2-hit melee BRV attack\\nIncreases special effect Drop of Myrrh by 1 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "2HIT近距離物理BRV攻撃\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -2150,9 +2248,12 @@
                 "gl": "Increases BRV based on ATK\\nHoly melee BRV attack + HP attack\\nBecomes Holyrastrike while special effect Drop of Myrrh at 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋聖属性近距離物理BRV攻撃＋HP攻撃\\n特殊効果「ミルラの雫」5の時\\n「ホーリラ剣」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2274,9 +2375,12 @@
                 "gl": "Increases BRV based on ATK\\n2-hit Holy melee BRV attack + HP attack\\nReduces special effect Drop of Myrrh by 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2460,9 +2564,12 @@
                 "gl": "Increases BRV based on ATK\\nHoly melee BRV attack + HP attack\\nBecomes Holyrastrike while special effect Drop of Myrrh at 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋聖属性近距離物理BRV攻撃＋HP攻撃\\n特殊効果「ミルラの雫」5の時\\n「ホーリラ剣」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2584,9 +2691,12 @@
                 "gl": "Increases BRV based on ATK\\n2-hit Holy melee BRV attack + HP attack\\nReduces special effect Drop of Myrrh by 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2770,9 +2880,12 @@
                 "gl": "Grants party BRV based on own ATK\\n2-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nBecomes Holyrastrike while special effect Drop of Myrrh at 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n特殊効果「ミルラの雫」5の時\\n「ホーリラ剣」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2934,9 +3047,12 @@
                 "gl": "Grants party BRV based on own ATK\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 100% HP damage to non-targets\\nReduces special effect Drop of Myrrh by 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも100％分のHPダメージ\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 11,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3180,9 +3296,12 @@
                 "gl": "Grants party BRV based on own ATK\\n2-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nBecomes Holyrastrike while special effect Drop of Myrrh at 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n特殊効果「ミルラの雫」5の時\\n「ホーリラ剣」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3344,9 +3463,12 @@
                 "gl": "Grants party BRV based on own ATK\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 100% HP damage to non-targets\\nReduces special effect Drop of Myrrh by 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも100％分のHPダメージ\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 11,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3590,9 +3712,12 @@
                 "gl": "Increases BRV based on ATK\\nMelee BRV attack + HP attack\\nBecomes Soulshot+ while special effect Drop of Myrrh at 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3676,9 +3801,12 @@
                 "gl": "Increases BRV based on ATK\\n2-hit melee BRV attack + HP attack\\nReduces special effect Drop of Myrrh by 2",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3822,9 +3950,12 @@
                 "gl": "Grants party BRV based on own ATK\\nMelee BRV attack + HP attack\\nBecomes Soulshot+ while special effect Drop of Myrrh at 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3908,9 +4039,12 @@
                 "gl": "Grants party BRV based on own ATK\\n2-hit melee BRV attack + HP attack\\nReduces special effect Drop of Myrrh by 2",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4054,9 +4188,12 @@
                 "gl": "Increases BRV based on ATK\\n2-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nBecomes Soulshot+ while special effect Drop of Myrrh at 5",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4158,9 +4295,12 @@
                 "gl": "Increases BRV based on ATK\\n4-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nReduces special effect Drop of Myrrh by 2",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4340,9 +4480,12 @@
                 "gl": "Grants party BRV based on own ATK\\n2-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nBecomes Soulshot+ while special effect Drop of Myrrh at 5",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4444,9 +4587,12 @@
                 "gl": "Grants party BRV based on own ATK\\n4-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nReduces special effect Drop of Myrrh by 2",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4626,9 +4772,12 @@
                 "gl": "5-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nIncreases special effect Drop of Myrrh by 2 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に特殊効果「ミルラの雫」2加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4806,9 +4955,12 @@
                 "gl": "5-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nIncreases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4986,9 +5138,12 @@
                 "gl": "5-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nSelf: 6 turns Memories of Chronicles\\nIncreases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に6ACTION「メモリーズオブクロニクル」付与\\n自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 9,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -5194,6 +5349,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             67,
@@ -5242,10 +5403,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1366": [
@@ -5277,9 +5446,12 @@
                 "gl": "5-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nSelf: 6 turns Memories of Chronicles\\nIncreases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に6ACTION「メモリーズオブクロニクル」付与\\n自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 9,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -5485,6 +5657,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             67,
@@ -5533,10 +5711,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1366": [
@@ -5568,9 +5754,12 @@
                 "gl": "5-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nSelf: 6 turns Memories of Chronicles\\nIncreases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に6ACTION「メモリーズオブクロニクル」付与\\n自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 9,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -5776,6 +5965,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             67,
@@ -5824,10 +6019,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1366": [
@@ -5859,9 +6062,12 @@
                 "gl": "8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals proportionate HP damage to each target\\nSelf: 6 turns Memories of Chronicles\\nIncreases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n自身に6ACTION「メモリーズオブクロニクル」付与\\n自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 15000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -6121,6 +6327,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             67,
@@ -6169,10 +6381,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1366": [
@@ -6204,9 +6424,12 @@
                 "gl": "Increases special effect Drop of Myrrh by 2 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "自身に特殊効果「ミルラの雫」2加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV　攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する \\n(同名の特殊効果は重複しない)\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 4,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -6312,9 +6535,12 @@
                 "gl": "Increases special effect Drop of Myrrh by 3 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "自身に特殊効果「ミルラの雫」3加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV　攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する \\n(同名の特殊効果は重複しない)\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 4,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -6420,9 +6646,12 @@
                 "gl": "Increases special effect Drop of Myrrh by 2 (limit 5)\\nSlightly raises party's MAX BRV for 5 turns\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "自身に特殊効果「ミルラの雫」2加算（上限5）\\n5ACTION味方全員の最大BRVを小アップ\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV　攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する \\n(同名の特殊効果は重複しない)\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 4,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -6538,6 +6767,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -6586,10 +6821,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1367": [
@@ -6652,9 +6895,12 @@
                 "gl": "Increases special effect Drop of Myrrh by 3 (limit 5)\\nSlightly raises party's MAX BRV for 5 turns\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "自身に特殊効果「ミルラの雫」3加算（上限5）\\n5ACTION味方全員の最大BRVを小アップ\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV　攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する \\n(同名の特殊効果は重複しない)\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 4,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -6770,6 +7016,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -6818,10 +7070,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1367": [
@@ -6884,9 +7144,12 @@
                 "gl": "Melee BRV attack + HP attack\\nIncreases special effect Drop of Myrrh by 1 (limit 5)\\nWhile special effect Drop of Myrrh at least 1:\\n • Raises party's INT BRV, MAX BRV, ATK, DEF (increases with level of special effect Drop of Myrrh; does not stack with special effects of same name)\\n • HP Attack becomes Soulshot",
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -6995,9 +7258,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n与えるHPダメージは分配 自身に4ACTION「世界の思い出」付与\\n自身に特殊効果「ミルラの雫」5加算（上限5）\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「世界の思い出」付与中 特殊効果「ミルラの雫」の段階は減少しない\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する （同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 14,
             "use_count": 2,
             "is_default": 0,
+            "same_ability": 2,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -7295,6 +7561,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             325,
                             -1,
@@ -7343,10 +7615,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1844": [
@@ -7478,6 +7758,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             44,
                             -1,
@@ -7526,10 +7812,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "642": [
@@ -7561,9 +7855,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n与えるHPダメージは分配 自身に8ACTION「世界の思い出」付与\\n自身に特殊効果「ミルラの雫」5加算（上限5）\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「世界の思い出」付与中 特殊効果「ミルラの雫」の段階は減少しない\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する （同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 14,
             "use_count": 2,
             "is_default": 0,
+            "same_ability": 2,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -7861,6 +8158,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             325,
                             -1,
@@ -7909,10 +8212,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1844": [
@@ -8044,6 +8355,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             44,
                             -1,
@@ -8092,10 +8409,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "642": [
@@ -8127,9 +8452,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋5HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に3ACTION「クリスタル・キャラバン」付与\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n「クリスタル・キャラバン」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」「HP攻撃＋」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 10,
             "use_count": 9,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -8355,6 +8683,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -8403,10 +8737,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -8469,9 +8811,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋5HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「クリスタル・キャラバン」付与\\n自身に特殊効果「ミルラの雫」2加算（上限5）\\n「クリスタル・キャラバン」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」「HP攻撃＋」が「ソウルショット」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 10,
             "use_count": 9,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -8697,6 +9042,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -8745,10 +9096,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1124": [
@@ -8811,9 +9170,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも100％分のHPダメージ\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 13,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -9097,9 +9459,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも100％分のHPダメージ\\n自身の特殊効果「ミルラの雫」5消費"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 13,
             "use_count": 4,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -9383,9 +9748,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -9529,9 +9897,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n通常「HP攻撃」が「ソウルショット」に変化"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -9675,9 +10046,12 @@
                 "gl": "",
                 "jp": "コールされたキアランが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも100％分のHPダメージ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 11,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -9929,6 +10303,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -9977,10 +10357,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1958": [
@@ -10012,9 +10400,12 @@
                 "gl": "",
                 "jp": "コールされたキアランが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも100％分のHPダメージ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 11,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -10266,6 +10657,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -10314,10 +10711,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1958": [
@@ -10349,9 +10754,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも20％分のHPダメージ\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -10533,9 +10941,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 9,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -10735,9 +11146,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも20％分のHPダメージ\\n自身に特殊効果「ミルラの雫」1加算（上限5）\\n特殊効果「ミルラの雫」0以上の時 以下の効果が発動\\n味方全員の初期BRV 最大BRV 攻撃力がアップ\\n特殊効果「ミルラの雫」1以上の時 以下の効果が追加\\n味方全員の防御力がアップ\\n段階によって効果は上昇する\\n（同名の特殊効果は重複しない）\\n特殊効果「ミルラの雫」5の時\\n「ソウルショット＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -10919,9 +11333,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n自身の特殊効果「ミルラの雫」2消費"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 9,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -11144,15 +11561,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         5459,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11194,13 +11625,27 @@
                 {
                     "effect_id": 64,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11215,7 +11660,7 @@
             "id": 271,
             "name": {
                 "en": "Buff Attack",
-                "gl": "Buffed Attack",
+                "gl": "Buff Attack Up",
                 "jp": "バフアタックアップ"
             },
             "desc": {
@@ -11225,7 +11670,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buffed Attack: Raises ATK",
+                "gl": "Buff Attack Up: Raises ATK",
                 "jp": "バフアタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -11244,15 +11689,29 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11294,15 +11753,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         5470,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11315,7 +11788,7 @@
             "id": 2342,
             "name": {
                 "en": "Buff Speed",
-                "gl": "Speed Buff",
+                "gl": "Buff Speed Up",
                 "jp": "バフスピードアップ"
             },
             "desc": {
@@ -11325,7 +11798,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Speed Buff: Raises SPD",
+                "gl": "Buff Speed Up: Raises SPD",
                 "jp": "バフスピードアップ：素早さがアップ"
             },
             "meta_data": {
@@ -11344,15 +11817,29 @@
                 {
                     "effect_id": 32,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11394,13 +11881,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         5459,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11415,7 +11916,7 @@
             "id": 671,
             "name": {
                 "en": "Break Boost",
-                "gl": "Break Boost",
+                "gl": "Break Boost Up",
                 "jp": "ブレイクブーストアップ"
             },
             "desc": {
@@ -11425,7 +11926,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Break Boost: Raises MAX BRV",
+                "gl": "Break Boost Up: Raises MAX BRV",
                 "jp": "ブレイクブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -11444,13 +11945,27 @@
                 {
                     "effect_id": 37,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11494,13 +12009,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         5470,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11544,13 +12073,26 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 78,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 78,
+                    "required_target": 2,
                     "required_values": [
                         1124,
                         0,
@@ -11559,15 +12101,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        10,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -11582,7 +12117,7 @@
             "id": 2346,
             "name": {
                 "en": "Buff Boost",
-                "gl": "Buff Boost",
+                "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
@@ -11592,7 +12127,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Boost: Raises MAX BRV",
+                "gl": "Buff Boost Up: Raises MAX BRV",
                 "jp": "バフブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -11611,15 +12146,29 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         60,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11658,13 +12207,25 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
             "id": 2348,
             "name": {
                 "en": "Buff Attack Speed",
-                "gl": "Buff Attack Speed",
+                "gl": "Buff Attack Speed Up",
                 "jp": "バフアタックスピードアップ"
             },
             "desc": {
@@ -11674,7 +12235,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Attack Speed: Raises ATK, SPD",
+                "gl": "Buff Attack Speed Up: Raises ATK, SPD",
                 "jp": "バフアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
@@ -11693,13 +12254,26 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         40,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 32,
+                    "effect_target": 2,
+                    "effect_values": [
+                        40,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
                         0,
@@ -11708,15 +12282,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 32,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        40,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -11757,6 +12324,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -11792,13 +12371,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11807,15 +12399,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        10,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -11856,6 +12441,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -11891,13 +12488,27 @@
                 {
                     "effect_id": 29,
                     "effect_target": 2,
-                    "required_id": 88,
-                    "required_target": 11,
                     "effect_values": [
                         5,
                         6,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 88,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -11943,15 +12554,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         5459,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -11993,13 +12618,27 @@
                 {
                     "effect_id": 64,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12014,7 +12653,7 @@
             "id": 271,
             "name": {
                 "en": "",
-                "gl": "Buffed Attack",
+                "gl": "Buff Attack Up",
                 "jp": "バフアタックアップ"
             },
             "desc": {
@@ -12024,7 +12663,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buffed Attack: Raises ATK",
+                "gl": "Buff Attack Up: Raises ATK",
                 "jp": "バフアタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -12043,15 +12682,29 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -12093,15 +12746,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         5470,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -12114,7 +12781,7 @@
             "id": 2342,
             "name": {
                 "en": "",
-                "gl": "Speed Buff",
+                "gl": "Buff Speed Up",
                 "jp": "バフスピードアップ"
             },
             "desc": {
@@ -12124,7 +12791,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Speed Buff: Raises SPD",
+                "gl": "Buff Speed Up: Raises SPD",
                 "jp": "バフスピードアップ：素早さがアップ"
             },
             "meta_data": {
@@ -12143,15 +12810,29 @@
                 {
                     "effect_id": 32,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -12193,13 +12874,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         5459,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12214,7 +12909,7 @@
             "id": 671,
             "name": {
                 "en": "",
-                "gl": "Break Boost",
+                "gl": "Break Boost Up",
                 "jp": "ブレイクブーストアップ"
             },
             "desc": {
@@ -12224,7 +12919,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Break Boost: Raises MAX BRV",
+                "gl": "Break Boost Up: Raises MAX BRV",
                 "jp": "ブレイクブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -12243,13 +12938,27 @@
                 {
                     "effect_id": 37,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12293,13 +13002,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         5470,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12343,13 +13066,26 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 78,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 78,
+                    "required_target": 2,
                     "required_values": [
                         1124,
                         0,
@@ -12358,15 +13094,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        10,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -12381,7 +13110,7 @@
             "id": 2346,
             "name": {
                 "en": "",
-                "gl": "Buff Boost",
+                "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
@@ -12391,7 +13120,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Boost: Raises MAX BRV",
+                "gl": "Buff Boost Up: Raises MAX BRV",
                 "jp": "バフブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -12410,15 +13139,29 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         60,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -12457,13 +13200,25 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
             "id": 2348,
             "name": {
                 "en": "",
-                "gl": "Buff Attack Speed",
+                "gl": "Buff Attack Speed Up",
                 "jp": "バフアタックスピードアップ"
             },
             "desc": {
@@ -12473,7 +13228,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Attack Speed: Raises ATK, SPD",
+                "gl": "Buff Attack Speed Up: Raises ATK, SPD",
                 "jp": "バフアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
@@ -12492,13 +13247,26 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         40,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 32,
+                    "effect_target": 2,
+                    "effect_values": [
+                        40,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
                         0,
@@ -12507,15 +13275,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 32,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        40,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -12556,6 +13317,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -12591,13 +13364,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12606,15 +13392,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        10,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -12655,6 +13434,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         }
     ],
@@ -12693,13 +13484,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         7000,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -12770,6 +13575,18 @@
                     "condition_type": 1
                 },
                 "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
                 "auras": []
             }
         },
@@ -12830,6 +13647,18 @@
                     "condition_type": 1
                 },
                 "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
                 "auras": []
             }
         },
@@ -12896,13 +13725,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             2198,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -12947,15 +13780,29 @@
                         {
                             "effect_id": 39,
                             "effect_target": 2,
-                            "required_id": 14,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
-                            ],
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
                             "required_values": [
                                 5474,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
                                 0,
                                 0
                             ],
@@ -12994,6 +13841,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -13029,13 +13888,27 @@
                         {
                             "effect_id": 107,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 20,
                                 5474,
                                 0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
                             ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -13108,13 +13981,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             851,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13156,6 +14033,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -13191,13 +14080,26 @@
                         {
                             "effect_id": 36,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 40,
                                 0,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                40,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -13206,15 +14108,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                40,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -13255,6 +14150,28 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -13287,6 +14204,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 }
             ]
@@ -13296,7 +14225,7 @@
             "series_id": 17,
             "name": {
                 "en": "Bastard Sword",
-                "gl": "",
+                "gl": "Bastard Sword (FFCC)",
                 "jp": "バスタードソード【CC】"
             },
             "status": {
@@ -13351,13 +14280,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             5043,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13402,13 +14335,26 @@
                         {
                             "effect_id": 39,
                             "effect_target": 2,
-                            "required_id": 14,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                20,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
                             "required_values": [
                                 10016,
                                 0,
@@ -13417,15 +14363,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                20,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -13469,13 +14408,27 @@
                         {
                             "effect_id": 28,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 20,
                                 0,
                                 0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
                             ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -13519,13 +14472,26 @@
                         {
                             "effect_id": 22,
                             "effect_target": 2,
-                            "required_id": 2,
-                            "required_target": 2,
                             "effect_values": [
                                 10016,
                                 1,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                20,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 2,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -13534,15 +14500,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                20,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -13617,13 +14576,26 @@
                     {
                         "effect_id": 5,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             680,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 1,
+                        "effect_target": 2,
+                        "effect_values": [
+                            72,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13632,15 +14604,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 1,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            72,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -13712,13 +14677,26 @@
                     {
                         "effect_id": 3,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             110,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 2,
+                        "effect_target": 2,
+                        "effect_values": [
+                            84,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13727,15 +14705,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 2,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            84,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -13807,13 +14778,26 @@
                     {
                         "effect_id": 4,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             220,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 1,
+                        "effect_target": 2,
+                        "effect_values": [
+                            72,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13822,15 +14806,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 1,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            72,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -13902,13 +14879,26 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 188,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -13917,15 +14907,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 188,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            5,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -14846,13 +15829,27 @@
                 {
                     "effect_id": 171,
                     "effect_target": 2,
-                    "required_id": 88,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         6,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 88,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -15012,7 +16009,7 @@
             "id": "130050103",
             "name": {
                 "en": "",
-                "gl": "HP Damage Guard★★",
+                "gl": "HP Damage Guard Up★★",
                 "jp": "HPダメージガードアップ★★"
             },
             "desc": {
@@ -15022,7 +16019,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "HP Damage Guard★★: Raises DEF",
+                "gl": "HP Damage Guard Up★★: Raises DEF",
                 "jp": "HPダメージガードアップ★★：防御力がアップ"
             },
             "meta_data": {
@@ -15086,15 +16083,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5459,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15162,15 +16173,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5459,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15238,15 +16263,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             197,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15314,15 +16353,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5459,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15390,15 +16443,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5459,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15466,15 +16533,29 @@
                     {
                         "effect_id": 34,
                         "effect_target": 2,
-                        "required_id": 61,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 61,
+                        "required_target": 2,
                         "required_values": [
                             1,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15542,15 +16623,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             198,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15618,15 +16713,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             198,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15694,15 +16803,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             199,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15770,15 +16893,29 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             198,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15846,15 +16983,29 @@
                     {
                         "effect_id": 192,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             198,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15922,15 +17073,29 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 61,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 61,
+                        "required_target": 2,
                         "required_values": [
                             1,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -15998,15 +17163,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5474,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -16074,15 +17253,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5474,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -16150,15 +17343,29 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             1366,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -16226,15 +17433,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5474,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -16302,15 +17523,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             5474,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -16378,15 +17613,29 @@
                     {
                         "effect_id": 36,
                         "effect_target": 2,
-                        "required_id": 61,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 61,
+                        "required_target": 2,
                         "required_values": [
                             1,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],

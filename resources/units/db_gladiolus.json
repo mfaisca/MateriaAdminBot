@@ -74,7 +74,50 @@
                     "sort": 11
                 }
             ],
-            "gl": []
+            "gl": [
+                {
+                    "id": 2922,
+                    "text": "安心しろ 死にゃしねえよ",
+                    "voice": 35,
+                    "type": 1,
+                    "sort": 2
+                },
+                {
+                    "id": 2924,
+                    "text": "自然の中だってのが\\nまず最高だろうが",
+                    "voice": 37,
+                    "type": 1,
+                    "sort": 4
+                },
+                {
+                    "id": 2925,
+                    "text": "オレを信じな\\nちゃんと片付ける",
+                    "voice": 38,
+                    "type": 5,
+                    "sort": 9
+                },
+                {
+                    "id": 2926,
+                    "text": "攻め甲斐があんじゃねえか",
+                    "voice": 39,
+                    "type": 1,
+                    "sort": 5
+                },
+                {
+                    "id": 2927,
+                    "text": "いい加減\\n切り替えられねぇのか！？",
+                    "voice": 40,
+                    "type": 5,
+                    "sort": 10
+                },
+                {
+                    "id": 2928,
+                    "text": "ちゃんと言えたじゃねえか",
+                    "voice": 41,
+                    "type": 5,
+                    "sort": 11
+                }
+            ]
         },
         "series": 18,
         "sort_num": 4
@@ -300,9 +343,12 @@
                 "gl": "Melee attack\\nSteals enemy's BRV",
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -348,9 +394,12 @@
                 "gl": "Expends BRV to deal HP damage",
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -396,9 +445,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に5ACTION「王の盾」1段階付与（上限10）\\n自身以外の味方全員に5ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 5,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -532,6 +584,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             5,
@@ -580,10 +638,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1768": [
@@ -624,6 +690,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             58,
                             180,
@@ -672,10 +744,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1770": [
@@ -707,9 +787,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に10ACTION「王の盾」2段階付与（上限10）\\n自身以外の味方全員に10ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -843,6 +926,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             5,
@@ -891,10 +980,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1768": [
@@ -935,6 +1032,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             58,
                             180,
@@ -983,10 +1086,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1770": [
@@ -1018,9 +1129,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に5ACTION「王の盾」1段階付与（上限10）\\n自身以外の味方全員に5ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1208,6 +1322,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             5,
@@ -1256,10 +1376,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1768": [
@@ -1300,6 +1428,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             58,
                             180,
@@ -1348,10 +1482,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1770": [
@@ -1383,9 +1525,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に10ACTION「王の盾」2段階付与（上限10）\\n自身以外の味方全員に10ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1573,6 +1718,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             5,
@@ -1621,10 +1772,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1768": [
@@ -1665,6 +1824,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             58,
                             180,
@@ -1713,10 +1878,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1770": [
@@ -1748,9 +1921,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n対象に4ACTION「最大BRV中ダウン」付与\\n自身に3ACTION「王都警護隊の意地」付与"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 7,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -1900,6 +2076,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1948,10 +2130,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "30": [
@@ -1963,7 +2153,7 @@
                             25,
                             80,
                             100,
-                            0,
+                            70,
                             0
                         ]
                     },
@@ -1992,6 +2182,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -2040,10 +2236,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1769": [
@@ -2075,9 +2279,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n対象に4ACTION「最大BRV中ダウン」付与\\n自身に6ACTION「王都警護隊の意地」付与"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 6,
             "use_count": 7,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2227,6 +2434,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -2275,10 +2488,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "30": [
@@ -2290,7 +2511,7 @@
                             25,
                             80,
                             100,
-                            0,
+                            70,
                             0
                         ]
                     },
@@ -2319,6 +2540,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -2367,10 +2594,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1769": [
@@ -2402,9 +2637,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n対象に4ACTION「最大BRV中ダウン」付与\\n自身に3ACTION「王都警護隊の意地」付与\\n\\n「王都警護隊の意地」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 10,
             "use_count": 7,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2626,6 +2864,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -2674,10 +2918,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "30": [
@@ -2689,7 +2941,7 @@
                             25,
                             80,
                             100,
-                            0,
+                            70,
                             0
                         ]
                     },
@@ -2718,6 +2970,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -2766,10 +3024,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1769": [
@@ -2801,9 +3067,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n対象に4ACTION「最大BRV中ダウン」付与\\n自身に6ACTION「王都警護隊の意地」付与\\n\\n「王都警護隊の意地」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 10,
             "use_count": 7,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3025,6 +3294,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -3073,10 +3348,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "30": [
@@ -3088,7 +3371,7 @@
                             25,
                             80,
                             100,
-                            0,
+                            70,
                             0
                         ]
                     },
@@ -3117,6 +3400,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             1,
@@ -3165,10 +3454,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1769": [
@@ -3200,9 +3497,12 @@
                 "gl": "",
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に4ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 17,
             "use_count": 21000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -3554,6 +3854,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             83,
                             84,
@@ -3602,10 +3908,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1772": [
@@ -3728,9 +4042,12 @@
                 "gl": "",
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 17,
             "use_count": 21000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4082,6 +4399,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             83,
                             84,
@@ -4130,10 +4453,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1772": [
@@ -4256,9 +4587,12 @@
                 "gl": "",
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 18,
             "use_count": 21000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4630,6 +4964,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             83,
                             84,
@@ -4678,10 +5018,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1772": [
@@ -4804,9 +5152,12 @@
                 "gl": "",
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 21,
             "use_count": 21000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -5236,6 +5587,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 10,
+                        "sp_stacks": 0,
                         "effects": [
                             83,
                             84,
@@ -5284,10 +5641,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 10
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1772": [
@@ -5410,9 +5775,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与\\n「ジャストガード」付与中\\nBRV攻撃またはHP攻撃を受けた時 以下の「カウンター」が発動\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n攻撃をした対象以外にも50％分のHPダメージ\\n攻撃をした対象に与えたHPダメージに依存した量のBRVを味方全員に加算\\n攻撃をした対象に4ACTION「ノックダウン」付与"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 2,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -5672,6 +6040,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             184,
                             180,
@@ -5720,10 +6094,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1771": [
@@ -5764,6 +6146,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             53,
                             53,
@@ -5812,10 +6200,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "169": [
@@ -5847,9 +6243,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与\\n「ジャストガード」付与中\\nBRV攻撃またはHP攻撃を受けた時 以下の「カウンター」が発動\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n攻撃をした対象以外にも50％分のHPダメージ\\n攻撃をした対象に与えたHPダメージに依存した量のBRVを味方全員に加算\\n攻撃をした対象に8ACTION「ノックダウン」付与"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 2,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -6109,6 +6508,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             184,
                             180,
@@ -6157,10 +6562,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1771": [
@@ -6201,6 +6614,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             53,
                             53,
@@ -6249,10 +6668,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "169": [
@@ -6284,9 +6711,12 @@
                 "gl": "",
                 "jp": "A"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -6474,6 +6904,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             2,
@@ -6522,10 +6958,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1773": [
@@ -6557,9 +7001,12 @@
                 "gl": "",
                 "jp": "A"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 8,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -6747,6 +7194,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             2,
@@ -6795,10 +7248,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1773": [
@@ -6830,9 +7291,12 @@
                 "gl": "",
                 "jp": "自身のHPを小回復し\\n3ACTION味方全員の最大BRV極小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 2,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 1,
@@ -6908,6 +7372,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -6956,10 +7426,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1903": [
@@ -7022,9 +7500,12 @@
                 "gl": "",
                 "jp": "自身のHPを小回復し\\n3ACTION味方全員の最大BRV極小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 2,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 1,
@@ -7100,6 +7581,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -7148,10 +7635,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1903": [
@@ -7214,9 +7709,12 @@
                 "gl": "",
                 "jp": "自身のHPを小回復し\\n3ACTION味方全員の最大BRV小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 2,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 1,
@@ -7292,6 +7790,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -7340,10 +7844,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1903": [
@@ -7406,9 +7918,12 @@
                 "gl": "",
                 "jp": "自身のHPを小回復し\\n3ACTION味方全員の最大BRV小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 2,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 1,
@@ -7484,6 +7999,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             -1,
                             -1,
@@ -7532,10 +8053,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1903": [
@@ -7598,9 +8127,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -7666,9 +8198,12 @@
                 "gl": "",
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -7752,9 +8287,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -7858,9 +8396,12 @@
                 "gl": "",
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 5,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -8005,15 +8546,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         9,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         9475,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -8026,7 +8581,7 @@
             "id": 287,
             "name": {
                 "en": "HP Damage Attack",
-                "gl": "HP Damage Attack",
+                "gl": "HP Damage Attack Up",
                 "jp": "HPダメージアタックアップ"
             },
             "desc": {
@@ -8036,7 +8591,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "HP Damage Attack: Raises ATK",
+                "gl": "HP Damage Attack Up: Raises ATK",
                 "jp": "HPダメージアタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -8055,13 +8610,27 @@
                 {
                     "effect_id": 29,
                     "effect_target": 2,
-                    "required_id": 36,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 36,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8076,7 +8645,7 @@
             "id": 271,
             "name": {
                 "en": "Buffed Attack",
-                "gl": "Buffed Attack",
+                "gl": "Buff Attack Up",
                 "jp": "バフアタックアップ"
             },
             "desc": {
@@ -8086,7 +8655,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buffed Attack: Raises ATK",
+                "gl": "Buff Attack Up: Raises ATK",
                 "jp": "バフアタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -8105,15 +8674,29 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -8155,15 +8738,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         9479,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -8205,13 +8802,17 @@
                 {
                     "effect_id": 62,
                     "effect_target": 2,
-                    "required_id": 30,
-                    "required_target": 2,
                     "effect_values": [
                         0,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 30,
+                    "required_target": 2,
                     "required_values": [
                         50,
                         0,
@@ -8220,15 +8821,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": -1,
-                    "effect_target": 2,
                     "required_id": 32,
                     "required_target": 2,
-                    "effect_values": [
-                        0,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         1769,
                         0,
@@ -8272,13 +8866,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         9475,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8293,7 +8901,7 @@
             "id": 748,
             "name": {
                 "en": "Buff Boost",
-                "gl": "Buff Boost",
+                "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
@@ -8303,7 +8911,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Boost: Raises MAX BRV",
+                "gl": "Buff Boost Up: Raises MAX BRV",
                 "jp": "バフブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -8322,15 +8930,29 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -8372,13 +8994,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         9479,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8422,13 +9058,27 @@
                 {
                     "effect_id": 115,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         15,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8472,13 +9122,26 @@
                 {
                     "effect_id": 32,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         40,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 36,
+                    "effect_target": 2,
+                    "effect_values": [
+                        40,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
                         0,
@@ -8487,15 +9150,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 36,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        40,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -8536,6 +9192,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -8571,13 +9239,26 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        20,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
                         0,
@@ -8586,15 +9267,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        20,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -8635,6 +9309,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -8670,13 +9356,26 @@
                 {
                     "effect_id": 115,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8685,15 +9384,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        10,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -8734,6 +9426,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         }
     ],
@@ -8773,13 +9477,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         9490,
                         2,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -8850,6 +9568,18 @@
                     "condition_type": 1
                 },
                 "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
                 "auras": []
             }
         },
@@ -8910,6 +9640,18 @@
                     "condition_type": 1
                 },
                 "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
                 "auras": []
             }
         },
@@ -8921,7 +9663,7 @@
             "series_id": 18,
             "name": {
                 "en": "Force Stealer",
-                "gl": "",
+                "gl": "Force Stealer (XV)",
                 "jp": "フォースイーター【XV】"
             },
             "status": {
@@ -8976,13 +9718,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             2259,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9027,15 +9773,29 @@
                         {
                             "effect_id": 39,
                             "effect_target": 2,
-                            "required_id": 14,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
-                            ],
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
                             "required_values": [
                                 9483,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
                                 0,
                                 0
                             ],
@@ -9074,6 +9834,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -9109,13 +9881,27 @@
                         {
                             "effect_id": 107,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 20,
                                 9483,
                                 0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
                             ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -9133,7 +9919,7 @@
             "series_id": 18,
             "name": {
                 "en": "Force Stealer+",
-                "gl": "",
+                "gl": "Force Stealer (XV)+",
                 "jp": "フォースイーター【XV】+"
             },
             "status": {
@@ -9188,13 +9974,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             938,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9236,6 +10026,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -9271,13 +10073,26 @@
                         {
                             "effect_id": 36,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 40,
                                 0,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                40,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -9286,15 +10101,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                40,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -9335,6 +10143,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -9367,6 +10187,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 }
             ]
@@ -9376,7 +10208,7 @@
             "series_id": 18,
             "name": {
                 "en": "Blade of Brennaere",
-                "gl": "",
+                "gl": "Blade of Brennaere (XV)",
                 "jp": "ブラナーレ【XV】"
             },
             "status": {
@@ -9431,13 +10263,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             5031,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9482,13 +10318,26 @@
                         {
                             "effect_id": 39,
                             "effect_target": 2,
-                            "required_id": 14,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                10,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
                             "required_values": [
                                 9487,
                                 0,
@@ -9497,15 +10346,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                10,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -9549,13 +10391,27 @@
                         {
                             "effect_id": 28,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
                             ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -9599,13 +10455,26 @@
                         {
                             "effect_id": 22,
                             "effect_target": 2,
-                            "required_id": 2,
-                            "required_target": 2,
                             "effect_values": [
                                 9487,
                                 1,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                10,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 2,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -9614,15 +10483,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                10,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -9697,13 +10559,26 @@
                     {
                         "effect_id": 5,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             680,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 1,
+                        "effect_target": 2,
+                        "effect_values": [
+                            72,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9712,15 +10587,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 1,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            72,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -9792,13 +10660,26 @@
                     {
                         "effect_id": 3,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             110,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 2,
+                        "effect_target": 2,
+                        "effect_values": [
+                            84,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9807,15 +10688,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 2,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            84,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -9887,13 +10761,26 @@
                     {
                         "effect_id": 5,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             680,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 4,
+                        "effect_target": 2,
+                        "effect_values": [
+                            220,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9902,15 +10789,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 4,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            220,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -9982,13 +10862,26 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 188,
+                        "effect_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -9997,15 +10890,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 188,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            10,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -10458,13 +11344,27 @@
                 {
                     "effect_id": 17,
                     "effect_target": 2,
-                    "required_id": 36,
-                    "required_target": 2,
                     "effect_values": [
                         2,
                         4,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 36,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10682,15 +11582,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9475,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -10758,15 +11672,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9475,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -10834,15 +11762,29 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             1768,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -10910,15 +11852,29 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9475,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -10986,15 +11942,29 @@
                     {
                         "effect_id": 192,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9475,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11062,13 +12032,17 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9475,
                             0,
@@ -11077,15 +12051,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": -1,
-                        "effect_target": 2,
                         "required_id": 60,
                         "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             1,
                             0,
@@ -11155,15 +12122,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9479,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11231,15 +12212,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9479,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11307,15 +12302,29 @@
                     {
                         "effect_id": 36,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             1769,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11383,15 +12392,29 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9479,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11459,15 +12482,29 @@
                     {
                         "effect_id": 192,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9479,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11535,13 +12572,17 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9479,
                             0,
@@ -11550,15 +12591,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": -1,
-                        "effect_target": 2,
                         "required_id": 60,
                         "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             1,
                             0,
@@ -11628,15 +12662,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9483,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11704,15 +12752,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9483,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11780,15 +12842,29 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             1772,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11856,15 +12932,29 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9483,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -11932,15 +13022,29 @@
                     {
                         "effect_id": 192,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             9483,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12008,13 +13112,17 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             20,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             10116,
                             0,
@@ -12023,15 +13131,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": -1,
-                        "effect_target": 2,
                         "required_id": 14,
                         "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             10117,
                             0,

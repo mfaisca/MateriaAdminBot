@@ -97,6 +97,27 @@
                     "voice": 27,
                     "type": 1,
                     "sort": 4
+                },
+                {
+                    "id": 1625,
+                    "text": "I can't just run away. I'm going to do whatever it takes to survive.",
+                    "voice": 28,
+                    "type": 5,
+                    "sort": 8
+                },
+                {
+                    "id": 1628,
+                    "text": "It's easy to look away when we see what we don't want to see、 but then we'd be missing something.",
+                    "voice": 31,
+                    "type": 5,
+                    "sort": 9
+                },
+                {
+                    "id": 1629,
+                    "text": "I'd rather go through the hurt of seeing painful truths than close my eyes and never know.",
+                    "voice": 32,
+                    "type": 5,
+                    "sort": 10
                 }
             ]
         },
@@ -569,9 +590,12 @@
                 "gl": "Melee attack\\nSteals enemy's BRV",
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 11,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -617,9 +641,12 @@
                 "gl": "Expends BRV to deal HP damage",
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 1,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -665,9 +692,12 @@
                 "gl": "Reduces target's BRV to 3/4, then ranged BRV attack + HP attack\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "対象のBRVを3/4にし\\n遠距離物理BRV攻撃＋HP攻撃\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 1,
+            "same_ability": 3,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -771,9 +801,12 @@
                 "gl": "Reduces target's BRV to 1/2, then ranged BRV attack + HP attack\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "対象のBRVを1/2にし\\n遠距離物理BRV攻撃＋HP攻撃\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 4,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -877,9 +910,12 @@
                 "gl": "Holy magic BRV attack\\nSelf: 2 turns MAX BRV Up II, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "聖属性魔法BRV攻撃\\n自身に2ACTION「最大BRV中アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 7,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -960,6 +996,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -1008,10 +1050,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -1076,6 +1126,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1124,10 +1180,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -1159,9 +1223,12 @@
                 "gl": "Holy magic BRV attack\\nSelf: 4 turns MAX BRV Up III, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "聖属性魔法BRV攻撃\\n自身に4ACTION「最大BRV大アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 8,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -1242,6 +1309,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -1290,10 +1363,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -1358,6 +1439,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -1406,10 +1493,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -1444,9 +1539,12 @@
                 "gl": "Melee BRV attack\\nSlightly consumes own HP\\nBRV Attack becomes BRV Attack+ while Chelinka's Prayer active",
                 "jp": "近距離物理BRV攻撃\\n使用時に自身のHPを小消費\\n「チェリンカの祈り」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 11,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -1512,9 +1610,12 @@
                 "gl": "Melee BRV attack\\nSlightly consumes own HP\\nBRV Attack becomes BRV Attack+ while Chelinka's Prayer active",
                 "jp": "近距離物理BRV攻撃\\n使用時に自身のHPを小消費\\n「チェリンカの祈り」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -1580,9 +1681,12 @@
                 "gl": "Melee BRV attack\\nDoes not consume HP while Chelinka's Prayer active",
                 "jp": "近距離物理BRV攻撃\\n「チェリンカの祈り」付与中\\n使用時に自身のHPを消費しない"
             },
+            "rank": 2,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -1628,9 +1732,12 @@
                 "gl": "Melee BRV attack\\nDoes not consume HP while Chelinka's Prayer active",
                 "jp": "近距離物理BRV攻撃\\n「チェリンカの祈り」付与中\\n使用時に自身のHPを消費しない"
             },
+            "rank": 3,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -1676,9 +1783,12 @@
                 "gl": "Reduces all targets' BRV to 3/4\\nGroup ranged BRV attack + group HP attack\\nDeals proportionate HP damage to each target\\nStolen BRV may exceed MAX BRV up to 150%\\nModerately increased BRV damage when attacking single target\\nModerately consumes HP upon use if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを3/4にし\\n全体遠距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 5,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -1785,9 +1895,12 @@
                 "gl": "Reduces all targets' BRV to 1/2\\nGroup ranged BRV attack + group HP attack\\nDeals proportionate HP damage to each target\\nStolen BRV may exceed MAX BRV up to 150%\\nModerately increased BRV damage when attacking single target\\nModerately consumes HP upon use if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを1/2にし\\n全体遠距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 6,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -1894,9 +2007,12 @@
                 "gl": "2-hit Holy magic BRV attack\\nSelf: 4 turns MAX BRV Up II, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit",
                 "jp": "2HIT聖属性魔法BRV攻撃\\n自身に4ACTION「最大BRV中アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 9,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -1997,6 +2113,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -2045,10 +2167,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -2113,6 +2243,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -2161,10 +2297,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -2196,9 +2340,12 @@
                 "gl": "2-hit Holy magic BRV attack\\nSelf: 6 turns MAX BRV Up III, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit",
                 "jp": "2HIT聖属性魔法BRV攻撃\\n自身に6ACTION「最大BRV大アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 10,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -2299,6 +2446,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -2347,10 +2500,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -2415,6 +2576,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -2463,10 +2630,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -2498,9 +2673,12 @@
                 "gl": "",
                 "jp": "0"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -2558,9 +2736,12 @@
                 "gl": "Reduces all enemies' BRV to 0 (excluding enemies afflicted with Break)\\n5-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nDeals total HP damage to each target\\nGrants allies BRV based on HP damage dealt\\nAll targets: 6 turns Holy Resist Down\\nSelf: 2 turns special effect Crystal User – Two Halves\\nCrystal Power, Rela Crystal use +1 after use (with upper limit)\\nWhile special effect Crystal User – Two Halves active:\\n • Slightly raises party's ATK, amount stolen BRV may exceed MAX BRV\\n • Grants ally HP Regen effect, BRV based on individual MAX BRV at start of each allies' turn\\n • (Does not stack with special effects of same name)",
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算\\n対象に6ACTION「聖耐性ダウン」付与\\n自身に2ACTION特殊効果「ふたりのハーフ・クリスタル使い」付与\\n使用後 「クリスタルの力」\\n「レラ・クリスタル」の使用回数＋1（上限あり）\\n特殊効果「ふたりのハーフ・クリスタル使い」付与中\\n味方全員の攻撃力と\\n奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方の行動開始時それぞれの最大BRVに依存した量のBRV加算と\\nHPリジェネの効果（同名の特殊効果は重複しない）"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 24000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -2834,6 +3015,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 17,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             111,
                             181,
@@ -2882,10 +3069,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1253": [
@@ -3047,6 +3242,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             16,
                             -1,
@@ -3095,10 +3296,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "28": [
@@ -3130,9 +3339,12 @@
                 "gl": "Reduces all enemies' BRV to 0 (excluding enemies afflicted with Break)\\n5-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nDeals total HP damage to each target\\nGrants allies BRV based on HP damage dealt\\nAll targets: 6 turns Holy Resist Down\\nSelf: 3 turns special effect Crystal User – Two Halves\\nCrystal Power, Rela Crystal use +1 after use (with upper limit)\\nWhile special effect Crystal User – Two Halves active:\\n • Slightly raises party's ATK, amount stolen BRV may exceed MAX BRV\\n • Grants ally HP Regen effect, BRV based on individual MAX BRV at start of each allies' turn\\n • (Does not stack with special effects of same name)",
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算\\n対象に6ACTION「聖耐性ダウン」付与\\n自身に3ACTION特殊効果「ふたりのハーフ・クリスタル使い」付与\\n使用後 「クリスタルの力」\\n「レラ・クリスタル」の使用回数＋1（上限あり）\\n特殊効果「ふたりのハーフ・クリスタル使い」付与中\\n味方全員の攻撃力と\\n奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方の行動開始時 それぞれの最大BRVに依存した量のBRV加算と\\nHPリジェネの効果（同名の特殊効果は重複しない）"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 24000,
             "is_default": 0,
+            "same_ability": 1,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -3406,6 +3618,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 17,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             111,
                             181,
@@ -3454,10 +3672,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1253": [
@@ -3619,6 +3845,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             16,
                             -1,
@@ -3667,10 +3899,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "28": [
@@ -3702,9 +3942,12 @@
                 "gl": "Reduces all enemies' BRV to 0 (excluding enemies afflicted with Break)\\n5-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nGrants allies BRV based on HP damage dealt\\nAll targets: 6 turns Holy Resist Down\\nSelf: 3 turns special effect Crystal User – Two Halves\\nCrystal Power, Rela Crystal use +1 after use (with upper limit)\\nWhile special effect Crystal User – Two Halves active:\\n • Slightly raises party's ATK, amount stolen BRV may exceed MAX BRV\\n • Grants ally HP Regen effect, BRV based on individual MAX BRV at start of each allies' turn\\n • (Does not stack with special effects of same name)",
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算\\n対象に6ACTION「聖耐性ダウン」付与\\n自身に3ACTION特殊効果「ふたりのハーフ・クリスタル使い」付与\\n使用後 「クリスタルの力」\\n「レラ・クリスタル」の使用回数＋1（上限あり）\\n特殊効果「ふたりのハーフ・クリスタル使い」付与中\\n味方全員の攻撃力と\\n奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方の行動開始時 それぞれの最大BRVに依存した量のBRV加算と\\nHPリジェネの効果（同名の特殊効果は重複しない）"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 24000,
             "is_default": 0,
+            "same_ability": 2,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -3978,6 +4221,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 17,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             111,
                             181,
@@ -4026,10 +4275,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1253": [
@@ -4191,6 +4448,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             16,
                             -1,
@@ -4239,10 +4502,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "28": [
@@ -4274,9 +4545,12 @@
                 "gl": "Reduces all enemies' BRV to 0 (excluding enemies afflicted with Break)\\n5-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nGrants allies BRV based on HP damage dealt\\nAll targets: 6 turns Holy Resist Down\\nSelf: 3 turns special effect Crystal User – Two Halves\\nCrystal Power, Rela Crystal use +1 after use (with upper limit)\\nWhile special effect Crystal User – Two Halves active:\\n • Slightly raises party's ATK, amount stolen BRV may exceed MAX BRV\\n • Grants ally HP Regen effect, BRV based on individual MAX BRV at start of each allies' turn\\n • (Does not stack with special effects of same name)",
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算\\n対象に6ACTION「聖耐性ダウン」付与\\n自身に3ACTION特殊効果「ふたりのハーフ・クリスタル使い」付与\\n使用後 「クリスタルの力」\\n「レラ・クリスタル」の使用回数＋1（上限あり）\\n特殊効果「ふたりのハーフ・クリスタル使い」付与中\\n味方全員の攻撃力と\\n奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方の行動開始時 それぞれの最大BRVに依存した量のBRV加算と\\nHPリジェネの効果（同名の特殊効果は重複しない）"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 12,
             "use_count": 24000,
             "is_default": 0,
+            "same_ability": 2,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -4550,6 +4824,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 17,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             111,
                             181,
@@ -4598,10 +4878,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1253": [
@@ -4763,6 +5051,12 @@
                     "type_data": {
                         "buff_type": 0,
                         "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             16,
                             -1,
@@ -4811,10 +5105,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "28": [
@@ -4846,9 +5148,12 @@
                 "gl": "2-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%",
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 3,
             "use_count": 24000,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 1,
@@ -4922,7 +5227,7 @@
             "id": 6666,
             "name": {
                 "en": "Initial Boost",
-                "gl": "Initial Boost",
+                "gl": "Base Boost Up",
                 "jp": "ベースブーストアップ"
             },
             "desc": {
@@ -4930,9 +5235,12 @@
                 "gl": "Slightly raises own INT BRV, MAX BRV for 2 turns",
                 "jp": "2ACTION自身の初期BRVと最大BRVを小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 1,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -4988,6 +5296,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             4,
                             5,
@@ -5036,10 +5350,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1288": [
@@ -5063,7 +5385,7 @@
             "id": 6667,
             "name": {
                 "en": "",
-                "gl": "Initial Boost",
+                "gl": "Base Boost Up",
                 "jp": "ベースブーストアップ"
             },
             "desc": {
@@ -5071,9 +5393,12 @@
                 "gl": "Slightly raises own INT BRV, MAX BRV for 4 turns",
                 "jp": "4ACTION自身の初期BRVと最大BRVを小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 1,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -5129,6 +5454,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             4,
                             5,
@@ -5177,10 +5508,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1288": [
@@ -5204,7 +5543,7 @@
             "id": 6668,
             "name": {
                 "en": "",
-                "gl": "Initial Boost",
+                "gl": "Base Boost Up",
                 "jp": "ベースブーストアップ"
             },
             "desc": {
@@ -5212,9 +5551,12 @@
                 "gl": "Slightly raises own INT BRV, MAX BRV for 2 turns",
                 "jp": "2ACTION自身の初期BRVと最大BRVを小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 1,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -5270,6 +5612,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             4,
                             5,
@@ -5318,10 +5666,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1288": [
@@ -5345,7 +5701,7 @@
             "id": 6669,
             "name": {
                 "en": "",
-                "gl": "Initial Boost",
+                "gl": "Base Boost Up",
                 "jp": "ベースブーストアップ"
             },
             "desc": {
@@ -5353,9 +5709,12 @@
                 "gl": "Slightly raises own INT BRV, MAX BRV for 4 turns",
                 "jp": "4ACTION自身の初期BRVと最大BRVを小アップ"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 1,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -5411,6 +5770,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 7,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             4,
                             5,
@@ -5459,10 +5824,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "1288": [
@@ -5494,9 +5867,12 @@
                 "gl": "",
                 "jp": "チェリンカAI_退場"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 1,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 6,
                 "attack_type": 3,
@@ -5542,9 +5918,12 @@
                 "gl": "Reduces all targets' BRV to 3/4\\n4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals proportionate HP damage to each target\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを3/4にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 5,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -5702,9 +6081,12 @@
                 "gl": "Reduces all targets' BRV to 1/2\\n4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals proportionate HP damage to each target\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを1/2にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 6,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -5862,9 +6244,12 @@
                 "gl": "5-hit Holy magic BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 4 turns MAX BRV Up II, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "5HIT聖属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に4ACTION「最大BRV中アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 9,
             "type_data": {
                 "type": 2,
                 "attack_type": 3,
@@ -6043,6 +6428,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -6091,10 +6482,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -6171,6 +6570,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -6219,10 +6624,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -6254,9 +6667,12 @@
                 "gl": "5-hit Holy magic BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 6 turns MAX BRV Up III, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "5HIT聖属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6CTION「最大BRV大アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 10,
             "type_data": {
                 "type": 2,
                 "attack_type": 3,
@@ -6435,6 +6851,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -6483,10 +6905,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -6563,6 +6993,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -6611,10 +7047,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -6646,9 +7090,12 @@
                 "gl": "2-hit melee BRV attack\\nDoes not consume HP while Chelinka's Prayer active",
                 "jp": "2HIT近距離物理BRV攻撃\\n「チェリンカの祈り」付与中\\n使用時に自身のHPを消費しない"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -6712,9 +7159,12 @@
                 "gl": "2-hit melee BRV attack\\nDoes not consume HP while Chelinka's Prayer active",
                 "jp": "2HIT近距離物理BRV攻撃\\n「チェリンカの祈り」付与中\\n使用時に自身のHPを消費しない"
             },
+            "rank": 1,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 0,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 1,
                 "attack_type": 1,
@@ -6778,9 +7228,12 @@
                 "gl": "Reduces target's BRV to 3/4\\nRanged BRV attack + HP attack\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "対象のBRVを3/4にし\\n遠距離物理BRV攻撃＋HP攻撃\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 3,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -6884,9 +7337,12 @@
                 "gl": "Reduces target's BRV to 1/2\\nRanged BRV attack + HP attack\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "対象のBRVを1/2にし\\n遠距離物理BRV攻撃＋HP攻撃\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 4,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 4,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -6990,9 +7446,12 @@
                 "gl": "Reduces all targets' BRV to 3/4\\n4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals proportionate HP damage to each target\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを3/4にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 5,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -7150,9 +7609,12 @@
                 "gl": "Reduces all targets' BRV to 1/2\\n4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals proportionate HP damage to each target\\nModerately consumes own HP if Chelinka's Prayer not active",
                 "jp": "敵全体のBRVを1/2にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のHPを中消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 5,
             "is_default": 0,
+            "same_ability": 6,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -7310,9 +7772,12 @@
                 "gl": "Holy magic BRV attack\\nSelf: 2 turns MAX BRV Up II, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "聖属性魔法BRV攻撃\\n自身に2ACTION「最大BRV中アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 7,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -7393,6 +7858,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -7441,10 +7912,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -7509,6 +7988,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -7557,10 +8042,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -7592,9 +8085,12 @@
                 "gl": "Holy magic BRV attack\\nSelf: 4 turns MAX BRV Up III, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "聖属性魔法BRV攻撃\\n自身に4ACTION「最大BRV大アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 2,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 8,
             "type_data": {
                 "type": 1,
                 "attack_type": 3,
@@ -7675,6 +8171,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -7723,10 +8225,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -7791,6 +8301,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -7839,10 +8355,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -7874,9 +8398,12 @@
                 "gl": "5-hit Holy magic BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 4 turns MAX BRV Up II, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "5HIT聖属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に4ACTION「最大BRV中アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 9,
             "type_data": {
                 "type": 2,
                 "attack_type": 3,
@@ -8055,6 +8582,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -8103,10 +8636,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -8183,6 +8724,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -8231,10 +8778,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -8266,9 +8821,12 @@
                 "gl": "5-hit Holy magic BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 6 turns MAX BRV Up III, Chelinka's Prayer\\nConsumes all BRV upon use if Chelinka's Prayer not already active",
                 "jp": "5HIT聖属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6CTION「最大BRV大アップ」\\n「チェリンカの祈り」付与\\n「チェリンカの祈り」が付与されていない場合\\n使用時に自身のBRVを全て消費"
             },
+            "rank": 0,
             "movement_cost": 30,
+            "hit_count": 7,
             "use_count": 3,
             "is_default": 0,
+            "same_ability": 10,
             "type_data": {
                 "type": 2,
                 "attack_type": 3,
@@ -8447,6 +9005,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             8,
                             7,
@@ -8495,10 +9059,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "143": [
@@ -8575,6 +9147,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             5,
                             -1,
@@ -8623,10 +9201,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 1,
-                        "removable": 1,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "79": [
@@ -8658,9 +9244,12 @@
                 "gl": "",
                 "jp": "コールされたユーリィが以下の行動を行う\\n自身の攻撃力小アップし\\n敵全体のBRVを3/4にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 8,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -8844,6 +9433,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             -1,
@@ -8892,10 +9487,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "2013": [
@@ -8927,9 +9530,12 @@
                 "gl": "",
                 "jp": "コールされたユーリィが以下の行動を行う\\n自身の攻撃力小アップし\\n敵全体のBRVを1/2にし\\n4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配"
             },
+            "rank": 0,
             "movement_cost": 0,
+            "hit_count": 8,
             "use_count": 1,
             "is_default": 0,
+            "same_ability": 0,
             "type_data": {
                 "type": 2,
                 "attack_type": 2,
@@ -9113,6 +9719,12 @@
                     "type_data": {
                         "buff_type": 1,
                         "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
                         "effects": [
                             1,
                             -1,
@@ -9161,10 +9773,18 @@
                             -1,
                             -1
                         ],
-                        "stackable": -1,
-                        "extendable": 0,
-                        "removable": 0,
-                        "max_stacks": 0
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
                     },
                     "rank_data": {
                         "2013": [
@@ -9219,15 +9839,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         1853,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -9269,13 +9903,27 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 38,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 38,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9319,15 +9967,29 @@
                 {
                     "effect_id": 30,
                     "effect_target": 2,
-                    "required_id": 26,
-                    "required_target": 2,
                     "effect_values": [
                         30,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 26,
+                    "required_target": 2,
                     "required_values": [
                         50,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -9369,15 +10031,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         1855,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -9419,13 +10095,27 @@
                 {
                     "effect_id": 64,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9469,13 +10159,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1853,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9490,7 +10194,7 @@
             "id": 748,
             "name": {
                 "en": "Buff Boost",
-                "gl": "Buff Boost",
+                "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
@@ -9500,7 +10204,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Boost: Raises MAX BRV",
+                "gl": "Buff Boost Up: Raises MAX BRV",
                 "jp": "バフブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -9519,15 +10223,29 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -9569,13 +10287,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1855,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9619,15 +10351,29 @@
                 {
                     "effect_id": 89,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -9640,7 +10386,7 @@
             "id": 2259,
             "name": {
                 "en": "Chelinka's Prayer Attack Speed",
-                "gl": "Chelinka's Prayer Attack Speed",
+                "gl": "Chelinka's Prayer Attack Speed Up",
                 "jp": "チェリンカの祈りアタックスピードアップ"
             },
             "desc": {
@@ -9650,7 +10396,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Chelinka's Prayer Attack Speed: Raises ATK, SPD",
+                "gl": "Chelinka's Prayer Attack Speed Up: Raises ATK, SPD",
                 "jp": "チェリンカの祈りアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
@@ -9669,13 +10415,26 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 32,
+                    "effect_target": 2,
+                    "effect_values": [
+                        80,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
                         0,
@@ -9684,15 +10443,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 32,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        80,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -9736,13 +10488,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1853,
                         2,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9757,7 +10523,7 @@
             "id": 2261,
             "name": {
                 "en": "Chelinka's Prayer Base Attack",
-                "gl": "Chelinka's Prayer Initial Attack",
+                "gl": "Chelinka's Prayer Initial Attack Up",
                 "jp": "チェリンカの祈りベースアタックアップ"
             },
             "desc": {
@@ -9767,7 +10533,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Chelinka's Prayer Initial Attack: Raises INT BRV, ATK",
+                "gl": "Chelinka's Prayer Base Attack Up: Raises INT BRV, ATK",
                 "jp": "チェリンカの祈りベースアタックアップ：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -9786,13 +10552,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         40,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        40,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
                         0,
@@ -9801,15 +10580,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        40,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -9853,13 +10625,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1855,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9903,13 +10689,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 36,
+                    "effect_target": 2,
+                    "effect_values": [
+                        20,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -9918,15 +10717,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 36,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        20,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -9967,6 +10759,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         },
         {
@@ -10002,13 +10806,17 @@
                 {
                     "effect_id": 171,
                     "effect_target": 2,
-                    "required_id": 133,
-                    "required_target": 2,
                     "effect_values": [
                         5,
                         3,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 133,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10017,15 +10825,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": -1,
-                    "effect_target": 2,
                     "required_id": 30,
                     "required_target": 2,
-                    "effect_values": [
-                        0,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         100,
                         0,
@@ -10071,15 +10872,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         1853,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -10121,13 +10936,27 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 38,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 38,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10171,15 +11000,29 @@
                 {
                     "effect_id": 30,
                     "effect_target": 2,
-                    "required_id": 26,
-                    "required_target": 2,
                     "effect_values": [
                         30,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 26,
+                    "required_target": 2,
                     "required_values": [
                         50,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -10221,15 +11064,29 @@
                 {
                     "effect_id": 39,
                     "effect_target": 2,
-                    "required_id": 14,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 14,
+                    "required_target": 2,
                     "required_values": [
                         1855,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -10271,13 +11128,27 @@
                 {
                     "effect_id": 64,
                     "effect_target": 2,
-                    "required_id": 33,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 33,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10321,13 +11192,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1853,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10342,7 +11227,7 @@
             "id": 748,
             "name": {
                 "en": "",
-                "gl": "Buff Boost",
+                "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
@@ -10352,7 +11237,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Boost: Raises MAX BRV",
+                "gl": "Buff Boost Up: Raises MAX BRV",
                 "jp": "バフブーストアップ：最大BRVがアップ"
             },
             "meta_data": {
@@ -10371,15 +11256,29 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 61,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 61,
+                    "required_target": 2,
                     "required_values": [
                         1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -10421,13 +11320,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1855,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10471,15 +11384,29 @@
                 {
                     "effect_id": 89,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         10,
                         0,
                         0
-                    ],
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
                         0,
                         0
                     ],
@@ -10492,7 +11419,7 @@
             "id": 2259,
             "name": {
                 "en": "",
-                "gl": "Chelinka's Prayer Attack Speed",
+                "gl": "Chelinka's Prayer Attack Speed Up",
                 "jp": "チェリンカの祈りアタックスピードアップ"
             },
             "desc": {
@@ -10502,7 +11429,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Chelinka's Prayer Attack Speed: Raises ATK, SPD",
+                "gl": "Chelinka's Prayer Attack Speed Up: Raises ATK, SPD",
                 "jp": "チェリンカの祈りアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
@@ -10521,13 +11448,26 @@
                 {
                     "effect_id": 28,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 32,
+                    "effect_target": 2,
+                    "effect_values": [
+                        80,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
                         0,
@@ -10536,15 +11476,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 32,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        80,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -10588,13 +11521,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1853,
                         2,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10609,7 +11556,7 @@
             "id": 2261,
             "name": {
                 "en": "",
-                "gl": "Chelinka's Prayer Initial Attack",
+                "gl": "Chelinka's Prayer Initial Attack Up",
                 "jp": "チェリンカの祈りベースアタックアップ"
             },
             "desc": {
@@ -10619,7 +11566,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Chelinka's Prayer Initial Attack: Raises INT BRV, ATK",
+                "gl": "Chelinka's Prayer Base Attack Up: Raises INT BRV, ATK",
                 "jp": "チェリンカの祈りベースアタックアップ：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -10638,13 +11585,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 83,
-                    "required_target": 2,
                     "effect_values": [
                         40,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        40,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 83,
+                    "required_target": 2,
                     "required_values": [
                         6,
                         0,
@@ -10653,15 +11613,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        40,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -10705,13 +11658,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         1855,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10755,13 +11722,26 @@
                 {
                     "effect_id": 34,
                     "effect_target": 2,
-                    "required_id": 1,
-                    "required_target": 2,
                     "effect_values": [
                         20,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 36,
+                    "effect_target": 2,
+                    "effect_values": [
+                        20,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10770,15 +11750,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 36,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        20,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -10819,6 +11792,18 @@
                 "condition_type": 1
             },
             "effects": [],
+            "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
             "auras": []
         }
     ],
@@ -10857,13 +11842,27 @@
                 {
                     "effect_id": 22,
                     "effect_target": 2,
-                    "required_id": 2,
-                    "required_target": 2,
                     "effect_values": [
                         6666,
                         1,
                         0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 2,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
                     ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
                     "required_values": [
                         0,
                         0,
@@ -10934,6 +11933,28 @@
                     "condition_type": 1
                 },
                 "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
                 "auras": []
             }
         },
@@ -10997,13 +12018,27 @@
                     {
                         "effect_id": 22,
                         "effect_target": 2,
-                        "required_id": 2,
-                        "required_target": 2,
                         "effect_values": [
                             1855,
                             1,
                             0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 2,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
                         ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11078,13 +12113,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             2116,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11129,15 +12168,29 @@
                         {
                             "effect_id": 39,
                             "effect_target": 2,
-                            "required_id": 14,
-                            "required_target": 2,
                             "effect_values": [
                                 10,
                                 0,
                                 0
-                            ],
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
                             "required_values": [
                                 6396,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
                                 0,
                                 0
                             ],
@@ -11176,6 +12229,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -11211,13 +12276,27 @@
                         {
                             "effect_id": 107,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 20,
                                 6396,
                                 0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
                             ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -11290,13 +12369,17 @@
                     {
                         "effect_id": 117,
                         "effect_target": 2,
-                        "required_id": -1,
-                        "required_target": 2,
                         "effect_values": [
                             870,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11338,6 +12421,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -11373,13 +12468,26 @@
                         {
                             "effect_id": 36,
                             "effect_target": 2,
-                            "required_id": 1,
-                            "required_target": 2,
                             "effect_values": [
                                 40,
                                 0,
                                 0
-                            ],
+                            ]
+                        },
+                        {
+                            "effect_id": 28,
+                            "effect_target": 2,
+                            "effect_values": [
+                                60,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
                             "required_values": [
                                 0,
                                 0,
@@ -11388,15 +12496,8 @@
                             "required_target_value": 0
                         },
                         {
-                            "effect_id": 28,
-                            "effect_target": 2,
                             "required_id": 1,
                             "required_target": 2,
-                            "effect_values": [
-                                60,
-                                0,
-                                0
-                            ],
                             "required_values": [
                                 0,
                                 0,
@@ -11437,6 +12538,28 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 },
                 {
@@ -11469,6 +12592,18 @@
                         "condition_type": 1
                     },
                     "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
                     "auras": []
                 }
             ]
@@ -11535,13 +12670,27 @@
                     {
                         "effect_id": 5,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             680,
                             0,
                             0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
                         ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11613,13 +12762,26 @@
                     {
                         "effect_id": 4,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             220,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 1,
+                        "effect_target": 2,
+                        "effect_values": [
+                            72,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11628,15 +12790,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 1,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            72,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -11652,7 +12807,7 @@
             "id": 1778,
             "series_id": 17,
             "name": {
-                "en": "Knight's Armor",
+                "en": "Knight Armor",
                 "gl": "Knight Armor (FFCC)",
                 "jp": "ナイトアーマー【CC】"
             },
@@ -11708,13 +12863,26 @@
                     {
                         "effect_id": 5,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             680,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 3,
+                        "effect_target": 2,
+                        "effect_values": [
+                            110,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11723,15 +12891,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 3,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            110,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -11747,7 +12908,7 @@
             "id": 1886,
             "series_id": 17,
             "name": {
-                "en": "Knight's Armor+",
+                "en": "Knight Armor+",
                 "gl": "Knight Armor (FFCC)+",
                 "jp": "ナイトアーマー【CC】+"
             },
@@ -11803,13 +12964,26 @@
                     {
                         "effect_id": 4,
                         "effect_target": 2,
-                        "required_id": 1,
-                        "required_target": 2,
                         "effect_values": [
                             220,
                             0,
                             0
-                        ],
+                        ]
+                    },
+                    {
+                        "effect_id": 2,
+                        "effect_target": 2,
+                        "effect_values": [
+                            84,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
                         "required_values": [
                             0,
                             0,
@@ -11818,15 +12992,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": 2,
-                        "effect_target": 2,
                         "required_id": 1,
                         "required_target": 2,
-                        "effect_values": [
-                            84,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             0,
                             0,
@@ -12123,13 +13290,26 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 30,
-                    "required_target": 2,
                     "effect_values": [
                         5,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        5,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 30,
+                    "required_target": 2,
                     "required_values": [
                         100,
                         0,
@@ -12138,15 +13318,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        5,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -12194,13 +13367,26 @@
                 {
                     "effect_id": 36,
                     "effect_target": 2,
-                    "required_id": 30,
-                    "required_target": 2,
                     "effect_values": [
                         2,
                         0,
                         0
-                    ],
+                    ]
+                },
+                {
+                    "effect_id": 28,
+                    "effect_target": 2,
+                    "effect_values": [
+                        2,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 30,
+                    "required_target": 2,
                     "required_values": [
                         100,
                         0,
@@ -12209,15 +13395,8 @@
                     "required_target_value": 0
                 },
                 {
-                    "effect_id": 28,
-                    "effect_target": 2,
                     "required_id": 1,
                     "required_target": 2,
-                    "effect_values": [
-                        2,
-                        0,
-                        0
-                    ],
                     "required_values": [
                         0,
                         0,
@@ -12360,7 +13539,7 @@
             "id": "81050103",
             "name": {
                 "en": "",
-                "gl": "HP Damage Guard★★",
+                "gl": "HP Damage Guard Up★★",
                 "jp": "HPダメージガードアップ★★"
             },
             "desc": {
@@ -12370,7 +13549,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "HP Damage Guard★★: Raises DEF",
+                "gl": "HP Damage Guard Up★★: Raises DEF",
                 "jp": "HPダメージガードアップ★★：防御力がアップ"
             },
             "meta_data": {
@@ -12434,15 +13613,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1853,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12510,15 +13703,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1853,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12586,15 +13793,29 @@
                     {
                         "effect_id": 36,
                         "effect_target": 2,
-                        "required_id": 61,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 61,
+                        "required_target": 2,
                         "required_values": [
                             1,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12662,15 +13883,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1853,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12738,15 +13973,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1853,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12814,15 +14063,29 @@
                     {
                         "effect_id": 203,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1853,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12890,15 +14153,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1855,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -12966,15 +14243,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1855,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13042,13 +14333,17 @@
                     {
                         "effect_id": 34,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             337,
                             0,
@@ -13057,15 +14352,8 @@
                         "required_target_value": 0
                     },
                     {
-                        "effect_id": -1,
-                        "effect_target": 2,
                         "required_id": 78,
                         "required_target": 2,
-                        "effect_values": [
-                            0,
-                            0,
-                            0
-                        ],
                         "required_values": [
                             338,
                             0,
@@ -13135,15 +14423,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1855,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13211,15 +14513,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             10,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             1855,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13287,15 +14603,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 77,
-                        "required_target": 2,
                         "effect_values": [
                             20,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 77,
+                        "required_target": 2,
                         "required_values": [
                             211,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13363,15 +14693,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             6396,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13439,15 +14783,29 @@
                     {
                         "effect_id": 170,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             6396,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13515,15 +14873,29 @@
                     {
                         "effect_id": 39,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             0,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             6645,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13591,15 +14963,29 @@
                     {
                         "effect_id": 44,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             6396,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13667,15 +15053,29 @@
                     {
                         "effect_id": 192,
                         "effect_target": 2,
-                        "required_id": 14,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
                         "required_values": [
                             6396,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
@@ -13743,15 +15143,29 @@
                     {
                         "effect_id": 28,
                         "effect_target": 2,
-                        "required_id": 78,
-                        "required_target": 2,
                         "effect_values": [
                             5,
                             0,
                             0
-                        ],
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
                         "required_values": [
                             1253,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
