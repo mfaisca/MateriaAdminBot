@@ -134,8 +134,10 @@ public class _Listener extends ListenerAdapter{
 		try {
 			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
 			while(rs.next()) {
-				UpdateableSimpleCommand cmd = new UpdateableSimpleCommand(rs.getString("name").trim(), rs.getLong("guildId"), rs.getString("data"), rs.getString("owner"), rs.getString("help"));
-				Constants.COMMANDS.add(cmd);
+				if(rs.getBoolean("simple"))
+					Constants.COMMANDS.add(new SimpleCommand(rs.getString("name").trim(), rs.getString("data"), rs.getString("help")));
+				else
+					Constants.COMMANDS.add(new UpdateableSimpleCommand(rs.getString("name").trim(), rs.getLong("guildId"), rs.getString("data"), rs.getString("owner"), rs.getString("help")));
 			}
 		} catch (BotException | SQLException e) {
 			MessageUtils.sendWhisper(Constants.QUETZ_ID, "Unable to load simple commands");
