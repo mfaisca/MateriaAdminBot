@@ -62,8 +62,17 @@ public class _Listener extends ListenerAdapter{
 				try {
 					originalMessage = event.getChannel().retrieveMessageById(event.getMessageId()).complete();
 				} catch(InsufficientPermissionException ee) {
-					MessageUtils.sendStatusMessageError(event.getChannel(), "Missing Permission \"Read Message History\". "
-							+ "This permission is needed to obtain a message from the past to respond to clickable reactions").join().delete().queueAfter(30, TimeUnit.SECONDS);
+					try {
+						MessageUtils.sendStatusMessageError(event.getChannel(), "Missing Permission \"Read Message History\". "
+								+ "This permission is needed to obtain a message from the past to respond to clickable reactions").join().delete().queueAfter(30, TimeUnit.SECONDS);
+					} catch(InsufficientPermissionException eee) {
+						try {
+							MessageUtils.sendWhisper(event.getGuild().getOwnerIdLong(), "I'm missing the permissions \"Read Message History\" and \"Send Message\". Please add these permissions or the bot cannot work properly");
+						}catch(Exception eeee) {
+							event.getGuild().leave().queue();
+							return;
+						}
+					}
 					return;
 				}
 				if(originalMessage.getAuthor().getIdLong() != e.getJDA().getSelfUser().getIdLong())
