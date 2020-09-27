@@ -1,4 +1,5 @@
 {
+    "id": 146,
     "profile": {
         "fullName": {
             "en": "Desch",
@@ -137,8 +138,40 @@
         8503,
         8526
     ],
-    "assistAbility": {},
-    "ldAssistAbility": {},
+    "assistAbility": {
+        "id": 118,
+        "name": {
+            "en": "Blitz Shear (C) Rank Up",
+            "gl": "",
+            "jp": "コールアビリティ_デッシュ"
+        },
+        "rank_up_desc": {
+            "en": "When using [Blitz Shear (C)]\\n• Stolen BRV can overflow up to 120% MAX BRV\\n• Call Effect +40%",
+            "gl": "",
+            "jp": "「瞬雷斬【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の効果中アップ"
+        },
+        "ability": {
+            "default": 12211,
+            "rank_up": 12212
+        }
+    },
+    "ldAssistAbility": {
+        "id": 119,
+        "name": {
+            "en": "Electric Floor (C) Rank Up",
+            "gl": "",
+            "jp": "LDコールアビリティ_デッシュ"
+        },
+        "rank_up_desc": {
+            "en": "When using [Electric Floor (C)]\\n• 4-HIT Thunder AoE melee BRV attack + ST HP attack\\n　+ 6-HIT Thunder AoE melee BRV attack + ST HP attack\\n• Increases total BRV potency by 160%\\n• Stolen BRV can overflow up to 120% Max BRV\\n• Call Effect duration +2",
+            "gl": "",
+            "jp": "「エレクトリックフロア【C】」使用時\\n・4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃を2回行うが\\n　4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n　＋6HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の2ACTION期間延長"
+        },
+        "ability": {
+            "default": 12213,
+            "rank_up": 12214
+        }
+    },
     "optionalAbilities": [
         [
             {
@@ -330,6 +363,18 @@
                     1671
                 ],
                 "reqSecretPassives": []
+            },
+            {
+                "id": 1,
+                "upgradedAbility": 12210,
+                "originalAbility": 8526,
+                "reqExtendPassives": [
+                    6091
+                ],
+                "reqWeaponPassives": [
+                    1671
+                ],
+                "reqSecretPassives": []
             }
         ],
         []
@@ -448,7 +493,7 @@
                 "jp": "瞬雷斬"
             },
             "desc": {
-                "en": "2-HIT Thunder AoE magic BRV attack + AoE HP attack\\nDeals proportionate HP damage to each target\\nGreatly restores party HP based on HP damage dealt, up to 20% of Max HP\\nGrants [Anti-Magic Area] for 4 turns\\nDispels [Anti-Physic Area]\\n\\n[Anti-Magic Area]\\n• Raises party's Max BRV and Attack\\n• Grants party Thunder Enchant\\n• Lowers party magic BRV damage taken\\n* Same buffs do not stack",
+                "en": "2-HIT Thunder AoE magic BRV attack + AoE HP attack\\nDeals split HP damage between all targets\\nRecovers party's HP by 80% of HP damage dealt (limit 20% MAX HP)\\nSelf: 4 turns [Anti-Magic Area]; cancels [Anti-Physic Area]\\n\\n[Anti-Magic Area]\\n• Raises party's MAX BRV, ATK by 20%\\n• Grants party 10% [Thunder Enchant] effect\\n• Lowers party's magical BRV damage taken by 40%\\n* Same buffs do not stack",
                 "gl": "2-hit group Thunder magic BRV attack + group HP attack\\nDeals proportionate HP damage to each target\\nLargely restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nSelf: 4 turns Anti-magic Area\\nCancels Anti-physical Area",
                 "jp": "2HIT雷属性全体魔法BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n与えたHPダメージに応じて味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの20％分\\n自身に4ACTION「アンチマジックエリア」付与\\n「アンチフィジクスエリア」解除"
             },
@@ -2328,7 +2373,7 @@
                 "jp": "紫電一文字"
             },
             "desc": {
-                "en": "2-HIT Thunder AoE melee BRV attack + ST HP attack\\nGreatly restores party HP based on HP damage dealt, up to 20% of Max HP\\nGrants [Anti-Physic Area] for 4 turns\\nDispels [Anti-Magic Area]\\n\\n[Anti-Physic Area]\\n• Raises party's Max BRV and Attack\\n• Grants party Thunder Enchant\\n• Lowers party physical BRV damage taken\\n* Same buffs do not stack",
+                "en": "2-HIT Thunder AoE melee BRV attack + ST HP attack\\nRecovers party's HP by 80% of HP damage dealt (limit 20% MAX HP)\\nSelf: 4 turns [Anti-Physic Area]; cancels [Anti-Magic Area]\\n\\n[Anti-Physic Area]\\n• Raises party's MAX BRV, ATK by 20%\\n• Grants party 10% [Thunder Enchant] effect\\n• Lowers party's physical BRV damage taken by 40%\\n* Same buffs do not stack",
                 "gl": "2-hit group Thunder melee BRV attack + single-target HP attack\\nLargely restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nSelf: 4 turns Anti-physical Area\\nCancels Anti-magic Area",
                 "jp": "2HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n与えたHPダメージに応じて味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの20％分\\n自身に4ACTION「アンチフィジクスエリア」付与\\n「アンチマジックエリア」解除"
             },
@@ -4368,7 +4413,7 @@
                 "jp": "古の霹靂"
             },
             "desc": {
-                "en": "6-HIT Thunder AoE melee BRV attack + AoE HP attack\\nModerately raises BRV damage dealt when attacking single target\\nDeals full HP damage to all targets\\nInflicts [Ancient Spell] for 4 turns\\n\\n[Ancient Spell]\\n• Lowers Max BRV",
+                "en": "6-HIT Thunder AoE melee BRV attack + AoE HP attack\\nIncreases BRV damage dealt by 60% when attacking ST\\nDeals 100% HP damage to all targets\\nAll targets: 4 turns [Ancient Techniques]\\n\\n[Ancient Techniques]\\n• Lowers MAX BRV by 60/40%/20%/10% (effect decreases based on remaining duration)",
                 "gl": "6-hit group Thunder melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nDeals total HP damage to each target\\nAll targets: 4 turns Ancient Techniques",
                 "jp": "6HIT雷属性全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n対象に4ACTION「古代の秘術」付与"
             },
@@ -5926,7 +5971,7 @@
                 "jp": "エレクトリックフロア"
             },
             "desc": {
-                "en": "4-HIT Thunder AoE melee BRV attack + ST HP attack delivered twice\\nModerately raises BRV damage dealt when attacking single target\\nStolen BRV can overflow up to 180% Max BRV\\nGrants [Electric Area] for 4 turns\\n\\nWhile [Electric Area] is active\\n• Small chance of [Paralysis] for every enemy turn taken\\n• Inflicts [Defense Down] otherwise\\n\\n[Electric Area]\\n• Raises party's elemental weakness damage",
+                "en": "4-HIT Thunder AoE melee BRV attack + ST HP attack delivered twice\\nIncreases BRV damage dealt by 60% when attacking ST\\nStolen BRV can overflow up to 180% MAX BRV\\nSelf: 4 turns [Electric Area]\\n\\nWhile [Electric Area] is active\\n• 25% chance of 1 turn [Paralyze] after enemy turn\\n　∟ Otherwise, 1 turn 40% [DEF Down]\\n\\n[Electric Area]\\n• Raises party's BRV damage dealt when attacking enemy's elemental weakness by 40%",
                 "gl": "4-hit group Thunder melee BRV attack + single-target HP attack delivered 2 times\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nSelf: 4 turns Electric Area\\nWhile Electric Area active: Low chance of inflicting 1 turn Paralyze on enemy turn; inflicts 1 turn DEF Down II if Paralyze not inflicted",
                 "jp": "4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n自身に4ACTION「エレクトリックエリア」付与\\n「エレクトリックエリア」付与中\\n敵が行動する度にその敵に\\n小確率で1ACTION「マヒ」付与\\n付与できなかった場合1ACTION「防御力中ダウン」付与"
             },
@@ -6308,12 +6353,12 @@
                                 "id": 529,
                                 "ailment_effect": 151,
                                 "target_id": 2,
-                                "value_type": 1,
+                                "value_type": 3,
                                 "type_id": -1,
                                 "rank_data": [
                                     8534,
-                                    0,
-                                    0,
+                                    8534,
+                                    12577,
                                     0,
                                     0,
                                     0,
@@ -6718,12 +6763,12 @@
                                 "id": 529,
                                 "ailment_effect": 151,
                                 "target_id": 2,
-                                "value_type": 1,
+                                "value_type": 3,
                                 "type_id": -1,
                                 "rank_data": [
                                     8534,
-                                    0,
-                                    0,
+                                    8534,
+                                    12577,
                                     0,
                                     0,
                                     0,
@@ -7387,7 +7432,7 @@
                 "jp": "HPヒールアドバンスオール"
             },
             "desc": {
-                "en": "Slightly restores party HP\\nSlightly raises party's Max BRV overflow limit for stolen BRV for 3 turns",
+                "en": "Recovers party's HP by 10% of individual MAX HP\\n\\n3 turns Additional Effect\\n• Increases party's stolen BRV overflow limit by 10%",
                 "gl": "Slightly restores party's HP\\nSlightly increases amount party's stolen BRV may exceed MAX BRV for 3 turns",
                 "jp": "味方全員のHPを小回復し\\n3ACTION味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限小アップ"
             },
@@ -8266,6 +8311,2609 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 12210,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "エレクトリックフロア"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋6HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n自身に8ACTION「エレクトリックエリア」付与\\n「エレクトリックエリア」付与中\\n敵が行動する度にその敵に\\n小確率で1ACTION「マヒ」付与\\n付与できなかった場合1ACTION「防御力中ダウン」付与"
+            },
+            "rank": 0,
+            "movement_cost": 30,
+            "hit_count": 12,
+            "use_count": 2,
+            "is_default": 0,
+            "same_ability": 2,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 8,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12225,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 180,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2571,
+                    "cast_id": 2533,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "エレクトリックエリア"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "エレクトリックエリア：味方全員の属性弱点攻撃BRV威力アップ　被HPダメージを軽減（同名の強化効果は重複しない）"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 2,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 8
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2571": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1097,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2571
+                            ],
+                            "effect_data": {
+                                "id": 528,
+                                "ailment_effect": 56,
+                                "target_id": 1,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    40,
+                                    60,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1098,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2571
+                            ],
+                            "effect_data": {
+                                "id": 529,
+                                "ailment_effect": 151,
+                                "target_id": 2,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    8534,
+                                    8534,
+                                    12577,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1115,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2571
+                            ],
+                            "effect_data": {
+                                "id": 1086,
+                                "ailment_effect": 180,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "type_id": -1,
+                                "rank_data": [
+                                    -30,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 12211,
+            "name": {
+                "en": "Blitz Shear (C)",
+                "gl": "",
+                "jp": "瞬雷斬【C】"
+            },
+            "desc": {
+                "en": "When called for assistance, Desch performs the following actions\\n• 4-HIT Thunder AoE magic BRV attack + AoE HP attack\\n• Increases BRV damage dealt by 60% when attacking ST\\n• Deals split HP damage between all targets\\n• Recovers party's HP by 80% of HP damage dealt (limit 20% MAX HP)\\n• All targets: 4 turns [Thunder Resist Down]\\n\\n3 turns Call Effect\\n• Party: Lowers magical BRV damage taken by 40%",
+                "gl": "",
+                "jp": "コールされたデッシュが以下の行動を行う\\n4HIT雷属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象に4ACTION「雷耐性ダウン」付与\\n\\n使用後特殊効果：3ACTION\\n・味方全員に「魔法BRVダメージ軽減」の効果"
+            },
+            "rank": 0,
+            "movement_cost": 0,
+            "hit_count": 9,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12226,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12226,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12226,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12226,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4641,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12467,
+                    "type": 6,
+                    "arguments": [
+                        80,
+                        20
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 7,
+                    "effect": 99,
+                    "effect_value_type": 14
+                },
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12566,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        2578
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 29,
+                    "effect": 37,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2577,
+                    "cast_id": 2539,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "瞬雷斬【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「瞬雷斬【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 47,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2577": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1126,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2577
+                            ],
+                            "effect_data": {
+                                "id": 1087,
+                                "ailment_effect": 41,
+                                "target_id": 1,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    60,
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "cast_id": 67,
+                    "name": {
+                        "en": "",
+                        "gl": "Thunder Resist Down",
+                        "jp": "雷耐性ダウン"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Thunder Resist Down: Lowers Thunder resist (does not stack)",
+                        "jp": "雷耐性ダウン：雷属性耐性が減少する（同属性の減少効果は重複しない）"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 5,
+                        "arguments": [],
+                        "duration": 4
+                    },
+                    "type_data": {
+                        "buff_type": 0,
+                        "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            12,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            24,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "24": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 12212,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "瞬雷斬【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "コールされたデッシュが以下の行動を行う\\n4HIT雷属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象に4ACTION「雷耐性ダウン」付与\\n\\n使用後特殊効果：3ACTION\\n・味方全員に「魔法BRVダメージ軽減」の効果"
+            },
+            "rank": 0,
+            "movement_cost": 0,
+            "hit_count": 9,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12227,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12227,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12227,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12227,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 130.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 78,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4641,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12467,
+                    "type": 6,
+                    "arguments": [
+                        80,
+                        20
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 7,
+                    "effect": 99,
+                    "effect_value_type": 14
+                },
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12566,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        2578
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 29,
+                    "effect": 37,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2577,
+                    "cast_id": 2539,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "瞬雷斬【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「瞬雷斬【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 2,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 47,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2577": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1126,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2577
+                            ],
+                            "effect_data": {
+                                "id": 1087,
+                                "ailment_effect": 41,
+                                "target_id": 1,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    60,
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "cast_id": 67,
+                    "name": {
+                        "en": "",
+                        "gl": "Thunder Resist Down",
+                        "jp": "雷耐性ダウン"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Thunder Resist Down: Lowers Thunder resist (does not stack)",
+                        "jp": "雷耐性ダウン：雷属性耐性が減少する（同属性の減少効果は重複しない）"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 5,
+                        "arguments": [],
+                        "duration": 4
+                    },
+                    "type_data": {
+                        "buff_type": 0,
+                        "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            12,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            24,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "24": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 12213,
+            "name": {
+                "en": "Electric Floor (C)",
+                "gl": "",
+                "jp": "エレクトリックフロア【C】"
+            },
+            "desc": {
+                "en": "When called for assistance, Desch performs the following actions\\n• 4-HIT Thunder AoE melee BRV attack + ST HP attack delivered twice\\n• Increases BRV damage dealt by 60% when attacking ST\\n\\n2 turns Call Effect\\n• After enemy turn, 25% chance of 1 turn [Paralyze]\\n　∟ Otherwise, 1 turn 40% [DEF Down]",
+                "gl": "",
+                "jp": "コールされたデッシュが以下の行動を行う\\n4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n\\n使用後特殊効果：2ACTION\\n・敵が行動する度にその敵に\\n　小確率で1ACTION「マヒ」付与\\n　付与できなかった場合1ACTION「防御力中ダウン」付与\\n　（「エレクトリックエリア」の効果とは重複しない）"
+            },
+            "rank": 0,
+            "movement_cost": 0,
+            "hit_count": 12,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12228,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12565,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        2577
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 29,
+                    "effect": 37,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2578,
+                    "cast_id": 2540,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "エレクトリックフロア【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「エレクトリックフロア【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 3,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 2
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 52,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2578": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1127,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2578
+                            ],
+                            "effect_data": {
+                                "id": 529,
+                                "ailment_effect": 151,
+                                "target_id": 2,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    8534,
+                                    8534,
+                                    12577,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 12214,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "エレクトリックフロア【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "コールされたデッシュが以下の行動を行う\\n4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋6HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n\\n使用後特殊効果：4ACTION\\n・敵が行動する度にその敵に\\n　小確率で1ACTION「マヒ」付与\\n　付与できなかった場合1ACTION「防御力中ダウン」付与\\n　（「エレクトリックエリア」の効果とは重複しない）"
+            },
+            "rank": 0,
+            "movement_cost": 0,
+            "hit_count": 14,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12229,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 80.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 48,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [
+                        4
+                    ],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5129,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12565,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        2577
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 29,
+                    "effect": 37,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2578,
+                    "cast_id": 2540,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "エレクトリックフロア【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「エレクトリックフロア【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 3,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 4
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 52,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2578": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1127,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2578
+                            ],
+                            "effect_data": {
+                                "id": 529,
+                                "ailment_effect": 151,
+                                "target_id": 2,
+                                "value_type": 3,
+                                "type_id": -1,
+                                "rank_data": [
+                                    8534,
+                                    8534,
+                                    12577,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 12577,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "「エレクトリックフロア【C】」による弱体効果付与"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "A"
+            },
+            "rank": 0,
+            "movement_cost": 30,
+            "hit_count": 1,
+            "use_count": 0,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 7,
+                "attack_type": 1,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 1797,
+                    "cast_id": 1759,
+                    "name": {
+                        "en": "",
+                        "gl": "Paralyze",
+                        "jp": "マヒ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Paralyze: Unable to act",
+                        "jp": "マヒ：行動不能になる"
+                    },
+                    "meta_data": {
+                        "rate": 25,
+                        "rank": 1,
+                        "target": 1,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 0,
+                        "icon_type": 5,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            31,
+                            103,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "1797": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
+                {
+                    "id": 7,
+                    "cast_id": 13,
+                    "name": {
+                        "en": "",
+                        "gl": "DEF Down",
+                        "jp": "防御力ダウン"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "DEF Down: Lowers DEF",
+                        "jp": "防御力ダウン：防御力が減少する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 8,
+                        "target": 1,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 0,
+                        "icon_type": 3,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "removable": 1,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            2,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            7,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "7": [
+                            10,
+                            20,
+                            30,
+                            50,
+                            80,
+                            15,
+                            25,
+                            40,
+                            100,
+                            60
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
         }
     ],
     "awakeningPassives": [
@@ -8277,7 +10925,7 @@
                 "jp": "瞬雷斬パワー"
             },
             "desc": {
-                "en": "Slightly increases BRV damage dealt with Blitz Shear",
+                "en": "Increases BRV damage dealt with [Blitz Shear] by 10%",
                 "gl": "Slightly increases BRV damage dealt with Blitz Shear",
                 "jp": "「瞬雷斬」の\\n与えるBRVダメージを小アップ"
             },
@@ -8341,7 +10989,7 @@
                 "jp": "バフアタックアップ"
             },
             "desc": {
-                "en": "Slightly raises ATK with active buffs",
+                "en": "Raises ATK by 10% while buffed",
                 "gl": "Slightly raises ATK with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の攻撃力を小アップ"
             },
@@ -8405,7 +11053,7 @@
                 "jp": "ブレイクスピードアップ"
             },
             "desc": {
-                "en": "Slightly raises SPD for 1 turn upon inflicting Break",
+                "en": "Raises SPD by 10% for 1 turn upon inflicting Break",
                 "gl": "Slightly raises SPD for 1 turn upon inflicting Break",
                 "jp": "敵をブレイクした時 1ACTION\\n自身の素早さが小アップ"
             },
@@ -8469,7 +11117,7 @@
                 "jp": "紫電一文字パワー"
             },
             "desc": {
-                "en": "Slightly increases BRV damage dealt with Plasma Stroke",
+                "en": "Increases BRV damage dealt with [Plasma Stroke] by 10%",
                 "gl": "Slightly increases BRV damage dealt with Plasma Stroke",
                 "jp": "「紫電一文字」の\\n与えるBRVダメージを小アップ"
             },
@@ -8528,12 +11176,12 @@
         {
             "id": 3980,
             "name": {
-                "en": "バフスピード",
+                "en": "Buff Speed Up",
                 "gl": "Buff Speed Up",
                 "jp": "バフスピードアップ"
             },
             "desc": {
-                "en": "自身に強化効果が付与されている時\\n自身の素早さを小アップ",
+                "en": "Raises SPD by 20% while buffed",
                 "gl": "With active buff:\\n • Slightly raises SPD",
                 "jp": "自身に強化効果が付与されている時\\n自身の素早さを小アップ"
             },
@@ -8597,7 +11245,7 @@
                 "jp": "瞬雷斬チャージ"
             },
             "desc": {
-                "en": "Blitz Shear use +1",
+                "en": "[Blitz Shear] use +1",
                 "gl": "Blitz Shear use +1",
                 "jp": "「瞬雷斬」の使用回数＋1"
             },
@@ -8656,12 +11304,12 @@
         {
             "id": 748,
             "name": {
-                "en": "Buff Boost",
+                "en": "Buff Boost Up",
                 "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
-                "en": "Slightly raises MAX BRV with active buffs",
+                "en": "Raises MAX BRV by 10% while buffed",
                 "gl": "Slightly raises MAX BRV with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の最大BRVを小アップ"
             },
@@ -8725,7 +11373,7 @@
                 "jp": "紫電一文字チャージ"
             },
             "desc": {
-                "en": "Plasma Stroke use +1",
+                "en": "[Plasma Stroke] use +1",
                 "gl": "Plasma Stroke use +1",
                 "jp": "「紫電一文字」の使用回数＋1"
             },
@@ -8789,7 +11437,7 @@
                 "jp": "超古代文明の記憶"
             },
             "desc": {
-                "en": "While either [Anti-Magic Area] or [Anti-Physic Area] is active\\nSlightly raises Attack, Defense, Initial BRV and Max BRV",
+                "en": "While [Anti-Magic Area] or [Anti-Physic Area] is active\\n• Raises ATK, DEF, INT BRV, MAX BRV by 10%",
                 "gl": "While Anti-magic Area or Anti-physical Area active:\\n • Slightly raises INT BRV, MAX BRV, ATK, DEF",
                 "jp": "自身に「アンチマジックエリア」または\\n「アンチフィジクスエリア」が付与されている時\\n自身の初期BRV・最大BRV・\\n攻撃力・防御力を小アップ"
             },
@@ -8848,12 +11496,12 @@
         {
             "id": 3936,
             "name": {
-                "en": "Buff Attack Speed",
+                "en": "Buff Attack Speed Up",
                 "gl": "Buff Attack Speed Up",
                 "jp": "バフアタックスピードアップ"
             },
             "desc": {
-                "en": "Slightly raises Attack and Speed while buffed",
+                "en": "Raises ATK, SPD by 30% while buffed",
                 "gl": "With active buff:\\n • Slightly raises ATK, SPD",
                 "jp": "自身に強化効果が付与されている時\\n自身の攻撃力と素早さを小アップ"
             },
@@ -8926,7 +11574,7 @@
                 "jp": "瞬雷斬エクステンド"
             },
             "desc": {
-                "en": "[Blitz Shear] use +2\\n\\nWhen using [Blitz Shear]\\n• BRV attack hit count becomes 4\\n• Greatly raises total BRV potency\\n• Stolen BRV can overflow up to 180% Max BRV\\n• Extends duration of [Anti-Magic Area] by 4 turns\\n\\nWhile buffed\\n• Turns [BRV Attack] to [BRV Attack+]\\n　∟ 2-HIT Thunder melee BRV attack",
+                "en": "[Blitz Shear] use +2\\n\\nWhen using [Blitz Shear]\\n• BRV attack hit count becomes 4\\n• Increases total BRV potency by 80%\\n• Stolen BRV can overflow up to 180% Max BRV\\n• [Anti-Magic Area] duration +4\\n\\nWhile buffed\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ 2-HIT Thunder melee BRV attack (60% x2)",
                 "gl": "Blitz Shear use +2\\n\\nWhen using Blitz Shear:\\n • BRV attack hit count becomes 4; largely increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 180%\\n • Anti-magic Area duration +4\\n\\nWith active buff:\\n • BRV Attack becomes BRV Attack+ (2-hit Thunder melee BRV attack)",
                 "jp": "「瞬雷斬」の使用回数＋2\\n\\n「瞬雷斬」使用時\\n・BRV攻撃のHIT数が4HITに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・「アンチマジックエリア」の4ACTION期間延長\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n・2HIT雷属性近距離物理BRV攻撃"
             },
@@ -8990,7 +11638,7 @@
                 "jp": "バフアタックブーストアップ"
             },
             "desc": {
-                "en": "Slightly raises Max BRV and Attack while buffed",
+                "en": "Raises MAX BRV, ATK by 30% while buffed",
                 "gl": "With active buff:\\n • Slightly boosts MAX BRV, ATK",
                 "jp": "自身に強化効果が付与されている時\\n自身の最大BRVと攻撃力を小アップ"
             },
@@ -9063,7 +11711,7 @@
                 "jp": "紫電一文字エクステンド"
             },
             "desc": {
-                "en": "[Plasma Stroke] use +2\\n\\nWhen using [Plasma Stroke]\\n• BRV attack hit count becomes 4\\n• Greatly raises total BRV potency\\n• Stolen BRV can overflow up to 150% Max BRV\\n• Deals 50% HP damage to non-targets\\n• Extends duration of [Anti-Physic Area]\\n\\nWhile buffed\\n• Turns [HP Attack] to [HP Attack+]\\n　∟ Thunder melee BRV + HP attack",
+                "en": "[Plasma Stroke] use +2\\n\\nWhen using [Plasma Stroke]\\n• BRV attack hit count becomes 4\\n• Increases total BRV potency by 80%\\n• Stolen BRV can overflow up to 150% Max BRV\\n• Deals 50% HP damage to non-targets\\n• Extends duration of [Anti-Physic Area]\\n\\nWhile buffed\\n• Turns [HP Attack] to [HP Attack+]\\n　∟ Thunder melee BRV + HP attack (80%)",
                 "gl": "Plasma Stroke use +2\\n\\nWhen using Plasma Stroke:\\n • BRV attack hit count becomes 4; largely increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 50% HP damage to non-targets\\n • Anti-physical Area duration +4\\n\\nWith active buff:\\n • HP Attack becomes HP Attack+ (Thunder melee BRV attack + HP Attack)",
                 "jp": "「紫電一文字」の使用回数＋2\\n\\n「紫電一文字」使用時\\n・BRV攻撃のHIT数が4HITに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・ターゲット以外にも50％分のHPダメージ\\n・「アンチフィジクスエリア」の4ACTION期間延長\\n\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n・雷属性近距離物理BRV攻撃＋HP攻撃"
             },
@@ -9127,7 +11775,7 @@
                 "jp": "破壊と力の共鳴"
             },
             "desc": {
-                "en": "Raises party's Max BRV and Attack by 10%",
+                "en": "Raises party's MAX BRV, ATK by 10%",
                 "gl": "Slightly raises party's MAX BRV, ATK",
                 "jp": "味方全員の最大BRVと攻撃力を小アップ"
             },
@@ -9228,6 +11876,70 @@
                     "required_target": 2,
                     "required_values": [
                         0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
+        },
+        {
+            "id": 5742,
+            "name": {
+                "en": "Full HP Boost All (C)",
+                "gl": "",
+                "jp": "フルHPブーストオール【C】"
+            },
+            "desc": {
+                "en": "When using a Call Ability at Max HP\\n• Raises party's Max BRV by 5% for 6 turns",
+                "gl": "",
+                "jp": "自身のHPがMAXの時\\nコールアビリティ使用時\\n6ACTION味方全員の最大BRVを極小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "",
+                "jp": "フルHPブーストオール【C】：味方全員の最大BRVがアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 3,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 37,
+                    "effect_target": 2,
+                    "effect_values": [
+                        5,
+                        6,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 133,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 30,
+                    "required_target": 2,
+                    "required_values": [
+                        100,
                         0,
                         0
                     ],
@@ -10305,12 +13017,12 @@
             "passive": {
                 "id": 1627,
                 "name": {
-                    "en": "Mysterious Wind Raider",
+                    "en": "Mysterious Wanderer",
                     "gl": "Mysterious Wanderer",
                     "jp": "謎の風来坊"
                 },
                 "desc": {
-                    "en": "When using [Blitz Shear]\\n• Raises BRV potency\\n• Moderately raises BRV damage dealt when attacking single target\\n• Inflicts [Thunder Resist Down] for 4 turns\\n• Improves effects of [Anti-Magic Area]",
+                    "en": "When using [Blitz Shear]\\n• Raises BRV potency by 80%\\n• Increases BRV damage dealt by 60% when attacking ST\\n• All targets: 4 turns [Thunder Resist Down]\\n• [Anti-Magic Area] boost\\n　∟ [Thunder Enchant] effect +10%\\n　∟ MAG BRV damage resist effect +40%\\n　∟ [MAX BRV Up], [ATK Up] effects +20%",
                     "gl": "When using Blitz Shear:\\n • BRV damage boost\\n • Moderately increased BRV damage when attacking single target\\n • All targets: 4 turns Thunder Resist Down\\n • Anti-magic Area buff boost",
                     "jp": "「瞬雷斬」使用時 以下の効果が発動\\n・BRV威力アップ\\n・攻撃対象が単体の時 与えるBRVダメージ中アップ\\n・対象に4ACTION「雷耐性ダウン」付与\\n・「アンチマジックエリア」の効果アップ"
                 },
@@ -10377,12 +13089,12 @@
             "passive": {
                 "id": 1628,
                 "name": {
-                    "en": "Ray of Flash",
+                    "en": "Shining Filament",
                     "gl": "Shining Filament",
                     "jp": "一筋の閃光"
                 },
                 "desc": {
-                    "en": "When using [Plasma Stroke]\\n• Raises BRV potency\\n• Moderately raises BRV damage dealt when attacking single target\\n• Inflicts [Thunder Resist Down] for 4 turns\\n• Improves effects of [Anti-Physic Area]",
+                    "en": "When using [Plasma Stroke]\\n• Raises BRV potency by 80%\\n• Increases BRV damage dealt by 60% when attacking ST\\n• All targets: 4 turns [Thunder Resist Down]\\n• [Anti-Magic Area] boost\\n　∟ [Thunder Enchant] effect +10%\\n　∟ PHY BRV damage resist effect +40%\\n　∟ [MAX BRV Up], [ATK Up] effects +20%",
                     "gl": "When using Plasma Stroke:\\n • BRV damage boost\\n • Moderately increased BRV damage when attacking single target\\n • All targets: 4 turns Thunder Resist Down\\n • Anti-physical Area buff boost",
                     "jp": "「紫電一文字」使用時 以下の効果が発動\\n・BRV威力アップ\\n・攻撃対象が単体の時 与えるBRVダメージ中アップ\\n・対象に4ACTION「雷耐性ダウン」付与\\n・「アンチフィジクスエリア」の効果アップ"
                 },
@@ -10452,7 +13164,7 @@
             "passive": {
                 "id": 1630,
                 "name": {
-                    "en": "Memories of Revival",
+                    "en": "Duty Recollected",
                     "gl": "Duty Recollected",
                     "jp": "蘇る使命の記憶"
                 },
@@ -10512,7 +13224,7 @@
                         "jp": "古の霹靂パワー"
                     },
                     "desc": {
-                        "en": "Slightly raises BRV damage dealt with [Ancient Thunderclap]",
+                        "en": "Increases BRV damage dealt with [Ancient Thunderclap] by 10%",
                         "gl": "Slightly increases BRV damage dealt with Ancient Thunderclap",
                         "jp": "「古の霹靂」の与える\\nBRVダメージを小アップ"
                     },
@@ -10576,7 +13288,7 @@
                         "jp": "古の霹靂デバフプラス"
                     },
                     "desc": {
-                        "en": "When using [Ancient Thunderclap]\\n• Inflicts [Thunder Resist Down] for 4 turns",
+                        "en": "When using [Ancient Thunderclap]\\n• All target: 4 turns [Thunder Resist Down]",
                         "gl": "When using Ancient Thunderclap:\\n • All targets: 4 turns Thunder Resist Down",
                         "jp": "「古の霹靂」使用時\\n対象に4ACTION「雷耐性ダウン」付与"
                     },
@@ -10620,7 +13332,7 @@
                         "jp": "古の霹靂リキャストアップ"
                     },
                     "desc": {
-                        "en": "Slightly raises recast speed of [Ancient Thunderclap]",
+                        "en": "Increases recast speed of [Ancient Thunderclap] by 20%",
                         "gl": "Slightly raises recast speed of Ancient Thunderclap",
                         "jp": "「古の霹靂」の\\nリキャストスピードを小アップ"
                     },
@@ -10708,7 +13420,7 @@
             "passive": {
                 "id": 1635,
                 "name": {
-                    "en": "Memories of Revival Extend",
+                    "en": "Duty Recollected Extend",
                     "gl": "Duty Recollected Extension",
                     "jp": "蘇る使命の記憶エクステンド"
                 },
@@ -10768,7 +13480,7 @@
                         "jp": "古の霹靂フォースアドバンス"
                     },
                     "desc": {
-                        "en": "When using [Ancient Thunderclap]\\n• Tremendously raises BRV potency\\n• Stolen BRV can overflow up to 120% Max BRV",
+                        "en": "When using [Ancient Thunderclap]\\n• Increases BRV potency by 90%\\n• Stolen BRV can overflow up to 120% Max BRV",
                         "gl": "When using Ancient Thunderclap:\\n • Tremendous BRV damage boost\\n • Stolen BRV may exceed MAX BRV up to 120%",
                         "jp": "「古の霹靂」使用時\\n・BRV威力極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
                     },
@@ -10807,12 +13519,12 @@
                 {
                     "id": 1636,
                     "name": {
-                        "en": "Memories of Revival Extend Attack Boost Up",
+                        "en": "Duty Recollected Extend Attack Boost Up",
                         "gl": "Duty Recollected Extension Attack Boost Up",
                         "jp": "蘇る使命の記憶エクステンドアタックブーストアップ"
                     },
                     "desc": {
-                        "en": "Moderately raises Max BRV and greatly raises Attack",
+                        "en": "Raises own MAX BRV by 60%, ATK by 70%",
                         "gl": "While equipping EX+ weapon Desch's Sword (III)+ or passive ability Duty Recollected Extension:\\n • Moderately raises MAX BRV, largely raises ATK",
                         "jp": "EX+武器「デッシュの剣【III】+」または\\nパッシブ「蘇る使命の記憶エクステンド」装備時\\n自身の最大BRV中アップと攻撃力大アップ"
                     },
@@ -10885,7 +13597,7 @@
                         "jp": "アンチマジックエリアアビリティアスピルリキャストチャージスタート"
                     },
                     "desc": {
-                        "en": "When Quest starts\\n• Grants [Anti-Magic Area] for 8 turns\\n• For the first turn:\\n　∟ Does not consume ability uses (excl. certain abilities)\\n　∟ No Action Delay\\n　∟ Does not increase turn count\\n　∟ Decreases Friend Support and Summon action count\\n　∟ Fills EX Gauge to 80%",
+                        "en": "When Quest starts\\n• Self: 8 turns [Anti-Magic Area]\\n• On first turn\\n　∟ Does not consume ability uses (excl. certain abilities)\\n　∟ No Action Delay\\n　∟ Does not increase turn count (excl. Summon, Friend action count)\\n　∟ Fills EX Gauge to 80%",
                         "gl": "At start of quest:\\n • Self: 8 turns special effect Anti-magic Area\\n • First turn does not consume use count (some abilities excluded)\\n • First turn rate becomes instantaneous\\n • First turn does not add to turn count; does consume turn during summoning, support\\n • Recast gauge filled 80%",
                         "jp": "クエスト開始時 自身に\\n・8ACTION「アンチマジックエリア」付与\\n・最初の行動時 アビリティの使用回数を消費しない\\n　（一部のアビリティを除く）\\n・最初の行動時 行動負荷がなくなる\\n・最初の行動時 総ACTION数に加算されない\\n　召喚中およびフレンドサポートの残りACTIONは消費される\\n・リキャストゲージが80％溜まる"
                     },
@@ -10929,7 +13641,7 @@
                         "jp": "古の霹靂BRVヒットプラスフォースアドバンス＋＋"
                     },
                     "desc": {
-                        "en": "When using [Ancient Thunderclap]\\n• BRV attack hit count becomes 8\\n• Tremendously raises total BRV potency\\n• Slightly raises Max BRV overflow limit for Stolen BRV\\n\\nWhile buffed\\n• Turns [BRV Attack], [BRV Attack+] to [BRV Attack++]\\n　∟ 3-HIT Thunder melee BRV attack\\n• Turns [HP Attack], [HP Attack+] to [HP Attack++]\\n　∟ 3-HIT Thunder melee BRV + HP attack\\n　∟ Stolen BRV can overflow up to 120% Max BRV",
+                        "en": "When using [Ancient Thunderclap]\\n• BRV attack hit count becomes 8\\n• Increases total BRV potency by 120%\\n• Increases stolen overflow limit by 30%\\n\\nWhile buffed\\n• [BRV Attack], [BRV Attack+] become [BRV Attack++]\\n　∟ 3-HIT Thunder melee BRV attack (70% x3)\\n• [HP Attack], [HP Attack+] become [HP Attack++]\\n　∟ 3-HIT Thunder melee BRV + HP attack (60% x3)\\n　∟ Stolen BRV can overflow up to 120% MAX BRV",
                         "gl": "When using Ancient Thunderclap:\\n • BRV attack hit count becomes 8; tremendously increased cumulative BRV damage\\n • Slightly increased limit for stolen BRV that may exceed MAX BRV\\n \\nWith active buff:\\n • BRV Attack, BRV Attack+ become BRV Attack++ (3-hit Thunder melee BRV attack)\\n • HP Attack, HP Attack+ become HP Attack++ (3-hit Thunder melee BRV attack + HP attack; stolen BRV may exceed individual MAX BRV up to 120%)",
                         "jp": "「古の霹靂」使用時\\n・BRV攻撃のHIT数が8HITに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する上限小アップ\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」「BRV攻撃＋」が以下の「BRV攻撃＋＋」に変化\\n・3HIT雷属性近距離物理BRV攻撃\\n通常「HP攻撃」「HP攻撃＋」が以下の「HP攻撃＋＋」に変化\\n・3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
                     },
@@ -11057,7 +13769,7 @@
                         "jp": "エレクトリックフロアパワー"
                     },
                     "desc": {
-                        "en": "Slightly raises Max BRV and Attack\\nSlightly raises BRV damage dealt with [Electric Floor]",
+                        "en": "Raises own MAX BRV, ATK by 10%\\nIncreases BRV damage dealt with [Electric Floor] by 10%",
                         "gl": "Slightly raises MAX BRV, ATK\\n\\nSlightly increases BRV damage dealt with Electric Floor",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エレクトリックフロア」の与える\\n　BRVダメージを小アップ"
                     },
@@ -11130,7 +13842,7 @@
                         "jp": "エレクトリックエリアロング"
                     },
                     "desc": {
-                        "en": "Slightly raises Max BRV and Attack\\nExtends duration of [Electric Area] by 4 turns",
+                        "en": "Raises own MAX BRV, ATK by 10%\\n[Electric Area] duration +4",
                         "gl": "Slightly raises MAX BRV, ATK\\n\\nWhen using Electric Floor:\\n • Electric Area duration +4",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エレクトリックフロア」使用時\\n　「エレクトリックエリア」の4ACTION期間延長"
                     },
@@ -11194,7 +13906,7 @@
                         "jp": "エレクトリックフロアチャージ"
                     },
                     "desc": {
-                        "en": "Slightly raises Max BRV and Attack\\n[Electric Floor] use +1",
+                        "en": "Raises own MAX BRV, ATK by 10%\\n[Electric Floor] use +1",
                         "gl": "Slightly raises MAX BRV, ATK\\n\\nElectric Floor use +1",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エレクトリックフロア」の使用回数＋1"
                     },
@@ -11601,7 +14313,7 @@
                     "jp": "結束の要"
                 },
                 "desc": {
-                    "en": "• Party: Maximum BRV DMG dealt may exceed 9999 by 5% (up to 10498)\\n• Self: Obtainable BRV and maximum HP DMG dealt may exceed 99999 by 10% (up to 109998)",
+                    "en": "• Party: Maximum BRV DMG dealt may exceed 9999 by 5% (up to 10,498)\\n• Self: Obtainable BRV and maximum HP DMG dealt may exceed 99999 by 10% (up to 109,998)",
                     "gl": "",
                     "jp": "・味方全員の与えるBRVダメージ上限が9999を5％分突破可能になる（10498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を10％分突破可能になる（109998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
@@ -12276,6 +14988,215 @@
                 ]
             },
             "auras": []
+        },
+        {
+            "id": 2571,
+            "cast_id": 2533,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "エレクトリックエリア"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "エレクトリックエリア：味方全員の属性弱点攻撃BRV威力アップ　被HPダメージを軽減（同名の強化効果は重複しない）"
+            },
+            "meta_data": {
+                "target": 2,
+                "rate": 100,
+                "rank": 2,
+                "battle_start": 1,
+                "wave_start": 0,
+                "conditions": [
+                    {
+                        "id": 2,
+                        "args": [
+                            6091,
+                            0
+                        ]
+                    }
+                ],
+                "duration": 6,
+                "arguments": []
+            },
+            "type_data": {
+                "buff_type": 1,
+                "icon_type": 17,
+                "disp_type": 0,
+                "stackable": -1,
+                "extendable": 1,
+                "removable": 0,
+                "max_stacks": 0,
+                "sp_stacks": 0,
+                "effects": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    60,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "val_types": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "val_edit_types": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "val_specify": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "rank_tables": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "conditions": []
+            },
+            "rank_data": {
+                "2571": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "auras": [
+                {
+                    "id": 1097,
+                    "required_conditions": [
+                        1,
+                        -1,
+                        -1
+                    ],
+                    "required_values": [
+                        2571
+                    ],
+                    "effect_data": {
+                        "id": 528,
+                        "ailment_effect": 56,
+                        "target_id": 1,
+                        "value_type": 3,
+                        "type_id": -1,
+                        "rank_data": [
+                            40,
+                            60,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "id": 1098,
+                    "required_conditions": [
+                        1,
+                        -1,
+                        -1
+                    ],
+                    "required_values": [
+                        2571
+                    ],
+                    "effect_data": {
+                        "id": 529,
+                        "ailment_effect": 151,
+                        "target_id": 2,
+                        "value_type": 3,
+                        "type_id": -1,
+                        "rank_data": [
+                            8534,
+                            8534,
+                            12577,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                },
+                {
+                    "id": 1115,
+                    "required_conditions": [
+                        1,
+                        -1,
+                        -1
+                    ],
+                    "required_values": [
+                        2571
+                    ],
+                    "effect_data": {
+                        "id": 1086,
+                        "ailment_effect": 180,
+                        "target_id": 1,
+                        "value_type": 1,
+                        "type_id": -1,
+                        "rank_data": [
+                            -30,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            ]
         }
     ],
     "bonusSphere": {
@@ -12289,7 +15210,7 @@
                 "jp": "バフサクセスレイジングアタックオール"
             },
             "desc": {
-                "en": "After granting a buff:\\n- Raises party's Attack by 1% up to 5 times\\n※Only once per turn\\n※Same Spheres do not stack",
+                "en": "After granting a buff:\\n• Raises party's Attack by 1% up to 5 times\\n* Only once per turn\\n* Same Spheres do not stack",
                 "gl": "After granting buff:\\n • Raises party's ATK by 1% up to 5 times, once per turn\\n*Does not stack with same sphere",
                 "jp": "自身が対象に強化効果を付与した後\\n味方全員の攻撃力が最大5回まで1％アップ\\n1回の行動での効果アップは1回のみ\\n※同一スフィアの効果は重複しない"
             },
@@ -12522,12 +15443,12 @@
             {
                 "id": 3857,
                 "name": {
-                    "en": "",
+                    "en": "Blitz Shear Power Lv9",
                     "gl": "Mighty Blitz Shear Lv9",
                     "jp": "瞬雷斬パワー Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Blitz Shear] BRV damage dealt +10%",
                     "gl": "Increases BRV damage dealt with Blitz Shear by 10％",
                     "jp": "「瞬雷斬」の\\n与えるBRVダメージ10％アップ"
                 },
@@ -12612,12 +15533,12 @@
             {
                 "id": 3858,
                 "name": {
-                    "en": "",
+                    "en": "Blitz Shear BRV Attack Advance Lv9",
                     "gl": "Blitz Shear BRV Attack Advance Lv9",
                     "jp": "瞬雷斬BRVアタックアドバンス Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Blitz Shear] stolen BRV overflow limit +20%",
                     "gl": "When using Blitz Shear:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「瞬雷斬」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
@@ -12702,12 +15623,12 @@
             {
                 "id": 3859,
                 "name": {
-                    "en": "",
+                    "en": "Blitz Shear Weak Damage Up Lv9",
                     "gl": "Blitz Shear Weak Damage Up Lv9",
                     "jp": "瞬雷斬ウィークダメージアップ Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Blitz Shear] BRV damage dealt +10% when attacking target's weakness",
                     "gl": "When using Blitz Shear:\\n • Increases BRV damage dealt when attacking target's weakness by 10％",
                     "jp": "「瞬雷斬」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
@@ -12792,12 +15713,12 @@
             {
                 "id": 3860,
                 "name": {
-                    "en": "",
+                    "en": "Blitz Shear Power II",
                     "gl": "Mighty Blitz Shear II",
                     "jp": "瞬雷斬パワーII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Blitz Shear] BRV damage dealt +5%",
                     "gl": "Increases BRV damage dealt with Blitz Shear by 5%",
                     "jp": "「瞬雷斬」の\\n与えるBRVダメージ5％アップ"
                 },
@@ -12882,12 +15803,12 @@
             {
                 "id": 3861,
                 "name": {
-                    "en": "",
+                    "en": "Blitz Shear BRV Attack Advance II",
                     "gl": "Blitz Shear BRV Attack Advance II",
                     "jp": "瞬雷斬BRVアタックアドバンスII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Blitz Shear] stolen BRV overflow limit +10%",
                     "gl": "When using Blitz Shear:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「瞬雷斬」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
@@ -12972,12 +15893,12 @@
             {
                 "id": 3862,
                 "name": {
-                    "en": "",
+                    "en": "Buff Attack Up",
                     "gl": "Buff Attack Up",
                     "jp": "バフアタックアップ"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "Raises own ATK by 10% while buffed",
                     "gl": "With active buff:\\n • Raises ATK by 10%",
                     "jp": "自身に強化効果が付与されている時\\n自身の攻撃力10％アップ"
                 },
@@ -13062,12 +15983,12 @@
             {
                 "id": 3863,
                 "name": {
-                    "en": "",
+                    "en": "Plasma Stroke Power Lv9",
                     "gl": "Mighty Plasma Stroke Lv9",
                     "jp": "紫電一文字パワー Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Plasma Stroke] BRV damage dealt +10%",
                     "gl": "Increases BRV damage dealt with Plasma Stroke by 10％",
                     "jp": "「紫電一文字」の\\n与えるBRVダメージ10％アップ"
                 },
@@ -13152,12 +16073,12 @@
             {
                 "id": 3864,
                 "name": {
-                    "en": "",
+                    "en": "Plasma Stroke BRV Attack Advance Lv9",
                     "gl": "Plasma Stroke BRV Attack Advance Lv9",
                     "jp": "紫電一文字BRVアタックアドバンス Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Plasma Stroke] stolen BRV overflow limit +10%",
                     "gl": "When using Plasma Stroke:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「紫電一文字」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
@@ -13242,12 +16163,12 @@
             {
                 "id": 3865,
                 "name": {
-                    "en": "",
+                    "en": "Plasma Stroke Weak Damage Up Lv9",
                     "gl": "Plasma Stroke Weak Damage Up Lv9",
                     "jp": "紫電一文字ウィークダメージアップ Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Plasma Stroke] BRV damage dealt +10% when attacking target's weakness",
                     "gl": "When using Plasma Stroke:\\n • Increases BRV damage dealt when attacking target's weakness by 10％",
                     "jp": "「紫電一文字」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
@@ -13332,12 +16253,12 @@
             {
                 "id": 3866,
                 "name": {
-                    "en": "",
+                    "en": "Plasma Stroke Power II",
                     "gl": "Mighty Plasma Stroke II",
                     "jp": "紫電一文字パワーII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Plasma Stroke] BRV damage dealt +5%",
                     "gl": "Increases BRV damage dealt with Plasma Stroke by 5%",
                     "jp": "「紫電一文字」の\\n与えるBRVダメージ5％アップ"
                 },
@@ -13422,12 +16343,12 @@
             {
                 "id": 3867,
                 "name": {
-                    "en": "",
+                    "en": "Plasma Stroke BRV Attack Advance II",
                     "gl": "Plasma Stroke BRV Attack Advance II",
                     "jp": "紫電一文字BRVアタックアドバンスII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Plasma Stroke] stolen BRV overflow limit +5%",
                     "gl": "When using Plasma Stroke:\\n • Stolen BRV may exceed MAX BRV up to 5％",
                     "jp": "「紫電一文字」の\\n奪ったBRVを最大BRVを超えて加算する上限5％アップ"
                 },
@@ -13512,12 +16433,12 @@
             {
                 "id": 3868,
                 "name": {
-                    "en": "",
+                    "en": "Buff Boost All",
                     "gl": "Buff Boost All",
                     "jp": "バフブーストオール"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "Raises party's MAX BRV by 5% while buffed",
                     "gl": "With active buff:\\n • Raises party's MAX BRV by 5%",
                     "jp": "自身に強化効果が付与されている時\\n味方全員の最大BRV5％アップ"
                 },
@@ -13602,12 +16523,12 @@
             {
                 "id": 3869,
                 "name": {
-                    "en": "",
+                    "en": "Ancient Thunderclap Power Lv9",
                     "gl": "Mighty Ancient Thunderclap Lv9",
                     "jp": "古の霹靂パワー Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Ancient Thunderclap] BRV damage dealt +10%",
                     "gl": "Increases BRV damage dealt with Ancient Thunderclap by 10％",
                     "jp": "「古の霹靂」の\\n与えるBRVダメージ10％アップ"
                 },
@@ -13692,12 +16613,12 @@
             {
                 "id": 3870,
                 "name": {
-                    "en": "",
+                    "en": "Ancient Thunderclap BRV Attack Advance Lv9",
                     "gl": "Ancient Thunderclap BRV Attack Advance Lv9",
                     "jp": "古の霹靂BRVアタックアドバンス Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Ancient Thunderclap] stolen BRV overflow limit +10%",
                     "gl": "When using Ancient Thunderclap:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「古の霹靂」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
@@ -13782,12 +16703,12 @@
             {
                 "id": 3871,
                 "name": {
-                    "en": "",
+                    "en": "Ancient Thunderclap Weak Damage Up Lv9",
                     "gl": "Ancient Thunderclap Weak Damage Up Lv9",
                     "jp": "古の霹靂ウィークダメージアップ Lv9"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Ancient Thunderclap] BRV damage dealt +10% when attacking target's weakness",
                     "gl": "When using Ancient Thunderclap:\\n • Increases BRV damage dealt when attacking target's weakness by 10％",
                     "jp": "「古の霹靂」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
@@ -13872,12 +16793,12 @@
             {
                 "id": 3872,
                 "name": {
-                    "en": "",
+                    "en": "Ancient Thunderclap Power II",
                     "gl": "Mighty Ancient Thunderclap II",
                     "jp": "古の霹靂パワーII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Ancient Thunderclap] BRV damage dealt +5%",
                     "gl": "Increases BRV damage dealt with Ancient Thunderclap by 5%",
                     "jp": "「古の霹靂」の\\n与えるBRVダメージ5％アップ"
                 },
@@ -13962,12 +16883,12 @@
             {
                 "id": 3873,
                 "name": {
-                    "en": "",
+                    "en": "Ancient Thunderclap BRV Attack Advance II",
                     "gl": "Ancient Thunderclap BRV Attack Advance II",
                     "jp": "古の霹靂BRVアタックアドバンスII"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[Ancient Thunderclap] stolen BRV overflow limit +5%",
                     "gl": "When using Ancient Thunderclap:\\n • Stolen BRV may exceed MAX BRV up to 5％",
                     "jp": "「古の霹靂」の\\n奪ったBRVを最大BRVを超えて加算する上限5％アップ"
                 },
@@ -14052,12 +16973,12 @@
             {
                 "id": 3874,
                 "name": {
-                    "en": "",
+                    "en": "BRV Attack++ HP Attack++ Up",
                     "gl": "BRV Attack++ HP Attack++ Up",
                     "jp": "ブレイブ攻撃＋＋HP攻撃＋＋アップ"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "[BRV Attack++][HP Attack++] BRV damage dealt +20%",
                     "gl": "Increases BRV damage dealt with BRV Attack++, HP Attack++ by 20%",
                     "jp": "「BRV攻撃＋＋」「HP攻撃＋＋」の\\n与えるBRVダメージ20％アップ"
                 },
@@ -14105,6 +17026,616 @@
                         "required_target": 2,
                         "required_values": [
                             9005,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6085,
+                "name": {
+                    "en": "Electric Floor Power Lv9",
+                    "gl": "",
+                    "jp": "エレクトリックフロアパワー Lv9"
+                },
+                "desc": {
+                    "en": "[Electric Floor] BRV damage dealt +10%",
+                    "gl": "",
+                    "jp": "「エレクトリックフロア」の\\n与えるBRVダメージ10％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックフロアパワー：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
+                        "required_values": [
+                            8526,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            7,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6086,
+                "name": {
+                    "en": "Electric Floor BRV Attack Advance Lv9",
+                    "gl": "",
+                    "jp": "エレクトリックフロアBRVアタックアドバンス Lv9"
+                },
+                "desc": {
+                    "en": "[Electric Floor] stolen BRV overflow limit +20%",
+                    "gl": "",
+                    "jp": "「エレクトリックフロア」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックフロアBRVアタックアドバンス：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 170,
+                        "effect_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
+                        "required_values": [
+                            8526,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            8,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6087,
+                "name": {
+                    "en": "Electric Floor Weak Damage Up Lv9",
+                    "gl": "",
+                    "jp": "エレクトリックフロアウィークダメージアップ Lv9"
+                },
+                "desc": {
+                    "en": "[Electric Floor] BRV damage dealt +10% when attacking target's weakness",
+                    "gl": "",
+                    "jp": "「エレクトリックフロア」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックフロアウィークダメージアップ：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "effect_values": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
+                        "required_values": [
+                            8526,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 81,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            7,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6088,
+                "name": {
+                    "en": "Electric Floor Power II",
+                    "gl": "",
+                    "jp": "エレクトリックフロアパワーII"
+                },
+                "desc": {
+                    "en": "[Electric Floor] BRV damage dealt +5%",
+                    "gl": "",
+                    "jp": "「エレクトリックフロア」の\\n与えるBRVダメージ5％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックフロアパワーII：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 39,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
+                        "required_values": [
+                            8526,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6089,
+                "name": {
+                    "en": "Electric Floor BRV Attack Advance II",
+                    "gl": "",
+                    "jp": "エレクトリックフロアBRVアタックアドバンスII"
+                },
+                "desc": {
+                    "en": "[Electric Floor] stolen BRV overflow limit +10%",
+                    "gl": "",
+                    "jp": "「エレクトリックフロア」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックフロアBRVアタックアドバンスII：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 170,
+                        "effect_target": 2,
+                        "effect_values": [
+                            10,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 14,
+                        "required_target": 2,
+                        "required_values": [
+                            8526,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6090,
+                "name": {
+                    "en": "Electric Area Attack All",
+                    "gl": "",
+                    "jp": "エレクトリックエリアアタックオール"
+                },
+                "desc": {
+                    "en": "Raises party's ATK by 5% while [Electric Area] is active",
+                    "gl": "",
+                    "jp": "自身に「エレクトリックエリア」が付与されている時\\n味方全員の攻撃力5％アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "エレクトリックエリアアタックオール：味方全員の攻撃力がアップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 3,
+                    "is_weapon_passive": -1,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 3
+                },
+                "effects": [
+                    {
+                        "effect_id": 28,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
+                        "required_values": [
+                            1585,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    },
+                    {
+                        "required_id": 78,
+                        "required_target": 2,
+                        "required_values": [
+                            2571,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "param_data": {
+                    "params": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ],
+                    "values": [
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        [
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    ]
+                },
+                "auras": []
+            },
+            {
+                "id": 6091,
+                "name": {
+                    "en": "Ancient Wisdom Extend",
+                    "gl": "",
+                    "jp": "古の叡智エクステンド"
+                },
+                "desc": {
+                    "en": "When Quest starts\\n• Self: 6 turns [Electric Area]\\n\\nWhen using [Electric Floor]\\n• 4-HIT Thunder AoE melee BRV attack + ST HP attack\\n　+ 6-HIT Thunder AoE melee BRV attack + ST HP attack\\n• Increases total BRV potency by 160%\\n• [Electric Area] boost \\n　∟ Elemental Weakness Damage Up effect +20%\\n　∟ Added effect: Lowers party's HP damage taken by 30%",
+                    "gl": "",
+                    "jp": "クエスト開始時\\n自身に6ACTION「エレクトリックエリア」付与\\n\\n「エレクトリックフロア」使用時\\n・4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃を2回行うが\\n　4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n　＋6HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n・「エレクトリックエリア」の味方全員の属性弱点ダメージアップの効果小アップ\\n・「エレクトリックエリア」に味方全員の「HPダメージ軽減」の効果が追加"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "古の叡智エクステンド：「エレクトリックフロア」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": -1,
+                    "required_passive": 1669
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 1,
+                    "condition_type": 1
+                },
+                "effects": [],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
                             0,
                             0
                         ],
