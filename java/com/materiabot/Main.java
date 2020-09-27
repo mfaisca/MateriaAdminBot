@@ -18,7 +18,7 @@ public class Main {
 		if(privateToken == null) {
 			System.out.println("Bot Token isn't inserted." + System.lineSeparator());
 			return;
-		} 
+		}
 		System.out.println("Connected to DB");
 		final List<GatewayIntent> gateways = Arrays.asList(	GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS, 
 															GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_MESSAGES, 
