@@ -1,5 +1,7 @@
 {
     "id": 48,
+    "uid": 162,
+    "sid": 162,
     "profile": {
         "fullName": {
             "en": "Galuf",
@@ -137,12 +139,12 @@
         "id": 139,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_ガラフ",
             "jp": "コールアビリティ_ガラフ"
         },
         "rank_up_desc": {
-            "en": "",
-            "gl": "",
+            "en": "When using [Shirahadori(C)]\\n• Stolen BRV can overflow up to 120% Max BRV \\n• Call Effect boost\\n　∟ MAX BRV Up effect +10%\\n　∟ Physical Evasion Rate Up effect +40%",
+            "gl": "「しらはどり【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の「最大BRVアップ」の効果小アップと\\n　「物理回避率アップ」の効果中アップ",
             "jp": "「しらはどり【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の「最大BRVアップ」の効果小アップと\\n　「物理回避率アップ」の効果中アップ"
         },
         "ability": {
@@ -154,12 +156,12 @@
         "id": 140,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_ガラフ",
             "jp": "LDコールアビリティ_ガラフ"
         },
         "rank_up_desc": {
-            "en": "",
-            "gl": "",
+            "en": "When using [Greatsword of Dawn (C)]\\n• Becomes 4-HIT AoE melee BRV attack + AoE HP attack delivered twice\\n• Increases total BRV potency by 80% \\n• Stolen BRV can overflow up to 200% Max BRV \\n• Call Effect +10%",
+            "gl": "「暁の太刀【C】」使用時\\n・6HIT全体近距離物理BRV 攻撃＋全体HP 攻撃が\\n　4HIT全体近距離物理BRV 攻撃＋全体HP 攻撃を2回行うに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・使用後特殊効果の効果小アップ",
             "jp": "「暁の太刀【C】」使用時\\n・6HIT全体近距離物理BRV攻撃＋全体HP攻撃が\\n　4HIT全体近距離物理BRV攻撃＋全体HP攻撃を2回行うに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・使用後特殊効果の効果小アップ"
         },
         "ability": {
@@ -581,6 +583,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [
@@ -689,6 +695,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -743,6 +750,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -792,11 +800,12 @@
                 "jp": "しらはどり"
             },
             "desc": {
-                "en": "Grants [L Physical Evasion Rate Up], [S Defense Up] for 2 turns\\n\\nBecomes [Shirahadori+] after 1 use\\n　∟ Grants [XL Physical Evasion Rate Up] and [S Defense Up] for 5 turns\\n　∟ Triggers a counterattack after dodging a physical attack",
+                "en": "Self: 2 turns 75% [PHY Evasion Up], 30% [DEF Up]\\n\\nMastery with 1 use\\n• [Shirahadori] becomes [Shirahadori+]\\n　∟ [PHY Evasion Up] effect +25%, duration +3\\n　∟ [DEF Up] duration +3\\n　∟ While [PHY Evasion Up] is active, triggers [Counter] after successful evasion of physical attacks\\n\\n[Counter]\\n• Melee BRV attack (200)",
                 "gl": "Self: 2 turns PHY Evasion Up III, DEF Up I\\nMastery with 1 use",
                 "jp": "自身に2ACTION「物理回避率大アップ」\\n「防御力小アップ」付与\\n1回使用でマスター"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 3,
@@ -863,6 +872,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -981,6 +992,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1083,11 +1096,12 @@
                 "jp": "かばう"
             },
             "desc": {
-                "en": "Grants [Cover] to target for 3 turns\\nGrants [S Attack Up] to self for 3 turns\\n\\nBecomes [Cover+] after 1 use\\n　∟ Grants [Cover] to allies for 5 turns\\n　∟ Grants [S Attack Up] to self for 5 turns\\n\\n[Cover] directs all single-target attacks aimed at a covered ally towards self",
+                "en": "Target: 3 turns [Cover]\\nSelf: 3 turns 20% [ATK Up]\\n[Cover] directs all single-target attacks aimed at a covered ally to self\\n\\nMastery with 1 use\\n• [Cover] becomes [Cover+]\\n　∟ Allies: 5 turns [Cover]\\n　∟ [Attack Up] effect +10%, duration +2\\n\\n[Cover]\\n• Raises Attack by 20%",
                 "gl": "Target: 3 turns Cover buff (single-target attacks hit self in place of covered ally)\\nSelf: 3 turns ATK Up I\\nMastery with 1 use",
                 "jp": "対象に3ACTION強化効果「かばう」付与\\n自身に3ACTION「攻撃力小アップ」付与\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 5,
@@ -1156,6 +1170,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1286,6 +1302,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1396,6 +1414,7 @@
                 "jp": "自身以外の味方全員に\\n5ACTION強化効果「かばう」付与\\n自身に5ACTION「攻撃力小アップ」付与\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける"
             },
             "rank": 1,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 5,
@@ -1464,6 +1483,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1594,6 +1615,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1701,6 +1724,7 @@
                 "jp": "自身に5ACTION「物理回避率極大アップ」\\n「防御力小アップ」付与\\n「しらはどり＋」による「物理回避率アップ」付与中\\n物理攻撃回避時に\\n近距離物理BRV攻撃の「カウンター」を行う"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 3,
@@ -1769,6 +1793,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1887,6 +1913,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1994,6 +2022,7 @@
                 "jp": "自身に4ACTION「物理回避率大アップ」\\n「防御力中アップ」\\n6ACTION「最大BRV中アップ」付与\\n1回使用でマスター\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 3,
@@ -2060,6 +2089,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2178,6 +2209,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2296,6 +2329,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2403,6 +2438,7 @@
                 "jp": "自身に7ACTION「物理回避率極大アップ」\\n「防御力中アップ」\\n6ACTION「最大BRV中アップ」付与\\n「しらはどり＋」による「物理回避率アップ」付与中\\n物理攻撃回避時に\\n近距離物理BRV攻撃の「カウンター」を行う\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 3,
@@ -2471,6 +2507,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2589,6 +2627,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2707,6 +2747,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2814,6 +2856,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2868,6 +2911,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2922,6 +2966,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2976,6 +3021,7 @@
                 "jp": "対象に3ACTION強化効果「かばう」付与\\n自身に3ACTION「攻撃力小アップ」付与し\\n自身に自身の初期BRVの50％分のBRVを加算\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -3066,6 +3112,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3196,6 +3244,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3303,6 +3353,7 @@
                 "jp": "自身以外の味方全員に5ACTION強化効果「かばう」\\n自身に5ACTION「攻撃力小アップ」付与し\\n自身に自身の初期BRVの100％分のBRVを加算\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -3393,6 +3444,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3523,6 +3576,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3630,6 +3685,7 @@
                 "jp": "近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -3684,6 +3740,7 @@
                 "jp": "対象に3ACTION強化効果「かばう」付与\\n自身以外の味方全員に5ACTION「最大BRV中アップ」付与\\n自身に3ACTION「攻撃力小アップ」付与\\n味方全員に自身の最大BRVに依存した量のBRV加算\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n使用後通常「HP攻撃」が5ACTION「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -3774,6 +3831,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3904,6 +3963,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4022,6 +4083,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4140,6 +4203,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4247,6 +4312,7 @@
                 "jp": "自身以外の味方全員に\\n5ACTION強化効果「かばう」「最大BRV中アップ」付与\\n自身に5ACTION「攻撃力小アップ」付与\\n味方全員に自身の最大BRVに依存した量のBRV加算\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n使用後通常「HP攻撃」が5ACTION「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -4337,6 +4403,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4467,6 +4535,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4585,6 +4655,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4703,6 +4775,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4810,6 +4884,7 @@
                 "jp": "対象に3ACTION強化効果「かばう」付与\\n自身以外の味方全員に5ACTION「最大BRV中アップ」付与\\n自身に3ACTION「攻撃力小アップ」付与し\\n初期BRVの50％分BRV加算\\n味方全員に自身の最大BRVに依存した量のBRV加算\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n使用後通常「HP攻撃」が5ACTION「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 5,
@@ -4922,6 +4997,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5052,6 +5129,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5170,6 +5249,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5288,6 +5369,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5395,6 +5478,7 @@
                 "jp": "自身以外の味方全員に\\n5ACTION強化効果「かばう」「最大BRV中アップ」付与\\n自身に5ACTION「攻撃力小アップ」付与し\\n初期BRV分BRV加算\\n味方全員に自身の最大BRVに依存した量のBRV加算\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n使用後通常「HP攻撃」が5ACTION「HP攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 5,
@@ -5507,6 +5591,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5637,6 +5723,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5755,6 +5843,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5873,6 +5963,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5980,6 +6072,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -6054,6 +6147,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ＋HP攻撃\\n自身に2ACTION「物理回避率大アップ」\\n「防御力小アップ」付与\\n1回使用でマスター"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -6164,6 +6258,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6282,6 +6378,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6389,6 +6487,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ＋HP攻撃\\n自身に5ACTION「物理回避率極大アップ」\\n「防御力小アップ」付与\\n物理攻撃回避時に近距離物理BRV攻撃＋HP攻撃の\\n「カウンター」を行う"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -6501,6 +6600,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6619,6 +6720,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6726,6 +6829,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ＋HP攻撃\\n自身に4ACTION「物理回避率極大アップ」\\n「防御力中アップ」\\n6ACTION「最大BRV中アップ」付与\\n1回使用でマスター\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -6836,6 +6940,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6954,6 +7060,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7072,6 +7180,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7179,6 +7289,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ＋HP攻撃\\n自身に7ACTION「物理回避率極大アップ」\\n「防御力中アップ」\\n6ACTION「最大BRV中アップ」付与\\n物理攻撃回避時に近距離物理BRV攻撃＋HP攻撃の\\n「カウンター」を行う\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -7291,6 +7402,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7409,6 +7522,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7527,6 +7642,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7634,6 +7751,7 @@
                 "jp": "近距離物理BRV攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -7688,6 +7806,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -7762,6 +7881,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -7836,6 +7956,7 @@
                 "jp": "近距離物理BRV攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -7890,6 +8011,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -7944,6 +8066,7 @@
                 "jp": "対象に6ACTION強化効果「かばう」付与\\n自身以外の味方全員に8ACTION「最大BRV中アップ」付与\\n自身に10ACTION「攻撃力中アップ」付与\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -8034,6 +8157,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8164,6 +8289,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8282,6 +8409,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8389,6 +8518,7 @@
                 "jp": "自身以外の味方全員に\\n8ACTION強化効果「かばう」「最大BRV中アップ」付与\\n自身に12ACTION「攻撃力中アップ」付与\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -8479,6 +8609,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8609,6 +8741,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8727,6 +8861,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8834,6 +8970,7 @@
                 "jp": "対象に6ACTION強化効果「かばう」付与\\n自身以外の味方全員に8ACTION「最大BRV中アップ」付与\\n自身に10ACTION「攻撃力中アップ」付与し\\n自身に自身の初期BRVの50％分のBRVを加算\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n1回使用でマスター\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 5,
@@ -8946,6 +9083,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9076,6 +9215,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9194,6 +9335,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9301,6 +9444,7 @@
                 "jp": "自身以外の味方全員に\\n8ACTION強化効果「かばう」「最大BRV中アップ」付与\\n自身に12ACTION「攻撃力中アップ」付与し\\n自身に自身の初期BRVの100％分のBRVを加算\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n強化効果「かばう」を付与した味方への単体攻撃を自身が受ける\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 5,
@@ -9413,6 +9557,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9543,6 +9689,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9661,6 +9809,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9768,6 +9918,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に7ACTION「物理回避率大アップ」「防御力小アップ」\\n20ACTION「最大BRV小アップ」付与\\n1回使用でマスター"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -9878,6 +10029,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9996,6 +10149,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10114,6 +10269,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10221,6 +10378,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に10ACTION「物理回避率極大アップ」「防御力小アップ」\\n20ACTION「最大BRV小アップ」付与\\n「しらはどり＋」による「物理回避率アップ」付与中\\n物理攻撃回避時 以下の「カウンター」が発動\\n4HIT近距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -10333,6 +10491,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10451,6 +10611,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10569,6 +10731,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10676,6 +10840,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に9ACTION「物理回避率大アップ」「防御力中アップ」\\n20ACTION「最大BRV大アップ」付与\\n1回使用でマスター\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -10786,6 +10951,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10904,6 +11071,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11022,6 +11191,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11129,6 +11300,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\nさらにBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に12ACTION「物理回避率極大アップ」「防御力中アップ」\\n20ACTION「最大BRV大アップ」付与\\n「しらはどり＋」による「物理回避率アップ」付与中\\n物理攻撃回避時 以下の「カウンター」が発動\\n4HIT近距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる\\n「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -11241,6 +11413,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11359,6 +11533,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11477,6 +11653,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11584,6 +11762,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -11740,6 +11919,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -11886,16 +12066,17 @@
         {
             "id": 7339,
             "name": {
-                "en": "Dual-wield Bladeblitz",
+                "en": "Dual-Wield Bladeblitz",
                 "gl": "Dual-Wield Bladeblitz",
                 "jp": "二刀流ぜんぎり"
             },
             "desc": {
-                "en": "4-HIT AoE melee BRV + ST HP attack\\nModerately raises BRV damage dealt to a single target\\nStolen BRV can overflow up to 150% Max BRV",
+                "en": "4-HIT AoE melee BRV attack + ST HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 150% MAX BRV ",
                 "gl": "4-hit group melee BRV attack + single-target HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%",
                 "jp": "4HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 12000,
@@ -12050,6 +12231,7 @@
                 "jp": "4HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に4ACTION「暁の魂」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 12000,
@@ -12216,6 +12398,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12315,13 +12499,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 391,
                                 "ailment_effect": 42,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12345,13 +12535,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 392,
                                 "ailment_effect": 43,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12375,13 +12571,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 440,
                                 "ailment_effect": 41,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12414,6 +12616,7 @@
                 "jp": "4HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n自身に4ACTION「暁の魂」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 12000,
@@ -12580,6 +12783,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12679,13 +12884,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 391,
                                 "ailment_effect": 42,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12709,13 +12920,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 392,
                                 "ailment_effect": 43,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12739,13 +12956,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 440,
                                 "ailment_effect": 41,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -12778,6 +13001,7 @@
                 "jp": "4HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる\\n自身に4ACTION「暁の魂」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 12000,
@@ -12966,6 +13190,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13065,13 +13291,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 391,
                                 "ailment_effect": 42,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13095,13 +13327,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 392,
                                 "ailment_effect": 43,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13125,13 +13363,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 440,
                                 "ailment_effect": 41,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13164,6 +13408,7 @@
                 "jp": "6HIT全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの250％分\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる\\n自身に4ACTION「暁の魂」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 12000,
@@ -13392,6 +13637,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13491,13 +13738,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 391,
                                 "ailment_effect": 42,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13521,13 +13774,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 392,
                                 "ailment_effect": 43,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13551,13 +13810,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1423
+                                1423,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 440,
                                 "ailment_effect": 41,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     60,
@@ -13590,6 +13855,7 @@
                 "jp": "2HIT近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -13664,6 +13930,7 @@
                 "jp": "2HIT近距離物理BRV攻撃"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -13738,6 +14005,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -13834,6 +14102,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -13987,11 +14256,12 @@
                 "jp": "アビリティリカバリーアドバンスオール"
             },
             "desc": {
-                "en": "Recovers 1 use of [Cover] and [Shirahadori] (up to initial values)\\nMarginally raises party Max BRV overflow limit for 5 turns",
+                "en": "Recovers 1 used of [Cover], [Shirahadori] (up to initial values)\\n5 turns Additional Effect\\n• Increases party's stolen BRV overflow limit by 5%",
                 "gl": "Cover, Shirahadori use +1 (with upper limit)\\nMarginally increases amount party's stolen BRV may exceed MAX BRV for 5 turns",
                 "jp": " 「かばう」「しらはどり」の使用回数＋1（上限あり）\\n5ACTION味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限極小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -14106,6 +14376,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14205,13 +14477,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1421
+                                1421,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 427,
                                 "ailment_effect": 67,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     5,
@@ -14244,6 +14522,7 @@
                 "jp": " 「かばう」「しらはどり」の使用回数＋1（上限あり）\\n9ACTION味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -14358,6 +14637,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14457,13 +14738,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1421
+                                1421,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 427,
                                 "ailment_effect": 67,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     5,
@@ -14496,6 +14783,7 @@
                 "jp": " 「かばう」「しらはどり」の使用回数＋1（上限あり）\\n5ACTION味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -14610,6 +14898,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14709,13 +14999,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1421
+                                1421,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 427,
                                 "ailment_effect": 67,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     5,
@@ -14748,6 +15044,7 @@
                 "jp": " 「かばう」「しらはどり」の使用回数＋1（上限あり）\\n9ACTION味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -14862,6 +15159,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14961,13 +15260,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1421
+                                1421,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 427,
                                 "ailment_effect": 67,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     5,
@@ -15000,6 +15305,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -15114,6 +15420,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -15218,16 +15525,17 @@
         {
             "id": 12596,
             "name": {
-                "en": "Greatsword of the Dawn",
+                "en": "Greatsword of Dawn",
                 "gl": "",
                 "jp": "暁の太刀"
             },
             "desc": {
-                "en": "",
+                "en": "Increases own BRV by 50% of MAX BRV\\n6-HIT AoE melee BRV attack + AoE HP attack\\nStolen BRV can overflow up to 200% Max BRV \\nDeals split HP damage between all targets\\n\\nSelf: 3 turns [Decisive Struggle]\\nAllies: 8 turns [Cover]\\n\\nWhile [Decisive Struggle] is active\\n• Party effects\\n ∟ Increases BRV damage dealt by 40%\\n ∟ Increases stolen and gained BRV overflow limits by 20%\\n ∟ Restores 20% of HP\\n• Increases HP Damage dealt by 20%\\n• Resists K.O. when HP reaches 0\\n• Recovers 1 HP when effect ends\\n• Consumes 40% Current HP after every action\\n• After taking damage or successful evasion, triggers [Decisive Strike]\\n　∟ Increases own BRV by 50% Max BRV + HP attack\\n　∟ 4-HIT melee BRV + HP attack\\n　∟ Gained BRV can overflow up to 120% Max BRV\\n　∟ Stolen BRV can overflow up to 150% Max BRV  \\n　∟ Increases party's BRV by 20% total HP damage dealt",
                 "gl": "",
-                "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に3ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・HPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃を受けた時または攻撃回避時　以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
+                "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に3ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・HPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃または弱体効果の付与を受けた時または回避時\\n　以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 3,
@@ -15456,6 +15764,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15555,13 +15865,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1150,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     40,
@@ -15585,13 +15901,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1151,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -15615,13 +15937,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1177,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     20,
@@ -15667,6 +15995,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15783,9 +16113,10 @@
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に5ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・HPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃を受けた時または攻撃回避時 以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
+                "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に5ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・HPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃または弱体効果の付与を受けた時または回避時\\n　以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 3,
@@ -16014,6 +16345,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16113,13 +16446,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1150,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     40,
@@ -16143,13 +16482,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1151,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -16173,13 +16518,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1177,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     20,
@@ -16225,6 +16576,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16341,9 +16694,10 @@
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "自身に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体近距離物理BRV攻撃＋全体HP攻撃を2回行う\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に5ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・自身のクリティカル発生率極大アップ\\n・自身のHPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃を受けた時または攻撃回避時 以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
+                "jp": "自身に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体近距離物理BRV攻撃＋全体HP攻撃を2回行う\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 自身に5ACTION「死力を尽くす決戦」付与\\n自身以外の味方全員に8ACTION強化効果「かばう」付与\\n「死力を尽くす決戦」付与中　以下の効果が発動\\n・自身のクリティカル発生率極大アップ\\n・自身のHPが0になっても戦闘不能にならず 解除時にHPを1回復\\n・自身の行動後　自身のHPを中消費（この効果によって戦闘不能にはならない）\\n・自身がBRV攻撃またはHP攻撃または弱体効果の付与を受けた時または回避時\\n　以下の「決死の一撃」が発動\\n　-自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n　 ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n　-加算したBRVを最大BRVを超えて加算する 上限は自身の最大BRVの120％分\\n　-奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n　-与えた合計HPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 12,
             "use_count": 3,
@@ -16632,6 +16986,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16731,13 +17087,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1150,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     40,
@@ -16761,13 +17123,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1151,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -16791,13 +17159,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2501
+                                2501,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1177,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     20,
@@ -16843,6 +17217,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16962,6 +17338,7 @@
                 "jp": "決死の一撃"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 9,
             "use_count": 0,
@@ -17180,6 +17557,7 @@
                 "jp": "第4ガラフ自傷"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 0,
@@ -17231,11 +17609,12 @@
                 "jp": "しらはどり【C】"
             },
             "desc": {
-                "en": "",
+                "en": "When called for assistance, Galuf performs the following actions\\n• Raises MAX BRV by 80%, ATK by 60%\\n• Increases own BRV by 100% Attack\\n• Increases own BRV by 100% current BRV\\n• 3-HIT melee BRV attack + HP attack\\n\\n3 turns Call Effect (caller)\\n• Raises MAX BRV by 10%\\n• Increases Physical Evasion Rate by 60%",
                 "gl": "",
                 "jp": "コールされたガラフが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋自身のBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n\\n使用後特殊効果：3ACTION\\nガラフをコールしたキャラクターに\\n「最大BRV小アップ」「物理回避率中アップ」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -17346,6 +17725,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17437,6 +17818,126 @@
                         ]
                     },
                     "auras": []
+                },
+                {
+                    "id": 159,
+                    "cast_id": 179,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "物理回避"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "物理回避"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 6,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "159": [
+                            60,
+                            60,
+                            60,
+                            60,
+                            100,
+                            50,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
                 }
             ]
         },
@@ -17453,6 +17954,7 @@
                 "jp": "コールされたガラフが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋自身のBRVを2.0倍にアップ\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n\\n使用後特殊効果：3ACTION\\nガラフをコールしたキャラクターに\\n「最大BRV小アップ」「物理回避率極大アップ」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -17563,6 +18065,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17654,22 +18158,143 @@
                         ]
                     },
                     "auras": []
+                },
+                {
+                    "id": 159,
+                    "cast_id": 179,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "物理回避"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "物理回避"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 5,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "159": [
+                            60,
+                            60,
+                            60,
+                            60,
+                            100,
+                            50,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
                 }
             ]
         },
         {
             "id": 12602,
             "name": {
-                "en": "Greatsword of the Dawn (C)",
+                "en": "Greatsword of Dawn (C)",
                 "gl": "",
                 "jp": "暁の太刀【C】"
             },
             "desc": {
-                "en": "",
+                "en": "When called for assistance, Galuf performs the following actions\\n• Raises Max BRV by 80%, Attack by 60%\\n• Increases own BRV by 50% of Max BRV\\n• 6-HIT AoE melee BRV attack + AoE HP attack\\n• Deals split HP damage between all targets\\n\\n3 turns Call Effect (party-wide)\\n• Increases BRV damage dealt by 10%\\n• Increases stolen BRV overflow limit by 10%",
                 "gl": "",
                 "jp": "コールされたガラフが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員の与えるBRVダメージと\\n奪ったBRVを最大BRVを越えて加算する上限小アップ"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -17921,6 +18546,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18039,6 +18666,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18138,13 +18767,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2696
+                                2696,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1180,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -18168,13 +18803,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2696
+                                2696,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1181,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -18207,6 +18848,7 @@
                 "jp": "コールされたガラフが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n自身に自身の最大BRVに依存した量のBRVを加算後\\n4HIT全体近距離物理BRV攻撃＋全体HP攻撃を2回行う\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員の与えるBRVダメージと\\n奪ったBRVを最大BRVを越えて加算する上限小アップ"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 13,
             "use_count": 1,
@@ -18518,6 +19160,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18636,6 +19280,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18735,13 +19381,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2696
+                                2696,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1180,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -18765,13 +19417,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2696
+                                2696,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1181,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -18804,6 +19462,7 @@
                 "jp": "コールガラフ追加発動用HP攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 0,
@@ -18973,6 +19632,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19080,6 +19741,7 @@
                 "jp": "強化コールガラフ追加発動用HP攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 0,
@@ -19249,6 +19911,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19349,7 +20013,7 @@
             "id": 142,
             "name": {
                 "en": "Kill BRV Gain",
-                "gl": "Bravery Kill",
+                "gl": "Kill BRV Gain",
                 "jp": "キルBRVゲイン"
             },
             "desc": {
@@ -19359,7 +20023,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Kill: Gains BRV",
+                "gl": "Kill BRV Gain: Increases BRV",
                 "jp": "キルBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -19860,12 +20524,12 @@
         {
             "id": 465,
             "name": {
-                "en": "A Grandfather's Lifestyle",
+                "en": "A Grandfather's Course",
                 "gl": "A Grandfather's Course",
                 "jp": "祖父の生き様"
             },
             "desc": {
-                "en": "Prevents KO if HP is at least 50% of Max HP and leaves its value at 1",
+                "en": "With at least 50% HP, KO is avoided and HP drops to 1",
                 "gl": "With at least 50% HP, KO is avoided and HP drops to 1",
                 "jp": "自身のHPが最大HPの50％以上の時\\n敵の攻撃でHPダメージを受けても\\n必ず1残る"
             },
@@ -19929,7 +20593,7 @@
                 "jp": "バフブーストスピードアップ"
             },
             "desc": {
-                "en": "Greatly raises Max BRV and moderately raises Speed while buffed",
+                "en": "Raises MAX BRV by 80%, SPD by 40% while buffed",
                 "gl": "Largely raises MAX BRV, moderately raises SPD with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の最大BRV大アップと素早さ中アップ"
             },
@@ -20002,7 +20666,7 @@
                 "jp": "かばうエクステンド"
             },
             "desc": {
-                "en": "「Cover」 use +2\\n\\nWhen using 「Cover」, 「Cover+」:\\n- Slightly improves effects of 「Cover」 and extends its duration by 3 turns\\n- Grants 「Medium Max BRV Up」 to allies for 8 turns\\n- Slightly improves effect of 「Attack Up」 and extends its duration by 7 turns\\n- Raises party BRV based on Max BRV\\n\\nWhile buffed, turns 「HP Attack」 into 「HP Attack+」:\\n　∟ Raises BRV based on Max BRV before attacking\\n　∟ Melee BRV + HP attack",
+                "en": "[Cover] use +2\\n\\nWhen using [Cover], [Cover+]\\n• [Cover] effect +10%, duration +3\\n• Allies: 8 turns 60% [MAX BRV Up]\\n• [ATK Up] effect +30%, duration +7 \\n• Increases party's BRV by 50% of MAX BRV\\n\\nWhile buffed\\n[HP Attack] becomes [HP Attack+]\\n• Increases own BRV by 20% of MAX BRV before BRV attacks\\n• melee BRV attack + HP attack (100)",
                 "gl": "Cover use +2\\n\\nWhen using Cover, Cover+:\\n • Slight Cover buff boost, duration +3\\n • Allies: 8 turns MAX BRV Up II\\n • Slight ATK Up boost, duration +7\\n • Grants party BRV based on own MAX BRV\\n\\nWith active buff:\\n • HP Attack becomes HP Attack+ (Increases BRV based on MAX BRV; melee BRV attack + HP attack)",
                 "jp": "「かばう」の使用回数＋2\\n\\n「かばう」「かばう＋」使用時\\n・強化効果「かばう」の効果小アップと3ACTION期間延長\\n・自身以外の味方全員に8ACTION「最大BRV中アップ」付与\\n・「攻撃力アップ」の効果小アップと7ACTION期間延長\\n・味方全員に自身の最大BRVに依存した量のBRVを加算\\n\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n・攻撃前\\n　自身に自身の最大BRVに依存した量のBRVを加算\\n・近距離物理BRV攻撃＋HP攻撃"
             },
@@ -20061,12 +20725,12 @@
         {
             "id": 1236,
             "name": {
-                "en": "Master Attack All",
+                "en": "Mastery Attack All",
                 "gl": "All Mastery Attack",
                 "jp": "マスターアタックオール"
             },
             "desc": {
-                "en": "Slightly raises party Attack after mastering an ability",
+                "en": "Raises party's ATK by 20% after mastery of either [Cover] or [Shirahadori]",
                 "gl": "Slightly raises party's ATK upon ability mastery",
                 "jp": "「かばう」または「しらはどり」をマスターした時\\n味方全員の攻撃力を小アップ\\n複数アビリティをマスターしても効果は重複しない"
             },
@@ -20130,7 +20794,7 @@
                 "jp": "しらはどりエクステンド"
             },
             "desc": {
-                "en": "When using 「Shirahadori」, 「Shirahadori+」:\\n- Raises BRV based on Attack and multiplies it by 2\\n- Triggers a 3-HIT melee BRV + HP attack after use\\n- Extends the duration of 「Physical Evasion Rate Up」 and 「Defense Up」 by 5 turns\\n- Slightly improves effect of 「Max BRV Up」 and extends its duration by 14 turns\\n\\nWhen using 「Shirahadori」:\\n- Stolen BRV can overflow up to 120% Max BRV\\n\\nWhen using 「Shirahadori+」:\\n- Stolen BRV can overflow up to 150% Max BRV\\n\\nWhen using 「Counter」:\\n- BRV attack hit count becomes 4\\n- Triggers an HP Attack after use\\n- Raises BRV by 20% of HP damage dealt\\n\\nWhen using 「BRV Attack」, 「BRV Attack+」:\\n- BRV attack hit count becomes 2\\n- Moderately raises total BRV potency",
+                "en": "When using [Shirahadori], [Shirahadori+]\\n• Increases own BRV by 100% of ATK\\n• Increases own BRV by 100% Current BRV\\n• Triggers 3-HIT melee BRV attack + HP attack after BRV gains (80x3)\\n• [PHY Evasion Up], [DEFe Up] duration +5\\n• [MAX BRV Up] effect +20%, duration +14\\n\\nWhen using [Shirahadori]\\n• Stolen BRV can overflow up to 120% Max BRV \\n\\nWhen using [Shirahadori+]\\n• Stolen BRV can overflow up to 150% Max BRV \\n\\nWhen using [Counter] \\n• BRV attack hit count becomes 4\\n• triggers additional HP attack after use\\n• Increases own BRV by 20% of HP damage dealt\\n\\nWhen using [BRV Attack], [BRV Attack+]\\n• BRV attack hit count becomes 2\\n• Increases total BRV potency by 50% ",
                 "gl": "When using Shirahadori, Shirahadori+:\\n • Increases BRV based on ATK then BRV × 2.0 + 3-hit melee BRV attack + HP attack\\n • PHY Evasion Up, DEF Up duration +5\\n • 20 turns slight boost to MAX BRV Up\\n\\nWhen using Shirahadori:\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nWhen using Shirahadori+:\\n • Stolen BRV may exceed MAX BRV up to 150%\\n\\nWhen using Counter while PHY Evasion Up from Shirahadori+ active:\\n • BRV attack hit count becomes 4\\n • Triggers additional HP attack after use\\n • Increases BRV by 20% of HP damage dealt\\n\\nWhen using BRV Attack, BRV Attack+:\\n • BRV attack hit count becomes 2; moderately increased cumulative BRV damage",
                 "jp": "「しらはどり」「しらはどり＋」使用時\\n・自身の攻撃力に依存した量のBRVを自身に加算し\\n　さらにBRVを2.0倍した後\\n　追加3HIT近距離物理BRV攻撃＋HP攻撃が発動\\n・「物理回避率アップ」「防御力アップ」の5ACTION期間延長\\n・自身に6ACTION「最大BRVアップ」付与の\\n　効果小アップを追加し さらに14ACTION期間延長\\n\\n「しらはどり」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n\\n「しらはどり＋」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n\\n「しらはどり＋」による「物理回避率アップ」付与中の\\n「カウンター」使用時\\n・BRV攻撃のHIT数が4HITに変化\\n・使用後 追加HP攻撃が発動\\n・与えたHPダメージの20％分\\n　自身のBRVをアップさせる\\n\\n通常「BRV攻撃」「BRV攻撃＋」使用時\\n・BRV攻撃のHIT数が2HITに変化し\\n　合計BRV威力も中アップ"
             },
@@ -20174,7 +20838,7 @@
                 "jp": "力の共鳴"
             },
             "desc": {
-                "en": "Raises party Attack by 20%",
+                "en": "Raises party's ATK by 20%",
                 "gl": "Slightly raises party's ATK",
                 "jp": "味方全員の攻撃力を小アップ"
             },
@@ -20238,7 +20902,7 @@
                 "jp": "アビリティリカバリーアドバンスオールエクステンド"
             },
             "desc": {
-                "en": "When using 「Ability Recovery Advance All」:\\n- Slightly raises party Max BRV overflow limit",
+                "en": "When using [Ability Recovery Advance All]\\n• Additional Effect +10%",
                 "gl": "When using Ability Recovery Advance All:\\n • Slight boost to party's increased stolen BRV limit",
                 "jp": "「アビリティリカバリーアドバンスオール」使用時\\n味方全員の奪ったBRVを自身の最大BRVを超えて加算する\\n上限アップの効果小アップ"
             },
@@ -20344,7 +21008,7 @@
             "id": 142,
             "name": {
                 "en": "",
-                "gl": "Bravery Kill",
+                "gl": "Kill BRV Gain",
                 "jp": "キルBRVゲイン"
             },
             "desc": {
@@ -20354,7 +21018,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Kill: Gains BRV",
+                "gl": "Kill BRV Gain: Increases BRV",
                 "jp": "キルBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -21280,7 +21944,7 @@
                 "jp": "アビリティリカバリーアドバンスオールグロース"
             },
             "desc": {
-                "en": "When using 「Ability Recovery Advance All」:\\n- Marginally raises party Max BRV overflow limit\\n\\nDuration of 「Ability Recovery Advance All」 effects +4 turns",
+                "en": "Additional Effect +5%, duration +4",
                 "gl": "When using Ability Recovery Advance All:\\n • Marginal boost to amount party's stolen BRV may exceed MAX BRV duration +4",
                 "jp": "「アビリティリカバリーアドバンスオール」の\\n味方全員の奪ったBRVを\\n最大BRVを超えて加算する上限アップの効果を\\n極小アップと4ACTION期間延長"
             },
@@ -21440,12 +22104,12 @@
             "passive": {
                 "id": 83,
                 "name": {
-                    "en": "Flame Tongue",
+                    "en": "Iron Will",
                     "gl": "Iron Will",
                     "jp": "鉄壁の意思"
                 },
                 "desc": {
-                    "en": "When using 「Cover」:\\n- Raises BRV by 50% Initial BRV\\n\\nWhen using 「Cover+」:\\n- Raises BRV by 100% Initial BRV",
+                    "en": "When using [Cover]\\n• Increases own BRV by 50% of INT BRV\\nWhen using [Cover+]\\n• Increases own BRV by 100% of INT BRV",
                     "gl": "When using Cover:\\n • Increases BRV by 50% of INT BRV (100% with mastery)",
                     "jp": "「かばう」使用時\\n自身のBRVを初期BRVの50％分アップ\\nマスター時 初期BRVの100％分アップ"
                 },
@@ -21522,12 +22186,12 @@
             "passive": {
                 "id": 82,
                 "name": {
-                    "en": "Master's Insight",
+                    "en": "Master Vision",
                     "gl": "Master Vision",
                     "jp": "達人の眼力"
                 },
                 "desc": {
-                    "en": "「Shirahadori」 use +1\\n\\nWhen using 「Shirahadori」, 「Shirahadori+」:\\n- Extends the duration of 「Physical Evasion Rate Up」 and 「Defense Up」\\n- Improves 「Defense Up」\\n- Grants 「Medium Max BRV Up」 for 6 turns\\n\\nWhen using 「Counter」:\\n- Raises BRV potency\\n\\nWhile 「Physical Evasion Rate Up」 is active:\\n- Turns 「BRV Attack」 into 「BRV Attack+」\\n　∟ Melee BRV attack",
+                    "en": "[Shirahadori] use +1\\n\\nWhile [Physical Evasion Rate Up] is active\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ melee BRV attack (150)\\n\\nWhen using [Shirahadori], [Shirahadori+]\\n• [PHY Evasion Rate Up], [DEF Up] duration +2\\n• [DEF Up] effect +20%\\n• Self: 6 turns 60% [MAX BRV Up]\\n\\nWhen using [Counter]\\n• Increases BRV potency by 20%",
                     "gl": "Shirahadori use +1\\n\\nWhile PHY Evasion Up active:\\n • BRV Attack becomes BRV Attack+\\n\\nWhen using Shirahadori, Shirahadori+:\\n • PHY Evasion Up, DEF Up duration+\\n • DEF Up boost\\n • Self: 6 turns MAX BRV Up II \\n\\nWhile PHY Evasion Up from Shirahadori+ active:\\n • Counter BRV damage boost",
                     "jp": "「しらはどり」の使用回数＋1\\n＋「物理回避率アップ」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化\\n＋「しらはどり」「しらはどり＋」使用時\\n・「物理回避率アップ」「防御力アップ」の期間延長\\n・「防御力アップ」の効果アップ\\n・自身に6ACTION「最大BRV中アップ」付与 \\n＋「しらはどり＋」による「物理回避率アップ」付与中\\n「カウンター」のBRV威力アップ"
                 },
@@ -21617,12 +22281,12 @@
             "passive": {
                 "id": 1433,
                 "name": {
-                    "en": "Spirit of a Legendary Warrior",
+                    "en": "Legendary Warrior's Vigor",
                     "gl": "Legendary Warrior's Vigor",
                     "jp": "伝説の戦士の気迫"
                 },
                 "desc": {
-                    "en": "May equip EX Ability 「Dual-wield Bladeblitz」",
+                    "en": "May equip EX ability [Dual-Wield Bladeblitz]",
                     "gl": "May equip EX ability Dual-Wield Bladeblitz",
                     "jp": "EXアビリティ「二刀流ぜんぎり」装備可能"
                 },
@@ -21687,12 +22351,12 @@
                 {
                     "id": 1434,
                     "name": {
-                        "en": "Dual-wield Bladeblitz Power",
+                        "en": "Dual-Wield Bladeblitz Power",
                         "gl": "Mighty Dual-Wield Bladeblitz",
                         "jp": "二刀流ぜんぎりパワー"
                     },
                     "desc": {
-                        "en": "Slightly raises BRV damage dealt by 「Dual-wield Bladeblitz」",
+                        "en": "[Dual-Wield Bladeblitz] BRV damage dealt +10%",
                         "gl": "Slightly increases BRV damage dealt with Dual-Wield Bladeblitz",
                         "jp": "「二刀流ぜんぎり」の与える\\nBRVダメージを小アップ"
                     },
@@ -21751,12 +22415,12 @@
                 {
                     "id": 1435,
                     "name": {
-                        "en": "Dual-wield Bladeblitz Buff Plus",
+                        "en": "Dual-Wield Bladeblitz Buff Plus",
                         "gl": "Dual-Wield Bladeblitz Buff Plus",
                         "jp": "二刀流ぜんぎりバフプラス"
                     },
                     "desc": {
-                        "en": "When using 「Dual-wield Bladeblitz」:\\n- Grants 「Soul of Dawn」 for 4 turns\\n\\n「Soul of Dawn」 has the following effects:\\n- Raises Attack and Evasion Rate\\n- Grants 「HP Regen」\\n- Reduces BRV damage taken by party\\n※Does not stack with same buff",
+                        "en": "When using [Dual-Wield Bladeblitz]\\n• Self: 4 turns [Soul of Dawn]\\n\\n[Soul of Dawn]\\n• Raises ATK by 60%, increases Evasion Rate by 60%\\n• Restores 20% of Max HP\\n• Lowers party's BRV damage taken by 40%",
                         "gl": "When using Dual-Wield Bladeblitz:\\n • Self: 4 turns Soul of Dawn",
                         "jp": "「二刀流ぜんぎり」使用時\\n自身に4ACTION「暁の魂」付与"
                     },
@@ -21795,12 +22459,12 @@
                 {
                     "id": 1436,
                     "name": {
-                        "en": "Dual-wield Bladeblitz Recast Up",
+                        "en": "Dual-Wield Bladeblitz Recast Up",
                         "gl": "Dual-Wield Bladeblitz Recast Up",
                         "jp": "二刀流ぜんぎりリキャストアップ"
                     },
                     "desc": {
-                        "en": "Slightly raises recast speed of 「Dual-wield Bladeblitz」",
+                        "en": "[Dual-Wield Bladeblitz] recast speed +20%",
                         "gl": "Slightly raises recast speed of Dual-Wield Bladeblitz",
                         "jp": "「二刀流ぜんぎり」の\\nリキャストスピードを小アップ"
                     },
@@ -21888,12 +22552,12 @@
             "passive": {
                 "id": 1438,
                 "name": {
-                    "en": "Spirit of a Legendary Warrior Extend",
+                    "en": "Legendary Warrior's Vigor Extend",
                     "gl": "Legendary Warrior's Vigor Extension",
                     "jp": "伝説の戦士の気迫エクステンド"
                 },
                 "desc": {
-                    "en": "Improves EX Ability 「Dual-wield Bladeblitz」",
+                    "en": "Improves EX ability [Dual-Wield Bladeblitz]",
                     "gl": "Boost to EX ability Dual-Wield Bladeblitz",
                     "jp": "EXアビリティ「二刀流ぜんぎり」の性能アップ"
                 },
@@ -21943,12 +22607,12 @@
                 {
                     "id": 1437,
                     "name": {
-                        "en": "Dual-wield Bladeblitz Force Advance",
+                        "en": "Dual-Wield Bladeblitz Force Advance",
                         "gl": "Dual-Wield Bladeblitz Force Advance",
                         "jp": "二刀流ぜんぎりフォースアドバンス"
                     },
                     "desc": {
-                        "en": "When using 「Dual-wield Bladeblitz」:\\n- Tremendously raises BRV potency\\n- Moderately raises Max BRV overflow limit",
+                        "en": "When using [Dual-Wield Bladeblitz]\\n• Increases BRV potency by 200% \\n• Increases stolen BRV overflow limit by 50%  ",
                         "gl": "When using Dual-Wield Bladeblitz:\\n • Tremendous BRV damage boost\\n • Moderately raises limit of BRV that may be stolen in excess of MAX BRV",
                         "jp": "「二刀流ぜんぎり」使用時\\n・BRV威力極大アップ\\n・奪ったBRVを最大BRVを超えて加算する上限を中アップ"
                     },
@@ -21987,12 +22651,12 @@
                 {
                     "id": 1439,
                     "name": {
-                        "en": "Spirit of a Legendary Warrior Extend Attack Boost Up",
+                        "en": "Legendary Warrior's Vigor Extend Attack Boost Up",
                         "gl": "Legendary Warrior's Vigor Extension Attack Boost Up",
                         "jp": "伝説の戦士の気迫エクステンドアタックブーストアップ"
                     },
                     "desc": {
-                        "en": "Moderately raises Max BRV and Attack",
+                        "en": "Raises MAX BRV by 60%, ATK by 40%",
                         "gl": "While equipping EX+ weapon Icebrand (V)+ or passive ability Legendary Warrior's Vigor Extension:\\n • Moderately raises MAX BRV, ATK",
                         "jp": "EX+武器「アイスブランド【V】+」\\nまたはパッシブ「伝説の戦士の気迫エクステンド」装備時\\n自身の最大BRVと攻撃力を中アップ"
                     },
@@ -22060,12 +22724,12 @@
                 {
                     "id": 1440,
                     "name": {
-                        "en": "Dual-wield Bladeblitz BRV Up Buff Start",
+                        "en": "Dual-Wield Bladeblitz BRV Up Buff Start",
                         "gl": "Dual-Wield Bladeblitz BRV Up Buff Starting",
                         "jp": "二刀流ぜんぎりBRVアップバフスタート"
                     },
                     "desc": {
-                        "en": "When using 「Dual-wield Bladeblitz」:\\n- Raises BRV by 20% of HP damage dealt\\n\\nWhen Quest starts:\\n- Grants 「Soul of Dawn」 for 4 turns\\n\\nFor the first turn:\\n- No Action Delay\\n- Does not increase turn count\\n- Decreases Friend Support and Summon action count",
+                        "en": "When using [Dual-Wield Bladeblitz]\\n• Increases own BRV by 20% HP damage dealt\\n\\nWhen Quest starts\\n• Self: 4 turns [Soul of Dawn]\\n\\nOn first turn\\n• No Action Delay\\n• Does not increase turn count\\n• Decreases Friend Support and Summon action count",
                         "gl": "When using Dual-Wield Bladeblitz:\\n • Increases BRV by 20% of HP damage dealt\\n\\nAt start of quest:\\n • Self: 4 turns Soul of Dawn\\n • First turn rate becomes instantaneous\\n • First turn does not add to turn count; does consume turn during summoning, support",
                         "jp": "「二刀流ぜんぎり」使用時\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる\\n\\nクエスト開始時 自身に\\n・4ACTION「暁の魂」付与\\n・最初の行動時 行動負荷がなくなる\\n・最初の行動時 総ACTION数に加算されない\\n　召喚中およびフレンドサポートの残りACTIONは消費される"
                     },
@@ -22104,12 +22768,12 @@
                 {
                     "id": 1441,
                     "name": {
-                        "en": "Dual-wield Bladeblitz BRV Hit Plus Force Advance++",
+                        "en": "Dual-Wield Bladeblitz BRV Hit Plus Force Advance++",
                         "gl": "Dual-Wield Bladeblitz BRV Hit Plus Force Advance++",
                         "jp": "二刀流ぜんぎりBRVヒットプラスフォースアドバンス＋＋"
                     },
                     "desc": {
-                        "en": "When using 「Dual-wield Bladeblitz」:\\n- BRV attack hit count becomes 6\\n- Moderately raises BRV potency\\n- Moderately raises Max BRV overflow limit\\n\\nWhen 「Soul of Dawn」 is active:\\n- Turns 「HP Attack」, 「HP Attack+」 into 「HP Attack++」\\n　∟ Raises BRV based on Max BRV before attacking\\n　∟ 3-HIT melee BRV + HP attack\\n　∟ Greatly raises total BRV potency when compared to 「HP Attack+」\\n　∟ Stolen BRV can overflow up to 120% Max BRV\\n　∟ Raises party BRV based on total HP damage dealt",
+                        "en": "When using [Dual-Wield Bladeblitz]\\n• BRV attack hit count becomes 6\\n• Increases total BRV potency by 60%\\n• Increases stolen BRV overflow limit by 50%  \\n\\nWhile [Soul of Dawn] is active\\n　∟ [HP Attack] variants become [HP Attack++]\\n　∟ Increases own BRV by 20% of MAX BRV before BRV attacks\\n　∟ Becomes 3-HIT melee BRV + HP attack (60x3)\\n　∟ Increases total BRV potency by 80%\\n　∟ Stolen BRV can overflow up to 120% Max BRV \\n　∟ Increases party's BRV by 20% of HP damage dealt ",
                         "gl": "When using Dual-Wield Bladeblitz:\\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Moderately raises limit of BRV that may be stolen in excess of MAX BRV\\n\\nWhile Soul of Dawn active:\\n • HP Attack, HP Attack+ becomes HP Attack++ (increases BRV based on MAX BRV before attack; 3-hit melee BRV attack + HP attack; large cumulative BRV damage boost over HP Attack+; stolen BRV may exceed MAX BRV up to 120%; grants party BRV based on HP damage dealt)",
                         "jp": "「二刀流ぜんぎり」使用時\\n・BRV攻撃のHIT数が6HITに変化し\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する上限を中アップ\\n\\n「暁の魂」付与中\\n通常「HP攻撃」「HP攻撃＋」が「HP攻撃＋＋」に変化し\\n・攻撃前\\n　自身に自身の最大BRVに依存した量のBRVを加算\\n・3HIT近距離物理BRV攻撃＋HP攻撃に変化し\\n　「HP攻撃＋」よりも合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・与えたHPダメージに依存した量のBRVを味方全員に加算"
                     },
@@ -22152,7 +22816,7 @@
             "series_id": 5,
             "name": {
                 "en": "Blood Sword",
-                "gl": "",
+                "gl": "Blood Sword (V)",
                 "jp": "ブラッドソード【V】"
             },
             "status": {
@@ -22177,12 +22841,12 @@
             "passive": {
                 "id": 2475,
                 "name": {
-                    "en": "",
+                    "en": "Will to pass on to Future Generations",
                     "gl": "",
                     "jp": "後世に受け継ぐ意志"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "May equip LD ability [Greatsword of Dawn]",
                     "gl": "",
                     "jp": "LDアビリティ「暁の太刀」装備可能"
                 },
@@ -22232,12 +22896,12 @@
                 {
                     "id": 2476,
                     "name": {
-                        "en": "",
+                        "en": "Greatsword of Dawn Power",
                         "gl": "",
                         "jp": "暁の太刀パワー"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Raises ATK by 20%\\n[Greatsword of Dawn] BRV damage dealt +10%",
                         "gl": "",
                         "jp": "・自身の攻撃力を小アップ\\n・「暁の太刀」の与える\\n　BRVダメージを小アップ"
                     },
@@ -22305,12 +22969,12 @@
                 {
                     "id": 2477,
                     "name": {
-                        "en": "",
+                        "en": "Decisive Struggle Long",
                         "gl": "",
                         "jp": "死力を尽くす決戦ロング"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Raises ATK by 20%\\nWhen using [Greatsword of Dawn]\\n• [Decisive Struggle] duration +2",
                         "gl": "",
                         "jp": "・自身の攻撃力を小アップ\\n・「暁の太刀」使用時\\n　「死力を尽くす決戦」の2ACTION期間延長"
                     },
@@ -22369,12 +23033,12 @@
                 {
                     "id": 2478,
                     "name": {
-                        "en": "",
+                        "en": "Greatsword of Dawn Charge",
                         "gl": "",
                         "jp": "暁の太刀チャージ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Raises ATK by 20%\\nIncreases party's BRV damage dealt by 10%\\nLowers party's HP damage taken by 30%\\n[Greatsword of Dawn] use +1",
                         "gl": "",
                         "jp": "・自身の攻撃力を小アップ\\n・味方全員の与えるBRVダメージ小アップ\\n・味方全員の受けるHPダメージ軽減\\n・「暁の太刀」の使用回数＋1"
                     },
@@ -22457,6 +23121,7 @@
             ]
         },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {
             "id": 1438,
             "series_id": 5,
@@ -22957,7 +23622,7 @@
             "id": 5734,
             "series_id": 5,
             "name": {
-                "en": "",
+                "en": "Galuf Model+",
                 "gl": "",
                 "jp": "ガラフモデル【V】+"
             },
@@ -22983,12 +23648,12 @@
             "passive": {
                 "id": 2543,
                 "name": {
-                    "en": "",
+                    "en": "Bravery Resonance & Ruin Resonance",
                     "gl": "",
                     "jp": "勇猛の共鳴・破滅の共鳴"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "Increases party's BRV, HP damage limits (2, 2)",
                     "gl": "",
                     "jp": "全解放_★7真化防具ガラフ"
                 },
@@ -23038,12 +23703,12 @@
                 {
                     "id": 2544,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance I",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅰ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10198\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 111998\\n*Party: Up to 101998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10198まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は111998まで 自身以外の味方全員は101998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -23092,12 +23757,12 @@
                 {
                     "id": 2545,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance II",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅱ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10398\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 113998\\n*Party: Up to 103998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10398まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は113998まで 自身以外の味方全員は103998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -23146,12 +23811,12 @@
                 {
                     "id": 2546,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance III",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅲ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10598\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 115998\\n*Party: Up to 105998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10598まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は115998まで 自身以外の味方全員は105998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -23200,12 +23865,12 @@
                 {
                     "id": 2547,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance IV",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅳ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 4%\\n*Up to 10998\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 4%\\n*Self: Up to 119998\\n*Party: Up to 109998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋4％分突破可能になる（10998まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋4％分突破可能になる\\n　（自身は119998まで 自身以外の味方全員は109998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -23292,6 +23957,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -23355,7 +24022,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1422": [
@@ -23410,6 +24088,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -23473,7 +24153,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1423": [
@@ -23498,13 +24189,19 @@
                         -1
                     ],
                     "required_values": [
-                        1423
+                        1423,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 391,
                         "ailment_effect": 42,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             60,
@@ -23528,13 +24225,19 @@
                         -1
                     ],
                     "required_values": [
-                        1423
+                        1423,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 392,
                         "ailment_effect": 43,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             60,
@@ -23558,13 +24261,19 @@
                         -1
                     ],
                     "required_values": [
-                        1423
+                        1423,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 440,
                         "ailment_effect": 41,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             60,
@@ -23619,6 +24328,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -23632,7 +24343,7 @@
                     -1,
                     -1,
                     -1,
-                    -1
+                    60
                 ],
                 "val_types": [
                     0,
@@ -23682,7 +24393,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2717": [
@@ -23707,13 +24429,19 @@
                         -1
                     ],
                     "required_values": [
-                        2717
+                        2717,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1179,
                         "ailment_effect": 180,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             -30,
@@ -23807,17 +24535,17 @@
             "id": 5428,
             "name": {
                 "en": "Evasion Attack Up Long (RF)",
-                "gl": "",
+                "gl": "Evasion Attack Up Longer (RF)",
                 "jp": "エヴァージョンアタックアップロング【精錬】"
             },
             "desc": {
                 "en": "After evading an attack:\\n- Raises Attack by 4% for 6 turns",
-                "gl": "",
+                "gl": "When dodging attack:\\n • Raises ATK by 4% for 6 turns",
                 "jp": "自身が攻撃回避時\\n6ACTION自身の攻撃力が4％アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Evasion Attack Up Longer (RF): Raises ATK",
                 "jp": "エヴァージョンアタックアップロング【精錬】：攻撃力がアップ"
             },
             "meta_data": {
@@ -23873,7 +24601,7 @@
             "id": "48050100",
             "name": {
                 "en": "Bravery Cover★★",
-                "gl": "Bravery Cover★★",
+                "gl": "Cover BRV Gain★★",
                 "jp": "かばうBRVゲイン★★"
             },
             "desc": {
@@ -23883,7 +24611,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Cover★★: Gains BRV",
+                "gl": "Cover BRV Gain★★: Increases BRV",
                 "jp": "かばうBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -23915,7 +24643,7 @@
             "id": "48050101",
             "name": {
                 "en": "Bravery Shirahadori★★",
-                "gl": "Bravery Shirahadori★★",
+                "gl": "Shirahadori BRV Gain★★",
                 "jp": "しらはどりBRVゲイン★★"
             },
             "desc": {
@@ -23925,7 +24653,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Shirahadori★★: Gains BRV",
+                "gl": "Shirahadori BRV Gain★★: Increases BRV",
                 "jp": "しらはどりBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -24044,17 +24772,17 @@
                 "id": 5266,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up Lv9",
                     "jp": "バフアタックアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own ATK by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の攻撃力10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up: Raises ATK",
                     "jp": "バフアタックアップ：攻撃力がアップ"
                 },
                 "meta_data": {
@@ -24134,17 +24862,17 @@
                 "id": 5267,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Guard All Lv9",
                     "jp": "バフガードオール Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises party's DEF by 10％",
                     "jp": "自身に強化効果が付与されている時\\n味方全員の防御力10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Guard All: Raises party's DEF",
                     "jp": "バフガードオール：味方全員の防御力がアップ"
                 },
                 "meta_data": {
@@ -24224,17 +24952,17 @@
                 "id": 5268,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack+ Up Lv9",
                     "jp": "HP攻撃＋アップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using HP Attack+:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「HP攻撃＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack+ Up: Boost to HP Attack+",
                     "jp": "HP攻撃＋アップ：「HP攻撃＋」の性能アップ"
                 },
                 "meta_data": {
@@ -24314,17 +25042,17 @@
                 "id": 5269,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Cover BRV Up",
                     "jp": "かばうBRVアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Cover, Cover+:\\n • Increases BRV gained by 10％ (except when 5★ Flametongue [V], Iron Will, Cover Extension not equipped)",
                     "jp": "「かばう」「かばう＋」の\\nBRV加算量10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Cover BRV Up: Boost to Cover",
                     "jp": "かばうBRVアップ：「かばう」の性能アップ"
                 },
                 "meta_data": {
@@ -24404,23 +25132,23 @@
                 "id": 5270,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Cover BRV Up Advance",
                     "jp": "かばうBRVアップアドバンス"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Cover, Cover+:\\n • Increased BRV may exceed MAX BRV up to 10% (except when 5★ Flametongue [V], Iron Will, Cover Extension not equipped)",
                     "jp": "「かばう」「かばう＋」使用時\\n加算したBRVを最大BRVを超えて加算する上限10％アップ\\n★5武器「フレイムタン【V】」\\nまたはパッシブ「鉄壁の意思」\\nまたは「かばうエクステンド」非装備時を除く"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Cover BRV Up Advance: Boost to Cover",
                     "jp": "かばうBRVアップアドバンス：「かばう」の性能アップ"
                 },
                 "meta_data": {
                     "cp": 10,
                     "level": -1,
-                    "target": 2,
+                    "target": 3,
                     "is_weapon_passive": -1,
                     "required_passive": -1
                 },
@@ -24494,17 +25222,17 @@
                 "id": 5271,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Base Up",
                     "jp": "バフベースアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own INT BRV by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の初期BRV10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Base Up: Raises INT BRV",
                     "jp": "バフベースアップ：初期BRVがアップ"
                 },
                 "meta_data": {
@@ -24584,17 +25312,17 @@
                 "id": 5272,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shirahadori Lv9",
                     "jp": "しらはどりパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shirahadori, Shirahadori+ while Shiradori Extension equipped:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shirahadori: Boost to Shirahadori",
                     "jp": "しらはどりパワー：「しらはどり」の性能アップ"
                 },
                 "meta_data": {
@@ -24674,17 +25402,17 @@
                 "id": 5273,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shirahadori BRV Attack Advance Lv9",
                     "jp": "しらはどりBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shirahadori, Shirahadori+ while Shirahadori Extension equipped:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shirahadori BRV Attack Advance: Boost to Shirahadori",
                     "jp": "しらはどりBRVアタックアドバンス：「しらはどり」の性能アップ"
                 },
                 "meta_data": {
@@ -24764,17 +25492,17 @@
                 "id": 5274,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack+ Counter Up Lv9",
                     "jp": "ブレイブ攻撃＋カウンターアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using BRV Attack+, Counter:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「BRV攻撃＋」「カウンター」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack+ Counter Up: Boost to BRV Attack+, Counter",
                     "jp": "ブレイブ攻撃＋カウンターアップ：「BRV攻撃＋」「カウンター」の性能アップ"
                 },
                 "meta_data": {
@@ -24854,17 +25582,17 @@
                 "id": 5275,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shirahadori II",
                     "jp": "しらはどりパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shirahadori, Shirahadori+ while Shirahadori Extension equipped:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shirahadori II: Boost to Shirahadori",
                     "jp": "しらはどりパワーII：「しらはどり」の性能アップ"
                 },
                 "meta_data": {
@@ -24944,17 +25672,17 @@
                 "id": 5276,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shirahadori BRV Attack Advance II",
                     "jp": "しらはどりBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shirahadori, Shirahadori+ while Shirahadori Extension equipped:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「しらはどりエクステンド」装備時\\n「しらはどり」「しらはどり＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shirahadori BRV Attack Advance II: Boost to Shirahadori",
                     "jp": "しらはどりBRVアタックアドバンスII：「しらはどり」の性能アップ"
                 },
                 "meta_data": {
@@ -25034,17 +25762,17 @@
                 "id": 5277,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Guard Up",
                     "jp": "バフガードアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own DEF by 20％",
                     "jp": "自身に強化効果が付与されている時\\n自身の防御力20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Guard Up: Raises DEF",
                     "jp": "バフガードアップ：防御力がアップ"
                 },
                 "meta_data": {
@@ -25124,17 +25852,17 @@
                 "id": 5278,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Dual-Wield Bladeblitz Lv9",
                     "jp": "二刀流ぜんぎりパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Dual-Wield Bladeblitz:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「二刀流ぜんぎり」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Dual-Wield Bladeblitz: Boost to Dual-Wield Bladeblitz",
                     "jp": "二刀流ぜんぎりパワー：「二刀流ぜんぎり」の性能アップ"
                 },
                 "meta_data": {
@@ -25214,17 +25942,17 @@
                 "id": 5279,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Dual-Wield Bladeblitz BRV Attack Advance Lv9",
                     "jp": "二刀流ぜんぎりBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Dual-Wield Bladeblitz:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「二刀流ぜんぎり」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Dual-Wield Bladeblitz BRV Attack Advance: Boost to Dual-Wield Bladeblitz",
                     "jp": "二刀流ぜんぎりBRVアタックアドバンス：「二刀流ぜんぎり」の性能アップ"
                 },
                 "meta_data": {
@@ -25304,17 +26032,17 @@
                 "id": 5280,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up Lv9",
                     "jp": "バフブーストアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own MAX BRV by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の最大BRV10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up: Raises MAX BRV",
                     "jp": "バフブーストアップ：最大BRVがアップ"
                 },
                 "meta_data": {
@@ -25394,17 +26122,17 @@
                 "id": 5281,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Dual-Wield Bladeblitz II",
                     "jp": "二刀流ぜんぎりパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Dual-Wield Bladeblitz:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「二刀流ぜんぎり」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Dual-Wield Bladeblitz II: Boost to Dual-Wield Bladeblitz",
                     "jp": "二刀流ぜんぎりパワーII：「二刀流ぜんぎり」の性能アップ"
                 },
                 "meta_data": {
@@ -25484,17 +26212,17 @@
                 "id": 5282,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Dual-Wield Bladeblitz BRV Attack Advance II",
                     "jp": "二刀流ぜんぎりBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Dual-Wield Bladeblitz:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「二刀流ぜんぎり」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Dual-Wield Bladeblitz BRV Attack Advance II: Boost to Dual-Wield Bladeblitz",
                     "jp": "二刀流ぜんぎりBRVアタックアドバンスII：「二刀流ぜんぎり」の性能アップ"
                 },
                 "meta_data": {
@@ -25574,17 +26302,17 @@
                 "id": 5283,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack++ Up",
                     "jp": "HP攻撃＋＋アップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using HP Attack++:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「HP攻撃＋＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack++ Up: Boost to HP Attack++",
                     "jp": "HP攻撃＋＋アップ：「HP攻撃＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -26203,12 +26931,12 @@
             {
                 "id": 6202,
                 "name": {
-                    "en": "",
+                    "en": "Will to pass on to Future Generations Extend",
                     "gl": "",
                     "jp": "後世に受け継ぐ意志エクステンド"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "When using [Greatsword of Dawn]\\n• Becomes 4-HIT AoE melee BRV attack + AoE HP attack delivered twice\\n• Increases total BRV potency by 80% \\n\\n[Decisive Struggle] added effect: Increases Critical Hit Rate by 100%",
                     "gl": "",
                     "jp": "「暁の太刀」使用時\\n・6HIT全体近距離物理BRV攻撃＋全体HP攻撃が\\n　4HIT全体近距離物理BRV攻撃＋全体HP攻撃を2回行うに変化し\\n　合計BRV威力も大アップ\\n\\n「死力を尽くす決戦」に\\n自身のクリティカル発生率極大アップの効果が追加"
                 },
@@ -26218,7 +26946,7 @@
                     "jp": "後世に受け継ぐ意志エクステンド：「暁の太刀」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -26271,5 +26999,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-10-16 15:00:00"
+        }
     }
 }

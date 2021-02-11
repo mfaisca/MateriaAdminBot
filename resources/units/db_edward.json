@@ -1,5 +1,7 @@
 {
     "id": 149,
+    "uid": 748,
+    "sid": 748,
     "profile": {
         "fullName": {
             "en": "Edward",
@@ -139,12 +141,12 @@
         "id": 141,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_ギルバート",
             "jp": "コールアビリティ_ギルバート"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「うたう【C】」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の効果小アップ",
             "jp": "「うたう【C】」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の効果小アップ"
         },
         "ability": {
@@ -156,12 +158,12 @@
         "id": 142,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_ギルバート",
             "jp": "LDコールアビリティ_ギルバート"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「子守歌【C】」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n　与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない\\n・「ねむり」の2ACTION期間延長",
             "jp": "「子守歌【C】」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n　与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない\\n・「ねむり」の2ACTION期間延長"
         },
         "ability": {
@@ -642,6 +644,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -659,6 +665,7 @@
                 "jp": "魔法攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -713,6 +720,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -767,6 +775,7 @@
                 "jp": "魔法攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -821,6 +830,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 44,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -875,6 +885,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT全体魔法BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に5ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -1007,8 +1018,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -1023,6 +1034,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -1122,13 +1135,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -1152,13 +1171,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -1182,13 +1207,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -1221,6 +1252,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に10ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -1353,8 +1385,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -1369,6 +1401,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -1468,13 +1502,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -1498,13 +1538,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -1528,13 +1574,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -1567,6 +1619,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力中ダウン」付与\\n自身に5ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -1755,6 +1808,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1857,8 +1912,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -1873,6 +1928,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -1972,13 +2029,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -2002,13 +2065,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -2032,13 +2101,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -2071,6 +2146,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力中ダウン」付与\\n自身に10ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -2259,6 +2335,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2361,8 +2439,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -2377,6 +2455,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -2476,13 +2556,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -2506,13 +2592,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -2536,13 +2628,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -2575,6 +2673,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT全体魔法BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に5ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -2707,8 +2806,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -2723,6 +2822,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -2822,13 +2923,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -2852,13 +2959,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -2882,13 +2995,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -2921,6 +3040,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に10ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -3053,8 +3173,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3069,6 +3189,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -3168,13 +3290,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -3198,13 +3326,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -3228,13 +3362,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -3267,6 +3407,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力中ダウン」付与\\n自身に5ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -3455,6 +3596,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3557,8 +3700,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3573,6 +3716,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -3672,13 +3817,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -3702,13 +3853,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -3732,13 +3889,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -3771,6 +3934,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力中ダウン」付与\\n自身に10ACTION「英雄の歌」付与\\n\\n「英雄の歌」は自身が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n1回の行動での残り期間の減少は1ACTIONのみ\\n「目覚めし勇気」付与中 「英雄の歌II」に変化し効果が上昇する\\n「英雄の歌II」はダメージによる残り期間減少は発生しない\\n「目覚めし勇気」が解除されると「英雄の歌」に戻る"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -3959,6 +4123,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4061,8 +4227,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Hero's Rime: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
-                        "jp": "英雄の歌：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
+                        "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                        "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4077,6 +4243,8 @@
                         "disp_type": 0,
                         "stackable": 78,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -4176,13 +4344,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 639,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     40,
@@ -4206,13 +4380,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 640,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     40,
@@ -4236,13 +4416,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1747
+                                1747,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 641,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     20,
@@ -4275,6 +4461,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n自身に4ACTION「勇気の兆し」付与\\n「目覚めし勇気」解除\\n「勇気の兆し」付与中 「あらわれる」に変化\\n「勇気の兆し」が解除されると「かくれる」に戻る"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -4407,6 +4594,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4514,6 +4703,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n自身に6ACTION「勇気の兆し」付与\\n「目覚めし勇気」解除\\n「勇気の兆し」付与中 「あらわれる」に変化\\n「勇気の兆し」が解除されると「かくれる」に戻る"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -4646,6 +4836,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4753,6 +4945,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n自身に4ACTION「勇気の兆し」付与\\n「目覚めし勇気」解除\\n「勇気の兆し」付与中 「あらわれる」に変化\\n「勇気の兆し」が解除されると「かくれる」に戻る\\n行動負荷がない\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 5,
@@ -4885,6 +5078,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4992,6 +5187,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n自身に6ACTION「勇気の兆し」付与\\n「目覚めし勇気」解除\\n「勇気の兆し」付与中 「あらわれる」に変化\\n「勇気の兆し」が解除されると「かくれる」に戻る\\n行動負荷がない\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 5,
@@ -5124,6 +5320,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5231,6 +5429,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 5,
@@ -5285,6 +5484,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n自身に4ACTION「目覚めし勇気」付与\\n「勇気の兆し」解除\\n使用回数を消費しない\\n「勇気の兆し」が解除されると「かくれる」に戻る"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -5453,6 +5653,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5560,6 +5762,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n自身に6ACTION「目覚めし勇気」付与\\n「勇気の兆し」解除\\n使用回数を消費しない\\n「勇気の兆し」が解除されると「かくれる」に戻る"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -5728,6 +5931,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5835,6 +6040,7 @@
                 "jp": "5HIT魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n自身に4ACTION「目覚めし勇気」付与\\n「勇気の兆し」解除\\n使用回数を消費しない\\n「勇気の兆し」が解除されると「かくれる」に戻る\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -6065,6 +6271,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6172,6 +6380,7 @@
                 "jp": "5HIT魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n自身に6ACTION「目覚めし勇気」付与\\n「勇気の兆し」解除\\n使用回数を消費しない\\n「勇気の兆し」が解除されると「かくれる」に戻る\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -6402,6 +6611,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6509,6 +6720,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n敵全体に3ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -6699,8 +6911,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -6717,6 +6929,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6824,6 +7038,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -7014,8 +7229,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -7032,6 +7247,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7139,6 +7356,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\n6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -7332,8 +7550,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -7350,6 +7568,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7457,6 +7677,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋8HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -7712,8 +7933,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -7730,6 +7951,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7837,6 +8060,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n敵全体に3ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -8027,8 +8251,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -8045,6 +8269,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -8152,6 +8378,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -8342,8 +8569,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -8360,6 +8587,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -8467,6 +8696,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\n6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -8660,8 +8890,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -8678,6 +8908,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -8785,6 +9017,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋8HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n敵全体に6ACTION「衰弱の音色」1段階付与（上限3）"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -9040,8 +9273,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Debilitating Tones I: Lowers INT BRV\\nDebilitating Tones II: Lowers MAX BRV, INT BRV\\nDebilitating Tones III: Lowers MAX BRV, INT BRV, ATK; prohibits BRV restoration",
-                        "jp": "衰弱の音色I：初期BRVが減少する\\n衰弱の音色II：最大BRV 初期BRVが減少する\\n衰弱の音色III：最大BRV 初期BRV 攻撃力が減少し BRV回復を受け付けない"
+                        "gl": "Debilitating Tones I: Lowers INT BRV",
+                        "jp": "衰弱の音色I：初期BRVが減少する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -9058,6 +9291,8 @@
                         "disp_type": 0,
                         "stackable": 80,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -9165,6 +9400,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に3ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -9298,6 +9534,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9405,6 +9643,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に3ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -9538,6 +9777,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9645,6 +9886,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に5ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -9778,6 +10020,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9885,6 +10129,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に3ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -10018,6 +10263,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10125,6 +10372,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に3ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -10258,6 +10506,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10365,6 +10615,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に5ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 2,
@@ -10498,6 +10749,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10605,6 +10858,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -10681,6 +10935,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -10757,6 +11012,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -10857,6 +11113,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -10957,6 +11214,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11057,6 +11315,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11157,6 +11416,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11257,6 +11517,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11357,6 +11618,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11457,6 +11719,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n自身に付与された強化効果を2ACTION延長する"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -11557,6 +11820,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT魔法BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -11653,6 +11917,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n3HIT魔法BRV攻撃"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -11769,6 +12034,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n2HIT魔法BRV攻撃"
             },
             "rank": 1,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -11865,6 +12131,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算し\\n3HIT魔法BRV攻撃"
             },
             "rank": 2,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -11981,6 +12248,7 @@
                 "jp": "2HIT魔法BRV攻撃＋HP攻撃\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -12117,6 +12385,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -12273,6 +12542,7 @@
                 "jp": "2HIT魔法BRV攻撃＋HP攻撃\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 1,
+            "motion": 44,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -12409,6 +12679,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 2,
+            "motion": 44,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -12565,6 +12836,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\nその後 味方全員に自身の最大BRVに依存した量のBRVを加算し\\n敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない\\n敵全体に5ACTION「ねむり」付与 自身に12ACTION「安らぎの調べ」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する\\n\\n「安らぎの調べ」は「目覚めし勇気」付与中 「安らぎの調べII」に変化し\\n味方全員の与えるBRVダメージアップの効果が上昇する\\n「目覚めし勇気」が解除されると「安らぎの調べ」に戻る"
             },
             "rank": 1,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -12720,6 +12992,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12823,7 +13097,7 @@
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "安らぎの調べ：味方全員の初期BRV 最大BRV 与えるBRVダメージ 加算したBRVを最大BRVを超えて加算する上限が上昇する（同名の強化効果は重複しない）"
+                        "jp": "安らぎの調べII：味方全員の初期BRV 最大BRV 与えるBRVダメージ 加算したBRVを最大BRVを超えて加算する上限が上昇する（同名の強化効果は重複しない）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -12838,6 +13112,8 @@
                         "disp_type": 0,
                         "stackable": 88,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -12937,13 +13213,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1160,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -12967,13 +13249,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1161,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     30,
@@ -12997,13 +13285,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1162,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -13027,13 +13321,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1163,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -13066,6 +13366,7 @@
                 "jp": "敵全体の自身が付与した弱体効果の期間を1ACTION延長し\\nブレイク中の敵を除く 敵全体のBRVを0にする\\nその後 味方全員に自身の最大BRVに依存した量のBRVを加算し\\n敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない\\n敵全体に5ACTION「ねむり」付与 自身に12ACTION「安らぎの調べ」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する\\n\\n「安らぎの調べ」は「目覚めし勇気」付与中 「安らぎの調べII」に変化し\\n味方全員の与えるBRVダメージアップの効果が上昇する\\n「目覚めし勇気」が解除されると「安らぎの調べ」に戻る"
             },
             "rank": 1,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -13221,6 +13522,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13324,7 +13627,7 @@
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "安らぎの調べ：味方全員の初期BRV 最大BRV 与えるBRVダメージ 加算したBRVを最大BRVを超えて加算する上限が上昇する（同名の強化効果は重複しない）"
+                        "jp": "安らぎの調べII：味方全員の初期BRV 最大BRV 与えるBRVダメージ 加算したBRVを最大BRVを超えて加算する上限が上昇する（同名の強化効果は重複しない）"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -13339,6 +13642,8 @@
                         "disp_type": 0,
                         "stackable": 88,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 1,
                         "sp_stacks": 0,
@@ -13438,13 +13743,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1160,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -13468,13 +13779,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1161,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     30,
@@ -13498,13 +13815,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1162,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -13528,13 +13851,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2657
+                                2657,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1163,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -13567,6 +13896,7 @@
                 "jp": "コールされたギルバートが以下の行動を行う\\n味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員に「攻撃力小アップ」と「BRVリジェネ」と\\n「奪ったBRVを最大BRVを超えて加算する上限小アップ」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 7,
             "use_count": 1,
@@ -13755,6 +14085,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13854,13 +14186,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1197,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -13884,13 +14222,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1198,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -13914,13 +14258,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1199,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -13953,6 +14303,7 @@
                 "jp": "コールされたギルバートが以下の行動を行う\\n味方全員に自身の最大BRVに依存した量のBRVを加算し\\n4HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員に「攻撃力中アップ」と「BRVリジェネ」と\\n「奪ったBRVを最大BRVを超えて加算する上限小アップ」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 7,
             "use_count": 1,
@@ -14141,6 +14492,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14240,13 +14593,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1197,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -14270,13 +14629,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1198,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -14300,13 +14665,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2711
+                                2711,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1199,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -14339,6 +14710,7 @@
                 "jp": "コールされたギルバートが以下の行動を行う\\nブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に2ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -14449,6 +14821,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14556,6 +14930,7 @@
                 "jp": "コールされたギルバートが以下の行動を行う\\nブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない\\n敵全体に4ACTION「ねむり」付与\\n\\n「ねむり」は対象が攻撃によるBRVダメージ\\nまたはHPダメージを受けると残り期間が1ACTION減少する\\n(召喚による攻撃を除く)\\n1回の行動での残り期間の減少は1ACTIONのみ\\nバーストモード中は残り期間の減少は発生せず\\nフィニッシュバースト後に1ACTION減少する"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 1,
@@ -14688,6 +15063,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14852,7 +15229,7 @@
             "id": 145,
             "name": {
                 "en": "Bravery Critical Hit",
-                "gl": "Bravery Critical Hit",
+                "gl": "Critical Hit BRV Gain",
                 "jp": "クリティカルBRVゲイン"
             },
             "desc": {
@@ -14862,7 +15239,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Critical Hit: Gains BRV",
+                "gl": "Critical Hit BRV Gain: Increases BRV",
                 "jp": "クリティカルBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -14980,7 +15357,7 @@
             "id": 4361,
             "name": {
                 "en": "Hide BRV Gain",
-                "gl": "Bravery Hide",
+                "gl": "Hide BRV Gain",
                 "jp": "かくれるBRVゲイン"
             },
             "desc": {
@@ -14990,7 +15367,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Hide: Increases BRV",
+                "gl": "Hide BRV Gain: Increases BRV",
                 "jp": "かくれるBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -15373,7 +15750,7 @@
             "id": 4365,
             "name": {
                 "en": "Buff Base Boost All",
-                "gl": "Buff Initial Boost All",
+                "gl": "Buff Base Boost All",
                 "jp": "バフベースブーストオール"
             },
             "desc": {
@@ -15383,7 +15760,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Initial Boost All: Raises party's INT BRV, MAX BRV",
+                "gl": "Buff Base Boost All: Raises party's INT BRV, MAX BRV",
                 "jp": "バフベースブーストオール：味方全員の初期BRVと最大BRVがアップ"
             },
             "meta_data": {
@@ -15894,7 +16271,7 @@
             "id": 145,
             "name": {
                 "en": "",
-                "gl": "Bravery Critical Hit",
+                "gl": "Critical Hit BRV Gain",
                 "jp": "クリティカルBRVゲイン"
             },
             "desc": {
@@ -15904,7 +16281,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Critical Hit: Gains BRV",
+                "gl": "Critical Hit BRV Gain: Increases BRV",
                 "jp": "クリティカルBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -16022,7 +16399,7 @@
             "id": 4361,
             "name": {
                 "en": "",
-                "gl": "Bravery Hide",
+                "gl": "Hide BRV Gain",
                 "jp": "かくれるBRVゲイン"
             },
             "desc": {
@@ -16032,7 +16409,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Hide: Increases BRV",
+                "gl": "Hide BRV Gain: Increases BRV",
                 "jp": "かくれるBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -16415,7 +16792,7 @@
             "id": 4365,
             "name": {
                 "en": "",
-                "gl": "Buff Initial Boost All",
+                "gl": "Buff Base Boost All",
                 "jp": "バフベースブーストオール"
             },
             "desc": {
@@ -16425,7 +16802,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Initial Boost All: Raises party's INT BRV, MAX BRV",
+                "gl": "Buff Base Boost All: Raises party's INT BRV, MAX BRV",
                 "jp": "バフベースブーストオール：味方全員の初期BRVと最大BRVがアップ"
             },
             "meta_data": {
@@ -17849,6 +18226,7 @@
             ]
         },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4079,
@@ -18258,8 +18636,8 @@
             "id": 5736,
             "series_id": 4,
             "name": {
-                "en": "",
-                "gl": "",
+                "en": "Harmony Ring+",
+                "gl": "Harmonious Ring (IV)+",
                 "jp": "ハーモニーリング【IV】+"
             },
             "status": {
@@ -18284,12 +18662,12 @@
             "passive": {
                 "id": 2558,
                 "name": {
-                    "en": "",
+                    "en": "Bravery Resonance & Ruin Resonance",
                     "gl": "",
                     "jp": "勇猛の共鳴・破滅の共鳴"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "Increases party's BRV, HP damage limits (1, 3)",
                     "gl": "",
                     "jp": "全解放_★7真化防具ギルバート"
                 },
@@ -18339,12 +18717,12 @@
                 {
                     "id": 2559,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance I",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅰ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 1%\\n*Up to 10098\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 3%\\n*Self: Up to 112998\\n*Party: Up to 102998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋1％分突破可能になる（10098まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋3％分突破可能になる\\n　（自身は112998まで 自身以外の味方全員は102998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -18393,12 +18771,12 @@
                 {
                     "id": 2560,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance II",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅱ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 1%\\n*Up to 10198\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 3%\\n*Self: Up to 115998\\n*Party: Up to 105998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋1％分突破可能になる（10198まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋3％分突破可能になる\\n　（自身は115998まで 自身以外の味方全員は105998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -18447,12 +18825,12 @@
                 {
                     "id": 2561,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance III",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅲ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 1%\\n*Up to 10298\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 3%\\n*Self: Up to 118998\\n*Party: Up to 108998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋1％分突破可能になる（10298まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋3％分突破可能になる\\n　（自身は118998まで 自身以外の味方全員は108998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -18501,12 +18879,12 @@
                 {
                     "id": 2562,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Resonance & Ruin Resonance IV",
                         "gl": "",
                         "jp": "勇猛の共鳴・破滅の共鳴Ⅳ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10498\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 6%\\n*Self: Up to 124998\\n*Party: Up to 114998",
                         "gl": "",
                         "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10498まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋6％分突破可能になる\\n　（自身は124998まで 自身以外の味方全員は114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -18593,6 +18971,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -18656,7 +19036,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1749": [
@@ -18684,8 +19075,8 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Hero's Rime (Edward)",
-                "jp": "英雄の詩（ギルバート）"
+                "gl": "Hero's Rime II: Raises party's ATK; raises amount party's stolen BRV may exceed MAX BRV; restores a certain amount of party's BRV; further raises allies' effect (does not stack)",
+                "jp": "英雄の歌II：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限上昇 BRV一定量回復 自身以外の効果はさらに上昇（同名強化効果重複不可）"
             },
             "meta_data": {
                 "target": 2,
@@ -18711,6 +19102,8 @@
                 "disp_type": 0,
                 "stackable": 78,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 1,
                 "sp_stacks": 0,
@@ -18774,7 +19167,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1747": [
@@ -18799,13 +19203,19 @@
                         -1
                     ],
                     "required_values": [
-                        1747
+                        1747,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 639,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 1,
                         "rank_data": [
                             40,
@@ -18829,13 +19239,19 @@
                         -1
                     ],
                     "required_values": [
-                        1747
+                        1747,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 640,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 6,
                         "rank_data": [
                             40,
@@ -18859,13 +19275,19 @@
                         -1
                     ],
                     "required_values": [
-                        1747
+                        1747,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 641,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 13,
                         "rank_data": [
                             20,
@@ -18893,8 +19315,8 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Debilitating Tones (Edward)",
-                "jp": "衰弱の音色（ギルバート）"
+                "gl": "Debilitating Tones I: Lowers INT BRV",
+                "jp": "衰弱の音色I：初期BRVが減少する"
             },
             "meta_data": {
                 "target": 5,
@@ -18922,6 +19344,8 @@
                 "disp_type": 0,
                 "stackable": 80,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 3,
                 "sp_stacks": 0,
@@ -18985,7 +19409,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1750": [
@@ -19040,6 +19475,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -19103,7 +19540,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "642": [
@@ -19132,7 +19580,7 @@
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "安らぎの調べ"
+                "jp": "安らぎの調べII：味方全員の初期BRV 最大BRV 与えるBRVダメージ 加算したBRVを最大BRVを超えて加算する上限が上昇する（同名の強化効果は重複しない）"
             },
             "meta_data": {
                 "target": 2,
@@ -19158,6 +19606,8 @@
                 "disp_type": 0,
                 "stackable": 88,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 1,
                 "sp_stacks": 0,
@@ -19221,7 +19671,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2657": [
@@ -19246,13 +19707,19 @@
                         -1
                     ],
                     "required_values": [
-                        2657
+                        2657,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1160,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 5,
                         "rank_data": [
                             30,
@@ -19276,13 +19743,19 @@
                         -1
                     ],
                     "required_values": [
-                        2657
+                        2657,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1161,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 4,
                         "rank_data": [
                             30,
@@ -19306,13 +19779,19 @@
                         -1
                     ],
                     "required_values": [
-                        2657
+                        2657,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1162,
                         "ailment_effect": 150,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             20,
@@ -19336,13 +19815,19 @@
                         -1
                     ],
                     "required_values": [
-                        2657
+                        2657,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1163,
                         "ailment_effect": 114,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             10,
@@ -19368,7 +19853,7 @@
             "id": 4371,
             "name": {
                 "en": "Buff Success Base Boost All Short",
-                "gl": "Buff Success Initial Boost All Shorter",
+                "gl": "Buff Success Base Boost All Shorter",
                 "jp": "バフサクセスベースブーストオールショート"
             },
             "desc": {
@@ -19378,7 +19863,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Success Initial Boost All Shorter: Raises party's INT BRV, MAX BRV",
+                "gl": "Buff Success Base Boost All Shorter: Raises party's INT BRV, MAX BRV",
                 "jp": "バフサクセスベースブーストオールショート：味方全員の初期BRVと最大BRVがアップ"
             },
             "meta_data": {
@@ -19486,7 +19971,7 @@
             "id": "146050101",
             "name": {
                 "en": "",
-                "gl": "Bravery Hide★★",
+                "gl": "Hide BRV Gain★★",
                 "jp": "かくれるBRVゲイン★★"
             },
             "desc": {
@@ -19496,7 +19981,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Hide★★: Increases BRV",
+                "gl": "Hide BRV Gain★★: Increases BRV",
                 "jp": "かくれるBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -19586,7 +20071,7 @@
             "id": "146050103",
             "name": {
                 "en": "",
-                "gl": "Bravery HP Damage★★",
+                "gl": "HP Damage BRV Gain★★",
                 "jp": "HPダメージBRVゲイン★★"
             },
             "desc": {
@@ -19596,7 +20081,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage★★: Increases BRV",
+                "gl": "HP Damage BRV Gain★★: Increases BRV",
                 "jp": "HPダメージBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -21797,7 +22282,7 @@
                 "desc": {
                     "en": "",
                     "gl": "",
-                    "jp": "自身の行動時のBRV加算量を小アップ\\n（強化効果 パッシブ スフィアによる加算を除く）\\n\\nクエスト開始時\\n自身に12ACTION「安らぎの調べ」付与\\n\\n「子守歌」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・自身に12ACTION「安らぎの調べ」付与\\n・敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n　与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない"
+                    "jp": "自身の行動時のBRV加算量を小アップ\\n\\nクエスト開始時\\n自身に12ACTION「安らぎの調べ」付与\\n\\n「子守歌」使用時\\n・自身の最大BRV依存のBRV加算量小アップ\\n・自身に12ACTION「安らぎの調べ」付与\\n・敵全体に自身の現在BRVに依存した量のHPダメージを与える\\n　与えるHPダメージは等倍 この攻撃で自身のBRVは消費しない"
                 },
                 "short_desc": {
                     "en": "",
@@ -21805,7 +22290,7 @@
                     "jp": "眠りに誘う音色エクステンド：「子守歌」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -21878,5 +22363,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-10-20 15:00:00"
+        }
     }
 }

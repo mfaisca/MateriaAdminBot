@@ -1,5 +1,7 @@
 {
     "id": 38,
+    "uid": 82,
+    "sid": 82,
     "profile": {
         "fullName": {
             "en": "Balthier",
@@ -146,9 +148,26 @@
         324,
         348,
         5727,
-        3441
+        3441,
+        12965
     ],
-    "assistAbility": {},
+    "assistAbility": {
+        "id": 183,
+        "name": {
+            "en": "",
+            "gl": "コールアビリティ_バルフレア",
+            "jp": "コールアビリティ_バルフレア"
+        },
+        "rank_up_desc": {
+            "en": "When using [Great Aim+ (C)]\\n• Stolen BRV can overflow up to 150% MAX BRV\\n• Removes 2 more buffs from target",
+            "gl": "When using Great Aim+ (C):\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Buffs removed +2",
+            "jp": "「グレイスエイミング＋【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・強化効果解除数＋2"
+        },
+        "ability": {
+            "default": 13286,
+            "rank_up": 13287
+        }
+    },
     "ldAssistAbility": {},
     "optionalAbilities": [
         [
@@ -428,7 +447,23 @@
             }
         ],
         [],
-        []
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+            {
+                "id": 49,
+                "upgradedAbility": 12966,
+                "originalAbility": 12965,
+                "reqExtendPassives": [],
+                "reqWeaponPassives": [
+                    2621
+                ],
+                "reqSecretPassives": []
+            }
+        ]
     ],
     "triggeredAbilities": [
         {
@@ -484,6 +519,7 @@
                 "jp": "遠距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -538,6 +574,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -592,6 +629,7 @@
                 "jp": "遠距離物理BRV攻撃\\n中確率で対象の強化効果をランダムで1個奪う"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 5,
@@ -656,6 +694,7 @@
                 "jp": "遠距離物理BRV攻撃 必中\\n対象に弱体効果が付与されている時\\n自身に3ACTION「攻撃力小アップ」付与\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 22,
             "hit_count": 1,
             "use_count": 7,
@@ -722,6 +761,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -829,6 +870,7 @@
                 "jp": "自身のBRVを1.3倍にアップ＋HP攻撃\\n中確率で対象の強化効果をランダムで1個奪う"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 3,
@@ -929,6 +971,7 @@
                 "jp": "遠距離物理BRV攻撃\\n中確率で対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 5,
@@ -986,6 +1029,7 @@
                 "jp": "自身のBRVを1.4倍にアップ＋HP攻撃\\n自身の弱体効果を付与順に3個回復\\n大確率で対象の強化効果をランダムで3個奪い\\n奪った強化効果の期間を1ACTION延長"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 3,
@@ -1125,10 +1169,11 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Group ranged BRV attack\\nModerately increased BRV damage when attacking single target\\nOften steals random buff from targets\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes BRV Attack+ for 5 turns after use",
+                "gl": "Group ranged BRV attack\\nModerately increased BRV damage when attacking single target\\nOften steals random buff from all targets\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes BRV Attack+ for 5 turns after use",
                 "jp": "全体遠距離物理BRV攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n大確率で対象の強化効果をランダムで1個奪う\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\nターゲットに追加HP攻撃が発動\\n使用後通常「BRV攻撃」が5ACTION「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -1221,6 +1266,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1324,10 +1371,11 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Group ranged BRV attack\\nModerately increased BRV damage when attacking single target\\nSteals random buff from targets\\nExtends stolen buff duration 1 turn\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes BRV Attack+ for 5 turns after use",
+                "gl": "Group ranged BRV attack\\nModerately increased BRV damage when attacking single target\\nSteals random buff from all targets\\nExtends stolen buff duration 1 turn\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes BRV Attack+ for 5 turns after use",
                 "jp": "全体遠距離物理BRV攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\nターゲットに追加HP攻撃が発動\\n使用後通常「BRV攻撃」が5ACTION「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -1419,6 +1467,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1526,6 +1576,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRV1.4倍＋HP攻撃\\n大確率で対象の強化効果をランダムで1個奪う\\n自身に8ACTION「物理攻撃力中アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 3,
@@ -1660,6 +1711,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1767,6 +1820,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRV1.5倍＋HP攻撃\\n自身の弱体効果を付与順に3個解除\\n対象の強化効果をランダムで3個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に8ACTION「物理攻撃力中アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 3,
@@ -1944,6 +1998,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2051,6 +2107,7 @@
                 "jp": "遠距離物理BRV攻撃\\n中確率で対象の強化効果をランダムで1個奪う"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2109,6 +2166,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2169,6 +2227,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 15000,
@@ -2404,6 +2463,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2503,13 +2564,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -2533,13 +2600,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -2572,6 +2645,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 15000,
@@ -2718,6 +2792,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2817,13 +2893,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -2847,13 +2929,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -2886,6 +2974,7 @@
                 "jp": "遠距離物理BRV攻撃＋HP攻撃\\n自身に付与されている「空賊の流儀」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -2983,6 +3072,7 @@
                 "jp": "2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n大確率で対象の強化効果をランダムで1個奪う\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」3段階付与中 「スナッチショット＋」に変化\\n「空賊の流儀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -3133,6 +3223,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3235,8 +3327,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3253,6 +3345,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -3355,8 +3449,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3373,6 +3467,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -3480,6 +3576,7 @@
                 "jp": "4HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n大確率で対象の強化効果をランダムで1個奪う\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -3670,6 +3767,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3772,8 +3871,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3790,6 +3889,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -3892,8 +3993,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -3910,6 +4011,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4017,6 +4120,7 @@
                 "jp": "2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」3段階付与中 「スナッチショット＋」に変化\\n「空賊の流儀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -4166,6 +4270,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4268,8 +4374,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4286,6 +4392,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4388,8 +4496,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4406,6 +4514,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4513,6 +4623,7 @@
                 "jp": "4HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -4702,6 +4813,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4804,8 +4917,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4822,6 +4935,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4924,8 +5039,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4942,6 +5057,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5049,6 +5166,7 @@
                 "jp": "2HIT遠距離物理BRV攻撃\\n中確率で対象の強化効果をランダムで1個奪う\\n自身に付与されている「空賊の流儀」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -5190,6 +5308,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.4倍にアップ\\n＋遠距離物理BRV攻撃＋HP攻撃\\n大確率で対象の強化効果をランダムで1個奪う\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」3段階付与中 「グレイスエイミング＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 3,
@@ -5348,8 +5467,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5366,6 +5485,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5468,8 +5589,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5486,6 +5607,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5593,6 +5716,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.4倍にアップ\\n＋3HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n大確率で対象の強化効果をランダムで1個奪う\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 3,
@@ -5791,8 +5915,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5809,6 +5933,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5911,8 +6037,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5929,6 +6055,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6036,6 +6164,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.5倍にアップ＋遠距離物理BRV攻撃＋HP攻撃\\n自身の弱体効果を付与順に3個回復\\n対象の強化効果をランダムで3個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与\\n「空賊の流儀」3段階付与中 「グレイスエイミング＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 3,
@@ -6237,8 +6366,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -6255,6 +6384,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6357,8 +6488,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -6375,6 +6506,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6482,6 +6615,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.5倍にアップ\\n＋3HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身の弱体効果を付与順に3個回復\\n対象の強化効果をランダムで3個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に8ACTION「空賊の流儀」1段階付与（上限3）\\nターゲットブレイク時 ブレイク中攻撃時\\n「空賊の流儀」1段階追加付与"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 3,
@@ -6723,8 +6857,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -6741,6 +6875,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6843,8 +6979,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Way of the Sky Pirate I: Raises PHY ATK\\nWay of the Sky Pirate II: Raises PHY ATK, MAX BRV\\nWay of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
-                        "jp": "空賊の流儀I：物理攻撃力が上昇する\\n空賊の流儀II：物理攻撃力 最大BRVが上昇する\\n空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                        "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                        "jp": "空賊の流儀I：物理攻撃力が上昇する"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -6861,6 +6997,8 @@
                         "disp_type": 0,
                         "stackable": 65,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6968,6 +7106,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 15000,
@@ -7203,6 +7342,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7302,13 +7443,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -7332,13 +7479,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -7371,6 +7524,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 15000,
@@ -7606,6 +7760,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7705,13 +7861,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -7735,13 +7897,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -7774,6 +7942,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 15000,
@@ -8009,6 +8178,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8108,13 +8279,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -8138,13 +8315,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -8177,6 +8360,7 @@
                 "jp": "5HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n自身の弱体効果を全て回復\\n対象の強化効果をランダムで1個奪い\\n奪った強化効果の期間を1ACTION延長\\n自身に6ACTION「スナッチ」付与\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -8452,6 +8636,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8551,13 +8737,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 27,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     -20,
@@ -8581,13 +8773,19 @@
                                 -1
                             ],
                             "required_values": [
-                                817
+                                817,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 28,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     -20,
@@ -8620,6 +8818,7 @@
                 "jp": "遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に付与された強化効果を1ACTION延長する"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -8717,6 +8916,7 @@
                 "jp": "対象のBRVを3/5にした後\\n減少させた分のBRVと\\n自身の最大BRVに依存した量のBRVを自身に加算\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 5,
             "use_count": 1,
@@ -8869,6 +9069,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8976,6 +9178,7 @@
                 "jp": "対象のBRVを3/5にした後\\n減少させた分のBRVと\\n自身の最大BRVに依存した量のBRVを自身に加算\\n4ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 5,
             "use_count": 1,
@@ -9128,6 +9331,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9235,6 +9440,7 @@
                 "jp": "対象のBRVを1/5にした後\\n減少させた分のBRVと\\n自身の最大BRVに依存した量のBRVを自身に加算\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 5,
             "use_count": 1,
@@ -9387,6 +9593,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9494,6 +9702,7 @@
                 "jp": "対象のBRVを1/5にした後\\n減少させた分のBRVと\\n自身の最大BRVに依存した量のBRVを自身に加算\\n4ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 5,
             "use_count": 1,
@@ -9646,6 +9855,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9739,6 +9950,1835 @@
                     "auras": []
                 }
             ]
+        },
+        {
+            "id": 13286,
+            "name": {
+                "en": "Great Aim+ (C)",
+                "gl": "Great Aim+ (C)",
+                "jp": "グレイスエイミング＋【C】"
+            },
+            "desc": {
+                "en": "When called for assistance, Balthier performs the following actions\\n• Raises own MAX BRV by 60%, ATK by 20%\\n• Increases own BRV by 100% ATK\\n• Multiplies own BRV by 1.5 of current BRV\\n• 3-HIT ranged BRV attack + HP attack\\n• Randomly removes 1 buff from target",
+                "gl": "Balthier's ability when called:\\n • Moderately raises MAX BRV, slightly raises ATK\\n • Increases BRV based on ATK, then further increases BRV × 1.5\\n • 3-hit ranged BRV attack + HP attack\\n • Removes 1 random buff from target",
+                "jp": "コールされたバルフレアが以下の行動を行う\\n自身の最大BRV中アップと攻撃力小アップし\\n自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.5倍にアップ\\n＋3HIT遠距離物理BRV攻撃＋HP攻撃\\n対象の強化効果をランダムで1個解除する"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 0,
+            "hit_count": 8,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 2,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13362,
+                    "type": 6,
+                    "arguments": [
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 41,
+                    "effect_value_type": 15
+                },
+                {
+                    "id": 13363,
+                    "type": 6,
+                    "arguments": [
+                        50
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 41,
+                    "effect_value_type": 7
+                },
+                {
+                    "id": 6822,
+                    "type": 7,
+                    "arguments": [
+                        1
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 8,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13364,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13364,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13364,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 155,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2813,
+                    "cast_id": 2775,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールバルフレア用先付け内部バフ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールバルフレア用先付け内部バフ"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            6,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            60,
+                            20,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2813": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 13287,
+            "name": {
+                "en": "",
+                "gl": "Great Aim+ (C)",
+                "jp": "グレイスエイミング＋【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "Balthier's ability when called:\\n • Moderately raises MAX BRV, slightly raises ATK\\n • Increases BRV based on ATK, then further increases BRV × 1.5\\n • 3-hit ranged BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Removes 3 random buffs from target",
+                "jp": "コールされたバルフレアが以下の行動を行う\\n自身の最大BRV中アップと攻撃力小アップし\\n自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを1.5倍にアップ\\n＋3HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n対象の強化効果をランダムで3個解除する"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 0,
+            "hit_count": 8,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 2,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13365,
+                    "type": 6,
+                    "arguments": [
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 41,
+                    "effect_value_type": 15
+                },
+                {
+                    "id": 13366,
+                    "type": 6,
+                    "arguments": [
+                        50
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 41,
+                    "effect_value_type": 7
+                },
+                {
+                    "id": 6848,
+                    "type": 7,
+                    "arguments": [
+                        3
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 1,
+                    "effect": 8,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13367,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13367,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13367,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 250.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 155,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2813,
+                    "cast_id": 2775,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールバルフレア用先付け内部バフ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールバルフレア用先付け内部バフ"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            6,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            60,
+                            20,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2813": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 2562,
+            "name": {
+                "en": "",
+                "gl": "0",
+                "jp": ""
+            },
+            "desc": {
+                "en": "",
+                "gl": "0",
+                "jp": ""
+            },
+            "rank": 0,
+            "motion": 40,
+            "movement_cost": 30,
+            "hit_count": 1,
+            "use_count": 0,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 0
+            },
+            "hit_data": [
+                {
+                    "id": 155,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": []
+        },
+        {
+            "id": 12965,
+            "name": {
+                "en": "",
+                "gl": "Tides of Fate",
+                "jp": ""
+            },
+            "desc": {
+                "en": "",
+                "gl": "8-hit group ranged BRV attack + group HP attack\\nDeals total HP damage to each target\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nRemoves all debuffs from self\\nSteals 3 random buffs from each target\\nExtends stolen buff duration 1 turn\\nSelf: 8 turns 3 levels of Way of the Sky Pirate (limit 3)\\n\\nWhile special effect Sky-Plying Strahl active:\\n • Increases by 1 level per turn; increases by an additional level if an enemy's buff was stolen (limit 5)\\n\\nGains following effects depending on level (does not stack with special effects of same name):\\n • 1 level: Moderately raises ATK\\n • 2 levels: Moderately raises MAX BRV \\n • 3 levels: Slightly increases BRV damage dealt\\n • 4 levels: Slightly increases HP damage dealt\\n • 5 levels: Effects from each level extended to party",
+                "jp": ""
+            },
+            "rank": 0,
+            "motion": 56,
+            "movement_cost": 30,
+            "hit_count": 13,
+            "use_count": 2,
+            "is_default": 0,
+            "same_ability": 3,
+            "type_data": {
+                "type": 2,
+                "attack_type": 2,
+                "command_type": 8,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13403,
+                    "type": 6,
+                    "arguments": [
+                        -1
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 7,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 6754,
+                    "type": 6,
+                    "arguments": [
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 55,
+                    "effect_value_type": 16
+                },
+                {
+                    "id": 13135,
+                    "type": 7,
+                    "arguments": [
+                        3,
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 48,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13134,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4645,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 107,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 945,
+                    "cast_id": 879,
+                    "name": {
+                        "en": "",
+                        "gl": "Way of the Sky Pirate",
+                        "jp": "空賊の流儀"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Way of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
+                        "jp": "空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [
+                            3
+                        ],
+                        "duration": 8
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": 65,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 3,
+                        "sp_stacks": 0,
+                        "effects": [
+                            51,
+                            52,
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            3,
+                            3,
+                            3,
+                            3,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            2,
+                            2,
+                            3,
+                            4,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            945,
+                            945,
+                            945,
+                            945,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "945": [
+                            40000000,
+                            40060000,
+                            40060020,
+                            40060020,
+                            40060020,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 12966,
+            "name": {
+                "en": "",
+                "gl": "Tides of Fate",
+                "jp": ""
+            },
+            "desc": {
+                "en": "",
+                "gl": "8-hit group ranged BRV attack + group HP attack\\nDeals total HP damage to each target\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nRemoves all debuffs from party\\nSteals 3 random buffs from each target\\nExtends stolen buff duration 1 turn\\nSelf: 8 turns 3 levels of Way of the Sky Pirate (limit 3)\\n\\nWhile special effect Sky-Plying Strahl active:\\n • Increases by 1 level per turn; increases by an additional level if an enemy's buff was stolen (limit 5)\\n\\nGains following effects depending on level (does not stack with special effects of same name):\\n • 1 level: Moderately raises ATK\\n • 2 levels: Moderately raises MAX BRV \\n • 3 levels: Slightly increases BRV damage dealt\\n • 4 levels: Slightly increases HP damage dealt\\n • 5 levels: Effects from each level extended to party",
+                "jp": ""
+            },
+            "rank": 0,
+            "motion": 56,
+            "movement_cost": 30,
+            "hit_count": 13,
+            "use_count": 2,
+            "is_default": 0,
+            "same_ability": 3,
+            "type_data": {
+                "type": 2,
+                "attack_type": 2,
+                "command_type": 8,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13137,
+                    "type": 6,
+                    "arguments": [
+                        -1
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 6,
+                    "effect": 7,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 6754,
+                    "type": 6,
+                    "arguments": [
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 55,
+                    "effect_value_type": 16
+                },
+                {
+                    "id": 13138,
+                    "type": 7,
+                    "arguments": [
+                        3,
+                        100
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 48,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13136,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4645,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 5,
+                    "effect": 107,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 945,
+                    "cast_id": 879,
+                    "name": {
+                        "en": "",
+                        "gl": "Way of the Sky Pirate",
+                        "jp": "空賊の流儀"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Way of the Sky Pirate III: Raises PHY ATK, MAX BRV, ATK",
+                        "jp": "空賊の流儀III：物理攻撃力 最大BRV 攻撃力が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [
+                            3
+                        ],
+                        "duration": 8
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": 65,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 3,
+                        "sp_stacks": 0,
+                        "effects": [
+                            51,
+                            52,
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            3,
+                            3,
+                            3,
+                            3,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            2,
+                            2,
+                            3,
+                            4,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            945,
+                            945,
+                            945,
+                            945,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "945": [
+                            40000000,
+                            40060000,
+                            40060020,
+                            40060020,
+                            40060020,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 13319,
+            "name": {
+                "en": "",
+                "gl": "BRV Attack++",
+                "jp": ""
+            },
+            "desc": {
+                "en": "",
+                "gl": "3-hit ranged BRV attack\\nOften steals random buff from target\\nIncreases active Way of the Sky Pirate level by 1",
+                "jp": ""
+            },
+            "rank": 0,
+            "motion": 30,
+            "movement_cost": 30,
+            "hit_count": 5,
+            "use_count": 0,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 1,
+                "attack_type": 2,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 13400,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 70.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13400,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 70.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13400,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 70.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13402,
+                    "type": 7,
+                    "arguments": [
+                        1,
+                        -1,
+                        80
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 48,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13404,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        945
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 89,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": []
+        },
+        {
+            "id": 13320,
+            "name": {
+                "en": "",
+                "gl": "HP Attack++",
+                "jp": ""
+            },
+            "desc": {
+                "en": "",
+                "gl": "3-hit ranged BRV attack + HP attack\\nIncreases active Way of the Sky Pirate level by 1",
+                "jp": ""
+            },
+            "rank": 0,
+            "motion": 40,
+            "movement_cost": 30,
+            "hit_count": 5,
+            "use_count": 0,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 2,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 1
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 13401,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 60.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13401,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 60.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13401,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 60.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 155,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 13405,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        945
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 2,
+                    "element": [],
+                    "target": 2,
+                    "effect": 89,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": []
         }
     ],
     "awakeningPassives": [
@@ -10696,6 +12736,70 @@
             },
             "effects": [],
             "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
+        },
+        {
+            "id": 5623,
+            "name": {
+                "en": "Break Hit Attack Up (C)",
+                "gl": "Break Hit Attack Up (C)",
+                "jp": "ブレイクヒットアタックアップ【C】"
+            },
+            "desc": {
+                "en": "When using a Call Ability with a BRV Attack\\n• Raises own Attack by 10% for 6 turns when breaking target or attacking a broken target",
+                "gl": "When using call ability:\\n • Slightly raises ATK for 6 turns after inflicting Break or attacking target afflicted with Break",
+                "jp": "コールアビリティ使用時\\n対象ブレイク後 ブレイク中攻撃後\\n6ACTION自身の攻撃力を小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Break Hit Attack Up (C): Raises ATK",
+                "jp": "ブレイクヒットアタックアップ【C】：攻撃力がアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 2,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 29,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        6,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 88,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
                 {
                     "required_id": 1,
                     "required_target": 2,
@@ -11677,6 +13781,70 @@
                 }
             ],
             "auras": []
+        },
+        {
+            "id": 5623,
+            "name": {
+                "en": "",
+                "gl": "Break Hit Attack Up (C)",
+                "jp": "ブレイクヒットアタックアップ【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "When using call ability:\\n • Slightly raises ATK for 6 turns after inflicting Break or attacking target afflicted with Break",
+                "jp": "コールアビリティ使用時\\n対象ブレイク後 ブレイク中攻撃後\\n6ACTION自身の攻撃力を小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Break Hit Attack Up (C): Raises ATK",
+                "jp": "ブレイクヒットアタックアップ【C】：攻撃力がアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 2,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 29,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        6,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 88,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
         }
     ],
     "bloomStone": {
@@ -12549,8 +14717,302 @@
                 }
             ]
         },
-        "limitedWeapon": {},
+        "limitedWeapon": {
+            "id": 5111,
+            "series_id": 12,
+            "name": {
+                "en": "",
+                "gl": "Sirius (XII)",
+                "jp": ""
+            },
+            "status": {
+                "max_hp": 115,
+                "int_brv": 350,
+                "max_brv": 3396,
+                "atk": 1120,
+                "def": 55,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 4,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 38
+            },
+            "passive_data": {
+                "passive_id": 2619,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 2619,
+                "name": {
+                    "en": "",
+                    "gl": "Voyages yet Unseen",
+                    "jp": ""
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "May equip LD ability Tides of Fate\\nAdds special effect Sky-Plying Strahl",
+                    "jp": ""
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "Voyages yet Unseen: May equip Tides of Fate",
+                    "jp": ""
+                },
+                "meta_data": {
+                    "cp": 0,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 2619,
+                    "required_passive": -1
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 117,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5111,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 2620,
+                    "name": {
+                        "en": "",
+                        "gl": "Mighty Tides of Fate",
+                        "jp": ""
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Slightly raises ATK\\n\\nSlightly increases BRV damage dealt with Tides of Fate",
+                        "jp": ""
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "Mighty Tides of Fate: Increases BRV damage dealt with Tides of Fate",
+                        "jp": ""
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2620,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 0,
+                        "condition_type": 2
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 39,
+                            "effect_target": 2,
+                            "effect_values": [
+                                10,
+                                0,
+                                0
+                            ]
+                        },
+                        {
+                            "effect_id": 113,
+                            "effect_target": 2,
+                            "effect_values": [
+                                20000000,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 14,
+                            "required_target": 2,
+                            "required_values": [
+                                12965,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 2621,
+                    "name": {
+                        "en": "",
+                        "gl": "Tides of Fate Debuff Erase All",
+                        "jp": ""
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Slightly raises ATK\\n\\nWhen using Tides of Fate:\\n • Extends debuff removal to party",
+                        "jp": ""
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "Tides of Fate Debuff Erase All: Boost to Tides of Fate",
+                        "jp": ""
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2621,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 0,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 113,
+                            "effect_target": 2,
+                            "effect_values": [
+                                20000000,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 2622,
+                    "name": {
+                        "en": "",
+                        "gl": "Charged Tides of Fate++",
+                        "jp": ""
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Slightly raises ATK\\n\\nTides of Fate use +1\\n\\nBRV Attack, BRV Attack+ becomes BRV Attack++ (3-hit ranged BRV attack; often steals 1 random buff from target; increases active Way of the Sky Pirate level by 1)\\n\\nHP Attack, HP Attack+ becomes HP Attack++ (3-hit ranged BRV attack + HP attack; increases active Way of the Sky Pirate level by 1)",
+                        "jp": ""
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "Charged Tides of Fate++: Tides of Fate use +1",
+                        "jp": ""
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2622,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 0,
+                        "condition_type": 2
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 22,
+                            "effect_target": 2,
+                            "effect_values": [
+                                12965,
+                                1,
+                                0
+                            ]
+                        },
+                        {
+                            "effect_id": 113,
+                            "effect_target": 2,
+                            "effect_values": [
+                                20000000,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 2,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {
             "id": 1431,
             "series_id": 12,
@@ -12960,8 +15422,8 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Way of the Sky Pirate (Fixed)",
-                "jp": "空賊の流儀（解除不能）"
+                "gl": "Way of the Sky Pirate I: Raises PHY ATK",
+                "jp": "空賊の流儀I：物理攻撃力が上昇する"
             },
             "meta_data": {
                 "target": 2,
@@ -12989,6 +15451,8 @@
                 "disp_type": 0,
                 "stackable": 65,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 3,
                 "sp_stacks": 0,
@@ -13052,7 +15516,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "945": [
@@ -13109,6 +15584,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13172,7 +15649,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "817": [
@@ -13197,13 +15685,19 @@
                         -1
                     ],
                     "required_values": [
-                        817
+                        817,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 27,
                         "ailment_effect": -1,
                         "target_id": 2,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 1,
                         "rank_data": [
                             -20,
@@ -13227,13 +15721,19 @@
                         -1
                     ],
                     "required_values": [
-                        817
+                        817,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 28,
                         "ailment_effect": -1,
                         "target_id": 2,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 5,
                         "rank_data": [
                             -20,
@@ -13435,7 +15935,7 @@
             "id": "38050101",
             "name": {
                 "en": "Bravery Great Aim★★",
-                "gl": "Bravery Great Aim★★",
+                "gl": "Great Aim BRV Gain★★",
                 "jp": "グレイスエイミングBRVゲイン★★"
             },
             "desc": {
@@ -13445,7 +15945,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Great Aim★★: Gains BRV",
+                "gl": "Great Aim BRV Gain★★: Increases BRV",
                 "jp": "グレイスエイミングBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -15181,5 +17681,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": ""
+        }
     }
 }

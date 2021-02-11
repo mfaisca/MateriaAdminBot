@@ -1,5 +1,7 @@
 {
     "id": 108,
+    "uid": 458,
+    "sid": 221,
     "profile": {
         "fullName": {
             "en": "Golbez",
@@ -142,12 +144,12 @@
         "id": 129,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_ゴルベーザ",
             "jp": "コールアビリティ_ゴルベーザ"
         },
         "rank_up_desc": {
-            "en": "",
-            "gl": "",
+            "en": "When using [Glare Hand+ (C)]\\n- Stolen BRV can overflow up to 150% Max BRV\\n- [Dark Resist Down] duration +2",
+            "gl": "「グレアハンド＋【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「Dark 耐性ダウン」の2ACTION期間延長",
             "jp": "「グレアハンド＋【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「闇耐性ダウン」の2ACTION期間延長"
         },
         "ability": {
@@ -159,12 +161,12 @@
         "id": 130,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_ゴルベーザ",
             "jp": "LDコールアビリティ_ゴルベーザ"
         },
         "rank_up_desc": {
-            "en": "",
-            "gl": "",
+            "en": "When using [Black Fang (C)]\\n- Becomes 4-HIT Dark AoE magic BRV attack + AoE HP attack delivered 4 times\\n- Increases total BRV potency by 280%\\n- Stolen BRV can overflow up to 150% MAX BRV\\n- Call Effect +10%",
+            "gl": "「くろいきば【C】」使用時\\n・4HITDark 属性全体魔法BRV 攻撃＋全体HP 攻撃を3回行うが\\n　4HITDark 属性全体魔法BRV 攻撃＋全体HP 攻撃を4回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・使用後特殊効果の効果小アップ",
             "jp": "「くろいきば【C】」使用時\\n・4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行うが\\n　4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を4回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・使用後特殊効果の効果小アップ"
         },
         "ability": {
@@ -700,6 +702,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -717,6 +723,7 @@
                 "jp": "魔法攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -771,6 +778,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -820,11 +828,12 @@
                 "jp": "ライズウェイブ"
             },
             "desc": {
-                "en": "Dark melee BRV attack + Dark magic BRV + HP attack\\nGrants 1 stack of [Shadow Dragon] for 4 turns\\n\\nWhile [Shadow Dragon] is active:\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ Dark magic BRV attack + Dark melee BRV attack by Shadow Dragon\\n\\nWhile [Shadow Dragon II] is active:\\n• Becomes [Rising Wave+]\\n　∟ Adds a Dark melee BRV + HP attack by Shadow Dragon\\n\\nWhile [Shadow Dragon III] is active:\\n• Becomes [Rising Wave++]\\n　∟ BRV attack hit count becomes 2 for every attack\\n　∟ Does not grant [Shadow Dragon]\\n\\n[Shadow Dragon] raises Max BRV and Attack based on the number of stacks",
+                "en": "Dark melee BRV attack (60)\\n+ Dark magic BRV attack + HP attack (60)\\nSelf: 4 turns 1 level [Shadow Dragon] (limit 3)\\n\\nWhile [Shadow Dragon II] is active \\n- [Rising Wave] becomes [Rising Wave+]\\n　∟ Adds 1-HIT Dark melee BRV attack + HP attack from Shadow Dragon (40)\\n\\nWhile [Shadow Dragon III] is active \\n- [Rising Wave] becomes [Rising Wave++]\\n　∟ Becomes 2-HIT Dark melee BRV attack (40x2)\\n   + 2-HIT Dark magic BRV attack + HP attack (40x2)\\n　∟ Adds 2-HIT Dark melee BRV attack + HP attack from Shadow Dragon (60x2)\\n　∟ Does not grant [Shadow Dragon]\\n\\nWhile [Shadow Dragon] is active  \\n- [BRV Attack] becomes [BRV Attack+]\\n　∟ 1-HIT Dark magic BRV attack (80)\\n + 1-HIT Dark melee BRV attack from Shadow Dragon (40)\\n\\n[Shadow Dragon I~III]\\n- Raises MAX BRV, ATK by 10/20/30%",
                 "gl": "Dark melee BRV attack + Dark magic BRV attack + HP attack\\nSelf: 4 turns 1 level of Shadow Dragon (limit 3)\\nBecomes Rising Wave+ with 2 levels of Shadow Dragon\\nBecomes Rising Wave++ with 3 levels of Shadow Dragon\\nBRV Attack becomes BRV Attack+ while Shadow Dragon active",
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃\\n自身に4ACTION「黒竜」1段階付与（上限3）\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -957,6 +966,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -1064,6 +1075,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃\\n自身に4ACTION「黒竜」1段階付与（上限3）\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -1240,6 +1252,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -1347,6 +1361,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -1575,6 +1590,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃\\n自身に4ACTION「黒竜」2段階付与（上限3）\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -1707,6 +1723,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -1814,6 +1832,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃\\n自身に4ACTION「黒竜」2段階付与（上限3）\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -1990,6 +2009,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -2097,6 +2118,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -2325,6 +2347,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「最大BRV中アップ」付与\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -2459,6 +2482,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -2577,6 +2602,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2684,6 +2711,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「最大BRV中アップ」付与\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -2862,6 +2890,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -2980,6 +3010,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3087,6 +3119,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に8ACTION「最大BRV中アップ」付与"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -3329,6 +3362,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3436,6 +3471,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「最大BRV中アップ」付与\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -3570,6 +3606,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -3688,6 +3726,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3795,6 +3835,7 @@
                 "jp": "闇属性近距離物理BRV攻撃\\n＋闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「最大BRV中アップ」付与\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -3973,6 +4014,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4091,6 +4134,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4198,6 +4243,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に8ACTION「最大BRV中アップ」付与"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -4438,6 +4484,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4540,11 +4588,12 @@
                 "jp": "グレアハンド"
             },
             "desc": {
-                "en": "Dark AoE melee BRV attack + Dark AoE magic BRV + HP attack\\nHP Damage is split equally amongst all enemies\\nGrants 1 stack of [Shadow Dragon] for 4 turns\\n\\nWhile [Shadow Dragon] is active:\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ Dark magic BRV attack + Dark melee BRV attack by Shadow Dragon\\n\\nWhile [Shadow Dragon II] is active:\\n• Becomes [Glare Hand+]\\n　∟ Adds a Dark AoE melee BRV + HP attack by Shadow Dragon\\n\\nWhile [Shadow Dragon III] is active:\\n• Becomes [Glare Hand++]\\n　∟ BRV attack hit count becomes 2 for every attack\\n　∟ Does not grant [Shadow Dragon]\\n\\n[Shadow Dragon] raises Max BRV and Attack based on the number of stacks",
+                "en": "Dark AoE melee BRV attack\\n+ Dark AoE magic BRV attack + AoE HP attack (30)\\nDeals split HP damage between all targets (30)\\nSelf: 4 turns 1 level [Shadow Dragon] (limit 3)\\n\\nWhile [Shadow Dragon II] is active \\n- [Glare Hand] becomes [Glare Hand+]\\n　∟ Adds 1-HIT Dark AoE magic BRV attack + AoE HP attack from Shadow Dragon (40)\\n　∟ Deals split HP damage between all targets\\n\\nWhile [Shadow Dragon III] is active \\n- [Glare Hand] becomes [Glare Hand++]\\n　∟ Becomes 2-HIT Dark AoE melee BRV attack (20x2)\\n   + 2-HIT Dark AoE magic BRV attack + AoE HP attack (20x2)\\n　∟ Adds 2-HIT Dark AoE melee BRV attack + AoE HP attack from Shadow Dragon (40x2)\\n　∟ Deals split HP damage between all targets\\n　∟ Does not grant [Shadow Dragon]\\n\\nWhile [Shadow Dragon] is active  \\n- [BRV Attack] becomes [BRV Attack+]",
                 "gl": "Group Dark melee BRV attack + group Dark magic BRV attack + group HP attack\\nDeals proportionate HP damage to each target\\nSelf: 4 turns 1 level of Shadow Dragon (limit 3)\\nBecomes Glare Hand+ with 2 levels of Shadow Dragon\\nBecomes Glare Hand++ with 3 levels of Shadow Dragon\\nBRV Attack becomes BRV Attack+ while Shadow Dragon active",
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」1段階付与（上限3）\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -4679,6 +4728,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -4786,6 +4837,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」1段階付与（上限3）\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -4964,6 +5016,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5071,6 +5125,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n与えるHPダメージは分配"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -5301,6 +5356,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」2段階付与（上限3）\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -5435,6 +5491,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5542,6 +5600,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」2段階付与（上限3）\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -5720,6 +5779,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5827,6 +5888,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -6057,6 +6119,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「攻撃力中アップ」付与\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -6191,6 +6254,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6309,6 +6374,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6416,6 +6483,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「攻撃力中アップ」付与\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -6594,6 +6662,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6712,6 +6782,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6819,6 +6891,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n与えるHPダメージは分配\\n自身に8ACTION「攻撃力中アップ」付与"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -7061,6 +7134,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7168,6 +7243,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「攻撃力中アップ」付与\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -7302,6 +7378,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7420,6 +7498,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7527,6 +7607,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「攻撃力中アップ」付与\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -7705,6 +7786,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7823,6 +7906,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7930,6 +8015,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n自身に8ACTION「攻撃力中アップ」付与"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -8172,6 +8258,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8279,6 +8367,7 @@
                 "jp": "闇属性魔法BRV攻撃後\\n黒竜による闇属性近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -8357,6 +8446,7 @@
                 "jp": "闇属性魔法BRV攻撃後\\n黒竜による闇属性近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -8433,11 +8523,12 @@
                 "jp": "Ｗメテオ"
             },
             "desc": {
-                "en": "5-HIT Dark AoE magic BRV + HP attack\\nInflicts [Dark Resist Down] for 4 turns\\nTriggers another 5-HIT Dark AoE magic BRV + HP attack\\nStolen BRV can overflow up to 150% Max BRV\\nModerately raises BRV damage dealt to a single target\\nHP damage is split equally amongst all enemies\\nGrants 3 Stacks of [Shadow Dragon] for 6 turns\\n\\nWhile [Shadow Dragon] is active:\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ Dark magic BRV attack + Dark melee BRV attack by Shadow Dragon",
+                "en": "5-HIT Dark AoE magic BRV attack + AoE HP attack delivered twice (30x5 + 50x5)\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 150% Max BRV\\nDeals split HP damage between all targets\\nSelf: 6 turns 3 levels [Shadow Dragon]\\nAll targets: 4 turns [Dark Resist Down] on first HP attack\\n\\nWhile [Shadow Dragon] is active  \\n- [BRV Attack] becomes [BRV Attack+]",
                 "gl": "5-hit group Dark magic BRV attack + group HP attack\\nAll targets: 4 turns Dark Resist Down\\nAnother 5-hit group Dark magic BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nSelf: 6 turns 3 levels of Shadow Dragon (limit 3)\\nBRV Attack becomes BRV Attack+ while Shadow Dragon active",
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃の後\\n対象に4ACTION「闇耐性ダウン」付与し\\nさらに5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 21000,
@@ -8770,6 +8861,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -8888,6 +8981,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8995,6 +9090,7 @@
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃の後\\n対象に4ACTION「闇耐性ダウン」付与し\\nさらに5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 21000,
@@ -9327,6 +9423,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -9445,6 +9543,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9547,11 +9647,12 @@
                 "jp": "ダークエンチャント"
             },
             "desc": {
-                "en": "Grants [Dark Enchant] for 2 turns",
+                "en": "2 turns Additional Effect\\nSelf: 30% Dark Enchant",
                 "gl": "Grants Dark Enchant effect for 2 turns",
                 "jp": "2ACTION自身に「エンチャント・闇」効果を与える"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -9638,6 +9739,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9745,6 +9848,7 @@
                 "jp": "4ACTION自身に「エンチャント・闇」効果を与える"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -9831,6 +9935,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9938,6 +10044,7 @@
                 "jp": "2ACTION自身の最大BRVを小アップし\\n自身に「エンチャント・闇」効果を与える"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -10024,6 +10131,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10131,6 +10240,7 @@
                 "jp": "4ACTION自身の最大BRVを小アップし\\n自身に「エンチャント・闇」効果を与える"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -10217,6 +10327,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10324,6 +10436,7 @@
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃の後\\n対象に4ACTION「闇耐性ダウン」付与し\\nさらに5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 21000,
@@ -10656,6 +10769,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -10774,6 +10889,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10892,6 +11009,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10999,6 +11118,7 @@
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃の後\\n対象に4ACTION「闇耐性ダウン」付与し\\nさらに5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 21000,
@@ -11331,6 +11451,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -11449,6 +11571,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11567,6 +11691,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11674,6 +11800,7 @@
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃の後\\n対象に4ACTION「闇耐性ダウン」付与し\\nさらに5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n4ACTION「憎しみへの償い」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 21000,
@@ -12006,6 +12133,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -12124,6 +12253,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12242,6 +12373,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12360,6 +12493,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12467,6 +12602,7 @@
                 "jp": "5HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に6ACTION「黒竜」3段階付与（上限3）\\n4ACTION「憎しみへの償い」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 19,
             "use_count": 21000,
@@ -12931,6 +13067,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -13049,6 +13187,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13167,6 +13307,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13285,6 +13427,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13392,6 +13536,7 @@
                 "jp": "2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -13534,6 +13679,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -13756,6 +13902,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -13874,6 +14022,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13981,6 +14131,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 5,
@@ -14269,6 +14420,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -14387,6 +14540,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14494,6 +14649,7 @@
                 "jp": "3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に8ACTION「黒き甲冑の男」付与\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 5,
@@ -14846,6 +15002,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14953,6 +15111,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」2段階付与中「ライズウェイブ＋」に\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -15175,6 +15334,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -15293,6 +15454,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15400,6 +15563,7 @@
                 "jp": "2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」3段階付与中「ライズウェイブ＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 5,
@@ -15688,6 +15852,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -15806,6 +15972,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15913,6 +16081,7 @@
                 "jp": "3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n＋3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に8ACTION「黒き甲冑の男」付与\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 5,
@@ -16265,6 +16434,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16372,6 +16543,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -16528,6 +16700,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -16646,6 +16820,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16764,6 +16940,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16871,6 +17049,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に4ACTION「黒竜」1段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -17071,6 +17250,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -17189,6 +17370,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17307,6 +17490,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17414,6 +17599,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に8ACTION「黒き甲冑の男」付与\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -17678,6 +17864,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17796,6 +17984,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17903,6 +18093,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」2段階付与中「グレアハンド＋」に\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -18059,6 +18250,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -18177,6 +18370,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18295,6 +18490,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18402,6 +18599,7 @@
                 "jp": "闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に4ACTION「黒竜」2段階（上限3）\\n8ACTION「黒き甲冑の男」付与\\n「黒竜」3段階付与中「グレアハンド＋＋」に変化\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -18602,6 +18800,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -18720,6 +18920,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18838,6 +19040,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18945,6 +19149,7 @@
                 "jp": "2HIT闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋2HIT闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による2HIT闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に8ACTION「黒き甲冑の男」付与\\n「黒竜」付与中 通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -19209,6 +19414,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19327,6 +19534,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19434,6 +19643,7 @@
                 "jp": "3HIT闇属性魔法BRV攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -19573,11 +19783,12 @@
                 "jp": "くろいきば"
             },
             "desc": {
-                "en": "",
+                "en": "4-HIT Dark AoE magic BRV attack + AoE HP attack delivered 3 times (50x4x3)\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 150% MAX BRV\\nDeals split HP damage between all targets\\nAll targets: 4 turns [Dark Resist Down] on first HP attack\\nSelf: 6 turns 3 levels [Shadow Dragon] (limit 3), 6 turns [Black Fang]\\n\\n[Black Fang]\\n- Increases HP damage dealt by 10%\\n- Increases own BRV by 20% HP damage dealt (once per turn)",
                 "gl": "",
                 "jp": "4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に6ACTION「黒竜」3段階（上限3）\\n強化効果「くろいきば」付与"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 16,
             "use_count": 3,
@@ -19976,6 +20187,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -20094,6 +20307,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20212,6 +20427,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20319,6 +20536,7 @@
                 "jp": "4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に6ACTION「黒竜」3段階（上限3）\\n9ACTION強化効果「くろいきば」付与\\n\\n「黒竜」3段階付与中以下の効果追加\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身が対象の弱点をついた時 与えたBRVダメージよりも多くのBRVを得る"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 16,
             "use_count": 3,
@@ -20717,6 +20935,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -20835,6 +21055,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20953,6 +21175,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21060,6 +21284,7 @@
                 "jp": "4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を4回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n自身に6ACTION「黒竜」3段階（上限3）\\n9ACTION強化効果「くろいきば」付与\\n自身に付与された強化効果を2ACTION延長する\\n\\n「黒竜」3段階付与中以下の効果追加\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身が対象の弱点をついた時 与えたBRVダメージよりも多くのBRVを得る"
             },
             "rank": 1,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 22,
             "use_count": 3,
@@ -21590,6 +21815,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -21708,6 +21935,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21826,6 +22055,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21933,6 +22164,7 @@
                 "jp": "4HIT闇属性魔法BRV攻撃後\\n黒竜による3HIT闇属性近距離物理BRV攻撃"
             },
             "rank": 2,
+            "motion": 31,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -22121,6 +22353,7 @@
                 "jp": "3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 2,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -22304,11 +22537,12 @@
                 "jp": "双月"
             },
             "desc": {
-                "en": "",
+                "en": "15-HIT Dark AoE magic BRV attack + AoE HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nDeals full HP damage to all targets\\n\\nMaximum BRV damage limit +200% (up to 11998)\\nMaximum obtainable BRV & HP damage limit +80%（up to 179998）\\n\\n4 turns Burst Effect (party-wide)\\n- Increases BRV damage dealt by 50%\\n- Increases Maximum BRV damage limit by 20% (up to 11998)\\n- Increases stolen BRV overflow limit by 30%\\n- All targets: freezes BRV value\\n\\n* Same character's BURST do not stack",
                 "gl": "",
                 "jp": "15HIT闇属性全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは等倍\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVが最大BRVを超えて179998まで加算でき\\n与えるHPダメージ上限も99999を80％分突破可能（179998まで）\\n使用後 以下のバースト効果を4ACTION付与\\n味方全員の\\n与えるBRVダメージ中アップ\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVを最大BRVを超えて加算する上限小アップ\\n敵全体の\\nBRVが上昇しない\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
+            "motion": 74,
             "movement_cost": 30,
             "hit_count": 19,
             "use_count": 1,
@@ -22379,8 +22613,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22401,8 +22635,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22423,8 +22657,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22445,8 +22679,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22467,8 +22701,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22489,8 +22723,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22511,8 +22745,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22533,8 +22767,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22555,8 +22789,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22599,8 +22833,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22621,8 +22855,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22643,8 +22877,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22665,8 +22899,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22687,8 +22921,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22709,8 +22943,8 @@
                         "single_target_brv_rate": 36,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [
@@ -22732,7 +22966,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 3,
                     "element": [],
@@ -22769,6 +23003,8 @@
                         "disp_type": 28,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -22868,13 +23104,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2599
+                                2599,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1105,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     30,
@@ -22898,13 +23140,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2599
+                                2599,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1106,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -22928,13 +23176,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2599
+                                2599,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1107,
                                 "ailment_effect": 235,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -22958,13 +23212,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2599
+                                2599,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1108,
                                 "ailment_effect": 186,
                                 "target_id": 2,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -22992,11 +23252,12 @@
                 "jp": "グレアハンド＋【C】"
             },
             "desc": {
-                "en": "",
+                "en": "When called for assistance, Golbez performs the following actions\\n\\nRaises MAX BRV, ATK by 20%\\n1-HIT Dark AoE melee BRV attack + AoE HP attack\\n+ 1-HIT Dark AoE magic BRV attack + AoE HP attack\\n+ 1-HIT Dark AoE melee BRV attack + AoE HP attack from Shadow Dragon\\nIncreases BRV damage dealt by 60% when attacking single target\\nDeals split HP damage between all targets\\n\\nAll targets: 2 turns [Dark Resist Down] on first HP attack",
                 "gl": "",
                 "jp": "コールされたゴルベーザが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に2ACTION「闇耐性ダウン」付与"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 8,
             "use_count": 1,
@@ -23215,6 +23476,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23333,6 +23596,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23440,6 +23705,7 @@
                 "jp": "コールされたゴルベーザが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n＋闇属性全体魔法BRV攻撃＋全体HP攻撃後\\n黒竜による闇属性全体近距離物理BRV攻撃\\n＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 8,
             "use_count": 1,
@@ -23658,6 +23924,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23776,6 +24044,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23878,11 +24148,12 @@
                 "jp": "くろいきば【C】"
             },
             "desc": {
-                "en": "",
+                "en": "When called for assistance, Golbez performs the following actions\\n\\nRaises MAX BRV, ATK by 20%\\n4-HIT Dark AoE magic BRV attack + AoE HP attack delivered 3 times\\nIncreases BRV damage dealt by 60% when attacking single target\\nDeals split HP damage between all targets\\n\\n3 turns Call Effect\\n- Caller: increases BRV by 10% HP damage dealt (once per turn)",
                 "gl": "",
                 "jp": "コールされたゴルベーザが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\nゴルベーザをコールしたキャラクターに\\n自身がHP攻撃後 与えた合計HPダメージの10％分\\n自身のBRVをアップさせる効果 （1回の行動で1回のみ）"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 0,
             "hit_count": 17,
             "use_count": 1,
@@ -24299,6 +24570,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -24417,6 +24690,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -24524,6 +24799,7 @@
                 "jp": "コールされたゴルベーザが以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を4回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\nゴルベーザをコールしたキャラクターに\\n自身がHP攻撃後 与えた合計HPダメージの20％分\\n自身のBRVをアップさせる効果 （1回の行動で1回のみ）"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 0,
             "hit_count": 22,
             "use_count": 1,
@@ -25050,6 +25326,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -25168,6 +25446,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -25272,7 +25552,7 @@
                 "jp": "ライズウェイブパワー"
             },
             "desc": {
-                "en": "Slightly raises BRV damage dealt with 「Rising Wave」, 「Rising Wave+」, 「Rising Wave++」",
+                "en": "[Rising Wave], [Rising Wave+], [Rising Wave++] BRV damage dealt +10%",
                 "gl": "Slightly increases BRV damage dealt with Rising Wave, Rising Wave+, Rising Wave++",
                 "jp": "「ライズウェイブ」\\n「ライズウェイブ＋」\\n「ライズウェイブ＋＋」の\\n与えるBRVダメージを小アップ"
             },
@@ -25336,7 +25616,7 @@
                 "jp": "ブレイクボーナスアップ"
             },
             "desc": {
-                "en": "Slightly raises Break Bonus earned after breaking an enemy",
+                "en": "Increases own Break Bonus received by 20%",
                 "gl": "Slightly raises Break Bonus upon inflicting Break",
                 "jp": "自身が敵をブレイクした時\\n自身に入るブレイクボーナスを小アップ"
             },
@@ -25400,7 +25680,7 @@
                 "jp": "バフスピードアップ"
             },
             "desc": {
-                "en": "Slightly raises Speed while buffed",
+                "en": "Raises SPD by 10% while buffed",
                 "gl": "Slightly raises SPD with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の素早さを小アップ"
             },
@@ -25464,7 +25744,7 @@
                 "jp": "グレアハンドパワー"
             },
             "desc": {
-                "en": "Slightly raises BRV damage dealt with 「Glare Hand」, 「Glare Hand+」, 「Glare Hand++」",
+                "en": "[Glare Hand], [Glare Hand+], [Glare Hand++] BRV damage dealt +10%",
                 "gl": "Slightly increases BRV damage dealt with Glare Hand, Glare Hand+, Glare Hand++",
                 "jp": "「グレアハンド」\\n「グレアハンド＋」\\n「グレアハンド＋＋」の\\n与えるBRVダメージを小アップ"
             },
@@ -25523,12 +25803,12 @@
         {
             "id": 671,
             "name": {
-                "en": "Break Speed Up",
+                "en": "Break Boost Up",
                 "gl": "Break Boost Up",
                 "jp": "ブレイクブーストアップ"
             },
             "desc": {
-                "en": "Slightly raises Speed for 1 turn after breaking an enemy",
+                "en": "Raises MAX BRV by 10% for 1 turn after inflicting BREAK",
                 "gl": "Slightly raises MAX BRV for 1 turn upon inflicting Break",
                 "jp": "敵をブレイクした時 1ACTION\\n自身の最大BRVが小アップ"
             },
@@ -25592,7 +25872,7 @@
                 "jp": "ライズウェイブチャージ"
             },
             "desc": {
-                "en": "「Rising Wave」 use +1",
+                "en": "[Rising Wave] use +1",
                 "gl": "Rising Wave use +1",
                 "jp": "「ライズウェイブ」の使用回数＋1"
             },
@@ -25656,7 +25936,7 @@
                 "jp": "バフアタックアップ"
             },
             "desc": {
-                "en": "Slightly raises Attack while buffed",
+                "en": "Raises ATK by 10% while buffed",
                 "gl": "Slightly raises ATK with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の攻撃力を小アップ"
             },
@@ -25720,7 +26000,7 @@
                 "jp": "グレアハンドチャージ"
             },
             "desc": {
-                "en": "「Glare Hand」 use +1",
+                "en": "[Glare Hand] use +1",
                 "gl": "Glare Hand use +1",
                 "jp": "「グレアハンド」の使用回数＋1"
             },
@@ -25779,12 +26059,12 @@
         {
             "id": 1351,
             "name": {
-                "en": "The Lunarian Descendant",
+                "en": "Lunarian Descent",
                 "gl": "Lunarian Descent",
                 "jp": "月の民の血を引く者"
             },
             "desc": {
-                "en": "Slightly raises Max BRV and Attack while 「Shadow Dragon」 is active",
+                "en": "Raises MAX BRV, ATK by 10% while [Shadow Dragon] is active",
                 "gl": "Slightly raises MAX BRV, ATK while Shadow Dragon active",
                 "jp": "自身に「黒竜」が付与されている時\\n自身の最大BRVと攻撃力を小アップ"
             },
@@ -25852,12 +26132,12 @@
         {
             "id": 1352,
             "name": {
-                "en": "Buff Boost",
+                "en": "Buff Boost Up",
                 "gl": "Buff Boost Up",
                 "jp": "バフブーストアップ"
             },
             "desc": {
-                "en": "Moderately raises Max BRV while buffed",
+                "en": "Raises MAX BRV by 40% while buffed",
                 "gl": "Moderately raises MAX BRV with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の最大BRVを中アップ"
             },
@@ -25921,7 +26201,7 @@
                 "jp": "ライズウェイブエクステンド"
             },
             "desc": {
-                "en": "「ライズウェイブ」の使用回数＋2\\n\\n「ライズウェイブ」「ライズウェイブ＋」\\n「ライズウェイブ＋＋」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・最後のHP攻撃HIT時\\n　ターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n・自身に8ACTION「黒き甲冑の男」付与\\n\\n「ライズウェイブ」使用時\\n・闇属性近距離物理BRV攻撃\\n　＋闇属性魔法BRV攻撃＋HP攻撃が\\n　2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n\\n「ライズウェイブ＋」使用時\\n・闇属性近距離物理BRV攻撃\\n　＋闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による闇属性近距離物理BRV攻撃＋HP攻撃が\\n　2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n\\n「ライズウェイブ＋＋」使用時\\n・2HIT闇属性近距離物理BRV攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃が\\n　3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による3HIT闇属性近距離物理BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ",
+                "en": "[Rising Wave] use+2\\n\\nWhen using [Rising Wave], [Rising Wave+], [Rising Wave++]\\n- Stolen BRV can overflow up to 120% MAX BRV \\n- Deals 20% total HP damage to non-targets on last HP attack\\n- Self: 8 turns [Clad in Black]\\n\\nWhen using [Rising Wave]\\n- Becomes 2-HIT Dark melee BRV attack + HP attack\\n  + 2-HIT Dark magic BRV attack + HP attack\\n- Increases total BRV potency by 200%\\n\\nWhen using [Rising Wave+]\\n- Becomes 2-HIT Dark melee BRV attack + HP attack\\n  + 2-HIT Dark magic BRV attack + HP attack\\n  + 2-HIT Dark melee BRV attack + HP attack from Shadow Dragon\\n- Increases total BRV potency by 240%\\n\\nWhen using [Rising Wave++]\\n- Becomes 3-HIT Dark melee BRV attack + HP attack\\n  + 3-HIT Dark magic BRV attack + HP attack\\n  + 3-HIT Dark melee BRV attack + HP attack from Shadow Dragon\\n- Increases total BRV potency by 240%\\n\\n[Clad in Black]\\n- Raises MAX BRV, ATK by 40%",
                 "gl": "",
                 "jp": "「ライズウェイブ」の使用回数＋2\\n\\n「ライズウェイブ」「ライズウェイブ＋」\\n「ライズウェイブ＋＋」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・最後のHP攻撃HIT時\\n　ターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n・自身に8ACTION「黒き甲冑の男」付与\\n\\n「ライズウェイブ」使用時\\n・闇属性近距離物理BRV攻撃\\n　＋闇属性魔法BRV攻撃＋HP攻撃が\\n　2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n\\n「ライズウェイブ＋」使用時\\n・闇属性近距離物理BRV攻撃\\n　＋闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による闇属性近距離物理BRV攻撃＋HP攻撃が\\n　2HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n\\n「ライズウェイブ＋＋」使用時\\n・2HIT闇属性近距離物理BRV攻撃\\n　＋2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃が\\n　3HIT闇属性近距離物理BRV攻撃＋HP攻撃\\n　＋3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　黒竜による3HIT闇属性近距離物理BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ"
             },
@@ -25970,12 +26250,12 @@
         {
             "id": 1354,
             "name": {
-                "en": "Buff Attack Speed Up",
+                "en": "Buff Attack Speed",
                 "gl": "Buff Attack Speed Up",
                 "jp": "バフアタックスピードアップ"
             },
             "desc": {
-                "en": "Moderately raises Attack and Speed while buffed",
+                "en": "Raises ATK, SPD by 40% while buffed",
                 "gl": "Moderately raises ATK, SPD with active buffs",
                 "jp": "自身に強化効果が付与されている時\\n自身の攻撃力と素早さを中アップ"
             },
@@ -26048,7 +26328,7 @@
                 "jp": "グレアハンドエクステンド"
             },
             "desc": {
-                "en": "「グレアハンド」の使用回数＋2\\n\\n「グレアハンド」「グレアハンド＋」\\n「グレアハンド＋＋」使用時\\n・ゴルベーザによる攻撃のBRV威力中アップ\\n・黒竜による攻撃のBRV威力小アップ\\n・闇属性全体魔法BRV攻撃の前に追加全体HP攻撃が発動\\n　与えるHPダメージは分配\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n・自身に8ACTION「黒き甲冑の男」付与\\n\\n「BRV攻撃＋」使用時\\n・ゴルベーザによる攻撃のHIT数が3HITに変化し\\n　合計BRV威力も中アップ\\n・黒竜による攻撃のHIT数が2HITに変化し\\n　合計BRV威力も中アップ",
+                "en": "[Glare Hand] use+2\\n\\nWhen using [Glare Hand], [Glare Hand+], [Glare Hand++]\\n- Increases Golbez's BRV potency by 40%\\n- Increases Shadow Dragon's BRV potency by 20%\\n- Adds AoE HP attack before the Dark AoE magic BRV attack \\n- Deals split HP damage between all targets\\n- Stolen BRV can overflow up to 150% MAX BRV \\n- All targets: 4 turns [Dark Resist Down] on first HP attack\\n- Self: 8 turns [Clad in Black]\\n\\nWhen using [BRV Attack+]\\n- Golbez's BRV attack hit count becomes 3 (50x3)\\n- Increases total BRV potency by 70%\\n- Shadow Dragon's BRV attack hit count becomes 2 (50x2)\\n- Increases total BRV potency by 60%\\n\\n[Clad in Black]\\n- Raises MAX BRV, ATK by 40%",
                 "gl": "",
                 "jp": "「グレアハンド」の使用回数＋2\\n\\n「グレアハンド」「グレアハンド＋」\\n「グレアハンド＋＋」使用時\\n・ゴルベーザによる攻撃のBRV威力中アップ\\n・黒竜による攻撃のBRV威力小アップ\\n・闇属性全体近距離物理BRV攻撃\\n　＋闇属性全体魔法BRV攻撃＋全体HP攻撃が\\n　闇属性全体近距離物理BRV攻撃＋全体HP攻撃\\n　＋闇属性全体魔法BRV攻撃＋全体HP攻撃に変化\\n　　与えるHPダメージは分配\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最初のHP攻撃時に対象に4ACTION「闇耐性ダウン」付与\\n・自身に8ACTION「黒き甲冑の男」付与\\n\\n「BRV攻撃＋」使用時\\n・ゴルベーザによる攻撃のHIT数が3HITに変化し\\n　合計BRV威力も大アップ\\n・黒竜による攻撃のHIT数が2HITに変化し\\n　合計BRV威力も中アップ"
             },
@@ -26175,7 +26455,7 @@
                 "jp": "ダークエンチャントエクステンド"
             },
             "desc": {
-                "en": "When using 「Dark Enchant」, adds the following effect:\\n- Slightly raises Max BRV",
+                "en": "Additional Effect added: Raises MAX BRV by 20%",
                 "gl": "When using Dark Enchant:\\n • Adds effect that slightly raises own MAX BRV",
                 "jp": "「ダークエンチャント」使用時\\n自身の最大BRV小アップの効果追加\\n"
             },
@@ -27215,7 +27495,7 @@
                 "jp": "ダークエンチャントグロース"
             },
             "desc": {
-                "en": "「Dark Enchant」 use +1\\nDuration of 「Dark Enchant」 effects +2 turns",
+                "en": "[Dark Enchant] use +1\\nAdditional Effect duration +2",
                 "gl": "Dark Enchant use +1\\n\\nDark Enchant effect duration +2",
                 "jp": "「ダークエンチャント」の使用回数＋1\\n\\n「ダークエンチャント」の効果を\\n2ACTION期間延長"
             },
@@ -27304,12 +27584,12 @@
             "passive": {
                 "id": 563,
                 "name": {
-                    "en": "Breath of Rising Darkness",
+                    "en": "Rising Breath of Darkness",
                     "gl": "Rising Breath of Darkness",
                     "jp": "噴き上がる闇の息吹"
                 },
                 "desc": {
-                    "en": "When using 「Rising Wave」, 「Rising Wave+」, 「Rising Wave++」:\\n- Raises BRV potency\\n\\nWhen using 「Rising Wave」, 「Rising Wave+」:\\n- Grants an additional stack of 「Shadow Dragon」",
+                    "en": "When using [Rising Wave], [Rising Wave+], [Rising Wave++]\\n- Increases Golbez's BRV potency by 40%\\n- Increases Shadow Dragon's BRV potency by 40%\\n\\nWhen using [Rising Wave], [Rising Wave+]\\n- [Shadow Dragon] level +1",
                     "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • BRV damage boost to attacks from Golbez, Shadow Dragon\\n\\nWhen using Rising Wave, Rising Wave+:\\n • Shadow Dragon level +1",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」\\n「ライズウェイブ＋＋」使用時\\nゴルベーザ 黒竜による攻撃のBRV威力アップ\\n＋「ライズウェイブ」「ライズウェイブ＋」使用時\\n「黒竜」付与段階＋1"
                 },
@@ -27386,12 +27666,12 @@
             "passive": {
                 "id": 564,
                 "name": {
-                    "en": "The Magus' Fingers",
+                    "en": "Sorcerer's Fingertips",
                     "gl": "Sorcerer's Fingertips",
                     "jp": "魔人の指先"
                 },
                 "desc": {
-                    "en": "When using 「Glare Hand」, 「Glare Hand+」, 「Glare Hand++」:\\n- Raises BRV potency\\n- Moderately raises BRV damage dealt to a single target\\n\\nWhen using 「Glare Hand」, 「Glare Hand+」:\\n- Grants an additional stack of 「Shadow Dragon」",
+                    "en": "When using [Glare Hand], [Glare Hand+], [Glare Hand++]\\n- Increases Golbez's BRV potency by 40%\\n- Increases Shadow Dragon's BRV potency by 20%\\n- Increases BRV damage dealt by 60% when attacking single target\\n\\nWhen using [Glare Hand], [Glare Hand+]\\n- [Shadow Dragon] level +1",
                     "gl": "When using Glare Hand, Glare Hand+, Glare Hand++:\\n • BRV damage boost to attacks from Golbez, Shadow Dragon\\n • Moderately increased BRV damage when attacking single target\\n\\nWhen using Glare Hand, Glare Hand+:\\n • Shadow Dragon level +1",
                     "jp": "「グレアハンド」「グレアハンド＋」\\n「グレアハンド＋＋」使用時\\n以下の効果が発動\\n・ゴルベーザ 黒竜による攻撃のBRV威力アップ\\n・攻撃対象が単体の時 与えるBRVダメージ中アップ\\n＋「グレアハンド」「グレアハンド＋」使用時\\n「黒竜」付与段階＋1"
                 },
@@ -27481,12 +27761,12 @@
             "passive": {
                 "id": 510,
                 "name": {
-                    "en": "Shadow Dragon commanding Magus",
+                    "en": "The Shadow Dragon's Master",
                     "gl": "The Shadow Dragon's Master",
                     "jp": "漆黒の竜を従えし魔人"
                 },
                 "desc": {
-                    "en": "May equip EX Ability 「Twin Meteor」",
+                    "en": "May equip EX ability [Twin Meteor]",
                     "gl": "May equip EX ability Twin Meteor",
                     "jp": "EXアビリティ「Wメテオ」装備可能"
                 },
@@ -27530,7 +27810,7 @@
                         "jp": "Wメテオパワー"
                     },
                     "desc": {
-                        "en": "Slightly raises BRV damage dealt with 「Twin Meteor」",
+                        "en": "[Twin Meteor] BRV damage dealt +10%",
                         "gl": "Slightly increases BRV damage dealt with Twin Meteor",
                         "jp": "「Wメテオ」の与える\\nBRVダメージを小アップ"
                     },
@@ -27594,7 +27874,7 @@
                         "jp": "Wメテオアドバンス"
                     },
                     "desc": {
-                        "en": "When using 「Twin Meteor」:\\n- Slightly raises Max BRV Overflow limit",
+                        "en": "When using [Twin Meteor]\\nIncreases stolen BRV overflow limit by 50%",
                         "gl": "Moderately raises limit of BRV that may be stolen in excess of MAX BRV when using Twin Meteor",
                         "jp": "「Wメテオ」使用時\\n奪ったBRVを最大BRVを超えて加算する上限を中アップ"
                     },
@@ -27648,7 +27928,7 @@
                         "jp": "Wメテオリキャストアップ"
                     },
                     "desc": {
-                        "en": "Slightly raises recast speed of 「Twin Meteor」",
+                        "en": "[Twin Meteor] recast speed +20%",
                         "gl": "Slightly raises recast speed of Twin Meteor",
                         "jp": "「Wメテオ」の\\nリキャストスピードを小アップ"
                     },
@@ -27736,12 +28016,12 @@
             "passive": {
                 "id": 1137,
                 "name": {
-                    "en": "Shadow Dragon commanding Magus Extend",
+                    "en": "The Shadow Dragon's Master Extend",
                     "gl": "The Shadow Dragon's Master Extension",
                     "jp": "漆黒の竜を従えし魔人エクステンド"
                 },
                 "desc": {
-                    "en": "Improves EX Ability 「Twin Meteor」",
+                    "en": "Improves EX ability [Twin Meteor]",
                     "gl": "Boost to EX ability Twin Meteor",
                     "jp": "EXアビリティ「Wメテオ」の性能アップ"
                 },
@@ -27791,12 +28071,12 @@
                 {
                     "id": 1136,
                     "name": {
-                        "en": "Twin Meteor Ability Freecast+",
+                        "en": "Twin Meteor Force Freecast+",
                         "gl": "Twin Meteor Force Ability Aspir+",
                         "jp": "Wメテオフォースアビリティアスピル＋"
                     },
                     "desc": {
-                        "en": "When using 「Twin Meteor」:\\n- Moderately raises BRV potency\\n- Doesn't consume ability use on the next turn\\n\\nTurns 「HP Attack」 into 「HP Attack+」\\n　∟ 2-HIT Dark magic BRV + HP attack\\n　∟ + Dark melee BRV + HP attack by Shadow Dragon",
+                        "en": "When using [Twin Meteor]\\n- Increases BRV potency by 50%\\n- Does not consume use count on next turn (excl. some abilities)\\n\\n[HP Attack] becomes [HP Attack+]\\n- 2-HIT Dark magic BRV attack + HP attack\\n  + 1-HIT Dark melee BRV attack + HP attack from Shadow Dragon",
                         "gl": "When using Twin Meteor:\\n • Moderate BRV damage boost\\n • Next turn after use does not consume ability use count (some abilities excluded)\\n\\nWhile equipping EX+ weapon Obsidian Scales (IV)+ or passive ability The Shadow Dragon's Master Extension:\\n • HP Attack becomes HP Attack+ (2-hit Dark magic BRV attack + HP attack followed by Dark melee BRV attack + HP attack from Shadow Dragon)",
                         "jp": "「Wメテオ」使用時\\n・BRV威力中アップ\\n・使用後 次の行動時 アビリティの使用回数を消費しない\\n　（一部のアビリティを除く）\\n\\nEX+武器「黒曜の竜鱗【IV】+」\\nまたはパッシブ「漆黒の竜を従えし魔人エクステンド」装備時\\n通常「HP攻撃」が「HP攻撃＋」に変化し\\n2HIT闇属性魔法BRV攻撃＋HP攻撃後\\n黒竜による闇属性近距離物理BRV攻撃＋HP攻撃に変化"
                     },
@@ -27835,12 +28115,12 @@
                 {
                     "id": 1138,
                     "name": {
-                        "en": "Shadow Dragon commanding Magus Extend Attack Boost Up",
+                        "en": "The Shadow Dragon's Master Extend Attack Boost Up",
                         "gl": "The Shadow Dragon's Master Extension Attack Boost Up",
                         "jp": "漆黒の竜を従えし魔人エクステンドアタックブーストアップ"
                     },
                     "desc": {
-                        "en": "Moderately raises Max BRV and Attack",
+                        "en": "Raises MAX BRV by 60%, ATK by 40%",
                         "gl": "While equipping EX+ weapon Obsidian Scales (IV)+ or passive ability The Shadow Dragon's Master Extension:\\n • Moderately raises MAX BRV, ATK",
                         "jp": "EX+武器「黒曜の竜鱗【IV】+」\\nまたはパッシブ「漆黒の竜を従えし魔人エクステンド」装備時\\n自身の最大BRVと攻撃力を中アップ"
                     },
@@ -27908,12 +28188,12 @@
                 {
                     "id": 1139,
                     "name": {
-                        "en": "Twin Meteor Buff Plus Shadow Dragon Buff Start Recast MAX",
+                        "en": "Twin Meteor Buff Plus Shadow Dragon Buff Start Recast Max ",
                         "gl": "Twin Meteor Buff Plus Shadow Dragon Buff Starting Recast MAX",
                         "jp": "Wメテオバフプラス黒竜バフスタートリキャストMAX"
                     },
                     "desc": {
-                        "en": "When using 「Twin Meteor」:\\n- Grants 「Atonement for Hatred」 for 4 turns\\n\\nWhen Quest starts:\\n- Grants 1 stack of 「Shadow Dragon」 (max is 3) for 6 turns\\n- Fills EX gauge to MAX\\n\\n「Atonement for Hatred」 has the following effects:\\n- Raises Max BRV overflow limit\\n- Raises BRV damage dealt when hitting target's weakness",
+                        "en": "When using [Twin Meteor]\\n- Self: 4 turns [Atonement for Hatred]\\n\\nWhen Quest starts\\n- Self: 6 turns 1 level [Shadow Dragon] (limit 3)\\n- Fills EX gauge to MAX\\n\\n[Atonement for Hatred]\\n- Increases BRV damage dealt by 50% when hitting weakness\\n- Increases stolen BRV overflow limit by 20%",
                         "gl": "When using Twin Meteor:\\n • Self: 4 turns Atonement for Hatred\\n\\nAt start of quest:\\n • Self: 6 turns 1 level of Shadow Dragon (limit 3)\\n • Full recast gauge",
                         "jp": "「Wメテオ」使用時\\n自身に4ACTION「憎しみへの償い」付与\\n\\nクエスト開始時\\n自身に6ACTION「黒竜」1段階付与（上限3）し\\n自身のリキャストゲージがMAXになる"
                     },
@@ -27952,12 +28232,12 @@
                 {
                     "id": 1140,
                     "name": {
-                        "en": "Twin Meteor BRV HP Hit Plus Force",
+                        "en": "Twin Meteor BRV+HP Hit Plus Force",
                         "gl": "Twin Meteor BRV HP Hit Plus Force",
                         "jp": "WメテオBRVHPヒットプラスフォース"
                     },
                     "desc": {
-                        "en": "When using 「Twin Meteor」:\\n- Executes a 5-HIT Dark AoE magic BRV + HP attack three times instead\\n- Tremendously raises total BRV potency",
+                        "en": "When using [Twin Meteor]\\n- Becomes 5-HIT Dark AoE magic BRV attack + AoE HP attack delivered 3 times\\n- Increases total BRV potency by 200%",
                         "gl": "When using Twin Meteor:\\n • 5-hit group Dark magic BRV attack + group HP attack delivered 2 times becomes 5-hit group Dark magic BRV attack + group HP attack delivered 3 times\\n • Tremendously increased cumulative BRV damage",
                         "jp": "「Wメテオ」使用時\\n5HIT闇属性全体魔法BRV攻撃\\n＋全体HP攻撃を2回行うが\\n5HIT闇属性全体魔法BRV攻撃\\n＋全体HP攻撃を3回行うに変化し\\n合計BRV威力も極大アップ"
                     },
@@ -28000,7 +28280,7 @@
             "series_id": 4,
             "name": {
                 "en": "Sapphire Scales",
-                "gl": "",
+                "gl": "Sapphire Scales (IV)",
                 "jp": "蒼玉の竜鱗【IV】"
             },
             "status": {
@@ -28025,12 +28305,12 @@
             "passive": {
                 "id": 2270,
                 "name": {
-                    "en": "",
+                    "en": "Shadow Dragon's Power",
                     "gl": "",
                     "jp": "黒竜の魔力"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "May equip LD ability [Black Fang]",
                     "gl": "",
                     "jp": "LDアビリティ「くろいきば」装備可能"
                 },
@@ -28080,12 +28360,12 @@
                 {
                     "id": 2271,
                     "name": {
-                        "en": "",
+                        "en": "Black Fang Power",
                         "gl": "",
                         "jp": "くろいきばパワー"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "- Raises ATK by 40%\\n- [Black Fang] BRV damage dealt +10%",
                         "gl": "",
                         "jp": "・自身の攻撃力を中アップ\\n・「くろいきば」の与える\\n　BRVダメージを小アップ"
                     },
@@ -28153,12 +28433,12 @@
                 {
                     "id": 2272,
                     "name": {
-                        "en": "",
+                        "en": "Black Fang Long Shadow Dragon Plus",
                         "gl": "",
                         "jp": "くろいきばロング黒竜プラス"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "- Raises ATK by 40%\\n- [Black Fang] duration +3\\n- While [Shadow Dragon III] is active \\n　∟ Lowers BRV damage taken by 60%\\n　∟ Lowers HP damage taken by 60%\\n　∟ Increases BRV Gained by 20% when hitting weakness",
                         "gl": "",
                         "jp": "・自身の攻撃力を中アップ\\n・「くろいきば」使用時\\n　強化効果「くろいきば」の\\n　3ACTION期間延長\\n・「黒竜」3段階付与中以下の効果追加\\n　-自身の受けるBRVダメージ軽減\\n　-自身の受けるHPダメージ軽減\\n　-自身が対象の弱点をついた時 与えたBRVダメージよりも多くのBRVを得る"
                     },
@@ -28260,12 +28540,12 @@
                 {
                     "id": 2273,
                     "name": {
-                        "en": "",
+                        "en": "Black Fang Charge++",
                         "gl": "",
                         "jp": "くろいきばチャージ＋＋"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "- Raises ATK by 40%\\n- [Black Fang] use +1\\n- While [Shadow Dragon III] is active \\n　∟ [BRV Attack] variants become [BRV Attack++]\\n   - 4-HIT Dark magic BRV attack\\n   + 3-HIT Dark melee BRV attack from Shadow Dragon\\n　∟ [HP Attack] variants become [HP Attack++]\\n　  - 3-HIT Dark magic BRV attack + HP attack\\n   + 2-HIT Dark melee BRV attack + HP attack from Shadow Dragon",
                         "gl": "",
                         "jp": "・自身の攻撃力を中アップ\\n・「くろいきば」の使用回数＋1\\n・「黒竜」3段階付与中\\n　通常「BRV攻撃」「BRV攻撃＋」が\\n　以下の「BRV攻撃＋＋」に変化\\n　-4HIT闇属性魔法BRV攻撃後\\n　　黒竜による3HIT闇属性近距離物理BRV攻撃\\n　通常「HP攻撃」「HP攻撃＋」が\\n　以下の「HP攻撃＋＋」に変化\\n　-3HIT闇属性魔法BRV攻撃＋HP攻撃後\\n　　黒竜による2HIT闇属性近距離物理BRV攻撃＋HP攻撃"
                     },
@@ -28337,7 +28617,7 @@
             "series_id": 4,
             "name": {
                 "en": "Clairvoyant Scales",
-                "gl": "",
+                "gl": "Heavens' Eye Scales (IV)",
                 "jp": "天眼の竜鱗【IV】"
             },
             "status": {
@@ -28362,12 +28642,12 @@
             "passive": {
                 "id": 2274,
                 "name": {
-                    "en": "",
+                    "en": "Evils Unleashed",
                     "gl": "",
                     "jp": "邪悪な思念からの解放"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "May equip Finish Burst [Twin Moon]",
                     "gl": "",
                     "jp": "フィニッシュバースト「双月」装備可能"
                 },
@@ -28414,6 +28694,7 @@
                 "auras": []
             }
         },
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 1699,
@@ -28723,7 +29004,7 @@
             "series_id": 4,
             "name": {
                 "en": "Golbez Model",
-                "gl": "",
+                "gl": "Golbez's Armor (IV)",
                 "jp": "ゴルベーザモデル【IV】"
             },
             "status": {
@@ -28753,8 +29034,8 @@
                     "jp": "攻撃の要"
                 },
                 "desc": {
-                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・自身の与えるBRVダメージ上限が9999を15％分突破可能になる（11498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -28823,7 +29104,7 @@
             "id": 5706,
             "series_id": 4,
             "name": {
-                "en": "",
+                "en": "Golbez Model+",
                 "gl": "",
                 "jp": "ゴルベーザモデル【IV】+"
             },
@@ -28849,12 +29130,12 @@
             "passive": {
                 "id": 2480,
                 "name": {
-                    "en": "",
+                    "en": "Bravery Brilliance & Ruin Brilliance",
                     "gl": "",
                     "jp": "勇猛の輝き・破滅の輝き"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "Increases own BRV, HP damage limits (3, 1)",
                     "gl": "",
                     "jp": "全解放_★7真化防具ゴルベーザ"
                 },
@@ -28904,12 +29185,12 @@
                 {
                     "id": 2481,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Brilliance & Ruin Brilliance I",
                         "gl": "",
                         "jp": "勇猛の輝き・破滅の輝きⅠ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12098\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 116998",
                         "gl": "",
                         "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12098まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（116998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -28958,12 +29239,12 @@
                 {
                     "id": 2482,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Brilliance & Ruin Brilliance II",
                         "gl": "",
                         "jp": "勇猛の輝き・破滅の輝きⅡ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12698\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 118998",
                         "gl": "",
                         "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12698まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（118998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -29012,12 +29293,12 @@
                 {
                     "id": 2483,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Brilliance & Ruin Brilliance III",
                         "gl": "",
                         "jp": "勇猛の輝き・破滅の輝きⅢ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 13298\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 120998",
                         "gl": "",
                         "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（13298まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（120998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -29066,12 +29347,12 @@
                 {
                     "id": 2484,
                     "name": {
-                        "en": "",
+                        "en": "Bravery Brilliance & Ruin Brilliance IV",
                         "gl": "",
                         "jp": "勇猛の輝き・破滅の輝きⅣ"
                     },
                     "desc": {
-                        "en": "",
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 12%\\n*Up to 14498\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 4%\\n*Up to 124998",
                         "gl": "",
                         "jp": "・自身の与えるBRVダメージ上限が9999を＋12％分突破可能になる（14498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋4％分突破可能になる（124998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                     },
@@ -29160,6 +29441,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 3,
                 "sp_stacks": 0,
@@ -29223,7 +29506,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "811": [
@@ -29247,12 +29541,12 @@
             "name": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "meta_data": {
                 "target": 2,
@@ -29278,6 +29572,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -29341,7 +29637,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1081": [
@@ -29396,6 +29703,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -29459,7 +29768,46 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    {
+                        "id": 35,
+                        "conds": [
+                            {
+                                "id": 82,
+                                "name": "TARGET_BLESS_LEVEL_SUM",
+                                "target": 2,
+                                "values": [
+                                    811,
+                                    3,
+                                    4
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 35,
+                        "conds": [
+                            {
+                                "id": 82,
+                                "name": "TARGET_BLESS_LEVEL_SUM",
+                                "target": 2,
+                                "values": [
+                                    811,
+                                    3,
+                                    4
+                                ]
+                            }
+                        ]
+                    },
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2624": [
@@ -29514,6 +29862,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -29577,7 +29927,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2636": [
@@ -29632,6 +29993,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -29695,7 +30058,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2638": [
@@ -29789,17 +30163,17 @@
             "id": 5652,
             "name": {
                 "en": "Weak Raging Attack Up (RF)",
-                "gl": "ウィークレイジングアタック【精錬】",
+                "gl": "Weak Raging Attack Up (RF)",
                 "jp": "ウィークレイジングアタックアップ【精錬】"
             },
             "desc": {
                 "en": "When attacking target's weakness:\\n- Raises Attack by 2% up to 2 times\\n* Only once per turn",
-                "gl": "自身が対象の弱点をついた時\\n自身の攻撃力が最大2回まで2％アップ\\n1回の行動での効果アップは1回のみ",
+                "gl": "When attacking target's weakness:\\n • Raises own ATK by 2% up to 2 times, once per turn",
                 "jp": "自身が対象の弱点をついた時\\n自身の攻撃力が最大2回まで2％アップ\\n1回の行動での効果アップは1回のみ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "ウィークレイジングアタック【精錬】：攻撃力がアップ",
+                "gl": "Weak Raging Attack Up (RF): Raises ATK",
                 "jp": "ウィークレイジングアタックアップ【精錬】：攻撃力がアップ"
             },
             "meta_data": {
@@ -29997,7 +30371,7 @@
             "id": "108050103",
             "name": {
                 "en": "",
-                "gl": "Bravery HP Damage★★",
+                "gl": "HP Damage BRV Gain★★",
                 "jp": "HPダメージBRVゲイン★★"
             },
             "desc": {
@@ -30007,7 +30381,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage★★: Increases BRV",
+                "gl": "HP Damage BRV Gain★★: Increases BRV",
                 "jp": "HPダメージBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -30042,17 +30416,17 @@
                 "id": 5560,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Rising Wave Lv9",
                     "jp": "ライズウェイブパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Rising Wave: Boost to Rising Wave, Rising Wave+, Rising Wave++",
                     "jp": "ライズウェイブパワー：「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30132,17 +30506,17 @@
                 "id": 5561,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave BRV Attack Advance Lv9",
                     "jp": "ライズウェイブBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave BRV Attack Advance: Boost to Rising Wave, Rising Wave+, Rising Wave++",
                     "jp": "ライズウェイブBRVアタックアドバンス：「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30222,17 +30596,17 @@
                 "id": 5562,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up Lv9",
                     "jp": "バフアタックアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own ATK by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の攻撃力10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up: Raises ATK",
                     "jp": "バフアタックアップ：攻撃力がアップ"
                 },
                 "meta_data": {
@@ -30312,17 +30686,17 @@
                 "id": 5563,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Rising Wave II",
                     "jp": "ライズウェイブパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Rising Wave II: Boost to Rising Wave, Rising Wave+, Rising Wave++",
                     "jp": "ライズウェイブパワーII：「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30402,17 +30776,17 @@
                 "id": 5564,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave BRV Attack Advance II",
                     "jp": "ライズウェイブBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave BRV Attack Advance II: Boost to Rising Wave, Rising Wave+, Rising Wave++",
                     "jp": "ライズウェイブBRVアタックアドバンスII：「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30492,17 +30866,17 @@
                 "id": 5565,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave Weak Damage Up",
                     "jp": "ライズウェイブウィークダメージアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Rising Wave, Rising Wave+, Rising Wave++:\\n • Increases BRV damage dealt when attacking target's weakness by 10%",
                     "jp": "「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Rising Wave Weak Damage Up: Boost to Rising Wave, Rising Wave+, Rising Wave++",
                     "jp": "ライズウェイブウィークダメージアップ：「ライズウェイブ」「ライズウェイブ＋」「ライズウェイブ＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30582,17 +30956,17 @@
                 "id": 5566,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Glare Hand Lv9",
                     "jp": "グレアハンドパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Glare Hand, Glare Hand+, Glare Hand++:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Glare Hand: Boost to Glare Hand, Glare Hand+, Glare Hand++",
                     "jp": "グレアハンドパワー：「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30672,17 +31046,17 @@
                 "id": 5567,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Glare Hand BRV Attack Advance Lv9",
                     "jp": "グレアハンドBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Glare Hand, Glare Hand+, Glare Hand++:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Glare Hand BRV Attack Advance: Boost to Glare Hand, Glare Hand+, Glare Hand++",
                     "jp": "グレアハンドBRVアタックアドバンス：「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30762,17 +31136,17 @@
                 "id": 5568,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up Lv9",
                     "jp": "バフブーストアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own MAX BRV by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の最大BRV10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up: Raises MAX BRV",
                     "jp": "バフブーストアップ：最大BRVがアップ"
                 },
                 "meta_data": {
@@ -30852,17 +31226,17 @@
                 "id": 5569,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Glare Hand II",
                     "jp": "グレアハンドパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Glare Hand, Glare Hand+, Glare Hand++:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Glare Hand II: Boost to Glare Hand, Glare Hand+, Glare Hand++",
                     "jp": "グレアハンドパワーII：「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -30942,17 +31316,17 @@
                 "id": 5570,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Glare Hand BRV Attack Advance II",
                     "jp": "グレアハンドBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Glare Hand, Glare Hand+, Glare Hand++:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Glare Hand BRV Attack Advance II: Boost to Glare Hand, Glare Hand+, Glare Hand++",
                     "jp": "グレアハンドBRVアタックアドバンスII：「グレアハンド」「グレアハンド＋」「グレアハンド＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -31032,17 +31406,17 @@
                 "id": 5571,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack+ Up",
                     "jp": "ブレイブ攻撃＋アップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using BRV Attack+:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「BRV攻撃＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack+ Up: Boost to BRV Attack+",
                     "jp": "ブレイブ攻撃＋アップ：「BRV攻撃＋」の性能アップ"
                 },
                 "meta_data": {
@@ -31122,17 +31496,17 @@
                 "id": 5572,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Twin Meteor Lv9",
                     "jp": "Wメテオパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Twin Meteor:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「Wメテオ」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Twin Meteor: Boost to Twin Meteor",
                     "jp": "Wメテオパワー：「Wメテオ」の性能アップ"
                 },
                 "meta_data": {
@@ -31212,17 +31586,17 @@
                 "id": 5573,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor BRV Attack Advance Lv9",
                     "jp": "WメテオBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Twin Meteor:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「Wメテオ」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor BRV Attack Advance: Boost to Twin Meteor",
                     "jp": "WメテオBRVアタックアドバンス：「Wメテオ」の性能アップ"
                 },
                 "meta_data": {
@@ -31302,17 +31676,17 @@
                 "id": 5574,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor Weak Damage Up Lv9",
                     "jp": "Wメテオウィークダメージアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Twin Meteor:\\n • Increases BRV damage dealt when attacking target's weakness by 10％",
                     "jp": "「Wメテオ」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor Weak Damage Up: Boost to Twin Meteor",
                     "jp": "Wメテオウィークダメージアップ：「Wメテオ」の性能アップ"
                 },
                 "meta_data": {
@@ -31392,17 +31766,17 @@
                 "id": 5575,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Twin Meteor II",
                     "jp": "WメテオパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Twin Meteor:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「Wメテオ」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Twin Meteor II: Boost to Twin Meteor",
                     "jp": "WメテオパワーII：「Wメテオ」の性能アップ"
                 },
                 "meta_data": {
@@ -31482,17 +31856,17 @@
                 "id": 5576,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor BRV Attack Advance II",
                     "jp": "WメテオBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Twin Meteor:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「Wメテオ」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Twin Meteor BRV Attack Advance II: Boost to Twin Meteor",
                     "jp": "WメテオBRVアタックアドバンスII：「Wメテオ」の性能アップ"
                 },
                 "meta_data": {
@@ -31572,17 +31946,17 @@
                 "id": 5577,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack+ Up",
                     "jp": "HP攻撃＋アップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using HP Attack+:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「HP攻撃＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "HP Attack+ Up: Boost to HP Attack+",
                     "jp": "HP攻撃＋アップ：「HP攻撃＋」の性能アップ"
                 },
                 "meta_data": {
@@ -32201,12 +32575,12 @@
             {
                 "id": 6127,
                 "name": {
-                    "en": "",
+                    "en": "Shadow Dragon's Power Extend",
                     "gl": "",
                     "jp": "黒竜の魔力エクステンド"
                 },
                 "desc": {
-                    "en": "",
+                    "en": "When Quest starts\\n- Self: 6 turns [Black Fang], [Clad in Black]\\n\\nWhen using [Black Fang]\\n- Becomes　4-HIT Dark AoE magic BRV attack + AoE HP attack delivered 4 times\\n- Increases total BRV potency by 200%\\n- Granted buffs duration +2",
                     "gl": "",
                     "jp": "クエスト開始時\\n自身に6ACTION強化効果「くろいきば」「黒き甲冑の男」付与\\n\\n「くろいきば」使用時\\n・4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を3回行うが\\n　4HIT闇属性全体魔法BRV攻撃＋全体HP攻撃を4回行うに変化し\\n　合計BRV威力も極大アップ\\n・自身に付与された強化効果を2ACTION延長する"
                 },
@@ -32216,7 +32590,7 @@
                     "jp": "黒竜の魔力エクステンド：「くろいきば」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -32269,5 +32643,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-09-30 15:00:00"
+        }
     }
 }

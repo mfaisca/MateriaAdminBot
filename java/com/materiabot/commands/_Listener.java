@@ -30,29 +30,29 @@ public class _Listener extends ListenerAdapter{
 	private static final class Analyze implements Runnable{
 		public static enum Action{
 			MESSAGE_RECEIVED{public void run(Event e) {
-					MessageReceivedEvent event = (MessageReceivedEvent)e;
-//					try {
-						for(_BaseCommand c : Constants.COMMANDS)
-							if(c.validateCommand(event.getMessage()))
-								if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
-									int cd = -1;
-									if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
-											c.doStuff(event.getMessage());
-									else {
-										cd = (cd / 1000) + 1; 
-										CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
-										Constants.sleep(cd * 1000);
-										try {
-											MessageUtils.deleteMessage(m.get());
-										} catch (InterruptedException | ExecutionException e1) {
-											e1.printStackTrace();
-										}
-									}
-									return;
+				MessageReceivedEvent event = (MessageReceivedEvent)e;
+				for(_BaseCommand c : Constants.COMMANDS)
+					if(c.validateCommand(event.getMessage()))
+						if(c.validatePermission(event.getMessage()) || event.getAuthor().getIdLong() == Constants.QUETZ_ID) {
+							if(SQLAccess.isBanned(event.getAuthor())) {
+								MessageUtils.sendStatusMessageError(event.getChannel(), "The user " + event.getAuthor().getAsMention() + " has been banned from using the bot." + System.lineSeparator() + "Amazing, you must have done some really shitty thing for this to happen. Everyone shame this user!!");
+								return;
+							}
+							int cd = -1;
+							if((cd = CooldownManager.userCooldown(event.getAuthor(), c.getCooldown(event.getMessage()))) == -1)
+									c.doStuff(event.getMessage());
+							else {
+								cd = (cd / 1000) + 1; 
+								CompletableFuture<Message> m = MessageUtils.sendStatusMessageWarn(event.getChannel(), "Please wait " + cd + " second" + (cd == 1 ? "" : "s") + " to use that command.");
+								Constants.sleep(cd * 1000);
+								try {
+									MessageUtils.deleteMessage(m.get());
+								} catch (InterruptedException | ExecutionException e1) {
+									e1.printStackTrace();
 								}
-//				} catch(InsufficientPermissionException ee) {
-//					MessageUtils.sendWhisper(event.getAuthor().getIdLong(), "Missing Permission on the channel \"" + event.getChannel().getName() + "\"");
-//				}
+							}
+							return;
+						}
 			}
 			},
 			REACTION_ADDED{public void run(Event e) {

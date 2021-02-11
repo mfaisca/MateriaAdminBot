@@ -1,5 +1,7 @@
 {
     "id": 41,
+    "uid": 600,
+    "sid": 600,
     "profile": {
         "fullName": {
             "en": "Basch",
@@ -137,12 +139,12 @@
         "id": 107,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_バッシュ",
             "jp": "コールアビリティ_バッシュ"
         },
         "rank_up_desc": {
             "en": "When using [Fulminating Darkness (C)]\\n• Stolen BRV can overflow up to 120% Max BRV\\n• Increases caller's BRV by 30% HP damage dealt",
-            "gl": "",
+            "gl": "「闇と暗黒の衝撃【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・与えたHPダメージの30％分\\n　自身と自身をコールしたキャラのBRVアップ",
             "jp": "「闇と暗黒の衝撃【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・与えたHPダメージの30％分\\n　自身と自身をコールしたキャラのBRVアップ"
         },
         "ability": {
@@ -154,12 +156,12 @@
         "id": 108,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_バッシュ",
             "jp": "LDコールアビリティ_バッシュ"
         },
         "rank_up_desc": {
             "en": "When using [Indomitable Palisade (C)]\\n• Stolen BRV can overflow up to 150% Max BRV\\n• Increases party's BRV by 30% total HP damage dealt",
-            "gl": "",
+            "gl": "「不屈なる障壁【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最後のHP 攻撃後\\n　与えた合計HPダメージに依存した量のBRVを味方全員に加算",
             "jp": "「不屈なる障壁【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最後のHP攻撃後\\n　与えた合計HPダメージに依存した量のBRVを味方全員に加算"
         },
         "ability": {
@@ -477,6 +479,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -494,6 +500,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -548,6 +555,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -605,6 +613,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に3ACTION「ダルマスカの勇将」付与\\n自身のHPが最大HPの50％以上の時\\n「百鬼・烈日の破邪＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 18000,
@@ -771,6 +780,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -870,13 +881,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -900,13 +917,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -939,6 +962,7 @@
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n自身に3ACTION「ダルマスカの勇将」付与"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -1145,6 +1169,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1244,13 +1270,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -1274,13 +1306,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -1313,6 +1351,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「ダルマスカの勇将」付与\\n自身のHPが最大HPの50％以上の時\\n「百鬼・烈日の破邪＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 18000,
@@ -1479,6 +1518,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1578,13 +1619,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -1608,13 +1655,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -1647,6 +1700,7 @@
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n自身に6ACTION「ダルマスカの勇将」付与"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -1853,6 +1907,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1952,13 +2008,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -1982,13 +2044,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -2021,6 +2089,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「ダルマスカの勇将」付与\\n自身のHPが最大HPの50％以上の時\\n「百鬼・烈日の破邪＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 18000,
@@ -2212,6 +2281,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2311,13 +2382,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -2341,13 +2418,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -2380,6 +2463,7 @@
                 "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「ダルマスカの勇将」付与"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -2611,6 +2695,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2710,13 +2796,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -2740,13 +2832,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -2779,6 +2877,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「ダルマスカの勇将」付与\\n自身のHPが最大HPの50％以上の時\\n「百鬼・烈日の破邪＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 18000,
@@ -3030,6 +3129,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3129,13 +3230,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -3159,13 +3266,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -3198,6 +3311,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「ダルマスカの勇将」付与"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 12,
             "use_count": 18000,
@@ -3489,6 +3603,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3588,13 +3704,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 184,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -3618,13 +3740,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1087
+                                1087,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 185,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     40,
@@ -3657,6 +3785,7 @@
                 "jp": "2HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n与えたHPダメージの10％分\\n自身のBRVをアップさせる\\n対象に2ACTION「ターゲット固定」付与\\n自身に3ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -3805,6 +3934,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3923,12 +4054,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -3940,7 +4073,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -3964,7 +4097,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -4041,6 +4174,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4148,6 +4283,7 @@
                 "jp": "2HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージの10％分\\n自身のBRVをアップさせる\\n対象に3ACTION「ターゲット固定」付与\\n自身に4ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -4296,6 +4432,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4414,12 +4552,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -4431,7 +4571,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -4455,7 +4595,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -4532,6 +4672,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4639,6 +4781,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n対象に2ACTION「ターゲット固定」付与\\n自身に3ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -4847,6 +4990,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4965,12 +5110,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -4982,7 +5129,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -5006,7 +5153,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -5083,6 +5230,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5190,6 +5339,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n対象に3ACTION「ターゲット固定」付与\\n自身に4ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -5398,6 +5548,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5516,12 +5668,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -5533,7 +5687,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -5557,7 +5711,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -5634,6 +5788,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5741,6 +5897,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -5837,6 +5994,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに応じて自身のHP小回復\\n回復量の上限は 自身の最大HPの10％分"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -5934,6 +6092,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n自身に3ACTION「騎士の技量」付与"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -6083,6 +6242,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6190,6 +6351,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「騎士の技量」付与"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -6345,6 +6507,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6452,6 +6616,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n自身に3ACTION「騎士の技量」付与\\n「騎士の技量」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 7,
@@ -6641,6 +6806,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6748,6 +6915,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「騎士の技量」付与\\n「騎士の技量」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 7,
@@ -6947,6 +7115,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7054,6 +7224,7 @@
                 "jp": "自身のHPを小回復し\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7142,6 +7313,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7249,6 +7422,7 @@
                 "jp": "自身のHPを小回復し\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7337,6 +7511,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7444,6 +7620,7 @@
                 "jp": "自身のHPを小回復し\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7532,6 +7709,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7639,6 +7818,7 @@
                 "jp": "自身のHPを小回復し\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7727,6 +7907,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7830,10 +8012,11 @@
             },
             "desc": {
                 "en": "8-HIT AoE melee BRV attack + AoE HP attack (90% x8)\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 200% Max BRV\\nDeals split HP damage between all targets\\nIncreases own BRV by 30% HP damage dealt\\nAll targets: 5 turns [Lock]\\nSelf: 5 turns [Indomitable]\\nSelf: 6 turns [Kingdom's Shield], [HP Damage Resist]\\n\\n[Indomitable]\\n• Raises Attack by 40%\\n• Increases stolen BRV overflow limit by 30%\\n• When taking HP damage and HP drops below 50% Max HP\\n　∟ Recovers HP back to 50% Max HP",
-                "gl": "8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nIncreases BRV by 30% of HP damage dealt\\nAll targets: 5 turns Lock\\nSelf: 5 turns Indomitable; 6 turns Kingdom's Shield, HP Damage Resist\\n(Up to 1 Kingdom's Shield may be simultaneously active in a party, with the newest effect taking precedence)",
+                "gl": "8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nIncreases BRV by 30% of cumulative HP damage dealt\\nAll enemies: 5 turns Lock\\nSelf: 5 turns Indomitable; 6 turns Kingdom's Shield, HP Damage Resist\\n(Up to 1 Kingdom's Shield may be simultaneously active in a party, with the newest effect taking precedence)",
                 "jp": "8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えた合計HPダメージの30％分\\n自身のBRVをアップさせる\\n敵全体に5ACTION「ターゲット固定」付与\\n自身に5ACTION「不屈」 6ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 2,
@@ -8102,6 +8285,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8220,6 +8405,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8338,12 +8525,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -8355,7 +8544,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -8379,7 +8568,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -8456,6 +8645,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8559,10 +8750,11 @@
             },
             "desc": {
                 "en": "",
-                "gl": "8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nIncreases BRV by 30% of HP damage dealt\\nAll targets: 5 turns Lock\\nSelf: 10 turns Indomitable; 6 turns Kingdom's Shield, HP Damage Resist\\n(Up to 1 Kingdom's Shield may be simultaneously active in a party, with the newest effect taking precedence)",
+                "gl": "8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nIncreases BRV by 30% of cumulative HP damage dealt\\nAll enemies: 5 turns Lock\\nSelf: 10 turns Indomitable; 6 turns Kingdom's Shield, HP Damage Resist\\n(Up to 1 Kingdom's Shield may be simultaneously active in a party, with the newest effect taking precedence)",
                 "jp": "8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えた合計HPダメージの30％分\\n自身のBRVをアップさせる\\n敵全体に5ACTION「ターゲット固定」付与\\n自身に10ACTION「不屈」 6ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 2,
@@ -8831,6 +9023,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8949,6 +9143,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9067,12 +9263,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -9084,7 +9282,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -9108,7 +9306,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -9185,6 +9383,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9292,6 +9492,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n対象に4ACTION「ターゲット固定」付与\\n自身に5ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -9500,6 +9701,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9618,12 +9821,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -9635,7 +9840,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -9659,7 +9864,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -9736,6 +9941,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9843,6 +10050,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n対象に5ACTION「ターゲット固定」付与\\n自身に6ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -10051,6 +10259,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10169,12 +10379,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -10186,7 +10398,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -10210,7 +10422,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -10287,6 +10499,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10394,6 +10608,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n自身に3ACTION「騎士の技量」付与\\n「騎士の技量」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 7,
@@ -10605,6 +10820,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10712,6 +10929,7 @@
                 "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n与えたHPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの30％分\\n最大HPを超えてHPが回復した時\\n超えたHP分 自身のBRVに加算\\n自身に6ACTION「騎士の技量」付与\\n「騎士の技量」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 7,
@@ -10933,6 +11151,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11040,6 +11260,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -11136,6 +11357,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに応じて自身のHP小回復\\n回復量の上限は 自身の最大HPの10％分"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -11253,6 +11475,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -11349,6 +11572,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n与えたHPダメージに応じて自身のHP小回復\\n回復量の上限は 自身の最大HPの10％分"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -11508,6 +11732,7 @@
                 "jp": "4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えた合計HPダメージに応じて味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの50％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n敵全体に5ACTION「ターゲット固定」付与\\n自身に12ACTION「不屈」 6ACTION「王国の盾」「HPダメージ軽減」付与\\n（「王国の盾」が付与できるのはパーティに同時に1つまでで\\n一番新しいもの以外は解除される）\\n「不屈」付与中\\n味方の行動開始時それぞれの現在HPに依存した量のBRV加算"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 2,
@@ -11843,6 +12068,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11942,13 +12169,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2533
+                                2533,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1065,
                                 "ailment_effect": 347,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     70,
@@ -11992,6 +12225,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 1,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12110,12 +12345,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -12127,7 +12364,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -12151,7 +12388,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -12228,6 +12465,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12335,6 +12574,7 @@
                 "jp": "コールされたバッシュが以下の行動を行う\\n自身の攻撃力中アップし\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n敵全体に2ACTION「ターゲット固定」付与\\n\\n使用後特殊効果：3ACTION\\nバッシュをコールしたキャラクターに「BRVダメージ軽減」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 9,
             "use_count": 1,
@@ -12566,6 +12806,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12684,6 +12926,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12802,12 +13046,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -12819,7 +13065,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -12843,7 +13089,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -12900,12 +13146,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -12920,6 +13166,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13027,6 +13275,7 @@
                 "jp": "コールされたバッシュが以下の行動を行う\\n自身の攻撃力中アップし\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n与えた合計HPダメージの30％分\\n自身とバッシュをコールしたキャラクターのBRVをアップさせる\\n敵全体に2ACTION「ターゲット固定」付与\\n\\n使用後特殊効果：3ACTION\\nバッシュをコールしたキャラクターに「BRVダメージ軽減」の効果"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -13280,6 +13529,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13398,6 +13649,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13516,12 +13769,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -13533,7 +13788,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -13557,7 +13812,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -13614,12 +13869,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -13634,6 +13889,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13741,6 +13998,7 @@
                 "jp": "コールされたバッシュが以下の行動を行う\\n自身の攻撃力中アップし\\n4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n＋4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えた合計HPダメージに応じて味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの50％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n敵全体に2ACTION「ターゲット固定」付与\\n\\n使用後特殊効果：3ACTION\\nバッシュをコールしたキャラクターに「BRVダメージ軽減」の効果と\\n「味方の行動開始時それぞれの現在HPに依存した量のBRV加算」の効果"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 13,
             "use_count": 1,
@@ -14055,6 +14313,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14173,6 +14433,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14272,13 +14534,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2550
+                                2550,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1065,
                                 "ailment_effect": 347,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     70,
@@ -14322,12 +14590,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -14339,7 +14609,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -14363,7 +14633,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -14429,6 +14699,7 @@
                 "jp": "コールされたバッシュが以下の行動を行う\\n自身の攻撃力中アップし\\n4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n＋4HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えた合計HPダメージに応じて味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの50％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n敵全体に2ACTION「ターゲット固定」付与\\n\\n使用後特殊効果：3ACTION\\nバッシュをコールしたキャラクターに「BRVダメージ軽減」の効果と\\n「味方の行動開始時それぞれの現在HPに依存した量のBRV加算」の効果"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 14,
             "use_count": 1,
@@ -14765,6 +15036,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14883,6 +15156,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14982,13 +15257,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2550
+                                2550,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1065,
                                 "ailment_effect": 347,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     70,
@@ -15032,12 +15313,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -15049,7 +15332,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -15073,7 +15356,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -15388,7 +15671,7 @@
             "id": 128,
             "name": {
                 "en": "HP Damage BRV Gain",
-                "gl": "Bravery HP Damage",
+                "gl": "HP Damage BRV Gain",
                 "jp": "HPダメージBRVゲイン"
             },
             "desc": {
@@ -15398,7 +15681,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage: Gains BRV",
+                "gl": "HP Damage BRV Gain: Increases BRV",
                 "jp": "HPダメージBRVゲイン：BRVを加算"
             },
             "meta_data": {
@@ -16108,17 +16391,17 @@
             "id": 5620,
             "name": {
                 "en": "Full HP Attack All (C)",
-                "gl": "",
+                "gl": "Full HP Attack All (C)",
                 "jp": "フルHPアタックオール【C】"
             },
             "desc": {
                 "en": "When using a Call Ability at MAX HP\\n• Raises party's Attack by 5% for 6 turns",
-                "gl": "",
+                "gl": "When using call ability while HP at MAX:\\n • Marginally raises party's ATK for 6 turns",
                 "jp": "自身のHPがMAXの時\\nコールアビリティ使用時\\n6ACTION味方全員の攻撃力を極小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Full HP Attack All (C): Raises party's ATK",
                 "jp": "フルHPアタックオール【C】：味方全員の攻撃力がアップ"
             },
             "meta_data": {
@@ -16430,7 +16713,7 @@
             "id": 128,
             "name": {
                 "en": "",
-                "gl": "Bravery HP Damage",
+                "gl": "HP Damage BRV Gain",
                 "jp": "HPダメージBRVゲイン"
             },
             "desc": {
@@ -16440,7 +16723,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage: Gains BRV",
+                "gl": "HP Damage BRV Gain: Increases BRV",
                 "jp": "HPダメージBRVゲイン：BRVを加算"
             },
             "meta_data": {
@@ -18223,6 +18506,7 @@
             ]
         },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4031,
@@ -18668,6 +18952,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -18731,7 +19017,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1087": [
@@ -18756,13 +19053,19 @@
                         -1
                     ],
                     "required_values": [
-                        1087
+                        1087,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 184,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": 1,
                         "rank_data": [
                             20,
@@ -18786,13 +19089,19 @@
                         -1
                     ],
                     "required_values": [
-                        1087
+                        1087,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 185,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": 5,
                         "rank_data": [
                             40,
@@ -18847,6 +19156,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -18910,7 +19221,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1169": [
@@ -19004,17 +19326,17 @@
             "id": 6101,
             "name": {
                 "en": "HP Damage Attack Up Short (RF)",
-                "gl": "",
+                "gl": "HP Damage Attack Up Shorter (RF)",
                 "jp": "HPダメージアタックアップショート【精錬】"
             },
             "desc": {
                 "en": "After taking an HP attack:\\n- Raises Attack by 8% for 3 turns",
-                "gl": "",
+                "gl": "When taking HP damage:\\n • Raises own ATK by 8% for 3 turns",
                 "jp": "自身がHPダメージを受けた時\\n3ACTION自身の攻撃力を8％アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "HP Damage Attack Up Shorter (RF): Raises ATK",
                 "jp": "HPダメージアタックアップショート【精錬】：攻撃力がアップ"
             },
             "meta_data": {
@@ -19691,7 +20013,7 @@
                 "id": 4300,
                 "name": {
                     "en": "Fulminating Darkness Critical Power",
-                    "gl": "Mighty Fulminating Darkness Critical",
+                    "gl": "Fulminating Darkness Critical Power",
                     "jp": "闇と暗黒の衝撃クリティカルパワー"
                 },
                 "desc": {
@@ -19701,7 +20023,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Mighty Fulminating Darkness Critical: Boost to Fulminating Darkness",
+                    "gl": "Fulminating Darkness Critical Power: Boost to Fulminating Darkness",
                     "jp": "闇と暗黒の衝撃クリティカルパワー：「闇と暗黒の衝撃」の性能アップ"
                 },
                 "meta_data": {
@@ -21424,7 +21746,7 @@
                     "jp": "貫く忠義エクステンド：「不屈なる障壁」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -21477,5 +21799,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-08-31 15:00:00"
+        }
     }
 }

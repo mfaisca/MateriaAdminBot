@@ -1,5 +1,7 @@
 {
     "id": 1,
+    "uid": 0,
+    "sid": 0,
     "profile": {
         "fullName": {
             "en": "Cloud",
@@ -168,12 +170,12 @@
         "id": 31,
         "name": {
             "en": "Finishing Touch (C) Rank Up",
-            "gl": "",
+            "gl": "コールアビリティ_クラウド",
             "jp": "コールアビリティ_クラウド"
         },
         "rank_up_desc": {
             "en": "When using [Finishing Touch (C)]\\n• Attack-based BRV gain +10%\\n• Stolen BRV can overflow up to 150%\\n• Deals 20% of total HP damage to non-targets on last HP attack",
-            "gl": "",
+            "gl": "When using Finishing Touch (C):\\n • Slight boost to BRV granted based on ATK\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets on last HP  attack",
             "jp": "「画龍点睛【C】」使用時\\n・攻撃力依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最後のHP攻撃HIT時\\n　ターゲット以外にも\\n　与えた合計HPダメージの20％分のHPダメージ"
         },
         "ability": {
@@ -185,12 +187,12 @@
         "id": 75,
         "name": {
             "en": "Blade Bleam (C) Rank Up",
-            "gl": "",
+            "gl": "LDコールアビリティ_クラウド",
             "jp": "LDコールアビリティ_クラウド"
         },
         "rank_up_desc": {
             "en": "When using [Blade Bleam (C)]\\n• Becomes 3-HIT AoE ranged BRV attack + ST HP attack delivered twice\\n• Increases BRV potency by 60%\\n• Stolen BRV can overflow up to 180% Max BRV\\n• Delay +1 turn",
-            "gl": "",
+            "gl": "「破晄撃【C】」使用時\\n・6HIT全体遠距離物理BRV 攻撃＋単体HP 攻撃が\\n　3HIT全体遠距離物理BRV 攻撃＋単体HP 攻撃を2回行うに変化し\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・対象の行動順を下げる量＋1",
             "jp": "「破晄撃【C】」使用時\\n・6HIT全体遠距離物理BRV攻撃＋単体HP攻撃が\\n　3HIT全体遠距離物理BRV攻撃＋単体HP攻撃を2回行うに変化し\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・対象の行動順を下げる量＋1"
         },
         "ability": {
@@ -615,6 +617,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -632,6 +638,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -686,6 +693,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -740,6 +748,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n小確率で対象に1ACTION「マヒ」付与"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 9,
@@ -869,6 +878,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -976,6 +987,7 @@
                 "jp": "4HIT遠距離物理BRV攻撃\\n対象を吹きとばす"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 3,
@@ -1090,6 +1102,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\nさらにBRVを2倍にアップ\\n自身に2ACTION「最大BRV小アップ」\\n「ザンガン流格闘術」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 3,
@@ -1160,6 +1173,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1280,6 +1295,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1405,6 +1422,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n小確率で対象に1ACTION「マヒ」付与"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 9,
@@ -1531,6 +1549,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1638,6 +1658,7 @@
                 "jp": "4HIT遠距離物理BRV攻撃\\n自身に5ACTION「最大BRV小アップ」\\n「物理攻撃力小アップ」「クリティカル率小アップ」付与\\n対象を吹きとばす"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 4,
@@ -1784,6 +1805,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1902,6 +1925,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2020,6 +2045,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2127,6 +2154,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 9,
@@ -2236,6 +2264,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2343,6 +2373,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 9,
@@ -2449,6 +2480,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2556,6 +2589,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 3,
@@ -2670,6 +2704,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 4,
@@ -2816,6 +2851,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2934,6 +2971,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3052,6 +3091,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3159,6 +3200,7 @@
                 "jp": "6HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n与えるHPダメージは分配\\n自身に4ACTION「魔晄」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -3367,6 +3409,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3486,6 +3530,7 @@
                 "jp": "6HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n与えるHPダメージは分配\\n自身に6ACTION「魔晄」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -3694,6 +3739,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3819,6 +3866,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n2HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n小確率で対象に1ACTION「マヒ」付与\\n使用後通常「HP攻撃」が6ACTION「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 9,
@@ -3990,6 +4038,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4108,6 +4158,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4215,6 +4267,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n2HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n小確率で対象に1ACTION「マヒ」付与\\n使用後通常「HP攻撃」が6ACTION「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 9,
@@ -4383,6 +4436,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4501,6 +4556,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4608,6 +4665,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n4HIT遠距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に3ACTION「最大BRV小アップ」\\n「物理攻撃力小アップ」「クリティカル率小アップ」付与\\n対象を吹きとばす\\n自身に付与された強化効果を1ACTION延長する\\n使用後通常「BRV攻撃」が8ACTION「BRV攻撃＋」に\\n「凶斬り」が8ACTION「凶斬り＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 3,
@@ -4820,6 +4878,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4938,6 +4998,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5056,6 +5118,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5174,6 +5238,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5292,6 +5358,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5399,6 +5467,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n4HIT遠距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に8ACTION「最大BRV中アップ」\\n「物理攻撃力中アップ」「クリティカル率中アップ」付与\\n対象を吹きとばす\\n自身に付与された強化効果を1ACTION延長する\\n使用後通常「BRV攻撃」が8ACTION「BRV攻撃＋」に\\n「凶斬り」が8ACTION「凶斬り＋」に変化"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 4,
@@ -5611,6 +5680,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5729,6 +5800,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5847,6 +5920,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5965,6 +6040,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6083,6 +6160,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6190,6 +6269,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\nクリティカル時 与えるBRVダメージ中アップ"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -6264,6 +6344,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -6338,6 +6419,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n2HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n極大確率で対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る\\n使用後通常「HP攻撃」が6ACTION「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 9,
@@ -6528,6 +6610,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6646,6 +6730,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6753,6 +6839,7 @@
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n2HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る\\n使用後通常「HP攻撃」が6ACTION「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 9,
@@ -6943,6 +7030,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7061,6 +7150,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7168,6 +7259,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n極大確率で対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 9,
@@ -7319,6 +7411,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7426,6 +7520,7 @@
                 "jp": "2HIT近距離物理BRV攻撃＋HP攻撃\\n対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 9,
@@ -7574,6 +7669,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7681,6 +7778,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n2ACTION自身の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -7853,6 +7951,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7960,6 +8060,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n4ACTION自身の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -8132,6 +8233,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8239,6 +8342,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n2ACTION自身の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -8411,6 +8515,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8518,6 +8624,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n4ACTION自身の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -8690,6 +8797,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8797,6 +8906,7 @@
                 "jp": "6HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n自身に6ACTION「魔晄」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -9005,6 +9115,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9124,6 +9236,7 @@
                 "jp": "6HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n自身に6ACTION「魔晄」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 15000,
@@ -9332,6 +9445,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9451,6 +9566,7 @@
                 "jp": "6HIT全体遠距離物理BRV攻撃＋全体HP攻撃を2回行う\\n敵の数に応じてBRV攻撃対象は分散\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n自身に6ACTION「魔晄」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 15,
             "use_count": 15000,
@@ -9799,6 +9915,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9912,15 +10030,16 @@
             "id": 10011,
             "name": {
                 "en": "Blade Beam",
-                "gl": "",
+                "gl": "Blade Beam",
                 "jp": "破晄撃"
             },
             "desc": {
                 "en": "6-HIT AoE ranged BRV attack + ST HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 180% Max BRV\\nDeals 50% HP damage to non-targets\\nDelays all targets by 1 turn\\nDoes not consume ability use count on next turn (excl. some abilities)",
-                "gl": "",
+                "gl": "6-hit group ranged BRV attack + single-target HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nDelays all targets 1 turn\\nNext turn after use does not consume ability use count (some abilities excluded)",
                 "jp": "6HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも50％分のHPダメージ\\n対象の行動順を1つ下げる\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 3,
@@ -10171,6 +10290,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10269,15 +10390,16 @@
             "id": 10012,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Blade Beam",
                 "jp": "破晄撃"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit group ranged BRV attack + single-target HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nDelays all targets 2 turns\\nNext turn after use does not consume ability use count (some abilities excluded)",
                 "jp": "6HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも50％分のHPダメージ\\n対象の行動順を2つ下げる\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 3,
@@ -10528,6 +10650,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10626,15 +10750,16 @@
             "id": 10013,
             "name": {
                 "en": "Omnislash Version 5",
-                "gl": "",
+                "gl": "Omnislash Version 5",
                 "jp": "超究武神覇斬ver.5"
             },
             "desc": {
                 "en": "Ranged BRV attack + HP attack delivered 12 times\\nConverts 50% of total HP damage dealt to BRV before last HP attack\\nDeals 20% of total HP damage to non-targets on last HP attack\\n\\nMaximum BRV damage limit +150% (up to 24997)\\nMaximum obtainable BRV & HP damage limit +50% (up to 149998)\\n\\nBURST Effect (4 turns, party-wide)\\n• BRV damage dealt +50%\\n• Critical BRV damage dealt +50%\\n• Maximum BRV damage limit +20% (up to 11998)\\n• Stolen BRV overflow limit +30%\\n* Same character's BURST effects do not stack",
-                "gl": "",
+                "gl": "Ranged BRV attack + HP attack delivered 12 times\\nIncreases BRV by 50% of cumulative HP damage dealt before last HP attack\\nDeals 20% of cumulative HP damage to non-targets on last HP attack\\nBRV damage dealt can exceed limit of 9999 by 150% (up to 24997)\\nStolen BRV may exceed MAX BRV up to 149998\\nHP damage dealt can exceed limit of 99999 by 50% (up to 149998)\\nBurst effect for 4 turns after use:\\n • Moderately increased party BRV damage\\n • Moderately increased party BRV damage with critical hits\\n • Party BRV damage dealt can exceed limit of 9999 by 20% (up to 11998)\\n • Slightly increases amount party's stolen BRV may exceed MAX BRV\\nDoes not stack with identical characters' burst effects",
                 "jp": "遠距離物理BRV攻撃＋HP攻撃を12回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの50％分自身のBRVをアップ\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n与えるBRVダメージ上限が9999を150％分突破可能（24997まで）\\n奪ったBRVが最大BRVを超えて149998まで加算でき\\n与えるHPダメージ上限も99999を50％分突破可能（149998まで）\\n使用後 以下のバースト効果を4ACTION付与\\n味方全員の\\n与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVを最大BRVを超えて加算する上限小アップ\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 28,
             "use_count": 0,
@@ -10683,8 +10808,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10704,7 +10829,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10723,8 +10848,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10744,7 +10869,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10763,8 +10888,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10784,7 +10909,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10803,8 +10928,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10824,7 +10949,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10843,8 +10968,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10864,7 +10989,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10883,8 +11008,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10904,7 +11029,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10923,8 +11048,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10944,7 +11069,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10963,8 +11088,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -10984,7 +11109,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11003,8 +11128,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11024,7 +11149,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11043,8 +11168,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11064,7 +11189,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11083,8 +11208,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11104,7 +11229,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11123,8 +11248,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11145,8 +11270,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 150,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 150,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": -1,
                     "element": [],
@@ -11166,7 +11291,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -11224,12 +11349,12 @@
                     "cast_id": 1804,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Omnislash Version 5",
                         "jp": "超究武神覇斬ver.5"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from finishing burst Omnislash Version 5",
                         "jp": "フィニッシュバースト「超究武神覇斬ver.5」の効果"
                     },
                     "meta_data": {
@@ -11245,6 +11370,8 @@
                         "disp_type": 28,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11344,13 +11471,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1842
+                                1842,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 707,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -11374,13 +11507,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1842
+                                1842,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 708,
                                 "ailment_effect": 199,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -11404,13 +11543,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1842
+                                1842,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 709,
                                 "ailment_effect": 235,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -11434,13 +11579,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1842
+                                1842,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 710,
                                 "ailment_effect": 67,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     30,
@@ -11464,15 +11615,16 @@
             "id": 10446,
             "name": {
                 "en": "Finishing Touch (C)",
-                "gl": "",
+                "gl": "Finishing Touch (C)",
                 "jp": "画龍点睛【C】"
             },
             "desc": {
                 "en": "When called for assistance, Cloud performs the following actions\\n• Raises own Max BRV and Attack by 40%\\n• Raises own BRV by 10% of Attack\\n• Ranged BRV attack + HP attack delivered 5 times\\n• Converts 20% of total HP damage dealt to BRV before last HP attack\\n• Raises critical BRV damage dealt by 50%\\n• Target: Initiates [Chase]",
-                "gl": "",
+                "gl": "Cloud's ability when called:\\n • Moderately increases own MAX BRV, ATK\\n • Increases BRV based on ATK\\n • Ranged BRV attack + HP attack delivered 5 times\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage with critical hits\\n • Knock Back to target",
                 "jp": "コールされたクラウドが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n自身に自身の攻撃力に依存した量のBRVを加算し\\n遠距離物理BRV攻撃＋HP攻撃を5回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n対象を吹きとばす"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 0,
             "hit_count": 15,
             "use_count": 1,
@@ -11825,6 +11977,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11923,12 +12077,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -11943,6 +12097,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12041,15 +12197,16 @@
             "id": 10447,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Finishing Touch (C)",
                 "jp": "画龍点睛【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Cloud's ability when called:\\n • Moderately increases own MAX BRV, ATK\\n • Increases BRV based on ATK\\n • Ranged BRV attack + HP attack delivered 5 times\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets on last HP attack\\n • Knock Back to selected target",
                 "jp": "コールされたクラウドが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n自身に自身の攻撃力に依存した量のBRVを加算し\\n遠距離物理BRV攻撃＋HP攻撃を5回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nターゲットを吹きとばす"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 0,
             "hit_count": 16,
             "use_count": 1,
@@ -12424,6 +12581,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12522,12 +12681,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -12542,6 +12701,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12640,15 +12801,16 @@
             "id": 10545,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Cross-Slash",
                 "jp": "凶斬り"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nMelee BRV attack + HP attack delivered 3 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nTarget: Low chance 1 turn Paralyze\\nWith active buff:\\n • HP Attack becomes HP Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n近距離物理BRV攻撃＋HP攻撃を3回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n小確率で対象に1ACTION「マヒ」付与\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 9,
@@ -12881,6 +13043,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12979,15 +13143,16 @@
             "id": 10546,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Cross-Slash+",
                 "jp": "凶斬り＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nMelee BRV attack + HP attack delivered 3 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nTarget: Tremendous chance 1 turn Paralyze\\nCross-Slash+ returns to Cross-Slash after use\\nWith active buff:\\n • HP Attack becomes HP Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n近距離物理BRV攻撃＋HP攻撃を3回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n極大確率で対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 9,
@@ -13220,6 +13385,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13318,15 +13485,16 @@
             "id": 10547,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Cross-Slash",
                 "jp": "凶斬り"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nMelee BRV attack + HP attack delivered 3 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nTarget: Low chance 1 turn Paralyze\\nWith active buff:\\n • HP Attack becomes HP Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n近距離物理BRV攻撃＋HP攻撃を3回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n小確率で対象に1ACTION「マヒ」付与\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 3,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 9,
@@ -13559,6 +13727,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13657,15 +13827,16 @@
             "id": 10548,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Cross-Slash+",
                 "jp": "凶斬り＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nMelee BRV attack + HP attack delivered 3 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nTarget: 1 turn Paralyze\\nCross-Slash+ returns to Cross-Slash after use\\nWith active buff:\\n • HP Attack becomes HP Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n近距離物理BRV攻撃＋HP攻撃を3回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n対象に1ACTION「マヒ」付与\\n使用後「凶斬り＋」が「凶斬り」に戻る\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 4,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 9,
@@ -13898,6 +14069,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13996,15 +14169,16 @@
             "id": 10549,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Finishing Touch",
                 "jp": "画龍点睛"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nRanged BRV attack + HP attack delivered 5 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals 20% of cumulative HP damage to non-targets on last HP attack\\nSelf: 3 turns MAX BRV Up I, PHY ATK Up I, Critical Hit Rate Up I\\nKnock Back to selected target on hit\\nExtends own buff duration 1 turn\\nAfter use:\\n • Cross-Slash becomes Cross-Slash+ for 8 turns\\nWith active buff:\\n • BRV Attack becomes BRV Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n遠距離物理BRV攻撃＋HP攻撃を5回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に3ACTION「最大BRV小アップ」\\n「物理攻撃力小アップ」「クリティカル率小アップ」付与\\nターゲットにHIT時\\nターゲットを吹きとばす\\n自身に付与された強化効果を1ACTION延長する\\n使用後「凶斬り」が8ACTION「凶斬り＋」に変化\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 15,
             "use_count": 5,
@@ -14361,6 +14535,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14479,6 +14655,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14597,6 +14775,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14715,6 +14895,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14833,6 +15015,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14931,15 +15115,16 @@
             "id": 10550,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Finishing Touch",
                 "jp": "画龍点睛"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Increases BRV based on ATK\\nRanged BRV attack + HP attack delivered 5 times\\nIncreases BRV by 20% of cumulative HP damage dealt before last HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals 20% of cumulative HP damage to non-targets on last HP attack\\nSelf: 8 turns MAX BRV Up II, PHY ATK Up II, Critical Hit Rate Up II\\nKnock Back to selected target on hit\\nExtends own buff duration 1 turn\\nAfter use:\\n • Cross-Slash becomes Cross-Slash+ for 8 turns\\nWith active buff:\\n • BRV Attack becomes BRV Attack+",
                 "jp": "自身の攻撃力に依存した量のBRVを自身に加算し\\n遠距離物理BRV攻撃＋HP攻撃を5回行う\\n最後のHP攻撃前に\\n与えた合計HPダメージの20％分自身のBRVをアップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n自身に8ACTION「最大BRV中アップ」\\n「物理攻撃力中アップ」「クリティカル率中アップ」付与\\nターゲットにHIT時\\nターゲットを吹きとばす\\n自身に付与された強化効果を1ACTION延長する\\n使用後「凶斬り」が8ACTION「凶斬り＋」に変化\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 2,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 15,
             "use_count": 5,
@@ -15296,6 +15481,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15414,6 +15601,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15532,6 +15721,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15650,6 +15841,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15768,6 +15961,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15866,15 +16061,16 @@
             "id": 10552,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "BRV Attack++",
                 "jp": "ブレイブ攻撃＋＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "4-hit melee BRV attack\\nModerately increased BRV damage with critical hits",
                 "jp": "4HIT近距離物理BRV攻撃\\nクリティカル時 与えるBRVダメージ中アップ"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -16023,12 +16219,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -16043,6 +16239,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16141,15 +16339,16 @@
             "id": 10551,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "HP Attack++",
                 "jp": "HP攻撃＋＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "3-hit melee BRV attack + HP attack\\nModerately increased BRV damage with critical hits\\nStolen BRV may exceed MAX BRV up to 150%",
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -16298,12 +16497,12 @@
                     "name": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "",
-                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ（非表示）"
+                        "jp": "汎用クリティカル時BRVダメージアップ内部バフ"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -16318,6 +16517,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16425,6 +16626,7 @@
                 "jp": "3HIT全体遠距離物理BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n対象の行動順を2つ下げる\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n自身が対象にクリティカル時\\n自身に3ACTION特殊効果「クラウディウルフ」付与\\n特殊効果「クラウディウルフ」付与中\\n最大BRVと物理攻撃力と\\n自身の与えるHPダメージ小アップ"
             },
             "rank": 1,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 3,
@@ -16695,6 +16897,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16802,6 +17006,7 @@
                 "jp": "コールされたクラウドが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n6HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nターゲット以外にも50％分のHPダメージ\\n対象の行動順を1つ下げる"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -17052,6 +17257,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17159,6 +17366,7 @@
                 "jp": "コールされたクラウドが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n3HIT全体遠距離物理BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも50％分のHPダメージ\\n対象の行動順を2つ下げる"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 11,
             "use_count": 1,
@@ -17429,6 +17637,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18105,17 +18315,17 @@
             "id": 5617,
             "name": {
                 "en": "Buff Attack Speed Up",
-                "gl": "",
+                "gl": "Buff Attack Speed Up",
                 "jp": "バフアタックスピードアップ"
             },
             "desc": {
                 "en": "Raises Attack by 60%, Speed by 40%",
-                "gl": "",
+                "gl": "With active buff:\\n • Moderately raises ATK, SPD",
                 "jp": "自身に強化効果が付与されている時\\n自身の攻撃力と素早さ中アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Buff Attack Speed Up: Raises ATK, SPD",
                 "jp": "バフアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
@@ -18178,17 +18388,17 @@
             "id": 5618,
             "name": {
                 "en": "Cross-Slash Extend",
-                "gl": "",
+                "gl": "Cross-Slash Extension",
                 "jp": "凶斬りエクステンド"
             },
             "desc": {
                 "en": "When using [Cross-Slash], [Cross-Slash+]\\n• Raises own BRV by 70% of Attack before first BRV attack\\n• Melee BRV attack + HP attack delivered 3 times\\n• Increases total BRV potency by 180%\\n• Converts 20% of total HP damage dealt to BRV before last HP attack\\n• Increases critical BRV damage dealt by 50%\\n• Stolen BRV can overflow up to 150% Max BRV\\n\\nWhile buffed\\n• [HP Attack] becomes [HP Attack+]\\n　∟ Melee BRV attack + HP attack (BRV potency 120%)\\n　∟ Increases critical BRV damage dealt by 50%\\n　∟ Stolen BRV can overflow up to 120% Max BRV",
-                "gl": "",
+                "gl": "When using Cross-Slash, Cross-Slash+:\\n • Increases BRV based on ATK before first BRV attack\\n • Becomes melee BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n\\nWith active buff:\\n • HP Attack becomes HP Attack+ (melee BRV attack + HP attack; moderately increased BRV damage dealt with critical hits; stolen BRV may exceed MAX BRV up to 120%)",
                 "jp": "「凶斬り」「凶斬り＋」使用時\\n・最初のBRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・近距離物理BRV攻撃＋HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃前に\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n・近距離物理BRV攻撃＋HP攻撃\\n・クリティカルヒット時 与えるBRVダメージ中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Cross-Slash Extension: Boost to Cross-Slash",
                 "jp": "凶斬りエクステンド：「凶斬り」の性能アップ"
             },
             "meta_data": {
@@ -18315,17 +18525,17 @@
             "id": 5619,
             "name": {
                 "en": "Finishing Touch Extend",
-                "gl": "",
+                "gl": "Finishing Touch Extension",
                 "jp": "画龍点睛エクステンド"
             },
             "desc": {
                 "en": "When using [Finishing Touch]\\n• Raises own BRV by 70% of Attack before first BRV attack\\n• Ranged BRV attack + HP attack delivered 5 times\\n• Increases total BRV potency by 200%\\n• Converts 20% of total HP damage dealt to BRV before last HP attack\\n• Increases critical BRV damage dealt by 50%\\n• Stolen BRV can overflow up to 150% Max BRV\\n• Deals 20% of total HP damage to non-target on last HP attack\\n• [MAX BRV Up] +25%, [PHY ATK Up] +20%, [Critical Hit Rate Up] +30%; duration +3\\n• Extends own buffs by 1 turn\\n\\nAfter using [Finishing Touch]\\n• [Cross-Slash] becomes [Cross-Slash+] for 8 turns\\n　∟ [Paralyze] success rate +65%\\n　∟ Returns to [Cross-Slash] after use\\n\\nWhile buffed\\n• [BRV Attack] becomes [BRV Attack+]\\n　∟ BRV attack hit count becomes 2 (total BRV potency +40%)\\n　∟ Increases critical BRV damage dealt by 50%",
-                "gl": "",
+                "gl": "When using Finishing Touch:\\n • Increases BRV based on ATK before first BRV attack\\n • Becomes ranged BRV attack + HP attack delivered 5 times; tremendously increased cumulative BRV damage\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets on last HP attack\\n • Slight MAX BRV Up, PHY ATK Up, Critical Hit Rate Up boost, duration +3\\n • Active buff duration +1\\n\\nAfter using Finishing Touch:\\n • Cross-Slash becomes Cross-Slash+ (moderate Paralyze hit rate boost; returns to Cross-Slash after use) for 8 turns\\n\\nWith active buff:\\n • BRV Attack becomes BRV Attack+ (BRV attack hit count becomes 2; moderately increased cumulative BRV damage; moderately increased BRV damage dealt with critical hits)",
                 "jp": "「画龍点睛」使用時\\n・最初のBRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・遠距離物理BRV攻撃＋HP攻撃を5回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃前に\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最後のHP攻撃HIT時\\n　ターゲット以外にも\\n　与えた合計HPダメージの20％分のHPダメージ\\n・「最大BRVアップ」「物理攻撃力アップ」「クリティカル率アップ」\\n　の効果小アップ追加と3ACTION期間追加\\n・自身に付与されている強化効果を全て＋1ACTION\\n\\n「画龍点睛」使用後 8ACTION\\n「凶斬り」が「凶斬り＋」に変化し 以下の効果が追加\\n・「マヒ」の付与率中アップ\\n・使用後 「凶斬り」に戻る\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n・BRV攻撃のHIT数が2HITに変化し合計BRV威力中アップ\\n・クリティカルヒット時 与えるBRVダメージ中アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Finishing Touch Extension: Boost to Finishing Touch",
                 "jp": "画龍点睛エクステンド：「画龍点睛」の性能アップ"
             },
             "meta_data": {
@@ -18496,17 +18706,17 @@
             "id": 5432,
             "name": {
                 "en": "Critical Power (C)",
-                "gl": "",
+                "gl": "Critical Power (C)",
                 "jp": "クリティカルパワー【C】"
             },
             "desc": {
                 "en": "When using a Call Ability with a BRV Attack:\\n• Increases critical BRV damage dealt by 30%",
-                "gl": "",
+                "gl": "When using a Call Ability that includes BRV attack:\\n • Slightly increases BRV damage dealt with critical hits",
                 "jp": "BRV攻撃を含むコールアビリティ使用時\\nクリティカルヒットで与える\\nBRVダメージを小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Critical Power (C): Increases BRV damage dealt",
                 "jp": "クリティカルパワー【C】：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -19135,21 +19345,21 @@
             "auras": []
         },
         {
-            "id": 1378,
+            "id": 5617,
             "name": {
                 "en": "",
-                "gl": "Buff Attack Speed",
-                "jp": "A"
+                "gl": "Buff Attack Speed Up",
+                "jp": "バフアタックスピードアップ"
             },
             "desc": {
                 "en": "",
-                "gl": "Moderately raises ATK, slightly raises SPD with active buffs",
-                "jp": "A"
+                "gl": "With active buff:\\n • Moderately raises ATK, SPD",
+                "jp": "自身に強化効果が付与されている時\\n自身の攻撃力と素早さ中アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Attack Speed: Raises ATK, SPD",
-                "jp": "A"
+                "gl": "Buff Attack Speed Up: Raises ATK, SPD",
+                "jp": "バフアタックスピードアップ：攻撃力と素早さがアップ"
             },
             "meta_data": {
                 "cp": 5,
@@ -19168,7 +19378,7 @@
                     "effect_id": 28,
                     "effect_target": 2,
                     "effect_values": [
-                        40,
+                        60,
                         0,
                         0
                     ]
@@ -19177,7 +19387,7 @@
                     "effect_id": 32,
                     "effect_target": 2,
                     "effect_values": [
-                        20,
+                        40,
                         0,
                         0
                     ]
@@ -19208,7 +19418,7 @@
             "auras": []
         },
         {
-            "id": 797,
+            "id": 5618,
             "name": {
                 "en": "",
                 "gl": "Cross-Slash Extension",
@@ -19216,8 +19426,8 @@
             },
             "desc": {
                 "en": "",
-                "gl": "When using Cross-Slash, Cross-Slash+:\\n • Increases BRV based on ATK before BRV attack\\n • Moderate BRV damage boost\\n • Moderately increases BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n\\nAfter using Cross-Slash, Cross-Slash+:\\nHP Attack becomes HP Attack+ (melee BRV attack + HP attack; moderately increased BRV damage dealt with critical hits; stolen BRV may exceed MAX BRV up to 120%) for 6 turns",
-                "jp": "「凶斬り」「凶斬り＋」使用時\\n・BRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・「凶斬り」「凶斬り＋」のBRV威力中アップ\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n\\n「凶斬り」「凶斬り＋」使用後 6ACTION\\n通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n　・近距離物理BRV攻撃＋HP攻撃\\n　・クリティカルヒット時 与えるBRVダメージ中アップ\\n　・奪ったBRVを最大BRVを超えて加算する\\n　　上限は自身の最大BRVの120％分"
+                "gl": "When using Cross-Slash, Cross-Slash+:\\n • Increases BRV based on ATK before first BRV attack\\n • Becomes melee BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n\\nWith active buff:\\n • HP Attack becomes HP Attack+ (melee BRV attack + HP attack; moderately increased BRV damage dealt with critical hits; stolen BRV may exceed MAX BRV up to 120%)",
+                "jp": "「凶斬り」「凶斬り＋」使用時\\n・最初のBRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・近距離物理BRV攻撃＋HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃前に\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n\\n自身に強化効果が付与されている時\\n通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n・近距離物理BRV攻撃＋HP攻撃\\n・クリティカルヒット時 与えるBRVダメージ中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
             },
             "short_desc": {
                 "en": "",
@@ -19262,7 +19472,7 @@
                     "required_id": 77,
                     "required_target": 2,
                     "required_values": [
-                        43,
+                        212,
                         0,
                         0
                     ],
@@ -19345,7 +19555,7 @@
             "auras": []
         },
         {
-            "id": 798,
+            "id": 5619,
             "name": {
                 "en": "",
                 "gl": "Finishing Touch Extension",
@@ -19353,8 +19563,8 @@
             },
             "desc": {
                 "en": "",
-                "gl": "When using Finishing Touch:\\n • Increases BRV based on ATK before BRV attack\\n • Tremendous BRV damage boost\\n • Moderately increases BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Triggers additional HP attack\\n • Slight MAX BRV Up, PHY ATK Up, Critical Hit Rate Up boost, duration +3\\n • Extends own buffs 1 turn\\n\\nAfter using Finishing Touch:\\n • BRV Attack becomes BRV Attack+ (hit count becomes 2; moderately increased cumulative BRV damage; moderately increased BRV damage dealt with critical hits) for 8 turns\\n • Cross-Slash becomes Cross-Slash+ (moderate Paralyze hit rate boost; returns to Cross-Slash after use) for 8 turns",
-                "jp": "「画龍点睛」使用時\\n・BRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・「画龍点睛」のBRV威力極大アップ\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・追加HP攻撃が発動\\n・「最大BRVアップ」「物理攻撃力アップ」「クリティカル率アップ」\\n　の効果小アップ追加と3ACTION期間追加\\n・自身に付与されている強化効果を全て＋1ACTION\\n\\n「画龍点睛」使用後 8ACTION\\n・通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n　-HIT数が2HITに変化し合計BRV威力中アップ\\n　-クリティカルヒット時 与えるBRVダメージ中アップ\\n・「凶斬り」が「凶斬り＋」に変化し 以下の効果が追加\\n　-「マヒ」の付与率中アップ\\n　-使用後 「凶斬り」に戻る"
+                "gl": "When using Finishing Touch:\\n • Increases BRV based on ATK before first BRV attack\\n • Becomes ranged BRV attack + HP attack delivered 5 times; tremendously increased cumulative BRV damage\\n • Increases BRV by 20% of cumulative HP damage dealt before last HP attack\\n • Moderately increased BRV damage dealt with critical hits\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets on last HP attack\\n • Slight MAX BRV Up, PHY ATK Up, Critical Hit Rate Up boost, duration +3\\n • Active buff duration +1\\n\\nAfter using Finishing Touch:\\n • Cross-Slash becomes Cross-Slash+ (moderate Paralyze hit rate boost; returns to Cross-Slash after use) for 8 turns\\n\\nWith active buff:\\n • BRV Attack becomes BRV Attack+ (BRV attack hit count becomes 2; moderately increased cumulative BRV damage; moderately increased BRV damage dealt with critical hits)",
+                "jp": "「画龍点睛」使用時\\n・最初のBRV攻撃前に自身に\\n　自身の攻撃力に依存した量のBRVを加算\\n・遠距離物理BRV攻撃＋HP攻撃を5回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃前に\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・クリティカルヒット時 与えるBRVダメージを中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最後のHP攻撃HIT時\\n　ターゲット以外にも\\n　与えた合計HPダメージの20％分のHPダメージ\\n・「最大BRVアップ」「物理攻撃力アップ」「クリティカル率アップ」\\n　の効果小アップ追加と3ACTION期間追加\\n・自身に付与されている強化効果を全て＋1ACTION\\n\\n「画龍点睛」使用後 8ACTION\\n「凶斬り」が「凶斬り＋」に変化し 以下の効果が追加\\n・「マヒ」の付与率中アップ\\n・使用後 「凶斬り」に戻る\\n\\n自身に強化効果が付与されている時\\n通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n・BRV攻撃のHIT数が2HITに変化し合計BRV威力中アップ\\n・クリティカルヒット時 与えるBRVダメージ中アップ"
             },
             "short_desc": {
                 "en": "",
@@ -19399,7 +19609,7 @@
                     "required_id": 77,
                     "required_target": 2,
                     "required_values": [
-                        44,
+                        213,
                         0,
                         0
                     ],
@@ -19512,6 +19722,70 @@
             },
             "effects": [],
             "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
+        },
+        {
+            "id": 5432,
+            "name": {
+                "en": "",
+                "gl": "Critical Power (C)",
+                "jp": "クリティカルパワー【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "When using a Call Ability that includes BRV attack:\\n • Slightly increases BRV damage dealt with critical hits",
+                "jp": "BRV攻撃を含むコールアビリティ使用時\\nクリティカルヒットで与える\\nBRVダメージを小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Critical Power (C): Increases BRV damage dealt",
+                "jp": "クリティカルパワー【C】：与えるBRVダメージがアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 11,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 39,
+                    "effect_target": 2,
+                    "effect_values": [
+                        30,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 38,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
                 {
                     "required_id": 1,
                     "required_target": 2,
@@ -20540,7 +20814,7 @@
                     "id": 800,
                     "name": {
                         "en": "Meteorain Critical Power Buff Start",
-                        "gl": "Meteorain Mighty Critical Hit Buff Starting",
+                        "gl": "Meteorain Critical Power Buff Starting",
                         "jp": "メテオレインクリティカルパワーバフスタート"
                     },
                     "desc": {
@@ -20550,7 +20824,7 @@
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "Meteorain Mighty Critical Hit Buff Starting: Boost to Meteorain; Mako at start of quest",
+                        "gl": "Meteorain Critical Power Buff Starting: Boost to Meteorain; Mako at start of quest",
                         "jp": "メテオレインクリティカルパワーバフスタート：「メテオレイン」の性能アップとクエスト開始時 自身に「魔晄」付与"
                     },
                     "meta_data": {
@@ -20760,17 +21034,17 @@
                 "id": 2007,
                 "name": {
                     "en": "True Memories",
-                    "gl": "",
+                    "gl": "True Memories",
                     "jp": "真実の記憶"
                 },
                 "desc": {
                     "en": "May equip LD Ability [Blade Beam]",
-                    "gl": "",
+                    "gl": "May equip LD ability Blade Beam",
                     "jp": "LDアビリティ「破晄撃」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "True Memories: May equip Blade Beam",
                     "jp": "真実の記憶：「破晄撃」装備可能"
                 },
                 "meta_data": {
@@ -20815,17 +21089,17 @@
                     "id": 2008,
                     "name": {
                         "en": "Blade Beam Power++",
-                        "gl": "",
+                        "gl": "Mighty Blade Beam++",
                         "jp": "破晄撃パワー＋＋"
                     },
                     "desc": {
                         "en": "Raises own Attack by 50%\\nIncreases BRV damage dealt with [Blade Beam] by 10%\\n\\nWhile buffed\\n• [BRV Attack+] becomes [BRV Attack++] with equipped [Finishing Touch Extend]\\n　∟ 4-HIT melee BRV attack\\n　∟ Raises critical BRV damage dealt by 50%\\n• [HP Attack+] becomes [HP Attack++] with equipped [Cross-Slash Extend]\\n　∟ 3-HIT melee BRV attack + HP attack\\n　∟ Raises critical BRV damage dealt by 50%\\n　∟ Stolen BRV can overflow up to 150% Max BRV",
-                        "gl": "",
+                        "gl": "Moderately raises ATK\\n\\nSlightly increases BRV damage dealt with Blade Beam\\n\\nWith active buff:\\n • BRV Attack, BRV Attack+ becomes BRV Attack++ (4-hit melee BRV attack; moderately increased BRV damage with critical hits)\\n • HP Attack, HP Attack+ becomes HP Attack++ (3-hit melee BRV attack + HP attack; moderately increased BRV damage with critical hits; stolen BRV may exceed MAX BRV up to 150%)",
                         "jp": "・自身の攻撃力を中アップ\\n・「破晄撃」の与える\\n　BRVダメージを小アップ\\n\\n自身に強化効果が付与されている時\\n　通常「BRV攻撃」「BRV攻撃＋」が以下の「BRV攻撃＋＋」に変化し\\n　-4HIT近距離物理BRV攻撃\\n　-クリティカル時 与えるBRVダメージ中アップ\\n　通常「HP攻撃」「HP攻撃＋」が以下の「HP攻撃＋＋」に変化し\\n　-3HIT近距離物理BRV攻撃＋HP攻撃\\n　-クリティカル時 与えるBRVダメージ中アップ\\n　-奪ったBRVを最大BRVを超えて加算する\\n　 上限は自身の最大BRVの150％分"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Mighty Blade Beam++: Increases BRV damage dealt with Blade Beam; enables BRV Attack++, HP Attack++ with active buff",
                         "jp": "破晄撃パワー＋＋：「破晄撃」のBRVダメージがアップ 強化効果付与中「BRV攻撃＋＋」「HP攻撃＋＋」に変化"
                     },
                     "meta_data": {
@@ -20888,17 +21162,17 @@
                     "id": 2009,
                     "name": {
                         "en": "Blade Beam Delay Plus",
-                        "gl": "",
+                        "gl": "Blade Beam Delay Plus",
                         "jp": "破晄撃ディレイプラス"
                     },
                     "desc": {
                         "en": "Raises own Attack by 50%\\nWhen using [Blade Beam]\\n• Delay +1 turn",
-                        "gl": "",
+                        "gl": "Moderately raises ATK\\n\\nWhen using Blade Beam:\\n • Target delay +1",
                         "jp": "・自身の攻撃力を中アップ\\n・「破晄撃」使用時\\n　対象の行動順を下げる量＋1"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Blade Beam Delay Plus: Increases target delay 1 turn when using Blade Beam",
                         "jp": "破晄撃ディレイプラス：「破晄撃」使用時 対象の行動順を下げる量＋１"
                     },
                     "meta_data": {
@@ -20952,17 +21226,17 @@
                     "id": 2010,
                     "name": {
                         "en": "Blade Beam Charge",
-                        "gl": "",
+                        "gl": "Charged Blade Beam",
                         "jp": "破晄撃チャージ"
                     },
                     "desc": {
                         "en": "Raises own Attack by 50%\\n[Blade Beam] use +1",
-                        "gl": "",
+                        "gl": "Moderately raises ATK\\n\\nBlade Beam use +1",
                         "jp": "・自身の攻撃力を中アップ\\n・「破晄撃」の使用回数＋1"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Charged Blade Beam: Blade Beam use +1",
                         "jp": "破晄撃チャージ：「破晄撃」の使用回数＋1"
                     },
                     "meta_data": {
@@ -21054,17 +21328,17 @@
                 "id": 2011,
                 "name": {
                     "en": "Resolve to Confront",
-                    "gl": "",
+                    "gl": "Prepared to Face it All",
                     "jp": "全てに向き合う決意"
                 },
                 "desc": {
                     "en": "May equip Finishing Burst [Omnislash Version 5]",
-                    "gl": "",
+                    "gl": "May equip BT ability Omnislash Version 5",
                     "jp": "BTアビリティ「超究武神覇斬ver.5」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Prepared to Face it All: May equip Omnislash Version 5",
                     "jp": "全てに向き合う決意：「超究武神覇斬ver.5」装備可能"
                 },
                 "meta_data": {
@@ -21105,6 +21379,7 @@
                 "auras": []
             }
         },
+        "rzBurstWeapon": {},
         "silverArmor": {
             "id": 1406,
             "series_id": 7,
@@ -21535,8 +21810,8 @@
                     "jp": "攻撃の要"
                 },
                 "desc": {
-                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・自身の与えるBRVダメージ上限が9999を15％分突破可能になる（11498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -21601,7 +21876,306 @@
                 "auras": []
             }
         },
-        "rzHighArmor": {}
+        "rzHighArmor": {
+            "id": 5818,
+            "series_id": 7,
+            "name": {
+                "en": "Cloud's Uniform+",
+                "gl": "",
+                "jp": "クラウドモデル【VII】+"
+            },
+            "status": {
+                "max_hp": 29,
+                "int_brv": 0,
+                "max_brv": 87,
+                "atk": 36,
+                "def": 2213,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 6,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 1
+            },
+            "passive_data": {
+                "passive_id": 2427,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 2427,
+                "name": {
+                    "en": "Bravery Brilliance & Ruin Brilliance",
+                    "gl": "",
+                    "jp": "勇猛の輝き・破滅の輝き"
+                },
+                "desc": {
+                    "en": "Increases own BRV, HP damage limits (3, 1)",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具クラウド"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具クラウド"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 2427,
+                    "required_passive": 534
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 118,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5818,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 3047,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance I",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅠ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12098\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 116998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12098まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（116998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅠ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3047,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2287,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3048,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance II",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅡ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12698\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 118998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12698まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（118998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅡ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3048,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2323,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3049,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance III",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅢ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 13298\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 120998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（13298まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（120998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅢ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3049,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2359,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3050,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance IV",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅣ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 12%\\n*Up to 14498\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 4%\\n*Up to 124998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋12％分突破可能になる（14498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋4％分突破可能になる（124998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅣ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3050,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2395,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        }
     },
     "defaultAilments": [
         {
@@ -21643,6 +22217,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21706,7 +22282,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "398": [
@@ -21773,6 +22360,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 1,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21836,7 +22425,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "79": [
@@ -21891,6 +22491,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 1,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21954,7 +22556,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "120": [
@@ -22009,6 +22622,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 1,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -22072,7 +22687,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "75": [
@@ -22098,7 +22724,7 @@
             "id": 1802,
             "name": {
                 "en": "Critical Power",
-                "gl": "Mighty Critical Hit",
+                "gl": "Critical Power",
                 "jp": "クリティカルパワー"
             },
             "desc": {
@@ -22108,7 +22734,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Mighty Critical Hit: Increases BRV damage dealt",
+                "gl": "Critical Power: Increases BRV damage dealt",
                 "jp": "クリティカルパワー：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -22166,17 +22792,17 @@
             "id": 5628,
             "name": {
                 "en": "Critical Power (RF)",
-                "gl": "",
+                "gl": "Critical Power (RF)",
                 "jp": "クリティカルパワー【精錬】"
             },
             "desc": {
                 "en": "Raises critical BRV damage dealt by 4%",
-                "gl": "",
+                "gl": "Raises BRV damage dealt with critical hits by 4%",
                 "jp": "自身がクリティカルヒットで与える\\nBRVダメージを4％アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Critical Power (RF): Increases BRV damage dealt",
                 "jp": "クリティカルパワー【精錬】：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -22583,7 +23209,7 @@
                 "id": 2540,
                 "name": {
                     "en": "Cross-Slash Critical Power Lv9",
-                    "gl": "Cross-Slash Critical Hit Lv9",
+                    "gl": "Cross-Slash Critical Power Lv9",
                     "jp": "凶斬りクリティカルパワー Lv9"
                 },
                 "desc": {
@@ -22593,7 +23219,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Cross-Slash Critical Hit: Boost to Cross-Slash",
+                    "gl": "Cross-Slash Critical Power: Boost to Cross-Slash",
                     "jp": "凶斬りクリティカルパワー：「凶斬り」の性能アップ"
                 },
                 "meta_data": {
@@ -23123,7 +23749,7 @@
                 "id": 2547,
                 "name": {
                     "en": "Finishing Touch Critical Power Lv9",
-                    "gl": "Finishing Touch Critical Hit Lv9",
+                    "gl": "Finishing Touch Critical Power Lv9",
                     "jp": "画龍点睛クリティカルパワー Lv9"
                 },
                 "desc": {
@@ -23133,7 +23759,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Finishing Touch Critical Hit: Boost to Finishing Touch",
+                    "gl": "Finishing Touch Critical Power: Boost to Finishing Touch",
                     "jp": "画龍点睛クリティカルパワー：「画龍点睛」の性能アップ"
                 },
                 "meta_data": {
@@ -23663,7 +24289,7 @@
                 "id": 2554,
                 "name": {
                     "en": "Meteorain Critical Power Lv9",
-                    "gl": "Meteorain Critical Hit Lv9",
+                    "gl": "Meteorain Critical Power Lv9",
                     "jp": "メテオレインクリティカルパワー Lv9"
                 },
                 "desc": {
@@ -23673,7 +24299,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Meteorain Critical Hit: Boost to Meteorain",
+                    "gl": "Meteorain Critical Power: Boost to Meteorain",
                     "jp": "メテオレインクリティカルパワー：「メテオレイン」の性能アップ"
                 },
                 "meta_data": {
@@ -24557,7 +25183,7 @@
                     "jp": "真実の記憶エクステンド：「破晄撃」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -24630,5 +25256,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-07-17 15:00:00"
+        }
     }
 }

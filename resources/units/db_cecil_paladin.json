@@ -1,5 +1,7 @@
 {
     "id": 33,
+    "uid": 49,
+    "sid": 49,
     "profile": {
         "fullName": {
             "en": "Cecil (Paladin)",
@@ -142,12 +144,12 @@
         "id": 65,
         "name": {
             "en": "Holy Flame (C) Rank Up",
-            "gl": "",
+            "gl": "コールアビリティ_セシルパラディン",
             "jp": "コールアビリティ_セシルパラディン"
         },
         "rank_up_desc": {
             "en": "When using [Holy Flame (C)]\\n• Increases BRV gain based on Max BRV by 20%\\n• Stolen BRV can overflow up to 180% Max BRV\\n• Call Effect duration +3",
-            "gl": "",
+            "gl": "「ホーリーフレイム【C】」使用時\\n・最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・使用後特殊効果の3ACTION期間延長",
             "jp": "「ホーリーフレイム【C】」使用時\\n・最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・使用後特殊効果の3ACTION期間延長"
         },
         "ability": {
@@ -159,12 +161,12 @@
         "id": 66,
         "name": {
             "en": "Luminous Shard (C) Rank Up",
-            "gl": "",
+            "gl": "LDコールアビリティ_セシルパラディン",
             "jp": "LDコールアビリティ_セシルパラディン"
         },
         "rank_up_desc": {
             "en": "When using [Luminous Shard (C)]\\n• Becomes 3-HIT AoE Holy ranged BRV attack + AoE HP attack\\n　+ 5-HIT AoE Holy ranged BRV attack + AoE HP attack\\n• Stolen BRV can overflow up to 200% Max BRV\\n• Increases BRV damage dealt by 50% when attacking weakness\\n• [Holy Resist Down] duration +2\\n• Call Effect's Max HP overflow effect +20%",
-            "gl": "",
+            "gl": "「ライトスラスター【C】」使用時\\n・8HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃が\\n　3HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃\\n　＋5HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃に変化\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・弱点をついた時 与えるBRVダメージ中アップ\\n・「Holy 耐性ダウン」の2ACTION期間延長\\n・使用後特殊効果の\\n　最大HPを超えてHP回復する効果小アップ",
             "jp": "「ライトスラスター【C】」使用時\\n・8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃に変化\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・弱点をついた時 与えるBRVダメージ中アップ\\n・「聖耐性ダウン」の2ACTION期間延長\\n・使用後特殊効果の\\n　最大HPを超えてHP回復する効果小アップ"
         },
         "ability": {
@@ -505,6 +507,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [
@@ -561,6 +567,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -615,6 +622,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -669,6 +677,7 @@
                 "jp": "聖属性近距離物理BRV攻撃\\n自身に3ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -757,6 +766,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -864,6 +875,7 @@
                 "jp": "聖属性近距離物理BRV攻撃\\n自身に6ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 5,
@@ -952,6 +964,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1059,6 +1073,7 @@
                 "jp": "自身の最大BRVに依存した量のBRVを味方全員に加算し\\n2HIT聖属性近距離物理BRV攻撃\\n自身に3ACTION「光輝の剣」付与\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -1191,6 +1206,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1298,6 +1315,7 @@
                 "jp": "自身の最大BRVに依存した量のBRVを味方全員に加算し\\n2HIT聖属性近距離物理BRV攻撃\\n自身に6ACTION「光輝の剣」付与\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -1430,6 +1448,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1537,6 +1557,7 @@
                 "jp": "聖属性遠距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの10％分\\n自身に2ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 5,
@@ -1668,6 +1689,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1767,13 +1790,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -1797,13 +1826,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -1827,13 +1862,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -1866,6 +1907,7 @@
                 "jp": "聖属性遠距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に5ACTION「聖光の盾」付与\\n行動負荷が低い\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 5,
@@ -1999,6 +2041,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2098,13 +2142,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -2128,13 +2178,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -2158,13 +2214,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -2197,6 +2259,7 @@
                 "jp": "2HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの10％分\\n自身に2ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -2350,6 +2413,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2449,13 +2514,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -2479,13 +2550,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -2509,13 +2586,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -2548,6 +2631,7 @@
                 "jp": "2HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n行動負荷が低い\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に5ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 22,
             "hit_count": 5,
             "use_count": 5,
@@ -2703,6 +2787,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2802,13 +2888,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -2832,13 +2924,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -2862,13 +2960,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -2901,6 +3005,7 @@
                 "jp": "6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n自身に付与されている\\n「光輝の剣」「聖光の盾」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -3175,6 +3280,7 @@
                 "jp": "6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に付与されている\\n「光輝の剣」「聖光の盾」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -3461,6 +3567,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3568,6 +3676,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 0,
@@ -3688,6 +3797,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 0,
@@ -3808,6 +3918,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 0,
@@ -3928,6 +4039,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 0,
@@ -4048,6 +4160,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -4276,6 +4389,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -4504,6 +4618,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -4732,6 +4847,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -4960,6 +5076,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -5014,6 +5131,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRV加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に5ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -5210,6 +5328,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5317,6 +5437,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRV加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に8ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
+            "motion": 59,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 5,
@@ -5513,6 +5634,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5620,6 +5743,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n自身に4ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 8,
@@ -5839,6 +5963,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5938,13 +6064,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -5968,13 +6100,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -5998,13 +6136,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -6037,6 +6181,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に7ACTION「聖光の盾」付与\\n行動負荷が低い\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 22,
             "hit_count": 8,
             "use_count": 8,
@@ -6258,6 +6403,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6357,13 +6504,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 12,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     40,
@@ -6387,13 +6540,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 25,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -6417,13 +6576,19 @@
                                 -1
                             ],
                             "required_values": [
-                                712
+                                712,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 26,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     5,
@@ -6456,6 +6621,7 @@
                 "jp": "3ACTION味方全員に「エンチャント・聖」効果を与える"
             },
             "rank": 0,
+            "motion": 79,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -6542,6 +6708,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6641,13 +6809,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 365,
                                 "ailment_effect": 29,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -6671,13 +6845,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 366,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     0,
@@ -6710,6 +6890,7 @@
                 "jp": "5ACTION味方全員に「エンチャント・聖」効果を与える"
             },
             "rank": 0,
+            "motion": 79,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -6796,6 +6977,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6895,13 +7078,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 365,
                                 "ailment_effect": 29,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -6925,13 +7114,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 366,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     0,
@@ -6964,6 +7159,7 @@
                 "jp": "3ACTION味方全員の攻撃力を小アップし\\n味方全員に「エンチャント・聖」効果を与える"
             },
             "rank": 0,
+            "motion": 79,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7050,6 +7246,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7149,13 +7347,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 365,
                                 "ailment_effect": 29,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -7179,13 +7383,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 366,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     0,
@@ -7218,6 +7428,7 @@
                 "jp": "5ACTION味方全員の攻撃力を小アップし\\n味方全員に「エンチャント・聖」効果を与える"
             },
             "rank": 0,
+            "motion": 79,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -7304,6 +7515,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7403,13 +7616,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 365,
                                 "ailment_effect": 29,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -7433,13 +7652,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1374
+                                1374,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 366,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     0,
@@ -7472,6 +7697,7 @@
                 "jp": "6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に6ACTION「闇を裂く光」付与\\n自身に付与されている\\n「光輝の剣」「聖光の盾」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 15000,
@@ -7738,6 +7964,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7856,6 +8084,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7955,13 +8185,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 389,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     30,
@@ -7985,13 +8221,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 390,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -8024,6 +8266,7 @@
                 "jp": "6HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に6ACTION「闇を裂く光」付与\\n自身に付与されている\\n「光輝の剣」「聖光の盾」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 15000,
@@ -8290,6 +8533,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8408,6 +8653,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8507,13 +8754,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 389,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     30,
@@ -8537,13 +8790,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 390,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -8576,6 +8835,7 @@
                 "jp": "4HIT聖属性近距離物理BRV攻撃＋HP攻撃を2回行う\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n最初のHP攻撃時に敵全体に4ACTION「聖耐性ダウン」付与\\n自身に6ACTION「闇を裂く光」付与\\n自身に付与されている\\n「光輝の剣」「聖光の盾」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 73,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 15000,
@@ -8906,6 +9166,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9024,6 +9286,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9123,13 +9387,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 389,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     30,
@@ -9153,13 +9423,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1385
+                                1385,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 390,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -9192,6 +9468,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n行動負荷が低い"
             },
             "rank": 1,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 5,
             "use_count": 0,
@@ -9334,6 +9611,7 @@
                 "jp": "3HIT聖属性近距離物理BRV攻撃\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n行動負荷が低い"
             },
             "rank": 1,
+            "motion": 72,
             "movement_cost": 22,
             "hit_count": 5,
             "use_count": 0,
@@ -9476,6 +9754,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも20％分のHPダメージ"
             },
             "rank": 1,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -9706,6 +9985,7 @@
                 "jp": "7HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも20％分のHPダメージ"
             },
             "rank": 1,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 0,
@@ -9936,6 +10216,7 @@
                 "jp": "8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に6ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し\\n与えるBRVダメージ中アップと与えるHPダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 420,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 3,
@@ -10223,6 +10504,8 @@
                         "disp_type": 53,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10322,13 +10605,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 864,
                                 "ailment_effect": 227,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     30,
@@ -10352,13 +10641,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 865,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -10383,13 +10678,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 866,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -10414,13 +10714,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 867,
                                 "ailment_effect": 57,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     -20,
@@ -10444,13 +10749,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 868,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     120,
@@ -10475,13 +10786,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1014,
                                 "ailment_effect": 115,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -10525,6 +10841,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10643,6 +10961,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10750,6 +11070,7 @@
                 "jp": "8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に12ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し\\n与えるBRVダメージ中アップと与えるHPダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 420,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 4,
@@ -11037,6 +11358,8 @@
                         "disp_type": 53,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11136,13 +11459,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 864,
                                 "ailment_effect": 227,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     30,
@@ -11166,13 +11495,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 865,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -11197,13 +11532,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 866,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -11228,13 +11568,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 867,
                                 "ailment_effect": 57,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     -20,
@@ -11258,13 +11603,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 868,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     120,
@@ -11289,13 +11640,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1014,
                                 "ailment_effect": 115,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -11339,6 +11695,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11457,6 +11815,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11564,6 +11924,7 @@
                 "jp": "3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱点をついた時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n最初のHP攻撃時に敵全体に4ACTION「聖耐性ダウン」付与\\n自身に12ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生 超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し 与えるBRVダメージ中アップと \\n与えるHPダメージ小アップ 同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 420,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 4,
@@ -11893,6 +12254,8 @@
                         "disp_type": 53,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11992,13 +12355,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 864,
                                 "ailment_effect": 227,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     30,
@@ -12022,13 +12391,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 865,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -12053,13 +12428,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 866,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -12084,13 +12464,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 867,
                                 "ailment_effect": 57,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     -20,
@@ -12114,13 +12499,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2083
+                                2083,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 868,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     120,
@@ -12145,13 +12536,18 @@
                             ],
                             "required_values": [
                                 2083,
-                                100
+                                0,
+                                0,
+                                0,
+                                100,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1014,
                                 "ailment_effect": 115,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -12195,6 +12591,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12313,6 +12711,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12431,6 +12831,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12538,6 +12940,7 @@
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n\\n使用後特殊効果：3ACTION\\n味方全員の防御力大アップ"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -12802,6 +13205,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12920,6 +13325,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13019,13 +13426,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2134
+                                2134,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 878,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     80,
@@ -13058,6 +13471,7 @@
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n\\n使用後特殊効果：6ACTION\\n味方全員の防御力大アップ"
             },
             "rank": 0,
+            "motion": 71,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -13322,6 +13736,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13440,6 +13856,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13539,13 +13957,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2134
+                                2134,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 878,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     80,
@@ -13578,6 +14002,7 @@
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配 \\n与えたHPダメージに応じて自身以外の味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 \\n超えたHP分 対象のBRVに加算\\n敵全体に2ACTION「聖耐性ダウン」付与\\n\\n使用時特殊効果：3ACTION\\n味方全員の防御力極大アップと\\n最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの10％分"
             },
             "rank": 0,
+            "motion": 420,
             "movement_cost": 0,
             "hit_count": 13,
             "use_count": 1,
@@ -13908,6 +14333,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14026,6 +14453,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14125,13 +14554,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2135
+                                2135,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 879,
                                 "ailment_effect": 227,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -14155,13 +14590,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2135
+                                2135,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1015,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     120,
@@ -14207,6 +14648,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14314,6 +14757,7 @@
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱点をついた時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて自身以外の味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n最初のHP攻撃時に敵全体に4ACTION「聖耐性ダウン」付与\\n\\n使用時特殊効果：3ACTION\\n味方全員の防御力極大アップと\\n最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分"
             },
             "rank": 0,
+            "motion": 420,
             "movement_cost": 0,
             "hit_count": 15,
             "use_count": 1,
@@ -14686,6 +15130,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14804,6 +15250,8 @@
                         "disp_type": 52,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14903,13 +15351,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2135
+                                2135,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 879,
                                 "ailment_effect": 227,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -14933,13 +15387,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2135
+                                2135,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1015,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 2,
                                 "rank_data": [
                                     120,
@@ -14985,6 +15445,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15103,6 +15565,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15210,6 +15674,7 @@
                 "jp": "15HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは等倍\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVが最大BRVを超えて179998まで加算でき\\n与えるHPダメージ上限も99999を80％分突破可能（179998まで）\\n使用後 以下のバースト効果を5ACTION付与\\n味方全員の与えるBRVダメージ中アップと加算したBRVを最大BRVを超えて\\n加算する上限小アップ 味方全員にHPリジェネの効果が発生し \\n味方の行動開始時それぞれの現在HPに依存した量のBRV加算\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n・与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n・所持できるBRVと与えるHPダメージ上限が99999を10％分突破可能(109998まで)\\n （最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効）\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
+            "motion": 421,
             "movement_cost": 30,
             "hit_count": 17,
             "use_count": 1,
@@ -15238,8 +15703,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15260,8 +15725,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15282,8 +15747,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15304,8 +15769,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15326,8 +15791,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15348,8 +15813,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15370,8 +15835,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15392,8 +15857,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15414,8 +15879,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15436,8 +15901,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15458,8 +15923,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15480,8 +15945,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15502,8 +15967,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15524,8 +15989,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15546,8 +16011,8 @@
                         "single_target_brv_rate": 48,
                         "brv_damage_limit_up": 20,
                         "max_brv_limit_up": 80,
-                        "brv_damage_limit_up_direct": 20,
-                        "max_brv_limit_up_direct": 80
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [
@@ -15569,7 +16034,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 2,
                     "element": [],
@@ -15628,6 +16093,8 @@
                         "disp_type": 28,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15727,13 +16194,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2046
+                                2046,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 822,
                                 "ailment_effect": 347,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -15757,13 +16230,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2046
+                                2046,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 896,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -15787,13 +16266,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2046
+                                2046,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 897,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -15818,13 +16303,18 @@
                             ],
                             "required_values": [
                                 2046,
-                                100
+                                0,
+                                100,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 898,
                                 "ailment_effect": 235,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -15849,13 +16339,18 @@
                             ],
                             "required_values": [
                                 2046,
-                                100
+                                0,
+                                100,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 899,
                                 "ailment_effect": 236,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -15879,13 +16374,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2046
+                                2046,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 900,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -19076,6 +19577,7 @@
                 "auras": []
             }
         },
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 1626,
@@ -19427,7 +19929,7 @@
                 "meta_data": {
                     "cp": 10,
                     "level": -1,
-                    "target": 3,
+                    "target": 2,
                     "is_weapon_passive": 538,
                     "required_passive": -1
                 },
@@ -19448,7 +19950,7 @@
                     },
                     {
                         "effect_id": 187,
-                        "effect_target": 2,
+                        "effect_target": 3,
                         "effect_values": [
                             5,
                             0,
@@ -19496,7 +19998,306 @@
                 ]
             }
         },
-        "rzHighArmor": {}
+        "rzHighArmor": {
+            "id": 5691,
+            "series_id": 4,
+            "name": {
+                "en": "Crystal Shield+",
+                "gl": "",
+                "jp": "クリスタルの盾【IV】+"
+            },
+            "status": {
+                "max_hp": 51,
+                "int_brv": 0,
+                "max_brv": 37,
+                "atk": 18,
+                "def": 2327,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 6,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 33
+            },
+            "passive_data": {
+                "passive_id": 2425,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 2425,
+                "name": {
+                    "en": "Bravery Resonance & Ruin Resonance",
+                    "gl": "",
+                    "jp": "勇猛の共鳴・破滅の共鳴"
+                },
+                "desc": {
+                    "en": "Increases party's BRV, HP damage limits (2, 2)",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具セシルパラディン"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具セシルパラディン"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 2425,
+                    "required_passive": 538
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 118,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5691,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 2742,
+                    "name": {
+                        "en": "Bravery Resonance & Ruin Resonance I",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅰ"
+                    },
+                    "desc": {
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10698\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 111998\\n*Party: Up to 101998",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10698まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は111998まで 自身以外の味方全員は101998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅰ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2742,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2303,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 2743,
+                    "name": {
+                        "en": "Bravery Resonance & Ruin Resonance II",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅱ"
+                    },
+                    "desc": {
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 10898\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 113998\\n*Party: Up to 103998",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（10898まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は113998まで 自身以外の味方全員は103998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅱ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2743,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2339,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 2744,
+                    "name": {
+                        "en": "Bravery Resonance & Ruin Resonance III",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅲ"
+                    },
+                    "desc": {
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 2%\\n*Up to 11098\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Self: Up to 115998\\n*Party: Up to 105998",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋2％分突破可能になる（11098まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は115998まで 自身以外の味方全員は105998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅲ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2744,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2375,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 2745,
+                    "name": {
+                        "en": "Bravery Resonance & Ruin Resonance IV",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅳ"
+                    },
+                    "desc": {
+                        "en": "Party: BRV damage dealt can exceed limit of 9999 by 4%\\n*Up to 11498\\n\\nParty: Held bravery and HP damage dealt can exceed limit of 99999 by 4%\\n*Self: Up to 119998\\n*Party: Up to 109998",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋4％分突破可能になる（11498まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋4％分突破可能になる\\n　（自身は119998まで 自身以外の味方全員は109998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅳ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 2745,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2411,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        }
     },
     "defaultAilments": [
         {
@@ -19536,6 +20337,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -19599,7 +20402,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "709": [
@@ -19654,6 +20468,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -19717,7 +20533,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "712": [
@@ -19742,13 +20569,19 @@
                         -1
                     ],
                     "required_values": [
-                        712
+                        712,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 12,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 2,
                         "rank_data": [
                             40,
@@ -19772,13 +20605,19 @@
                         -1
                     ],
                     "required_values": [
-                        712
+                        712,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 25,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 6,
                         "rank_data": [
                             20,
@@ -19802,13 +20641,19 @@
                         -1
                     ],
                     "required_values": [
-                        712
+                        712,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 26,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 7,
                         "rank_data": [
                             5,
@@ -19832,12 +20677,12 @@
             "name": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "meta_data": {
                 "target": 2,
@@ -19863,6 +20708,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -19926,7 +20773,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1081": [
@@ -19952,7 +20810,7 @@
             "id": 2387,
             "name": {
                 "en": "Full HP Break Hit BRV Gain All",
-                "gl": "Full HP Break Hit All Bravery",
+                "gl": "Full HP Break Hit BRV Gain All",
                 "jp": "フルHPブレイクヒットBRVゲインオール"
             },
             "desc": {
@@ -19962,13 +20820,13 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Full HP Break Hit All Bravery: Increases BRV",
+                "gl": "Full HP Break Hit BRV Gain All: Increases BRV",
                 "jp": "フルHPブレイクヒットBRVゲインオール：BRVが加算"
             },
             "meta_data": {
                 "cp": 3,
                 "level": -1,
-                "target": 3,
+                "target": 2,
                 "is_weapon_passive": -1,
                 "required_passive": -1
             },
@@ -19980,7 +20838,7 @@
             "effects": [
                 {
                     "effect_id": 43,
-                    "effect_target": 2,
+                    "effect_target": 3,
                     "effect_values": [
                         5,
                         0,
@@ -20020,7 +20878,7 @@
             "id": 4067,
             "name": {
                 "en": "Full HP Break Hit BRV Gain All (RF)",
-                "gl": "Bravery Full HP Break Hit All (RF)",
+                "gl": "Full HP Break Hit BRV Gain All (RF)",
                 "jp": "フルHPブレイクヒットBRVゲインオール【精錬】"
             },
             "desc": {
@@ -20030,13 +20888,13 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Full HP Break Hit All (RF): Increases BRV",
+                "gl": "Full HP Break Hit BRV Gain All (RF): Increases BRV",
                 "jp": "フルHPブレイクヒットBRVゲインオール【精錬】：BRVが加算"
             },
             "meta_data": {
                 "cp": 3,
                 "level": -1,
-                "target": 3,
+                "target": 2,
                 "is_weapon_passive": -1,
                 "required_passive": -1
             },
@@ -20048,7 +20906,7 @@
             "effects": [
                 {
                     "effect_id": 43,
-                    "effect_target": 2,
+                    "effect_target": 3,
                     "effect_values": [
                         2,
                         0,
@@ -21090,7 +21948,7 @@
                 },
                 "desc": {
                     "en": "Increases BRV gained with [Holy Flame] by 10％\\n* Requires [Holy Flame Extend] passive",
-                    "gl": "While equipping Holy Flame Extension:\\n • Increases BRV gained with Holy Flame by 10%",
+                    "gl": "When using Holy Flame:\\n • Increases BRV gained by 10％ (except when 5★ Lustrous Sword [IV], Hallowed Blade's Guidance, Holy Flame Extension not equipped)",
                     "jp": "「ホーリーフレイム」の\\nBRV加算量10％アップ\\n★5武器「光の剣【IV】」\\nまたはパッシブ「聖剣の導き」\\nまたは「ホーリーフレイムエクステンド」非装備時を除く"
                 },
                 "short_desc": {
@@ -21180,7 +22038,7 @@
                 },
                 "desc": {
                     "en": "Increases gained BRV overflow limit of [Holy Flame] by 10％\\n* Requires [Holy Flame Extend] passive",
-                    "gl": "While equipping Holy Flame Extension and using Holy Flame:\\n • Increased BRV may exceed MAX BRV up to 10%",
+                    "gl": "When using Holy Flame:\\n • Increased BRV may exceed MAX BRV up to 10％ (except when 5★ Lustrous Sword [IV], Hallowed Blade's Guidance, Holy Flame Extension not equipped)",
                     "jp": "「ホーリーフレイム」使用時\\n加算したBRVを最大BRVを超えて加算する上限10％アップ\\n★5武器「光の剣【IV】」\\nまたはパッシブ「聖剣の導き」\\nまたは「ホーリーフレイムエクステンド」非装備時を除く"
                 },
                 "short_desc": {
@@ -22458,7 +23316,7 @@
                     "jp": "燦然と輝く一閃エクステンド：「ライトスラスター」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -22511,5 +23369,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-07-14 15:00:00"
+        }
     }
 }
