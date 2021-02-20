@@ -1,9 +1,12 @@
 {
     "id": 158,
+    "uid": 802,
+    "sid": 802,
     "profile": {
         "fullName": {
             "en": "Mog",
-            "jp": "モグ"
+            "jp": "モグ",
+            "gl": "Mog"
         },
         "va": {
             "en": "Sumire Morohoshi",
@@ -77,7 +80,50 @@
                     "sort": 6
                 }
             ],
-            "gl": []
+            "gl": [
+                {
+                    "id": 3061,
+                    "text": "あんちゃんたちの仲間になれって\\n言ったクポ！",
+                    "voice": 36,
+                    "type": 1,
+                    "sort": 1
+                },
+                {
+                    "id": 3063,
+                    "text": "生きてたクポー！ よかったクポー！",
+                    "voice": 38,
+                    "type": 1,
+                    "sort": 2
+                },
+                {
+                    "id": 3064,
+                    "text": "ボクもいっしょに戦うクポ！！",
+                    "voice": 39,
+                    "type": 1,
+                    "sort": 3
+                },
+                {
+                    "id": 3067,
+                    "text": "おれはおまえの親分クポ！",
+                    "voice": 42,
+                    "type": 5,
+                    "sort": 4
+                },
+                {
+                    "id": 3070,
+                    "text": "仲間がいるクポ！",
+                    "voice": 45,
+                    "type": 5,
+                    "sort": 5
+                },
+                {
+                    "id": 3072,
+                    "text": "ぬいぐるみじゃないクポー！",
+                    "voice": 47,
+                    "type": 5,
+                    "sort": 6
+                }
+            ]
         },
         "series": 6,
         "sort_num": 12
@@ -96,12 +142,12 @@
         "id": 109,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_モグ",
             "jp": "コールアビリティ_モグ"
         },
         "rank_up_desc": {
             "en": "When using [Jump (C)] \\n• Stolen BRV can overflow up to 120% Max BRV\\n• Call effect duration +3",
-            "gl": "",
+            "gl": "「ジャンプ【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の3ACTION期間延長",
             "jp": "「ジャンプ【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の3ACTION期間延長"
         },
         "ability": {
@@ -113,12 +159,12 @@
         "id": 110,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_モグ",
             "jp": "LDコールアビリティ_モグ"
         },
         "rank_up_desc": {
             "en": "When using [Moogle March (C)] \\n• Increases BRV attack hit count by 4\\n• Increases total BRV potency by 40% \\n• Stolen BRV can overflow up to 120% Max BRV\\n",
-            "gl": "",
+            "gl": "「モーグリだいこうしん【C】」使用時\\n・BRV 攻撃のHIT数が合計4HIT増え\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分",
             "jp": "「モーグリだいこうしん【C】」使用時\\n・BRV攻撃のHIT数が合計4HIT増え\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
         },
         "ability": {
@@ -418,6 +464,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [
@@ -2458,6 +2508,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2512,6 +2563,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2566,6 +2618,7 @@
                 "jp": "2HIT水属性遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも50％分のHPダメージ\\n自身に6ACTION「飛竜の角」付与\\n使用後「連続ジャンプ」に変化"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -2718,6 +2771,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2817,13 +2872,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1047,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -2847,13 +2908,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1048,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -2877,13 +2944,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1049,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -5,
@@ -2927,6 +3000,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3034,6 +3109,7 @@
                 "jp": "2HIT水属性遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「雷水耐性ダウン」付与\\n自身に12ACTION「飛竜の角」付与\\n使用後「連続ジャンプ」に変化"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -3186,6 +3262,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3285,13 +3363,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1047,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -3315,13 +3399,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1048,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -3345,13 +3435,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1049,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -5,
@@ -3395,6 +3491,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3513,6 +3611,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3620,6 +3720,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n自身に6ACTION「飛竜の角」付与\\n使用後「連続ジャンプ」に変化"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 7,
@@ -3838,6 +3939,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3937,13 +4040,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1047,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -3967,13 +4076,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1048,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -3997,13 +4112,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1049,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -5,
@@ -4047,6 +4168,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4154,6 +4277,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「雷水耐性ダウン」付与\\n自身に12ACTION「飛竜の角」付与\\n使用後「連続ジャンプ」に変化"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 7,
@@ -4372,6 +4496,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4471,13 +4597,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1047,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -4501,13 +4633,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1048,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -4531,13 +4669,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2521
+                                2521,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1049,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -5,
@@ -4581,6 +4725,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4699,6 +4845,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4806,6 +4954,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n＋2HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n使用後「ジャンプ」に戻る"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 0,
@@ -5010,6 +5159,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n＋2HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n敵全体に4ACTION「雷水耐性ダウン」付与\\n使用後「ジャンプ」に戻る"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 0,
@@ -5226,6 +5376,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5333,6 +5485,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n＋与えたHPダメージの20％分 自身のBRVをアップ\\n＋4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n使用後「ジャンプ」に戻る"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 0,
@@ -5603,6 +5756,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算＋HP攻撃\\n＋与えたHPダメージの20％分 自身のBRVをアップ\\n＋4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの50％分のHPダメージ\\n敵全体に4ACTION「雷水耐性ダウン」付与\\n使用後「ジャンプ」に戻る"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 0,
@@ -5885,6 +6039,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5992,6 +6148,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に4ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネ\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 4,
@@ -6144,6 +6301,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6243,13 +6402,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -6273,13 +6438,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -6303,13 +6474,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -6353,6 +6530,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6460,6 +6639,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に8ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネ\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 4,
@@ -6612,6 +6792,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6711,13 +6893,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -6741,13 +6929,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -6771,13 +6965,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -6821,6 +7021,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6928,6 +7130,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に4ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネ\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 4,
@@ -7124,6 +7327,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7223,13 +7428,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -7253,13 +7464,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -7283,13 +7500,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -7333,6 +7556,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7440,6 +7665,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に8ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネ\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋2HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 4,
@@ -7636,6 +7862,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7735,13 +7963,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -7765,13 +7999,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -7795,13 +8035,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -7845,6 +8091,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7952,6 +8200,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に4ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネと行動開始時　それぞれの最大BRVに依存した量のBRV加算\\n・敵全体の素早さ小ダウン\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ＋」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ＋」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋3HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの120％分\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -8104,6 +8353,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8203,13 +8454,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -8233,13 +8490,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -8263,13 +8526,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -8313,6 +8582,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8420,6 +8691,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に8ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネと行動開始時　それぞれの最大BRVに依存した量のBRV加算\\n・敵全体の素早さ小ダウン\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ＋」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ＋」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋3HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの120％分\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 0,
@@ -8572,6 +8844,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8671,13 +8945,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -8701,13 +8981,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -8731,13 +9017,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -8781,6 +9073,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8888,6 +9182,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に4ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネと行動開始時　それぞれの最大BRVに依存した量のBRV加算\\n・敵全体の素早さ小ダウン\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ＋」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ＋」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋3HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの120％分\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -9084,6 +9379,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9183,13 +9480,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -9213,13 +9516,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -9243,13 +9552,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -9293,6 +9608,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9400,6 +9717,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの150％分\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは分配\\n敵全体に4ACTION「雷水耐性ダウン」付与　自身に8ACTION特殊効果「水のハーモニー」付与\\n特殊効果「水のハーモニー」付与中　以下の効果が発動　同名の特殊効果は重複しない\\n・自身に「エンチャント・水」の効果\\n・味方全員にHPリジェネと行動開始時　それぞれの最大BRVに依存した量のBRV加算\\n・敵全体の素早さ小ダウン\\n・自身がHP攻撃後 以下の追加攻撃発動（一部攻撃を除く 1回の行動で追加発動は1回まで）\\n　-味方に弱体効果が付与されている場合 水属性で味方全員の弱体効果を2個回復する「エルニーニョ＋」\\n　　そうでない場合 雷水属性でターゲットに小確率で1ACTION「混乱」付与する「プラズマ＋」が発動\\n　-味方全員に自身の最大BRVに依存した量のBRVを加算\\n　　＋3HIT全体遠距離物理BRV攻撃＋単体HP攻撃\\n　-奪ったBRVを最大BRVを超えて加算する　上限は自身の最大BRVの120％分\\n　-ターゲット以外にも20％分のHPダメージ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -9596,6 +9914,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9695,13 +10015,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -9725,13 +10051,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -9755,13 +10087,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -9805,6 +10143,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9912,6 +10252,7 @@
                 "jp": "追加発動用_第2モグ_エルニーニョ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -10099,6 +10440,7 @@
                 "jp": "追加発動用_第2モグ_プラズマ"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -10275,6 +10617,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10382,6 +10726,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身に3ACTION「モーグリ族の戦士」付与\\n\\n「モーグリ族の戦士」付与中\\n味方全員にそれぞれのHPが最大HPの50％以上の時\\n与えるBRVダメージ小アップの効果"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -10622,6 +10967,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10721,13 +11068,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1050,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -10751,13 +11104,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1051,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -10782,13 +11141,18 @@
                             ],
                             "required_values": [
                                 2522,
-                                50
+                                0,
+                                50,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1052,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -10821,6 +11185,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋6HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身に6ACTION「モーグリ族の戦士」付与\\n\\n「モーグリ族の戦士」付与中\\n味方全員にそれぞれのHPが最大HPの50％以上の時\\n与えるBRVダメージ小アップの効果"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -11061,6 +11426,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11160,13 +11527,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1050,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -11190,13 +11563,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1051,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -11221,13 +11600,18 @@
                             ],
                             "required_values": [
                                 2522,
-                                50
+                                0,
+                                50,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1052,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -11260,6 +11644,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋8HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身に6ACTION「モーグリ族の戦士」付与\\n\\n「モーグリ族の戦士」付与中\\n味方全員にそれぞれのHPが最大HPの50％以上の時\\n与えるBRVダメージ小アップの効果"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 18000,
@@ -11544,6 +11929,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11643,13 +12030,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1050,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -11673,13 +12066,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1051,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -11704,13 +12103,18 @@
                             ],
                             "required_values": [
                                 2522,
-                                50
+                                0,
+                                50,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1052,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -11743,6 +12147,7 @@
                 "jp": "真化第3モグ2凸"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 18000,
@@ -12015,6 +12420,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋10HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n自身に6ACTION「モーグリ族の戦士」付与\\n\\n「モーグリ族の戦士」付与中\\n味方全員にそれぞれのHPが最大HPの50％以上の時\\n与えるBRVダメージ小アップの効果"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 18000,
@@ -12343,6 +12749,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12442,13 +12850,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1050,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -12472,13 +12886,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2522
+                                2522,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1051,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     10,
@@ -12503,13 +12923,18 @@
                             ],
                             "required_values": [
                                 2522,
-                                50
+                                0,
+                                50,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1052,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -12542,6 +12967,7 @@
                 "jp": "味方全員のHPを大回復し\\n2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃を3回行う\\nその後　味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\nHP攻撃毎に 敵の数に応じてBRV攻撃の対象は分散\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に12ACTION特殊効果「水のハーモニー」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 15,
             "use_count": 2,
@@ -12908,6 +13334,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13007,13 +13435,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -13037,13 +13471,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -13067,13 +13507,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -13117,6 +13563,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13224,6 +13672,7 @@
                 "jp": "味方全員のHPを大回復し\\n2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃を3回行う\\nその後　味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\nHP攻撃毎に 敵の数に応じてBRV攻撃の対象は分散\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に12ACTION特殊効果「水のハーモニー」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 15,
             "use_count": 2,
@@ -13590,6 +14039,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13689,13 +14140,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -13719,13 +14176,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -13749,13 +14212,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -13799,6 +14268,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13906,6 +14377,7 @@
                 "jp": "味方全員のHPを大回復し\\n3HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃を3回行う\\nその後　味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\nHP攻撃毎に 敵の数に応じてBRV攻撃の対象は分散\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に12ACTION特殊効果「水のハーモニー」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 19,
             "use_count": 2,
@@ -14360,6 +14832,8 @@
                         "disp_type": 67,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14459,13 +14933,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1053,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     0,
@@ -14489,13 +14969,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1054,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 7,
                                 "rank_data": [
                                     10,
@@ -14519,13 +15005,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2387
+                                2387,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1084,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     0,
@@ -14569,6 +15061,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14676,6 +15170,7 @@
                 "jp": "追加発動用_第4モグ_エルニーニョ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 0,
@@ -14884,6 +15379,7 @@
                 "jp": "追加発動用_第4モグ_プラズマ"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -15083,6 +15579,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15190,6 +15688,7 @@
                 "jp": "3ACTION味方全員の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 1,
@@ -15256,6 +15755,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15355,13 +15856,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2537
+                                2537,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1068,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     10,
@@ -15394,6 +15901,7 @@
                 "jp": "5ACTION味方全員の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 1,
@@ -15460,6 +15968,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15559,13 +16069,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2537
+                                2537,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1068,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     10,
@@ -15598,6 +16114,7 @@
                 "jp": "3ACTION味方全員の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 1,
@@ -15664,6 +16181,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15763,13 +16282,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2537
+                                2537,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1068,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     10,
@@ -15802,6 +16327,7 @@
                 "jp": "5ACTION味方全員の最大BRVを小アップ"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 0,
             "hit_count": 1,
             "use_count": 1,
@@ -15868,6 +16394,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15967,13 +16495,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2537
+                                2537,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1068,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     10,
@@ -16006,6 +16540,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性遠距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -16106,6 +16641,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋水属性遠距離物理BRV攻撃＋HP攻撃"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -16204,6 +16740,7 @@
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT水属性遠距離物理BRV攻撃"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -16326,6 +16863,7 @@
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -16446,6 +16984,7 @@
                 "jp": "コールされたモグが以下の行動を行う\\n自身に自身の最大BRVに依存した量のBRVを加算\\n4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも50％分のHPダメージ\\n\\n使用後特殊効果：3ACTION\\n味方全員に「攻撃力小アップ」「最大BRV小アップ」の効果\\n敵全体の素早さ小ダウン"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 8,
             "use_count": 1,
@@ -16664,6 +17203,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16763,13 +17304,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1099,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -16793,13 +17340,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1100,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -16823,13 +17376,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1101,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -10,
@@ -16862,6 +17421,7 @@
                 "jp": "コールされたモグが以下の行動を行う\\n自身に自身の最大BRVに依存した量のBRVを加算\\n4HIT水属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n\\n使用後特殊効果：6ACTION\\n味方全員に「攻撃力小アップ」「最大BRV小アップ」の効果\\n敵全体の素早さ小ダウン"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 8,
             "use_count": 1,
@@ -17080,6 +17640,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17179,13 +17741,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1099,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     20,
@@ -17209,13 +17777,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1100,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 1,
                                 "rank_data": [
                                     20,
@@ -17239,13 +17813,19 @@
                                 -1
                             ],
                             "required_values": [
-                                2590
+                                2590,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 1101,
                                 "ailment_effect": -1,
                                 "target_id": 2,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 3,
                                 "rank_data": [
                                     -10,
@@ -17278,6 +17858,7 @@
                 "jp": "コールされたモグが以下の行動を行う\\n味方全員のHPを大回復し\\n2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃を3回行う\\nその後　味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋2HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\nHP攻撃毎に 敵の数に応じてBRV攻撃の対象は分散\\n与えるHPダメージは分配"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 15,
             "use_count": 1,
@@ -17632,6 +18213,7 @@
                 "jp": "コールされたモグが以下の行動を行う\\n味方全員のHPを大回復し\\n3HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃を3回行う\\nその後　味方全員に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT水属性全体遠距離物理BRV攻撃＋全体HP攻撃\\nHP攻撃毎に 敵の数に応じてBRV攻撃の対象は分散\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 19,
             "use_count": 1,
@@ -18074,6 +18656,7 @@
                 "jp": "追加行動用_LDコールモグ_エルニーニョ"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 0,
@@ -18282,6 +18865,7 @@
                 "jp": "追加行動用_LDコールモグ_プラズマ"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -18481,6 +19065,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19537,17 +20123,17 @@
             "id": 5357,
             "name": {
                 "en": "Full HP Boost All (C)",
-                "gl": "",
+                "gl": "Full HP Boost All (C)",
                 "jp": "フルHPブーストオール【C】"
             },
             "desc": {
                 "en": "When using a Call Ability at Max HP\\n• Raises party's Max BRV by 5% for 6 turns",
-                "gl": "",
+                "gl": "When using Call Ability and own HP at MAX:\\n • Marginally raises party's MAX BRV for 6 turns",
                 "jp": "自身のHPがMAXの時\\nコールアビリティ使用時\\n6ACTION味方全員の最大BRVを極小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Full HP Boost All (C): Raises party's MAX BRV",
                 "jp": "フルHPブーストオール【C】：味方全員の最大BRVがアップ"
             },
             "meta_data": {
@@ -19830,7 +20416,7 @@
             "series_id": 6,
             "name": {
                 "en": "Radiant Lance",
-                "gl": "",
+                "gl": "Radiant Lance (VI)",
                 "jp": "グローランス【VI】"
             },
             "status": {
@@ -20086,7 +20672,7 @@
             "series_id": 6,
             "name": {
                 "en": "Radiant Lance+",
-                "gl": "",
+                "gl": "Radiant Lance (VI)+",
                 "jp": "グローランス【VI】+"
             },
             "status": {
@@ -20375,7 +20961,7 @@
             "series_id": 6,
             "name": {
                 "en": "Holy Lance",
-                "gl": "",
+                "gl": "Holy Lance (VI)",
                 "jp": "ホーリーランス【VI】"
             },
             "status": {
@@ -20674,6 +21260,7 @@
             ]
         },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4100,
@@ -20983,7 +21570,7 @@
             "series_id": 6,
             "name": {
                 "en": "Molulu's Charm",
-                "gl": "",
+                "gl": "Molulu's Charm (VI)",
                 "jp": "モルルのお守り【VI】"
             },
             "status": {
@@ -21025,7 +21612,7 @@
                 "meta_data": {
                     "cp": 10,
                     "level": -1,
-                    "target": 3,
+                    "target": 2,
                     "is_weapon_passive": 538,
                     "required_passive": -1
                 },
@@ -21046,7 +21633,7 @@
                     },
                     {
                         "effect_id": 187,
-                        "effect_target": 2,
+                        "effect_target": 3,
                         "effect_values": [
                             5,
                             0,
@@ -21094,7 +21681,306 @@
                 ]
             }
         },
-        "rzHighArmor": {}
+        "rzHighArmor": {
+            "id": 5821,
+            "series_id": 6,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "モルルのお守り【VI】+"
+            },
+            "status": {
+                "max_hp": 44,
+                "int_brv": 0,
+                "max_brv": 44,
+                "atk": 18,
+                "def": 2327,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 6,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 158
+            },
+            "passive_data": {
+                "passive_id": 3117,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 3117,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "勇猛の共鳴・破滅の共鳴"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具モグ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具モグ"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 3117,
+                    "required_passive": 538
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 118,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5821,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 3118,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅰ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋3％分突破可能になる（10798まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋1％分突破可能になる\\n　（自身は110998まで 自身以外の味方全員は100998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅰ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3118,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2308,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3119,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅱ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋3％分突破可能になる（11098まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋1％分突破可能になる\\n　（自身は111998まで 自身以外の味方全員は101998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅱ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3119,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2344,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3120,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅲ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋3％分突破可能になる（11398まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋1％分突破可能になる\\n　（自身は112998まで 自身以外の味方全員は102998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅲ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3120,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2380,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3121,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅳ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "・味方全員の与えるBRVダメージ上限が9999を＋6％分突破可能になる（11998まで）\\n・味方全員の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる\\n　（自身は114998まで 自身以外の味方全員は104998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の共鳴・破滅の共鳴Ⅳ：味方全員の与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3121,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2416,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        }
     },
     "defaultAilments": [
         {
@@ -21134,6 +22020,8 @@
                 "disp_type": 67,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21197,7 +22085,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2387": [
@@ -21222,13 +22121,19 @@
                         -1
                     ],
                     "required_values": [
-                        2387
+                        2387,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1053,
                         "ailment_effect": 9,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             0,
@@ -21252,13 +22157,19 @@
                         -1
                     ],
                     "required_values": [
-                        2387
+                        2387,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1054,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 7,
                         "rank_data": [
                             10,
@@ -21282,13 +22193,19 @@
                         -1
                     ],
                     "required_values": [
-                        2387
+                        2387,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1084,
                         "ailment_effect": -1,
                         "target_id": 2,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 3,
                         "rank_data": [
                             0,
@@ -21343,6 +22260,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21406,7 +22325,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2521": [
@@ -21431,13 +22361,19 @@
                         -1
                     ],
                     "required_values": [
-                        2521
+                        2521,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1047,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 5,
                         "rank_data": [
                             20,
@@ -21461,13 +22397,19 @@
                         -1
                     ],
                     "required_values": [
-                        2521
+                        2521,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1048,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 1,
                         "rank_data": [
                             20,
@@ -21491,13 +22433,19 @@
                         -1
                     ],
                     "required_values": [
-                        2521
+                        2521,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1049,
                         "ailment_effect": -1,
                         "target_id": 2,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 3,
                         "rank_data": [
                             -5,
@@ -21552,6 +22500,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21615,7 +22565,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "2522": [
@@ -21640,13 +22601,19 @@
                         -1
                     ],
                     "required_values": [
-                        2522
+                        2522,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1050,
                         "ailment_effect": 150,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             10,
@@ -21670,13 +22637,19 @@
                         -1
                     ],
                     "required_values": [
-                        2522
+                        2522,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1051,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 13,
                         "rank_data": [
                             10,
@@ -21701,13 +22674,18 @@
                     ],
                     "required_values": [
                         2522,
-                        50
+                        0,
+                        50,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 1052,
                         "ailment_effect": 114,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             10,
@@ -21762,6 +22740,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21825,7 +22805,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "642": [
@@ -21880,6 +22871,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -21943,7 +22936,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "111": [
@@ -24397,7 +25401,7 @@
                     "jp": "一族の絆エクステンド：「モーグリだいこうしん」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -24450,5 +25454,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-09-09 15:00:00"
+        }
     }
 }

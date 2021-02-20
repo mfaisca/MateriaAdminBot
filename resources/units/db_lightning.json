@@ -1,5 +1,7 @@
 {
     "id": 7,
+    "uid": 13,
+    "sid": 13,
     "profile": {
         "fullName": {
             "en": "Lightning",
@@ -170,12 +172,12 @@
         "id": 11,
         "name": {
             "en": "Sparkstrike (C) Rank Up",
-            "gl": "",
+            "gl": "コールアビリティ_ライトニング",
             "jp": "コールアビリティ_ライトニング"
         },
         "rank_up_desc": {
             "en": "When using [Sparkstrike (C)]:\\n• Slightly raises BRV gain based on Max BRV\\n• BRV stolen can overflow up to 180% Max BRV\\n• Special effect duration +3",
-            "gl": "",
+            "gl": "When using Sparkstrike (C):\\n • Slight boost to BRV increased based on MAX BRV\\n • Stolen BRV may exceed MAX BRV up to 180%\\n • Special effect duration +3 after use",
             "jp": "「スパークブロウ【C】」使用時\\n・最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・使用後特殊効果の3ACTION期間延長"
         },
         "ability": {
@@ -187,12 +189,12 @@
         "id": 12,
         "name": {
             "en": "Crushing Blow (C) Rank Up",
-            "gl": "",
+            "gl": "コールアビリティ_LDライトニング",
             "jp": "コールアビリティ_LDライトニング"
         },
         "rank_up_desc": {
             "en": "When using [Crushing Blow (C)]\\n• Stolen BRV can overflow up to 150% Max BRV\\n• Increases BRV by 20% HP damage dealt after first HP attack",
-            "gl": "",
+            "gl": "「絶影【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最初のHP 攻撃後\\n　与えたHPダメージの20％分自身のBRVをアップ",
             "jp": "「絶影【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・最初のHP攻撃後\\n　与えたHPダメージの20％分自身のBRVをアップ"
         },
         "ability": {
@@ -904,6 +906,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -921,6 +927,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -975,6 +982,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -1032,6 +1040,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃\\n自身に3ACTION「ブラスター」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -1260,6 +1269,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1379,6 +1390,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n自身に3ACTION「アタッカー」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -1624,6 +1636,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1743,6 +1757,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃の後\\n2HIT近距離物理BRV攻撃＋HP攻撃し\\nさらに2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n対象の行動順を1つ下げる\\n自身に3ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「ブラスター」付与中「シーンドライブ＋」に変化\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -2026,6 +2041,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2144,6 +2161,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2251,6 +2270,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃 5\\bQS\\n「ブラスター」状態になり「アタッカー」状態解除\\nブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -2479,6 +2499,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2598,6 +2620,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃 5\\bQS\\n「アタッカー」状態になり 「ブラスター」状態解除\\nブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -2840,6 +2863,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2959,6 +2984,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃\\n自身に3ACTION「ブラスター」「攻撃力中アップ」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -3187,6 +3213,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3317,6 +3345,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3424,6 +3454,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃 8\\bQS\\n「ブラスター」状態になり 「アタッカー」状態解除\\nブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -3652,6 +3683,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3771,6 +3804,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n自身に3ACTION「アタッカー」「BRVリジェネ」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -4016,6 +4050,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4146,6 +4182,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4253,6 +4291,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃 8\\bQS\\n「アタッカー」状態になり 「ブラスター」状態解除\\nブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -4495,6 +4534,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4614,6 +4655,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -4776,6 +4818,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4895,6 +4939,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 5,
@@ -5057,6 +5102,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5187,6 +5234,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5294,6 +5343,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -5473,6 +5523,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5592,6 +5644,7 @@
                 "jp": "A"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 5,
@@ -5771,6 +5824,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5901,6 +5956,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6008,6 +6065,7 @@
                 "jp": "近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -6058,10 +6116,11 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Increases BRV based on ATK + HP attack",
+                "gl": "Increases BRV based on ATK\\nHP attack",
                 "jp": "自身の攻撃力に依存した量のBRVを加算＋HP攻撃"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -6138,6 +6197,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃の後\\n2HIT近距離物理BRV攻撃＋HP攻撃し\\nさらに2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n対象の行動順を2つ下げる\\n自身に3ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -6421,6 +6481,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6539,6 +6601,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6646,6 +6710,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃の後\\n2HIT近距離物理BRV攻撃＋HP攻撃し\\nさらに2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n対象の行動順を1つ下げる\\n自身に5ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「ブラスター」付与中「シーンドライブ＋」に変化\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -6929,6 +6994,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7047,6 +7114,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7154,6 +7223,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃の後\\n2HIT近距離物理BRV攻撃＋HP攻撃し\\nさらに2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n与えた合計HPダメージに応じて自身のHP中回復\\n回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n対象の行動順を2つ下げる\\n自身に5ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 11,
             "use_count": 15000,
@@ -7437,6 +7507,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7555,6 +7627,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7662,6 +7736,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの110％分\\n与えたHPダメージの10％分\\n自身のBRVをアップさせる\\n自身に6ACTION「ブラスター」1段階付与（上限2）\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「ブラスター」2段階付与中\\n「連閃」が「連閃＋」に変化\\n「ブラスター」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（ブラスター）」に\\n通常「HP攻撃」が「HP攻撃＋（ブラスター）」に変化"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -7934,6 +8009,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -8041,6 +8118,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に3ACTION「ブラスター」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -8269,6 +8347,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8388,6 +8468,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n自身に6ACTION「ブラスター」1段階付与（上限2）\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「ブラスター」2段階付与中\\n「連閃」が「連閃＋」に変化\\n「ブラスター」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（ブラスター）」に\\n通常「HP攻撃」が「HP攻撃＋（ブラスター）」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -8658,6 +8739,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -8765,6 +8848,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの110％分\\n与えたHPダメージの10％分\\n自身のBRVをアップさせる\\n自身に6ACTION「ブラスター」1段階（上限2）\\n「攻撃力中アップ」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「ブラスター」2段階付与中\\n「連閃」が「連閃＋」に変化\\n「ブラスター」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（ブラスター）」に\\n通常「HP攻撃」が「HP攻撃＋（ブラスター）」に変化"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -9037,6 +9121,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -9155,6 +9241,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9262,6 +9350,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に3ACTION「ブラスター」「攻撃力中アップ」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 5,
@@ -9490,6 +9579,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9620,6 +9711,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9727,6 +9820,7 @@
                 "jp": "3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージの30％分\\n自身のBRVをアップさせる\\n自身に6ACTION「ブラスター」1段階（上限2）\\n「攻撃力中アップ」付与\\n「アタッカー」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「ブラスター」2段階付与中\\n「連閃」が「連閃＋」に変化\\n「ブラスター」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（ブラスター）」に\\n通常「HP攻撃」が「HP攻撃＋（ブラスター）」に変化"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 5,
@@ -9997,6 +10091,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -10115,6 +10211,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10222,6 +10320,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に6ACTION「アタッカー」1段階付与（上限2）\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「アタッカー」2段階付与中\\n「スパークブロウ」が「スパークブロウ＋」に変化\\n「アタッカー」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（アタッカー）」に\\n通常「HP攻撃」が「HP攻撃＋（アタッカー）」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -10467,6 +10566,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -10574,6 +10675,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に3ACTION「アタッカー」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -10819,6 +10921,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10938,6 +11042,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「アタッカー」1段階付与（上限2）\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「アタッカー」2段階付与中\\n「スパークブロウ」が「スパークブロウ＋」に変化\\n「アタッカー」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（アタッカー）」に\\n通常「HP攻撃」が「HP攻撃＋（アタッカー）」に変化"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -11183,6 +11288,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -11290,6 +11397,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に6ACTION「アタッカー」1段階（上限2）\\n「BRVリジェネ」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「アタッカー」2段階付与中\\n「スパークブロウ」が「スパークブロウ＋」に変化\\n「アタッカー」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（アタッカー）」に\\n通常「HP攻撃」が「HP攻撃＋（アタッカー）」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -11535,6 +11643,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -11653,6 +11763,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -11760,6 +11872,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に3ACTION「アタッカー」「BRVリジェネ」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -12005,6 +12118,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12135,6 +12250,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12242,6 +12359,7 @@
                 "jp": "3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「アタッカー」1段階（上限2）\\n「BRVリジェネ」付与\\n「ブラスター」解除\\n対象ブレイク時 ブレイク中攻撃時 行動負荷ダウン\\n「アタッカー」2段階付与中\\n「スパークブロウ」が「スパークブロウ＋」に変化\\n「アタッカー」付与中\\n通常「BRV攻撃」が「BRV攻撃＋（アタッカー）」に\\n通常「HP攻撃」が「HP攻撃＋（アタッカー）」に変化"
             },
             "rank": 1,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 5,
@@ -12487,6 +12605,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 2,
                         "sp_stacks": 0,
@@ -12605,6 +12725,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -12712,6 +12834,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\n自身に付与されている「ブラスター」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -12875,6 +12998,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\n自身に付与されている「アタッカー」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 0,
@@ -13038,6 +13162,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n自身に付与されている「ブラスター」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -13223,6 +13348,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n自身に付与されている「アタッカー」の段階を\\n1段階アップ"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -13408,6 +13534,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\nBRV攻撃後 対象のブレイク状態を解除"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -13562,6 +13689,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\nBRV攻撃後 対象のブレイク状態を解除"
             },
             "rank": 1,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -13716,6 +13844,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\nBRV攻撃後 対象のブレイク状態を解除\\n3ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -13882,6 +14011,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -13989,6 +14120,7 @@
                 "jp": "2HIT近距離物理BRV攻撃\\nBRV攻撃後 対象のブレイク状態を解除\\n3ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -14155,6 +14287,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14262,6 +14396,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を1つ下げる\\n自身に5ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「ブラスター」付与中「シーンドライブ＋」に変化\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 15000,
@@ -14589,6 +14724,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14707,6 +14844,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14825,6 +14964,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -14932,6 +15073,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を2つ下げる\\n自身に5ACTION「女神の騎士」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 15000,
@@ -15259,6 +15401,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15377,6 +15521,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15495,6 +15641,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -15602,6 +15750,7 @@
                 "jp": "対象のブレイク状態を解除＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋3HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ＋4HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を1つ下げる\\n自身に5ACTION「女神の騎士」付与 自身に付与された強化効果を1ACTION延長する\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「ブラスター」付与中「シーンドライブ＋」に変化\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 19,
             "use_count": 15000,
@@ -16061,6 +16210,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16179,6 +16330,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16297,6 +16450,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16404,6 +16559,7 @@
                 "jp": "対象のブレイク状態を解除＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋3HIT近距離物理BRV攻撃＋HP攻撃 \\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を2つ下げる \\n自身に5ACTION「女神の騎士」付与 自身に付与された強化効果を1ACTION延長する\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 19,
             "use_count": 15000,
@@ -16863,6 +17019,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -16981,6 +17139,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17099,6 +17259,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -17206,6 +17368,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に付与されている「ブラスター」の段階を\\n1段階アップ"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 0,
@@ -17391,6 +17554,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に付与されている「アタッカー」の段階を\\n1段階アップ"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 0,
@@ -17596,6 +17760,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を1つ下げる\\n自身に5ACTION「女神の騎士」付与 自身に付与された強化効果を1ACTION延長する\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「ブラスター」付与中「シーンドライブ＋」に変化\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 15000,
@@ -17947,6 +18112,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18065,6 +18232,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18183,6 +18352,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18290,6 +18461,7 @@
                 "jp": "近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ＋2HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\n対象ブレイク時 ブレイク中攻撃時 BRV威力がアップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えた合計HPダメージに応じて自身のHP中回復 回復量の上限は 自身の最大HPの10％分\\n最大HPを超えてHPが回復した時 超えたHP分 自身のBRVに加算\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与 対象の行動順を2つ下げる\\n自身に5ACTION「女神の騎士」付与 自身に付与された強化効果を1ACTION延長する\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n「女神の騎士」付与中 ターゲットブレイク時 行動負荷がなくなり 追加行動が可能\\nバーストモード中は発生せず バーストモード終了後に1回のみ発生\\n追加行動でターゲットをブレイクしても 追加行動は発生しない\\n自身の追加行動は総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される"
             },
             "rank": 1,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 15000,
@@ -18641,6 +18813,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18759,6 +18933,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18877,6 +19053,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -18975,15 +19153,16 @@
             "id": 9623,
             "name": {
                 "en": "Crushing Blow",
-                "gl": "",
+                "gl": "Crushing Blow",
                 "jp": "絶影"
             },
             "desc": {
                 "en": "Cancels all enemies' BREAK status\\n4-HIT AoE Thunder melee BRV attack + ST HP attack delivered twice\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 150% Max BRV\\nAll targets: 4 turns [Thunder Resistance Down]\\nSelf: 7 turns Special Effect [Savior of Souls] \\n\\nFor the next 2 turns\\n• Nullifies Action Delay\\n• Does not increase turn count\\n• Does not consume use count (excl. some abilities)\\n• Decreases Friend Support, Summon, and Burst action count\\n\\nWhile [Savior of Souls] is active\\n• Self: Increases HP damage dealt by 20%; increases stolen BRV overflow limit by 20%\\n• Party: Restores BRV by 20% of Max BRV; increases BRV damage dealt by 20% when breaking target or attacking broken target\\n* Same Special Effects do not stack",
-                "gl": "",
+                "gl": "Cancels all enemies' Break\\n4-hit group Thunder melee BRV attack + single-target HP attack + 4-hit group Thunder melee BRV attack + single-target HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nAll targets: 4 turns Thunder Resist Down from first HP attack\\nSelf: 7 turns special effect Savior of Souls\\nNext 2 turns after use instant turn rate, do not add to turn count, do not consume ability use count (some abilities excluded); do consume turn during summoning, support, burst mode\\nWhile special effect Savior of Souls active:\\n • Slightly increases HP damage dealt, amount stolen BRV may exceed MAX BRV\\n • Grants party member BRV based on individual MAX BRV at start of each party member's turn\\n • Slightly increased BRV damage when party inflicting Break or attacking target afflicted with Break \\n • Does not stack with special effects of same name",
                 "jp": "敵全体のブレイク状態を解除\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与\\n自身に7ACTION特殊効果「魂の解放者」付与\\n使用後2回の行動で 自身の行動負荷がなくなり 総ACTION数に加算されず\\nアビリティの使用回数を消費しない（一部のアビリティを除く）\\nバースト中 召喚中およびフレンドサポートの残りACTIONは消費される\\n特殊効果「魂の解放者」付与中\\n自身の与えるHPダメージと奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方全員に以下の効果が発動\\n行動開始時それぞれの最大BRVに依存した量のBRV加算\\nブレイク時 ブレイク中攻撃時 与えるBRVダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 3,
@@ -19285,12 +19464,12 @@
                     "cast_id": 1753,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "meta_data": {
@@ -19306,6 +19485,8 @@
                         "disp_type": 45,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19405,13 +19586,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 669,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -19435,13 +19622,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 670,
                                 "ailment_effect": 300,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -19485,6 +19678,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19603,6 +19798,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19721,6 +19918,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -19819,15 +20018,16 @@
             "id": 9624,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Crushing Blow",
                 "jp": "絶影"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Cancels all enemies' Break\\n4-hit group Thunder melee BRV attack + single-target HP attack + 4-hit group Thunder melee BRV attack + single-target HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nAll targets: 4 turns Thunder Resist Down from first HP attack\\nSelf: 14 turns special effect Savior of Souls\\nNext 2 turns after use instant turn rate, do not add to turn count, do not consume ability use count (some abilities excluded); do consume turn during summoning, support, burst mode\\nWhile special effect Savior of Souls active:\\n • Slightly increases HP damage dealt, amount stolen BRV may exceed MAX BRV\\n • Grants party member BRV based on individual MAX BRV at start of each party member's turn\\n • Slightly increased BRV damage when party inflicting Break or attacking target afflicted with Break \\n • Does not stack with special effects of same name",
                 "jp": "敵全体のブレイク状態を解除\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与\\n自身に14ACTION特殊効果「魂の解放者」付与\\n使用後2回の行動で 自身の行動負荷がなくなり 総ACTION数に加算されず\\nアビリティの使用回数を消費しない（一部のアビリティを除く）\\nバースト中 召喚中およびフレンドサポートの残りACTIONは消費される\\n特殊効果「魂の解放者」付与中\\n自身の与えるHPダメージと奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方全員に以下の効果が発動\\n行動開始時それぞれの最大BRVに依存した量のBRV加算\\nブレイク時 ブレイク中攻撃時 与えるBRVダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 3,
@@ -20129,12 +20329,12 @@
                     "cast_id": 1753,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "meta_data": {
@@ -20150,6 +20350,8 @@
                         "disp_type": 45,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20249,13 +20451,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 669,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -20279,13 +20487,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 670,
                                 "ailment_effect": 300,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -20329,6 +20543,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20447,6 +20663,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20565,6 +20783,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -20663,15 +20883,16 @@
             "id": 9625,
             "name": {
                 "en": "Gestalt Drive",
-                "gl": "",
+                "gl": "Gestalt Drive",
                 "jp": "ゲシュタルトドライブ"
             },
             "desc": {
                 "en": "10-HIT Thunder melee BRV attack + HP attack delivered twice\\n\\nMaximum BRV damage limit +50% (up to 14998)\\nMaximum obtainable BRV & HP damage limit +50% (up to 149998)\\n\\n10 turns BURST Effect (party-wide)\\n• BRV damage dealt +50%, stolen BRV overflow limit +30%\\n• BRV damage dealt when breaking target or attacking broken target +30%\\n• HP damage dealt when breaking target or attacking broken target +20%\\n• Maximum BRV damage limit +20%\\n* Same character's BURST effects do not stack",
-                "gl": "",
+                "gl": "10-hit Thunder melee BRV attack + HP attack delivered 2 times\\nBRV damage dealt can exceed limit of 9999 by 50% (up to 14998)\\nStolen BRV may exceed MAX BRV up to 149998\\nHP damage dealt can exceed limit of 9999 by 50% (up to 14998)\\nBurst effect for 10 turns after use:\\n • Moderately increased party BRV damage\\n • Party BRV damage dealt can exceed limit of 9999 by 20% (up to 11998)\\n • Slightly increased limit for party's stolen BRV that may exceed MAX BRV\\n • Slightly increased party BRV damage and HP damage when inflicting Break or attacking target afflicted with Break\\nDoes not stack with identical characters' burst effects",
                 "jp": "10HIT雷属性近距離物理BRV攻撃＋HP攻撃を2回行う\\n与えるBRVダメージ上限が9999を50％分突破可能（14998まで）\\n奪ったBRVが最大BRVを超えて149998まで加算でき\\n与えるHPダメージ上限も99999を50％分突破可能（149998まで）\\n使用後 以下のバースト効果を10ACTION付与\\n味方全員の\\n与えるBRVダメージ中アップ\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVを最大BRVを超えて加算する上限小アップ\\nブレイク時 ブレイク中攻撃時\\n与えるBRVダメージと与えるHPダメージ小アップ\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
+            "motion": 58,
             "movement_cost": 30,
             "hit_count": 23,
             "use_count": 0,
@@ -20700,8 +20921,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20722,8 +20943,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20744,8 +20965,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20766,8 +20987,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20788,8 +21009,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20810,8 +21031,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20832,8 +21053,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20854,8 +21075,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20876,8 +21097,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20898,8 +21119,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20921,7 +21142,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -20940,8 +21161,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20962,8 +21183,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -20984,8 +21205,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21006,8 +21227,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21028,8 +21249,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21050,8 +21271,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21072,8 +21293,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21094,8 +21315,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21116,8 +21337,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21138,8 +21359,8 @@
                         "single_target_brv_rate": 0,
                         "brv_damage_limit_up": 50,
                         "max_brv_limit_up": 50,
-                        "brv_damage_limit_up_direct": 50,
-                        "max_brv_limit_up_direct": 50
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [
@@ -21161,7 +21382,7 @@
                         "brv_damage_limit_up": 0,
                         "max_brv_limit_up": 50,
                         "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 50
+                        "max_brv_limit_up_direct": 0
                     },
                     "attack_type": 1,
                     "element": [],
@@ -21199,12 +21420,12 @@
                     "cast_id": 1754,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Gestalt Drive",
                         "jp": "ゲシュタルトドライブ"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from finishing burst Gestalt Drive",
                         "jp": "フィニッシュバースト「ゲシュタルトドライブ」の効果"
                     },
                     "meta_data": {
@@ -21220,6 +21441,8 @@
                         "disp_type": 28,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21319,13 +21542,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1792
+                                1792,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 667,
                                 "ailment_effect": 114,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     50,
@@ -21349,13 +21578,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1792
+                                1792,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 668,
                                 "ailment_effect": 300,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     30,
@@ -21379,13 +21614,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1792
+                                1792,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 738,
                                 "ailment_effect": 235,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -21409,13 +21650,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1792
+                                1792,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 739,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 13,
                                 "rank_data": [
                                     30,
@@ -21439,13 +21686,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1792
+                                1792,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 760,
                                 "ailment_effect": 224,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -21469,15 +21722,16 @@
             "id": 10124,
             "name": {
                 "en": "Sparkstrike (C)",
-                "gl": "",
+                "gl": "Sparkstrike (C)",
                 "jp": "スパークブロウ【C】"
             },
             "desc": {
                 "en": "When called for assistance, Lightning performs the following actions\\n• Raises Max BRV, Attack by 40%\\n• Increases BRV by 20% Max BRV\\n• 3-HIT Thunder melee BRV attack + HP attack\\n• Increases caller's BRV by 30% of HP damage dealt\\n\\n3 turns Call Effect\\n• Caller: 100% [BRV Regen] (based on INT BRV)",
-                "gl": "",
+                "gl": "Lightning's ability when called:\\n • Moderately raises MAX BRV, ATK\\n • Increases BRV based on MAX BRV\\n • 3-hit Thunder melee BRV attack + HP attack\\n • Increases BRV of character who called Lightning by 30% of HP damage dealt\\n\\nGrants BRV Regen to character who called Lightning for 3 turns after use",
                 "jp": "コールされたライトニングが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージの30％分\\nライトニングをコールしたキャラクターのBRVをアップさせる\\n\\n使用後特殊効果：3ACTION\\nライトニングをコールしたキャラクターに「BRVリジェネ」の効果"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 7,
             "use_count": 1,
@@ -21674,6 +21928,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21771,12 +22027,12 @@
                     "cast_id": 1878,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sparkstrike (C)",
                         "jp": "スパークブロウ【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Sparkstrike (C)",
                         "jp": "コールアビリティ「スパークブロウ【C】」の効果"
                     },
                     "meta_data": {
@@ -21792,6 +22048,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -21890,15 +22148,16 @@
             "id": 10125,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Sparkstrike (C)",
                 "jp": "スパークブロウ【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Lightning's ability when called:\\n • Moderately raises MAX BRV, ATK\\n • Increases BRV based on MAX BRV\\n • 3-hit Thunder melee BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 180%\\n • Increases BRV of character who called Lightning by 30% of HP damage dealt\\n\\nGrants BRV Regen to character who called Lightning for 6 turns after use",
                 "jp": "コールされたライトニングが以下の行動を行う\\n自身の最大BRVと攻撃力中アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋3HIT雷属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えたHPダメージの30％分\\nライトニングをコールしたキャラクターのBRVをアップさせる\\n\\n使用後特殊効果：6ACTION\\nライトニングをコールしたキャラクターに「BRVリジェネ」の効果"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 7,
             "use_count": 1,
@@ -22095,6 +22354,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -22192,12 +22453,12 @@
                     "cast_id": 1878,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sparkstrike (C)",
                         "jp": "スパークブロウ【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Sparkstrike (C)",
                         "jp": "コールアビリティ「スパークブロウ【C】」の効果"
                     },
                     "meta_data": {
@@ -22213,6 +22474,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -22320,6 +22583,7 @@
                 "jp": "コールされたライトニングが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n敵全体のブレイク状態を解除\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n最初のHP攻撃時 対象に4ACTION「雷耐性ダウン」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 13,
             "use_count": 1,
@@ -22642,6 +22906,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -22760,6 +23026,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -22867,6 +23135,7 @@
                 "jp": "コールされたライトニングが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n敵全体のブレイク状態を解除\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 0,
             "hit_count": 14,
             "use_count": 1,
@@ -23211,6 +23480,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23329,6 +23600,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23436,6 +23709,7 @@
                 "jp": "敵全体のブレイク状態を解除\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ\\n＋4HIT雷属性全体近距離物理BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n最初のHP攻撃時に対象に4ACTION「雷耐性ダウン」付与\\n自身に14ACTION特殊効果「魂の解放者」付与\\n使用後2回の行動で 自身の行動負荷がなくなり 総ACTION数に加算されず\\nアビリティの使用回数を消費しない（一部のアビリティを除く）\\nバースト中 召喚中およびフレンドサポートの残りACTIONは消費される\\n特殊効果「魂の解放者」付与中\\n自身の与えるHPダメージと奪ったBRVを最大BRVを超えて加算する上限小アップし\\n味方全員に以下の効果が発動\\n行動開始時それぞれの最大BRVに依存した量のBRV加算\\nブレイク時 ブレイク中攻撃時 与えるBRVダメージ小アップ 同名の特殊効果は重複しない"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 13,
             "use_count": 3,
@@ -23760,6 +24034,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23857,12 +24133,12 @@
                     "cast_id": 1753,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls",
                         "jp": "魂の解放者"
                     },
                     "meta_data": {
@@ -23878,6 +24154,8 @@
                         "disp_type": 45,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -23977,13 +24255,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 669,
                                 "ailment_effect": 9,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -24007,13 +24291,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1791
+                                1791,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 670,
                                 "ailment_effect": 300,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     20,
@@ -24057,6 +24347,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -24175,6 +24467,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -25242,17 +25536,17 @@
             "id": 5359,
             "name": {
                 "en": "Single Power (C)",
-                "gl": "",
+                "gl": "Single Power (C)",
                 "jp": "シングルパワー【C】"
             },
             "desc": {
                 "en": "When using a Call Ability with BRV attacks\\n• Increases BRV damage dealt by 30% when attacking single target",
-                "gl": "",
+                "gl": "When using Call Ability that includes BRV attack and attacking single target:\\n • Slightly increases BRV damage dealt",
                 "jp": "BRV攻撃を含むコールアビリティ使用時\\n攻撃対象が単体の時\\n与えるBRVダメージを小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Single Power (C): Increases BRV damage dealt",
                 "jp": "シングルパワー【C】：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -26270,6 +26564,70 @@
                 }
             ],
             "auras": []
+        },
+        {
+            "id": 5359,
+            "name": {
+                "en": "",
+                "gl": "Single Power (C)",
+                "jp": "シングルパワー【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "When using Call Ability that includes BRV attack and attacking single target:\\n • Slightly increases BRV damage dealt",
+                "jp": "BRV攻撃を含むコールアビリティ使用時\\n攻撃対象が単体の時\\n与えるBRVダメージを小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Single Power (C): Increases BRV damage dealt",
+                "jp": "シングルパワー【C】：与えるBRVダメージがアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 11,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 39,
+                    "effect_target": 2,
+                    "effect_values": [
+                        30,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 60,
+                    "required_target": 11,
+                    "required_values": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
         }
     ],
     "bloomStone": {
@@ -27125,7 +27483,7 @@
                     },
                     "desc": {
                         "en": "When using [Army of One], [Army of One+]\\n• Cancels target's BREAK status before BRV attacks\\n• Becomes 2-HIT melee BRV + HP attack\\n　+ 3-HIT melee BRV + HP attack\\n　+ 4-HIT melee BRV + HP attack\\n• Increases total BRV potency by 180%\\n\\nWhile [Ravager] is active\\n• [HP Attack] variants become [HP Attack++ (Ravager)]\\n　∟ Increases BRV by 120% Attack\\n　∟ 1-HIT melee BRV + HP attack (BRV potency 80%)\\n　∟ Stolen BRV can overflow up to 120% Max BRV\\n　∟ [Ravager] level +1\\n\\nWhile [Commando] is active\\n• [HP Attack] variants become [HP Attack++ (Commando)]\\n　∟ Increases BRV by 70% Attack\\n　∟ 2-HIT Melee BRV + HP attack (90% per hit)\\n　∟ Stolen BRV can overflow up to 120% Max BRV\\n　∟ [Commando] level +1",
-                        "gl": "When using Army of One, Army of One+:\\n • Cancels target's Break before first BRV attack\\n • Melee BRV attack + HP attack + 2-hit melee BRV attack + HP attack + 2-hit melee BRV attack + HP attack becomes 2-hit melee BRV attack + HP attack + 3-hit melee BRV attack + HP attack + 4-hit melee BRV attack + HP attack; tremendously increased cumulative BRV damage\\n\\nWhile Ravager active:\\nHP Attack, HP Attack+ (Ravager) becomes HP Attack++ (Ravager)\\n • Increases BRV based on ATK + melee BRV attack + HP attack; tremendous BRV damage boost over HP Attack+ (Ravager)\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Active Ravager level +1\\n\\nWhile Commando active:\\nHP Attack, HP Attack+ (Commando) becomes HP Attack++ (Commando)\\n • Increases BRV based on ATK + melee BRV attack + HP attack; tremendous BRV damage boost over HP Attack+ (Commando)\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Active Commando level +1",
+                        "gl": "When using Army of One, Army of One+:\\n • Cancels target's Break before first BRV attack\\n • Melee BRV attack + HP attack + 2-hit melee BRV attack + HP attack + 2-hit melee BRV attack + HP attack becomes 2-hit melee BRV attack + HP attack + 3-hit melee BRV attack + HP attack + 4-hit melee BRV attack + HP attack; tremendously increased cumulative BRV damage\\n\\nWhile Ravager active:\\n • HP Attack, HP Attack+ (Ravager) becomes HP Attack++ (Ravager) (increases BRV based on ATK; melee BRV attack + HP attack; tremendous BRV damage boost over HP Attack+ [Ravager]; stolen BRV may exceed MAX BRV up to 120%; active Ravager level +1)\\n\\nWhile Commando active:\\n • HP Attack, HP Attack+ (Commando) becomes HP Attack++ (Commando) (increases BRV based on ATK; 2-hit melee BRV attack + HP attack; tremendous BRV damage boost over HP Attack+ [Commando]; stolen BRV may exceed MAX BRV up to 120%; active Commando level +1)",
                         "jp": "「シーンドライブ」「シーンドライブ＋」使用時\\n・最初のBRV攻撃前に対象のブレイク状態を解除\\n・近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT近距離物理BRV攻撃＋HP攻撃\\n　＋2HIT近距離物理BRV攻撃＋HP攻撃が\\n　2HIT近距離物理BRV攻撃＋HP攻撃\\n　＋3HIT近距離物理BRV攻撃＋HP攻撃\\n　＋4HIT近距離物理BRV攻撃＋HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n\\n「ブラスター」付与中\\n通常「HP攻撃」「HP攻撃＋（ブラスター）」が\\n「HP攻撃＋＋（ブラスター）」に変化し\\n・自身に自身の攻撃力に依存した量のBRVを加算\\n　＋近距離物理BRV攻撃＋HP攻撃に変化し\\n　「HP攻撃＋（ブラスター）」よりもBRV威力小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・自身に付与されている「ブラスター」の段階を\\n　1段階アップ\\n\\n「アタッカー」付与中\\n通常「HP攻撃」「HP攻撃＋（アタッカー）」が\\n「HP攻撃＋＋（アタッカー）」に変化し\\n・自身に自身の攻撃力に依存した量のBRVを加算\\n　＋2HIT近距離物理BRV攻撃＋HP攻撃に変化し\\n　「HP攻撃＋（アタッカー）」よりも合計BRV威力極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・自身に付与されている「アタッカー」の段階を\\n　1段階アップ"
                     },
                     "short_desc": {
@@ -27193,17 +27551,17 @@
                 "id": 2028,
                 "name": {
                     "en": "Shadowless Flash",
-                    "gl": "",
+                    "gl": "Shadowless Flash",
                     "jp": "影を留めぬ一閃"
                 },
                 "desc": {
                     "en": "May equip LD Ability [Crushing Blow]",
-                    "gl": "",
+                    "gl": "May equip LD ability Crushing Blow",
                     "jp": "LDアビリティ「絶影」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shadowless Flash: May equip Crushing Blow",
                     "jp": "影を留めぬ一閃：「絶影」装備可能"
                 },
                 "meta_data": {
@@ -27248,17 +27606,17 @@
                     "id": 2029,
                     "name": {
                         "en": "Crushing Blow Power",
-                        "gl": "",
+                        "gl": "Mighty Crushing Blow",
                         "jp": "絶影パワー"
                     },
                     "desc": {
                         "en": "• Raises Attack by 20%\\n• [Crushing Blow] BRV damage dealt +10%",
-                        "gl": "",
+                        "gl": "Slightly raises own ATK\\n\\nSlightly raises BRV damage dealt with Crushing Blow",
                         "jp": "・自身の攻撃力を小アップ\\n・「絶影」の与える\\n　BRVダメージを小アップ"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Mighty Crushing Blow: Increases BRV damage dealt with Crushing Blow",
                         "jp": "絶影パワー：「絶影」のBRVダメージがアップ"
                     },
                     "meta_data": {
@@ -27321,17 +27679,17 @@
                     "id": 2030,
                     "name": {
                         "en": "Savior of Souls Long",
-                        "gl": "",
+                        "gl": "Savior of Souls Longer",
                         "jp": "魂の解放者ロング"
                     },
                     "desc": {
                         "en": "• Raises Attack by 20%\\n• [Savior of Souls] duration +7",
-                        "gl": "",
+                        "gl": "Slightly raises own ATK\\n\\nWhen using Crushing Blow:\\n • Special effect Savior of Souls duration +7",
                         "jp": "・自身の攻撃力を小アップ\\n・「絶影」使用時\\n　特殊効果「魂の解放者」の7ACTION期間延長"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Savior of Souls Longer: Savior of Souls duration+",
                         "jp": "魂の解放者ロング：「魂の解放者」の期間延長"
                     },
                     "meta_data": {
@@ -27385,17 +27743,17 @@
                     "id": 2031,
                     "name": {
                         "en": "Crushing Blow Charge",
-                        "gl": "",
+                        "gl": "Charged Crushing Blow",
                         "jp": "絶影チャージ"
                     },
                     "desc": {
                         "en": "• Raises Attack by 20%\\n• [Crushing Blow] use +1",
-                        "gl": "",
+                        "gl": "Slightly raises own ATK\\n\\nCrushing Blow use +1",
                         "jp": "・自身の攻撃力を小アップ\\n・「絶影」の使用回数＋1"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Charged Crushing Blow: Crushing Blow use +1",
                         "jp": "絶影チャージ：「絶影」の使用回数＋1"
                     },
                     "meta_data": {
@@ -27487,17 +27845,17 @@
                 "id": 2032,
                 "name": {
                     "en": "Fighting Despair with Hope ",
-                    "gl": "",
+                    "gl": "Hope Opposing Despair",
                     "jp": "絶望に抗う希望"
                 },
                 "desc": {
                     "en": "May equip Finishing Burst [Gestalt Drive]",
-                    "gl": "",
+                    "gl": "May equip BT ability Gestalt Drive",
                     "jp": "BTアビリティ「ゲシュタルトドライブ」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Hope Opposing Despair: May equip Gestalt Drive",
                     "jp": "絶望に抗う希望：「ゲシュタルトドライブ」装備可能"
                 },
                 "meta_data": {
@@ -27538,6 +27896,7 @@
                 "auras": []
             }
         },
+        "rzBurstWeapon": {},
         "silverArmor": {
             "id": 1427,
             "series_id": 13,
@@ -27968,8 +28327,8 @@
                     "jp": "攻撃の要"
                 },
                 "desc": {
-                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 14998)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・自身の与えるBRVダメージ上限が9999を15％分突破可能になる（11498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -28034,7 +28393,306 @@
                 "auras": []
             }
         },
-        "rzHighArmor": {}
+        "rzHighArmor": {
+            "id": 5817,
+            "series_id": 13,
+            "name": {
+                "en": "Raijin Ring+",
+                "gl": "",
+                "jp": "天雷の指輪【XIII】+"
+            },
+            "status": {
+                "max_hp": 28,
+                "int_brv": 0,
+                "max_brv": 100,
+                "atk": 18,
+                "def": 2213,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 6,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 7
+            },
+            "passive_data": {
+                "passive_id": 2430,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 2430,
+                "name": {
+                    "en": "Bravery Brilliance & Ruin Brilliance",
+                    "gl": "",
+                    "jp": "勇猛の輝き・破滅の輝き"
+                },
+                "desc": {
+                    "en": "Increases own BRV, HP damage limits (3, 1)",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具ライトニング"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "全解放_★7真化防具ライトニング"
+                },
+                "meta_data": {
+                    "cp": 10,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 2430,
+                    "required_passive": 534
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 0,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 118,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5817,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 3043,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance I",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅠ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12098\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 116998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12098まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（116998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅠ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3043,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2287,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3044,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance II",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅡ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 12698\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 118998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（12698まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（118998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅡ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3044,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2323,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3045,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance III",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅢ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 6%\\n*Up to 13298\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 2%\\n*Up to 120998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋6％分突破可能になる（13298まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋2％分突破可能になる（120998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅢ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3045,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2359,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3046,
+                    "name": {
+                        "en": "Bravery Brilliance & Ruin Brilliance IV",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅣ"
+                    },
+                    "desc": {
+                        "en": "Self: BRV damage dealt can exceed limit of 9999 by 12%\\n*Up to 14498\\n\\nSelf: Held bravery and HP damage dealt can exceed limit of 99999 by 4%\\n*Up to 124998",
+                        "gl": "",
+                        "jp": "・自身の与えるBRVダメージ上限が9999を＋12％分突破可能になる（14498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を＋4％分突破可能になる（124998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "勇猛の輝き・破滅の輝きⅣ：与えるBRVダメージ上限上昇し 所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3046,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 211,
+                            "effect_target": 2,
+                            "effect_values": [
+                                2395,
+                                -1,
+                                -1
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        }
     },
     "defaultAilments": [
         {
@@ -28047,7 +28705,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Knight of Etro: Raises MAX BRV, ATK; grants Thunder  Enchant",
+                "gl": "Knight of Etro: Raises MAX BRV, ATK; grants Thunder Enchant",
                 "jp": "女神の騎士：最大BRV 攻撃力が上昇し エンチャント・雷効果"
             },
             "meta_data": {
@@ -28074,6 +28732,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -28137,7 +28797,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "603": [
@@ -28192,6 +28863,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -28255,7 +28928,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "642": [
@@ -28310,6 +28994,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -28373,7 +29059,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1455": [
@@ -28397,12 +29094,12 @@
             "name": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "クルルリキャスト付与用（非表示）"
+                "jp": "クルルリキャスト付与用"
             },
             "meta_data": {
                 "target": 2,
@@ -28428,6 +29125,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -28491,7 +29190,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1081": [
@@ -28517,7 +29227,7 @@
             "id": 2482,
             "name": {
                 "en": "Break Raging Base Attack Up",
-                "gl": "Break Raging Initial Attack Up",
+                "gl": "Break Raging Base Attack Up",
                 "jp": "ブレイクレイジングベースアタックアップ"
             },
             "desc": {
@@ -28527,7 +29237,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Break Raging Base Attack Up: Raises INT BRV, ATK",
+                "gl": "Break Raging Base Attack: Raises INT BRV, ATK",
                 "jp": "ブレイクレイジングベースアタックアップ：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -28594,17 +29304,17 @@
             "id": 5391,
             "name": {
                 "en": "Break Raging Base Attack (RF)",
-                "gl": "",
+                "gl": "Break Raging Base Attack Up (RF)",
                 "jp": "ブレイクレイジングベースアタックアップ【精錬】"
             },
             "desc": {
                 "en": "When breaking target:\\n- Raises Initial BRV and Attack by 2% up to 2 times\\n※Only once per turn\\n※Same Spheres do not stack",
-                "gl": "",
+                "gl": "When inflicting Break:\\n • Raises INT BRV, ATK by 2% up to 2 times, once per turn\\n*Does not stack with same sphere",
                 "jp": "自身が対象をブレイク時\\n自身の初期BRVと攻撃力が最大2回まで2％アップ\\n1回の行動での効果アップは1回のみ\\n※同一スフィアの効果は重複しない"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Break Raging Base Attack Up (RF): Raises INT BRV, ATK",
                 "jp": "ブレイクレイジングベースアタックアップ【精錬】：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -31041,7 +31751,7 @@
                     "jp": "影を留めぬ一閃エクステンド：「絶影」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -31094,5 +31804,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-07-17 15:00:00"
+        }
     }
 }

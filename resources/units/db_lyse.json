@@ -1,5 +1,7 @@
 {
     "id": 124,
+    "uid": 550,
+    "sid": 550,
     "profile": {
         "fullName": {
             "en": "Lyse",
@@ -133,7 +135,23 @@
         5627,
         5287
     ],
-    "assistAbility": {},
+    "assistAbility": {
+        "id": 156,
+        "name": {
+            "en": "",
+            "gl": "",
+            "jp": "コールアビリティ_リセ"
+        },
+        "rank_up_desc": {
+            "en": "When using [Elixir Field (C)]\\n• Increases BRV damage dealt by 60% when attacking single target\\n• Stolen BRV can overflow up to 120% MAX BRV",
+            "gl": "",
+            "jp": "「蒼気砲【C】」使用時\\n・攻撃対象が単体の時 与えるBRVダメージ中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分"
+        },
+        "ability": {
+            "default": 12822,
+            "rank_up": 12823
+        }
+    },
     "ldAssistAbility": {},
     "optionalAbilities": [
         [
@@ -442,6 +460,10 @@
             }
         ],
         [],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [
@@ -568,6 +590,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -622,6 +645,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -676,6 +700,7 @@
                 "jp": "2HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n味方全員に3ACTION「最大BRV小アップ」\\n「攻撃力小アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 6,
@@ -802,6 +827,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -920,6 +947,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1027,6 +1056,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に5ACTION「紅蓮の構え」付与\\n行動負荷が低い\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n「紅蓮の構え」付与中\\n「紅蓮羅刹衝」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 18,
             "hit_count": 3,
             "use_count": 6,
@@ -1135,6 +1165,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1234,13 +1266,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 186,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     10,
@@ -1264,13 +1302,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 187,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -1303,6 +1347,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 6,
@@ -1461,6 +1506,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋近距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ"
             },
             "rank": 1,
+            "motion": 55,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -1579,6 +1625,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても\\n特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -1667,6 +1714,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1766,13 +1815,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -1805,6 +1860,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの250％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費\\n使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても\\n特殊効果「闘気」1加算（上限5）"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -1893,6 +1949,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1992,13 +2050,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -2031,6 +2095,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n行動負荷がない\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n特殊効果「闘気」5消費\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 2,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 0,
@@ -2142,6 +2207,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2249,6 +2316,7 @@
                 "jp": "2HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n味方全員に3ACTION「最大BRV小アップ」\\n「攻撃力小アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 6,
@@ -2375,6 +2443,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2493,6 +2563,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2600,6 +2672,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n味方全員に8ACTION「最大BRV小アップ」\\n「攻撃力小アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 6,
@@ -2786,6 +2859,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2904,6 +2979,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3011,6 +3088,7 @@
                 "jp": "5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n味方全員に8ACTION「最大BRV小アップ」\\n「攻撃力小アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 6,
@@ -3197,6 +3275,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3315,6 +3395,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3422,6 +3504,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に5ACTION「紅蓮の構え」付与\\n行動負荷が低い\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n「紅蓮の構え」付与中\\n「紅蓮羅刹衝」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 18,
             "hit_count": 3,
             "use_count": 6,
@@ -3530,6 +3613,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3629,13 +3714,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 186,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     10,
@@ -3659,13 +3750,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 187,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -3698,6 +3795,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に10ACTION「紅蓮の構え」付与\\n行動負荷がない\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n「紅蓮の構え」付与中\\n「紅蓮羅刹衝」に\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 6,
@@ -3806,6 +3904,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3905,13 +4005,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 186,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     10,
@@ -3935,13 +4041,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 187,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -3974,6 +4086,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に10ACTION「紅蓮の構え」付与\\n行動負荷がない\\n総ACTION数に加算されない\\n召喚中およびフレンドサポートの残りACTIONは消費される\\n「紅蓮の構え」付与中\\n「紅蓮羅刹衝」に\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 6,
@@ -4082,6 +4195,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4181,13 +4296,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 186,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     10,
@@ -4211,13 +4332,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1088
+                                1088,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 187,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -4250,6 +4377,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋2HIT近距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも50％分のHPダメージ"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 6,
@@ -4408,6 +4536,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋5HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも20％分のHPダメージ\\n「紅蓮の構え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 6,
@@ -4626,6 +4755,7 @@
                 "jp": "味方全員に自身の攻撃力に依存した量のBRVを加算\\n＋5HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n「紅蓮の構え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 1,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 6,
@@ -4844,6 +4974,7 @@
                 "jp": "3ACTION自身の攻撃力を極小アップ\\n自身に付与されている\\n「紅蓮の構え」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -4913,12 +5044,12 @@
                     "name": {
                         "en": "",
                         "gl": "Fists of Fire Longer Attack",
-                        "jp": "紅蓮の構えロングアタック"
+                        "jp": "紅蓮の構えロングアタックアップ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "Effect from additional ability Fists of Fire Longer Attack",
-                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタック」の効果"
+                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタックアップ」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -4933,6 +5064,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5040,6 +5173,7 @@
                 "jp": "5ACTION自身の攻撃力を極小アップ\\n自身に付与されている\\n「紅蓮の構え」を5ACTION延長"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -5109,12 +5243,12 @@
                     "name": {
                         "en": "",
                         "gl": "Fists of Fire Longer Attack",
-                        "jp": "紅蓮の構えロングアタック"
+                        "jp": "紅蓮の構えロングアタックアップ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "Effect from additional ability Fists of Fire Longer Attack",
-                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタック」の効果"
+                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタックアップ」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5129,6 +5263,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5236,6 +5372,7 @@
                 "jp": "3ACTION自身の攻撃力を小アップ\\n自身に付与されている\\n「紅蓮の構え」を3ACTION延長"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -5305,12 +5442,12 @@
                     "name": {
                         "en": "",
                         "gl": "Fists of Fire Longer Attack",
-                        "jp": "紅蓮の構えロングアタック"
+                        "jp": "紅蓮の構えロングアタックアップ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "Effect from additional ability Fists of Fire Longer Attack",
-                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタック」の効果"
+                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタックアップ」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5325,6 +5462,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5432,6 +5571,7 @@
                 "jp": "5ACTION自身の攻撃力を小アップ\\n自身に付与されている\\n「紅蓮の構え」を5ACTION延長"
             },
             "rank": 0,
+            "motion": 56,
             "movement_cost": 0,
             "hit_count": 2,
             "use_count": 1,
@@ -5501,12 +5641,12 @@
                     "name": {
                         "en": "",
                         "gl": "Fists of Fire Longer Attack",
-                        "jp": "紅蓮の構えロングアタック"
+                        "jp": "紅蓮の構えロングアタックアップ"
                     },
                     "desc": {
                         "en": "",
                         "gl": "Effect from additional ability Fists of Fire Longer Attack",
-                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタック」の効果"
+                        "jp": "アディショナルアビリティ「紅蓮の構えロングアタックアップ」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
@@ -5521,6 +5661,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5628,6 +5770,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えるHPダメージは分配　自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に\\n通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -5716,6 +5859,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5815,13 +5960,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -5854,6 +6005,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの250％分\\n与えるHPダメージは分配　\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費 使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものとアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -5942,6 +6094,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6041,13 +6195,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -6080,6 +6240,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えるHPダメージは分配　自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に\\n通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -6168,6 +6329,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6267,13 +6430,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -6306,6 +6475,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの250％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費 使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものとアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -6394,6 +6564,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6493,13 +6665,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -6532,6 +6710,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配　自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に\\n通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し　使用後\\n特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -6620,6 +6799,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6719,13 +6900,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -6758,6 +6945,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの300％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費 使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものとアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -6846,6 +7034,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6945,13 +7135,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -6984,6 +7180,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -7181,6 +7378,7 @@
                 "jp": "0"
             },
             "rank": 1,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -7403,6 +7601,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -7600,6 +7799,7 @@
                 "jp": "0"
             },
             "rank": 1,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -7822,6 +8022,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -8019,6 +8220,7 @@
                 "jp": "0"
             },
             "rank": 1,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -8241,6 +8443,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 18000,
@@ -8438,6 +8641,7 @@
                 "jp": "0"
             },
             "rank": 1,
+            "motion": 57,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 18000,
@@ -8660,6 +8864,7 @@
                 "jp": "2HIT近距離物理BRV攻撃"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -8734,6 +8939,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分　与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても\\n特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に\\n通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -8822,6 +9028,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8921,13 +9129,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -8960,6 +9174,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの250％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費 使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -9048,6 +9263,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9147,13 +9364,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -9186,6 +9409,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n与えるHPダメージは分配　自身に付与されている「紅蓮の構え」を1ACTION延長\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものと\\nアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 「桃園結義＆陰陽闘気斬＋」に\\n通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し　使用後\\n特殊効果「闘気」5消費"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -9274,6 +9498,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9373,13 +9599,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -9412,6 +9644,7 @@
                 "jp": "自身に自身の攻撃力に依存した量のBRVを加算し\\n6ACTION強化効果「桃園結義」付与\\nその後 以下の「陰陽闘気斬＋」が追加発動\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\nクリティカル時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの250％分\\n与えるHPダメージは分配\\n自身に付与されている「紅蓮の構え」を1ACTION延長\\n特殊効果「闘気」5消費 使用後特殊効果「闘気」は加算しない\\n「桃園結義＆陰陽闘気斬」装備中\\nアビリティ使用で特殊効果「闘気」1加算（上限5）\\n（通常「BRV攻撃」通常「HP攻撃」が変化したものとアディショナルアビリティは除く）\\n強化効果「桃園結義」付与中は味方が使用しても特殊効果「闘気」1加算（上限5）\\n特殊効果「闘気」5の時 通常「BRV攻撃」「BRV攻撃＋」が「気孔術」に変化し\\n使用後特殊効果「闘気」5消費"
             },
             "rank": 1,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 18000,
@@ -9500,6 +9733,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9599,13 +9834,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1090
+                                1090,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 192,
                                 "ailment_effect": 142,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     1,
@@ -9629,10 +9870,982 @@
             "error": 1
         },
         {
-            "error": 1
+            "id": 12822,
+            "name": {
+                "en": "Elixir Field (C)",
+                "gl": "",
+                "jp": "蒼気砲【C】"
+            },
+            "desc": {
+                "en": "When called for assistance, Lyse performs the following actions\\n• Raises own MAX BRV by 70%, ATK by 50%\\n• 5-HIT AoE melee BRV attack + AoE HP attack\\n• Deals split HP damage between all targets\\n\\n3 turns Call Effect\\n• Party: 20% [MAX BRV Up], 20% [ATK Up]",
+                "gl": "",
+                "jp": "コールされたリセが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員に「最大BRV小アップ」\\n「攻撃力小アップ」の効果"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 0,
+            "hit_count": 7,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12762,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12762,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12762,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12762,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12762,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4638,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2707,
+                    "cast_id": 2669,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールリセ用先付内部バフ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールリセ用先付内部バフ"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            6,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            70,
+                            50,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2707": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
+                {
+                    "id": 2708,
+                    "cast_id": 2670,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "蒼気砲【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「蒼気砲【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 47,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2708": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1214,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2708,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1195,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 5,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1215,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2708,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1196,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 1,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "error": 1
+            "id": 12823,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "蒼気砲【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "コールされたリセが以下の行動を行う\\n自身の最大BRV大アップと攻撃力中アップし\\n5HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは分配\\n\\n使用後特殊効果：3ACTION\\n味方全員に「最大BRV小アップ」\\n「攻撃力小アップ」の効果"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 0,
+            "hit_count": 7,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 1,
+                "command_type": 9,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 5038,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 110,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12763,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12763,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12763,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12763,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 12763,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 90.0,
+                        "max_brv_overflow": 120,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 54,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 4638,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 1,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 2707,
+                    "cast_id": 2669,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールリセ用先付内部バフ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールリセ用先付内部バフ"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [],
+                        "duration": 1
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            5,
+                            1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            6,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            70,
+                            50,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2707": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                },
+                {
+                    "id": 2708,
+                    "cast_id": 2670,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "蒼気砲【C】"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "コールアビリティ「蒼気砲【C】」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 29,
+                        "arguments": [],
+                        "duration": 3
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 47,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "2708": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1214,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2708,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1195,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 5,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1215,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                2708,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1196,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 1,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "error": 1
@@ -10354,7 +11567,7 @@
             "id": 1566,
             "name": {
                 "en": "Buff Base Attack",
-                "gl": "Buff Initial Attack Up",
+                "gl": "Buff Base Attack Up",
                 "jp": "バフベースアタックアップ"
             },
             "desc": {
@@ -10364,7 +11577,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Base Attack Up: Raises INT BRV, ATK",
+                "gl": "Buff Base Attack: Raises INT BRV, ATK",
                 "jp": "バフベースアタックアップ：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -10565,17 +11778,17 @@
             "name": {
                 "en": "Fists of Fire Long Attack Extend",
                 "gl": "Fists of Fire Longer Attack Extension",
-                "jp": "紅蓮の構えロングアタックエクステンド"
+                "jp": "紅蓮の構えロングアタックアップエクステンド"
             },
             "desc": {
                 "en": "When using 「Fists of Fire Long Attack」:\\n- Slightly improves 「Attack Up」 effect",
                 "gl": "When using Fists of Fire Longer Attack:\\n • Slight raised ATK boost",
-                "jp": "「紅蓮の構えロングアタック」使用時\\n自身の攻撃力アップの効果小アップ"
+                "jp": "「紅蓮の構えロングアタックアップ」使用時\\n自身の攻撃力アップの効果小アップ"
             },
             "short_desc": {
                 "en": "",
                 "gl": "Fists of Fire Longer Attack Extension: Boost to Fists of Fire Longer Attack",
-                "jp": "紅蓮の構えロングアタックエクステンド：「紅蓮の構えロングアタック」の性能アップ"
+                "jp": "紅蓮の構えロングアタックアップエクステンド：「紅蓮の構えロングアタックアップ」の性能アップ"
             },
             "meta_data": {
                 "cp": 15,
@@ -10591,6 +11804,70 @@
             },
             "effects": [],
             "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
+        },
+        {
+            "id": 5405,
+            "name": {
+                "en": "Break Hit Attack All (C)",
+                "gl": "Break Hit Attack All (C)",
+                "jp": "ブレイクヒットアタックオール【C】"
+            },
+            "desc": {
+                "en": "When using a Call Ability\\n• Raises party's Attack by 5% for 6 turns when breaking target or attacking a broken target",
+                "gl": "When using Call Ability and after inflicting Break or attacking target afflicted with Break:\\n • Marginally raises party's ATK for 6 turns",
+                "jp": "コールアビリティ使用時\\n対象ブレイク後 ブレイク中攻撃後\\n6ACTION味方全員の攻撃力を極小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Break Hit Attack All (C): Raises party's ATK",
+                "jp": "ブレイクヒットアタックオール【C】：味方全員の攻撃力がアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 3,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 29,
+                    "effect_target": 2,
+                    "effect_values": [
+                        5,
+                        6,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 88,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
                 {
                     "required_id": 1,
                     "required_target": 2,
@@ -11312,7 +12589,7 @@
             "id": 1566,
             "name": {
                 "en": "",
-                "gl": "Buff Initial Attack Up",
+                "gl": "Buff Base Attack Up",
                 "jp": "バフベースアタックアップ"
             },
             "desc": {
@@ -11322,7 +12599,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Buff Base Attack Up: Raises INT BRV, ATK",
+                "gl": "Buff Base Attack: Raises INT BRV, ATK",
                 "jp": "バフベースアタックアップ：初期BRVと攻撃力がアップ"
             },
             "meta_data": {
@@ -11523,17 +12800,17 @@
             "name": {
                 "en": "",
                 "gl": "Fists of Fire Longer Attack Extension",
-                "jp": "紅蓮の構えロングアタックエクステンド"
+                "jp": "紅蓮の構えロングアタックアップエクステンド"
             },
             "desc": {
                 "en": "",
                 "gl": "When using Fists of Fire Longer Attack:\\n • Slight raised ATK boost",
-                "jp": "「紅蓮の構えロングアタック」使用時\\n自身の攻撃力アップの効果小アップ"
+                "jp": "「紅蓮の構えロングアタックアップ」使用時\\n自身の攻撃力アップの効果小アップ"
             },
             "short_desc": {
                 "en": "",
                 "gl": "Fists of Fire Longer Attack Extension: Boost to Fists of Fire Longer Attack",
-                "jp": "紅蓮の構えロングアタックエクステンド：「紅蓮の構えロングアタック」の性能アップ"
+                "jp": "紅蓮の構えロングアタックアップエクステンド：「紅蓮の構えロングアタックアップ」の性能アップ"
             },
             "meta_data": {
                 "cp": 15,
@@ -11570,17 +12847,17 @@
             "name": {
                 "en": "Fists of Fire Longer Attack Growth",
                 "gl": "Fists of Fire Longer Attack Growth",
-                "jp": "紅蓮の構えロングアタックグロース"
+                "jp": "紅蓮の構えロングアタックアップグロース"
             },
             "desc": {
                 "en": "「Fists of Fire Long Attack」 use +1\\nDuration of 「Fists of Fire Long」 effects +2 turns",
                 "gl": "Fists of Fire Longer Attack use +1\\n\\nFists of Fire Longer Attack effect duration +2",
-                "jp": "「紅蓮の構えロングアタック」の使用回数＋1\\n\\n「紅蓮の構えロングアタック」の効果を\\n2ACTION期間延長"
+                "jp": "「紅蓮の構えロングアタックアップ」の使用回数＋1\\n\\n「紅蓮の構えロングアタックアップ」の効果を\\n2ACTION期間延長"
             },
             "short_desc": {
                 "en": "",
                 "gl": "Fists of Fire Longer Attack Growth: Boost to Fists of Fire Longer Attack",
-                "jp": "紅蓮の構えロングアタックグロース：「紅蓮の構えロングアタック」の性能アップ"
+                "jp": "紅蓮の構えロングアタックアップグロース：「紅蓮の構えロングアタックアップ」の性能アップ"
             },
             "meta_data": {
                 "cp": 20,
@@ -12121,7 +13398,7 @@
                     "id": 978,
                     "name": {
                         "en": "The Forbidden Chakra Critical Power",
-                        "gl": "The Forbidden Chakra Mighty Critical Hit",
+                        "gl": "The Forbidden Chakra Critical Power",
                         "jp": "陰陽闘気斬クリティカルパワー"
                     },
                     "desc": {
@@ -12131,7 +13408,7 @@
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "The Forbidden Chakra Mighty Critical Hit: Boost to The Forbidden Chakra",
+                        "gl": "The Forbidden Chakra Critical Power: Boost to The Forbidden Chakra",
                         "jp": "陰陽闘気斬クリティカルパワー：「陰陽闘気斬」の性能アップ"
                     },
                     "meta_data": {
@@ -12317,6 +13594,7 @@
         },
         "limitedWeapon": {},
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4029,
@@ -12631,12 +13909,12 @@
             "name": {
                 "en": "",
                 "gl": "",
-                "jp": "闘気（非表示）"
+                "jp": "闘気"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "闘気（非表示）"
+                "jp": "闘気"
             },
             "meta_data": {
                 "target": 2,
@@ -12664,6 +13942,8 @@
                 "disp_type": 13,
                 "stackable": -1,
                 "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 5,
                 "sp_stacks": 1,
@@ -12727,7 +14007,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1089": [
@@ -12782,6 +14073,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -12845,7 +14138,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1090": [
@@ -12870,13 +14174,19 @@
                         -1
                     ],
                     "required_values": [
-                        1090
+                        1090,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 192,
                         "ailment_effect": 142,
                         "target_id": 1,
                         "value_type": 1,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             1,
@@ -12902,17 +14212,17 @@
             "id": 2013,
             "name": {
                 "en": "Break Hit Attack All Long",
-                "gl": "All Break Hit Attack Longer",
+                "gl": "Break Hit Attack All Longer",
                 "jp": "ブレイクヒットアタックオールロング"
             },
             "desc": {
-                "en": "When breaking target or attacking a broken target:\\n- Raises party's Attack by 5% for 6 turns",
+                "en": "After inflicting Break or attacking target afflicted with Break:\\n- Raises party's Attack by 5% for 6 turns",
                 "gl": "After inflicting Break or attacking target afflicted with Break:\\n • Raises party's ATK by 5% for 6 turns",
                 "jp": "自身が対象をブレイク時 ブレイク中攻撃後\\n味方全員に6ACTION以下の効果が発動\\n攻撃力が5％アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "All Break Hit Attack Longer: Raises party's ATK",
+                "gl": "Break Hit Attack All Longer: Raises party's ATK",
                 "jp": "ブレイクヒットアタックオールロング：味方全員の攻撃力がアップ"
             },
             "meta_data": {
@@ -12974,7 +14284,7 @@
                 "jp": "ブレイクヒットアタックオールロング【精錬】"
             },
             "desc": {
-                "en": "When breaking target or attacking a broken target:\\n- Raises party's Attack by 2% for 6 turns",
+                "en": "After inflicting Break or attacking target afflicted with Break:\\n- Raises party's Attack by 2% for 6 turns",
                 "gl": "After inflicting Break or attacking target afflicted with Break:\\n • Raises party's ATK by 2% for 6 turns",
                 "jp": "自身が対象をブレイク時 ブレイク中攻撃後\\n味方全員に6ACTION以下の効果が発動\\n攻撃力が2％アップ"
             },
@@ -13178,7 +14488,7 @@
             "id": "123050103",
             "name": {
                 "en": "",
-                "gl": "Bravery HP Damage★★",
+                "gl": "HP Damage BRV Gain★★",
                 "jp": "HPダメージBRVゲイン★★"
             },
             "desc": {
@@ -13188,7 +14498,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage★★: Increases BRV",
+                "gl": "HP Damage BRV Gain★★: Increases BRV",
                 "jp": "HPダメージBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -14840,5 +16150,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": ""
+        }
     }
 }

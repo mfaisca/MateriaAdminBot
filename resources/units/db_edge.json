@@ -1,5 +1,7 @@
 {
     "id": 21,
+    "uid": 45,
+    "sid": 45,
     "profile": {
         "fullName": {
             "en": "Edge",
@@ -140,12 +142,12 @@
         "id": 13,
         "name": {
             "en": "Smoke Screen (C) Rank Up",
-            "gl": "",
+            "gl": "コールアビリティ_エッジ",
             "jp": "コールアビリティ_エッジ"
         },
         "rank_up_desc": {
             "en": "When using [Smoke Screen (C)]:\\n• [ATK Down] duration +2\\n• BRV stolen can overflow up to 120% Max BRV\\n• Moderately improves Special Effect",
-            "gl": "",
+            "gl": "When using Smoke (C):\\n • ATK Down duration +2\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Moderate special effect boost after use",
             "jp": "「煙玉【C】」使用時\\n・「攻撃力ダウン」の2ACTION期間延長\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・使用後特殊効果の効果中アップ"
         },
         "ability": {
@@ -439,6 +441,10 @@
             }
         ],
         [],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [
@@ -515,6 +521,7 @@
                 "jp": "近距離物理攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -569,6 +576,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -623,6 +631,7 @@
                 "jp": "雷属性魔法BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 1,
             "use_count": 7,
@@ -670,7 +679,7 @@
             "id": 122,
             "name": {
                 "en": "Smoke Screen",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
@@ -679,6 +688,7 @@
                 "jp": "自身に1ACTION「回避率極大アップ」\\n2ACTION「エブラーナの教え」付与し\\n自身の攻撃力に依存した量のBRVを加算"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -767,6 +777,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -887,6 +899,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1012,6 +1026,7 @@
                 "jp": "雷属性魔法BRV攻撃\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 1,
             "use_count": 7,
@@ -1059,7 +1074,7 @@
             "id": 379,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
@@ -1068,6 +1083,7 @@
                 "jp": "自身に2ACTION「回避率極大アップ」\\n6ACTION「エブラーナの教え」付与し\\n自身の攻撃力に依存した量のBRVを加算\\n敵全体に1ACTION「ターゲット固定」付与"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -1156,6 +1172,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1276,6 +1294,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1406,12 +1426,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -1423,7 +1445,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -1447,7 +1469,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -1513,6 +1535,7 @@
                 "jp": "3HIT雷属性魔法BRV攻撃＋HP攻撃\\n行動負荷が低い\\n自身に4ACTION「最大BRV中アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 7,
@@ -1645,6 +1668,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1752,6 +1777,7 @@
                 "jp": "3HIT雷属性魔法BRV攻撃＋HP攻撃\\n行動負荷が低い\\n自身に4ACTION「最大BRV中アップ」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 7,
@@ -1884,6 +1910,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1982,15 +2010,16 @@
             "id": 3061,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
                 "en": "",
-                "gl": "Self: 1 turn Evasion Up V; 4 turns Eblan's Teachings\\nIncreases BRV based on ATK + HP attack\\nBRV Attack becomes BRV Attack+ while Eblan's Teachings active",
+                "gl": "Self: 1 turn Evasion Up V; 4 turns Eblan's Teachings\\nIncreases BRV based on ATK\\nHP attack\\nBRV Attack becomes BRV Attack+ while Eblan's Teachings active",
                 "jp": "自身に1ACTION「回避率極大アップ」\\n4ACTION「エブラーナの教え」付与し\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋HP攻撃\\n「エブラーナの教え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -2079,6 +2108,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2199,6 +2230,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2309,15 +2342,16 @@
             "id": 3062,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
                 "en": "",
-                "gl": "Self: 2 turns Evasion Up V; 8 turns Eblan's Teachings\\nIncreases BRV based on ATK + HP attack\\nAll targets: 1 turn Lock\\nBRV Attack becomes BRV Attack+ while Eblan's Teachings active",
+                "gl": "Self: 2 turns Evasion Up V; 8 turns Eblan's Teachings\\nIncreases BRV based on ATK\\nHP attack\\nAll targets: 1 turn Lock\\nBRV Attack becomes BRV Attack+ while Eblan's Teachings active",
                 "jp": "自身に2ACTION「回避率極大アップ」\\n8ACTION「エブラーナの教え」付与し\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋HP攻撃\\n敵全体に1ACTION「ターゲット固定」付与\\n「エブラーナの教え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -2406,6 +2440,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2526,6 +2562,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2656,12 +2694,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -2673,7 +2713,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -2697,7 +2737,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -2763,6 +2803,7 @@
                 "jp": "近距離物理BRV攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2817,6 +2858,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2871,6 +2913,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -2940,6 +2983,7 @@
                 "jp": "4HIT雷属性全体魔法BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に2ACTION「分身」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 21000,
@@ -3114,6 +3158,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3213,13 +3259,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1255
+                                1255,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 324,
                                 "ailment_effect": 47,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -3252,6 +3304,7 @@
                 "jp": "4HIT雷属性全体魔法BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「怒りによる覚醒」\\n2ACTION「分身」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 21000,
@@ -3426,6 +3479,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3525,13 +3580,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1254
+                                1254,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 351,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -3575,6 +3636,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3674,13 +3737,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1255
+                                1255,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 324,
                                 "ailment_effect": 47,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -3713,6 +3782,7 @@
                 "jp": "4HIT雷属性全体魔法BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n自身に6ACTION「怒りによる覚醒」\\n2ACTION「分身」付与"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 7,
             "use_count": 21000,
@@ -3909,6 +3979,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4008,13 +4080,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1254
+                                1254,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 351,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -4058,6 +4136,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4157,13 +4237,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1255
+                                1255,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 324,
                                 "ailment_effect": 47,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -4196,6 +4282,7 @@
                 "jp": "8HIT雷属性全体魔法BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\nターゲット以外にも50％分のHPダメージ\\n自身に6ACTION「怒りによる覚醒」\\n2ACTION「分身」付与\\n自身に付与されている「エブラーナの教え」を2ACTION延長\\n使用後 「らいげき」の使用回数＋1（上限あり）"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 14,
             "use_count": 21000,
@@ -4550,6 +4637,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4649,13 +4738,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1254
+                                1254,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 351,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -4699,6 +4794,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4798,13 +4895,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1255
+                                1255,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 324,
                                 "ailment_effect": 47,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -4837,6 +4940,7 @@
                 "jp": "雷属性魔法BRV攻撃＋HP攻撃\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算\\n行動負荷が低い"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -4913,6 +5017,7 @@
                 "jp": "4HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「最大BRV中アップ」付与\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 6,
             "use_count": 7,
@@ -5087,6 +5192,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5194,6 +5301,7 @@
                 "jp": "4HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n自身に4ACTION「最大BRV中アップ」付与\\n行動負荷が低い"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 22,
             "hit_count": 6,
             "use_count": 7,
@@ -5368,6 +5476,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5466,7 +5576,7 @@
             "id": 6774,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
@@ -5475,6 +5585,7 @@
                 "jp": "自身に2ACTION「回避率極大アップ」\\n6ACTION「エブラーナの教え」付与し\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n敵全体に4ACTION「攻撃力中ダウン」付与\\nその後ターゲットに以下の行動が追加発動\\n2HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n「エブラーナの教え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -5563,6 +5674,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5683,6 +5796,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5801,6 +5916,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5899,7 +6016,7 @@
             "id": 6775,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen",
+                "gl": "Smoke",
                 "jp": "煙玉"
             },
             "desc": {
@@ -5908,6 +6025,7 @@
                 "jp": "自身に3ACTION「回避率極大アップ」\\n10ACTION「エブラーナの教え」付与し\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n敵全体に1ACTION「ターゲット固定」\\n4ACTION「攻撃力中ダウン」付与\\nその後ターゲットに以下の行動が追加発動\\n2HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n「エブラーナの教え」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 3,
@@ -5996,6 +6114,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6116,6 +6236,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6234,12 +6356,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -6251,7 +6375,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -6275,7 +6399,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -6352,6 +6476,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6459,6 +6585,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -6557,6 +6684,7 @@
                 "jp": "0"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -6655,6 +6783,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃\\n与えたBRVダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 3,
             "use_count": 0,
@@ -6755,6 +6884,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃＋HP攻撃\\n1ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 1,
@@ -6885,6 +7015,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6992,6 +7124,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃＋HP攻撃\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 1,
@@ -7122,6 +7255,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7229,6 +7364,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃＋HP攻撃\\n1ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 1,
@@ -7359,6 +7495,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7466,6 +7604,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃＋HP攻撃\\n2ACTION自身の攻撃力を小アップ"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 4,
             "use_count": 1,
@@ -7596,6 +7735,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7703,6 +7844,7 @@
                 "jp": "雷属性魔法BRV攻撃＋HP攻撃\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n行動負荷が低い"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 22,
             "hit_count": 3,
             "use_count": 0,
@@ -7801,6 +7943,7 @@
                 "jp": "3HIT雷属性魔法BRV攻撃\\n与えたBRVダメージに依存した量のBRVを味方全員に加算"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -7923,6 +8066,7 @@
                 "jp": "2HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n行動負荷が低い"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 22,
             "hit_count": 4,
             "use_count": 0,
@@ -8043,6 +8187,7 @@
                 "jp": "4HIT雷属性全体魔法BRV攻撃＋単体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n自身に6ACTION「怒りによる覚醒」\\n2ACTION「分身」付与\\n自身に付与されている「エブラーナの教え」を2ACTION延長\\n使用後 「らいげき」の使用回数＋1（上限あり）"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 30,
             "hit_count": 10,
             "use_count": 21000,
@@ -8309,6 +8454,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8408,13 +8555,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1254
+                                1254,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 351,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": 5,
                                 "rank_data": [
                                     30,
@@ -8458,6 +8611,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8557,13 +8712,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1255
+                                1255,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 324,
                                 "ailment_effect": 47,
                                 "target_id": 1,
                                 "value_type": 1,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     100,
@@ -8587,15 +8748,16 @@
             "id": 10118,
             "name": {
                 "en": "Smoke Screen (C)",
-                "gl": "",
+                "gl": "Smoke (C)",
                 "jp": "煙玉【C】"
             },
             "desc": {
                 "en": "When called for assistance, Edge performs the following actions:\\n• Largely raises own Max BRV\\n• Raises party's BRV based on own Attack\\n• 2-HIT Thunder magic BRV attack + HP attack\\n• All targets: 1 turn [Lock], 2 turns [M Attack Down]\\n\\n3 turns special effect after use:\\n• Caller: [M Evasion Up]",
-                "gl": "",
+                "gl": "Edge's ability when called:\\n • Largely raises MAX BRV\\n • Grants party BRV based on own ATK\\n • All targets: 1 turn Lock; 2 turns ATK Down II\\n • 2-hit Thunder magic BRV attack + HP attack\\n\\nModerately raises Evasion of character who called Edge for 3 turns after use",
                 "jp": "コールされたエッジが以下の行動を行う\\n自身の最大BRV大アップし\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n敵全体に1ACTION「ターゲット固定」\\n2ACTION「攻撃力中ダウン」付与\\nその後 2HIT雷属性魔法BRV攻撃＋HP攻撃\\n\\n使用後特殊効果：3ACTION\\nエッジをコールしたキャラクターの回避率中アップ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -8704,6 +8866,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8801,12 +8965,12 @@
                     "cast_id": 1873,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Smoke (C)",
                         "jp": "煙玉【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Smoke (C)",
                         "jp": "コールアビリティ「煙玉【C】」の効果"
                     },
                     "meta_data": {
@@ -8822,6 +8986,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8940,12 +9106,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -8957,7 +9125,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -8981,7 +9149,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -9058,6 +9226,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9156,15 +9326,16 @@
             "id": 10119,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Smoke (C)",
                 "jp": "煙玉【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Edge's ability when called:\\n • Largely raises MAX BRV\\n • Grants party BRV based on own ATK\\n • All targets: 1 turn Lock; 4 turns ATK Down II\\n • 2-hit Thunder magic BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nTremendously raises Evasion of character who called Edge for 3 turns after use",
                 "jp": "コールされたエッジが以下の行動を行う\\n自身の最大BRV大アップし\\n味方全員に自身の攻撃力に依存した量のBRVを加算\\n敵全体に1ACTION「ターゲット固定」\\n4ACTION「攻撃力中ダウン」付与\\nその後 2HIT雷属性魔法BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n\\n使用後特殊効果：3ACTION\\nエッジをコールしたキャラクターの回避率極大アップ"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -9273,6 +9444,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9370,12 +9543,12 @@
                     "cast_id": 1873,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Smoke (C)",
                         "jp": "煙玉【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Smoke (C)",
                         "jp": "コールアビリティ「煙玉【C】」の効果"
                     },
                     "meta_data": {
@@ -9391,6 +9564,8 @@
                         "disp_type": 47,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9509,12 +9684,14 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
                         "effects": [
                             40,
-                            -1,
+                            85,
                             -1,
                             -1,
                             -1,
@@ -9526,7 +9703,7 @@
                         ],
                         "val_types": [
                             0,
-                            0,
+                            6,
                             0,
                             0,
                             0,
@@ -9550,7 +9727,7 @@
                         ],
                         "val_specify": [
                             0,
-                            0,
+                            2,
                             0,
                             0,
                             0,
@@ -9627,6 +9804,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 1,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9725,15 +9904,16 @@
             "id": 10162,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Call Edge Additional Attack",
                 "jp": "コールエッジ追加攻撃"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Call Edge Additional Attack",
                 "jp": "コールエッジ追加攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 0,
@@ -9823,15 +10003,16 @@
             "id": 10163,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Stronger Call Edge Additional Attack",
                 "jp": "強化コールエッジ追加攻撃"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Stronger Call Edge Additional Attack",
                 "jp": "強化コールエッジ追加攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 0,
@@ -9987,7 +10168,7 @@
             "id": 163,
             "name": {
                 "en": "Critical Power",
-                "gl": "Mighty Critical Hit",
+                "gl": "Critical Power",
                 "jp": "クリティカルパワー"
             },
             "desc": {
@@ -9997,7 +10178,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Mighty Critical Hit: Increases BRV damage dealt with Critical Hit",
+                "gl": "Critical Power: Increases BRV damage dealt",
                 "jp": "クリティカルパワー：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -10243,17 +10424,17 @@
             "id": 212,
             "name": {
                 "en": "Smoke Attack Up",
-                "gl": "Smoke Screen Attack Up",
+                "gl": "Smoke Attack Up",
                 "jp": "煙玉アタックアップ"
             },
             "desc": {
                 "en": "Slightly raises Attack for 1 turn after using 「Smoke」",
-                "gl": "Slightly raises ATK for 1 turn upon using Smoke Screen",
+                "gl": "Slightly raises ATK for 1 turn upon using Smoke",
                 "jp": "「煙玉」使用後 1ACTION\\n自身の攻撃力を小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Smoke Screen Attack Up: Raises ATK",
+                "gl": "Smoke Attack Up: Raises ATK",
                 "jp": "煙玉アタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -10307,7 +10488,7 @@
             "id": 213,
             "name": {
                 "en": "Avoid BRV Gain",
-                "gl": "Bravery Feint",
+                "gl": "Feint BRV Gain",
                 "jp": "アボイドBRVゲイン"
             },
             "desc": {
@@ -10317,7 +10498,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Feint: Gains BRV",
+                "gl": "Feint BRV Gain: Increases BRV",
                 "jp": "アボイドBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -10371,17 +10552,17 @@
             "id": 426,
             "name": {
                 "en": "Smoke BRV Gain",
-                "gl": "Bravery Smoke Screen",
+                "gl": "Smoke BRV Gain",
                 "jp": "煙玉BRVゲイン"
             },
             "desc": {
                 "en": "Gains a small amount of BRV after using 「Smoke」",
-                "gl": "Moderately raises BRV upon using Smoke Screen",
+                "gl": "Moderately raises BRV upon using Smoke",
                 "jp": "「煙玉」使用後\\n自身のBRVを中アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Smoke Screen: Gains BRV",
+                "gl": "Smoke BRV Gain: Increases BRV",
                 "jp": "煙玉BRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -10700,17 +10881,17 @@
             "id": 2301,
             "name": {
                 "en": "Smoke Extend",
-                "gl": "Smoke Screen Extension",
+                "gl": "Smoke Extension",
                 "jp": "煙玉エクステンド"
             },
             "desc": {
                 "en": "「Smoke」 use +1\\n\\nWhen using 「Smoke」:\\n- Slightly raises the BRV gain based on Attack\\n- Raises party BRV based on Attack\\n- Adds the effect of 「Small Speed Up」 into 「Teaching of Eblan」\\n- Increases the duration of 「Evasion Rate Up」 by 1 turn\\n- Increases the duration of 「Teaching of Eblan」 by 4 turns\\n- Inflicts 「Medium Attack Down」 to all enemies for 4 turns\\n- Triggers a 2-HIT Thunder magic BRV + HP Attack on target after use\\n- Stolen BRV can overflow up to 120% Max BRV\\n\\nWhile 「Teaching of Eblan」 is active\\n- Turns 「BRV Attack」 into 「BRV Attack+」\\n　∟ 2-HIT Thunder magic BRV Attack\\n　∟ Moderately raises total BRV potency\\n　∟ Raises party BRV based on BRV damage dealt\\n- Turns 「HP Attack」 into 「HP Attack+」\\n　∟ Thunder magic BRV + HP Attack\\n　∟ Raises party BRV based on HP damage dealt\\n　∟ Lowers Action Delay",
-                "gl": "Smoke Screen use +1\\n\\nWhen using Smoke Screen:\\n • Slight boost to BRV granted based on ATK, extended to party\\n • Adds SPD Up I effect to Eblan's Teachings\\n • Evasion Up duration +1\\n • Eblan's Teachings duration +4\\n • All enemies: 4 turns ATK Down II\\n • Triggers additional 2-hit Thunder magic BRV attack + HP attack after use\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nWhile Eblan's Teachings active:\\n • BRV Attack becomes BRV Attack+ (2-hit Thunder magic BRV attack; moderately increased cumulative BRV damage; grants party BRV based on BRV damage dealt)\\n • HP Attack becomes HP Attack+ (Thunder magic BRV attack + HP attack; grants party BRV based on HP damage dealt; turn rate+)",
+                "gl": "Smoke use +1\\n\\nWhen using Smoke:\\n • Slight boost to BRV granted based on ATK, extended to party\\n • Adds SPD Up I effect to Eblan's Teachings\\n • Evasion Up duration +1\\n • Eblan's Teachings duration +4\\n • All enemies: 4 turns ATK Down II\\n • Triggers additional 2-hit Thunder magic BRV attack + HP attack after use\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nWhile Eblan's Teachings active:\\n • BRV Attack becomes BRV Attack+ (2-hit Thunder magic BRV attack; moderately increased cumulative BRV damage; grants party BRV based on BRV damage dealt)\\n • HP Attack becomes HP Attack+ (Thunder magic BRV attack + HP attack; grants party BRV based on HP damage dealt; turn rate+)",
                 "jp": "「煙玉」の使用回数＋1\\n\\n「煙玉」使用時\\n・自身の攻撃力に依存したBRV加算を味方全体化し\\n　BRV加算量も小アップ\\n・「エブラーナの教え」に「素早さ小アップ」の効果追加\\n・「回避率アップ」の1ACTION期間延長\\n・「エブラーナの教え」の4ACTION期間延長\\n・敵全体に4ACTION「攻撃力中ダウン」付与\\n・使用後 ターゲットに追加\\n　2HIT雷属性魔法BRV攻撃＋HP攻撃が発動\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n\\n「エブラーナの教え」付与中\\n・通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n　-BRV攻撃が2HIT雷属性魔法BRV攻撃に変化し\\n　　合計BRV威力も中アップ\\n　-与えたBRVダメージに依存した量のBRVを味方全員に加算\\n・通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n　-雷属性魔法BRV攻撃＋HP攻撃\\n　-与えたHPダメージに依存した量のBRVを味方全員に加算\\n　-行動負荷ダウン"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Smoke Screen Extension: Boost to Smoke Screen",
+                "gl": "Smoke Extension: Boost to Smoke",
                 "jp": "煙玉エクステンド：「煙玉」の性能アップ"
             },
             "meta_data": {
@@ -10881,17 +11062,17 @@
             "id": 5356,
             "name": {
                 "en": "Weak Evasion All (C)",
-                "gl": "",
+                "gl": "Weak Evasion All (C)",
                 "jp": "ウィークエヴァージョンオール【C】"
             },
             "desc": {
                 "en": "When using a Call Ability with BRV attacks:\\n• Slightly raises party's Evasion for 3 turns when attacking target's weakness",
-                "gl": "",
+                "gl": "When using call ability that includes BRV attack:\\n • Slightly raises party's evasion rate for 3 turns after attacking target's weakness",
                 "jp": "BRV攻撃を含むコールアビリティ使用時\\n対象の弱点をついた後\\n味方全員に3ACTION以下の効果が発動\\n回避率を小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Weak Evasion All (C): Raises party's evasion rate",
                 "jp": "ウィークエヴァージョンオール【C】：味方全員の回避率がアップ"
             },
             "meta_data": {
@@ -11011,7 +11192,7 @@
             "id": 163,
             "name": {
                 "en": "",
-                "gl": "Mighty Critical Hit",
+                "gl": "Critical Power",
                 "jp": "クリティカルパワー"
             },
             "desc": {
@@ -11021,7 +11202,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Mighty Critical Hit: Increases BRV damage dealt with Critical Hit",
+                "gl": "Critical Power: Increases BRV damage dealt",
                 "jp": "クリティカルパワー：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -11267,17 +11448,17 @@
             "id": 212,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen Attack Up",
+                "gl": "Smoke Attack Up",
                 "jp": "煙玉アタックアップ"
             },
             "desc": {
                 "en": "",
-                "gl": "Slightly raises ATK for 1 turn upon using Smoke Screen",
+                "gl": "Slightly raises ATK for 1 turn upon using Smoke",
                 "jp": "「煙玉」使用後 1ACTION\\n自身の攻撃力を小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Smoke Screen Attack Up: Raises ATK",
+                "gl": "Smoke Attack Up: Raises ATK",
                 "jp": "煙玉アタックアップ：攻撃力がアップ"
             },
             "meta_data": {
@@ -11331,7 +11512,7 @@
             "id": 213,
             "name": {
                 "en": "",
-                "gl": "Bravery Feint",
+                "gl": "Feint BRV Gain",
                 "jp": "アボイドBRVゲイン"
             },
             "desc": {
@@ -11341,7 +11522,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Feint: Gains BRV",
+                "gl": "Feint BRV Gain: Increases BRV",
                 "jp": "アボイドBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -11395,17 +11576,17 @@
             "id": 426,
             "name": {
                 "en": "",
-                "gl": "Bravery Smoke Screen",
+                "gl": "Smoke BRV Gain",
                 "jp": "煙玉BRVゲイン"
             },
             "desc": {
                 "en": "",
-                "gl": "Moderately raises BRV upon using Smoke Screen",
+                "gl": "Moderately raises BRV upon using Smoke",
                 "jp": "「煙玉」使用後\\n自身のBRVを中アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Smoke Screen: Gains BRV",
+                "gl": "Smoke BRV Gain: Increases BRV",
                 "jp": "煙玉BRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -11724,17 +11905,17 @@
             "id": 2301,
             "name": {
                 "en": "",
-                "gl": "Smoke Screen Extension",
+                "gl": "Smoke Extension",
                 "jp": "煙玉エクステンド"
             },
             "desc": {
                 "en": "",
-                "gl": "Smoke Screen use +1\\n\\nWhen using Smoke Screen:\\n • Slight boost to BRV granted based on ATK, extended to party\\n • Adds SPD Up I effect to Eblan's Teachings\\n • Evasion Up duration +1\\n • Eblan's Teachings duration +4\\n • All enemies: 4 turns ATK Down II\\n • Triggers additional 2-hit Thunder magic BRV attack + HP attack after use\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nWhile Eblan's Teachings active:\\n • BRV Attack becomes BRV Attack+ (2-hit Thunder magic BRV attack; moderately increased cumulative BRV damage; grants party BRV based on BRV damage dealt)\\n • HP Attack becomes HP Attack+ (Thunder magic BRV attack + HP attack; grants party BRV based on HP damage dealt; turn rate+)",
+                "gl": "Smoke use +1\\n\\nWhen using Smoke:\\n • Slight boost to BRV granted based on ATK, extended to party\\n • Adds SPD Up I effect to Eblan's Teachings\\n • Evasion Up duration +1\\n • Eblan's Teachings duration +4\\n • All enemies: 4 turns ATK Down II\\n • Triggers additional 2-hit Thunder magic BRV attack + HP attack after use\\n • Stolen BRV may exceed MAX BRV up to 120%\\n\\nWhile Eblan's Teachings active:\\n • BRV Attack becomes BRV Attack+ (2-hit Thunder magic BRV attack; moderately increased cumulative BRV damage; grants party BRV based on BRV damage dealt)\\n • HP Attack becomes HP Attack+ (Thunder magic BRV attack + HP attack; grants party BRV based on HP damage dealt; turn rate+)",
                 "jp": "「煙玉」の使用回数＋1\\n\\n「煙玉」使用時\\n・自身の攻撃力に依存したBRV加算を味方全体化し\\n　BRV加算量も小アップ\\n・「エブラーナの教え」に「素早さ小アップ」の効果追加\\n・「回避率アップ」の1ACTION期間延長\\n・「エブラーナの教え」の4ACTION期間延長\\n・敵全体に4ACTION「攻撃力中ダウン」付与\\n・使用後 ターゲットに追加\\n　2HIT雷属性魔法BRV攻撃＋HP攻撃が発動\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n\\n「エブラーナの教え」付与中\\n・通常「BRV攻撃」が以下の「BRV攻撃＋」に変化\\n　-BRV攻撃が2HIT雷属性魔法BRV攻撃に変化し\\n　　合計BRV威力も中アップ\\n　-与えたBRVダメージに依存した量のBRVを味方全員に加算\\n・通常「HP攻撃」が以下の「HP攻撃＋」に変化\\n　-雷属性魔法BRV攻撃＋HP攻撃\\n　-与えたHPダメージに依存した量のBRVを味方全員に加算\\n　-行動負荷ダウン"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Smoke Screen Extension: Boost to Smoke Screen",
+                "gl": "Smoke Extension: Boost to Smoke",
                 "jp": "煙玉エクステンド：「煙玉」の性能アップ"
             },
             "meta_data": {
@@ -11888,6 +12069,70 @@
             },
             "effects": [],
             "conditions": [
+                {
+                    "required_id": 1,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
+        },
+        {
+            "id": 5356,
+            "name": {
+                "en": "",
+                "gl": "Weak Evasion All (C)",
+                "jp": "ウィークエヴァージョンオール【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "When using call ability that includes BRV attack:\\n • Slightly raises party's evasion rate for 3 turns after attacking target's weakness",
+                "jp": "BRV攻撃を含むコールアビリティ使用時\\n対象の弱点をついた後\\n味方全員に3ACTION以下の効果が発動\\n回避率を小アップ"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Weak Evasion All (C): Raises party's evasion rate",
+                "jp": "ウィークエヴァージョンオール【C】：味方全員の回避率がアップ"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 3,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 83,
+                    "effect_target": 2,
+                    "effect_values": [
+                        30,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 81,
+                    "required_target": 11,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
                 {
                     "required_id": 1,
                     "required_target": 2,
@@ -12170,12 +12415,12 @@
                 },
                 "desc": {
                     "en": "「Smoke」 use +1\\n\\nWhen using 「Smoke」:\\n- Raises BRV gain based on Attack\\n- Improves effects of 「Eblan's Teachings」 and extends its duration\\n- Casts 「Target Lock」 on all enemies for 1 turn",
-                    "gl": "Smoke Screen use +1\\n\\nWhen using Smoke Screen:\\n • Boost to BRV granted based on ATK\\n • Evasion Up duration+\\n • Boost to MAX BRV, ATK boost from Eblan's Teachings, duration+\\n • All enemies: 1 turn Lock",
+                    "gl": "Smoke use +1\\n\\nWhen using Smoke:\\n • Boost to BRV granted based on ATK\\n • Evasion Up duration+\\n • Boost to MAX BRV, ATK boost from Eblan's Teachings, duration+\\n • All enemies: 1 turn Lock",
                     "jp": "「煙玉」の使用回数＋1し BRV加算量もアップ\\n＋「回避率アップ」の期間延長\\n＋「エブラーナの教え」の\\n　最大BRVアップと攻撃力アップの効果アップと期間延長\\n＋敵全体に1ACTION「ターゲット固定」付与"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Prince of Eblan's Will: Boost to Smoke Bomb",
+                    "gl": "Prince of Eblan's Will: Boost to Smoke",
                     "jp": "エブラーナ王子の意地：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -12786,6 +13031,7 @@
         },
         "limitedWeapon": {},
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {
             "id": 1414,
             "series_id": 4,
@@ -13222,6 +13468,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13285,7 +13533,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1360": [
@@ -13337,7 +13596,7 @@
             "id": 2321,
             "name": {
                 "en": "Evasion BRV Gain",
-                "gl": "Bravery Evasion",
+                "gl": "Evasion BRV Gain",
                 "jp": "エヴァージョンBRVゲイン"
             },
             "desc": {
@@ -13347,7 +13606,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Evasion: Increases BRV",
+                "gl": "Evasion BRV Gain: Increases BRV",
                 "jp": "エヴァージョンBRVゲイン：BRVが加算"
             },
             "meta_data": {
@@ -13405,17 +13664,17 @@
             "id": 5392,
             "name": {
                 "en": "Evasion BRV Gain (RF)",
-                "gl": "",
+                "gl": "Evasion BRV Gain (RF)",
                 "jp": "エヴァージョンBRVゲイン【精錬】"
             },
             "desc": {
                 "en": "After evading an attack:\\n- Raises BRV by 16% of Initial BRV",
-                "gl": "",
+                "gl": "When dodging attack:\\n • Grants self BRV based on 16% of own INT BRV",
                 "jp": "自身が攻撃回避時\\n自身に自身の初期BRVの16％分のBRVを加算"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Evasion BRV Gain (RF): Increases BRV",
                 "jp": "エヴァージョンBRVゲイン【精錬】：BRVが加算"
             },
             "meta_data": {
@@ -13513,17 +13772,17 @@
             "id": "21050101",
             "name": {
                 "en": "Bravery Smoke Screen★★",
-                "gl": "Bravery Smoke Screen★★",
+                "gl": "Smoke BRV Gain★★",
                 "jp": "煙玉BRVゲイン★★"
             },
             "desc": {
                 "en": "Raises BRV by 10% of INT BRV upon using Smoke Screen",
-                "gl": "Raises BRV by 10% of INT BRV upon using Smoke Screen",
+                "gl": "Raises BRV by 10% of INT BRV upon using Smoke",
                 "jp": "「煙玉」使用後\\n自身のBRVを初期BRVの10％アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery Smoke Screen★★: Gains BRV",
+                "gl": "Smoke BRV Gain★★: Increases BRV",
                 "jp": "煙玉BRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -13642,17 +13901,17 @@
                 "id": 5104,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shock Lv9",
                     "jp": "らいげきパワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shock:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「らいげき」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shock: Boost to Shock",
                     "jp": "らいげきパワー：「らいげき」の性能アップ"
                 },
                 "meta_data": {
@@ -13732,17 +13991,17 @@
                 "id": 5105,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock BRV Attack Advance Lv9",
                     "jp": "らいげきBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shock:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「らいげき」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock BRV Attack Advance: Boost to Shock",
                     "jp": "らいげきBRVアタックアドバンス：「らいげき」の性能アップ"
                 },
                 "meta_data": {
@@ -13822,17 +14081,17 @@
                 "id": 5106,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up Lv9",
                     "jp": "バフブーストアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own MAX BRV by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の最大BRV10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Boost Up: Raises MAX BRV",
                     "jp": "バフブーストアップ：最大BRVがアップ"
                 },
                 "meta_data": {
@@ -13912,17 +14171,17 @@
                 "id": 5107,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shock II",
                     "jp": "らいげきパワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shock:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「らいげき」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Shock II: Boost to Shock",
                     "jp": "らいげきパワーII：「らいげき」の性能アップ"
                 },
                 "meta_data": {
@@ -14002,17 +14261,17 @@
                 "id": 5108,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock BRV Attack Advance II",
                     "jp": "らいげきBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shock:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「らいげき」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock BRV Attack Advance II: Boost to Shock",
                     "jp": "らいげきBRVアタックアドバンスII：「らいげき」の性能アップ"
                 },
                 "meta_data": {
@@ -14092,17 +14351,17 @@
                 "id": 5109,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock Weak Damage Up",
                     "jp": "らいげきウィークダメージアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Shock:\\n • Increases BRV damage dealt when attacking target's weakness by 10%",
                     "jp": "「らいげき」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Shock Weak Damage Up: Boost to Shock",
                     "jp": "らいげきウィークダメージアップ：「らいげき」の性能アップ"
                 },
                 "meta_data": {
@@ -14182,17 +14441,17 @@
                 "id": 5110,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Up Lv9",
                     "jp": "煙玉BRVアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Smoke:\\n • Increases BRV gained by 10％",
                     "jp": "「煙玉」の\\nBRV加算量10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Up: Boost to Smoke",
                     "jp": "煙玉BRVアップ：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -14272,17 +14531,17 @@
                 "id": 5111,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Up Advance Lv9",
                     "jp": "煙玉BRVアップアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Smoke:\\n • Increased BRV may exceed MAX BRV up to 10％",
                     "jp": "「煙玉」使用時\\n加算したBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Up Advance: Boost to Smoke",
                     "jp": "煙玉BRVアップアドバンス：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -14362,17 +14621,17 @@
                 "id": 5112,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up Lv9",
                     "jp": "バフアタックアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "With active buff:\\n • Raises own ATK by 10％",
                     "jp": "自身に強化効果が付与されている時\\n自身の攻撃力10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Buff Attack Up: Raises ATK",
                     "jp": "バフアタックアップ：攻撃力がアップ"
                 },
                 "meta_data": {
@@ -14452,17 +14711,17 @@
                 "id": 5113,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Smoke",
                     "jp": "煙玉パワー"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Smoke while Smoke Extension equipped:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「煙玉エクステンド」装備時\\n「煙玉」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Smoke: Boost to Smoke",
                     "jp": "煙玉パワー：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -14542,17 +14801,17 @@
                 "id": 5114,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Attack Advance",
                     "jp": "煙玉BRVアタックアドバンス"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Smoke while Smoke Extension equipped:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「煙玉エクステンド」装備時\\n「煙玉」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke BRV Attack Advance: Boost to Smoke",
                     "jp": "煙玉BRVアタックアドバンス：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -14632,17 +14891,17 @@
                 "id": 5115,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke Weak Damage Up",
                     "jp": "煙玉ウィークダメージアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Smoke while Smoke Extension equipped:\\n • Increases BRV damage dealt when attacking target's weakness by 10%",
                     "jp": "「煙玉エクステンド」装備時\\n「煙玉」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Smoke Weak Damage Up: Boost to Smoke",
                     "jp": "煙玉ウィークダメージアップ：「煙玉」の性能アップ"
                 },
                 "meta_data": {
@@ -14722,17 +14981,17 @@
                 "id": 5116,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Blitz Mirage Lv9",
                     "jp": "雷分身殺法パワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Blitz Mirage:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「雷分身殺法」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Blitz Mirage: Boost to Blitz Mirage",
                     "jp": "雷分身殺法パワー：「雷分身殺法」の性能アップ"
                 },
                 "meta_data": {
@@ -14812,17 +15071,17 @@
                 "id": 5117,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Blitz Mirage BRV Attack Advance Lv9",
                     "jp": "雷分身殺法BRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Blitz Mirage:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「雷分身殺法」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Blitz Mirage BRV Attack Advance: Boost to Blitz Mirage",
                     "jp": "雷分身殺法BRVアタックアドバンス：「雷分身殺法」の性能アップ"
                 },
                 "meta_data": {
@@ -14902,17 +15161,17 @@
                 "id": 5118,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack++ HP Attack++ Up Lv9",
                     "jp": "ブレイブ攻撃＋＋HP攻撃＋＋アップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using BRV Attack++, HP Attack++:\\n • Increases BRV damage dealt by 20％",
                     "jp": "「BRV攻撃＋＋」「HP攻撃＋＋」の\\n与えるBRVダメージ20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "BRV Attack++ HP Attack++ Up: Boost to BRV Attack++, HP Attack++",
                     "jp": "ブレイブ攻撃＋＋HP攻撃＋＋アップ：「BRV攻撃＋＋」「HP攻撃＋＋」の性能アップ"
                 },
                 "meta_data": {
@@ -14992,17 +15251,17 @@
                 "id": 5119,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Blitz Mirage II",
                     "jp": "雷分身殺法パワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Blitz Mirage:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「雷分身殺法」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Blitz Mirage II: Boost to Blitz Mirage",
                     "jp": "雷分身殺法パワーII：「雷分身殺法」の性能アップ"
                 },
                 "meta_data": {
@@ -15082,17 +15341,17 @@
                 "id": 5120,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Blitz Mirage BRV Attack Advance II",
                     "jp": "雷分身殺法BRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Blitz Mirage:\\n • Stolen BRV may exceed MAX BRV up to 5％",
                     "jp": "「雷分身殺法」の\\n奪ったBRVを最大BRVを超えて加算する上限5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Blitz Mirage BRV Attack Advance II: Boost to Blitz Mirage",
                     "jp": "雷分身殺法BRVアタックアドバンスII：「雷分身殺法」の性能アップ"
                 },
                 "meta_data": {
@@ -15172,17 +15431,17 @@
                 "id": 5121,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Awakened by Anger Boost All",
                     "jp": "怒りによる覚醒ブーストオール"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "While Awakened by Anger active:\\n • Raises party's MAX BRV by 5％",
                     "jp": "自身に「怒りによる覚醒」が付与されている時\\n味方全員の最大BRV5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Awakened by Anger Boost All: Raises party's MAX BRV",
                     "jp": "怒りによる覚醒ブーストオール：味方全員の最大BRVがアップ"
                 },
                 "meta_data": {
@@ -15259,5 +15518,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": ""
+        }
     }
 }

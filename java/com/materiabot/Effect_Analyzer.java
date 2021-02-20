@@ -79,9 +79,8 @@ public class Effect_Analyzer {
 					for(int i = 0; i < effects.length; i++) {
 						try {
 							if(effects[i] == -1) continue;
-							if(!Arrays.asList(331, 335, 327, 329, 58).contains(effects[i])) continue;
-							if(effects[i] == 226)
-								System.out.println(226 + " - " + uName);
+							if(!Arrays.asList(334, 229, 221, 180, 115, 57).contains(effects[i])) continue;
+							System.out.println(effects[i] + " - " + uName);
 							Ailment.EffectType eff = Ailment.EffectType.get(effects[i]);
 							if(eff == null)
 								store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ")");
@@ -97,6 +96,12 @@ public class Effect_Analyzer {
 						} catch(Exception ee) {
 							store(map, "A"+effects[i], uName + " | " + sName + "(" + skillId + ") | " + " | " + aName + "(" + aId + ") | RankData:(???)");
 						}
+					}
+					MyJSONObject[] auras = e.getObjectArray("auras");
+					for(int i = 0; i < auras.length; i++) {
+						Integer effect = auras[i].getObject("effect_data").getInt("ailment_effect");
+						if(!Arrays.asList(334, 229, 221, 180, 115, 57).contains(effect)) continue;
+						System.out.println(effect + " - " + uName);
 					}
 				}
 			}

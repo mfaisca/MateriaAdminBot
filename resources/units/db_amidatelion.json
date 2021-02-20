@@ -1,5 +1,7 @@
 {
     "id": 145,
+    "uid": 716,
+    "sid": 716,
     "profile": {
         "fullName": {
             "en": "Amidatelion",
@@ -139,12 +141,12 @@
         "id": 103,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_アミダテリオン",
             "jp": "コールアビリティ_アミダテリオン"
         },
         "rank_up_desc": {
             "en": "When using [Comet (C)]\\n• Stolen BRV can overflow up to 150% Max BRV\\n• [Action Delay Up (Yuke)] duration +2",
-            "gl": "",
+            "gl": "「コメット【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「行動負荷小アップ・「智」の民」の2ACTION期間延長",
             "jp": "「コメット【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「行動負荷小アップ・「智」の民」の2ACTION期間延長"
         },
         "ability": {
@@ -156,12 +158,12 @@
         "id": 104,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_アミダテリオン",
             "jp": "LDコールアビリティ_アミダテリオン"
         },
         "rank_up_desc": {
             "en": "When using [Crystal Idol (C)]\\n• Increases BRV gain based on MAX BRV by 40%\\n• Gained BRV can overflow up to 150% Max BRV\\n• [INT BRV Down (Yuke)] duration +2",
-            "gl": "",
+            "gl": "「クリスタルアイドル【C】」使用時\\n・最大BRVに依存したBRV加算量中アップ\\n・加算したBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「初期BRV小ダウン・「智」の民」の2ACTION期間延長",
             "jp": "「クリスタルアイドル【C】」使用時\\n・最大BRVに依存したBRV加算量中アップ\\n・加算したBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・「初期BRV小ダウン・「智」の民」の2ACTION期間延長"
         },
         "ability": {
@@ -382,6 +384,10 @@
                 "reqSecretPassives": []
             }
         ],
+        [],
+        [],
+        [],
+        [],
         []
     ],
     "triggeredAbilities": [],
@@ -399,6 +405,7 @@
                 "jp": "魔法攻撃\\n相手のBRVを奪う攻撃"
             },
             "rank": 0,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -453,6 +460,7 @@
                 "jp": "自身のBRVを消費して\\n相手のHPを削る攻撃"
             },
             "rank": 0,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 1,
             "use_count": 0,
@@ -507,6 +515,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n対象に3ACTION「行動負荷小アップ・「智」の民」付与\\n自身に3ACTION「ユークの希望」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -653,6 +662,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -752,13 +763,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1578
+                                1578,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 568,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     30,
@@ -802,6 +819,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -909,6 +928,7 @@
                 "jp": "3HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n対象に6ACTION「行動負荷小アップ・「智」の民」付与\\n自身に6ACTION「ユークの希望」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 7,
@@ -1055,6 +1075,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1154,13 +1176,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1578
+                                1578,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 568,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     30,
@@ -1204,6 +1232,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1311,6 +1341,7 @@
                 "jp": "6HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に3ACTION「行動負荷小アップ・「智」の民」付与\\n自身に3ACTION「ユークの希望」付与\\n「ユークの希望」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 7,
@@ -1539,6 +1570,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1638,13 +1671,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1578
+                                1578,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 568,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     30,
@@ -1688,6 +1727,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -1795,6 +1836,7 @@
                 "jp": "6HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に6ACTION「行動負荷小アップ・「智」の民」付与\\n自身に6ACTION「ユークの希望」付与\\n「ユークの希望」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 7,
@@ -2023,6 +2065,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2122,13 +2166,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1578
+                                1578,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 568,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     30,
@@ -2172,6 +2222,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2279,6 +2331,7 @@
                 "jp": "3HIT全体魔法BRV攻撃＋全体HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力小ダウン・「智」の民」\\n「素早さ小ダウン・「智」の民」付与\\nターゲットの次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 3,
@@ -2445,6 +2498,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2563,6 +2618,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2670,6 +2727,7 @@
                 "jp": "3HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\n与えるHPダメージは分配\\n敵全体に12ACTION「防御力小ダウン・「智」の民」\\n「素早さ小ダウン・「智」の民」付与\\nターゲットの次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 6,
             "use_count": 3,
@@ -2836,6 +2894,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -2954,6 +3014,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3061,6 +3123,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「防御力小ダウン・「智」の民」\\n「素早さ小ダウン・「智」の民」付与\\nターゲットの次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 3,
@@ -3287,6 +3350,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3405,6 +3470,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3512,6 +3579,7 @@
                 "jp": "6HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n敵全体に12ACTION「防御力小ダウン・「智」の民」\\n「素早さ小ダウン・「智」の民」付与\\nターゲットの次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 51,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 3,
@@ -3738,6 +3806,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3856,6 +3926,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -3963,6 +4035,7 @@
                 "jp": "5HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\nターゲットに付与されている弱体効果の数に応じて\\n奪ったBRVを最大BRVを超えて加算する上限アップ\\n与えるHPダメージは等倍"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 8,
             "use_count": 21000,
@@ -4171,6 +4244,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4256,8 +4331,8 @@
                             30,
                             40,
                             50,
-                            0,
-                            0,
+                            60,
+                            70,
                             0
                         ]
                     },
@@ -4278,6 +4353,7 @@
                 "jp": "5HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\nターゲットに付与されている弱体効果の数に応じて\\n奪ったBRVを最大BRVを超えて加算する上限アップ\\n与えるHPダメージは等倍\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 21000,
@@ -4508,6 +4584,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4593,8 +4671,8 @@
                             30,
                             40,
                             50,
-                            0,
-                            0,
+                            60,
+                            70,
                             0
                         ]
                     },
@@ -4615,6 +4693,7 @@
                 "jp": "5HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲットに付与されている弱体効果の数に応じて\\n奪ったBRVを最大BRVを超えて加算する上限アップ\\n与えるHPダメージは等倍\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 9,
             "use_count": 21000,
@@ -4845,6 +4924,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -4930,8 +5011,8 @@
                             30,
                             40,
                             50,
-                            0,
-                            0,
+                            60,
+                            70,
                             0
                         ]
                     },
@@ -4952,6 +5033,7 @@
                 "jp": "8HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲットに付与されている弱体効果の数に応じて\\n奪ったBRVを最大BRVを超えて加算する上限アップ\\n与えるHPダメージは等倍\\n与えたHPダメージの20％分\\n自身のBRVをアップさせる"
             },
             "rank": 0,
+            "motion": 52,
             "movement_cost": 30,
             "hit_count": 12,
             "use_count": 21000,
@@ -5242,6 +5324,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -5327,8 +5411,8 @@
                             30,
                             40,
                             50,
-                            0,
-                            0,
+                            60,
+                            70,
                             0
                         ]
                     },
@@ -5349,6 +5433,7 @@
                 "jp": "対象のBRVを1/2にし\\n自身に自身の初期BRVに依存した量のBRVを加算\\nこの攻撃では吹きとばしは発生しない"
             },
             "rank": 1,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -5427,6 +5512,7 @@
                 "jp": "対象のBRVを1/4にし\\n自身に自身の初期BRVに依存した量のBRVを加算\\nこの攻撃では吹きとばしは発生しない"
             },
             "rank": 2,
+            "motion": 30,
             "movement_cost": 30,
             "hit_count": 2,
             "use_count": 0,
@@ -5505,6 +5591,7 @@
                 "jp": "対象のBRVを3/4にし\\n自身に自身の初期BRVに依存した量のBRVを加算＋HP攻撃\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算"
             },
             "rank": 1,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -5625,6 +5712,7 @@
                 "jp": "対象のBRVを1/2にし\\n自身に自身の初期BRVに依存した量のBRVを加算＋HP攻撃\\n加算したBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに依存した量のBRVを\\n自身以外の味方全員に加算"
             },
             "rank": 2,
+            "motion": 40,
             "movement_cost": 30,
             "hit_count": 4,
             "use_count": 0,
@@ -5745,6 +5833,7 @@
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算＋全体HP攻撃\\n加算したBRVを最大BRVを超えて加算する\\n上限はそれぞれの最大BRVの150％分\\n与えるHPダメージは等倍\\n敵全体に6ACTION「初期BRV小ダウン・「智」の民」付与\\n自身に6ACTION「リザレクション」1段階付与（上限3）\\n「リザレクション」の効果は解除されても 段階は保持される\\n敵全体の次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 2,
@@ -5897,6 +5986,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -5996,13 +6087,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 525,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -6026,13 +6123,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 526,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -6056,13 +6159,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 527,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     20,
@@ -6106,6 +6215,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6213,6 +6324,7 @@
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算＋全体HP攻撃\\n加算したBRVを最大BRVを超えて加算する\\n上限はそれぞれの最大BRVの150％分\\n与えるHPダメージは等倍\\n敵全体に12ACTION「初期BRV小ダウン・「智」の民」付与\\n自身に12ACTION「リザレクション」1段階付与（上限3）\\n「リザレクション」の効果は解除されても 段階は保持される\\n敵全体の次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 2,
@@ -6365,6 +6477,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -6464,13 +6578,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 525,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -6494,13 +6614,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 526,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -6524,13 +6650,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 527,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     20,
@@ -6574,6 +6706,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6681,6 +6815,7 @@
                 "jp": "「コメット」「メガフレア」の使用回数＋1（上限あり）\\n5ACTION味方全員に「BRVリジェネ」効果を与える"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -6795,6 +6930,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -6894,13 +7031,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1650
+                                1650,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 569,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     10,
@@ -6933,6 +7076,7 @@
                 "jp": "「コメット」「メガフレア」の使用回数＋1（上限あり）\\n9ACTION味方全員に「BRVリジェネ」効果を与える"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -7047,6 +7191,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7146,13 +7292,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1650
+                                1650,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 569,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     10,
@@ -7185,6 +7337,7 @@
                 "jp": "「コメット」「メガフレア」の使用回数＋1（上限あり）\\n5ACTION味方全員に「BRVリジェネ」効果を与える"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -7299,6 +7452,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7398,13 +7553,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1650
+                                1650,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 569,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     10,
@@ -7437,6 +7598,7 @@
                 "jp": "「コメット」「メガフレア」の使用回数＋1（上限あり）\\n9ACTION味方全員に「BRVリジェネ」効果を与える"
             },
             "rank": 0,
+            "motion": 54,
             "movement_cost": 0,
             "hit_count": 3,
             "use_count": 1,
@@ -7551,6 +7713,8 @@
                         "disp_type": 7,
                         "stackable": -1,
                         "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -7650,13 +7814,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1650
+                                1650,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 569,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 3,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     10,
@@ -7689,6 +7859,7 @@
                 "jp": "ブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算＋全体HP攻撃\\n加算したBRVを最大BRVを超えて加算する\\n上限はそれぞれの最大BRVの180％分\\n与えるHPダメージは等倍\\n敵全体に12ACTION「初期BRV小ダウン・「智」の民」付与\\n自身に15ACTION「リザレクション」1段階付与（上限3）\\n「リザレクション」の効果は解除されても 段階は保持される\\n敵全体の次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 30,
             "hit_count": 5,
             "use_count": 2,
@@ -7841,6 +8012,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 3,
                         "sp_stacks": 0,
@@ -7940,13 +8113,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 525,
                                 "ailment_effect": 150,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": -1,
                                 "rank_data": [
                                     10,
@@ -7970,13 +8149,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 526,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 6,
                                 "rank_data": [
                                     20,
@@ -8000,13 +8185,19 @@
                                 -1
                             ],
                             "required_values": [
-                                1584
+                                1584,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
                             ],
                             "effect_data": {
                                 "id": 527,
                                 "ailment_effect": -1,
                                 "target_id": 1,
                                 "value_type": 2,
+                                "value_edit_type": 0,
                                 "type_id": 4,
                                 "rank_data": [
                                     20,
@@ -8050,6 +8241,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8157,6 +8350,7 @@
                 "jp": "コールされたアミダテリオンが以下の行動を行う\\n6HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\nターゲット以外にも50％分のHPダメージ\\n敵全体に2ACTION「行動負荷小アップ・「智」の民」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -8405,6 +8599,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8512,6 +8708,7 @@
                 "jp": "コールされたアミダテリオンが以下の行動を行う\\n6HIT魔法BRV攻撃＋HP攻撃\\n弱体効果が付与された対象に より大きなBRVダメージ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「行動負荷小アップ・「智」の民」付与"
             },
             "rank": 0,
+            "motion": 50,
             "movement_cost": 0,
             "hit_count": 10,
             "use_count": 1,
@@ -8760,6 +8957,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -8867,6 +9066,7 @@
                 "jp": "コールされたアミダテリオンが以下の行動を行う\\nブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算＋全体HP攻撃\\n与えるHPダメージは等倍\\n敵全体に2ACTION「初期BRV小ダウン・「智」の民」付与\\n敵全体の次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -9037,6 +9237,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -9144,6 +9346,7 @@
                 "jp": "コールされたアミダテリオンが以下の行動を行う\\nブレイク中の敵を除く 敵全体のBRVを0にし\\n味方全員に自身の最大BRVに依存した量のBRVを加算＋全体HP攻撃\\n加算したBRVを最大BRVを超えて加算する\\n上限はそれぞれの最大BRVの150％分\\n与えるHPダメージは等倍\\n敵全体に4ACTION「初期BRV小ダウン・「智」の民」付与\\n敵全体の次の行動順を消失させる"
             },
             "rank": 0,
+            "motion": 53,
             "movement_cost": 0,
             "hit_count": 6,
             "use_count": 1,
@@ -9314,6 +9517,8 @@
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
                         "removable": 0,
                         "max_stacks": 0,
                         "sp_stacks": 0,
@@ -10381,17 +10586,17 @@
             "id": 5743,
             "name": {
                 "en": "Debuff Power (C)",
-                "gl": "",
+                "gl": "Mighty Debuff (C)",
                 "jp": "デバフパワー【C】"
             },
             "desc": {
                 "en": "When using a Call Ability with BRV attacks\\n• Increases BRV damage dealt by 30% when an enemy is debuffed",
-                "gl": "",
+                "gl": "When using a call ability that includes BRV attack:\\n • Slightly increases BRV damage dealt while debuffed enemy present",
                 "jp": "BRV攻撃を含むコールアビリティ使用時\\n弱体効果が付与された敵がいる時\\n与えるBRVダメージが小アップ"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Mighty Debuff (C): Increases BRV damage dealt",
                 "jp": "デバフパワー【C】：与えるBRVダメージがアップ"
             },
             "meta_data": {
@@ -12447,6 +12652,7 @@
             ]
         },
         "burstWeapon": {},
+        "rzBurstWeapon": {},
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4071,
@@ -12949,6 +13155,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13012,7 +13220,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1683": [
@@ -13067,6 +13286,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13130,7 +13351,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1684": [
@@ -13185,6 +13417,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13248,7 +13482,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1685": [
@@ -13303,6 +13548,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 0,
                 "sp_stacks": 0,
@@ -13366,7 +13613,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1578": [
@@ -13391,13 +13649,19 @@
                         -1
                     ],
                     "required_values": [
-                        1578
+                        1578,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 568,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 3,
+                        "value_edit_type": 0,
                         "type_id": 6,
                         "rank_data": [
                             30,
@@ -13454,6 +13718,8 @@
                 "disp_type": 0,
                 "stackable": -1,
                 "extendable": 1,
+                "burst_ext": 1,
+                "range_limit": 0,
                 "removable": 0,
                 "max_stacks": 3,
                 "sp_stacks": 0,
@@ -13517,7 +13783,18 @@
                     -1,
                     -1
                 ],
-                "conditions": []
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
             },
             "rank_data": {
                 "1584": [
@@ -13542,13 +13819,19 @@
                         -1
                     ],
                     "required_values": [
-                        1584
+                        1584,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 525,
                         "ailment_effect": 150,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": -1,
                         "rank_data": [
                             10,
@@ -13572,13 +13855,19 @@
                         -1
                     ],
                     "required_values": [
-                        1584
+                        1584,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 526,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 6,
                         "rank_data": [
                             20,
@@ -13602,13 +13891,19 @@
                         -1
                     ],
                     "required_values": [
-                        1584
+                        1584,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "effect_data": {
                         "id": 527,
                         "ailment_effect": -1,
                         "target_id": 1,
                         "value_type": 2,
+                        "value_edit_type": 0,
                         "type_id": 4,
                         "rank_data": [
                             20,
@@ -13843,7 +14138,7 @@
             "id": "140050103",
             "name": {
                 "en": "",
-                "gl": "Bravery HP Damage★★",
+                "gl": "HP Damage BRV Gain★★",
                 "jp": "HPダメージBRVゲイン★★"
             },
             "desc": {
@@ -13853,7 +14148,7 @@
             },
             "short_desc": {
                 "en": "",
-                "gl": "Bravery HP Damage★★: Increases BRV",
+                "gl": "HP Damage BRV Gain★★: Increases BRV",
                 "jp": "HPダメージBRVゲイン★★：BRVが加算"
             },
             "meta_data": {
@@ -14338,7 +14633,7 @@
                 "id": 3700,
                 "name": {
                     "en": "Yuke's Hope Base All",
-                    "gl": "Yukes' Hope Initial All",
+                    "gl": "Yukes' Hope Base All",
                     "jp": "ユークの希望ベースオール"
                 },
                 "desc": {
@@ -14348,7 +14643,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Yukes' Hope Initial All: Raises party's INT BRV",
+                    "gl": "Yukes' Hope Base All: Raises party's INT BRV",
                     "jp": "ユークの希望ベースオール：味方全員の初期BRVがアップ"
                 },
                 "meta_data": {
@@ -16062,7 +16357,7 @@
                     "jp": "秘められた至宝の力エクステンド：「クリスタルアイドル」の性能アップ"
                 },
                 "meta_data": {
-                    "cp": 10,
+                    "cp": 15,
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
@@ -16115,5 +16410,11 @@
                 "auras": []
             }
         ]
+    },
+    "updates": {
+        "ldBoard": {
+            "gl": "",
+            "jp": "2020-09-04 15:00:00"
+        }
     }
 }
