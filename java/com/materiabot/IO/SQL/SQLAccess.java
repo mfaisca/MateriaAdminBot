@@ -30,7 +30,7 @@ public class SQLAccess {
 	public static final String PATREON_TT_ACCESS_TOKEN = "PATREON_TT_ACCESS_TOKEN";
 	public static final String CLEVERBOT_TOKEN_KEY = "CLEVERBOT_TOKEN_KEY"; 
 
-	static{
+	static{ 
 		try {
 			File f = new File("./resources/Configs.txt");
 			BufferedReader br = new BufferedReader(new FileReader(f));
