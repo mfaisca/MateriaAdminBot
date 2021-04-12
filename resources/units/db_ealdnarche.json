@@ -31,8 +31,8 @@
         },
         "description": {
             "en": "",
-            "jp": "不思議な力を持つ ジュノ大公の兄弟。\\n政治的判断に優れた天才児であり\\n政務に口を挟むことを許されている。\\n無邪気な少年のように振る舞うが\\nその姿は３０年以上変わっていない。\\n興味深いものには積極的に動く一方で\\n冷静な計画性も兼ね備えた人物。",
-            "gl": "The brother of the Archduke of Jeuno and wielder of a mysterious power. A genius with excellent political judgement、 he is allowed to express his opinion in government matters. While he acts like an innocent child、 his appearance has not changed for over 30 years. Though proactively pursuing that which interests him、 he also possesses the ability to plan with composure."
+            "jp": "不思議な力を持つ ジュノ大公の兄弟。政治的判断に優れた天才児であり政務に口を挟むことを許されている。無邪気な少年のように振る舞うがその姿は３０年以上変わっていない。興味深いものには積極的に動く一方で冷静な計画性も兼ね備えた人物。",
+            "gl": "The brother of the Archduke of Jeuno and wielder of a mysterious power. A genius with excellent political judgement, he is allowed to express his opinion in government matters. While he acts like an innocent child, his appearance has not changed for over 30 years. Though proactively pursuing that which interests him, he also possesses the ability to plan with composure."
         },
         "lines": {
             "jp": [
@@ -125,7 +125,11 @@
             ]
         },
         "series": 11,
-        "sort_num": 13
+        "sort_num": 13,
+        "shortName": {
+            "gl": "Eald'narche",
+            "jp": "エルドナーシュ"
+        }
     },
     "status": {},
     "defaultAbilities": [
@@ -147,7 +151,7 @@
         },
         "rank_up_desc": {
             "en": "When using [Omega Javelin (C)]\\n• Stolen BRV can overflow up to 120% Max BRV\\n• Increases HP damage dealt to non-targets by 30%\\n• [DEF Down] duration +2",
-            "gl": "「オメガジャベリン【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は最大BRVの120％分\\n・ターゲット以外に与えるHPダメージ小アップ\\n・「防御力ダウン」の2ACTION期間延長",
+            "gl": "When using Omega Javelin (C):\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Slightly increased HP damage to non-targets\\n • DEF Down duration +2",
             "jp": "「オメガジャベリン【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は最大BRVの120％分\\n・ターゲット以外に与えるHPダメージ小アップ\\n・「防御力ダウン」の2ACTION期間延長"
         },
         "ability": {
@@ -164,7 +168,7 @@
         },
         "rank_up_desc": {
             "en": "When using [Exceed Lance+ (C)]\\n• Becomes 6-HIT distributed ranged BRV attack + AoE HP attack \\n　+ 3-HIT AoE ranged BRV attack + AoE HP attack \\n　+ 3-HIT AoE ranged BRV attack + AoE HP attack (130*12)\\n• Increases total BRV potency by 100%\\n• Stolen BRV can overflow up to 200% Max BRV\\n• [Nourishment for Paradise] effects +10%",
-            "gl": "「エクシードランス＋【C】」使用時\\n・4HIT全体遠距離物理BRV 攻撃＋全体HP 攻撃が\\n　3HIT全体遠距離物理BRV 攻撃＋全体HP 攻撃\\n　＋3HIT全体遠距離物理BRV 攻撃＋全体HP 攻撃\\n　に変化し合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は最大BRVの200％分\\n・「真世界への糧」の効果小アップ",
+            "gl": "When using Exceed Lance+ (C):\\n • 4-hit group ranged BRV  attack + group HP  attack becomes 3-hit group ranged BRV  attack + group HP  attack + 3-hit group ranged BRV  attack + group HP  attack; tremendously increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 200%\\n • Slight Sustenance for Paradise effect boost",
             "jp": "「エクシードランス＋【C】」使用時\\n・4HIT全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n　に変化し合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は最大BRVの200％分\\n・「真世界への糧」の効果小アップ"
         },
         "ability": {
@@ -182,7 +186,27 @@
                 "reqWeaponPassives": [
                     1556
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    },
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 50,
@@ -192,7 +216,18 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 52,
@@ -200,7 +235,18 @@
                 "originalAbility": 2,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 48,
@@ -210,7 +256,27 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    },
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -222,7 +288,27 @@
                 "reqWeaponPassives": [
                     1556
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    },
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 51,
@@ -232,7 +318,18 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 53,
@@ -240,7 +337,18 @@
                 "originalAbility": 614,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 49,
@@ -250,7 +358,27 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    },
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1598,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -260,7 +388,18 @@
                 "originalAbility": 8013,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 31,
@@ -270,7 +409,8 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 29,
@@ -280,7 +420,18 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 28,
@@ -290,7 +441,8 @@
                     3286
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 26,
@@ -300,7 +452,18 @@
                     3286
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 25,
@@ -312,7 +475,8 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 23,
@@ -324,7 +488,18 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 33,
@@ -332,7 +507,18 @@
                 "originalAbility": 8013,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1607,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 30,
@@ -342,7 +528,18 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1607,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 27,
@@ -352,7 +549,18 @@
                     3286
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1607,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 24,
@@ -364,7 +572,18 @@
                 "reqWeaponPassives": [
                     1549
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1607,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -374,7 +593,18 @@
                 "originalAbility": 8021,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 21,
@@ -384,7 +614,8 @@
                 "reqWeaponPassives": [
                     1550
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 20,
@@ -394,7 +625,18 @@
                 "reqWeaponPassives": [
                     1550
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 19,
@@ -404,7 +646,8 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 18,
@@ -414,7 +657,18 @@
                     3288
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 17,
@@ -426,7 +680,8 @@
                 "reqWeaponPassives": [
                     1550
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 16,
@@ -438,7 +693,18 @@
                 "reqWeaponPassives": [
                     1550
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -450,7 +716,8 @@
                     3293
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 37,
@@ -460,7 +727,8 @@
                     3290
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 35,
@@ -471,7 +739,8 @@
                     3293
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 40,
@@ -479,7 +748,18 @@
                 "originalAbility": 8577,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 6,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 38,
@@ -489,7 +769,18 @@
                     3293
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 6,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 36,
@@ -499,7 +790,18 @@
                     3290
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 6,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 34,
@@ -510,7 +812,18 @@
                     3293
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 6,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -520,7 +833,18 @@
                 "originalAbility": 8029,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 14,
@@ -530,7 +854,8 @@
                 "reqWeaponPassives": [
                     1554
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 13,
@@ -540,7 +865,18 @@
                 "reqWeaponPassives": [
                     1554
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 12,
@@ -551,7 +887,8 @@
                     1554,
                     1556
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 11,
@@ -562,7 +899,18 @@
                     1554,
                     1556
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 10,
@@ -574,7 +922,8 @@
                     1556,
                     1560
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 9,
@@ -586,7 +935,18 @@
                     1556,
                     1560
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -596,7 +956,18 @@
                 "originalAbility": 11616,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 60,
@@ -606,7 +977,8 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 59,
@@ -616,7 +988,18 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 58,
@@ -628,7 +1011,8 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 57,
@@ -640,7 +1024,18 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 56,
@@ -652,7 +1047,8 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 55,
@@ -664,7 +1060,18 @@
                 "reqWeaponPassives": [
                     2182
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -674,7 +1081,18 @@
                 "originalAbility": 12721,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1553,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [],
@@ -840,7 +1258,7 @@
             },
             "desc": {
                 "en": "2-HIT AoE ranged BRV + HP attack\\nStolen BRV can overflow up to 120% Max BRV\\nDeals Full HP damage to all targets\\nRestores 100% HP\\nDoes not consume ability use\\n\\nRemoves [Exoplates] upon use and becomes [Stellar Burst]\\n• 3-HIT AoE ranged BRV + AoE HP attack\\n• Deals split HP damage between all targets\\n• All targets: 3 turns 10% [Speed Down] \\n\\nWhile [Exoplates] is active\\n• Lowers BRV damage taken by 50%\\n• Lowers HP damage taken by 50%\\n• Increases Debuff Evasion Rate by 100%\\n• Enemy attacks will not reduce HP below 1\\n• Restores 100% HP if HP less than 1% of MAX; removes [Exoplates]",
-                "gl": "2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない\\n使用後特殊効果「Exoplates」解除\\n特殊効果「Exoplates」解除後「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -1044,7 +1462,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -1056,7 +1474,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -1164,7 +1587,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -1176,7 +1599,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -1412,7 +1840,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -1526,7 +1959,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "2-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない\\n使用後特殊効果「Exoplates」解除\\n特殊効果「Exoplates」解除後「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -1730,7 +2163,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -1742,7 +2175,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -1850,7 +2288,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -1862,7 +2300,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -2098,7 +2541,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -2212,7 +2660,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない 行動負荷がない\\n総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n使用後特殊効果「Exoplates」解除し 「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 1,
@@ -2476,7 +2924,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -2488,7 +2936,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -2596,7 +3049,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -2608,7 +3061,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -2884,7 +3342,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -2998,7 +3461,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍 自身のHPを極大回復\\n使用回数を消費しない 行動負荷がない\\n総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n使用後特殊効果「Exoplates」解除し 「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 1,
@@ -3262,7 +3725,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -3274,7 +3737,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -3382,7 +3850,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -3394,7 +3862,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -3670,7 +4143,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -3784,7 +4262,7 @@
             },
             "desc": {
                 "en": "2-HIT ranged BRV + HP attack\\nDeals 20% HP damage to non-targets\\nAll targets: 3 turns 20% [Attack Down] \\nSelf: 4 turns [Mulled Cunning] \\n\\nUpon [Exoplates] removal\\n• Recovers all ability uses, becomes [Omega Javelin]\\n　∟ 3-HIT ranged BRV + HP attack\\n　∟ Deals 20% HP damage to non-targets\\n　∟ All targets: 1 turn [Warp]; 3 turns 20% [Defense Down]\\n　∟ Self: 4 turns [Mulled Cunning]\\n\\n* [Warp] grants an additional turn after any afflicted target's turn\\n* Granted turns do not increase turn count",
-                "gl": "2-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll targets: 3 turns ATK Down I\\nSelf: 4 turns Mulled Cunning\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
+                "gl": "2-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll enemies: 3 turns ATK Down I\\nSelf: 4 turns Mulled Cunning\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
                 "jp": "2HIT遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ\\n敵全体に3ACTION「攻撃力小ダウン」付与\\n自身に4ACTION「巡らされた智謀」付与\\n\\n特殊効果「Exoplates」解除後\\n「ウラノスカスケード」の使用回数を全回復し\\n「オメガジャベリン」に変化"
             },
             "rank": 0,
@@ -3928,7 +4406,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -4048,7 +4531,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -4162,7 +4650,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "3-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll targets: 1 turn Warp; 3 turns DEF Down I\\nSelf: 4 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn",
+                "gl": "3-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll enemies: 1 turn Warp; 3 turns DEF Down I\\nSelf: 4 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn",
                 "jp": "3HIT遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ\\n敵全体に1ACTION「ワープ」\\n3ACTION「防御力小ダウン」付与\\n自身に4ACTION「巡らされた智謀」付与\\n自身の付与した「ワープ」が\\n付与されている対象の行動後に\\n総ACTION数に加算されずに追加行動が可能\\n追加行動後 元の行動順に戻る"
             },
             "rank": 0,
@@ -4326,7 +4814,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -4446,7 +4939,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -4566,7 +5064,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -4680,7 +5183,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll targets: 6 turns ATK Down II\\nSelf: 4 turns Mulled Cunning\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
+                "gl": "2-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll enemies: 6 turns ATK Down II\\nSelf: 4 turns Mulled Cunning\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
                 "jp": "2HIT遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ\\n敵全体に6ACTION「攻撃力中ダウン」付与\\n自身に4ACTION「巡らされた智謀」付与\\n\\n特殊効果「Exoplates」解除後\\n「ウラノスカスケード」の使用回数を全回復し\\n「オメガジャベリン」に変化"
             },
             "rank": 0,
@@ -4824,7 +5327,12 @@
                         "rate": 100,
                         "rank": 6,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -4944,7 +5452,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -5058,7 +5571,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "3-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll targets: 2 turns Warp; 6 turns DEF Down II\\nSelf: 4 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn",
+                "gl": "3-hit ranged BRV attack + HP attack\\nDeals 20% HP damage to non-targets\\nAll enemies: 2 turns Warp; 6 turns DEF Down II\\nSelf: 4 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn",
                 "jp": "3HIT遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ\\n敵全体に2ACTION「ワープ」\\n6ACTION「防御力中ダウン」付与\\n自身に4ACTION「巡らされた智謀」付与\\n自身の付与した「ワープ」が\\n付与されている対象の行動後に\\n総ACTION数に加算されずに追加行動が可能\\n追加行動後 元の行動順に戻る"
             },
             "rank": 0,
@@ -5222,7 +5735,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -5342,7 +5860,12 @@
                         "rate": 100,
                         "rank": 8,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -5462,7 +5985,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -5576,7 +6104,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nAll targets: 3 turns ATK Down I\\nSelf: 8 turns Mulled Cunning\\n\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Mulled Cunning active\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
+                "gl": "4-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nAll enemies: 3 turns ATK Down I\\nSelf: 8 turns Mulled Cunning\\n\\nWhile Mulled Cunning active:\\n • BRV Attack becomes BRV Attack+\\n • HP Attack becomes HP Attack+\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
                 "jp": "4HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に3ACTION「攻撃力小ダウン」付与\\n自身に8ACTION「巡らされた智謀」付与\\n\\n「巡らされた智謀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化\\n\\n特殊効果「Exoplates」解除後\\n「ウラノスカスケード」の使用回数を全回復し\\n「オメガジャベリン」に変化"
             },
             "rank": 0,
@@ -5760,7 +6288,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -5880,7 +6413,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -5994,7 +6532,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "5-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nAll targets: 1 turn Warp; 3 turns DEF Down I\\nSelf: 8 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn\\n\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Mulled Cunning active",
+                "gl": "5-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nAll enemies: 1 turn Warp; 3 turns DEF Down I\\nSelf: 8 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn\\n\\nWhile Mulled Cunning active:\\n • BRV Attack becomes BRV Attack+\\n • HP Attack becomes HP Attack+",
                 "jp": "5HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に1ACTION「ワープ」\\n3ACTION「防御力小ダウン」付与\\n自身に8ACTION「巡らされた智謀」付与\\n自身の付与した「ワープ」が\\n付与されている対象の行動後に\\n総ACTION数に加算されずに追加行動が可能\\n追加行動後 元の行動順に戻る\\n\\n「巡らされた智謀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
@@ -6198,7 +6736,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -6318,7 +6861,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -6438,7 +6986,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -6552,7 +7105,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nAll targets: 6 turns ATK Down II\\nSelf: 8 turns Mulled Cunning\\n\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Mulled Cunning active\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
+                "gl": "4-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 50% HP damage to non-targets\\nAll enemies: 6 turns ATK Down II\\nSelf: 8 turns Mulled Cunning\\n\\nWhile Mulled Cunning active:\\n • BRV Attack becomes BRV Attack+\\n • HP Attack becomes HP Attack+\\n\\nAfter special effect Exoplates canceled:\\n • Resets use count of Uranos Cascade\\n • Becomes Omega Javelin",
                 "jp": "4HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に6ACTION「攻撃力中ダウン」付与\\n自身に8ACTION「巡らされた智謀」付与\\n\\n「巡らされた智謀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化\\n\\n特殊効果「Exoplates」解除後\\n「ウラノスカスケード」の使用回数を全回復し\\n「オメガジャベリン」に変化"
             },
             "rank": 0,
@@ -6736,7 +7289,12 @@
                         "rate": 100,
                         "rank": 6,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -6856,7 +7414,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -6970,7 +7533,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "5-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nAll targets: 2 turns Warp; 6 turns DEF Down II\\nSelf: 8 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn\\n\\nBRV Attack becomes BRV Attack+, HP Attack becomes HP Attack+ while Mulled Cunning active",
+                "gl": "5-hit ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 180%\\nDeals 50% HP damage to non-targets\\nAll enemies: 2 turns Warp; 6 turns DEF Down II\\nSelf: 8 turns Mulled Cunning\\nGrants additional turn after turn of target afflicted with Warp; does not add to turn count; turn order returns to normal after additional turn\\n\\nWhile Mulled Cunning active:\\n • BRV Attack becomes BRV Attack+\\n • HP Attack becomes HP Attack+",
                 "jp": "5HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に2ACTION「ワープ」\\n6ACTION「防御力中ダウン」付与\\n自身に8ACTION「巡らされた智謀」付与\\n自身の付与した「ワープ」が\\n付与されている対象の行動後に\\n総ACTION数に加算されずに追加行動が可能\\n追加行動後 元の行動順に戻る\\n\\n「巡らされた智謀」付与中\\n通常「BRV攻撃」が「BRV攻撃＋」に\\n通常「HP攻撃」が「HP攻撃＋」に変化"
             },
             "rank": 0,
@@ -7174,7 +7737,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -7294,7 +7862,12 @@
                         "rate": 100,
                         "rank": 8,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -7414,7 +7987,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -7867,7 +8445,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -7975,8 +8558,8 @@
                     "cast_id": 1588,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "第3エルドナーシュ＋用内部バフ"
+                        "gl": "HP Damage Up",
+                        "jp": "与えるHPダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -7987,7 +8570,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -8440,7 +9028,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -8548,8 +9141,8 @@
                     "cast_id": 1588,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "第3エルドナーシュ＋用内部バフ"
+                        "gl": "HP Damage Up",
+                        "jp": "与えるHPダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -8560,7 +9153,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -8818,7 +9416,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -8830,7 +9428,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -8938,7 +9541,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -8950,7 +9553,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -9208,7 +9816,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -9220,7 +9828,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -9328,7 +9941,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -9340,7 +9953,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -9799,7 +10417,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -9907,8 +10530,8 @@
                     "cast_id": 1588,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "第3エルドナーシュ＋用内部バフ"
+                        "gl": "HP Damage Up",
+                        "jp": "与えるHPダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -9919,7 +10542,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -10492,7 +11120,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -10600,8 +11233,8 @@
                     "cast_id": 1588,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "第3エルドナーシュ＋用内部バフ"
+                        "gl": "HP Damage Up",
+                        "jp": "与えるHPダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -10612,7 +11245,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -11106,7 +11744,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -11302,7 +11945,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -11498,7 +12146,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -11694,7 +12347,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -11952,7 +12610,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -11964,7 +12622,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -12084,7 +12747,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -12192,7 +12860,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -12204,7 +12872,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -12462,7 +13135,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -12474,7 +13147,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -12594,7 +13272,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -12702,7 +13385,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -12714,7 +13397,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -13400,7 +14088,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -13596,7 +14289,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -13792,7 +14490,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -13988,7 +14691,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -14102,7 +14810,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない\\n使用後特殊効果「Exoplates」解除\\n特殊効果「Exoplates」解除後「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -14306,7 +15014,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -14318,7 +15026,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -14438,7 +15151,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -14546,7 +15264,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -14558,7 +15276,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -14672,7 +15395,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "2-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない\\n使用後特殊効果「Exoplates」解除\\n特殊効果「Exoplates」解除後「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -14876,7 +15599,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -14888,7 +15611,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -15008,7 +15736,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -15116,7 +15849,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -15128,7 +15861,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -15242,7 +15980,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍\\n自身のHPを極大回復\\n使用回数を消費しない 行動負荷がない\\n総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n使用後特殊効果「Exoplates」解除し 「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -15506,7 +16244,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -15518,7 +16256,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -15638,7 +16381,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -15746,7 +16494,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -15758,7 +16506,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -15872,7 +16625,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\nBecomes Stellar Burst after special effect Exoplates canceled\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
+                "gl": "4-hit group ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals total HP damage to each target\\nTremendously restores own HP\\nDoes not consume ability use count\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\nCancels special effect Exoplates after use\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Stellar Burst\\n\\nWhile special effect Exoplates active:\\n • Reduces BRV damage taken\\n • Reduces HP damage taken\\n • Tremendously reduces occurrence of debuffs\\n • Enemy attacks will not reduce HP below 1\\n • Tremendously restores own HP, cancels special effect Exoplates while HP less than 1% of MAX",
                 "jp": "4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは等倍 自身のHPを極大回復\\n使用回数を消費しない 行動負荷がない\\n総ACTION数に加算されない\\nバーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n使用後特殊効果「Exoplates」解除し 「ステラバースト」に変化\\n特殊効果「Exoplates」付与中 以下の効果が発動\\n・自身の受けるBRVダメージ軽減\\n・自身の受けるHPダメージ軽減\\n・自身の弱体回避率極大アップ\\n・敵の攻撃でHPダメージを受けても必ず1残る\\n・自身のHPが最大HPの1％未満の時\\n 自身のHPを極大回復し 特殊効果「Exoplates」解除"
             },
             "rank": 0,
@@ -16136,7 +16889,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -16148,7 +16901,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -16268,7 +17026,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -16376,7 +17139,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -16388,7 +17151,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -16497,12 +17265,12 @@
             "id": 11616,
             "name": {
                 "en": "Exceed Lance",
-                "gl": "",
+                "gl": "Exceed Lance",
                 "jp": "エクシードランス"
             },
             "desc": {
                 "en": "6-HIT distributed ranged BRV attack\\n+ 2-HIT AoE ranged BRV attack + AoE HP attack\\nStolen BRV can overflow up to 200% Max BRV\\nDeals split HP damage between all targets\\nAll targets: 3 turns [Nourishment for Paradise]\\nDoes not consume use count on next turn (excl. some abilities)\\n\\nUpon [Exoplates] removal\\n• Becomes [Exceed Lance+]\\n　∟ 6-HIT distributed ranged BRV attack + AoE HP attack (90% per hit)\\n　∟ + 4-HIT AoE ranged BRV attack + AoE HP attack (80% per hit)\\n　∟ Stolen BRV can overflow up to 200% Max BRV\\n　∟ Deals split HP damage between all targets\\n　∟ All targets: 3 turns [Nourishment for Paradise]\\n　∟ Does not consume use count on next turn (excl. some abilities)",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack\\nAttacks distributed based on number of enemies\\n2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 3 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Exceed Lance+",
                 "jp": "6HIT遠距離物理BRV攻撃\\n敵の数に応じて攻撃対象は分散\\n＋2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に3ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n特殊効果「Exoplates」解除後\\n「エクシードランス＋」に変化"
             },
             "rank": 1,
@@ -16732,19 +17500,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "Nourishment for Paradise",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "Nourishment for Paradise: Lowers Defense by 20%; steals BRV by 10% Max BRV",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -16864,7 +17637,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -16973,12 +17751,12 @@
             "id": 11617,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+",
                 "jp": "エクシードランス＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack + group HP attack\\nBRV attacks distributed based on number of enemies\\n4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 3 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)",
                 "jp": "6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に3ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 2,
@@ -17268,19 +18046,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -17400,7 +18183,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -17509,12 +18297,12 @@
             "id": 11618,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance",
                 "jp": "エクシードランス"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack\\nAttacks distributed based on number of enemies\\n2-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 6 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Exceed Lance+",
                 "jp": "6HIT遠距離物理BRV攻撃\\n敵の数に応じて攻撃対象は分散\\n＋2HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n特殊効果「Exoplates」解除後\\n「エクシードランス＋」に変化"
             },
             "rank": 1,
@@ -17744,19 +18532,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -17876,7 +18669,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -17985,12 +18783,12 @@
             "id": 11619,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+",
                 "jp": "エクシードランス＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack + group HP attack\\nBRV attacks distributed based on number of enemies\\n4-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 6 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)",
                 "jp": "6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に6ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 2,
@@ -18280,19 +19078,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -18412,7 +19215,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -18521,12 +19329,12 @@
             "id": 11620,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance",
                 "jp": "エクシードランス"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack\\nAttacks distributed based on number of enemies\\nGroup ranged BRV attack + group HP attack\\n3-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 8 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Exceed Lance+",
                 "jp": "6HIT遠距離物理BRV攻撃\\n敵の数に応じて攻撃対象は分散\\n＋全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に8ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n特殊効果「Exoplates」解除後\\n「エクシードランス＋」に変化"
             },
             "rank": 1,
@@ -18816,19 +19624,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -18948,7 +19761,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -19057,12 +19875,12 @@
             "id": 11621,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+",
                 "jp": "エクシードランス＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack + group HP attack\\nBRV attacks distributed based on number of enemies\\n3-hit group ranged BRV attack + group HP attack\\n3-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 8 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)",
                 "jp": "6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に8ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）"
             },
             "rank": 2,
@@ -19412,19 +20230,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -19544,7 +20367,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -19653,12 +20481,12 @@
             "id": 10019,
             "name": {
                 "en": "Omega Javelin (C)",
-                "gl": "",
+                "gl": "Omega Javelin (C)",
                 "jp": "オメガジャベリン【C】"
             },
             "desc": {
                 "en": "When called for assistance, Eald'narche performs the following actions\\n• Removes [Exoplate]\\n• 5-HIT ranged BRV + HP attack (50% per hit)\\n• Deals 20% HP damage to non-targets\\n• All targets: 2 turns 40% [DEF Down]\\n\\n3 turns Call Effect\\n• Caller: Raises Max BRV, Attack by 40%",
-                "gl": "",
+                "gl": "Eald'narche's ability when called:\\n • Cancels special effect Exoplates\\n • 5-hit ranged BRV attack + HP attack\\n • Deals 20% HP damage to non-targets\\n • All enemies: 2 turns DEF Down II\\n\\nSpecial effect for 3 turns after use:\\n • Grants character who called Eald'narche MAX BRV Up II, ATK Up II effect",
                 "jp": "コールされたエルドナーシュが以下の行動を行う\\n特殊効果「Exoplates」解除し\\n5HIT遠距離物理BRV攻撃＋HP攻撃\\nターゲット以外にも20％分のHPダメージ\\n敵全体に2ACTION「防御力中ダウン」付与\\n\\n使用後特殊効果：3ACTION\\nエルドナーシュをコールしたキャラクターに\\n「最大BRV中アップ」「攻撃力中アップ」の効果"
             },
             "rank": 0,
@@ -19772,7 +20600,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -19784,7 +20612,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -19892,7 +20725,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -19904,7 +20737,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -20013,12 +20851,12 @@
             "id": 10020,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Omega Javelin (C)",
                 "jp": "オメガジャベリン【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Eald'narche's ability when called:\\n • Cancels special effect Exoplates\\n • 5-hit ranged BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Deals 50% HP damage to non-targets\\n • All enemies: 4 turns DEF Down II\\n\\nSpecial effect for 3 turns after use:\\n • Grants character who called Eald'narche MAX BRV Up II, ATK Up II effect",
                 "jp": "コールされたエルドナーシュが以下の行動を行う\\n特殊効果「Exoplates」解除し\\n5HIT遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\nターゲット以外にも50％分のHPダメージ\\n敵全体に4ACTION「防御力中ダウン」付与\\n\\n使用後特殊効果：3ACTION\\nエルドナーシュをコールしたキャラクターに\\n「最大BRV中アップ」「攻撃力中アップ」の効果"
             },
             "rank": 0,
@@ -20132,7 +20970,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -20144,7 +20982,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -20252,7 +21095,7 @@
                     "cast_id": 1267,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Production Dummy Buff 73",
                         "jp": "演出用ダミーバフ73"
                     },
                     "desc": {
@@ -20264,7 +21107,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -20373,12 +21221,12 @@
             "id": 11622,
             "name": {
                 "en": "Exceed Lance+ (C)",
-                "gl": "",
+                "gl": "Exceed Lance+ (C)",
                 "jp": "エクシードランス＋【C】"
             },
             "desc": {
                 "en": "When called for assistance, Eald'narche performs the following actions\\n• Removes [Exoplate]\\n• 6-HIT distributed ranged BRV attack + AoE HP attack (150*6)\\n• + 4-HIT AoE ranged BRV attack + AoE HP attack (140*4)\\n• Deals split HP damage between all targets\\n• All targets: 4 turns [Nourishment for Paradise]",
-                "gl": "",
+                "gl": "Eald'narche's ability when called:\\n • Cancels special effect Exoplates\\n • 6-hit ranged BRV attack + group HP attack\\n • BRV attacks distributed based on number of enemies\\n • 4-hit group ranged BRV attack + group HP attack\\n • Deals proportionate HP damage to each target\\n • All targets: 4 turns Sustenance for Paradise",
                 "jp": "コールされたエルドナーシュが以下の行動を行う\\n特殊効果「Exoplates」解除し\\n6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋4HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n敵全体に4ACTION「真世界への糧」付与"
             },
             "rank": 0,
@@ -20492,7 +21340,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -20504,7 +21352,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -20613,12 +21466,12 @@
             "id": 11623,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+ (C)",
                 "jp": "エクシードランス＋【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Eald'narche's ability when called:\\n • Cancels special effect Exoplates\\n • 6-hit ranged BRV attack + group HP attack\\n • BRV attacks distributed based on number of enemies\\n • 3-hit group ranged BRV attack + group HP attack\\n • 3-hit group ranged BRV attack + group HP attack\\n • Stolen BRV may exceed MAX BRV up to 200%\\n • Deals proportionate HP damage to each target\\n • All targets: 4 turns Sustenance for Paradise",
                 "jp": "コールされたエルドナーシュが以下の行動を行う\\n特殊効果「Exoplates」解除し\\n6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に4ACTION「真世界への糧」付与"
             },
             "rank": 0,
@@ -20732,7 +21585,7 @@
                     "cast_id": 1516,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Eald'narche S2 Morphing Buff",
                         "jp": "エルドナーシュ第2形態変化バフ"
                     },
                     "desc": {
@@ -20744,7 +21597,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": -1
                     },
                     "type_data": {
@@ -20853,12 +21711,12 @@
             "id": 11652,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Omega Javelin (C)",
                 "jp": "オメガジャベリン【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Triggered Call Eald'narche",
                 "jp": "追加発動用コールエルドナーシュ"
             },
             "rank": 0,
@@ -21062,7 +21920,12 @@
                         "rate": 100,
                         "rank": 8,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -21170,19 +22033,24 @@
                     "cast_id": 1810,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Omega Javelin (C)",
                         "jp": "オメガジャベリン【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Omega Javelin (C)",
                         "jp": "コールアビリティ「オメガジャベリン【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -21291,12 +22159,12 @@
             "id": 11653,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Omega Javelin (C)",
                 "jp": "オメガジャベリン【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Triggered Stronger Call Eald'narche",
                 "jp": "追加発動用強化コールエルドナーシュ"
             },
             "rank": 0,
@@ -21500,7 +22368,12 @@
                         "rate": 100,
                         "rank": 8,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -21608,19 +22481,24 @@
                     "cast_id": 1810,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Omega Javelin (C)",
                         "jp": "オメガジャベリン【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Omega Javelin (C)",
                         "jp": "コールアビリティ「オメガジャベリン【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -21729,12 +22607,12 @@
             "id": 11654,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+ (C)",
                 "jp": "エクシードランス＋【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Triggered LD Call Eald'narche",
                 "jp": "追加発動用LDコールエルドナーシュ"
             },
             "rank": 0,
@@ -22024,19 +22902,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -22145,12 +23028,12 @@
             "id": 11655,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+ (C)",
                 "jp": "エクシードランス＋【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Triggered Stronger LD Call Eald'narche",
                 "jp": "追加発動用強化LDコールエルドナーシュ"
             },
             "rank": 0,
@@ -22500,19 +23383,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -22621,12 +23509,12 @@
             "id": 12720,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance",
                 "jp": "エクシードランス"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack\\nAttacks distributed based on number of enemies\\nGroup ranged BRV attack + group HP attack\\n3-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 2 turns Warp; 8 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nAfter special effect Exoplates canceled:\\n • Becomes Exceed Lance+\\n\\nWhen inflicting debuff on target:\\n • Self: 6 turns Exceed Lance buff",
                 "jp": "6HIT遠距離物理BRV攻撃\\n敵の数に応じて攻撃対象は分散\\n＋全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に2ACTION「ワープ」8ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n特殊効果「Exoplates」解除後\\n「エクシードランス＋」に変化\\n\\n自身が対象に弱体効果付与時\\n自身に6ACTION強化効果「エクシードランス」付与"
             },
             "rank": 1,
@@ -22916,19 +23804,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -23048,7 +23941,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -23168,7 +24066,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -23277,12 +24180,12 @@
             "id": 12779,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exceed Lance+",
                 "jp": "エクシードランス＋"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "6-hit ranged BRV attack + group HP attack\\nBRV attacks distributed based on number of enemies\\n3-hit group ranged BRV attack + group HP attack\\n3-hit group ranged BRV attack + group HP attack\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nAll targets: 2 turns Warp; 8 turns Sustenance for Paradise\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nWhen inflicting debuff on target:\\n • Self: 6 turns Exceed Lance buff",
                 "jp": "6HIT遠距離物理BRV攻撃＋全体HP攻撃\\n敵の数に応じてBRV攻撃対象は分散\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n敵全体に2ACTION「ワープ」8ACTION「真世界への糧」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない\\n（一部のアビリティを除く）\\n\\n自身が対象に弱体効果付与時\\n自身に6ACTION強化効果「エクシードランス」付与"
             },
             "rank": 2,
@@ -23632,19 +24535,24 @@
                     "cast_id": 2385,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Nourishment for Paradise",
                         "jp": "真世界への糧"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise: Effects a certain amount of BRV damage; lowers DEF",
                         "jp": "真世界への糧：一定量のBRVダメージが発生し 防御力が減少する"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -23764,7 +24672,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -23884,7 +24797,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -24390,7 +25308,7 @@
                     "cast_id": 2465,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Divine Might",
                         "jp": "神威"
                     },
                     "desc": {
@@ -24402,7 +25320,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -25053,7 +25976,7 @@
                     "cast_id": 2465,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Divine Might",
                         "jp": "神威"
                     },
                     "desc": {
@@ -25065,7 +25988,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -26262,7 +27190,7 @@
             },
             "desc": {
                 "en": "When using a Call Ability that applies a debuff\\n• Raises own Max BRV by 10% for 6 turns after inflicting a debuff",
-                "gl": "When using Call Ability and successfully inflicting debuff:\\n • Slightly raises own MAX BRV for 6 turns",
+                "gl": "When using call ability that inflicts debuff:\\n • Slightly raises own MAX BRV for 6 turns when successfully inflicting debuff",
                 "jp": "弱体効果を付与するコールアビリティ使用時\\n弱体効果の付与に成功した時\\n6ACTION自身の最大BRVを小アップ"
             },
             "short_desc": {
@@ -28048,17 +28976,17 @@
                 "id": 2180,
                 "name": {
                     "en": "The Celestial Nexus",
-                    "gl": "",
+                    "gl": "Celestial Nexus",
                     "jp": "宿星の座"
                 },
                 "desc": {
                     "en": "May equip LD Ability [Exceed Lance]",
-                    "gl": "",
+                    "gl": "May equip LD ability Exceed Lance",
                     "jp": "LDアビリティ「エクシードランス」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Celestial Nexus: May equip Exceed Lance",
                     "jp": "宿星の座：「エクシードランス」装備可能"
                 },
                 "meta_data": {
@@ -28103,17 +29031,17 @@
                     "id": 2181,
                     "name": {
                         "en": "Exceed Lance Power",
-                        "gl": "",
+                        "gl": "Exceed Lance Power",
                         "jp": "エクシードランスパワー"
                     },
                     "desc": {
                         "en": "• Raises Max BRV by 10%, Attack by 20%\\n• [Exceed Lance], [Exceed Lance+] BRV damage dealt +10%",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, ATK\\n\\nSlightly increases BRV damage dealt with Exceed Lance, Exceed Lance+",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エクシードランス」「エクシードランス＋」の与える\\n　BRVダメージを小アップ"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Exceed Lance Power: Increases BRV damage dealt with Exceed Lance, Exceed Lance+",
                         "jp": "エクシードランスパワー：「エクシードランス」「エクシードランス＋」のBRVダメージがアップ"
                     },
                     "meta_data": {
@@ -28176,17 +29104,17 @@
                     "id": 2182,
                     "name": {
                         "en": "Nourishment for Paradise Long",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise Longer",
                         "jp": "真世界への糧ロング"
                     },
                     "desc": {
                         "en": "• Raises Max BRV by 10%, Attack by 20%\\n• [Nourishment for Paradise] duration +3",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, ATK\\n\\nWhen using Exceed Lance, Exceed Lance+:\\n • Sustenance for Paradise duration +3",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エクシードランス」「エクシードランス＋」使用時\\n　「真世界への糧」の3ACTION期間延長"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Sustenance for Paradise Longer: Sustenance for Paradise duration+",
                         "jp": "真世界への糧ロング：「真世界への糧」の期間延長"
                     },
                     "meta_data": {
@@ -28240,17 +29168,17 @@
                     "id": 2183,
                     "name": {
                         "en": "Exceed Lance Charge",
-                        "gl": "",
+                        "gl": "Charged Exceed Lance",
                         "jp": "エクシードランスチャージ"
                     },
                     "desc": {
                         "en": "• Raises Max BRV by 10%, Attack by 20%\\n• [Exceed Lance] use +1",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, ATK\\n\\nExceed Lance use +1",
                         "jp": "・自身の最大BRVと攻撃力を小アップ\\n・「エクシードランス」の使用回数＋1"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Charged Exceed Lance: Exceed Lance use +1",
                         "jp": "エクシードランスチャージ：「エクシードランス」の使用回数＋1"
                     },
                     "meta_data": {
@@ -28316,7 +29244,7 @@
             "series_id": 11,
             "name": {
                 "en": "Divine Might",
-                "gl": "",
+                "gl": "Divine Might (XI)",
                 "jp": "神威【XI】"
             },
             "status": {
@@ -28729,17 +29657,17 @@
                 "id": 537,
                 "name": {
                     "en": "Tactics's Keystone",
-                    "gl": "Tactics's Keystone",
+                    "gl": "Tactics' Keystone",
                     "jp": "策略の要"
                 },
                 "desc": {
                     "en": "Lowers all enemies' INT BRV, MAX BRV, ATK by 10%, DEF by 20%\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "Lowers all enemies' INT BRV, MAX BRV, ATK by 10%, DEF by 20%\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 10% (up to 109998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "Lowers all enemies' INT BRV, MAX BRV, ATK by 10%, DEF by 20%\\n\\nHeld bravery, HP damage dealt can exceed limit of 99999 by 10% (up to 109998)\\n*Only valid when effect breaking limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・敵全体の初期BRV 最大BRV 攻撃力10％ダウンと防御力20％ダウン\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Tactics's Keystone: Lowers all enemies' INT BRV, MAX BRV, ATK, DEF; raises own BRV capacity, HP damage limit (when BRV exceeds 99999)",
+                    "gl": "Tactics' Keystone: Lowers all enemies' INT BRV, MAX BRV, ATK, DEF; raises own BRV capacity, HP damage limit (when BRV exceeds 99999)",
                     "jp": "策略の要：敵全体の初期BRV 最大BRV 攻撃力 防御力ダウンし 自身の所持可能BRVと与えるHPダメージ上限上昇（BRVが99999を超える場合のみ）"
                 },
                 "meta_data": {
@@ -28861,7 +29789,7 @@
             "series_id": 11,
             "name": {
                 "en": "Eald'narche Model+",
-                "gl": "",
+                "gl": "Eald'narche's Robe (XI)+",
                 "jp": "エルドナーシュモデル【XI】+"
             },
             "status": {
@@ -29163,13 +30091,13 @@
             "cast_id": 1467,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exoplates",
                 "jp": "Exoplates"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "Exoplates"
+                "jp": "「Exoplates」の効果"
             },
             "meta_data": {
                 "target": 2,
@@ -29195,7 +30123,8 @@
                 ],
                 "duration": -1,
                 "arguments": [
-                    8099
+                    8099,
+                    0
                 ]
             },
             "type_data": {
@@ -29376,13 +30305,13 @@
             "cast_id": 1467,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Exoplates",
                 "jp": "Exoplates"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "Exoplates"
+                "jp": "「Exoplates」の効果"
             },
             "meta_data": {
                 "target": 2,
@@ -29408,7 +30337,8 @@
                 ],
                 "duration": -1,
                 "arguments": [
-                    8609
+                    8609,
+                    0
                 ]
             },
             "type_data": {
@@ -29613,7 +30543,10 @@
                     }
                 ],
                 "duration": 8,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -29720,13 +30653,13 @@
             "cast_id": 1569,
             "name": {
                 "en": "",
-                "gl": "",
-                "jp": "Exoplates(非表示)"
+                "gl": "Exoplates",
+                "jp": "Exoplates"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "Exoplates(非表示)"
+                "jp": "「Exoplates」の効果"
             },
             "meta_data": {
                 "target": 2,
@@ -29751,7 +30684,10 @@
                     }
                 ],
                 "duration": -1,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -31802,17 +32738,17 @@
                 "id": 5924,
                 "name": {
                     "en": "Exceed Lance Power Lv9",
-                    "gl": "",
+                    "gl": "Exceed Lance Power Lv9",
                     "jp": "エクシードランスパワー Lv9"
                 },
                 "desc": {
                     "en": "Increases BRV damage dealt with [Exceed Lance], [Exceed Lance+] by 10％",
-                    "gl": "",
+                    "gl": "When using Exceed Lance, Exceed Lance+:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「エクシードランス」「エクシードランス＋」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Exceed Lance Power: Boost to Exceed Lance",
                     "jp": "エクシードランスパワー：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {
@@ -31892,17 +32828,17 @@
                 "id": 5925,
                 "name": {
                     "en": "Exceed Lance BRV Attack Advance Lv9",
-                    "gl": "",
+                    "gl": "Exceed Lance BRV Attack Advance Lv9",
                     "jp": "エクシードランスBRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "Increases stolen BRV overflow limit of [Exceed Lance], [Exceed Lance+] by 20％",
-                    "gl": "",
+                    "gl": "When using Exceed Lance, Exceed Lance+:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「エクシードランス」「エクシードランス＋」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Exceed Lance BRV Attack Advance: Boost to Exceed Lance",
                     "jp": "エクシードランスBRVアタックアドバンス：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {
@@ -31982,17 +32918,17 @@
                 "id": 5926,
                 "name": {
                     "en": "Exceed Lance Critical Power Lv9",
-                    "gl": "",
+                    "gl": "Exceed Lance Critical Power Lv9",
                     "jp": "エクシードランスクリティカルパワー Lv9"
                 },
                 "desc": {
                     "en": "Increases critical BRV damage dealt with [Exceed Lance], [Exceed Lance+] by 10％",
-                    "gl": "",
+                    "gl": "When using Exceed Lance, Exceed Lance+:\\n • Increases BRV damage dealt with critical hits by 10％",
                     "jp": "「エクシードランス」「エクシードランス＋」使用時\\nクリティカルヒット時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Exceed Lance Critical Power: Boost to Exceed Lance",
                     "jp": "エクシードランスクリティカルパワー：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {
@@ -32072,17 +33008,17 @@
                 "id": 5927,
                 "name": {
                     "en": "Exceed Lance Power II",
-                    "gl": "",
+                    "gl": "Exceed Lance Power II",
                     "jp": "エクシードランスパワーII"
                 },
                 "desc": {
                     "en": "Increases BRV damage dealt with [Exceed Lance], [Exceed Lance+] by 5％",
-                    "gl": "",
+                    "gl": "When using Exceed Lance, Exceed Lance+:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「エクシードランス」「エクシードランス＋」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Exceed Lance Power II: Boost to Exceed Lance",
                     "jp": "エクシードランスパワーII：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {
@@ -32162,17 +33098,17 @@
                 "id": 5928,
                 "name": {
                     "en": "Exceed Lance BRV Attack Advance II",
-                    "gl": "",
+                    "gl": "Exceed Lance BRV Attack Advance II",
                     "jp": "エクシードランスBRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "Increases stolen BRV overflow limit of [Exceed Lance], [Exceed Lance+] by 10％",
-                    "gl": "",
+                    "gl": "When using Exceed Lance, Exceed Lance+:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「エクシードランス」「エクシードランス＋」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Exceed Lance BRV Attack Advance II: Boost to Exceed Lance",
                     "jp": "エクシードランスBRVアタックアドバンスII：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {
@@ -32252,17 +33188,17 @@
                 "id": 5929,
                 "name": {
                     "en": "Debuff Attack Up",
-                    "gl": "",
+                    "gl": "Debuff Attack Up",
                     "jp": "デバフアタックアップ"
                 },
                 "desc": {
                     "en": "Raises own Attack while an enemy is debuffed",
-                    "gl": "",
+                    "gl": "While debuffed enemy present:\\n • Raises own ATK by 10%",
                     "jp": "弱体効果が付与されている敵がいる時\\n自身の攻撃力10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Debuff Attack Up: Raises ATK",
                     "jp": "デバフアタックアップ：攻撃力がアップ"
                 },
                 "meta_data": {
@@ -32342,17 +33278,17 @@
                 "id": 5930,
                 "name": {
                     "en": "The Celestial Nexus Extend",
-                    "gl": "",
+                    "gl": "Celestial Nexus Extension",
                     "jp": "宿星の座エクステンド"
                 },
                 "desc": {
                     "en": "When using [Exceed Lance], [Exceed Lance+]\\n• [Nourishment for Paradise] effects +10％, duration +2\\n• All targets: 2 turns [Warp]\\n\\nWhen using [Exceed Lance]\\n• Becomes 6-HIT distributed ranged BRV attack\\n　+ 3-HIT AoE ranged BRV attack + AoE HP attack\\n• Increases total BRV potency by 50％\\n\\nWhen using [Exceed Lance+]\\n• Becomes 6-HIT distributed ranged BRV attack + AoE HP attack\\n　+ 3-HIT AoE ranged BRV attack + AoE HP attack \\n　+ 3-HIT AoE ranged BRV attack + AoE HP attack\\n• Increases total BRV potency by 100％\\n\\n When inflicting debuff\\n• Self: 6 turns [Exceed Lance]\\n\\n[Exceed Lance]\\n• Increases stolen BRV overflow limit by 20%\\n• Restores BRV by 20% of INT BRV\\n• Increases BRV damage dealt depending on target's debuff count (5% per debuff)",
-                    "gl": "",
+                    "gl": "When inflicting debuff on target:\\n • Self: 6 turns Exceed Lance buff\\n\\nWhen using Exceed Lance, Exceed Lance+:\\n • All enemies: 2 turns Warp\\n • Slight Sustenance for Paradise effect boost\\n • Sustenance for Paradise duration +2\\n\\nWhen using Exceed Lance:\\n • 2-hit group ranged BRV attack + group HP attack becomes group ranged BRV attack + group HP attack + 3-hit group ranged BRV attack + group HP attack; tremendously increased cumulative BRV damage\\n\\nWhen using Exceed Lance+:\\n • 4-hit group ranged BRV attack + group HP attack becomes 3-hit group ranged BRV attack + group HP attack + 3-hit group ranged BRV attack + group HP attack; tremendously increased cumulative BRV damage",
                     "jp": "自身が対象に弱体効果付与時\\n自身に6ACTION強化効果「エクシードランス」付与\\n\\n「エクシードランス」「エクシードランス＋」使用時\\n・敵全体に2ACTION「ワープ」付与\\n・「真世界への糧」の効果小アップ\\n・「真世界への糧」の2ACTIOIN期間延長\\n\\n「エクシードランス」使用時\\n・2HIT全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n　に変化し合計BRV威力も極大アップ\\n\\n「エクシードランス＋」使用時\\n・4HIT全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋3HIT全体遠距離物理BRV攻撃＋全体HP攻撃\\n　に変化し合計BRV威力も極大アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Celestial Nexus Extension: Boost to Exceed Lance",
                     "jp": "宿星の座エクステンド：「エクシードランス」の性能アップ"
                 },
                 "meta_data": {

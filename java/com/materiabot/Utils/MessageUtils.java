@@ -25,13 +25,13 @@ public abstract class MessageUtils {
 		public String getMessage() { return msg; }
 	}
 
-	public static final String S = "‏‏‎ ";
+	public static final String S = "‎";
 	public static final int DISCORD_MESSAGE_LIMIT = 1800;
 
 	public static final String empty(int l) {
 		String s = "";
 		for(int i = 0; i < l; i++)
-			s += "‏‏‎ ‎";
+			s += S;
 		return s;
 	}
 

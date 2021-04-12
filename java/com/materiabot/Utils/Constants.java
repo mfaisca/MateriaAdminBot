@@ -29,7 +29,7 @@ public class Constants {
 	
 	public static final boolean isHeaven() {
 		try {
-			return InetAddress.getLocalHost().getHostName().equalsIgnoreCase("HEAVEN");
+			return InetAddress.getLocalHost().getHostName().equalsIgnoreCase("DESKTOP-R5A6RF4");
 		} catch (UnknownHostException e) {}
 		return false;
 	}

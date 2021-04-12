@@ -35,8 +35,8 @@
         },
         "description": {
             "en": "",
-            "jp": "大空を自由に飛びまわる空賊に憧れる\\nダルマスカ王国の孤児。兄を奪った帝国\\nの支配を憎みながらも行動できず過ごし\\nていたが 祖国解放を目指す王女\\nアーシェと出会ったことから 運命は急\\n転。幼馴染のパンネロや空賊バルフレア\\nと共に 壮大な戦いに身を投じた。",
-            "gl": "An orphan from the Kingdom of Dalmasca who dreams of becoming a sky pirate. While he despised the empire for taking his brother's life、 he was helpless until a twist of fate brought him and Princess Ashe together. Along with his childhood friend、 Penelo、 and the sky pirate、 Balthier、 he sets out on a cosmic journey to free their homeland."
+            "jp": "大空を自由に飛びまわる空賊に憧れるダルマスカ王国の孤児。兄を奪った帝国の支配を憎みながらも行動できず過ごしていたが 祖国解放を目指す王女アーシェと出会ったことから 運命は急転。幼馴染のパンネロや空賊バルフレアと共に 壮大な戦いに身を投じた。",
+            "gl": "An orphan from the Kingdom of Dalmasca who dreams of becoming a sky pirate. While he despised the empire for taking his brother's life, he was helpless until a twist of fate brought him and Princess Ashe together. Along with his childhood friend, Penelo, and the sky pirate, Balthier, he sets out on a cosmic journey to free their homeland."
         },
         "lines": {
             "jp": [
@@ -157,7 +157,11 @@
             ]
         },
         "series": 12,
-        "sort_num": 1
+        "sort_num": 1,
+        "shortName": {
+            "gl": "Vaan",
+            "jp": "ヴァン"
+        }
     },
     "status": {},
     "defaultAbilities": [
@@ -174,12 +178,12 @@
         "id": 197,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_ヴァン",
             "jp": "コールアビリティ_ヴァン"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「ディープハザード【C】」「ルミネッセンス【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n\\n「ディープハザード【C】」使用時\\n・「防御ダウン」の付与率中アップ\\n\\n「ルミネッセンス【C】」使用時\\n・「暗闇」の付与率小アップ",
             "jp": "「ディープハザード【C】」「ルミネッセンス【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n\\n「ディープハザード【C】」使用時\\n・「防御ダウン」の付与率中アップ\\n\\n「ルミネッセンス【C】」使用時\\n・「暗闇」の付与率小アップ"
         },
         "ability": {
@@ -191,12 +195,12 @@
         "id": 198,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_ヴァン",
             "jp": "LDコールアビリティ_ヴァン"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「グラウンドゼロ【C】」使用時\\n・8HIT全体魔法BRV 攻撃＋全体HP 攻撃が\\n　2HIT全体魔法BRV 攻撃＋全体HP 攻撃を6回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・使用後特殊効果の最大BRVアップの効果小アップと\\n　奪ったBRVと加算したBRVを最大BRVを超えて加算する上限アップと\\n　与えるHPダメージアップの効果極小アップ",
             "jp": "「グラウンドゼロ【C】」使用時\\n・8HIT全体魔法BRV攻撃＋全体HP攻撃が\\n　2HIT全体魔法BRV攻撃＋全体HP攻撃を6回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・使用後特殊効果の最大BRVアップの効果小アップと\\n　奪ったBRVと加算したBRVを最大BRVを超えて加算する上限アップと\\n　与えるHPダメージアップの効果極小アップ"
         },
         "ability": {
@@ -214,7 +218,18 @@
                     6498
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 2,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            2
+                        ]
+                    }
+                ]
             },
             {
                 "id": 52,
@@ -224,7 +239,18 @@
                     6498
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            536,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -236,7 +262,8 @@
                 "reqWeaponPassives": [
                     990
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 9,
@@ -246,7 +273,18 @@
                 "reqWeaponPassives": [
                     994
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            536,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -256,7 +294,18 @@
                 "originalAbility": 112,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 9,
+                        "target": 2,
+                        "values": [
+                            13,
+                            -1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 66,
@@ -264,7 +313,18 @@
                 "originalAbility": 112,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 63,
@@ -272,7 +332,18 @@
                 "originalAbility": 112,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 13,
+                        "target": 2,
+                        "values": [
+                            13,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 62,
@@ -282,7 +353,8 @@
                     868
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 59,
@@ -294,7 +366,8 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 60,
@@ -304,7 +377,18 @@
                     868
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 57,
@@ -316,7 +400,18 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 37,
@@ -326,7 +421,8 @@
                     1777
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 36,
@@ -336,7 +432,18 @@
                     1777
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 35,
@@ -346,7 +453,18 @@
                     1777
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            5,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 34,
@@ -358,7 +476,8 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 33,
@@ -370,7 +489,18 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 32,
@@ -382,7 +512,18 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            5,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 16,
@@ -392,7 +533,8 @@
                     6497
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 15,
@@ -402,7 +544,18 @@
                     6497
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 14,
@@ -412,7 +565,18 @@
                     6497
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 13,
@@ -424,7 +588,8 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 12,
@@ -436,7 +601,18 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 11,
@@ -448,7 +624,18 @@
                 "reqWeaponPassives": [
                     13
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -458,7 +645,18 @@
                 "originalAbility": 113,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 9,
+                        "target": 2,
+                        "values": [
+                            29,
+                            -1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 79,
@@ -466,7 +664,18 @@
                 "originalAbility": 113,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 9,
+                        "target": 2,
+                        "values": [
+                            29,
+                            -1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 77,
@@ -474,7 +683,18 @@
                 "originalAbility": 113,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 74,
@@ -482,7 +702,18 @@
                 "originalAbility": 113,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 13,
+                        "target": 2,
+                        "values": [
+                            29,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 73,
@@ -492,7 +723,8 @@
                     869
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 70,
@@ -504,7 +736,8 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 71,
@@ -514,7 +747,18 @@
                     869
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 68,
@@ -526,7 +770,18 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 47,
@@ -536,7 +791,8 @@
                     1778
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 46,
@@ -546,7 +802,18 @@
                     1778
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 45,
@@ -556,7 +823,18 @@
                     1778
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            5,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 44,
@@ -568,7 +846,8 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 43,
@@ -580,7 +859,18 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 42,
@@ -592,7 +882,18 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            5,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 26,
@@ -602,7 +903,8 @@
                     6498
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 25,
@@ -612,7 +914,18 @@
                     6498
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 24,
@@ -622,7 +935,18 @@
                     6498
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 23,
@@ -634,7 +958,8 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 22,
@@ -646,7 +971,18 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 21,
@@ -658,7 +994,18 @@
                 "reqWeaponPassives": [
                     29
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 8,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            2,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -670,7 +1017,8 @@
                     2032
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 81,
@@ -680,7 +1028,8 @@
                     2031
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 80,
@@ -691,7 +1040,8 @@
                     2032
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -701,7 +1051,18 @@
                 "originalAbility": 2545,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            106,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 55,
@@ -711,7 +1072,8 @@
                 "reqWeaponPassives": [
                     335
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 54,
@@ -721,7 +1083,18 @@
                 "reqWeaponPassives": [
                     335
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            106,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 8,
@@ -732,7 +1105,8 @@
                     335,
                     990
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 5,
@@ -743,7 +1117,18 @@
                     335,
                     990
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            106,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 7,
@@ -755,7 +1140,8 @@
                     990,
                     993
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 4,
@@ -767,7 +1153,18 @@
                     990,
                     993
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            106,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 6,
@@ -780,7 +1177,8 @@
                     993,
                     994
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 3,
@@ -793,7 +1191,18 @@
                     993,
                     994
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            106,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 2,
@@ -806,7 +1215,18 @@
                     993,
                     994
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            536,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [],
@@ -819,7 +1239,8 @@
                 "reqWeaponPassives": [
                     1683
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 84,
@@ -831,7 +1252,8 @@
                 "reqWeaponPassives": [
                     1683
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [],
@@ -1437,7 +1859,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -1545,8 +1972,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -1557,7 +1984,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -1821,7 +2253,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -1929,8 +2366,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -1941,7 +2378,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -2395,7 +2837,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -2651,7 +3098,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -2759,8 +3211,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -2771,7 +3223,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -3027,7 +3484,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -3135,8 +3597,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -3147,7 +3609,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -3411,7 +3878,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -3519,8 +3991,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -3531,7 +4003,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -3787,7 +4264,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -3895,8 +4377,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -3907,7 +4389,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -4171,7 +4658,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -4279,8 +4771,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -4291,7 +4783,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -4555,7 +5052,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -4663,8 +5165,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -4675,7 +5177,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -4961,7 +5468,12 @@
                         "rate": 80,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -5217,7 +5729,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -5325,8 +5842,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -5337,7 +5854,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -5593,7 +6115,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -5701,8 +6228,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -5713,7 +6240,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -5977,7 +6509,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -6085,8 +6622,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -6097,7 +6634,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -6361,7 +6903,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -6469,8 +7016,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -6481,7 +7028,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -6737,7 +7289,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -6845,8 +7402,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -6857,7 +7414,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -7113,7 +7675,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -7221,8 +7788,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -7233,7 +7800,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -7497,7 +8069,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -7605,8 +8182,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -7617,7 +8194,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -7881,7 +8463,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -7989,8 +8576,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -8001,7 +8588,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -8452,7 +9044,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -8738,7 +9335,12 @@
                         "rate": 80,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -9708,7 +10310,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -9816,8 +10423,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -9828,7 +10435,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -10106,7 +10718,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -10214,8 +10831,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -10226,7 +10843,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -10691,7 +11313,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -10799,8 +11426,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -10811,7 +11438,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -11119,7 +11751,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -11453,7 +12090,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -11561,8 +12203,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -11573,7 +12215,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -11851,7 +12498,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -11959,8 +12611,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -11971,7 +12623,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -12249,7 +12906,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -12357,8 +13019,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -12369,7 +13031,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -12675,7 +13342,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -12783,8 +13455,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -12795,7 +13467,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -12915,7 +13592,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -13221,7 +13903,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -13329,8 +14016,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -13341,7 +14028,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -13461,7 +14153,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -13747,7 +14444,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -14053,7 +14755,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -14161,8 +14868,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -14173,7 +14880,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -14293,7 +15005,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -14579,7 +15296,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -14699,7 +15421,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -15061,7 +15788,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -15169,8 +15901,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -15181,7 +15913,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -15301,7 +16038,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -15607,7 +16349,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -15715,8 +16462,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -15727,7 +16474,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -15847,7 +16599,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -16133,7 +16890,12 @@
                         "rate": 80,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -16439,7 +17201,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -16547,8 +17314,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -16559,7 +17326,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -16679,7 +17451,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -16965,7 +17742,12 @@
                         "rate": 80,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -17085,7 +17867,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -17927,7 +18714,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -18269,7 +19061,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -18721,7 +19518,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -19173,7 +19975,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -19502,7 +20309,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -19700,7 +20512,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -19898,7 +20715,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -20096,7 +20918,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -20587,7 +21414,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -20979,7 +21811,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -21357,7 +22194,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -21513,7 +22355,7 @@
             },
             "desc": {
                 "en": "12-HIT magic BRV attack + HP attack\\n\\nMaximum BRV damage limit +150% (up to 24997)\\nMaximum HP damage limit +200% (up to 299997)\\n\\nBURST effect (4 turns, party-wide):\\n• Own BRV will not drop below 20% of Max BRV (if below 20%, does not decrease further)\\n* Same character's BURST effects do not stack",
-                "gl": "12-hit magic BRV attack + HP attack\\nBRV damage dealt can exceed limit of 9999 by 150% (up to 24997)\\nStolen BRV may exceed MAX BRV up to 299997\\nHP damage dealt can exceed limit of 99999 by 200% (up to 299997)\\nBurst effect for 4 turns after finishing burst:\\n• Party: BRV cannot be lowered to less than 20% of MAX BRV (if BRV is less than 20% of MAX BRV, BRV will not lower further)\\nDoes not stack with identical characters' burst effects",
+                "gl": "12-hit magic BRV attack + HP attack\\nBRV damage dealt can exceed limit of 9999 by 150% (up to 24997)\\nStolen BRV may exceed MAX BRV up to 299997\\nHP damage dealt can exceed limit of 99999 by 200% (up to 299997)\\n\\nBurst effect for 4 turns after finishing burst:\\n• Party: BRV cannot be lowered to less than 20% of MAX BRV (if BRV is less than 20% of MAX BRV, BRV will not lower further)\\nDoes not stack with identical characters' burst effects",
                 "jp": "12HIT魔法BRV攻撃＋HP攻撃\\n与えるBRVダメージ上限が9999を150％分突破可能（24997まで）\\n奪ったBRVが最大BRVを超えて299997まで加算でき\\n与えるHPダメージ上限も99999を200％分突破可能（299997まで）\\n使用後 以下のバースト効果を4ACTION付与\\n味方全員のBRVがそれぞれの最大BRVの20％未満にならない\\n（20％未満の時はそれ以上減少しない）\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
@@ -21837,7 +22679,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -22410,7 +23257,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -22572,7 +23424,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -23028,7 +23885,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -23136,8 +23998,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -23148,7 +24010,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -23568,7 +24435,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -23676,8 +24548,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -23688,7 +24560,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -24569,7 +25446,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -24677,8 +25559,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -24689,7 +25571,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -25301,7 +26188,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -25477,7 +26369,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -25933,7 +26830,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -26041,8 +26943,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -26053,7 +26955,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -26473,7 +27380,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -26581,8 +27493,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -26593,7 +27505,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -27135,7 +28052,12 @@
                         "rate": 100,
                         "rank": 4,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -27243,8 +28165,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -27255,7 +28177,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -27691,7 +28618,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -27799,8 +28731,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -27811,7 +28743,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -27931,7 +28868,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -28367,7 +29309,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -28475,8 +29422,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -28487,7 +29434,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -28607,7 +29559,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -29067,7 +30024,12 @@
                         "rate": 70,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -29525,7 +30487,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -29633,8 +30600,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -29645,7 +30612,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -29765,7 +30737,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -30377,7 +31354,12 @@
                         "rate": 70,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -30497,7 +31479,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -30989,7 +31976,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -31097,8 +32089,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -31109,7 +32101,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -31229,7 +32226,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -31665,7 +32667,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -31773,8 +32780,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -31785,7 +32792,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -31905,7 +32917,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -32365,7 +33382,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -32823,7 +33845,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -32931,8 +33958,8 @@
                     "cast_id": 103,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "プリッシュスピンダミーバフ"
+                        "gl": "Attack Change",
+                        "jp": "攻撃変化"
                     },
                     "desc": {
                         "en": "",
@@ -32943,7 +33970,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -33063,7 +34095,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -33183,7 +34220,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -33851,7 +34893,12 @@
                         "rate": 70,
                         "rank": 2,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -33971,7 +35018,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 16
                     },
                     "type_data": {
@@ -34321,8 +35373,8 @@
                     "cast_id": 2800,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールヴァン用先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -34333,7 +35385,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -34453,7 +35510,12 @@
                         "rate": 50,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -34759,7 +35821,12 @@
                         "rate": 50,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -35053,8 +36120,8 @@
                     "cast_id": 2800,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールヴァン用先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -35065,7 +36132,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -35185,7 +36257,12 @@
                         "rate": 100,
                         "rank": 7,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -35491,7 +36568,12 @@
                         "rate": 80,
                         "rank": 2,
                         "target": 1,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -35835,8 +36917,8 @@
                     "cast_id": 2800,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールヴァン用先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -35847,7 +36929,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -35955,7 +37042,7 @@
                     "cast_id": 2847,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Earthen Eruption (C)",
                         "jp": "グラウンドゼロ【C】"
                     },
                     "desc": {
@@ -35967,7 +37054,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -36491,8 +37583,8 @@
                     "cast_id": 2800,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールヴァン用先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -36503,7 +37595,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -36611,7 +37708,7 @@
                     "cast_id": 2847,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Earthen Eruption (C)",
                         "jp": "グラウンドゼロ【C】"
                     },
                     "desc": {
@@ -36623,7 +37720,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -40582,7 +41684,7 @@
                 },
                 "desc": {
                     "en": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery, HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when effect breaking limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・自身の与えるBRVダメージ上限が9999を15％分突破可能になる（11498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -40978,7 +42080,10 @@
                     }
                 ],
                 "duration": 8,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -41141,8 +42246,8 @@
             "cast_id": 2806,
             "name": {
                 "en": "",
-                "gl": "",
-                "jp": "ヴァンLDエクステンドバフ用条件"
+                "gl": "LD Extend",
+                "jp": "LDエクステンド"
             },
             "desc": {
                 "en": "",
@@ -41165,7 +42270,10 @@
                     }
                 ],
                 "duration": -1,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -42641,7 +43749,7 @@
                 },
                 "desc": {
                     "en": "When using [White Whorl], [White Whorl+]:\\n• Increases BRV gained by 10％\\n* Requires [White Whorl Extend] passive",
-                    "gl": "While equipping White Whorl Extension:\\n • Increases BRV gained with White Whorl, White Whorl+ by 10%",
+                    "gl": "When using White Whorl, White Whorl+, Luminescence, Luminescence+ while White Whorl Extension equipped:\\n • Increases BRV gained by 10％",
                     "jp": "「ディープハザードエクステンド」装備時\\n「ディープハザード」「ディープハザード＋」\\n「ルミネッセンス」「ルミネッセンス＋」の\\nBRV加算量10％アップ"
                 },
                 "short_desc": {

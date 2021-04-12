@@ -142,7 +142,7 @@ public class Ailment {
 		E65(65, "{0}% BRV Damage on debuffed targets"),
 		E67(67, "{0}% {t} Stolen BRV Overflow"),
 		//E68 - Zell Duel - Effect not needed
-		E69(69, "Counter {vt} with 「**{vs}**」"),
+		E69(69, "Counter {vt} with 「{vs}」"),
 		E78(78, null), //Shadow EX
 		E79(79, null), //Gladio LD Random Effect
 		E80(80, null), //CoD S1 Random Effect
@@ -163,7 +163,7 @@ public class Ailment {
 		E112(112, "{0}% {t}Critical Hit Damage"),
 		E114(114, "{0}% {t}BRV Damage dealt"),
 		E115(115, "{0}% {t}HP Damage dealt"),
-		E116(116, "Party BRV Regen({0}% HP Damage Dealt with 「**Quick Dualcast**」"),
+		E116(116, "Party BRV Regen({0}% HP Damage Dealt with 「Quick Dualcast」"),
 		E118(118, "BRV Regen applies **every** turn. Duration goes down **every** turn."),
 		E119(119, "Instant turn rate"),
 		E120(120, "Doesn't increase turn count"),
@@ -173,11 +173,11 @@ public class Ailment {
 		E125(125, "Prevents use of Magic attacks"),
 		E139(139, "New debuffs duration {0} turns"),
 		E140(140, "New buffs duration {0} turns"),
-		E141(141, "+1 「**Chakra**」 whenever party uses an ability(non BRV/HP/AA)"),
+		E141(141, "+1 「Chakra」 whenever party uses an ability(non BRV/HP/AA)"),
 		E142(142, null), //Lyse Chakra
 		E146(146, "Take AoE HP attacks in place of allies"),
 		E150(150, "{0}% {t} Gained BRV Overflow"),
-		E151(151, "Triggers 「**{0}**」 at end of turn", null),
+		E151(151, "Triggers 「{0}」 at end of turn", null),
 		E169(169, "{0}% {t}Ranged BRV Overflow"),
 		E164(164, "{t} unable to gain buffs"),
 		E165(165, "{t} unable to battery"),
@@ -190,7 +190,7 @@ public class Ailment {
 		E190(190, "Last stand on {t} when {0}% Max HP or higher", null),
 		E191(191, "Sets {t} HP Damage dealt to 0"),
 		E193(193, "HP Damage equal to {0}% of Attack", null),
-		E194(194, "Trigger 「**{vs}**」 on expiration"),
+		E194(194, "Trigger 「{vs}」 on expiration"),
 		E195(195, null), //WoL LD unknown HitData
 		E197(197, "Raises stack by 1 every action you take"),
 		E199(199, "{0}% {t} critical BRV damage dealt"),
@@ -209,7 +209,7 @@ public class Ailment {
 		E227(227, "{0}% {t}Max HP overflow limit"),
 		E228(228, "{0}% {t}BRV Damage taken if broken", true),
 		E229(229, "{0}% HP damage taken from caster", true),
-		E230(230, "Triggers 「**{0}**」 at end of every turn" + System.lineSeparator()
+		E230(230, "Triggers 「{0}」 at end of every turn" + System.lineSeparator()
 					+ "Lowers duration at the end of every turn", null),
 		E232(232, "All BRV Attacks will inflict BREAK if not broken", true),
 		E233(233, "Caster takes a free instant turn after target's turn"),
@@ -227,22 +227,22 @@ public class Ailment {
 		E265(265, "{0}% Critical BRV Damage Taken", true),
 		E266(266, "All BRV hits are Critical Hits"),
 		E268(268, "Cannot be killed"),
-		E274(274, "Triggers 「**{0}**」 after ally attack or enemy attacks", null),
+		E274(274, "Triggers 「{0}」 after ally attack or enemy attacks", null),
 		E276(276, "Move your next turn to just before the target next turn"),
 		E279(279, "-100% HP Damage taken"),
 		E280(280, null), //Nine LD ???
 		E282(282, "Sets HP to 1 if at 0 HP when buff expires"),
 		E288(288, "{0} duration when hit"),
-		E284(284, "Raises party member BRV by {0}% of remaining 「**Shield**」 at the start of their turn", null),
-		E293(293, "Nulls {t} HP damage that is lower than each ally's 「**Shield**」 power"),
-		E294(294, "Triggers 「**{0}**」 after party member turn", null),
+		E284(284, "Raises party member BRV by {0}% of remaining 「Shield」 at the start of their turn", null),
+		E293(293, "Nulls {t} HP damage that is lower than each ally's 「Shield」 power"),
+		E294(294, "Triggers 「{0}」 after party member turn", null),
 		E295(295, "Caster takes the hit for ally"),
 		E300(300, "{0}% {t}BRV Damage when attacking a broken target"),
 		E309(309, null), //Kurasame useless effect?
 		E311(311, "{0}% of {t}excess healing is converted to BRV"),
 		E317(317, "After any turn, sets {t} BRV to {0}", null),
 		E320(320, "Delay target by {0}T after a physical attack"),
-		E325(325, "「**{0}**」 are not consumed", null),
+		E325(325, "「{0}」 are not consumed", null),
 		E331(331, "Cannot deal BRV damage"),
 		E335(335, "Cannot deal HP damage"),
 		E327(327, "Cannot inflict debuffs"),
@@ -256,9 +256,9 @@ public class Ailment {
 		E367(367, "+1 stack after every ally turn", null),
 		E368(368, "Resets to 1 stack after enemy turn", null),
 		E374(374, "Reduce BRV by {0}% at end of turn", null),
-		E390(390, "Apply 「**{0}**」 after attacking", null),
+		E390(390, "Apply 「{0}」 after attacking", null),
 		E403(403, "Raises allies BRV by {0}% of own Max BRV when dealing weakness damage", null),
-		E418(418, "Triggers 「**{vs}**」 after own turn when at 1+ stacks"),
+		E418(418, "Triggers 「{vs}」 after own turn when at 1+ stacks"),
 		
 		E1001(1001, "{t}Attacks deal +3 [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/)"), //Fake Ailment used by Layle EX Buff
 		E1002(1002, "{t} cannot be broken by BRV damage"),

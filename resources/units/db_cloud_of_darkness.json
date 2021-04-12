@@ -30,8 +30,8 @@
         },
         "description": {
             "en": "",
-            "jp": "世界における光と闇のバランスが\\n崩れたときに現れすべてを「無」に\\n還そうとする存在 魔道師ザンデの\\n引き起こした「闇の氾濫」によって現れ\\n光の４戦士を圧倒するも 対となる\\n闇の４戦士の力を借りた彼らと死闘の末\\n封じられた。",
-            "gl": "Appears when the balance of light and darkness is disrupted、 and returns everything to the Void. It appeared after Xande created a flood of darkness. The Cloud of Darkness is sealed away when the Warriors of the Darkness sacrifice themselves to aid the Warriors of Light in the final battle."
+            "jp": "世界における光と闇のバランスが崩れたときに現れすべてを「無」に還そうとする存在 魔道師ザンデの引き起こした「闇の氾濫」によって現れ光の４戦士を圧倒するも 対となる闇の４戦士の力を借りた彼らと死闘の末封じられた。",
+            "gl": "Appears when the balance of light and darkness is disrupted, and returns everything to the Void. It appeared after Xande created a flood of darkness. The Cloud of Darkness is sealed away when the Warriors of the Darkness sacrifice themselves to aid the Warriors of Light in the final battle."
         },
         "lines": {
             "jp": [
@@ -124,7 +124,11 @@
             ]
         },
         "series": 3,
-        "sort_num": 10
+        "sort_num": 10,
+        "shortName": {
+            "gl": "Cloud of Darkness",
+            "jp": "暗闇の雲"
+        }
     },
     "status": {},
     "defaultAbilities": [
@@ -141,12 +145,12 @@
         "id": 169,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "コールアビリティ_暗闇の雲",
             "jp": "コールアビリティ_暗闇の雲"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「広角式 波動砲【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・敵全体の行動順を1つ下げる",
             "jp": "「広角式 波動砲【C】」使用時\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・敵全体の行動順を1つ下げる"
         },
         "ability": {
@@ -158,12 +162,12 @@
         "id": 170,
         "name": {
             "en": "",
-            "gl": "",
+            "gl": "LDコールアビリティ_暗闇の雲",
             "jp": "LDコールアビリティ_暗闇の雲"
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "",
+            "gl": "「急襲式 波動砲【C】」使用時\\n・4HIT全体魔法BRV 攻撃＋全体HP 攻撃を2回行うが\\n　4HIT全体魔法BRV 攻撃＋全体HP 攻撃を3回行うに変化し\\n　合計BRV威力も大アップ\\n・最後のHP 攻撃を除くHP 攻撃後\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・使用後特殊効果の「攻撃力アップ」と\\n　「クリティカル時 与えるBRVダメージアップ」の効果小アップと\\n　「与えるHPダメージアップ」の効果極小アップ",
             "jp": "「急襲式 波動砲【C】」使用時\\n・4HIT全体魔法BRV攻撃＋全体HP攻撃を2回行うが\\n　4HIT全体魔法BRV攻撃＋全体HP攻撃を3回行うに変化し\\n　合計BRV威力も大アップ\\n・最後のHP攻撃を除くHP攻撃後\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分\\n・使用後特殊効果の「攻撃力アップ」と\\n　「クリティカル時 与えるBRVダメージアップ」の効果小アップと\\n　「与えるHPダメージアップ」の効果極小アップ"
         },
         "ability": {
@@ -179,7 +183,18 @@
                 "originalAbility": 3,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 36,
@@ -189,7 +204,39 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 33,
+                "upgradedAbility": 8470,
+                "originalAbility": 3,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [],
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 35,
@@ -199,7 +246,41 @@
                     3050
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "upgradedAbility": 8471,
+                "originalAbility": 3,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [
+                    1493
+                ],
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 34,
@@ -211,7 +292,18 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -221,7 +313,18 @@
                 "originalAbility": 5,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 29,
@@ -231,7 +334,39 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 26,
+                "upgradedAbility": 8473,
+                "originalAbility": 5,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [],
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 28,
@@ -241,7 +376,41 @@
                     3050
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 25,
+                "upgradedAbility": 8474,
+                "originalAbility": 5,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [
+                    1493
+                ],
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 27,
@@ -253,7 +422,18 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1463,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -265,7 +445,8 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 21,
@@ -275,7 +456,8 @@
                     3050
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 20,
@@ -287,7 +469,32 @@
                 "reqWeaponPassives": [
                     1493
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
+            },
+            {
+                "id": 19,
+                "upgradedAbility": 14184,
+                "originalAbility": 7647,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [],
+                "reqSecretPassives": [],
+                "miscConditions": []
+            },
+            {
+                "id": 18,
+                "upgradedAbility": 14185,
+                "originalAbility": 7647,
+                "reqExtendPassives": [
+                    6743
+                ],
+                "reqWeaponPassives": [
+                    1493
+                ],
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -297,7 +504,18 @@
                 "originalAbility": 7652,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 30,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1465,
+                            5
+                        ]
+                    }
+                ]
             },
             {
                 "id": 15,
@@ -307,7 +525,8 @@
                 "reqWeaponPassives": [
                     1494
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 14,
@@ -317,7 +536,18 @@
                 "reqWeaponPassives": [
                     1494
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 30,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1465,
+                            5
+                        ]
+                    }
+                ]
             },
             {
                 "id": 13,
@@ -327,7 +557,8 @@
                     3052
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 12,
@@ -337,7 +568,18 @@
                     3052
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 30,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1465,
+                            5
+                        ]
+                    }
+                ]
             },
             {
                 "id": 11,
@@ -349,7 +591,8 @@
                 "reqWeaponPassives": [
                     1494
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 10,
@@ -361,7 +604,18 @@
                 "reqWeaponPassives": [
                     1494
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 30,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            1465,
+                            5
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -373,7 +627,8 @@
                     3054
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 40,
@@ -384,7 +639,8 @@
                     3057
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 42,
@@ -394,7 +650,8 @@
                     3057
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -406,7 +663,8 @@
                 "reqWeaponPassives": [
                     1498
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 5,
@@ -417,7 +675,8 @@
                     1498,
                     1500
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 4,
@@ -429,7 +688,8 @@
                     1500,
                     1504
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -441,7 +701,8 @@
                 "reqWeaponPassives": [
                     2646
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 1,
@@ -453,10 +714,35 @@
                 "reqWeaponPassives": [
                     2646
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
-        [],
+        [
+            {
+                "id": 49,
+                "upgradedAbility": 14186,
+                "originalAbility": 13024,
+                "reqExtendPassives": [],
+                "reqWeaponPassives": [
+                    3139
+                ],
+                "reqSecretPassives": [],
+                "miscConditions": []
+            },
+            {
+                "id": 48,
+                "upgradedAbility": 14187,
+                "originalAbility": 13024,
+                "reqExtendPassives": [],
+                "reqWeaponPassives": [
+                    3139,
+                    3141
+                ],
+                "reqSecretPassives": [],
+                "miscConditions": []
+            }
+        ],
         [],
         [],
         [],
@@ -751,7 +1037,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -1033,7 +1324,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -1355,7 +1651,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -1677,7 +1978,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -4807,7 +5113,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -5043,7 +5354,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -5606,7 +5922,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -6007,7 +6328,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -6570,7 +6896,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -8193,7 +8524,7 @@
                     "cast_id": 2710,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Balance By Destruction",
                         "jp": "破壊による均衡"
                     },
                     "desc": {
@@ -8205,7 +8536,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -8665,7 +9001,7 @@
                     "cast_id": 2710,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Balance By Destruction",
                         "jp": "破壊による均衡"
                     },
                     "desc": {
@@ -8677,7 +9013,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 12
                     },
                     "type_data": {
@@ -8820,7 +9161,7 @@
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "対象のブレイク状態を解除し 4HIT全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n最後のHP攻撃を除くHP攻撃後\\n与えた合計HPダメージの20％分自身のBRVをアップさせる\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分 与えるHPダメージは分配\\n自身に12ACTION「破壊による均衡」付与 自身に特殊効果「闇」5加算（上限5を超えて加算可能）\\n使用後 「隔たりの触手」の使用回数＋1（上限あり）\\n「破壊による均衡」付与中\\n・対象ブレイク時 行動負荷がなくなり 総ACTION数に加算されない追加行動が可能\\n　バーストモード中は発生せず バーストモード終了後に1回のみ発生\\n　追加行動で対象をブレイクしても 追加行動は発生しない\\n　バーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n・「カウンター」に以下の効果が追加\\n　-3HIT魔法BRV攻撃＋HP攻撃に変化し 合計BRV威力も大アップ\\n　-与えたHPダメージの30％分 自身のBRVをアップさせる\\n特殊効果「闇」の段階に応じて 自身の奪ったBRVを最大BRVを超えて加算する上限アップ\\n（上限5を超えても効果は上昇しない）特殊効果「闇」5以上の時 自身の与えるHPダメージ小アップ"
+                "jp": "対象のブレイク状態を解除し 4HIT全体魔法BRV攻撃＋全体HP攻撃を3回行う\\n最後のHP攻撃を除くHP攻撃後与えた合計HPダメージの20％分自身のBRVをアップさせる\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分 与えるHPダメージは分配\\n自身に12ACTION「破壊による均衡」付与 自身に特殊効果「闇」5加算（上限5を超えて加算可能）\\n使用後 「隔たりの触手」の使用回数＋1（上限あり）\\n「破壊による均衡」付与中\\n・対象ブレイク時 行動負荷がなくなり 総ACTION数に加算されない追加行動が可能\\n　バーストモード中は発生せず バーストモード終了後に1回のみ発生\\n　追加行動で対象をブレイクしても 追加行動は発生しない\\n　バーストモード中 召喚中およびフレンドサポートの残りACTIONは消費される\\n・「カウンター」に以下の効果が追加\\n　-3HIT魔法BRV攻撃＋HP攻撃に変化し 合計BRV威力も大アップ\\n　-与えたHPダメージの30％分 自身のBRVをアップさせる\\n特殊効果「闇」の段階に応じて 自身の奪ったBRVを最大BRVを超えて加算する上限アップ\\n(上限5を超えても効果は上昇しない) 自身の与えるHPダメージアップ 特殊効果「闇」5以上時さらにアップ"
             },
             "rank": 0,
             "motion": 58,
@@ -9281,7 +9622,7 @@
                     "cast_id": 2710,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Balance By Destruction",
                         "jp": "破壊による均衡"
                     },
                     "desc": {
@@ -9293,7 +9634,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 12
                     },
                     "type_data": {
@@ -9807,7 +10153,7 @@
                     "cast_id": 2711,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Ultra Particle Beam",
                         "jp": "超波動砲"
                     },
                     "desc": {
@@ -9819,7 +10165,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -10875,7 +11226,7 @@
                     "cast_id": 2777,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "High-Speed Particle Beam (C)",
                         "jp": "急襲式 波動砲【C】"
                     },
                     "desc": {
@@ -10887,7 +11238,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -11429,7 +11785,7 @@
                     "cast_id": 2777,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "High-Speed Particle Beam (C)",
                         "jp": "急襲式 波動砲【C】"
                     },
                     "desc": {
@@ -11441,7 +11797,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -11719,6 +12080,2324 @@
             ],
             "arguments": [],
             "ailments": []
+        },
+        {
+            "id": 14184,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "隔たりの触手"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "4HIT全体魔法BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「無に帰す力」付与\\n自身に特殊効果「闇」1加算（上限5）\\n対象ブレイク時 さらに自身に特殊効果「闇」1加算（上限5）\\n特殊効果「闇」の段階に応じて\\n自身の奪ったBRVを最大BRVを超えて加算する上限アップ\\n「無に帰す力」付与中\\n通常「BRV攻撃」が「慰みの触手」に\\n通常「HP攻撃」が「噴流砲」に変化し\\nHP攻撃を受けた時 以下の「カウンター」が発動\\n2HIT魔法BRV攻撃\\n自身に特殊効果「闇」1加算（上限5）"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 30,
+            "hit_count": 13,
+            "use_count": 9,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14109,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 35.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 21,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9025,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        1465
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 89,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 8172,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        1465
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 143,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 1463,
+                    "cast_id": 1426,
+                    "name": {
+                        "en": "",
+                        "gl": "Annulling Power",
+                        "jp": "無に帰す力"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Annulling Power: Raises MAX BRV, ATK",
+                        "jp": "無に帰す力：最大BRV 攻撃力が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "duration": 6
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            1,
+                            5,
+                            80,
+                            69,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            3,
+                            4,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            7651,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            1463,
+                            1463,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "1463": [
+                            20020,
+                            40040,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 14185,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "隔たりの触手"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "4HIT全体魔法BRV攻撃＋単体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に6ACTION「無に帰す力」付与\\n自身に特殊効果「闇」1加算（上限5）\\n対象ブレイク時 さらに自身に特殊効果「闇」1加算（上限5）\\n特殊効果「闇」の段階に応じて\\n自身の奪ったBRVを最大BRVを超えて加算する上限アップ\\n「無に帰す力」付与中\\n通常「BRV攻撃」が「慰みの触手」に\\n通常「HP攻撃」が「噴流砲」に変化し\\nHP攻撃を受けた時 以下の「カウンター」が発動\\n2HIT魔法BRV攻撃\\n自身に特殊効果「闇」1加算（上限5）"
+            },
+            "rank": 0,
+            "motion": 50,
+            "movement_cost": 30,
+            "hit_count": 13,
+            "use_count": 9,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 1,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 3
+            },
+            "hit_data": [
+                {
+                    "id": 518,
+                    "type": 6,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 0.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 2,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14110,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 45.0,
+                        "max_brv_overflow": 150,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 27,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 5,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 1,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9025,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        1465
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 89,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 8172,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        1465
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 143,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 1463,
+                    "cast_id": 1426,
+                    "name": {
+                        "en": "",
+                        "gl": "Annulling Power",
+                        "jp": "無に帰す力"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "Annulling Power: Raises MAX BRV, ATK",
+                        "jp": "無に帰す力：最大BRV 攻撃力が上昇する"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 2,
+                        "target": 2,
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "duration": 6
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 17,
+                        "disp_type": 0,
+                        "stackable": -1,
+                        "extendable": 1,
+                        "burst_ext": 1,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            1,
+                            5,
+                            80,
+                            69,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            6,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            3,
+                            4,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            7651,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            1463,
+                            1463,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "1463": [
+                            20020,
+                            40040,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": []
+                }
+            ]
+        },
+        {
+            "id": 14186,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "超波動砲"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "10HIT全体魔法BRV攻撃＋全体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ 与えるHPダメージは分配\\n与えるBRVダメージ上限が9999を150％分突破可能（24997まで）\\n奪ったBRVが最大BRVを超えて499995まで加算でき\\n与えるHPダメージ上限も99999を400％分突破可能（499995まで）\\n使用後 以下のバースト効果を5ACTION付与\\n味方全員が敵をターゲットとして行動後 そのターゲットに暗闇の雲の以下の行動が追加発動\\n1回の行動での追加発動は1回のみ（カウンター 追撃を除く）\\n5HIT全体魔法BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分 与えるHPダメージは分配\\n与えた合計HPダメージの30％分 自身のBRVをアップさせる\\n自身に特殊効果「闇」1加算（上限5） 対象ブレイク時 さらに自身に特殊効果「闇」1加算（上限5）\\nこの追加攻撃では吹きとばしは発生しない 他のキャラクターのバーストモード中も発動\\n同一キャラクターのバースト効果は先に付与したキャラクターのみ発動"
+            },
+            "rank": 0,
+            "motion": 59,
+            "movement_cost": 30,
+            "hit_count": 23,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 7,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 0
+            },
+            "hit_data": [
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9669,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 80,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14111,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9669,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 80,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9575,
+                    "type": 6,
+                    "arguments": [
+                        1
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 186,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 3018,
+                    "cast_id": 2980,
+                    "name": {
+                        "en": "",
+                        "gl": "Ultra Particle Beam",
+                        "jp": "超波動砲"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "フィニッシュバースト「超波動砲」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "duration": 5
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 28,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            257,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "3018": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1499,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1455,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 13,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1500,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1456,
+                                "ailment_effect": 115,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": -1,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1501,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1457,
+                                "ailment_effect": 294,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": -1,
+                                "rank_data": [
+                                    13025,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 14187,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "超波動砲"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "10HIT全体魔法BRV攻撃＋全体HP攻撃を2回行う\\n攻撃対象が単体の時 与えるBRVダメージ中アップ 与えるHPダメージは分配\\n与えるBRVダメージ上限が9999を150％分突破可能（24997まで）\\n奪ったBRVが最大BRVを超えて499995まで加算でき\\n与えるHPダメージ上限も99999を400％分突破可能（499995まで）\\n使用後 以下のバースト効果を8ACTION付与\\n味方全員の奪ったBRVを最大BRVを超えて加算する上限小アップと与えるHPダメージ小アップ\\n味方全員が敵をターゲットとして行動後 そのターゲットに暗闇の雲の以下の行動が追加発動\\n1回の行動での追加発動は1回のみ（カウンター 追撃を除く）\\n5HIT全体魔法BRV攻撃＋全体HP攻撃　攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分 与えるHPダメージは分配\\n与えた合計HPダメージの30％分 自身のBRVをアップさせる\\n自身に特殊効果「闇」1加算（上限5） 対象ブレイク時 さらに自身に特殊効果「闇」1加算（上限5）\\nこの追加攻撃では吹きとばしは発生しない 他のキャラクターのバーストモード中も発動\\n同一キャラクターのバースト効果は先に付与したキャラクターのみ発動"
+            },
+            "rank": 0,
+            "motion": 59,
+            "movement_cost": 30,
+            "hit_count": 23,
+            "use_count": 1,
+            "is_default": 0,
+            "same_ability": 0,
+            "type_data": {
+                "type": 2,
+                "attack_type": 3,
+                "command_type": 7,
+                "target_type": 2,
+                "target_range": 2
+            },
+            "chase_data": {
+                "can_initiate_chase": 1,
+                "chase_dmg": 0
+            },
+            "hit_data": [
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9669,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 80,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 14112,
+                    "type": 1,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 9999,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 60,
+                        "brv_damage_limit_up": 150,
+                        "max_brv_limit_up": 400,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9669,
+                    "type": 2,
+                    "arguments": [],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 80,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": 3,
+                    "element": [],
+                    "target": 5,
+                    "effect": 1,
+                    "effect_value_type": 1
+                },
+                {
+                    "id": 9575,
+                    "type": 6,
+                    "arguments": [
+                        1
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 2,
+                    "effect": 186,
+                    "effect_value_type": 1
+                }
+            ],
+            "arguments": [],
+            "ailments": [
+                {
+                    "id": 3018,
+                    "cast_id": 2980,
+                    "name": {
+                        "en": "",
+                        "gl": "Ultra Particle Beam",
+                        "jp": "超波動砲"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "フィニッシュバースト「超波動砲」の効果"
+                    },
+                    "meta_data": {
+                        "rate": 100,
+                        "rank": 1,
+                        "target": 2,
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "duration": 8
+                    },
+                    "type_data": {
+                        "buff_type": 1,
+                        "icon_type": 14,
+                        "disp_type": 28,
+                        "stackable": -1,
+                        "extendable": 0,
+                        "burst_ext": 0,
+                        "range_limit": 0,
+                        "removable": 0,
+                        "max_stacks": 0,
+                        "sp_stacks": 0,
+                        "effects": [
+                            257,
+                            -1,
+                            -1,
+                            -1,
+                            60,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "val_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_edit_types": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "val_specify": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "rank_tables": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ],
+                        "conditions": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "rank_data": {
+                        "3018": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+                    "auras": [
+                        {
+                            "id": 1499,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1455,
+                                "ailment_effect": -1,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": 13,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1500,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1456,
+                                "ailment_effect": 115,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": -1,
+                                "rank_data": [
+                                    20,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        },
+                        {
+                            "id": 1501,
+                            "required_conditions": [
+                                1,
+                                -1,
+                                -1
+                            ],
+                            "required_values": [
+                                3018,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "effect_data": {
+                                "id": 1457,
+                                "ailment_effect": 294,
+                                "target_id": 1,
+                                "value_type": 1,
+                                "value_edit_type": 0,
+                                "type_id": -1,
+                                "rank_data": [
+                                    13025,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "awakeningPassives": [
@@ -12372,20 +15051,20 @@
             "auras": []
         },
         {
-            "id": 3050,
+            "id": 6743,
             "name": {
                 "en": "Insulating Appendages Extend",
-                "gl": "Insulating Appendages Extension",
+                "gl": "",
                 "jp": "隔たりの触手エクステンド"
             },
             "desc": {
-                "en": "When using 「Insulating Appendages」:\\n- BRV attack hit count becomes 4\\n- Tremendously raises total BRV potency\\n- Stolen BRV can overflow up to 150% Max BRV\\n- Extends duration of 「Power of Nothingness」 by 2 turns\\n\\nWhen using 「Toying Appendages」:\\n- BRV attack hit count becomes 6\\n- Moderately raises total BRV potency\\n- Grants 1 stack of 「Darkness」\\n\\nWhen using 「Uncanny Beam」:\\n- BRV attack hit count becomes 3\\n- Greatly raises total BRV potency\\n- Stolen BRV can overflow up to 120% Max BRV",
-                "gl": "When using Insulating Appendages: \\n • BRV attack hit count becomes 4; greatly increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Annulling Power duration +2\\n \\nWhen using Toying Appendages:\\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Self: Increases special effect Darkness by 1 (limit 5)\\n \\nWhen using Uncanny Beam: \\n • BRV attack hit count becomes 3; greatly increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 120%",
-                "jp": "「隔たりの触手」使用時\\n・BRV攻撃のHIT数が4HITに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n 上限は自身の最大BRVの150％分\\n・「無に帰す力」の2ACTION期間延長\\n\\n「慰みの触手」使用時\\n・BRV攻撃のHIT数が6HITに変化し\\n　合計BRV威力も中アップ\\n・自身に特殊効果「闇」1加算（上限5）\\n\\n「噴流砲」使用時\\n・BRV攻撃のHIT数が3HITに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n 上限は自身の最大BRVの120％分"
+                "en": "",
+                "gl": "",
+                "jp": "「隔たりの触手」使用時\\n ・2HIT全体魔法BRV攻撃＋単体HP攻撃が\\n　4HIT全体魔法BRV攻撃＋単体HP攻撃を2回行うに変化し\\n　合計BRV威力も極大アップ\\n・攻撃対象が単体の時 与えるBRVダメージ中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n 上限は自身の最大BRVの150％分\\n・「無に帰す力」の2ACTION期間延長\\n\\n「慰みの触手」使用時\\n・BRV攻撃のHIT数が6HITに変化し\\n　合計BRV威力も中アップ\\n・自身に特殊効果「闇」1加算（上限5）\\n\\n「噴流砲」使用時\\n・BRV攻撃のHIT数が3HITに変化し\\n　合計BRV威力も大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n 上限は自身の最大BRVの120％分"
             },
             "short_desc": {
                 "en": "",
-                "gl": "Insulating Appendages Extension: Boost to Insulating Appendages",
+                "gl": "",
                 "jp": "隔たりの触手エクステンド：「隔たりの触手」の性能アップ"
             },
             "meta_data": {
@@ -12497,7 +15176,7 @@
             },
             "desc": {
                 "en": "「Wide Angle Particle Beam」 use +1\\n\\nWhen using 「Wide Angle Particle Beam」:\\n- BRV attack hit count becomes 6\\n- Moderately raises total BRV potency\\n- Stolen BRV can overflow up to 120% Max BRV\\n- Delays all enemies by 1 turn\\n\\nWhen using 「0-form Particle Beam」:\\n- 6-HIT magic BRV + HP attack triggered thrice\\n- Tremendously raises total BRV potency\\n- Stolen BRV can overflow up to 150% Max BRV\\nDeals 20% HP damage to non-targets\\n- Delays target by 3 turns\\n- Extends duration of 「Power of Nothingness」 by 3 turns",
-                "gl": "Wide-Angle Particle Beam use +1\\n\\nWhen using Wide-Angle Particle Beam: \\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • All enemies: Delay 1 turn\\n \\nWhen using Zero-Form Particle Beam: \\n • 6-hit magic BRV attack + HP attack delivered 2 times becomes 6-hit magic BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Target delay +2\\n • Active Annulling Power duration +3",
+                "gl": "Wide-Angle Particle Beam use +1\\n\\nWhen using Wide-Angle Particle Beam:\\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Delays all enemies 1 turn\\n\\nWhen using Zero-Form Particle Beam:\\n • 6-hit magic BRV attack + HP attack delivered 2 times becomes 6-hit magic BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets\\n • Target delay +2\\n • Active Annulling Power duration +3",
                 "jp": "「広角式 波動砲」の使用回数＋1\\n\\n「広角式 波動砲」使用時\\n・BRV攻撃のHIT数が6HITに変化し\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・敵全体の行動順を1つ下げる\\n\\n「零式 波動砲」使用時\\n・6HIT魔法BRV攻撃＋HP攻撃を2回行うが\\n　6HIT魔法BRV攻撃＋HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分に変化\\n・ターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n・ターゲットの行動順を下げる量＋2\\n・自身に付与されている「無に帰す力」を3ACTION延長"
             },
             "short_desc": {
@@ -13500,7 +16179,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Wide-Angle Particle Beam use +1\\n\\nWhen using Wide-Angle Particle Beam: \\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • All enemies: Delay 1 turn\\n \\nWhen using Zero-Form Particle Beam: \\n • 6-hit magic BRV attack + HP attack delivered 2 times becomes 6-hit magic BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Target delay +2\\n • Active Annulling Power duration +3",
+                "gl": "Wide-Angle Particle Beam use +1\\n\\nWhen using Wide-Angle Particle Beam:\\n • BRV attack hit count becomes 6; moderately increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 120%\\n • Delays all enemies 1 turn\\n\\nWhen using Zero-Form Particle Beam:\\n • 6-hit magic BRV attack + HP attack delivered 2 times becomes 6-hit magic BRV attack + HP attack delivered 3 times; tremendously increased cumulative BRV damage\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 20% of cumulative HP damage to non-targets\\n • Target delay +2\\n • Active Annulling Power duration +3",
                 "jp": "「広角式 波動砲」の使用回数＋1\\n\\n「広角式 波動砲」使用時\\n・BRV攻撃のHIT数が6HITに変化し\\n　合計BRV威力も中アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの120％分\\n・敵全体の行動順を1つ下げる\\n\\n「零式 波動砲」使用時\\n・6HIT魔法BRV攻撃＋HP攻撃を2回行うが\\n　6HIT魔法BRV攻撃＋HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの150％分に変化\\n・ターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\n・ターゲットの行動順を下げる量＋2\\n・自身に付与されている「無に帰す力」を3ACTION延長"
             },
             "short_desc": {
@@ -14429,7 +17108,7 @@
             "series_id": 3,
             "name": {
                 "en": "Draconic Tentacles",
-                "gl": "",
+                "gl": "Dragon Tentacles (III)",
                 "jp": "双竜の魔手【III】"
             },
             "status": {
@@ -14732,7 +17411,7 @@
             "series_id": 3,
             "name": {
                 "en": "Dream Eaters",
-                "gl": "",
+                "gl": "Dream Eaters (III)",
                 "jp": "絶夢の魔手【III】"
             },
             "status": {
@@ -14809,7 +17488,296 @@
                 "auras": []
             }
         },
-        "rzBurstWeapon": {},
+        "rzBurstWeapon": {
+            "id": 5147,
+            "series_id": 3,
+            "name": {
+                "en": "",
+                "gl": "",
+                "jp": "絶夢の魔手【III】+"
+            },
+            "status": {
+                "max_hp": 78,
+                "int_brv": 420,
+                "max_brv": 4124,
+                "atk": 1498,
+                "def": 55,
+                "spd": 0
+            },
+            "meta_data": {
+                "rarity": 1000,
+                "max_limit_break": 3,
+                "is_from_gacha": 0,
+                "is_private": 140
+            },
+            "passive_data": {
+                "passive_id": 3138,
+                "sphere_id": -1,
+                "is_multi_passive": 1
+            },
+            "passive": {
+                "id": 3138,
+                "name": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "世界の均衡エクステンド"
+                },
+                "desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "BTアビリティ「超波動砲」の性能アップ"
+                },
+                "short_desc": {
+                    "en": "",
+                    "gl": "",
+                    "jp": "世界の均衡エクステンド：「超波動砲」の性能アップ"
+                },
+                "meta_data": {
+                    "cp": 20,
+                    "level": -1,
+                    "target": 2,
+                    "is_weapon_passive": 3138,
+                    "required_passive": 2648
+                },
+                "type_data": {
+                    "type": 3,
+                    "disp_type": 1,
+                    "condition_type": 1
+                },
+                "effects": [
+                    {
+                        "effect_id": 117,
+                        "effect_target": 2,
+                        "effect_values": [
+                            5147,
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "required_id": 1,
+                        "required_target": 2,
+                        "required_values": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "required_target_value": 0
+                    }
+                ],
+                "auras": []
+            },
+            "passives": [
+                {
+                    "id": 3139,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲BRVHPヒットプラスフォースリミットアップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "「超波動砲」使用時\\n・15HIT全体魔法BRV攻撃＋全体HP攻撃が\\n　10HIT全体魔法BRV攻撃＋全体HP攻撃を2回行う\\n　合計BRV威力も極大アップ\\n・与えるBRVダメージ上限極大アップ\\n・所持できるBRVと与えるHPダメージ上限極大アップ"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲BRVHPヒットプラスフォースリミットアップ：「超波動砲」の性能アップ"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3139,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3140,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "バーストモードアクトロング"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "バーストモード使用時連続行動できる行動数＋1"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "バーストモードアクトロング：バーストモード使用時連続行動できる行動数＋1"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3140,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 214,
+                            "effect_target": 2,
+                            "effect_values": [
+                                1,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        },
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3141,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲バフアップ"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "バースト効果「超波動砲」の3ACTION期間延長\\nバースト効果「超波動砲」に以下の効果が追加\\n・味方全員の奪ったBRVを最大BRVを超えて加算する上限小アップ\\n・味方全員の与えるHPダメージ小アップ"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲バフアップ：「超波動砲」の性能アップ"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3141,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                },
+                {
+                    "id": 3142,
+                    "name": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲マスタリー"
+                    },
+                    "desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "BTアビリティ「超波動砲」装備可能"
+                    },
+                    "short_desc": {
+                        "en": "",
+                        "gl": "",
+                        "jp": "超波動砲マスタリー：BTアビリティ「超波動砲」装備可能"
+                    },
+                    "meta_data": {
+                        "cp": -1,
+                        "level": -1,
+                        "target": 2,
+                        "is_weapon_passive": 3142,
+                        "required_passive": -1
+                    },
+                    "type_data": {
+                        "type": 3,
+                        "disp_type": 1,
+                        "condition_type": 1
+                    },
+                    "effects": [
+                        {
+                            "effect_id": 116,
+                            "effect_target": 2,
+                            "effect_values": [
+                                13363,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "required_id": 1,
+                            "required_target": 2,
+                            "required_values": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "required_target_value": 0
+                        }
+                    ],
+                    "auras": []
+                }
+            ]
+        },
         "silverArmor": {},
         "uniqueArmor": {
             "id": 4059,
@@ -14817,7 +17785,7 @@
             "name": {
                 "en": "Cloud of Darkness's Armguard",
                 "gl": "Cloud of Darkness's Armguard (III)",
-                "jp": "暗闇の雲のアームガード【Ⅲ】"
+                "jp": "暗闇の雲のアームガード【III】"
             },
             "status": {
                 "max_hp": 39,
@@ -14918,7 +17886,7 @@
             "name": {
                 "en": "Cloud of Darkness's Mantle",
                 "gl": "Cloud of Darkness's Mantle (III)",
-                "jp": "暗闇の雲のマント【Ⅲ】"
+                "jp": "暗闇の雲のマント【III】"
             },
             "status": {
                 "max_hp": 39,
@@ -15019,7 +17987,7 @@
             "name": {
                 "en": "Cloud of Darkness's Cape+",
                 "gl": "Cloud of Darkness's Mantle (III)+",
-                "jp": "暗闇の雲のマント【Ⅲ】+"
+                "jp": "暗闇の雲のマント【III】+"
             },
             "status": {
                 "max_hp": 39,
@@ -15119,7 +18087,7 @@
             "series_id": 3,
             "name": {
                 "en": "Lucent Robe",
-                "gl": "",
+                "gl": "Lucent Robe (III)",
                 "jp": "光雲の衣【III】"
             },
             "status": {
@@ -15150,7 +18118,7 @@
                 },
                 "desc": {
                     "en": "",
-                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt can exceed limit of 9999 by 15% (up to 11498)\\n\\nHeld bravery, HP damage dealt can exceed limit of 99999 by 15% (up to 114998)\\n*Only valid when effect breaking limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・自身の与えるBRVダメージ上限が9999を15％分突破可能になる（11498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を15％分突破可能になる（114998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -15522,13 +18490,13 @@
             "cast_id": 1428,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Darkness",
                 "jp": "闇"
             },
             "desc": {
                 "en": "",
                 "gl": "",
-                "jp": "闇"
+                "jp": "「闇」の効果"
             },
             "meta_data": {
                 "target": 2,
@@ -15538,7 +18506,10 @@
                 "wave_start": 0,
                 "conditions": [],
                 "duration": -1,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -15554,7 +18525,7 @@
                 "effects": [
                     67,
                     115,
-                    -1,
+                    115,
                     -1,
                     -1,
                     -1,
@@ -15566,7 +18537,7 @@
                 "val_types": [
                     3,
                     6,
-                    0,
+                    6,
                     0,
                     0,
                     0,
@@ -15590,7 +18561,7 @@
                 "val_specify": [
                     0,
                     10,
-                    0,
+                    20,
                     0,
                     0,
                     0,
@@ -15638,7 +18609,31 @@
                             }
                         ]
                     },
-                    -1,
+                    {
+                        "id": 126,
+                        "conds": [
+                            {
+                                "id": 168,
+                                "name": "PTARGET_HAS_BUFF",
+                                "target": 2,
+                                "values": [
+                                    2781,
+                                    0,
+                                    0
+                                ]
+                            },
+                            {
+                                "id": 185,
+                                "name": "PTARGET_HAS_AILMENT_LEVEL",
+                                "target": 2,
+                                "values": [
+                                    1465,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ]
+                    },
                     -1,
                     -1,
                     -1,
@@ -15693,7 +18688,10 @@
                     }
                 ],
                 "duration": 6,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -15861,7 +18859,10 @@
                     }
                 ],
                 "duration": 6,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -15968,8 +18969,8 @@
             "cast_id": 2743,
             "name": {
                 "en": "",
-                "gl": "",
-                "jp": "暗闇の雲LDエクステンドバフ用条件"
+                "gl": "LD Extend",
+                "jp": "LDエクステンド"
             },
             "desc": {
                 "en": "",
@@ -15992,7 +18993,10 @@
                     }
                 ],
                 "duration": -1,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -16099,7 +19103,7 @@
             "cast_id": 2710,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Balance By Destruction",
                 "jp": "破壊による均衡"
             },
             "desc": {
@@ -16123,7 +19127,10 @@
                     }
                 ],
                 "duration": 6,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -18763,7 +21770,7 @@
                 "desc": {
                     "en": "",
                     "gl": "",
-                    "jp": "クエスト開始時\\n自身に6ACTION「破壊による均衡」付与\\n\\n「急襲式 波動砲」使用時\\n・4HIT全体魔法BRV攻撃＋全体HP攻撃を2回行うが\\n　4HIT全体魔法BRV攻撃＋全体HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃を除くHP攻撃後\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n\\n特殊効果「闇」5以上時　以下の効果が追加\\n・自身の与えるHPダメージ小アップ"
+                    "jp": "クエスト開始時\\n自身に6ACTION「破壊による均衡」付与\\n\\n「急襲式 波動砲」使用時\\n・4HIT全体魔法BRV攻撃＋全体HP攻撃を2回行うが\\n　4HIT全体魔法BRV攻撃＋全体HP攻撃を3回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃を除くHP攻撃後\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n\\n特殊効果「闇」に以下の効果が追加\\n・自身の与えるHPダメージがアップし\\n　特殊効果「闇」5以上の時さらにアップ"
                 },
                 "short_desc": {
                     "en": "",

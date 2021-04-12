@@ -33,8 +33,8 @@
         },
         "description": {
             "en": "",
-            "jp": "元は軍事国家バロンに仕える\\n「暗黒騎士」だったが 闇の力で戦う\\n己の生き方に疑問を抱いた末に聖なる\\n騎士「パラディン」に転身。真実を見据\\nえる強い精神力と 仲間たちとの絆を武\\n器に苦難を乗り越え 宿敵ゴルベーザと\\nその背後の真実に立ち向かった。",
-            "gl": "At one time a dark knight of Baron、 Cecil questions his way of life and becomes a paladin. With steel nerves fixed on the truth and the bonds with his allies as his weapons、 he overcomes many trials to face his archenemy Golbez and what lies beyond."
+            "jp": "元は軍事国家バロンに仕える「暗黒騎士」だったが 闇の力で戦う己の生き方に疑問を抱いた末に聖なる騎士「パラディン」に転身。真実を見据える強い精神力と 仲間たちとの絆を武器に苦難を乗り越え 宿敵ゴルベーザとその背後の真実に立ち向かった。",
+            "gl": "At one time a dark knight of Baron, Cecil questions his way of life and becomes a paladin. With steel nerves fixed on the truth and the bonds with his allies as his weapons, he overcomes many trials to face his archenemy Golbez and what lies beyond."
         },
         "lines": {
             "jp": [
@@ -127,7 +127,11 @@
             ]
         },
         "series": 4,
-        "sort_num": 2
+        "sort_num": 2,
+        "shortName": {
+            "gl": "Cecil (Paladin)",
+            "jp": "セシル＿パラディン"
+        }
     },
     "status": {},
     "defaultAbilities": [
@@ -149,7 +153,7 @@
         },
         "rank_up_desc": {
             "en": "When using [Holy Flame (C)]\\n• Increases BRV gain based on Max BRV by 20%\\n• Stolen BRV can overflow up to 180% Max BRV\\n• Call Effect duration +3",
-            "gl": "「ホーリーフレイム【C】」使用時\\n・最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・使用後特殊効果の3ACTION期間延長",
+            "gl": "When using Holy Flame (C):\\n • Slight boost to BRV increased based on MAX BRV\\n • Stolen BRV may exceed MAX BRV up to 180%\\n • Special effect duration +3 after use",
             "jp": "「ホーリーフレイム【C】」使用時\\n・最大BRV依存のBRV加算量小アップ\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの180％分\\n・使用後特殊効果の3ACTION期間延長"
         },
         "ability": {
@@ -166,7 +170,7 @@
         },
         "rank_up_desc": {
             "en": "When using [Luminous Shard (C)]\\n• Becomes 3-HIT AoE Holy ranged BRV attack + AoE HP attack\\n　+ 5-HIT AoE Holy ranged BRV attack + AoE HP attack\\n• Stolen BRV can overflow up to 200% Max BRV\\n• Increases BRV damage dealt by 50% when attacking weakness\\n• [Holy Resist Down] duration +2\\n• Call Effect's Max HP overflow effect +20%",
-            "gl": "「ライトスラスター【C】」使用時\\n・8HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃が\\n　3HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃\\n　＋5HITHoly 属性全体遠距離物理BRV 攻撃＋全体HP 攻撃に変化\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・弱点をついた時 与えるBRVダメージ中アップ\\n・「Holy 耐性ダウン」の2ACTION期間延長\\n・使用後特殊効果の\\n　最大HPを超えてHP回復する効果小アップ",
+            "gl": "When using Luminous Shard (C):\\n • 8-hit group Holy  ranged BRV  attack + group HP  attack becomes 3-hit group Holy  ranged BRV  attack + group HP  attack + 5-hit group Holy  ranged BRV  attack + group HP  attack\\n • Stolen BRV may exceed MAX BRV up to 200%\\n • Moderately increases BRV damage dealt when attacking target's weakness\\n • Holy  Resist Down duration +2\\n • Slight boost to HP recovery in excess of MAX HP from special effect after use",
             "jp": "「ライトスラスター【C】」使用時\\n・8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃に変化\\n・奪ったBRVを最大BRVを超えて加算する\\n　上限は自身の最大BRVの200％分\\n・弱点をついた時 与えるBRVダメージ中アップ\\n・「聖耐性ダウン」の2ACTION期間延長\\n・使用後特殊効果の\\n　最大HPを超えてHP回復する効果小アップ"
         },
         "ability": {
@@ -182,7 +186,18 @@
                 "originalAbility": 1,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 37,
@@ -192,7 +207,18 @@
                     1202
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 38,
@@ -202,7 +228,18 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 36,
@@ -214,7 +251,18 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 23,
@@ -224,7 +272,18 @@
                     2381
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 22,
@@ -236,7 +295,18 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            709,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -246,7 +316,18 @@
                 "originalAbility": 4,
                 "reqExtendPassives": [],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 41,
@@ -256,7 +337,18 @@
                     1204
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 42,
@@ -266,7 +358,18 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 40,
@@ -278,7 +381,18 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 25,
@@ -288,7 +402,18 @@
                     2383
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             },
             {
                 "id": 24,
@@ -300,7 +425,18 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": [
+                    {
+                        "label": 11,
+                        "target": 2,
+                        "values": [
+                            -1,
+                            712,
+                            -1
+                        ]
+                    }
+                ]
             }
         ],
         [
@@ -312,7 +448,8 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 31,
@@ -322,7 +459,8 @@
                     1202
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 30,
@@ -334,7 +472,8 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 11,
@@ -344,7 +483,8 @@
                     2381
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 10,
@@ -356,7 +496,8 @@
                 "reqWeaponPassives": [
                     471
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -368,7 +509,8 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 34,
@@ -378,7 +520,8 @@
                     1204
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 33,
@@ -390,7 +533,8 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 14,
@@ -400,7 +544,8 @@
                     2383
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 13,
@@ -412,7 +557,8 @@
                 "reqWeaponPassives": [
                     472
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -424,7 +570,8 @@
                     2389
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 51,
@@ -434,7 +581,8 @@
                     2385
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 50,
@@ -445,7 +593,8 @@
                     2389
                 ],
                 "reqWeaponPassives": [],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -457,7 +606,8 @@
                 "reqWeaponPassives": [
                     476
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 4,
@@ -468,7 +618,8 @@
                     476,
                     1347
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 3,
@@ -480,7 +631,8 @@
                     1347,
                     1351
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [
@@ -492,7 +644,8 @@
                 "reqWeaponPassives": [
                     2170
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             },
             {
                 "id": 56,
@@ -504,7 +657,8 @@
                 "reqWeaponPassives": [
                     2170
                 ],
-                "reqSecretPassives": []
+                "reqSecretPassives": [],
+                "miscConditions": []
             }
         ],
         [],
@@ -673,7 +827,7 @@
             },
             "desc": {
                 "en": "Holy melee BRV attack\\nSelf: 3 turns [Brilliant Sword]\\n\\nWhile [Brilliant Sword] is active\\n• [BRV Attack] becomes [Light Slash]\\n　∟ 3-HIT Holy melee BRV attack (50% per hit)\\n　∟ Lowers Action Delay to 22",
-                "gl": "Holy melee BRV attack\\nSelf: 3 turns Brilliant Sword\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Holy melee BRV attack\\nSelf: 3 turns Brilliant Sword\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "聖属性近距離物理BRV攻撃\\n自身に3ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -757,7 +911,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -871,7 +1030,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Holy melee BRV attack\\nSelf: 6 turns Brilliant Sword\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Holy melee BRV attack\\nSelf: 6 turns Brilliant Sword\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "聖属性近距離物理BRV攻撃\\n自身に6ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -955,7 +1114,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -1069,7 +1233,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Grants party BRV based on own MAX BRV\\n2-hit Holy melee BRV attack\\nSelf: 3 turns Brilliant Sword\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Grants party BRV based on own MAX BRV\\n2-hit Holy melee BRV attack\\nSelf: 3 turns Brilliant Sword\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "自身の最大BRVに依存した量のBRVを味方全員に加算し\\n2HIT聖属性近距離物理BRV攻撃\\n自身に3ACTION「光輝の剣」付与\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -1197,7 +1361,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -1311,7 +1480,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Grants party BRV based on own MAX BRV\\n2-hit Holy melee BRV attack\\nSelf: 6 turns Brilliant Sword\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Grants party BRV based on own MAX BRV\\n2-hit Holy melee BRV attack\\nSelf: 6 turns Brilliant Sword\\nTriggers additional HP attack if BRV is at least 80% of MAX after last hit\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "自身の最大BRVに依存した量のBRVを味方全員に加算し\\n2HIT聖属性近距離物理BRV攻撃\\n自身に6ACTION「光輝の剣」付与\\n最終HIT後 自身のBRVが最大BRVの80％以上の時\\n追加HP攻撃が発動\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -1439,7 +1608,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -1553,7 +1727,7 @@
             },
             "desc": {
                 "en": "Holy ranged BRV attack + HP attack\\nRecovers party's HP by 100% of HP damage dealt (limit 10% of Max HP)\\nSelf: 2 turns [Divine Shield]\\n\\nWhile [Divine Shield] is active\\n• [HP Attack] becomes [Luminous Blast]\\n　∟ 7-HIT Holy ranged BRV attack + HP attack (10% per hit)",
-                "gl": "Holy ranged BRV attack + HP attack\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 10% of individual MAX HP\\nSelf: 2 turns Divine Shield\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "Holy ranged BRV attack + HP attack\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 10% of individual MAX HP\\nSelf: 2 turns Divine Shield\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "聖属性遠距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの10％分\\n自身に2ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -1680,7 +1854,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -1903,7 +2082,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Holy ranged BRV attack + HP attack\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 5 turns Divine Shield\\nHigh turn rate\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "Holy ranged BRV attack + HP attack\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 5 turns Divine Shield\\nHigh turn rate\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "聖属性遠距離物理BRV攻撃＋HP攻撃\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に5ACTION「聖光の盾」付与\\n行動負荷が低い\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -2032,7 +2211,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -2255,7 +2439,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit Holy ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 10% of individual MAX HP\\nSelf: 2 turns Divine Shield\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "2-hit Holy ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 10% of individual MAX HP\\nSelf: 2 turns Divine Shield\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "2HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの10％分\\n自身に2ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -2404,7 +2588,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 2
                     },
                     "type_data": {
@@ -2627,7 +2816,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "2-hit Holy ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nHigh turn rate\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 5 turns Divine Shield\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "2-hit Holy ranged BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nHigh turn rate\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 5 turns Divine Shield\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "2HIT聖属性遠距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n行動負荷が低い\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に5ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -2778,7 +2967,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -3546,8 +3740,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -3558,7 +3752,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -5127,7 +5326,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Grants party BRV based on own MAX BRV\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 5 turns Brilliant Sword\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Grants party BRV based on own MAX BRV\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 5 turns Brilliant Sword\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "味方全員に自身の最大BRVに依存した量のBRV加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に5ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -5319,7 +5518,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -5433,7 +5637,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Grants party BRV based on own MAX BRV\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 8 turns Brilliant Sword\\nBRV Attack becomes Light Slash while Brilliant Sword active",
+                "gl": "Grants party BRV based on own MAX BRV\\n4-hit Holy melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nSelf: 8 turns Brilliant Sword\\n\\nWhile Brilliant Sword active:\\n • BRV Attack becomes Light Slash",
                 "jp": "味方全員に自身の最大BRVに依存した量のBRV加算\\n＋4HIT聖属性近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n自身に8ACTION「光輝の剣」付与\\n「光輝の剣」付与中\\n通常「BRV攻撃」が「ライトスラッシュ」に変化"
             },
             "rank": 0,
@@ -5625,7 +5829,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 8
                     },
                     "type_data": {
@@ -5739,7 +5948,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Increases BRV based on MAX BRV\\n4-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nSelf: 4 turns Divine Shield\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "Increases BRV based on MAX BRV\\n4-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 20% of individual MAX HP\\nSelf: 4 turns Divine Shield\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの20％分\\n自身に4ACTION「聖光の盾」付与\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -5954,7 +6163,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -6177,7 +6391,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Increases BRV based on MAX BRV\\n4-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 30% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 7 turns Divine Shield\\nHigh turn rate\\nHP Attack becomes Luminous Blast while Divine Shield active",
+                "gl": "Increases BRV based on MAX BRV\\n4-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 30% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nSelf: 7 turns Divine Shield\\nHigh turn rate\\n\\nWhile Divine Shield active:\\n • HP Attack becomes Luminous Blast",
                 "jp": "自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n自身に7ACTION「聖光の盾」付与\\n行動負荷が低い\\n「聖光の盾」付与中\\n通常「HP攻撃」が「シャインブラスト」に変化"
             },
             "rank": 0,
@@ -6394,7 +6608,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 7
                     },
                     "type_data": {
@@ -6699,7 +6918,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -6968,7 +7192,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -7237,7 +7466,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -7506,7 +7740,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -7943,8 +8182,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -7955,7 +8194,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -8075,7 +8319,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -8512,8 +8761,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -8524,7 +8773,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -8644,7 +8898,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -9145,8 +9404,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -9157,7 +9416,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -9277,7 +9541,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -10207,12 +10476,12 @@
             "id": 11250,
             "name": {
                 "en": "Luminous Shard",
-                "gl": "",
+                "gl": "Luminous Shard",
                 "jp": "ライトスラスター"
             },
             "desc": {
                 "en": "8-HIT AoE Holy ranged BRV attack + AoE HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 200% Max BRV\\nDeals split HP damage between all targets\\nRecovers party's HP by 100% of HP damage dealt (limit 60% of MAX HP)\\nConverts excess HP recovered to BRV (limit 100% of INT BRV)\\nAll targets: 4 turns [Holy Resist Down]\\nSelf: 6 turns Special Effect [Entrusted Crystal]\\nDoes not consume use count on next turn (excl. certain abilities)\\n\\nWhile Special Effect [Entrusted Crystal] is active\\n• Party: 120% [DEF Up], 10% [HP Regen]\\n• Increases party's MAX HP overflow limit by 30%\\n• When own HP is at least 100%\\n　∟ Increases party's BRV damage dealt by 50%, HP damage dealt by 20%\\n　∟ Lowers party's HP damage taken by 20%",
-                "gl": "",
+                "gl": "8-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 60% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nAll targets: 4 turns Holy Resist Down\\nSelf: 6 turns special effect Crystal Entrusted\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nWhile special effect Crystal Entrusted active:\\n • Tremendously raises party's DEF\\n • Grants party HP Regen effect\\n • Party's HP may be recovered in excess of individual MAX HP by 30%\\n • Reduces HP damage taken of party members with at least 100% HP\\n • Moderately increases BRV damage dealt, slightly increases HP damage dealt of party members with at least 100% HP\\n • Does not stack with special effects of same name",
                 "jp": "8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に6ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し\\n与えるBRVダメージ中アップと与えるHPダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
@@ -10483,19 +10752,24 @@
                     "cast_id": 2045,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Entrusted Crystal",
                         "jp": "託されしクリスタル"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
-                        "jp": "託されしクリスタル"
+                        "gl": "Crystal Entrusted",
+                        "jp": "「託されしクリスタル」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -10832,7 +11106,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -10940,8 +11219,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -10952,7 +11231,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -11061,12 +11345,12 @@
             "id": 11251,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Luminous Shard",
                 "jp": "ライトスラスター"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "8-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 60% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nAll targets: 4 turns Holy Resist Down\\nSelf: 12 turns special effect Crystal Entrusted\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nWhile special effect Crystal Entrusted active:\\n • Tremendously raises party's DEF\\n • Grants party HP Regen effect\\n • Party's HP may be recovered in excess of individual MAX HP by 30%\\n • Reduces HP damage taken of party members with at least 100% HP\\n • Moderately increases BRV damage dealt, slightly increases HP damage dealt of party members with at least 100% HP\\n • Does not stack with special effects of same name",
                 "jp": "8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n敵全体に4ACTION「聖耐性ダウン」付与\\n自身に12ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し\\n与えるBRVダメージ中アップと与えるHPダメージ小アップ\\n同名の特殊効果は重複しない"
             },
             "rank": 0,
@@ -11337,19 +11621,24 @@
                     "cast_id": 2045,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Entrusted Crystal",
                         "jp": "託されしクリスタル"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
-                        "jp": "託されしクリスタル"
+                        "gl": "Crystal Entrusted",
+                        "jp": "「託されしクリスタル」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 12
                     },
                     "type_data": {
@@ -11686,7 +11975,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -11794,8 +12088,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -11806,7 +12100,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -11915,12 +12214,12 @@
             "id": 11252,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Luminous Shard",
                 "jp": "ライトスラスター"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "3-hit group Holy ranged BRV attack + group HP attack\\n5-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nModerately increased BRV damage when attacking target's weakness\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nTremendously restores party's HP based on HP damage dealt\\nRecovery limit: 60% of individual MAX HP\\nHP recovered in excess of MAX HP added to BRV\\nAll targets: 4 turns Holy Resist Down from first HP attack\\nSelf: 12 turns special effect Crystal Entrusted\\nNext turn after use does not consume ability use count (some abilities excluded)\\n\\nWhile special effect Crystal Entrusted active:\\n • Tremendously raises party's DEF\\n • Grants party HP Regen effect\\n • Party's HP may be recovered in excess of individual MAX HP by 30%\\n • Reduces HP damage taken of party members with at least 100% HP\\n • Moderately increases BRV damage dealt, slightly increases HP damage dealt of party members with at least 100% HP\\n • Does not stack with special effects of same name",
                 "jp": "3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱点をついた時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n最初のHP攻撃時に敵全体に4ACTION「聖耐性ダウン」付与\\n自身に12ACTION特殊効果「託されしクリスタル」付与\\n使用後 次の行動時 アビリティの使用回数を消費しない（一部のアビリティを除く）\\n特殊効果「託されしクリスタル」付与中 味方全員の防御力極大アップと\\nHPリジェネと最大HPを超えてHP回復する効果が発生 超える上限はそれぞれの最大HPの30％分\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n受けるHPダメージを軽減し 与えるBRVダメージ中アップと \\n与えるHPダメージ小アップ 同名の特殊効果は重複しない"
             },
             "rank": 0,
@@ -12233,19 +12532,24 @@
                     "cast_id": 2045,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Entrusted Crystal",
                         "jp": "託されしクリスタル"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
-                        "jp": "託されしクリスタル"
+                        "gl": "Crystal Entrusted",
+                        "jp": "「託されしクリスタル」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 12
                     },
                     "type_data": {
@@ -12570,8 +12874,8 @@
                     "cast_id": 2093,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "汎用ウィークダメージアップ用内部バフ"
+                        "gl": "Weak Damage Up",
+                        "jp": "ウィークダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -12582,7 +12886,12 @@
                         "rate": 100,
                         "rank": 5,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -12702,7 +13011,12 @@
                         "rate": 100,
                         "rank": -1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -12810,8 +13124,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -12822,7 +13136,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 5,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 4
                     },
                     "type_data": {
@@ -12931,12 +13250,12 @@
             "id": 11253,
             "name": {
                 "en": "Holy Flame (C)",
-                "gl": "",
+                "gl": "Holy Flame (C)",
                 "jp": "ホーリーフレイム【C】"
             },
             "desc": {
                 "en": "When called for assistance, Cecil (Paladin) performs the following actions\\n• Raises own Max BRV, Attack by 30%\\n• Increases own BRV by 30% of Max BRV\\n• 4-HIT AoE Holy ranged BRV attack + AoE HP attack\\n• Increases BRV damage dealt by 60% when attacking single target\\n• Deals split HP damage between all targets\\n• Recovers party's HP by 100% of HP damage dealt (limit 30% of Max HP)\\n• Converts excess HP recovered to BRV (limit 100% of INT BRV)\\n\\n3 turns Call Effect after use\\n• Party: 80% [DEF Up]",
-                "gl": "",
+                "gl": "Cecil's (Paladin) ability when called:\\n • Slightly raises own MAX BRV, ATK\\n • Increases BRV based on MAX BRV\\n • 4-hit group Holy ranged BRV attack + group HP attack\\n • Moderately increased BRV damage when attacking single target\\n • Deals proportionate HP damage to each target\\n • Largely restores allies' HP based on HP damage dealt\\n • Recovery limit: 30% of individual MAX HP\\n • HP recovered in excess of MAX HP added to BRV\\n\\nSpecial effect for 3 turns after use:\\n • Largely raises party's DEF",
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n\\n使用後特殊効果：3ACTION\\n味方全員の防御力大アップ"
             },
             "rank": 0,
@@ -13184,8 +13503,8 @@
                     "cast_id": 2098,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールセシルパラディン先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -13196,7 +13515,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -13304,19 +13628,24 @@
                     "cast_id": 2096,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Holy Flame (C)",
                         "jp": "ホーリーフレイム【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Holy Flame (C)",
                         "jp": "コールアビリティ「ホーリーフレイム【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -13462,12 +13791,12 @@
             "id": 11254,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Holy Flame (C)",
                 "jp": "ホーリーフレイム【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Cecil's (Paladin) ability when called:\\n • Slightly raises own MAX BRV, ATK\\n • Increases BRV based on MAX BRV\\n • 4-hit group Holy ranged BRV attack + group HP attack\\n • Moderately increased BRV damage when attacking single target\\n • Stolen BRV may exceed MAX BRV up to 180%\\n • Deals proportionate HP damage to each target\\n • Largely restores allies' HP based on HP damage dealt\\n • Recovery limit: 30% of individual MAX HP\\n • HP recovered in excess of MAX HP added to BRV\\n\\nSpecial effect for 6 turns after use:\\n • Largely raises party's DEF",
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n自身に自身の最大BRVに依存した量のBRVを加算\\n＋4HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの180％分\\n与えるHPダメージは分配\\n与えたHPダメージに応じて自身以外の味方全員のHP大回復\\n回復量の上限は それぞれの最大HPの30％分\\n対象の最大HPを超えてHPが回復した時\\n超えたHP分 対象のBRVに加算\\n\\n使用後特殊効果：6ACTION\\n味方全員の防御力大アップ"
             },
             "rank": 0,
@@ -13715,8 +14044,8 @@
                     "cast_id": 2098,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "コールセシルパラディン先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -13727,7 +14056,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -13835,19 +14169,24 @@
                     "cast_id": 2096,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Holy Flame (C)",
                         "jp": "ホーリーフレイム【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Holy Flame (C)",
                         "jp": "コールアビリティ「ホーリーフレイム【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 6
                     },
                     "type_data": {
@@ -13993,12 +14332,12 @@
             "id": 11255,
             "name": {
                 "en": "Luminous Shard (C)",
-                "gl": "",
+                "gl": "Luminous Shard (C)",
                 "jp": "ライトスラスター【C】"
             },
             "desc": {
                 "en": "When called for assistance, Cecil (Paladin) performs the following actions\\n• Raises own Max BRV, Attack by 30%\\n8-HIT AoE Holy ranged BRV attack + AoE HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nStolen BRV can overflow up to 200% Max BRV\\nDeals split HP damage between all targets\\nRecovers party's HP by 100% of HP damage dealt (limit 60% of MAX HP)\\nConverts excess HP recovered to BRV (limit 100% of INT BRV)\\nAll targets: 2 turns [Holy Resist Down]\\n\\n3 turns Call Effect after use\\n• Party: 120% [DEF Up]\\n• Increases party's MAX HP overflow limit by 10%",
-                "gl": "",
+                "gl": "Cecil's (Paladin) ability when called:\\n • Slightly raises own MAX BRV, ATK\\n • 8-hit group Holy ranged BRV attack + group HP attack\\n • Moderately increased BRV damage when attacking single target\\n • Deals proportionate HP damage to each target \\n • Tremendously restores allies' HP based on HP damage dealt\\n • Recovery limit: 60% of individual MAX HP\\n • HP recovered in excess of MAX HP added to BRV\\n • All targets: 2 turns Holy Resist Down\\n\\nSpecial effect for 3 turns upon use:\\n • Tremendously raises party's DEF\\n • Party's HP may be recovered in excess of individual MAX HP by 10%",
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配 \\n与えたHPダメージに応じて自身以外の味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 \\n超えたHP分 対象のBRVに加算\\n敵全体に2ACTION「聖耐性ダウン」付与\\n\\n使用時特殊効果：3ACTION\\n味方全員の防御力極大アップと\\n最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの10％分"
             },
             "rank": 0,
@@ -14312,8 +14651,8 @@
                     "cast_id": 2099,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "LDコールセシルパラディン先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -14324,7 +14663,12 @@
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -14432,19 +14776,24 @@
                     "cast_id": 2097,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Luminous Shard (C)",
                         "jp": "ライトスラスター【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Luminous Shard (C)",
                         "jp": "コールアビリティ「ライトスラスタ―【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -14625,8 +14974,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -14638,7 +14987,10 @@
                         "rank": -1,
                         "target": 5,
                         "arguments": [
-                            1
+                            1,
+                            0,
+                            0,
+                            0
                         ],
                         "duration": 2
                     },
@@ -14748,12 +15100,12 @@
             "id": 11256,
             "name": {
                 "en": "",
-                "gl": "",
+                "gl": "Luminous Shard (C)",
                 "jp": "ライトスラスター【C】"
             },
             "desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Cecil's (Paladin) ability when called:\\n • Slightly raises own MAX BRV, ATK\\n • 3-hit group Holy ranged BRV attack + group HP attack\\n • 5-hit group Holy ranged BRV attack + group HP attack\\n • Moderately increased BRV damage when attacking single target\\n • Moderately increased BRV damage when attacking target's weakness\\n • Stolen BRV may exceed MAX BRV up to 200%\\n • Deals proportionate HP damage to each target\\n • Tremendously restores allies' HP based on HP damage dealt\\n • Recovery limit: 60% of individual MAX HP\\n • HP recovered in excess of MAX HP added to BRV\\n • All targets: 4 turns Holy Resist Down from first HP attack\\n\\nSpecial effect for 3 turns upon use:\\n • Tremendously raises party's DEF\\n • Party's HP may be recovered in excess of individual MAX HP by 30%",
                 "jp": "コールされたセシル（パラディン）が以下の行動を行う\\n自身の最大BRVと攻撃力小アップし\\n3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n弱点をついた時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配 与えたHPダメージに応じて自身以外の味方全員のHP極大回復\\n回復量の上限は それぞれの最大HPの60％分\\n対象の最大HPを超えてHPが回復した時 超えたHP分 対象のBRVに加算\\n最初のHP攻撃時に敵全体に4ACTION「聖耐性ダウン」付与\\n\\n使用時特殊効果：3ACTION\\n味方全員の防御力極大アップと\\n最大HPを超えてHP回復する効果が発生\\n超える上限はそれぞれの最大HPの30％分"
             },
             "rank": 0,
@@ -15109,8 +15461,8 @@
                     "cast_id": 2099,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "LDコールセシルパラディン先付け内部バフ"
+                        "gl": "Status Up (during Call)",
+                        "jp": "ステータスアップ（コール中）"
                     },
                     "desc": {
                         "en": "",
@@ -15121,7 +15473,12 @@
                         "rate": 100,
                         "rank": 2,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -15229,19 +15586,24 @@
                     "cast_id": 2097,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Luminous Shard (C)",
                         "jp": "ライトスラスター【C】"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from call ability Luminous Shard (C)",
                         "jp": "コールアビリティ「ライトスラスタ―【C】」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 2,
                         "target": 29,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 3
                     },
                     "type_data": {
@@ -15422,8 +15784,8 @@
                     "cast_id": 71,
                     "name": {
                         "en": "",
-                        "gl": "Holy Resist Down",
-                        "jp": "聖耐性ダウン"
+                        "gl": "@PO@@ Resist Down",
+                        "jp": "@PO@@耐性@ダウン"
                     },
                     "desc": {
                         "en": "",
@@ -15435,7 +15797,10 @@
                         "rank": -1,
                         "target": 5,
                         "arguments": [
-                            1
+                            1,
+                            0,
+                            0,
+                            0
                         ],
                         "duration": 4
                     },
@@ -15544,8 +15909,8 @@
                     "cast_id": 2093,
                     "name": {
                         "en": "",
-                        "gl": "",
-                        "jp": "汎用ウィークダメージアップ用内部バフ"
+                        "gl": "Weak Damage Up",
+                        "jp": "ウィークダメージアップ"
                     },
                     "desc": {
                         "en": "",
@@ -15556,7 +15921,12 @@
                         "rate": 100,
                         "rank": 5,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 1
                     },
                     "type_data": {
@@ -15665,12 +16035,12 @@
             "id": 11277,
             "name": {
                 "en": "Soul Shift",
-                "gl": "",
+                "gl": "Soul Shift",
                 "jp": "ダブルフェイズ"
             },
             "desc": {
                 "en": "15-HIT AoE Holy ranged BRV attack + AoE HP attack\\nIncreases BRV damage dealt by 60% when attacking single target\\nDeals 100% HP damage to all targets\\n\\nMaximum BRV damage limit +20% (up to 11998)\\nMaximum obtainable BRV & HP damage limit +80% (up to 179998)\\n\\n5 turns party-wide BURST Effect after use\\n• Increases BRV damage dealt by 50%\\n• Increases gained BRV overflow limit by 20%\\n• Restores HP by 10% of MAX HP\\n• Increases BRV by 100% of individual current HP at start of turn\\n• When HP is at least 100% of MAX\\n　∟ Maximum BRV damage limit +20% (up to 11998)\\n　∟ Maximum obtainable BRV & HP damage limit +10% (up to 109998)\\n* Same character's BURST effects do not stack",
-                "gl": "",
+                "gl": "15-hit group Holy ranged BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nDeals total HP damage to each target\\nBRV damage dealt can exceed limit of 9999 by 20% (up to 11998)\\nStolen BRV may exceed MAX BRV up to 179998\\nHP damage dealt can exceed limit of 99999 by 80% (up to 179998)\\n\\nBurst effect for 5 turns after use:\\n • Moderately increases party's BRV damage dealt\\n • Slightly increases amount party's increased BRV may exceed MAX BRV\\n • Grants party HP Regen effect\\n • Grants ally BRV based on individual current HP at time of each ally's turn\\n • BRV damage dealt by party members with at least 100% HP can exceed limit of 9999 by 20% (up to 11998)\\n • Held bravery, HP damage dealt by party members with at least 100% HP can exceed limit of 9999 by 10% (up to 109998; only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999)\\nDoes not stack with identical characters' burst effects",
                 "jp": "15HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ　与えるHPダメージは等倍\\n与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n奪ったBRVが最大BRVを超えて179998まで加算でき\\n与えるHPダメージ上限も99999を80％分突破可能（179998まで）\\n使用後 以下のバースト効果を5ACTION付与\\n味方全員の与えるBRVダメージ中アップと加算したBRVを最大BRVを超えて\\n加算する上限小アップ 味方全員にHPリジェネの効果が発生し \\n味方の行動開始時それぞれの現在HPに依存した量のBRV加算\\nHPが最大HPの100％以上の味方にさらに下記の効果が発生\\n・与えるBRVダメージ上限が9999を20％分突破可能（11998まで）\\n・所持できるBRVと与えるHPダメージ上限が99999を10％分突破可能(109998まで)\\n （最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効）\\n同一キャラクターのバースト効果は重複しない"
             },
             "rank": 0,
@@ -16072,19 +16442,24 @@
                     "cast_id": 2008,
                     "name": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Soul Shift",
                         "jp": "ダブルフェイズ"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Effect from finishing burst Soul Shift",
                         "jp": "フィニッシュバースト「ダブルフェイズ」の効果"
                     },
                     "meta_data": {
                         "rate": 100,
                         "rank": 1,
                         "target": 2,
-                        "arguments": [],
+                        "arguments": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
                         "duration": 5
                     },
                     "type_data": {
@@ -17330,17 +17705,17 @@
             "id": 5838,
             "name": {
                 "en": "Full HP Protect All (C)",
-                "gl": "",
+                "gl": "Full HP Protect All (C)",
                 "jp": "フルHPプロテクトオール【C】"
             },
             "desc": {
                 "en": "When using a Call Ability at MAX HP\\n• Lowers party's HP damage taken by 10% for 3 turns",
-                "gl": "",
+                "gl": "When using call ability and own HP at MAX:\\n • Slightly reduces party's HP damage taken for 3 turns",
                 "jp": "自身のHPがMAXの時\\nコールアビリティ使用時\\n味方全員に3ACTION以下の効果が発動\\n受けるHPダメージを小軽減"
             },
             "short_desc": {
                 "en": "",
-                "gl": "",
+                "gl": "Full HP Protect All (C): Reduces party's HP damage taken",
                 "jp": "フルHPプロテクトオール【C】：味方全員の受けるHPダメージを軽減"
             },
             "meta_data": {
@@ -18309,6 +18684,70 @@
                 }
             ],
             "auras": []
+        },
+        {
+            "id": 5838,
+            "name": {
+                "en": "",
+                "gl": "Full HP Protect All (C)",
+                "jp": "フルHPプロテクトオール【C】"
+            },
+            "desc": {
+                "en": "",
+                "gl": "When using call ability and own HP at MAX:\\n • Slightly reduces party's HP damage taken for 3 turns",
+                "jp": "自身のHPがMAXの時\\nコールアビリティ使用時\\n味方全員に3ACTION以下の効果が発動\\n受けるHPダメージを小軽減"
+            },
+            "short_desc": {
+                "en": "",
+                "gl": "Full HP Protect All (C): Reduces party's HP damage taken",
+                "jp": "フルHPプロテクトオール【C】：味方全員の受けるHPダメージを軽減"
+            },
+            "meta_data": {
+                "cp": 5,
+                "level": 78,
+                "target": 3,
+                "is_weapon_passive": -1,
+                "required_passive": -1
+            },
+            "type_data": {
+                "type": 3,
+                "disp_type": 0,
+                "condition_type": 1
+            },
+            "effects": [
+                {
+                    "effect_id": 168,
+                    "effect_target": 2,
+                    "effect_values": [
+                        10,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "required_id": 133,
+                    "required_target": 2,
+                    "required_values": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                },
+                {
+                    "required_id": 30,
+                    "required_target": 2,
+                    "required_values": [
+                        100,
+                        0,
+                        0
+                    ],
+                    "required_target_value": 0
+                }
+            ],
+            "auras": []
         }
     ],
     "bloomStone": {
@@ -18416,7 +18855,7 @@
                 },
                 "desc": {
                     "en": "When using [Saint's  Fall]\\n• Increases BRV potency by 40%\\n• [Brilliant Sword] duration +3\\n　∟ [MAX BRV Up], [ATK Up] effects +20%\\n　∟ [SPD Up] effect +30%\\n\\nWhen using [Light Slash]\\n• Increases BRV potency by 30%",
-                    "gl": "When using Light Slash:\\n • BRV damage boost\\n\\nWhen using Saint's Fall:\\n • BRV damage boost\\n • Brilliant Sword boost, duration+",
+                    "gl": "When using Saint's Fall:\\n • Damage boost\\n • Brilliant Sword boost, duration+\\n\\nWhen using Light Slash:\\n • Damage boost",
                     "jp": "「セイントダイブ」「ライトスラッシュ」のBRV威力アップ\\n＋「光輝の剣」の効果アップと期間延長"
                 },
                 "short_desc": {
@@ -18582,7 +19021,7 @@
                 },
                 "desc": {
                     "en": "Increases BRV damage dealt with [Saint's Fall], [Holy Flame] by 10%",
-                    "gl": "Slightly increases BRV damage dealt with Saint's Fall, Holy Flame",
+                    "gl": "When using Saint's Fall, Holy Flame:\\n • Slightly increases BRV damage dealt",
                     "jp": "「セイントダイヴ」「ホーリーフレイム」の\\n与えるBRVダメージを小アップ"
                 },
                 "short_desc": {
@@ -19232,17 +19671,17 @@
                 "id": 2168,
                 "name": {
                     "en": "Flash of Radiance",
-                    "gl": "",
+                    "gl": "Brilliant Flash",
                     "jp": "燦然と輝く一閃"
                 },
                 "desc": {
                     "en": "May equip LD Ability [Luminous Shard]",
-                    "gl": "",
+                    "gl": "May equip LD ability Luminous Shard",
                     "jp": "LDアビリティ「ライトスラスター」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Brilliant Flash: May equip Luminous Shard",
                     "jp": "燦然と輝く一閃：「ライトスラスター」装備可能"
                 },
                 "meta_data": {
@@ -19287,17 +19726,17 @@
                     "id": 2169,
                     "name": {
                         "en": "Luminous Shard Power",
-                        "gl": "",
+                        "gl": "Mighty Luminous Shard",
                         "jp": "ライトスラスターパワー"
                     },
                     "desc": {
                         "en": "Raises own Max BRV by 10%, Attack by 40%\\nIncreases BRV damage dealt with [Luminous Shard] by 10%",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, moderately raises ATK\\n\\nSlightly increases BRV damage dealt with Luminous Shard",
                         "jp": "・自身の最大BRV小アップと攻撃力中アップ\\n・「ライトスラスター」の与える\\n　BRVダメージを小アップ"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Mighty Luminous Shard: Increases BRV damage dealt with Luminous Shard",
                         "jp": "ライトスラスターパワー：「ライトスラスター」のBRVダメージがアップ"
                     },
                     "meta_data": {
@@ -19360,17 +19799,17 @@
                     "id": 2170,
                     "name": {
                         "en": "Entrusted Crystal Long",
-                        "gl": "",
+                        "gl": "Crystal Entrusted Longer",
                         "jp": "託されしクリスタルロング"
                     },
                     "desc": {
                         "en": "Raises own Max BRV by 10%, Attack by 40%\\n\\nWhen using [Luminous Shard]\\n• [Entrusted Crystal] duration +6",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, moderately raises ATK\\n\\nWhen using Luminous Shard:\\n • Special effect Crystal Entrusted duration +6",
                         "jp": "・自身の最大BRV小アップと攻撃力中アップ\\n・「ライトスラスター」使用時\\n　特殊効果「託されしクリスタル」の6ACTION期間延長"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Crystal Entrusted Longer: Crystal Entrusted duration+",
                         "jp": "託されしクリスタルロング：「託されしクリスタル」の期間延長"
                     },
                     "meta_data": {
@@ -19424,17 +19863,17 @@
                     "id": 2171,
                     "name": {
                         "en": "Luminous Shard Charge",
-                        "gl": "",
+                        "gl": "Charged Luminous Shard",
                         "jp": "ライトスラスターチャージ"
                     },
                     "desc": {
                         "en": "Raises own Max BRV by 10%, Attack by 40%\\n[Luminous Shard] use +1",
-                        "gl": "",
+                        "gl": "Slightly raises MAX BRV, moderately raises ATK\\n\\nLuminous Shard use +1",
                         "jp": "・自身の最大BRV小アップと攻撃力中アップ\\n・「ライトスラスター」の使用回数＋1"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "",
+                        "gl": "Charged Luminous Shard: Luminous Shard use +1",
                         "jp": "ライトスラスターチャージ：「ライトスラスター」の使用回数＋1"
                     },
                     "meta_data": {
@@ -19526,17 +19965,17 @@
                 "id": 2172,
                 "name": {
                     "en": "Harmony of Light and Dark",
-                    "gl": "",
+                    "gl": "Harmony of Light and Dark",
                     "jp": "光と闇の調和"
                 },
                 "desc": {
                     "en": "May equip Finishing Burst [Soul Shift]",
-                    "gl": "",
+                    "gl": "May equip BT ability Soul Shift",
                     "jp": "BTアビリティ「ダブルフェイズ」装備可能"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Harmony of Light and Dark: May equip Soul Shift",
                     "jp": "光と闇の調和：「ダブルフェイズ」装備可能"
                 },
                 "meta_data": {
@@ -19918,7 +20357,7 @@
                 },
                 "desc": {
                     "en": "BRV damage dealt by party can exceed limit of 9999 by 5% (up to 10498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 10% (up to 109998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
-                    "gl": "BRV damage dealt by party can exceed limit of 9999 by 5% (up to 10498)\\n\\nHeld bravery and HP damage dealt can exceed limit of 99999 by 10% (up to 109998)\\n*Only valid when an effect breaking the limit of MAX BRV causes BRV to exceed 99999",
+                    "gl": "BRV damage dealt by party can exceed limit of 9999 by 5% (up to 10498)\\n\\nHeld bravery, HP damage dealt can exceed limit of 99999 by 10% (up to 109998)\\n*Only valid when effect breaking limit of MAX BRV causes BRV to exceed 99999",
                     "jp": "・味方全員の与えるBRVダメージ上限が9999を5％分突破可能になる（10498まで）\\n・自身の所持できるBRVと与えるHPダメージ上限が\\n　99999を10％分突破可能になる（109998まで）\\n※最大BRVの上限突破効果によってBRVが99999を超える場合のみ有効"
                 },
                 "short_desc": {
@@ -20003,7 +20442,7 @@
             "series_id": 4,
             "name": {
                 "en": "Crystal Shield+",
-                "gl": "",
+                "gl": "Crystal Shield (IV)+",
                 "jp": "クリスタルの盾【IV】+"
             },
             "status": {
@@ -20329,7 +20768,10 @@
                     }
                 ],
                 "duration": 8,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -20460,7 +20902,10 @@
                     }
                 ],
                 "duration": 8,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -20676,8 +21121,8 @@
             "cast_id": 1043,
             "name": {
                 "en": "",
-                "gl": "",
-                "jp": "クルルリキャスト付与用"
+                "gl": "EX Recast MAX",
+                "jp": "EXリキャストMAX"
             },
             "desc": {
                 "en": "",
@@ -20700,7 +21145,10 @@
                     }
                 ],
                 "duration": 1,
-                "arguments": []
+                "arguments": [
+                    0,
+                    0
+                ]
             },
             "type_data": {
                 "buff_type": 1,
@@ -20815,7 +21263,7 @@
             },
             "desc": {
                 "en": "When HP is MAX and breaking target or attacking a broken target:\\n• Increases party's BRV by 5% of individual Max BRV\\n* Only once per turn",
-                "gl": "When inflicting Break or attacking target afflicted with Break while HP at MAX:\\n • Grants party 5% of individual MAX BRV once per turn",
+                "gl": "When inflicting Break or attacking target afflicted with Break while own HP at MAX:\\n • Grants party 5% of individual MAX BRV once per turn",
                 "jp": "自身のHPがMAXで 対象をブレイク時 ブレイク中攻撃時\\n味方全員にそれぞれの最大BRVの5％分のBRVを加算\\n1回の行動での効果発動は1回のみ"
             },
             "short_desc": {
@@ -22753,17 +23201,17 @@
                 "id": 5857,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Luminous Shard Lv9",
                     "jp": "ライトスラスタ―パワー Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Increases BRV damage dealt by 10％",
                     "jp": "「ライトスラスタ―」の\\n与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Luminous Shard: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―パワー：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -22843,17 +23291,17 @@
                 "id": 5858,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard BRV Attack Advance Lv9",
                     "jp": "ライトスラスタ―BRVアタックアドバンス Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Stolen BRV may exceed MAX BRV up to 20％",
                     "jp": "「ライトスラスタ―」の\\n奪ったBRVを最大BRVを超えて加算する上限20％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard BRV Attack Advance: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―BRVアタックアドバンス：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -22933,17 +23381,17 @@
                 "id": 5859,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard HP Heal Up Lv9",
                     "jp": "ライトスラスタ―HPヒールアップ Lv9"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Increases HP recovery, recovery limit by 10％",
                     "jp": "「ライトスラスタ―」の\\nHP回復量とHP回復量上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard HP Heal Up: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―HPヒールアップ：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -23032,17 +23480,17 @@
                 "id": 5860,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Luminous Shard II",
                     "jp": "ライトスラスタ―パワーII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Increases BRV damage dealt by 5％",
                     "jp": "「ライトスラスタ―」の\\n与えるBRVダメージ5％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Mighty Luminous Shard II: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―パワーII：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -23122,17 +23570,17 @@
                 "id": 5861,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard BRV Attack Advance II",
                     "jp": "ライトスラスタ―BRVアタックアドバンスII"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Stolen BRV may exceed MAX BRV up to 10％",
                     "jp": "「ライトスラスタ―」の\\n奪ったBRVを最大BRVを超えて加算する上限10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard BRV Attack Advance II: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―BRVアタックアドバンスII：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -23212,17 +23660,17 @@
                 "id": 5862,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard Weak Damage Up",
                     "jp": "ライトスラスタ―ウィークダメージアップ"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • Increases BRV damage dealt when attacking target's weakness by 10％",
                     "jp": "「ライトスラスタ―」使用時\\n弱点をついた時 与えるBRVダメージ10％アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Luminous Shard Weak Damage Up: Boost to Luminous Shard",
                     "jp": "ライトスラスタ―ウィークダメージアップ：「ライトスラスタ―」の性能アップ"
                 },
                 "meta_data": {
@@ -23302,17 +23750,17 @@
                 "id": 5863,
                 "name": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Brilliant Flash Extension",
                     "jp": "燦然と輝く一閃エクステンド"
                 },
                 "desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "When using Luminous Shard:\\n • 8-hit group Holy ranged BRV attack + group HP attack becomes 3-hit group Holy ranged BRV attack + group HP attack + 5-hit group Holy ranged BRV attack + group HP attack; largely increased cumulative BRV damage\\n • Moderately increases BRV damage dealt when attacking target's weakness",
                     "jp": "「ライトスラスター」使用時\\n・8HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃\\n　＋5HIT聖属性全体遠距離物理BRV攻撃＋全体HP攻撃に変化し\\n　合計BRV威力も大アップ\\n・弱点をついた時 与えるBRVダメージ中アップ"
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "",
+                    "gl": "Brilliant Flash Extension: Boost to Luminous Shard",
                     "jp": "燦然と輝く一閃エクステンド：「ライトスラスター」の性能アップ"
                 },
                 "meta_data": {
