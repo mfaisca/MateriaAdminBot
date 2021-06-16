@@ -28,8 +28,8 @@ public class LogUtils{
 
 	private static Logger log;
 
-	static {
-		log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); //TODO Make lots of logs everywhere
+	static { //LOW Make more logs and have them organized by day and DMed to me daily
+		log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 		log.setLevel(Level.WARNING); 					   //Make a command that allows changing logging levels dynamically
 		try {
 			FileHandler fileTxt = new FileHandler("logger.txt");

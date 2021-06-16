@@ -16,7 +16,7 @@ import com.materiabot.Utils.Constants;
 public class _Library {
 	public static final _Library L = new _Library();
 
-	private _Library() {
+	private _Library() { //TODO Fazer no futuro scheduler método para ler todas as units que estão no $schedule para as manter em memoria 
 		UNIT_CACHE = CacheBuilder.newBuilder()
 				.expireAfterAccess(30, TimeUnit.MINUTES).build(new CacheLoader<String, Unit>(){
 					@Override

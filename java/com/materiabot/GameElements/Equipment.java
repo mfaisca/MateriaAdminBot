@@ -41,17 +41,18 @@ public class Equipment{
 		W_WoI(5, "summonWeapon", "woi", "emptyCrystal", "woi", "summon"), 
 		W_NT(5, "ntWeapon", "NT", "ntlogo", "nt"), 
 		W_MW(5, "manikinWeapon", "dark", "IronManikin", "manikin", "mw", "dark", "shadow"), 
-		W_EX(5, "exWeapon", "ex", "70cp", "ex", "70", "70cp", "ex3", "ex2", "ex1"), 
-		W_EXP(7, "realizedWeapon", "ex+", "100cp", "ex+", "exp", "100", "100cp", "ex+3", "ex+2", "ex+1", "ex+0"), 
-		W_LD(5, "limitedWeapon", "ld", "90cp", "ld", "limited", "90", "90cp", "ld3", "ld2", "ld1"), 
-		W_BT(10, "burstWeapon", "bt", "140cp", "bt", "burst", "130", "130cp"),
+		W_EX(5, "exWeapon", "ex", "70cp", "ex", "ex3", "ex2", "ex1"), 
+		W_EXP(6, "realizedWeapon", "ex+", "ex+", "exp", "ex+3", "ex+2", "ex+1", "ex+0"), 
+		W_LD(5, "limitedWeapon", "ld", "ld", "limited", "ld3", "ld2", "ld1"), 
+		W_BT(1000, "burstWeapon", "bt", "burst", "bt"),
+		W_BTP(1001, "rzBurstWeapon", "bt+", "burst+", "bt+", "bt+0", "bt+1", "bt+2", "bt+3"),
 		A_3S(3, "bronzeArmor", "3a", "a1cp", "3a", "a3"), 
 		A_4S(4, "silverArmor", "4a", "a10cp", "4a", "a4"), 
 		A_35(5, "uniqueArmor", "35a", "armorToken", "35a", "a35"), 
 		A_90(5, "exArmor", "hg", "armorTokenP", "90a", "a90"), 
-		A_90P(7, "realizedArmor", "hg+", "armorTokenP", "90a+", "130a", "a90+", "a130", "90ap", "a90p"), 
+		A_90P(6, "realizedArmor", "hg+", "armorTokenP", "90a+", "130a", "a90+", "a130", "90ap", "a90p"), 
 		A_7S(7, "highArmor", "7a", "highArmorToken", "ha", "210a", "a210"),
-		A_7SP(7, "rzHighArmor", "7ap", "highArmorBook", "hap", "230a", "a230"),
+		A_7SP(8, "rzHighArmor", "7ap", "highArmorBook", "ha+", "230a", "a230"),
 		BS(0, "bloomStone", "bloom", "bloom", "bloom", "bs");
 		
 		private int rarity;
@@ -105,7 +106,7 @@ public class Equipment{
 	}
 	
 	private int id;
-	private String name;
+	private Text name;
 	private List<Passive> passives = new ArrayList<Passive>(1);
 	private Type type;
 	private Rarity rarity;
@@ -113,9 +114,8 @@ public class Equipment{
 	
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
-	public String getName() { return name; }
-	public String getSlugName() { return name.substring(0, name.indexOf("(")).trim().replace("'", "").replace("�", "c").replace(" ", "_"); }
-	public void setName(String name) { this.name = name; }
+	public Text getName() { return name; }
+	public void setName(Text name) { this.name = name; }
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
 	public List<Passive> getPassives() { return passives; }

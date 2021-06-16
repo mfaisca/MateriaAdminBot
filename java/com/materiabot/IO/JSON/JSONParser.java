@@ -9,10 +9,10 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.util.Set;
-import java.util.stream.Collectors;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import com.materiabot.GameElements.Text;
 
 public class JSONParser {
 	public static class MyJSONObject{
@@ -20,6 +20,7 @@ public class JSONParser {
 
 		public MyJSONObject(JSONObject o) { json = o; }
 
+		public Boolean getBoolean(String name) { return getInt(name) == 1; }
 		public Integer getInt(String name) { try { return json.getInt(name); } catch(Exception e) { return null; }}
 		public String getString(String name) { try { return json.getString(name); } catch(Exception e) { return null; }}
 		public MyJSONObject getObject(String name) { try { return new MyJSONObject(json.getJSONObject(name)); } catch(Exception e) { return null; }}
@@ -34,18 +35,17 @@ public class JSONParser {
 				return null; 
 			}
 		}
-		@SuppressWarnings("unchecked")
-		@Deprecated
-		/**
-		 * To be used only in names and descriptions to make it easier to find a valid text, following the order: GL > EN > JP
-		 */
-		public String[] getStringArray(MyJSONObject obj) {
-			String[] ret = new String[obj.json.keySet().size()];
-			int i = 0;
-			for(Object o : ((Set<String>)obj.json.keySet()).stream().sorted().collect(Collectors.toList()))
-				ret[i++] = obj.getString(o.toString());
-			return ret;
+		public Text getText(MyJSONObject obj) {
+			Text t = new Text();
+			t.setEn(fix(obj.getString("en")));
+			t.setGl(fix(obj.getString("gl")));
+			t.setJp(fix(obj.getString("jp")));
+			return t;
 		}
+		private String fix(String c) { //Fix Special Characters
+			return c.replace("\\n", System.lineSeparator()).replace("\\bQp", "+");
+		}
+		
 		public Integer[] getIntArray(String name) { 
 			try {
 				JSONArray arr = name == null ? (JSONArray)(Object)json : json.getJSONArray(name);
@@ -68,6 +68,25 @@ public class JSONParser {
 				return null;
 			}
 		}
+		public MyJSONObject[] getObjectArray(String name, int nullValue) {
+			try {
+				JSONArray arr = json.getJSONArray(name);
+				MyJSONObject[] ret = new MyJSONObject[arr.length()];
+				for(int i = 0; i < ret.length; i++) {
+					try {
+						ret[i] = new MyJSONObject(arr.getJSONObject(i));
+					}catch(JSONException e) {
+						if(arr.getInt(i) == nullValue)
+							ret[i] = null;
+						else
+							throw new RuntimeException("Error parsing an object array \"" + name + "\" with int value different than null value:" + nullValue);
+					}
+				}
+				return ret;
+			} catch(Exception e) {
+				return null;
+			}
+		}
 		public MyJSONObject[][] getArrayArray(String name) {
 			try {
 				JSONArray arr = json.getJSONArray(name);
@@ -83,22 +102,7 @@ public class JSONParser {
 			}
 		}
 		
-		public JSONObject obtainJSON() { return json; }
-	}
-	
-	public static class ValueGrouping<R>{
-		public R type;
-		public int id;
-		public Integer[] values = new Integer[3];
-		
-		public ValueGrouping(R t, Integer... vals) {
-			type = t;
-			values = vals;
-		}
-		public ValueGrouping(int i, Integer... vals) {
-			id = i;
-			values = vals;
-		}
+		public JSONObject getJSON() { return json; }
 	}
 
 	private static final JSONObject parse(InputStream is) throws IOException{

@@ -1,6 +1,6 @@
 package com.materiabot;
-import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Unit;
+import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.IO.JSON.UnitParser;
 import java.io.File;
 import java.io.FileWriter;
@@ -38,15 +38,15 @@ public class Builder {
 			String unitText = defaultText.replace("{cleanName}", cleanName)
 					.replace("{name}", u.getName())
 					.replace("{nicks}", nicks)
-					.replace("{brv}", u.getAbility(Ability.Type.BRV).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{hp}", u.getAbility(Ability.Type.HP).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{s1}", u.getAbility(Ability.Type.S1).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{s2}", u.getAbility(Ability.Type.S2).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{ex}", u.getAbility(Ability.Type.EX).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{aa}", u.getAbility(Ability.Type.AA).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{ld}", u.getAbility(Ability.Type.LD).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{bt}", u.getAbility(Ability.Type.BT).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
-					.replace("{ca}", u.getAbility(Ability.Type.CA).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""));
+					.replace("{brv}", u.getAbility(AttackName.BRV).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{hp}", u.getAbility(AttackName.HP).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{s1}", u.getAbility(AttackName.S1).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{s2}", u.getAbility(AttackName.S2).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{ex}", u.getAbility(AttackName.EX).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{aa}", u.getAbility(AttackName.AA).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{ld}", u.getAbility(AttackName.LD).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{bt}", u.getAbility(AttackName.BT).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""))
+					.replace("{ca}", u.getAbility(AttackName.CA).stream().map(s -> ""+s.getId()).reduce((s1, s2) -> s1 + ", " + s2).orElse(""));
 			new File(".\\resources\\builder\\" + u.getSeries()).mkdir();
 			File out = new File(".\\resources\\builder\\" + u.getSeries() + "\\" + cleanName + ".java");
 			FileWriter fw = new FileWriter(out);

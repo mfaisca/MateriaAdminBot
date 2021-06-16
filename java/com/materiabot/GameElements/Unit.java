@@ -1,12 +1,14 @@
 package com.materiabot.GameElements;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import com.materiabot.GameElements.Sphere.SphereType;
+import com.google.common.collect.Streams;
+import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
 public class Unit {
 	private int id;
@@ -16,14 +18,15 @@ public class Unit {
 	private Crystal crystal;
 	private Equipment.Type equipmentType;
 	private Integer[] baseAbilities = new Integer[8];
-	private List<Ability.UpgradedAbility> upgradedAbilities = new LinkedList<Ability.UpgradedAbility>();
+	private List<ChainAbility> triggeredAbilities = new LinkedList<ChainAbility>();
+	private List<ChainAbility> upgradedAbilities = new LinkedList<ChainAbility>();
 	private HashMap<Integer, Ability> abilities = new HashMap<Integer, Ability>();
-	private HashMap<Integer, Passive> passives = new HashMap<Integer, Passive>();
+	private HashMap<Integer, Passive> jpPassives = new HashMap<Integer, Passive>();
 	private HashMap<Integer, Passive> glPassives = new HashMap<Integer, Passive>();
 	private List<Passive> charaBoards = new LinkedList<Passive>();
 	private HashMap<Integer, Ailment> ailments = new HashMap<Integer, Ailment>();
 	private List<Equipment> equipment = new LinkedList<Equipment>();
-	private List<Artifact> artifacts = new LinkedList<Artifact>();
+	private List<Passive> artifacts = new LinkedList<Passive>();
 	private SphereType[] sphereSlots = new SphereType[3];
 	private Sphere weaponSphere, basicSphere;
 
@@ -49,14 +52,16 @@ public class Unit {
 	public void setCrystal(Crystal c) { crystal = c; }
 	public Equipment.Type getEquipmentType() { return equipmentType; }
 	public void setEquipmentType(Equipment.Type t) { equipmentType = t; }
-	public List<Ability.UpgradedAbility> getUpgradedAbilities() { return upgradedAbilities; }
+	public List<ChainAbility> getUpgradedAbilities() { return upgradedAbilities; }
+	public List<ChainAbility> getTriggeredAbilities() { return triggeredAbilities; }
 	public HashMap<Integer, Ability> getAbilities() { return abilities; }
-	public HashMap<Integer, Passive> getJPPassives() { return passives; }
-	public HashMap<Integer, Passive> getPassives() { return glPassives; }
+	public HashMap<Integer, Passive> getJPPassives() { return jpPassives; }
+	public HashMap<Integer, Passive> getGLPassives() { return glPassives; }
+	public HashMap<Integer, Passive> getPassives() { return getGLPassives(); }
 	public List<Passive> getCharaBoards() { return charaBoards; }
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
 	public List<Equipment> getEquipment() { return equipment; }
-	public List<Artifact> getArtifacts() { return artifacts; }
+	public List<Passive> getArtifacts() { return artifacts; }
 	public SphereType[] getSphereSlots() { return sphereSlots; }
 	public SphereType[] setSphereSlots(SphereType s1, SphereType s2, SphereType s3) { return sphereSlots = new SphereType[] {s1, s2, s3}; }
 	public SphereType[] setSphereSlots(SphereType... sph) { return sphereSlots = sph; }
@@ -66,37 +71,32 @@ public class Unit {
 	public Integer[] getBaseAbilities() { return baseAbilities; }
 	public void setBaseAbilities(Integer[] baseAbls) { baseAbilities = baseAbls; }
 
-	public List<Ability> getBaseAbility(Ability.Type type) {
+	public List<Ability> getBaseAbility(AttackName type) {
 		if(type != null && type.ordinal() < baseAbilities.length)
 			return Arrays.asList(abilities.get(baseAbilities[type.ordinal()]));
 		return null;
 	}
-	public List<Ability> getAbility(Ability.Type type) {
+	public List<Ability> getAbility(AttackName type) {
 		return getAbility(type, null);
 	}
-	public List<Ability> getAbility(Ability.Type type, String region) {
-		Passive awakening = type.equals(Ability.Type.S1) ? this.getPassive(55, region) :
-							type.equals(Ability.Type.S2) ? this.getPassive(60, region) :
-							type.equals(Ability.Type.AA) ? this.getPassive(70, region) : null;
-		Iterator<Ability.UpgradedAbility> iter = upgradedAbilities.stream()
-				.filter(ua -> ua.type.equals(type))
-				.filter(ua -> awakening == null || ua.reqExtendPassives.stream().anyMatch(rp -> rp.intValue() == awakening.getId()))
-				.sorted((u1, u2) -> u1.upgrade.getDescription().length() - u2.upgrade.getDescription().length())
-				.collect(Collectors.toCollection(LinkedList::new))
-					.descendingIterator();
-		if(!iter.hasNext()) 
-			return baseAbilities.length > type.ordinal() ? Arrays.asList(abilities.get(baseAbilities[type.ordinal()])) : new LinkedList<Ability>();
-		List<Ability.UpgradedAbility> ret = new LinkedList<Ability.UpgradedAbility>();
-		Ability.UpgradedAbility last = iter.next();
-		ret.add(last);
-		while(iter.hasNext()) {
-			Ability.UpgradedAbility cur = iter.next();
-			if(cur.reqExtendPassives.equals(last.reqExtendPassives) && 
-				cur.reqWeaponPassives.equals(last.reqWeaponPassives) && 
-				ret.stream().map(a -> a.upgrade.getName()).noneMatch(a -> a.equals(cur.upgrade.getName())))
-					ret.add(0, cur);
+	public List<Ability> getAbility(AttackName type, String region) { //XXX TEST THIS
+		Collection<Passive> passives = region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
+		List<Integer> passivesIds = Streams.concat(	passives.stream().map(p -> p.getId()), 
+													getCharaBoards().stream().map(p -> p.getId()))
+											.collect(Collectors.toList());
+		List<Integer> ret = new LinkedList<Integer>();
+		int max = 0;
+		for(ChainAbility ca : getUpgradedAbilities()) {
+			if(!passivesIds.containsAll(ca.getReqExtendPassives())) continue;
+			if(ca.getReqWeaponPassives().size() == max)
+				ret.add(ca.getSecondaryId());
+			else if(ca.getReqWeaponPassives().size() > max) {
+				max = ca.getReqWeaponPassives().size();
+				ret.clear();
+				ret.add(ca.getSecondaryId());
+			}
 		}
-		return ret.stream().map(ua -> ua.upgrade).collect(Collectors.toList());
+		return ret.stream().map(a -> this.getSpecificAbility(a)).sorted((a1, a2) -> a1.getId() - a2.getId()).collect(Collectors.toList());
 	}
 	public Passive getPassive(int level) {
 		return getPassive(level, null);
@@ -119,13 +119,16 @@ public class Unit {
 		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).findFirst().orElse(null).getPassives().get(idx);
 	}
 	
-	public Ability getSpecificAbility(int id) {
+	public Ability getSpecificAbility(Integer id) {
+		if(id == null) return null;
 		return abilities.get(id);
 	}
-	public Passive getSpecificPassive(Passive p) {
-		return p;
+	public Passive getSpecificPassive(Integer id) {
+		if(id == null) return null;
+		return glPassives.get(id);
 	}
-	public Ailment getSpecificAilment(int id) {
+	public Ailment getSpecificAilment(Integer id) {
+		if(id == null) return null;
 		return ailments.get(id);
 	}
 

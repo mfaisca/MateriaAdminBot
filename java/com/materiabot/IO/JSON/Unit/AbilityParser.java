@@ -1,79 +1,77 @@
 package com.materiabot.IO.JSON.Unit;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
-import com.materiabot.GameElements.Unit;
-import Shared.Methods;
-//import com.google.common.base.CharMatcher;
 import com.materiabot.GameElements.Ability;
-import com.materiabot.GameElements.Ability.Details;
-import com.materiabot.GameElements.Ability.Details.Attack_Type;
-import com.materiabot.GameElements.Ability.Details.Command_Type;
-import com.materiabot.GameElements.Ability.Details.Hit_Data.EffectType;
-import com.materiabot.GameElements.Ability.Details.Target_Type;
 import com.materiabot.GameElements.Element;
+import com.materiabot.GameElements.HitData;
+import com.materiabot.GameElements.Enumerators.Ability.*;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Target;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
+import com.materiabot.Utils.Constants;
 
-public class AbilityParser {
-	private Unit unit;
-	
-	public AbilityParser(Unit u) { unit = u; }
-	
-	public void parseAbilities(MyJSONObject obj, String abilityArray) {
-		for(MyJSONObject a : obj.getObjectArray(abilityArray)) {
-			if(a.getInt("error") != null) continue; //Some exception I made???
-//			if(!CharMatcher.ascii().matchesAllOf(a.getObject("name").getString("gl"))) //Ignore JP Skills in GL
-//				continue;
-			parseAbility(a);
+public class AbilityParser {	
+	public static List<Ability> parseAbilities(MyJSONObject obj, String abilityArray) {
+		List<Ability> abilities = new LinkedList<Ability>();
+		for(MyJSONObject s : obj.getObjectArray(abilityArray)) {
+			if(s.getInt("error") != null) continue; //Some abilities have error
+			Ability a = parseAbility(s);
+			if(a != null) {
+				a.getAilments().addAll(AilmentParser.parseAilments(s, "ailments"));
+				abilities.add(a);
+			}
 		}
+		return abilities;
 	}
-	public Ability parseAbility(MyJSONObject ab) {
+	public static Ability parseAbility(MyJSONObject ab) {
 		Ability a = new Ability();
 		a.setId(ab.getInt("id"));
-//		if(ab.getObject("name").getString("en").length() == 0 && 
-//			ab.getObject("name").getString("gl").length() == 0) return null;
-		a.setName(Methods.getBestText(ab.getStringArray(ab.getObject("name"))));
-		a.setDescription(Methods.getBestText(ab.getStringArray(ab.getObject("desc"))).replace("\\n", System.lineSeparator()));
+		a.setRank(ab.getInt("rank"));
+		a.setName(ab.getText(ab.getObject("name")));
+		a.setDesc(ab.getText(ab.getObject("desc")));
 		a.setUseCount(ab.getInt("use_count"));
-		a.setDetails(new Details());
-		a.getDetails().setAttackType(Details.Attack_Type.get(ab.getObject("type_data").getInt("attack_type")));
-		a.setUnit(unit);
-		Details d = new Details();
-		a.setDetails(d);
-		d.setAttackType(Attack_Type.get(ab.getObject("type_data").getInt("attack_type")));
-		d.setChaseDmg(ab.getObject("chase_data").getInt("can_initiate_chase") * ab.getObject("chase_data").getInt("chase_dmg"));
-		d.setCommandType(Command_Type.get(ab.getObject("type_data").getInt("command_type")));
-		d.setMovementCost(ab.getInt("movement_cost"));
-		d.setTargetType(Target_Type.get(ab.getObject("type_data").getInt("target_type")));
-		unit.getAbilities().put(a.getId(), a);
+		a.setMovementCost(ab.getInt("movement_cost"));
+		a.setAttackTypeId(ab.getObject("type_data").getInt("attack_type"));
+		a.setAttackType(AttackType.get(a.getAttackTypeId()));
+		a.setCommandTypeId(ab.getObject("type_data").getInt("command_type"));
+		a.setCommandType(CommandType.get(a.getCommandTypeId()));
+		a.setTargetTypeId(ab.getObject("type_data").getInt("target_type"));
+		a.setTargetType(TargetType.get(a.getTargetTypeId()));
+		a.setTargetRangeId(ab.getObject("type_data").getInt("target_range"));
+		a.setTargetRange(TargetRange.get(a.getTargetRangeId()));
+		a.setCanLaunch(ab.getObject("chase_data").getBoolean("can_initiate_chase"));
+		a.setChaseDmg(ab.getObject("chase_data").getInt("chase_dmg"));
+		a.setArguments(Arrays.asList(ab.getIntArray("arguments")).stream().mapToInt(i -> i).toArray());
 		for(MyJSONObject data : ab.getObjectArray("hit_data")) {
-			Details.Hit_Data hd = new Details.Hit_Data();
+			HitData hd = new HitData(a);
 			hd.setId(data.getInt("id"));
-			hd.setType(Details.Hit_Data.Type.get(data.getInt("type")));
-			if(hd.getType() == null) {
-				continue;
-			}
-			hd.setArguments(data.getIntArray("arguments"));
+			if(hd.getId() == 518) continue; //its that first useless hitframe
+			hd.setTypeId(data.getInt("type"));
+			hd.setType(Type.get(hd.getTypeId()));
+			hd.setArguments(Arrays.asList(data.getIntArray("arguments")).stream().mapToInt(i -> i).toArray());
+			hd.setAttackTypeId(data.getInt("attack_type"));
+			hd.setAttackType(com.materiabot.GameElements.Enumerators.Ability.HitData.AttackType.get(hd.getAttackTypeId()));
+			hd.getElements().addAll(Arrays.asList(data.getIntArray("element")).stream().map(eid -> Element.get(eid)).collect(Collectors.toList()));
 			hd.setBrvRate(data.getObject("brv_data").getInt("brv_rate"));
 			hd.setMaxBrvOverflow(data.getObject("brv_data").getInt("max_brv_overflow"));
-			hd.setMaxBrvOverflowOnBreak(data.getObject("brv_data").getInt("max_brv_overflow_with_break"));
+			hd.setMaxBrvOverflowBreak(data.getObject("brv_data").getInt("max_brv_overflow_with_break"));
 			hd.setSingleTargetBrvRate(data.getObject("brv_data").getInt("single_target_brv_rate"));
-			hd.setBrvDamageLimit(data.getObject("brv_data").getInt("brv_damage_limit_up"));
-			hd.setMaxBrvLimit(data.getObject("brv_data").getInt("max_brv_limit_up"));
-			hd.setAttackType(Details.Hit_Data.Attack_Type.get(data.getInt("attack_type")));
-			hd.addElements(Arrays.asList(data.getIntArray("element")).stream().map(e -> Element.get(e.intValue())).collect(Collectors.toList()));
-			hd.setTarget(Details.Hit_Data.Target.get(data.getInt("target")));
-			if(hd.getTarget() == null)
-				System.out.println("ST" + data.getInt("target") + " | " + a.getName() + "(" + a.getId() + ") | HD ID: " + hd.getId());
-			hd.setEffect(new Details.Hit_Data.Effect());
-			hd.getEffect().setEffect(EffectType.get(data.getInt("effect")));
-			if(hd.getEffect().getEffect() == null)
-				System.out.println("SE" + data.getInt("effect") + " | " + a.getName() + "(" + a.getId() + ") | HD ID: " + hd.getId());
-			hd.getEffect().setEffectValueType(data.getInt("effect_value_type"));
-			if(hd.getEffect().getEffectValueType() == -1)
-				System.out.println("SEVT" + data.getInt("effect_value_type") + " | " + a.getName() + "(" + a.getId() + ") | HD ID: " + hd.getId());
-			d.getHits().add(hd);
+			hd.setBrvDamageLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up"));
+			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up"));
+			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up_direct"));
+			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up_direct"));
+			hd.setTargetId(data.getInt("target"));
+			hd.setTarget(Target.get(hd.getTargetId()));
+			hd.setEffectId(data.getInt("effect"));
+			hd.setEffect(Constants.ABILITY_EFFECT.get(hd.getEffectId()));
+			hd.setEffectValueType(data.getInt("effect_value_type"));
+			if(hd.getEffect() == null)
+				hd.setEffect(_AbilityEffect.ERROR);
+			a.getHitData().add(hd);
 		}
-		d.getAilments().addAll(new AilmentParser(unit).parseAilments(ab, "ailments"));
 		return a;
 	}
 }
