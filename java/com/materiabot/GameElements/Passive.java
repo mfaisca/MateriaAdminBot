@@ -5,7 +5,7 @@ import com.materiabot.GameElements.Enumerators.Passive.PassiveCondition;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveTarget;
 
-public class Passive{
+public class Passive implements Comparable<Passive>{
 	private int id;
 	private Text name;
 	private Unit unit;
@@ -17,6 +17,8 @@ public class Passive{
 	private List<PassiveEffect> effects = new LinkedList<PassiveEffect>();
 	private List<PassiveCondition> conditions = new LinkedList<PassiveCondition>();
 	
+	public Passive() {}
+	public Passive(String text) { setName(new Text(text)); setManualDesc(text); }
 	
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
@@ -44,6 +46,9 @@ public class Passive{
 	public String generateDescription() {
 		if(getManualDesc() != null)
 			return getManualDesc();
+		if(this.getLevel() == 20 || this.getLevel() == 55 || this.getLevel() == 60 || 
+			this.getLevel() == 70 || this.getLevel() == 75 || this.getLevel() == 80 || this.getLevel() == 85 || this.getLevel() == 90)
+			return this.getDesc().getBest();
 		String ret = "";
 		for(PassiveCondition pc : getConditions())
 			ret += System.lineSeparator() + pc.getDescription();
@@ -52,5 +57,13 @@ public class Passive{
 		for(PassiveEffect pe : getEffects())
 			ret += System.lineSeparator() + (hasCondition ? "\t" : "") + pe.getDescription();
 		return ret.trim();
+	}
+	public static final Passive NULL(int id) {
+		return new Passive("Unknown Passive " + id) {};
+	}
+	@Override
+	public int compareTo(Passive other) {
+		int ret = Integer.compare(this.getLevel(), other.getLevel());
+		return ret != 0 ? ret : Integer.compare(this.getId(), other.getId());
 	}
 }

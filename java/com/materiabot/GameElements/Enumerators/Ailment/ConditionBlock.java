@@ -1,6 +1,7 @@
 package com.materiabot.GameElements.Enumerators.Ailment;
 import java.util.LinkedList;
 import java.util.List;
+import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Enumerators.Ailment.Condition.ConditionTarget;
 import com.materiabot.GameElements.Enumerators.Ailment.Condition._Condition;
 
@@ -10,6 +11,7 @@ public class ConditionBlock {
 	public Integer getSimpleValue() { return simpleValue; }
 	public void setSimpleValue(Integer simpleValue) { this.simpleValue = simpleValue; }
 	///
+	private Ailment ailment;
 	private int id;
 	private List<ConditionBlock> conditions = new LinkedList<ConditionBlock>();
 	private String name;
@@ -19,6 +21,8 @@ public class ConditionBlock {
 	private _Condition condition;
 	private Integer[] values;
 	
+	public Ailment getAilment() { return ailment; }
+	public void setAilment(Ailment a) { ailment = a; }
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
 	public String getName() { return name; }

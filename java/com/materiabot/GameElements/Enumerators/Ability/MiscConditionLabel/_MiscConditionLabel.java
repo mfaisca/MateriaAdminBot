@@ -1,27 +1,29 @@
-package com.materiabot.GameElements.Enumerators.Ailment.Effect;
-import com.materiabot.GameElements.Ailment;
-import com.materiabot.GameElements.Enumerators.Ailment.Effect.ValTypes._ValType;
+package com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel;
+import java.util.HashMap;
+import com.materiabot.GameElements.MiscCondition;
 
-public abstract class _AilmentEffect {
+public class _MiscConditionLabel {
+	public static final HashMap<Integer, _MiscConditionLabel> LABELS = new HashMap<Integer, _MiscConditionLabel>();
+	
 	protected int id;
 	protected String baseDescription;
 	
-	protected _AilmentEffect(int id, String desc) {
+	protected _MiscConditionLabel(int id, String desc) {
 		this.id = id;
 		this.baseDescription = desc;
+		LABELS.put(Integer.valueOf(id), this);
 	}
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 
-	public String getDescription(Ailment a, int effectIndex) {
-		if(a.getEffects()[effectIndex] != id) return null;
+	public String getDescription(MiscCondition a) {
+		Integer[] values = a.getValues();
 		String description = getBaseDescription().replace("{t}", a.getTarget().getDescription());
-		Integer[] values = _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]).getValues(a, effectIndex);
 		for(int i = 0; i < values.length; i++) {
-			description = description.replace("{ail" + i + "}", a.getUnit().getSpecificAilment(values[i]).getName().getBest());
-			description = description.replace("{ab" + i + "}", a.getUnit().getSpecificAbility(values[i]).getName().getBest());
-			description = description.replace("{p" + i + "}", a.getUnit().getSpecificPassive(values[i]).getName().getBest());
+			description = description.replace("{ail" + i + "}", a.getAb().getUnit().getSpecificAilment(values[i]).getName().getBest());
+			description = description.replace("{ab" + i + "}", a.getAb().getUnit().getSpecificAbility(values[i]).getName().getBest());
+			description = description.replace("{p" + i + "}", a.getAb().getUnit().getSpecificPassive(values[i]).getName().getBest());
 			description = description.replace("{" + i + "}", "" + values[i]);
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

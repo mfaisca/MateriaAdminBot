@@ -9,7 +9,6 @@ import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Enumerators.Ability.*;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Target;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
-import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.Utils.Constants;
 
@@ -68,8 +67,6 @@ public class AbilityParser {
 			hd.setEffectId(data.getInt("effect"));
 			hd.setEffect(Constants.ABILITY_EFFECT.get(hd.getEffectId()));
 			hd.setEffectValueType(data.getInt("effect_value_type"));
-			if(hd.getEffect() == null)
-				hd.setEffect(_AbilityEffect.ERROR);
 			a.getHitData().add(hd);
 		}
 		return a;

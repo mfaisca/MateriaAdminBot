@@ -4,7 +4,6 @@ import java.util.List;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Unit;
-import com.materiabot.GameElements.Enumerators.Ability.HitData.Target;
 
 public class _AbilityEffect {
 	public static enum TAG{
@@ -14,26 +13,32 @@ public class _AbilityEffect {
 	protected int id;
 	protected String baseDescription;
 	protected List<TAG> tags;
-	public static _AbilityEffect ERROR = null;
 	
 	public _AbilityEffect(int id, String desc, TAG... tags) {
 		this.id = id;
 		this.baseDescription = desc;
 		this.tags = Arrays.asList(tags);
-		if(id == -100)
-			ERROR = this;
 	}
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 
 	public String getDescription(HitData hd) {
-		return getDescription(getBaseDescription(), hd, hd.getTarget(), hd.getArguments());
-	}
-	protected static final String getDescription(String description, HitData hd, Target target, int... values) {
-		description = description.replace("{t}", target.getDescription());
-		for(int i = 0; i < values.length; i++)
-			description = description.replace("{" + i + "}", ""+values[i]);
+		String description = getBaseDescription().replace("{t}", hd.getTarget().getDescription());
+		for(int i = 0; i < 2; i++) {
+			description = description.replace("{ail" + i + "}", hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest());
+			description = description.replace("{ab" + i + "}", hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest());
+			description = description.replace("{p" + i + "}", hd.getAbility().getUnit().getSpecificPassive(hd.getArguments()[i]).getName().getBest());
+			description = description.replace("{" + i + "}", hd.getArguments()[i]+"");
+		}
+		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}
+			String plurality = description.substring(description.indexOf("{pl"), description.indexOf("}", description.indexOf("{pl")) + 1);
+			int idx = plurality.charAt(3) - '0';
+			String ret = hd.getArguments()[idx] == 1 ? 
+							plurality.substring(plurality.indexOf(";") + 1, plurality.lastIndexOf(";")) : 
+							plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
+			description = description.replace(plurality, ret);
+		}
 		return description;
 	}
 

@@ -3,12 +3,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public final class ChainAbility{
+	private Unit unit;
 	private int id;
 	private int originalId, secondaryId;
 	private List<Integer> reqExtendPassives = new LinkedList<Integer>();
 	private List<Integer> reqWeaponPassives = new LinkedList<Integer>();
 	private List<MiscCondition> reqMiscConditions = new LinkedList<MiscCondition>();
 	
+	public Unit getUnit() { return unit; }
+	public void setUnit(Unit unit) { this.unit = unit; }
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
 	public int getOriginalId() { return originalId; }

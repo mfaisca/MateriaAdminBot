@@ -47,7 +47,7 @@ public class AilmentParser {
 		ail.setValEditTypes(ailment.getObject("type_data").getIntArray("val_edit_types"));
 		ail.setValSpecify(ailment.getObject("type_data").getIntArray("val_specify"));
 		ail.setRankTables(ailment.getObject("type_data").getIntArray("rank_tables"));
-		ail.setConditions(parseConditionBlocks(ailment.getObject("type_data"), "conditions", -1));
+		ail.setConditions(parseConditionBlocks(ail, ailment.getObject("type_data"), "conditions", -1));
 		for(Integer i : ail.getRankTables()) {
 			if(i == -1) continue;
 			RankData rd = new RankData(i.intValue());
@@ -72,7 +72,7 @@ public class AilmentParser {
 				aurasConditions[i] = ar;
 			}
 			a.setRequiredConditions(aurasConditions);
-			a.setRequiredValues(parseConditionBlocks(aura, "required_values", 0));
+			a.setRequiredValues(parseConditionBlocks(ail, aura, "required_values", 0));
 			a.setEffectDataId(aura.getObject("effect_data").getInt("id"));
 			a.setEffectId(aura.getObject("effect_data").getInt("ailment_effect"));
 			a.setTypeId(aura.getObject("effect_data").getInt("type_id"));
@@ -90,7 +90,7 @@ public class AilmentParser {
 		return ail;
 	}
 	
-	private static ConditionBlock[] parseConditionBlocks(MyJSONObject root, String name, int nullValue) {
+	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name, int nullValue) {
 		List<ConditionBlock> conds = new LinkedList<ConditionBlock>();
 		for(int i = 0; i < root.getJSON().getJSONArray(name).length(); i++) {
 			ConditionBlock c = new ConditionBlock();
@@ -101,6 +101,7 @@ public class AilmentParser {
 				c.setId(cond.getInt("id"));
 				for(MyJSONObject cond2 : cond.getObjectArray("conds")) {
 					ConditionBlock c2 = new ConditionBlock();
+					c2.setAilment(a);
 					c2.setConditionId(cond2.getInt("id"));
 					c2.setCondition(Constants.AILMENT_CONDITION.get(c2.getConditionId()));
 					c2.setTargetId(cond2.getInt("target"));

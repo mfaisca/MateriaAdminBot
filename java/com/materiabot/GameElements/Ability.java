@@ -1,4 +1,5 @@
 package com.materiabot.GameElements;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
@@ -41,6 +42,9 @@ public class Ability {
 	private List<Ailment> ailments = new LinkedList<Ailment>();
 	private int[] arguments; //Unknown use
 	private Unit unit;
+	
+	public Ability() {}
+	public Ability(String text) { setName(new Text(text)); setManualDesc(text); }
 	
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
@@ -114,12 +118,15 @@ public class Ability {
 				.filter(o -> o > 0)
 				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
 		List<String> preEffects = new LinkedList<String>();
+		List<String> effectList = new LinkedList<String>();
 		List<String> postEffects = new LinkedList<String>();
 		List<List<HitData>> effects = new LinkedList<List<HitData>>();
 		List<HitData> currentChain = new LinkedList<HitData>();
 		for(HitData hd : this.getHitData()) {
-			if(hd.getId() == 5)
-				System.out.println();
+			if(hd.getEffect() == null) {
+				effectList.add("Unknown active effect type '" + hd.getEffectId() + "/" + hd.getEffectValueType() + "': " + Arrays.toString(hd.getArguments()));
+				continue;
+			}
 			if(hd.getEffect().isPreEffect(hd.getEffectValueType()) && !preEffects.contains(hd.getDescription()))
 				preEffects.add(hd.getDescription());
 			else if(hd.getEffect().isPostEffect(hd.getEffectValueType()) && !postEffects.contains(hd.getDescription()))
@@ -137,7 +144,6 @@ public class Ability {
 				currentChain.add(hd);
 			}
 		}
-		List<String> effectList = new LinkedList<String>();
 		StringBuilder brvPotency = new StringBuilder();
 		int totalPotency = 0;
 		if(currentChain.size() > 0)
@@ -181,5 +187,8 @@ public class Ability {
 			effectList.add(System.lineSeparator() + "BRV Potency: " + brvPotency.substring(2).trim());
 		}
 		return effectList.stream().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("Error parsing ability");
+	}
+	public static final Ability NULL(int id) {
+		return new Ability("Unknown Ability " + id) {};
 	}
 }

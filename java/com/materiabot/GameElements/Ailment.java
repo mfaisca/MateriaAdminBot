@@ -9,7 +9,7 @@ import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.Utils.Constants;
 import Shared.BotException;
 
-public class Ailment { //TODO Missing icons
+public class Ailment { //TODO Missing icons	
 	/* Regarding iconType and dispType
 	 14 means not visible buff/debuff icon
 	and then is disp_type is not 0 or -1, then it is a special effect
@@ -28,6 +28,9 @@ public class Ailment { //TODO Missing icons
 	private HashMap<Integer, RankData> rankData = new HashMap<Integer, RankData>();
 	private List<Aura> auras = new LinkedList<Aura>();
 
+	public Ailment() {}
+	public Ailment(String text) { setName(new Text(text)); setFakeDesc(new Text(text)); }
+	
 	public boolean isStackable() {
 		return getMaxStacks() > 0; //TODO - double check with rem if this is enough
 	}
@@ -125,6 +128,7 @@ public class Ailment { //TODO Missing icons
 	public void setAuras(List<Aura> auras) { this.auras = auras; }
 	
 	public String generateDescription() throws BotException {
+		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		String ret = "";
 		//DEBUG
 		ret += this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" : "");
@@ -179,5 +183,8 @@ public class Ailment { //TODO Missing icons
 			}
 		}
 		return ret.trim();
+	}
+	public static final Ailment NULL(int id) {
+		return new Ailment("Unknown Ailment " + id) {};
 	}
 }

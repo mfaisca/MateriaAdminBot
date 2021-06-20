@@ -16,7 +16,6 @@ public class PassiveEffect {
 		this.passive = p;
 		this.effectId = effectId;
 		this.targetId = target;
-		this.targetId = target;
 		this.values = requiredValues;
 		this.effect = Constants.PASSIVE_EFFECT.get(effectId);
 		this.target = EffectTarget.get(targetId);
@@ -32,9 +31,7 @@ public class PassiveEffect {
 	public String getDescription() {
 		if(effect == null)
 			return "Unknown Effect " + effectId + Arrays.toString(values) + " T:" + targetId;
-		else if(target == null)
-			return "Unknown Effect " + effectId + Arrays.toString(values) + " T:" + targetId;
 		else
-			return effect.getDescription(passive, target, values);
+			return effect.getDescription(this);
 	}
 }

@@ -83,16 +83,17 @@ public class PluginManager {
 		UnitParser.UNITS.clear();
 		UnitParser.UNITS = manager.getAllPlugins().stream()
 							.filter(p -> p.getName().contains("Unit."))
-							//.filter(p -> p.getName().contains("Cecil_Paladin")) //TODO DEBUG
 							.map(p -> (Unit)p.get())
-							.peek(p -> {
-								System.out.print("Reading " + p.getName() + "...");
+							.map(p -> { //TODO DEBUG
+								//System.out.print("Reading " + p.getName() + "...");
 								Unit u = _Library.L.getQuickUnit(p.getName());
 								//Unit u = _Library.L.getUnit(p.getName()); //TODO DEBUG
 								p.setCrystal(u.getCrystal());
 								p.setEquipmentType(u.getEquipmentType());
-								p.setSphereSlots(u.getSphereSlots());
-								System.out.println(" OK");
-							}).collect(Collectors.toList());
+								p.setSphereSlots(u.getSphereSlots());;
+								//System.out.println(" OK");
+								return u;
+							})
+							.collect(Collectors.toList());
 	}
 }

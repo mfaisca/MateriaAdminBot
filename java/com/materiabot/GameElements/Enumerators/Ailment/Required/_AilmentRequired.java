@@ -15,14 +15,21 @@ public abstract class _AilmentRequired {
 	public final String getBaseDescription() { return baseDescription; }
 	
 	public String getDescription(Ailment p, AuraTarget target, Integer requireTargetValue, Integer... values) {
-		String r = baseDescription;
-		r = r.replace("{t}", target.getDescription());
+		String description = getBaseDescription().replace("{t}", target.getDescription());
 		for(int i = 0; i < values.length; i++) {
-			r = r.replace("{ail" + i + "}", p.getUnit().getSpecificAilment(values[i]).getName().getBest());
-			r = r.replace("{ab" + i + "}", p.getUnit().getSpecificAbility(values[i]).getName().getBest());
-			r = r.replace("{p" + i + "}", p.getUnit().getSpecificPassive(values[i]).getName().getBest());
-			r = r.replace("{" + i + "}", ""+values[i]);
+			description = description.replace("{ail" + i + "}", p.getUnit().getSpecificAilment(values[i]).getName().getBest());
+			description = description.replace("{ab" + i + "}", p.getUnit().getSpecificAbility(values[i]).getName().getBest());
+			description = description.replace("{p" + i + "}", p.getUnit().getSpecificPassive(values[i]).getName().getBest());
+			description = description.replace("{" + i + "}", ""+values[i]);
 		}
-		return r;
+		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}
+			String plurality = description.substring(description.indexOf("{pl"), description.indexOf("}", description.indexOf("{pl")) + 1);
+			int idx = plurality.charAt(3) - '0';
+			String ret = values[idx] == 1 ? 
+							plurality.substring(plurality.indexOf(";") + 1, plurality.lastIndexOf(";")) : 
+							plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
+			description = description.replace(plurality, ret);
+		}
+		return description;
 	}
 }

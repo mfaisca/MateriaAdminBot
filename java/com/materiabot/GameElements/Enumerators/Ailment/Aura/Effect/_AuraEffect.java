@@ -15,9 +15,8 @@ public abstract class _AuraEffect {
 	public final String getBaseDescription() { return baseDescription; }
 
 	public String getDescription(Aura a) {
-		
-		Integer[] values = _ValType.VAL_TYPES.get(a.getValueType()).getValues(a);
 		String description = getBaseDescription().replace("{t}", a.getTarget().getDescription());
+		Integer[] values = _ValType.VAL_TYPES.get(a.getValueType()).getValues(a);
 		for(int i = 0; i < values.length; i++) {
 			description = description.replace("{ail" + i + "}", a.getAilment().getUnit().getSpecificAilment(values[i]).getName().getBest());
 			description = description.replace("{ab" + i + "}", a.getAilment().getUnit().getSpecificAbility(values[i]).getName().getBest());

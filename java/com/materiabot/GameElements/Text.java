@@ -6,6 +6,7 @@ public class Text {
 	private String jp;
 	
 	public Text() {}
+	public Text(String fake) { en = gl = jp = fake; }
 
 	public String getEn() { return en; }
 	public void setEn(String en) { this.en = en; }

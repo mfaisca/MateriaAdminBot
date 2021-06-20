@@ -35,9 +35,7 @@ public class PassiveCondition {
 	public String getDescription() {
 		if(required == null)
 			return "Unknown Condition " + requiredId + Arrays.toString(values) + " T:" + targetId + "/" + targetValue;
-		else if(target == null)
-			return "Unknown ConditionT " + requiredId + Arrays.toString(values) + " T:" + targetId + "/" + targetValue;
 		else
-			return required.getDescription(passive, target, targetValue, values);
+			return required.getDescription(this);
 	}
 }

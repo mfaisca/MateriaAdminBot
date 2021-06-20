@@ -22,9 +22,9 @@ public class _Library {
 					@Override
 					public Unit load(String key) throws Exception {
 						if(key.toLowerCase().contains("_short"))
-							return new UnitParser().parseUnitQuick(key.replace("_short", ""));
+							return UnitParser.parseUnitQuick(key.replace("_short", ""));
 						else
-							return new UnitParser().parseUnit(key);
+							return UnitParser.parseUnit(key);
 					}
 				});
 	}

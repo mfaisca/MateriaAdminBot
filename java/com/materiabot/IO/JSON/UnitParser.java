@@ -16,6 +16,7 @@ import com.materiabot.GameElements.Text;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
+import com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel._MiscConditionLabel;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.IO.JSON.Unit.AbilityParser;
 import com.materiabot.IO.JSON.Unit.AilmentParser;
@@ -25,13 +26,13 @@ import Shared.Methods;
 public class UnitParser {
 	public static List<Unit> UNITS = new LinkedList<Unit>();
 
-	public Unit parseUnit(String name) {
+	public static Unit parseUnit(String name) {
 		return createUnit(name, false);
 	}
-	public Unit parseUnitQuick(String name) {
+	public static Unit parseUnitQuick(String name) {
 		return createUnit(name, true);
 	}
-	private Unit createUnit(String name, boolean quickRead) {
+	private static Unit createUnit(String name, boolean quickRead) {
 		try{
 			Unit u = UNITS.stream()
 						.filter(uu -> uu.getNicknames().contains(name.replace("_", " ").toLowerCase()))
@@ -50,9 +51,9 @@ public class UnitParser {
 			if(quickRead)
 				return u;
 			parseDefaultAilments(u, obj);
+			parseCompleteListAbilities(u, obj);
 			parseBaseAbilities(u, obj);
 			parseOptionalAbilities(u, obj);
-			parseCompleteListAbilities(u, obj);
 			parsePassives(u, obj);
 			parseCharaBoards(u, obj);
 			parseArtifacts(u, obj);
@@ -64,7 +65,7 @@ public class UnitParser {
 			return null;
 		}
 	}
-	private void parseProfile(Unit u, MyJSONObject obj) {
+	private static void parseProfile(Unit u, MyJSONObject obj) {
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
 		u.setSeries(obj.getObject("profile").getInt("world"));
@@ -72,7 +73,7 @@ public class UnitParser {
 		for(int i = 0; i < 3; i++)
 			u.getSphereSlots()[i] = SphereType.get(obj.getObject("profile").getObject("traits").getStringArray("spheres")[i]);
 	}
-	private void parsePassives(Unit u, MyJSONObject obj) {
+	private static void parsePassives(Unit u, MyJSONObject obj) {
 		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
 			p.setUnit(u);
 			u.getJPPassives().put(p.getLevel(), p);
@@ -83,7 +84,7 @@ public class UnitParser {
 			u.getPassives().put(p.getLevel(), p);
 		}
 	}
-	private void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
+	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
 		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
 			a.setUnit(u);
 			a.getAilments().stream()
@@ -92,23 +93,24 @@ public class UnitParser {
 			u.getAbilities().put(a.getId(), a);
 		}
 	}
-	private void parseBaseAbilities(Unit u, MyJSONObject obj) {
+	private static void parseBaseAbilities(Unit u, MyJSONObject obj) {
 		u.setBaseAbilities(obj.getIntArray("defaultAbilities"));
 		int typeIdx = 0;
 		for(int id : u.getBaseAbilities())
 			u.getSpecificAbility(id).setAttackName(AttackName.values()[typeIdx++]);
 	}
-	private void parseDefaultAilments(Unit u, MyJSONObject obj) {
+	private static void parseDefaultAilments(Unit u, MyJSONObject obj) {
 		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments")) {
 			a.setUnit(u);
 			u.getAilments().put(a.getId(), a);
 		}
 	}
-	private void parseOptionalAbilities(Unit u, MyJSONObject obj) {
+	private static void parseOptionalAbilities(Unit u, MyJSONObject obj) {
 		int typeIdx = 0;
 		for(MyJSONObject[] skill : obj.getArrayArray("optionalAbilities")) {
 			for(MyJSONObject skillLevel : skill) {
 				ChainAbility ca = new ChainAbility();
+				ca.setUnit(u);
 				ca.setId(skillLevel.getInt("id"));
 				ca.setOriginalId(skillLevel.getInt("originalAbility"));
 				ca.setSecondaryId(skillLevel.getInt("upgradedAbility"));
@@ -116,19 +118,26 @@ public class UnitParser {
 				ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
 				for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
 					MiscCondition mc = new MiscCondition();
-					mc.setLabel(miscC.getInt("label"));
+					mc.setAb(ca);
+					mc.setLabelId(miscC.getInt("label"));
+					mc.setLabel(_MiscConditionLabel.LABELS.get(mc.getLabelId()));
 					mc.setTargetId(miscC.getInt("target"));
 					mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
 					mc.setValues(miscC.getIntArray("values"));
 					ca.getReqMiscConditions().add(mc);
 				}
+				if(u.getName().equals("Balthier"))
+					System.out.print("");
+				if(u.getSpecificAbility(ca.getSecondaryId()) == null) 
+					continue;
 				u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
 				u.getUpgradedAbilities().add(ca);
 			}
-			typeIdx++;
+			if(skill.length > 0)
+				typeIdx++;
 		}
 	}
-	private void parseCharaBoards(Unit u, MyJSONObject obj) {
+	private static void parseCharaBoards(Unit u, MyJSONObject obj) {
 		if(obj.getObject("enhancementBoard") == null)
 			return;
 		for(Passive p : new PassiveParser().parsePassives(obj.getObject("enhancementBoard"), "passives")) {
@@ -136,14 +145,14 @@ public class UnitParser {
 			u.getCharaBoards().add(p);
 		}
 	}
-	private void parseArtifacts(Unit u, MyJSONObject obj) {
+	private static void parseArtifacts(Unit u, MyJSONObject obj) {
 		u.getArtifacts().clear();
 		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
 			p.setUnit(u);
 			u.getPassives().put(p.getLevel(), p);
 		}
 	}
-	private void parseGear(Unit u, MyJSONObject obj) {
+	private static void parseGear(Unit u, MyJSONObject obj) {
 		PassiveParser pp = new PassiveParser();
 		for(String gearType : Arrays.asList("silverWeapon", "baseWeapon", 
 				"uniqueWeapon", "summonWeapon", "ntWeapon", "manikinWeapon", "exWeapon", "realizedWeapon", "limitedWeapon", "burstWeapon", "rzBurstWeapon", 
@@ -179,7 +188,7 @@ public class UnitParser {
 		equip.getPassives().add(new PassiveParser().parsePassive(gearPassive));
 		u.getEquipment().add(equip);
 	}
-	private void parseSpheres(Unit u, MyJSONObject obj) {
+	private static void parseSpheres(Unit u, MyJSONObject obj) {
 		Sphere s1 = null, s2 = null;
 		for(String s : Arrays.asList("bonusSphere", "craftedSphere")) {
 			MyJSONObject gear = obj.getObject(s);

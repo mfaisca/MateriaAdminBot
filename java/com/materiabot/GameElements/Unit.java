@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import com.materiabot.GameElements.Sphere.SphereType;
 import com.google.common.collect.Streams;
@@ -80,7 +81,7 @@ public class Unit {
 		return getAbility(type, null);
 	}
 	public List<Ability> getAbility(AttackName type, String region) { //XXX TEST THIS
-		Collection<Passive> passives = region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
+		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
 		List<Integer> passivesIds = Streams.concat(	passives.stream().map(p -> p.getId()), 
 													getCharaBoards().stream().map(p -> p.getId()))
 											.collect(Collectors.toList());
@@ -121,15 +122,15 @@ public class Unit {
 	
 	public Ability getSpecificAbility(Integer id) {
 		if(id == null) return null;
-		return abilities.get(id);
+		return Objects.requireNonNullElse(abilities.get(id), Ability.NULL(id));
 	}
 	public Passive getSpecificPassive(Integer id) {
 		if(id == null) return null;
-		return glPassives.get(id);
+		return Objects.requireNonNullElse(glPassives.get(id), Passive.NULL(id));
 	}
 	public Ailment getSpecificAilment(Integer id) {
 		if(id == null) return null;
-		return ailments.get(id);
+		return Objects.requireNonNullElse(ailments.get(id), Ailment.NULL(id));
 	}
 
 	public String toString() {
@@ -141,5 +142,8 @@ public class Unit {
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
 			return null;
 		}
+	}
+	public int compareTo(Object o) {
+		return this.getName().compareTo(((Unit)o).getName());
 	}
 }
