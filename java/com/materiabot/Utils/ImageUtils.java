@@ -46,6 +46,7 @@ public abstract class ImageUtils {
 	
 	public static Emote getEmoteClassByName(String name) {
 		final String name2 = name.replaceAll(" ", "").replaceAll("'", "").replaceAll("&", "");
+		if(Constants.getClient() == null) return null;
 		Emote emo = Constants.getClient().getGuilds().stream()
 				.filter(s -> {
 					return s.getOwnerIdLong() == Constants.QUETZ_ID && s.getIdLong() != Constants.MATERIABOT_SERVER_ID;

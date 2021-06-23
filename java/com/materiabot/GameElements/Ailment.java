@@ -19,7 +19,7 @@ public class Ailment { //TODO Missing icons
 	private int id, castId;
 	private Text name, desc, fakeName, fakeDesc, fakeEmote;
 	private int rate, rank, duration, maxStacks, buffType, iconType, dispType, spStacks, targetId;
-	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables;
+	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId;
 	private ConditionBlock[] conditions;
 	private TargetType target;
 	private boolean extendable, framed, golden;
@@ -101,6 +101,9 @@ public class Ailment { //TODO Missing icons
 	public Integer[] getRankTables() { return rankTables; }
 	public void setRankTables(Integer[] rankTables) { this.rankTables = rankTables; }
 
+	public Integer[] getGroupId() { return groupId; }
+	public void setGroupId(Integer[] groupId) { this.groupId = groupId; }
+	
 	public ConditionBlock[] getConditions() { return conditions; }
 	public void setConditions(ConditionBlock[] conditions) { this.conditions = conditions; }
 

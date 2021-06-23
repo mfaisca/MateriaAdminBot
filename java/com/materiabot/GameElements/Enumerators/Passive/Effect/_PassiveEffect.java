@@ -6,7 +6,7 @@ import com.materiabot.GameElements.Enumerators.Passive.PassiveEffect;
 
 public abstract class _PassiveEffect {
 	public static enum TAG{
-		ABILITY1;
+		ABILITY1; //Show ability ID from Argument 1
 	}
 	
 	protected int id;
@@ -43,8 +43,8 @@ public abstract class _PassiveEffect {
 			String plurality = description.substring(description.indexOf("{pl"), description.indexOf("}", description.indexOf("{pl")) + 1);
 			int idx = plurality.charAt(3) - '0';
 			String ret = p.getValues()[idx] == 1 ? 
-					plurality.substring(plurality.indexOf(";") + 1, plurality.lastIndexOf(";")) : 
-						plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
+							plurality.substring(plurality.indexOf(";") + 1, plurality.lastIndexOf(";")) : 
+							plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
 			description = description.replace(plurality, ret);
 		}
 		return description;

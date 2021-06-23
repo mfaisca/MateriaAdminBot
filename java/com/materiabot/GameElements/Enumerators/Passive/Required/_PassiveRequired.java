@@ -1,4 +1,5 @@
 package com.materiabot.GameElements.Enumerators.Passive.Required;
+import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveCondition;
 
 public abstract class _PassiveRequired {
@@ -14,13 +15,18 @@ public abstract class _PassiveRequired {
 	public final String getBaseDescription() { return baseDescription; }
 	
 	public String getDescription(PassiveCondition pc) {
-		String description = getBaseDescription()
+		return applyReplaces(pc, getBaseDescription());
+	}
+	protected String applyReplaces(PassiveCondition pc, String description) {
+		description = description
 				.replace("{t}", pc.getTarget() == null ? "Unknown Target: " + pc.getTargetId() : pc.getTarget().getDescription())
 				.replace("{pt}", pc.getPassive().getTarget() == null ? "Unknown Target: " + pc.getPassive().getTargetId() : pc.getPassive().getTarget().getDescription());
 		for(int i = 0; i < pc.getValues().length; i++) {
-			description = description.replace("{ail" + i + "}", pc.getPassive().getUnit().getSpecificAilment(pc.getValues()[i]).getName().getBest());
-			description = description.replace("{ab" + i + "}", pc.getPassive().getUnit().getSpecificAbility(pc.getValues()[i]).getName().getBest());
-			description = description.replace("{p" + i + "}", pc.getPassive().getUnit().getSpecificPassive(pc.getValues()[i]).getName().getBest());
+			description = description.replace("{ail" + i + "}", "「**" + pc.getPassive().getUnit().getSpecificAilment(pc.getValues()[i]).getName().getBest() + "**」");
+			description = description.replace("{ab" + i + "}", "「**" + pc.getPassive().getUnit().getSpecificAbility(pc.getValues()[i]).getName().getBest() + "**」");
+			description = description.replace("{p" + i + "}", "「**" + pc.getPassive().getUnit().getSpecificPassive(pc.getValues()[i]).getName().getBest() + "**」");
+			description = description.replace("{s1}", "「**" + pc.getPassive().getUnit().getAbility(AttackName.S1).get(0).getName().getBest() + "**」");
+			description = description.replace("{s2}", "「**" + pc.getPassive().getUnit().getAbility(AttackName.S2).get(0).getName().getBest() + "**」");
 			description = description.replace("{" + i + "}", ""+pc.getValues()[i]);
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

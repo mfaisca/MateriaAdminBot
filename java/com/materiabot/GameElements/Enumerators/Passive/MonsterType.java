@@ -2,7 +2,8 @@ package com.materiabot.GameElements.Enumerators.Passive;
 
 public enum MonsterType {
 	Wolf(4, "Wolf"),
-	Skeleton(7, "Skeleton");
+	Skeleton(7, "Skeleton"),
+	Skeleton2(23, "Skeleton");
 	
 	private String name;
 	private int id;

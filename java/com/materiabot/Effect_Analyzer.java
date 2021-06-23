@@ -16,7 +16,7 @@ public class Effect_Analyzer {
 //				.peek(e -> System.out.println(e.getName()))
 //				.forEach(u -> System.out.println(u.getName()));
 
-		_Library.L.getUnit("Yang").getPassives().values().stream().sorted().forEach(p -> {
+		_Library.L.getUnit("Queen").getPassives().values().stream().sorted().forEach(p -> {
 			String text = System.lineSeparator() + String.format("%s (%d)%nLevel: %d | CP: %d%n%n%s", p.getName().getBest(), p.getId(), p.getLevel(), p.getCp(), p.generateDescription());
 			System.out.println(text);
 		});

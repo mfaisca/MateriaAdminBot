@@ -32,6 +32,7 @@ public class AbilityParser {
 		a.setName(ab.getText(ab.getObject("name")));
 		a.setDesc(ab.getText(ab.getObject("desc")));
 		a.setUseCount(ab.getInt("use_count"));
+		a.setGroupId(ab.getIntArray("group_id"));
 		a.setMovementCost(ab.getInt("movement_cost"));
 		a.setAttackTypeId(ab.getObject("type_data").getInt("attack_type"));
 		a.setAttackType(AttackType.get(a.getAttackTypeId()));

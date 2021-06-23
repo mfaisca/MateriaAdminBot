@@ -18,7 +18,7 @@ public class Ability {
 		
 	}
 	
-	private int id;
+	private int id = -1;
 	private Text name;
 	private Text desc;
 	private String manualDesc;
@@ -33,6 +33,7 @@ public class Ability {
 	private AttackType attackType;
 	private AttackName attackName; //My own data structure
 	private int commandTypeId;
+	private Integer[] groupId;
 	private CommandType commandType;
 	private int targetTypeId;
 	private TargetType targetType;
@@ -86,6 +87,8 @@ public class Ability {
 	public void setAttackName(AttackName attackName) { this.attackName = attackName; }
 	public int getCommandTypeId() { return commandTypeId; }
 	public void setCommandTypeId(int commandTypeId) { this.commandTypeId = commandTypeId; }
+	public Integer[] getGroupId() { return groupId; }
+	public void setGroupId(Integer[] groupId) { this.groupId = groupId; }
 	public int getTargetTypeId() { return targetTypeId; }
 	public void setTargetTypeId(int targetTypeId) { this.targetTypeId = targetTypeId; }
 	public int getTargetRangeId() { return targetRangeId; }

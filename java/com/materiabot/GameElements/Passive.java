@@ -49,15 +49,25 @@ public class Passive implements Comparable<Passive>{
 		if(this.getLevel() == 20 || this.getLevel() == 55 || this.getLevel() == 60 || 
 			this.getLevel() == 70 || this.getLevel() == 75 || this.getLevel() == 80 || this.getLevel() == 85 || this.getLevel() == 90)
 			return this.getDesc().getBest();
-		String ret = "";
-		for(PassiveCondition pc : getConditions())
-			ret += System.lineSeparator() + pc.getDescription();
-		ret = ret.trim();
-		boolean hasCondition = ret.length() > 0;
+		List<String> ret = new LinkedList<String>();
+		ret.add(buildCondition());
+		boolean hasCondition = ret.get(0).length() > 0;
 		for(PassiveEffect pe : getEffects())
-			ret += System.lineSeparator() + (hasCondition ? "\t" : "") + pe.getDescription();
-		return ret.trim();
+			ret.add((hasCondition ? "\t" : "") + pe.getDescription());
+		return ret.stream().distinct().filter(s -> s.length() > 0).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").trim();
 	}
+	private String buildCondition() {
+		String condition1 = getConditions().get(0).getDescription().trim();
+		String condition2 = getConditions().get(1).getDescription().trim();
+		if(condition1.length() == 0)
+			condition1 = condition2;
+		else if(getConditions().get(1).getRequiredId() == 53)
+			condition1 += " " + condition2;
+		else if(condition2.length() > 0)
+			condition1 = condition1.replace(":", " and") + condition2.replace("When", "").replace("While", "");
+		return condition1.trim();
+	}
+	
 	public static final Passive NULL(int id) {
 		return new Passive("Unknown Passive " + id) {};
 	}
