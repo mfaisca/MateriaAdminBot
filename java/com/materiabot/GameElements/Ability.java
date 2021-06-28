@@ -9,8 +9,9 @@ import com.materiabot.GameElements.Enumerators.Ability.HitType;
 import com.materiabot.GameElements.Enumerators.Ability.TargetRange;
 import com.materiabot.GameElements.Enumerators.Ability.TargetType;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect.TAG;
 
-public class Ability {
+public class Ability implements Comparable<Ability>{
 	public static final class MiscCondition{
 		public int label;
 		public int target;
@@ -108,6 +109,8 @@ public class Ability {
 				.map(h -> h.getMaxBrvOverflow())
 				.filter(o -> o > 100)
 				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(100);
+		if(overflow <= 100)
+			overflow = this.getHitData().stream().filter(hd -> hd.getEffectId() == 106).map(hd -> hd.getArguments()[0]).findFirst().orElse(100);
 		int breakOverflow = this.getHitData().stream()
 				.map(h -> h.getMaxBrvOverflowBreak())
 				.filter(o -> o > 0)
@@ -130,10 +133,11 @@ public class Ability {
 				effectList.add("Unknown active effect type '" + hd.getEffectId() + "/" + hd.getEffectValueType() + "': " + Arrays.toString(hd.getArguments()));
 				continue;
 			}
+			hd.getDescription();
 			if(hd.getEffect().isPreEffect(hd.getEffectValueType()) && !preEffects.contains(hd.getDescription()))
-				preEffects.add(hd.getDescription());
+				preEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
 			else if(hd.getEffect().isPostEffect(hd.getEffectValueType()) && !postEffects.contains(hd.getDescription()))
-				postEffects.add(hd.getDescription());
+				postEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
 			if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()) && (currentChain.size() == 0 || currentChain.get(0).getEffect().isBRV())) {
 				currentChain.add(hd);
 			}else if(hd.getEffect().isHP() && Type.isHP(hd.getType()) && (currentChain.size() == 0 || currentChain.get(0).getEffect().isBRV())) {
@@ -173,10 +177,10 @@ public class Ability {
 				if(help.count > 1)
 					brvPotency.append(" x " + help.count);
 				totalPotency += Math.round(chain.get(0).getBrvRate() * help.count);
-			} else if(chain.get(0).getEffect().isHP() && Type.isHP(chain.get(0).getType())) {
+			} else if(chain.get(0).getEffect().isHP() && Type.isHP(chain.get(0).getType()))
 				effectList.add("Followed by an HP Attack");
-			} else
-				effectList.add(chain.get(0).getDescription());
+			else
+				effectList.add((chain.get(0).getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + chain.get(0).getDescription());
 		}
 		effectList.addAll(postEffects);
 		if(brvPotency.length() > 0) {
@@ -189,9 +193,13 @@ public class Ability {
 				brvPotency.append(")");
 			effectList.add(System.lineSeparator() + "BRV Potency: " + brvPotency.substring(2).trim());
 		}
-		return effectList.stream().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("Error parsing ability");
+		return effectList.stream().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("Error parsing ability").replace(System.lineSeparator() + "{retLine}", "");
 	}
 	public static final Ability NULL(int id) {
 		return new Ability("Unknown Ability " + id) {};
 	}
+    @Override
+    public int compareTo(Ability other) {
+        return Integer.compare(this.getId(), other.getId());
+    }
 }

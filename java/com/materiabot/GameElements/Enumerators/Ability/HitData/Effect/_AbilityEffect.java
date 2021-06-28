@@ -4,10 +4,11 @@ import java.util.List;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Unit;
+import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
 public class _AbilityEffect {
 	public static enum TAG{
-		PRE_EFFECT, POST_EFFECT, BRV, HP, FULLHP, SPLASH, REPEAT;
+		PRE_EFFECT, POST_EFFECT, BRV, HP, FULLHP, SPLASH, NOREPEAT, MERGE;
 	}
 	
 	protected int id;
@@ -24,11 +25,17 @@ public class _AbilityEffect {
 	public final String getBaseDescription() { return baseDescription; }
 
 	public String getDescription(HitData hd) {
-		String description = getBaseDescription().replace("{t}", hd.getTarget().getDescription());
-		for(int i = 0; i < 2; i++) {
-			description = description.replace("{ail" + i + "}", hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest());
-			description = description.replace("{ab" + i + "}", hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest());
-			description = description.replace("{p" + i + "}", hd.getAbility().getUnit().getSpecificPassive(hd.getArguments()[i]).getName().getBest());
+		return applyReplaces(hd, getBaseDescription());
+	}
+	
+	protected final String applyReplaces(HitData hd, String description) {
+		description = description.replace("{t}", hd.getTarget().getDescription());
+		for(int i = 0; i < hd.getArguments().length; i++) {
+			description = description.replace("{ail" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest() + "**」");
+			description = description.replace("{ab" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest() + "**」");
+			description = description.replace("{p" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificPassive(hd.getArguments()[i]).getName().getBest() + "**」");
+			description = description.replace("{s1}", "「**" + hd.getAbility().getUnit().getAbility(AttackName.S1).get(0).getName().getBest() + "**」");
+			description = description.replace("{s2}", "「**" + hd.getAbility().getUnit().getAbility(AttackName.S2).get(0).getName().getBest() + "**」");
 			description = description.replace("{" + i + "}", hd.getArguments()[i]+"");
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}
@@ -48,7 +55,7 @@ public class _AbilityEffect {
 	public boolean isPostEffect(int evt) { return isPostEffect(); }
 	public boolean isBRV() { return tags.contains(TAG.BRV); }
 	public boolean isHP() { return tags.contains(TAG.HP); }
-	public boolean allowRepeats() { return tags.contains(TAG.REPEAT); }
+	public boolean blockRepeats() { return tags.contains(TAG.NOREPEAT); }
 	public List<TAG> getTags() { return tags; }
 
 	protected static Ability convertIdToAbility(Unit u, int id) {

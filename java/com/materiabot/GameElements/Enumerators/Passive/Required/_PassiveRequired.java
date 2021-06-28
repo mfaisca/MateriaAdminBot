@@ -17,7 +17,7 @@ public abstract class _PassiveRequired {
 	public String getDescription(PassiveCondition pc) {
 		return applyReplaces(pc, getBaseDescription());
 	}
-	protected String applyReplaces(PassiveCondition pc, String description) {
+	protected final String applyReplaces(PassiveCondition pc, String description) {
 		description = description
 				.replace("{t}", pc.getTarget() == null ? "Unknown Target: " + pc.getTargetId() : pc.getTarget().getDescription())
 				.replace("{pt}", pc.getPassive().getTarget() == null ? "Unknown Target: " + pc.getPassive().getTargetId() : pc.getPassive().getTarget().getDescription());

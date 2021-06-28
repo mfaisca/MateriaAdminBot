@@ -5,7 +5,6 @@ import com.materiabot.GameElements.Enumerators.Ability.HitData.AttackType;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Target;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
-import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect.TAG;
 
 public class HitData {
 	public static class Extra{
@@ -19,8 +18,8 @@ public class HitData {
 		
 		public String getHitsDescription() {
 			if(t.effect.isHP() && Type.isHP(t.type))
-				return (t.target == Target.ST ? "ST " : "AoE ") + "HP" + 
-							(t.effect.getTags().contains(_AbilityEffect.TAG.FULLHP) ? "(Full)" : (t.getEffect().getTags().contains(TAG.SPLASH) ? "(" + t.getArguments()[0] + "% Splash)" : ""));
+				return (t.target == Target.ST ? "ST HP" : "AoE HP");
+								//+ (t.effect.getTags().contains(_AbilityEffect.TAG.FULLHP) ? "(Full)" : "");//(t.getEffect().getTags().contains(TAG.SPLASH) ? "(" + t.getArguments()[0] + "% Splash)" : ""));
 			else if(Type.isBRV(t.type))
 				return (count > 0 ? count + "x " : "") + t.target.name() + 
 					(showType && t.attackType != null ? " " + t.attackType.getEmote() : "") + 
@@ -78,14 +77,8 @@ public class HitData {
 	public void setArguments(int[] arguments) { this.arguments = arguments; }
 	public int getEffectValueType() { return effectValueType; }
 	public void setEffectValueType(int effectValueType) { this.effectValueType = effectValueType; }
-	public int getSplashValue() {
-		return splashValue;
-	}
-
-	public void setSplashValue(int splashValue) {
-		this.splashValue = splashValue;
-	}
-
+	public int getSplashValue() { return splashValue; }
+	public void setSplashValue(int splashValue) { this.splashValue = splashValue; }
 	public float getBrvRate() { return brvRate; }
 	public void setBrvRate(float brvRate) { this.brvRate = brvRate; }
 	public int getMaxBrvOverflow() { return maxBrvOverflow; }

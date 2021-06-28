@@ -88,6 +88,7 @@ public class Unit {
 		List<Integer> ret = new LinkedList<Integer>();
 		int max = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
+			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
 			if(!passivesIds.containsAll(ca.getReqExtendPassives())) continue;
 			if(ca.getReqWeaponPassives().size() == max)
 				ret.add(ca.getSecondaryId());
@@ -97,7 +98,7 @@ public class Unit {
 				ret.add(ca.getSecondaryId());
 			}
 		}
-		return ret.stream().map(a -> this.getSpecificAbility(a)).sorted((a1, a2) -> a1.getId() - a2.getId()).collect(Collectors.toList());
+		return ret.stream().map(a -> this.getSpecificAbility(a)).sorted((a1, a2) -> a1.getId() - a2.getId()).distinct().collect(Collectors.toList());
 	}
 	public Passive getPassive(int level) {
 		return getPassive(level, null);

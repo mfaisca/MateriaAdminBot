@@ -86,8 +86,8 @@ public class PluginManager {
 							.map(p -> (Unit)p.get())
 							.map(p -> { //TODO DEBUG
 								//System.out.print("Reading " + p.getName() + "...");
-								Unit u = _Library.L.getQuickUnit(p.getName());
-								//Unit u = _Library.L.getUnit(p.getName()); //TODO DEBUG
+								//Unit u = _Library.L.getQuickUnit(p.getName());
+								Unit u = _Library.L.getUnit(p.getName()); //TODO DEBUG
 								p.setCrystal(u.getCrystal());
 								p.setEquipmentType(u.getEquipmentType());
 								p.setSphereSlots(u.getSphereSlots());;
