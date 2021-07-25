@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public enum Target{
 	ST(1, "target"),
-	Self(2, "self"),
+	Self(2, "own"),
 	Random(3, "random targets"), //Kuja/Lenna only
 	AoE(5, 21, "all enemies"),
 	Party(6, 8, "party"),

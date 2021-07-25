@@ -10,6 +10,7 @@ import com.materiabot.GameElements.Crystal;
 import com.materiabot.GameElements.Equipment;
 import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Passive;
+import com.materiabot.GameElements.Region;
 import com.materiabot.GameElements.Sphere;
 import com.materiabot.GameElements.Sphere.SphereType;
 import com.materiabot.GameElements.Text;
@@ -54,6 +55,7 @@ public class UnitParser {
 			parseCompleteListAbilities(u, obj);
 			parseBaseAbilities(u, obj);
 			parseOptionalAbilities(u, obj);
+			parseTriggeredAbilities(u, obj);
 			parsePassives(u, obj);
 			parseCharaBoards(u, obj);
 			parseArtifacts(u, obj);
@@ -74,21 +76,23 @@ public class UnitParser {
 			u.getSphereSlots()[i] = SphereType.get(obj.getObject("profile").getObject("traits").getStringArray("spheres")[i]);
 	}
 	private static void parsePassives(Unit u, MyJSONObject obj) {
-		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
-			p.setUnit(u);
-			u.getJPPassives().put(p.getLevel(), p);
-			u.getPassives().put(p.getLevel(), p);
-		}
-		for(Passive p : new PassiveParser().parsePassives(obj, "glAwakeningPassives")) {
-			p.setUnit(u);
-			u.getPassives().put(p.getLevel(), p);
-		}
+		if(u.getRegion().equals(Region.JP))
+			for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
+				p.setUnit(u);
+				u.getJPPassives().put(p.getLevel(), p);
+			}
+		if(u.getRegion().equals(Region.GL))
+			for(Passive p : new PassiveParser().parsePassives(obj, "glAwakeningPassives")) {
+				p.setUnit(u);
+				u.getGLPassives().put(p.getLevel(), p);
+			}
 	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
 		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
 			a.setUnit(u);
 			a.getAilments().stream()
 				.peek(ail -> ail.setAbility(a))
+				.peek(ail -> u.getAilments().put(ail.getId(), ail))
 				.forEach(ail -> ail.setUnit(u));
 			u.getAbilities().put(a.getId(), a);
 		}
@@ -126,8 +130,6 @@ public class UnitParser {
 					mc.setValues(miscC.getIntArray("values"));
 					ca.getReqMiscConditions().add(mc);
 				}
-				if(u.getName().equals("Balthier"))
-					System.out.print("");
 				if(u.getSpecificAbility(ca.getSecondaryId()) == null) 
 					continue;
 				u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
@@ -135,6 +137,32 @@ public class UnitParser {
 			}
 			if(skill.length > 0)
 				typeIdx++;
+		}
+	}
+	private static void parseTriggeredAbilities(Unit u, MyJSONObject obj) {
+		int typeIdx = 0;
+		for(MyJSONObject skillLevel : obj.getObjectArray("triggeredAbilities")) {
+			ChainAbility ca = new ChainAbility();
+			ca.setUnit(u);
+			ca.setId(skillLevel.getInt("id"));
+			ca.setOriginalId(skillLevel.getInt("originalAbility"));
+			ca.setSecondaryId(skillLevel.getInt("triggeredAbility"));
+			ca.setReqExtendPassives(Arrays.asList(skillLevel.getIntArray("reqExtendPassives")));
+			ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
+			for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
+				MiscCondition mc = new MiscCondition();
+				mc.setAb(ca);
+				mc.setLabelId(miscC.getInt("label"));
+				mc.setLabel(_MiscConditionLabel.LABELS.get(mc.getLabelId()));
+				mc.setTargetId(miscC.getInt("target"));
+				mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
+				mc.setValues(miscC.getIntArray("values"));
+				ca.getReqMiscConditions().add(mc);
+			}
+			if(u.getSpecificAbility(ca.getSecondaryId()) == null) 
+				continue;
+			u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
+			u.getTriggeredAbilities().add(ca);
 		}
 	}
 	private static void parseCharaBoards(Unit u, MyJSONObject obj) {

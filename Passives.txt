@@ -1,100 +1,176 @@
-
-				EN1(-1, null, true),//Basic Hits - Exclusive to Yuri
-				E1(1, null, true), //Basic Hits
-				E7(7, "Removes {0} debuffs from {t}"),//(#ofRemovedDebuffs[, ?]) First can be -1 for all
-				E8(8, "Removes {0} buffs from {t}"),//(#ofRemovedBuffs[, ?, ?])  First can be -1 for all
-				E25(25, "BRV Hits are guaranteed hits", true, false),
-				E33(33, "Give turn to selected ally"),//(-1) Argument unknown
-				E34(34, "{0}"),//Angel Wing Unique Buff - ([1]) No value = remove, Value = give
-				E37(37, "Dispels 「**{0}**」", false, false),//(ID of buff)
-				E38(38, "Recover {0} of {2}"), //(1) or (-1, -1) - First is both, second is only skill1
-				E41(41, "Raises {t} BRV by {0}% of {evt}"), //Battery - (Potency[[, ?], ?, ?]) - EffectValueType says what stat its based on
-															//For effect_value_type = 46, there's 4 potencies and one is picked at random
-				E42(42, "{0}% Gravity on {t}"),//(% of shave)
-				E43(43, "Recover {t} HP by {0}% of {evt}"), //(Potency[, ?]) - EffectValueType says what stat its based on
-				E44(44, null, false), //HP Splash Damage - (% of splash)
-				E46(46, "Delays {t} by {0}"), //(# of turns)
-				E48(48, "{1}% chance to steal {0} buffs from {t}"), //(# of buffs, ?(-1), success%, ?(-1)) OR (# of buffs, success%, ?(-1)) OR (# of buffs, success%, ?(-1))
-				E48_2(48, "{1}% chance to steal {0} buffs from {t}" + System.lineSeparator() + 
-						  "Extend stolen buff by 1 turn"),
-				E50(50, null), //Yuri Only
-				E51(51, "Transfer own debuffs to all enemies" + System.lineSeparator() + 
-						"Extends transferred debuff duration by {0}"), //(Duration extended, ?, ?, ?) OR (Duration extended, ?, ?) - It always transfers to all, even though target is 1
-				E52(52, "Reduce {t} Current HP by {0}%"), //(%, ?) - Cecil, Rinoa, Yuri, Vivi
-				E54(54, "Revive {t} with {0}% of {evt}"), //(% of effectValueType, ?)
-				E55(55, null), //(100) - Balthier Great Aim and Yuffie I dont need this, but unknown what it refers to
-				E57(57, "{0}% chance to BREAK {t}", true), //(success%)
-				E58(58, "BRV hits have a random potency between {0}% and {1}%", true, false), //(minPower, maxPower, ?(3), ?(-1)) - Shadow Exclusive - minPower and maxPower are in tens(4, 6 = 40%, 60%)
-				E61(61, "Raises party BRV by {0}% of {t} {evt}"), //(copy%)
-				E65(65, "Restores {t} HP by {0}% of {evt}, up to {1}% Max HP"), //(Potency, MaxHP%Healed) EffectValueType = What damage it is based on
-				E69(62, null), //(X) || Unique to Ignis Regroup - Unknown Effect, others are accounted for
-				E70(70, "Raises BRV by {0}% of {t} {evt}"), //EffectValueType 2 = Copy Target BRV || Otherwise table
-				E72(72, "Raises turn rate by {0}% when breaking or hitting broken target", true, false), //(New Cost[, ?(-1)]))
-				E73(73, "BRV Hits are guaranted hits & 50% Bonus BRV potency if target not targetting self", true, false), //([?]) - No params - Fucking Lion
-				E78(78, "BRV Hits apply a stacking IBRV debuff", true, false), //Lenna Rapid Fire mechanic
-				E80(80, "Copy {0} random buff and extend its duration by 1"), //(?, ?, ?, ?) - Yuffie Snatch
-				E81(81, "Increase BRV potency by {0}% when targetted", true, false), //(Base Multiplier(100), Targetted Multipler(300), ?, ?, ?) - Zack
-				E82(82, "BRV Hits are critical hits if target not targetting self", true, false), //([?]) - No params - Jack
-				E84(84, null), //Old Vanille Data
-				E89(89, "{2} 「**{1}**」 stacks by {0}"), //(# of stacks to increase, buffID)
-				E90(90, "Moves own next turn to just before the target's next turn"),
-				E91(91, "Raises {t} BRV by {0}% of {evt} when breaking"),
-				E93(93, "Adds an extra hit with 30% ~ 120% BRV potency based on 「**{0}**」 stacks"), //([-1]) Noctis unique hit (30/60/80/100/120)
-				E94(94, "Raises BRV potency by {0}% per 1750? {1} amount on the party", true, false), //(10, -1) Unknown how to formulate it
-				E97(97, "Increases BRV hits potency up to {0}% based on how much HP you're missing", true, false), //(Potency, -1) Terra EX
-		/**/	E99(99, "Restores {t} HP by {0}% of {evt}, up to {1}% Max HP"), 	//(Potency[, MaxHP%Healed, ?]) EffectValueType = What damage it is based on
-				E100(100, "Restores {t} HP by {0}% of {evt}, up to {1}% Max HP" + System.lineSeparator() + 
-						  "{2}% of excess healing is converted to BRV"), //(Potency, MaxHP%Healed, YYY100, ?, ?) YYY = 100(%) / 300(%)
-				E102(102, null),		//Cait Sith Only
-				E103(103, null),		//Cait Sith Only	//I have no fucking idea how the arguments work
-				E104(104, null), //Cheating Andy 	//Cait Sith Only  //EffectValueType
-				E105(105, "(25% potency + 5% per Total Dice Value)"),  	//Cait Sith Only  //EffectValueType
-				E106(106, null, true, false), //(Overflow%) - Mentions overflow through an argument instead of the regular field, older model perhaps?
-				E107(107, null, true), // 100% AoE HP Damage
-				E110(110, "Doesn't increase turn count"),
-				E111(111, null), //Old Data? Barret Counter
-				E113(113, "Extends self-buffs by {0}"), //Prishe Only? (X, 1, -1)
-				E114(114, "Initiates a chase sequence ({0} [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))) if the target is broken"),
-				E115(115, "Raises BRV Damage by {0}% against ST", true, false), //(X, -1)
-				E116(116, null),
-				E117(117, "Raises BRV Damage by {0}% against Broken Targets", true, false), //(X)
-				E120(120, "Raises BRV Damage by {1}% against target with 「**Turn Rate Down**」 or 「**SPD Down**」", true, false), //(1, X)
-				E121(121, "{0}"), //(X, buffId) || (X, 2, -1)
-				E122(122, "Raises {t} BRV by {0}% of {evt}"), //(X) || effectvaluetype = stat its based on
-				E124(124, "Restores {t} HP by {0}% of {evt}, up to {2}% Max HP" + System.lineSeparator() + 
-						  "{1}% of excess healing is added to allies HP, up to {3}% Max HP"),
-				E125(125, "Cancels {t} BREAK status"),
-				E126(126, "Restores {t} HP by {0}% of {evt}" + System.lineSeparator() + "Allows overhealing up to {1}%"), //Porom only (X, Y, ?)
-				E128(128, null), //Alphinaud Only - Something related to his summon?
-				E129(129, "Release pet when broken???"), //Alphinaud Only
-				E131(131, "Raises {t} BRV by {0}% of {evt} (except the one with highest current BRV)"), //(X) || EffectValueType = 21 ||| Setzer Only
-				E132(132, null), //(X) || Unique to Ignis Regroup - Unknown Effect, others are accounted for
-				E135(135, "Raises Critical BRV Damage by {0}%", true, false),
-				E136(136, "Recover {0} of 「**{2}**」"), //(#ofUses, 100, skillID)
-				E137(137, "Deals HP damage to {t} equal to party current BRV"), //(100) / (1, 100) || Sherlotta Only
-				E139(139, "Delays {t} by {0} delay if 「**{1}**」 is active"), //(X, Y) || Garland Only
-				E140(140, null),
-				E141(141, null),
-				E142(142, "Reduce target's BRV by {0}% based on own {evt}"), //(X) - Y = effect_value_type = based on stat X
-				E143(143, "{2} 「**{1}**」 stacks by {0} when breaking target", true, false), //(New Cost[, ?(-1)]))
-				E147(147, null), //Ignis EX Only - Dead skill
-				E151(151, "100% chance to BREAK {t}{0}"),
-				E153(153, "Resets 「**{1}**」{0}"),
-				E154(154, null),
-				E155(155, null),
-				E156(156, "Lower {t} BRV by {0}% of {evt}, battery self for {0}% of {evt}{1}"),
-				E157(157, "Lower {t} BRV by {0}% of {evt}, battery party for {0}% of {evt}"),
-				E159(159, null), //Aphmau / Ulti BT
-				E160(160, "Move your next turn to just before the target next turn"),
-				E164(164, "High Turn Rate when attacking a broken target", true, false),
-				E165(165, "Instant Turn Rate and free ability use next turn(except LD) when breaking target", false, false),
-				E176(176, "Sets HP to {0}"),
-				E177(177, "Reverts base abilities to 「**Concentrate**」 for 1 turn"),
-				E180(180, "Removes {0} buffs from {t} if broken"),
-				E186(186, null), //Cloud BT Unknown Effect
-				E187(187, null, true), //Gabranth ???
-				E197(197, "Extends debuffs duration +{0} turns"),
-				E190(190, "Delete {t} next turn"),
-				E200(200, "Restores {t} HP by {0}% of {evt}, up to {1}% Max HP"),
-				
-				
+		E1(1, "{0}% {t}ATK"),
+		E2(2, "{0}% {t}DEF"),
+		E3(3, "{0}% {t}Speed"),
+		E4(4, "{0}% {t}Int BRV"),
+		E5(5, "{0}% {t}Max BRV"),
+		E6(6, "{0}% {t}Max HP"),
+		E7(7, "{t}HP Regen ({0}% Max HP)", null),
+		E8(8, "{t}BRV Regen ({0}% IBRV)", null),
+		E9(9, "{t}BRV Regen ({0}% MBRV)", null),
+		E10(10, "{0} {t}Fire Resist", null), //0 = Lowers/Increases
+		E11(11, "{0} {t}Ice Resist", null),  //3 = Party
+		E12(12, "{0} {t}Thunder Resist", null),
+		E13(13, "{0} {t}Wind Resist", null),
+		E14(14, "{0} {t}Water Resist", null),
+		E15(15, "{0} {t}Earth Resist", null),
+		E16(16, "{0} {t}Holy Resist", null),
+		E17(17, "{0} {t}Dark Resist", null),
+		E18(18, "{0} {t}ALL Resistances", null),
+		E19(19, "{0} {t}Magic Resist", null),
+		E20(20, "{0} {t}Melee Resist", null),
+		E21(21, "{0} {t}Ranged Resist", null),
+		E22(22, "{0}% {t}Debuff Evasion"),
+		E23(23, "{t}Fire Enchant"),
+		E24(24, "{t}Ice Enchant"),
+		E25(25, "{t}Thunder Enchant"),
+		E26(26, "{t}Wind Enchant"),
+		E27(27, "{t}Water Enchant"),
+		E28(28, "{t}Earth Enchant"),
+		E29(29, "{t}Holy Enchant"),
+		E30(30, "{t}Dark Enchant"),
+		E31(31, "Unable to act"),
+		E32(32, "{t}Poison by {0}% of Int BRV", null),
+		E40(40, "Unable to switch target"),
+		E41(41, "{0}% {t}BRV Magic Damage dealt", true),
+		E42(42, "{0}% {t}BRV Melee Damage dealt", true),
+		E43(43, "{0}% {t}BRV Ranged Damage dealt", true),
+		E44(44, "Free ability use next turn(S1/S2/AA only)"), 
+		E45(45, "{0}% Turn Rate"),
+		E46(46, "{0}% {t}Critical Hit Rate"),
+		E47(47, "{0}% {t} Evasion Rate"),
+		E48(48, "{0}% {t} Hit Rate", null),
+		E49(49, "{t}Sap by {0}% Max BRV", null),
+		E50(50, "{0}% {t}Magic ATK"),
+		E51(51, "{0}% {t}Melee ATK"),
+		E52(52, "{0}% {t}Ranged ATK"),
+		E53(53, "Raises {t}BRV by BRV damage prevented"),
+		E54(54, "{0}% {t}Debuff Success Rate"),
+		E55(55, "Halves current and max [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/)"),
+		E56(56, "{0}% {t}BRV Damage when hitting elemental weakness"),
+		E57(57, "{0}% {t}HP Damage taken", true),
+		E58(58, "{0}% {t}BRV Damage taken", true),
+		E59(59, "Revive with {0}% Max HP if KO'd", null),
+		E60(60, "Aura (Separate Parsing)"),
+		E61(61, "{0}% BRV Damage per debuff on target"),
+		E62(62, "Shields BRV for {0}% of caster Int BRV", null),
+		E63(63, "{0}% {t}BRV Damage taken"), //Fake for Alphi
+		E65(65, "{0}% BRV Damage on debuffed targets"),
+		E67(67, "{0}% {t} Stolen BRV Overflow"),
+		//E68 - Zell Duel - Effect not needed
+		E69(69, "Counter {vt} with 「{vs}」"),
+		E78(78, null), //Shadow EX
+		E79(79, null), //Gladio LD Random Effect
+		E80(80, null), //CoD S1 Random Effect
+		E81(81, null), //Gabranth Main Buff Random Effect
+		E82(82, null), //Gabranth Main Buff Random Effect
+		E83(83, null), //Gladio EX Random Effect
+		E84(84, null), //Gladio S1/EX Random Effect
+		//E85 - Selphie Aura - Unknown effect
+		E97(97, "{0}% {t}BRV Damage when hitting weakness"),
+		E98(98, "Dispels if broken"),
+		E101(101, null), //Unknown Poison second effect
+		E103(103, "Unable to act"),
+		E105(105, "{t} unable to battery"),
+		E106(106, "{t} EX Recast {0}%"),
+		E107(107, "Prevents from being broken"),
+		E110(110, "Free turn after breaking a target"),
+		E111(111, null), //Aphmau 2T dolls
+		E112(112, "{0}% {t}Critical Hit Damage"),
+		E114(114, "{0}% {t}BRV Damage dealt"),
+		E115(115, "{0}% {t}HP Damage dealt"),
+		E116(116, "Party BRV Regen({0}% HP Damage Dealt with 「Quick Dualcast」"),
+		E118(118, "BRV Regen applies **every** turn. Duration goes down **every** turn."),
+		E119(119, "Instant turn rate"),
+		E120(120, "Doesn't increase turn count"),
+		E122(122, "{0}% {t}Melee Damage taken", true),
+		E123(123, "{0}% {t}Ranged Damage taken", true),
+		E124(124, "Prevents use of HP attacks"),
+		E125(125, "Prevents use of Magic attacks"),
+		E139(139, "New debuffs duration {0} turns"),
+		E140(140, "New buffs duration {0} turns"),
+		E141(141, "+1 「Chakra」 whenever party uses an ability(non BRV/HP/AA)"),
+		E142(142, null), //Lyse Chakra
+		E146(146, "Take AoE HP attacks in place of allies"),
+		E150(150, "{0}% {t} Gained BRV Overflow"),
+		E151(151, "Triggers 「{0}」 at end of turn", null),
+		E169(169, "{0}% {t}Ranged BRV Overflow"),
+		E164(164, "{t} unable to gain buffs"),
+		E165(165, "{t} unable to battery"),
+		E180(180, "{0}% {t} HP damage taken", true),
+		E181(181, "{vs} joins you in battle"),
+		E183(183, null), //Both Eight Counterbuffs have this
+		E184(184, "{0}% {t} BRV damage taken", true), //Manually Made
+		E185(185, null), //Kurasame useless effect?
+		E186(186, "{t} unable to gain BRV"),
+		E190(190, "Last stand on {t} when {0}% Max HP or higher", null),
+		E191(191, "Sets {t} HP Damage dealt to 0"),
+		E193(193, "HP Damage equal to {0}% of Attack", null),
+		E194(194, "Trigger 「{vs}」 on expiration"),
+		E195(195, null), //WoL LD unknown HitData
+		E197(197, "Raises stack by 1 every action you take"),
+		E199(199, "{0}% {t} critical BRV damage dealt"),
+		E200(200, null), //Amidatelion LD effect?
+		E205(205, null), //Extra Garland LD effect?
+		E208(208, "{0}% BRV Damage with ST attacks", null),
+		E210(210, "Sets {t} BRV Damage dealt to 0", null),
+		E211(211, "{0}% HP Damage to non-targets"),
+		E214(214, "Shields BRV for {0}% of damage dealt", null),
+		E215(215, "Raises {t}BRV back to Int BRV when BRV=0 on the turn after theirs"),
+		E216(216, "Nulls BRV damage under {0}% Int BRV"),
+		E217(217, "{0}% HP Damage during a chase"),
+		E223(223, "Recover HP by {0}% of HP damage dealt up to {1}% Max HP", null),
+		E224(224, "{0}% {t}HP Damage when attacking a broken target"),
+		E226(226, "After an ally turn, raise BRV by {0}% of caster Max BRV", null),
+		E227(227, "{0}% {t}Max HP overflow limit"),
+		E228(228, "{0}% {t}BRV Damage taken if broken", true),
+		E229(229, "{0}% HP damage taken from caster", true),
+		E230(230, "Triggers 「{0}」 at end of every turn" + System.lineSeparator()
+					+ "Lowers duration at the end of every turn", null),
+		E232(232, "All BRV Attacks will inflict BREAK if not broken", true),
+		E233(233, "Caster takes a free instant turn after target's turn"),
+		E234(234, "Cannot act when targetting Eald'narche"),
+		E235(235, "{0}% {t} Maximum BRV damage limit"),
+		E236(236, "{0}% {t} Maximum obtainable BRV & HP damage limit"),
+		E238(238, "Guaranteed Launch with next attack"),
+		E239(239, "Trigger BREAK on expiration"),
+		E244(244, "{0}% {t}BRV Damage taken if broken", true),
+		E245(245, "+1 stack after attacking"),
+		E246(246, "{t}BRV will not drop below {0}% of Max BRV", null),
+		E252(252, "After HP attack, raises BRV by {0}% of HP Damage Dealt", null),
+		E255(255, "When Current HP <= {0}% Max HP, recover HP back to {0}% Max HP", null),
+		E257(257, null), //BT Buff Effect
+		E265(265, "{0}% Critical BRV Damage Taken", true),
+		E266(266, "All BRV hits are Critical Hits"),
+		E268(268, "Cannot be killed"),
+		E274(274, "Triggers 「{0}」 after ally attack or enemy attacks", null),
+		E276(276, "Move your next turn to just before the target next turn"),
+		E279(279, "-100% HP Damage taken"),
+		E280(280, null), //Nine LD ???
+		E282(282, "Sets HP to 1 if at 0 HP when buff expires"),
+		E288(288, "{0} duration when hit"),
+		E284(284, "Raises party member BRV by {0}% of remaining 「Shield」 at the start of their turn", null),
+		E293(293, "Nulls {t} HP damage that is lower than each ally's 「Shield」 power"),
+		E294(294, "Triggers 「{0}」 after party member turn", null),
+		E295(295, "Caster takes the hit for ally"),
+		E300(300, "{0}% {t}BRV Damage when attacking a broken target"),
+		E309(309, null), //Kurasame useless effect?
+		E311(311, "{0}% of {t}excess healing is converted to BRV"),
+		E317(317, "After any turn, sets {t} BRV to {0}", null),
+		E320(320, "Delay target by {0}T after a physical attack"),
+		E325(325, "「{0}」 are not consumed", null),
+		E331(331, "Cannot deal BRV damage"),
+		E335(335, "Cannot deal HP damage"),
+		E327(327, "Cannot inflict debuffs"),
+		E329(329, "Cancelled after using BRV, HP or debuffing skill"),
+		E334(334, "{0}% {t}HP Damage taken", true),
+		E336(336, "Deletes target next turn with abilities"),
+		E347(347, "{t}BRV Regen ({0}% Current HP)"),
+		E348(348, "Raises party BRV by {0}% of Total Chase HP Damage Dealt", null),
+		E355(355, "Raises BRV by {0}% of BRV Damage Dealt", null),
+		E359(359, "Unbreaks target before attack"),
+		E367(367, "+1 stack after every ally turn", null),
+		E368(368, "Resets to 1 stack after enemy turn", null),
+		E374(374, "Reduce BRV by {0}% at end of turn", null),
+		E390(390, "Apply 「{0}」 after attacking", null),
+		E403(403, "Raises allies BRV by {0}% of own Max BRV when dealing weakness damage", null),
+		E418(418, "Triggers 「{vs}」 after own turn when at 1+ stacks"),

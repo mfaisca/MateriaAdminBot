@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import com.materiabot.GameElements.Ability;
+import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Element;
 import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Enumerators.Ability.*;
@@ -19,7 +20,13 @@ public class AbilityParser {
 			if(s.getInt("error") != null) continue; //Some abilities have error
 			Ability a = parseAbility(s);
 			if(a != null) {
-				a.getAilments().addAll(AilmentParser.parseAilments(s, "ailments"));
+				for(Ailment ail : AilmentParser.parseAilments(s, "ailments"))
+					if(ail.isInvisibleSiphon()) {
+						HitData hd = new HitData(a);
+						hd.setManualDescription("Free ability use next turn(S1/S2/AA only)");
+						a.getHitData().add(hd);
+					}else
+						a.getAilments().add(ail);
 				abilities.add(a);
 			}
 		}
@@ -31,7 +38,7 @@ public class AbilityParser {
 		a.setRank(ab.getInt("rank"));
 		a.setName(ab.getText(ab.getObject("name")));
 		a.setDesc(ab.getText(ab.getObject("desc")));
-		a.setUseCount(ab.getInt("use_count"));
+		a.setBaseUseCount(ab.getInt("use_count"));
 		a.setGroupId(ab.getIntArray("group_id"));
 		a.setMovementCost(ab.getInt("movement_cost"));
 		a.setAttackTypeId(ab.getObject("type_data").getInt("attack_type"));
@@ -61,11 +68,13 @@ public class AbilityParser {
 			hd.setSingleTargetBrvRate(data.getObject("brv_data").getInt("single_target_brv_rate"));
 			hd.setBrvDamageLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up"));
 			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up"));
-			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up_direct"));
-			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up_direct"));
+//			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up_direct"));
+//			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up_direct"));
 			hd.setTargetId(data.getInt("target"));
 			hd.setTarget(Target.get(hd.getTargetId()));
 			hd.setEffectId(data.getInt("effect"));
+			if(hd.getEffectId() == 238)
+				System.out.print("");
 			hd.setEffect(Constants.ABILITY_EFFECT.get(hd.getEffectId()));
 			hd.setEffectValueType(data.getInt("effect_value_type"));
 			a.getHitData().add(hd);

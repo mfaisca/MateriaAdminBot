@@ -22,7 +22,7 @@ public class PassiveEffect {
 	}
 	
 	public Passive getPassive() { return passive; }
-	public Integer getRequiredId() { return effectId; }
+	public Integer getEffectId() { return effectId; }
 	public _PassiveEffect getEffect() { return effect; }
 	public Integer getTargetId() { return targetId; }
 	public EffectTarget getTarget() { return target; }

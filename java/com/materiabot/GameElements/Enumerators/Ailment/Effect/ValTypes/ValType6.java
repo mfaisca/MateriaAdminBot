@@ -7,7 +7,7 @@ public class ValType6 extends _ValType{
 	}
 
 	@Override
-	public Integer[] getValues(Ailment ailment, int index) { //Returns val specify
+	public Integer[] getValues(Ailment ailment, int index, int rank) { //Returns val specify
 		return new Integer[] {ailment.getValSpecify()[index]};
 	}
 }

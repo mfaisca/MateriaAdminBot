@@ -7,7 +7,6 @@ import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.Utils.Constants;
-import Shared.BotException;
 
 public class Ailment { //TODO Missing icons	
 	/* Regarding iconType and dispType
@@ -31,9 +30,7 @@ public class Ailment { //TODO Missing icons
 	public Ailment() {}
 	public Ailment(String text) { setName(new Text(text)); setFakeDesc(new Text(text)); }
 	
-	public boolean isStackable() {
-		return getMaxStacks() > 0; //TODO - double check with rem if this is enough
-	}
+	public boolean isStackable() { return getMaxStacks() > 0; }
 	
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
@@ -129,16 +126,45 @@ public class Ailment { //TODO Missing icons
 
 	public List<Aura> getAuras() { return auras; }
 	public void setAuras(List<Aura> auras) { this.auras = auras; }
+
+	public boolean isVisible() {
+		return getIconType() != 14;
+	}
+	public boolean isSpecial() {
+		return !isVisible() && getDispType() > 0;
+	}
 	
-	public String generateDescription() throws BotException {
+	public boolean isInvisibleSiphon() {
+		boolean isSiphon = false;
+		int effectCount = 0;
+		for(int i = 0; i < getEffects().length; i++) {
+			if(getEffects()[i] != -1) effectCount++;
+			if(getEffects()[i] == 44) isSiphon = true;
+		}
+		return isSiphon && effectCount == 1 && !isVisible();
+	}
+	
+	public boolean isDeadEffect() {
+		for(int e : this.getEffects())
+			if(e > 0) return false;
+		return true;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return this.getId() == ((Ailment)o).getId();
+	}
+	
+	public String generateDescription() {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		String ret = "";
+		if(isDeadEffect()) return "";
 		//DEBUG
-		ret += this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" : "");
+		ret += this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" : "") + System.lineSeparator();
 		//DEBUG
 
 		if(this.isStackable())
-			ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : "stacks to ");
+			ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
 		if(this.getTarget() != null) 
 			ret += this.isStackable() ? this.getTarget().getDescription() : this.getTarget().getDescription();
 		else 
@@ -160,7 +186,7 @@ public class Ailment { //TODO Missing icons
 				}
 				String effStr = effect.getDescription(this, i);
 				if(effStr == null)
-					throw new BotException("Ailment Effect does not match ID");
+					return "Error parsing Ailment";
 				ret += (condi.length() > 0 ? condi + "\t" : "") + effStr;
 			}
 			ret += System.lineSeparator();

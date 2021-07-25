@@ -13,6 +13,7 @@ import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
 public class Unit {
 	private int id;
+	private Region region = Region.GL;
 	private String name;
 	private int series = -1;
 	private List<String> nicknames = new LinkedList<String>();
@@ -32,6 +33,10 @@ public class Unit {
 	private Sphere weaponSphere, basicSphere;
 
 	public Unit(String name, String... nicknames) {
+		if(name.endsWith("_JP")) {
+			region = Region.JP;
+			name = name.replace("_JP", "");
+		}
 		this.name = name;
 		this.nicknames.add(name.toLowerCase());
 		if(nicknames != null)
@@ -45,6 +50,7 @@ public class Unit {
 
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
+	public Region getRegion() { return region; }
 	public String getName() { return name; }
 	public int getSeries() { return series; }
 	public void setSeries(int series) { this.series = series; }
@@ -58,7 +64,7 @@ public class Unit {
 	public HashMap<Integer, Ability> getAbilities() { return abilities; }
 	public HashMap<Integer, Passive> getJPPassives() { return jpPassives; }
 	public HashMap<Integer, Passive> getGLPassives() { return glPassives; }
-	public HashMap<Integer, Passive> getPassives() { return getGLPassives(); }
+	public HashMap<Integer, Passive> getPassives() { return region.equals("GL") ? getGLPassives() : getJPPassives(); }
 	public List<Passive> getCharaBoards() { return charaBoards; }
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
 	public List<Equipment> getEquipment() { return equipment; }
@@ -80,22 +86,40 @@ public class Unit {
 	public List<Ability> getAbility(AttackName type) {
 		return getAbility(type, null);
 	}
-	public List<Ability> getAbility(AttackName type, String region) { //XXX TEST THIS
+	public List<Ability> getAbility(AttackName type, String region) {
 		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
 		List<Integer> passivesIds = Streams.concat(	passives.stream().map(p -> p.getId()), 
 													getCharaBoards().stream().map(p -> p.getId()))
 											.collect(Collectors.toList());
 		List<Integer> ret = new LinkedList<Integer>();
-		int max = 0;
+		int passiveCount = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
 			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
 			if(!passivesIds.containsAll(ca.getReqExtendPassives())) continue;
-			if(ca.getReqWeaponPassives().size() == max)
+			
+			int reqCount = ca.getReqWeaponPassives().size() + ca.getReqExtendPassives().size();
+			if(reqCount == passiveCount)
 				ret.add(ca.getSecondaryId());
-			else if(ca.getReqWeaponPassives().size() > max) {
-				max = ca.getReqWeaponPassives().size();
+			else if(reqCount > passiveCount) {
+				passiveCount = reqCount;
 				ret.clear();
 				ret.add(ca.getSecondaryId());
+			}
+		}
+		LinkedList<Integer> ret2 = new LinkedList<Integer>();
+		ret2.addAll(ret);
+		for(int abId : ret2) {
+			int recursiveId = abId;
+			while(true) {
+				int recursiveId2 = recursiveId;
+				ChainAbility ca = getTriggeredAbilities().stream().filter(aa -> aa.getOriginalId() == recursiveId2).findFirst().orElse(null);
+				if(ca != null && ca.getOriginalId() == ca.getSecondaryId()) break;
+				if(ca != null && getSpecificAbility(ca.getSecondaryId()) != null) {
+					ret.add(ca.getSecondaryId());
+					recursiveId = ca.getSecondaryId();
+				}
+				else
+					break;
 			}
 		}
 		return ret.stream().map(a -> this.getSpecificAbility(a)).sorted((a1, a2) -> a1.getId() - a2.getId()).distinct().collect(Collectors.toList());

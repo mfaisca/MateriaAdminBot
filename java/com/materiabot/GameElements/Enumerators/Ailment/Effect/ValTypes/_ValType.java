@@ -30,6 +30,6 @@ public abstract class _ValType {
 	}
 
 	public int getValType() { return valType; }
-	
-	public abstract Integer[] getValues(Ailment ailment, int index);
+
+	public abstract Integer[] getValues(Ailment ailment, int index, int rank);
 }

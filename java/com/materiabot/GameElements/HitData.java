@@ -19,7 +19,6 @@ public class HitData {
 		public String getHitsDescription() {
 			if(t.effect.isHP() && Type.isHP(t.type))
 				return (t.target == Target.ST ? "ST HP" : "AoE HP");
-								//+ (t.effect.getTags().contains(_AbilityEffect.TAG.FULLHP) ? "(Full)" : "");//(t.getEffect().getTags().contains(TAG.SPLASH) ? "(" + t.getArguments()[0] + "% Splash)" : ""));
 			else if(Type.isBRV(t.type))
 				return (count > 0 ? count + "x " : "") + t.target.name() + 
 					(showType && t.attackType != null ? " " + t.attackType.getEmote() : "") + 
@@ -51,6 +50,7 @@ public class HitData {
 	private int singleTargetBrvRate;
 	private int brvDamageLimitUp;
 	private int maxBrvLimitUp;
+	private String manualDescription;
 	
 	public HitData(Ability a) { ability = a; }
 	
@@ -92,8 +92,12 @@ public class HitData {
 	public int getMaxBrvLimitUp() { return maxBrvLimitUp; }
 	public void setMaxBrvLimitUp(int maxBrvLimitUp) { this.maxBrvLimitUp = maxBrvLimitUp; }
 	public List<Element> getElements() { return elements; }
+	public String getManualDescription() { return manualDescription; }
+	public void setManualDescription(String manualDescription) { this.manualDescription = manualDescription; }
 
 	public String getDescription() {
+		if(getManualDescription() != null)
+			return getManualDescription();
 		return getEffect().getDescription(this);
 	}
 }

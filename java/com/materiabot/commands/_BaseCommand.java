@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent;
 
 public abstract class _BaseCommand{	
 	//https://old.reddit.com/r/DissidiaFFOO/comments/gfj0nh/draw_probabilities_in_the_btld_era/
+	//TODO https://ci.dv8tion.net/job/JDA/javadoc/net/dv8tion/jda/api/interactions/components/selections/SelectionMenu.html
 	protected List<String> triggerWords = new LinkedList<String>();
 
 	public String getCommand() { return triggerWords.get(0); }

@@ -85,13 +85,13 @@ public class PluginManager {
 							.filter(p -> p.getName().contains("Unit."))
 							.map(p -> (Unit)p.get())
 							.map(p -> { //TODO DEBUG
-								//System.out.print("Reading " + p.getName() + "...");
-								//Unit u = _Library.L.getQuickUnit(p.getName());
-								Unit u = _Library.L.getUnit(p.getName()); //TODO DEBUG
+								System.out.print("Reading " + p.getName() + "...");
+								Unit u = _Library.L.getQuickUnit(p.getName());
+								//Unit u = _Library.L.getUnit(p.getName()); //TODO DEBUG
 								p.setCrystal(u.getCrystal());
 								p.setEquipmentType(u.getEquipmentType());
 								p.setSphereSlots(u.getSphereSlots());;
-								//System.out.println(" OK");
+								System.out.println(" OK");
 								return u;
 							})
 							.collect(Collectors.toList());
