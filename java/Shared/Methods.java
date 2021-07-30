@@ -18,6 +18,8 @@ public class Methods {
 		return s.substring(0, s.contains("(") ? s.indexOf("(") : s.length()).replace("'", "").trim().replace(" ", "-");
 	}
 
+	public static final String enframe(String s) { return "「**" + s + "**」"; }
+	
 //	public static final LinkedList<String> splitString(String s, int size) {
 //		LinkedList<String> split = new LinkedList<String>();
 //		int spaceIndex = s.indexOf(" ");

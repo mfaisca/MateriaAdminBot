@@ -9,7 +9,7 @@ public class ValType4 extends _ValType{
 	@Override
 	public Integer[] getValues(Ailment ailment, int index, int rank) { //Returns all rank_data for stack-based ailment, starting from index 5
 		Integer[] ret = new Integer[ailment.getMaxStacks()];
-		for(int i = 0; 0 < ret.length; i++)
+		for(int i = 0; i < ret.length; i++)
 			switch(ailment.getValEditTypes()[index]) {
 				case 0: //Rank Table direct value
 					ret[i] = ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[i+5][2]; break;

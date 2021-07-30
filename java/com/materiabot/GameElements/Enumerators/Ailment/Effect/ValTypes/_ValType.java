@@ -20,6 +20,7 @@ public abstract class _ValType {
 		new ValType10();
 		new ValType11();
 		new ValType14();
+		new ValType16();
 		new ValType18();
 		new ValType20();
 	}

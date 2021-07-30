@@ -14,12 +14,12 @@ public class Effect_Analyzer {
 		//PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 1;		
+		int key = 1;
 		
 		if(key == 1)
-			printUnit("Rosa", AttackName.LD);
+			printUnit("Galuf", AttackName.LD);
 		if(key == 2)
-			printUnitSpecific("Garland", 14378, 12413);
+			printUnitSpecific("Caius", 10932);
 		if(key == 3)
 			findMissing();
 	}

@@ -155,22 +155,29 @@ public class Ailment { //TODO Missing icons
 		return this.getId() == ((Ailment)o).getId();
 	}
 	
+	public String generateTitle() {
+		if(this.getFakeName() != null) return getFakeName().getBest();
+		if(isDeadEffect()) return "";
+		return this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
+	}
+	
 	public String generateDescription() {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		String ret = "";
 		if(isDeadEffect()) return "";
 		//DEBUG
-		ret += this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" : "") + System.lineSeparator();
+		ret += generateTitle();
 		//DEBUG
 
-		if(this.isStackable())
+		if(this.isStackable() && this.getArgs()[0] > 0)
 			ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
 		if(this.getTarget() != null) 
 			ret += this.isStackable() ? this.getTarget().getDescription() : this.getTarget().getDescription();
 		else 
 			ret += "unknown target (" + this.getTargetId() + ")";
 		if(this.getDuration() > 0)
-			ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns") + System.lineSeparator();
+			ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
+		ret += System.lineSeparator();
 		boolean hasAuras = false;
 		for(int i = 0; i < this.getEffects().length; i++) {
 			if(this.getEffects()[i] == -1) continue;
@@ -182,7 +189,10 @@ public class Ailment { //TODO Missing icons
 				String condi = "";
 				if(this.getConditions()[i].getConditions().size() > 0){
 					ConditionBlock cond = this.getConditions()[i].getConditions().get(0);
-					condi += cond.getCondition().getDescription(cond) + System.lineSeparator();
+					if(cond.getCondition() != null)
+						condi += cond.getCondition().getDescription(cond) + System.lineSeparator();
+					else
+						condi += "Unknown Ailment Condition: " + cond.getConditionId() + System.lineSeparator();
 				}
 				String effStr = effect.getDescription(this, i);
 				if(effStr == null)

@@ -36,7 +36,7 @@ public class AilmentParser {
 		ail.setTargetId(ailment.getObject("meta_data").getInt("target"));
 		ail.setTarget(TargetType.get(ail.getTargetId()));
 		ail.setDuration(ailment.getObject("meta_data").getInt("duration"));
-		ail.setGroupId(ailment.getIntArray("group_id"));
+		ail.setGroupId(ailment.getIntArray("group"));
 		ail.setArgs(ailment.getObject("meta_data").getIntArray("arguments"));
 		ail.setBuffType(ailment.getObject("type_data").getInt("buff_type"));
 		ail.setIconType(ailment.getObject("type_data").getInt("icon_type"));

@@ -87,7 +87,7 @@ public class _Library {
 					new SummonPassive("Brothers Boost Up", "Raises Max BRV by 5% when HP > 60% Max HP", "MBrv+5% if HP>60%", true), 
 					new SummonPassive("Brothers Boost Guard Up", "Raises Max BRV by 2% and Defense by 10% when HP > 60% Max HP", "MBrv+2% & DEF+10% if HP>60%", true), 
 					new SummonPassive("Brothers Receive Heal Up", "Raises HP recovered by 5% when BRV > 50% Max BRV", "HP heal received +5% if BRV>50%"), 
-					new SummonPassive("Brothers Protect Up", "Lowers HP damage taken by 5% when BRV > 50% Max BRV", "HP dmg taken -5% if BRV>50%", true)));
+					new SummonPassive("Brothers Protect Up", "Lowers HP Damage taken by 5% when BRV > 50% Max BRV", "HP dmg taken -5% if BRV>50%", true)));
 			SUMMON_LIST.add(new Summon(Arrays.asList("Pandemonium", "Pandemona", "Pande", "Panda"), 30, Element.Wind, "Tornado Zone", "Raises HP and BRV damage by 25% during a Chase Sequence", 
 					"4000 Wind BRV Magical damage" + System.lineSeparator() +"Grants Wind attribute and faster Chase to the party", 
 					"10|14|6|8|12", "Edge|Penelo|Y'shtola|Vivi|Freya|Lion", 6, 6000, "Moderately Fast",  
@@ -117,7 +117,7 @@ public class _Library {
 					new SummonPassive("Diabolos Attack Up", "Raises Attack by 5% after hitting HP<60% once", "ATK+5% if HP<60% once", true), 
 					new SummonPassive("Diabolos Boost Guard Up", "Raises Max BRV by 2% and Defense by 10% when HP < 60% once", "MBrv+2% & DEF+20% if HP<80% once", true), 
 					new SummonPassive("Diabolos Receive BRV Heal Up", "Raises BRV gained by 5%", "BRV Gained +5%", true), 
-					new SummonPassive("Diabolos Protect Up", "Lowers HP damage taken by 5% when Max BRV < 50%", "HP dmg taken -5% if BRV<50%")));
+					new SummonPassive("Diabolos Protect Up", "Lowers HP Damage taken by 5% when Max BRV < 50%", "HP dmg taken -5% if BRV<50%")));
 			SUMMON_LIST.add(new Summon(Arrays.asList("Odin"), 30, null, "Zantetsuken", "Decreases DEF of all enemies by 15%" + System.lineSeparator() + "After HP drops below 80%, permanently increases ATK by 30%.", 
 					"4000 Melee BRV Melee damage with a low BREAK chance" + System.lineSeparator() + "Raises Attack by 30%", 
 					"8|6|10|12|14", "Noctis|Cecil Paladin|Fang|Irvine|Seven|Fran", 6, 6000, "Moderately Fast", 
