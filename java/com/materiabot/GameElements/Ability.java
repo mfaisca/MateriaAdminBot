@@ -7,6 +7,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ability.AttackType;
+import com.materiabot.GameElements.Enumerators.Ability.ChargeRate;
 import com.materiabot.GameElements.Enumerators.Ability.CommandType;
 import com.materiabot.GameElements.Enumerators.Ability.HitType;
 import com.materiabot.GameElements.Enumerators.Ability.TargetRange;
@@ -123,7 +124,7 @@ public class Ability implements Comparable<Ability>{
 	public void setTargetRangeId(int targetRangeId) { this.targetRangeId = targetRangeId; }
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
-
+	
 	public int getTotalUseCount() { 
 		Ability base = getUnit().getBaseAbility(this.getAttackName()).get(0);
 		int useCount = base.getBaseUseCount();
@@ -138,11 +139,26 @@ public class Ability implements Comparable<Ability>{
 					.reduce(0, (v1, v2) -> v1 + v2);
 		return useCount;
 	}
+	public int getChargeRate() {
+		Ability base = getUnit().getBaseAbility(this.getAttackName()).get(0);
+		int chargeRate = base.getBaseUseCount();
+		float mult = Streams.concat(	getUnit().getEquipment().stream().flatMap(e -> e.getPassives().stream()),
+											getUnit().getPassives().values().stream(),
+											getUnit().getCharaBoards().stream())
+							.filter(Methods.distinctByKey(p -> p.getId()))
+							.flatMap(p -> p.getEffects().stream())
+							.filter(e -> e.getEffectId() == 107)
+							.filter(e -> e.getValues()[1] == base.getId())
+							.map(e -> e.getValues()[0])
+							.reduce(100, (v1, v2) -> v1 - v2).intValue();
+		return (int)(chargeRate * (mult/100));
+	}
 	public String generateTitle() {
 		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> hd.getEmote()).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> e.getEmote()).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getName().getBest()
-				+ " (Uses: " + getTotalUseCount() + ")"
+				+ (getTotalUseCount() > 0 && !this.getAttackName().equals(AttackName.EX) && !this.getAttackName().equals(AttackName.BT) ? " (Uses: " + getTotalUseCount() + ")" : "")
+				+ (this.getAttackName().equals(AttackName.EX) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + ")" : "")
 				+ " (ID: " + getId() + ")";
 	}
 	public String generateDescription() {
@@ -152,7 +168,7 @@ public class Ability implements Comparable<Ability>{
 				.map(h -> (int)Math.floor((h.getSingleTargetBrvRate() / h.getBrvRate()) * 100))
 				.filter(o -> o > 0)
 				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
-		int overflow = this.getCommandType().equals(CommandType.BT) ? 100 : 
+		int overflow = this.getCommandType() == null || this.getCommandType().equals(CommandType.BT) ? 100 : 
 			this.getHitData().stream()
 				.map(h -> h.getMaxBrvOverflow())
 				.filter(o -> o > 100)
@@ -271,11 +287,11 @@ public class Ability implements Comparable<Ability>{
 		effectList.addAll(postEffects);
 		if(brvPotency.length() > 0) {
 			brvPotency.append(" = " + totalPotency + "%");
-			if(overflow > 100)
+			if(overflow > 100 && overflow < 5000)
 				brvPotency.append(" (" + overflow + "% overflow");
-			if(breakOverflow > 0)
+			if(breakOverflow > 0 && breakOverflow < 5000)
 				brvPotency.append(", " + (overflow + breakOverflow) + "% if target broken");
-			if(overflow > 100 || breakOverflow > 0)
+			if((overflow > 100 && overflow < 5000) || (breakOverflow > 0 && breakOverflow < 5000))
 				brvPotency.append(")");
 			effectList.add(System.lineSeparator() + "BRV Potency: " + brvPotency.substring(2).trim());
 		}

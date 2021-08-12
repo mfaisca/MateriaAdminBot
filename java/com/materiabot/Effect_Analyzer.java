@@ -17,9 +17,9 @@ public class Effect_Analyzer {
 		int key = 1;
 		
 		if(key == 1)
-			printUnit("Galuf", AttackName.LD);
+			printUnit("Selphie", AttackName.S2);
 		if(key == 2)
-			printUnitSpecific("Caius", 10932);
+			printUnitSpecific("Papalymo", 15537);
 		if(key == 3)
 			findMissing();
 	}
@@ -42,7 +42,7 @@ public class Effect_Analyzer {
 				System.out.println("------------------------------");
 				String desc = a.generateDescription();
 				if(desc.length() > 0)
-					System.out.println(a.generateDescription());
+					System.out.println(a.generateTitle() + a.generateDescription());
 			}
 		});
 	}
@@ -60,7 +60,7 @@ public class Effect_Analyzer {
 				System.out.println("------------------------------");
 				String desc = a.generateDescription();
 				if(desc.length() > 0)
-					System.out.println(a.generateDescription());
+					System.out.println(a.generateTitle() + a.generateDescription());
 			}
 		});
 	}
@@ -74,10 +74,7 @@ public class Effect_Analyzer {
 			.forEach(hd -> {
 				for(Integer i : hd.getEffects()) {
 					if(i == -1) continue;
-//					if(i == 69)
-//						System.out.println("vt: " + Arrays.toString(hd.getValTypes()));
-//					else 
-					if(Constants.AILMENT_EFFECT.get(i) != null) continue;
+					if(Constants.AILMENT_EFFECT.get(i) != null && Constants.AILMENT_EFFECT.get(i).getBaseDescription().length() > 0) continue;
 					if(!map.containsKey(i))
 						map.put(i, new LinkedList<Unit>());
 					if(!map.get(i).contains(hd.getUnit()))

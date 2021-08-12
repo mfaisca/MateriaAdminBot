@@ -43,6 +43,8 @@ public class AilmentParser {
 		ail.setExtendable(ailment.getObject("type_data").getBoolean("extendable"));
 		ail.setFramed(ailment.getObject("type_data").getInt("removable") == 0);
 		ail.setMaxStacks(ailment.getObject("type_data").getInt("max_stacks"));
+		if(ail.getMaxStacks() == -1) //Example: Ardyn Spectral Charge overhead
+			ail.setMaxStacks(ail.getArgs()[1]);
 		ail.setEffects(ailment.getObject("type_data").getIntArray("effects"));
 		ail.setValTypes(ailment.getObject("type_data").getIntArray("val_types"));
 		ail.setValEditTypes(ailment.getObject("type_data").getIntArray("val_edit_types"));

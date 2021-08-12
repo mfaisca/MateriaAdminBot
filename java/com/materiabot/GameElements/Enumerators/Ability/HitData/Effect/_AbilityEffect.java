@@ -30,6 +30,10 @@ public class _AbilityEffect {
 	
 	protected final String applyReplaces(HitData hd, String description) {
 		description = description.replace("{t}", hd.getTarget().getDescription());
+		if(hd.getMaxBrvOverflow() > 100)
+			description = description.replace("{of}", " (" + hd.getMaxBrvOverflow() + "% overflow)");
+		else
+			description = description.replace("{of}", "");
 		for(int i = 0; i < hd.getArguments().length; i++) {
 			description = description.replace("{ail" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest() + "**」");
 			description = description.replace("{ab" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest() + "**」");

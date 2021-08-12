@@ -3,6 +3,8 @@ import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.AuraTarget;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Required._AuraRequired;
+import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
+import com.materiabot.Utils.Constants;
 
 public class Aura {
 	private int id, effectDataId;
@@ -44,4 +46,17 @@ public class Aura {
 	public void setValueEditType(int valueEditType) { this.valueEditType = valueEditType; }
 	public Ailment getAilment() { return ailment; }
 	public void setAilment(Ailment ailment) { this.ailment = ailment; }
+	
+	public String getDescription() {
+		String description = null;
+		if(typeId != -1) 			//TypeEffect
+			;
+		else if(effectId != -1) {	//Ailment Effect
+			_AilmentEffect ae = Constants.AILMENT_EFFECT.get(effectId);
+			if(ae != null) {
+				description = " " + ae.getDescription(this);
+			}
+		}
+		return description != null ? description : "Unknown Aura Effect: " + getEffectId() + "/" + getTypeId();
+	}
 }

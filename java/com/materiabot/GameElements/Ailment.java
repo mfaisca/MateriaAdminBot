@@ -1,5 +1,6 @@
 package com.materiabot.GameElements;
 import java.util.List;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
@@ -18,10 +19,10 @@ public class Ailment { //TODO Missing icons
 	private int id, castId;
 	private Text name, desc, fakeName, fakeDesc, fakeEmote;
 	private int rate, rank, duration, maxStacks, buffType, iconType, dispType, spStacks, targetId;
-	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId;
+	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId, auraRankData; //auraRankData is for Fake Ailments for Auras
 	private ConditionBlock[] conditions;
 	private TargetType target;
-	private boolean extendable, framed, golden;
+	private boolean extendable, framed;
 	private Unit unit;
 	private Ability ability;
 	private HashMap<Integer, RankData> rankData = new HashMap<Integer, RankData>();
@@ -101,6 +102,9 @@ public class Ailment { //TODO Missing icons
 	public Integer[] getGroupId() { return groupId; }
 	public void setGroupId(Integer[] groupId) { this.groupId = groupId; }
 	
+	public Integer[] getAuraRankData() { return auraRankData; }
+	public void setAuraRankData(Integer[] auraRankData) { this.auraRankData = auraRankData; }
+	
 	public ConditionBlock[] getConditions() { return conditions; }
 	public void setConditions(ConditionBlock[] conditions) { this.conditions = conditions; }
 
@@ -112,9 +116,7 @@ public class Ailment { //TODO Missing icons
 
 	public boolean isFramed() { return framed; }
 	public void setFramed(boolean framed) { this.framed = framed; }
-
-	public boolean isGolden() { return golden; }
-	public void setGolden(boolean golden) { this.golden = golden; }
+	public boolean isGolden() { return Arrays.asList(this.getEffects()).stream().anyMatch(i -> i.intValue() == 413); }
 
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
@@ -160,31 +162,36 @@ public class Ailment { //TODO Missing icons
 		if(isDeadEffect()) return "";
 		return this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}
-	
+
 	public String generateDescription() {
+		return generateDescription(false);
+	}
+	
+	public String generateDescription(boolean isAuraEffect) {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
+		List<String> finalDescription = new LinkedList<String>();
 		String ret = "";
 		if(isDeadEffect()) return "";
-		//DEBUG
-		ret += generateTitle();
-		//DEBUG
-
-		if(this.isStackable() && this.getArgs()[0] > 0)
-			ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
-		if(this.getTarget() != null) 
-			ret += this.isStackable() ? this.getTarget().getDescription() : this.getTarget().getDescription();
-		else 
-			ret += "unknown target (" + this.getTargetId() + ")";
-		if(this.getDuration() > 0)
-			ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
-		ret += System.lineSeparator();
+		if(!isAuraEffect) {
+			if(this.isStackable() && this.getArgs()[0] > 0)
+				ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
+			if(this.getTarget() != null) 
+				ret += this.isStackable() ? this.getTarget().getDescription() : this.getTarget().getDescription();
+			else 
+				ret += "unknown target (" + this.getTargetId() + ")";
+			if(this.getDuration() > 0)
+				ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
+			//ret += System.lineSeparator();
+			finalDescription.add(ret);
+		}
 		boolean hasAuras = false;
 		for(int i = 0; i < this.getEffects().length; i++) {
-			if(this.getEffects()[i] == -1) continue;
+			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69) continue; //69 is a "meta" effect related to countering, other effects will use it.
 			if(this.getEffects()[i] == 60) { hasAuras = true; continue; }
 			_AilmentEffect effect = Constants.AILMENT_EFFECT.get(this.getEffects()[i]);
 			if(effect == null)
-				ret += "Unknown Effect " + this.getEffects()[i];
+				finalDescription.add("Unknown Effect " + this.getEffects()[i]);
+				//ret += "Unknown Effect " + this.getEffects()[i] + System.lineSeparator();
 			else {
 				String condi = "";
 				if(this.getConditions()[i].getConditions().size() > 0){
@@ -194,12 +201,13 @@ public class Ailment { //TODO Missing icons
 					else
 						condi += "Unknown Ailment Condition: " + cond.getConditionId() + System.lineSeparator();
 				}
-				String effStr = effect.getDescription(this, i);
+				String effStr = effect.getDescription(this, i, getRank(), false);
 				if(effStr == null)
 					return "Error parsing Ailment";
-				ret += (condi.length() > 0 ? condi + "\t" : "") + effStr;
+				if(effStr.length() > 0)
+					//ret += (condi.length() > 0 ? condi + "\t" : "") + effStr + System.lineSeparator();
+					finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + effStr);
 			}
-			ret += System.lineSeparator();
 		}
 		if(hasAuras) {
 			for(Aura a : this.getAuras()) {
@@ -214,14 +222,12 @@ public class Ailment { //TODO Missing icons
 					if(a.getRequiredConditions()[i] != null)
 						condi += a.getRequiredConditions()[i].getDescription(a, i) + System.lineSeparator();
 				}
-				if(a.getEffect() == null)
-					ret += (condi.length() > 0 ? condi + "\t" : "") + "Unknown Aura Effect: " + a.getEffectId() + "/" + a.getTypeId();
-				else
-					ret += (condi.length() > 0 ? condi + "\t" : "") + a.getEffect().getDescription(a);
-				ret += System.lineSeparator();
+				//ret += (condi.length() > 0 ? condi + "\t" : "") + a.getDescription() + System.lineSeparator();
+				finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + a.getDescription());
 			}
 		}
-		return ret.trim();
+		//return ret.trim();
+		return finalDescription.stream().distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
 	}
 	public static final Ailment NULL(int id) {
 		return new Ailment("Unknown Ailment " + id) {};

@@ -21,8 +21,7 @@ public class Main {
 		}
 		System.out.println("Connected to DB");
 		final List<GatewayIntent> gateways = Arrays.asList(	GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS, 
-															GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_MESSAGES, 
-															GatewayIntent.GUILD_EMOJIS);
+															GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_MESSAGES);
         JDA client = JDABuilder.createDefault(privateToken).setAutoReconnect(true)
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();

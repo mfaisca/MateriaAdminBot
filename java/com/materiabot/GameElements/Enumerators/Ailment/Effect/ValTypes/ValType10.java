@@ -1,4 +1,6 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Effect.ValTypes;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import com.materiabot.GameElements.Ailment;
 
 public class ValType10 extends _ValType{
@@ -28,6 +30,6 @@ public class ValType10 extends _ValType{
 				case 7: //Rank Table Right Negative Value
 					ret[i] = -ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[i][2]; break;
 			}
-		return ret;
+		return IntStream.rangeClosed(1, ret.length).mapToLong(i -> ret[ret.length - i]).mapToInt(l -> (int)l).boxed().collect(Collectors.toList()).toArray(new Integer[0]);
 	}
 }

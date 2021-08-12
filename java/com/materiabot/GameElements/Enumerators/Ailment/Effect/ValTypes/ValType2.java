@@ -9,7 +9,7 @@ public class ValType2 extends _ValType{
 	@Override
 	public Integer[] getValues(Ailment ailment, int index, int rank) { //Index of effect is on #1 on the args, if no rank_table, then its specific value
 		if(ailment.getRankTables()[index].intValue() == -1)
-			return new Integer[]{ailment.getArgs()[2]};
+			return new Integer[]{ailment.getArgs()[1]};
 		switch(ailment.getValEditTypes()[index]) {
 			case 0: //Rank Table direct value
 				return new Integer[]{ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[ailment.getArgs()[1]-1][2]};

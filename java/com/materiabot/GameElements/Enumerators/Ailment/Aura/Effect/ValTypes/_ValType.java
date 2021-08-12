@@ -1,5 +1,6 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes;
 import java.util.HashMap;
+import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Aura;
 
 public abstract class _ValType {
@@ -20,6 +21,7 @@ public abstract class _ValType {
 	}
 
 	public int getValType() { return valType; }
-	
+
 	public abstract Integer[] getValues(Aura aura);
+	public abstract Integer[] getValues(Ailment fakeAil);
 }
