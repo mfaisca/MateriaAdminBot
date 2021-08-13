@@ -49,14 +49,16 @@ public class Aura {
 	
 	public String getDescription() {
 		String description = null;
-		if(typeId != -1) 			//TypeEffect
-			;
+		if(typeId != -1) { 			//TypeEffect
+			_AuraEffect ae = Constants.AURA_EFFECT.get(typeId);
+			if(ae != null)
+				description = this.getTarget().getDescription() + " " + ae.getDescription(this);
+		}
 		else if(effectId != -1) {	//Ailment Effect
 			_AilmentEffect ae = Constants.AILMENT_EFFECT.get(effectId);
-			if(ae != null) {
-				description = " " + ae.getDescription(this);
-			}
+			if(ae != null)
+				description = this.getTarget().getDescription() + " " + ae.getDescription(this);
 		}
-		return description != null ? description : "Unknown Aura Effect: " + getEffectId() + "/" + getTypeId();
+		return description != null ? description.trim() : "Unknown Aura Effect: " + getEffectId() + "/" + getTypeId();
 	}
 }

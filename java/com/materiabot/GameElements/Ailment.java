@@ -205,7 +205,6 @@ public class Ailment { //TODO Missing icons
 				if(effStr == null)
 					return "Error parsing Ailment";
 				if(effStr.length() > 0)
-					//ret += (condi.length() > 0 ? condi + "\t" : "") + effStr + System.lineSeparator();
 					finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + effStr);
 			}
 		}
@@ -222,8 +221,11 @@ public class Ailment { //TODO Missing icons
 					if(a.getRequiredConditions()[i] != null)
 						condi += a.getRequiredConditions()[i].getDescription(a, i) + System.lineSeparator();
 				}
-				//ret += (condi.length() > 0 ? condi + "\t" : "") + a.getDescription() + System.lineSeparator();
-				finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + a.getDescription());
+				String auraDesc = a.getDescription();
+				if(auraDesc == null)
+					return "Error parsing Aura";
+				if(auraDesc.length() > 0)
+					finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + auraDesc);
 			}
 		}
 		//return ret.trim();

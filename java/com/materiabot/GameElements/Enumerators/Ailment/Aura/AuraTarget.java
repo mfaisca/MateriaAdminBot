@@ -2,7 +2,9 @@ package com.materiabot.GameElements.Enumerators.Ailment.Aura;
 import java.util.Arrays;
 
 public enum AuraTarget {
-	Self(2, "Self"),
+	Target(1, ""),
+	Self(2, ""),
+	Random(3, "Random"),
 	Enemies(5, "All Enemies"),
 	Party(6, "Party"),
 	Allies(7, "Allies"),

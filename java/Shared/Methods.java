@@ -19,6 +19,7 @@ public class Methods {
 	}
 
 	public static final String enframe(String s) { return "「**" + s + "**」"; }
+	public static final String enframe(Integer i) { return enframe(""+i); }
 	
 //	public static final LinkedList<String> splitString(String s, int size) {
 //		LinkedList<String> split = new LinkedList<String>();
@@ -68,9 +69,11 @@ public class Methods {
 		return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null; 
 	}
 
-	public static final int[][] splitRankData(String[] rdd) {
+	public static final Integer[][] splitRankData(String[] rdd) {
 		int[][] ret = new int[10][3];
 		int idx = 2; int mult = 1;
+		if(rdd == null)
+			System.out.println();
 		for(int i2 = 0; i2 < rdd.length; i2++) {
 			String rd = rdd[i2];
 			for(int i = rd.length()-1; i >= 0; i--) {
@@ -87,9 +90,15 @@ public class Methods {
 				mult *= 10;
 			}
 		}
-		return ret;
+		Integer[][] rett = new Integer[10][3];
+		for(int i = 0; i < rett.length; i++) {
+			rett[i] = new Integer[3];
+			for(int i2 = 0; i2 < rett[i].length; i2++)
+				rett[i][i2] = ret[i][i2];
+		}
+		return rett;
 	}
-	public static final int[][] splitRankData(Integer[] rdd) {
+	public static final Integer[][] splitRankData(Integer[] rdd) {
 		int[][] ret = new int[10][3];
 		for(int i2 = 0; i2 < rdd.length; i2++) {
 			String rd = ""+rdd[i2];
@@ -108,6 +117,12 @@ public class Methods {
 				mult *= 10;
 			}
 		}
-		return ret;
+		Integer[][] rett = new Integer[10][3];
+		for(int i = 0; i < rett.length; i++) {
+			rett[i] = new Integer[3];
+			for(int i2 = 0; i2 < rett[i].length; i2++)
+				rett[i][i2] = ret[i][i2];
+		}
+		return rett;
 	}
 }

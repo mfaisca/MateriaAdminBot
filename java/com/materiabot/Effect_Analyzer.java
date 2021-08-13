@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
+import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
+import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.Utils.Constants;
 
 public class Effect_Analyzer {
@@ -14,14 +17,18 @@ public class Effect_Analyzer {
 		//PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 1;
+		int key = 5;
 		
 		if(key == 1)
-			printUnit("Selphie", AttackName.S2);
+			printUnit("Tidus", AttackName.S1);
 		if(key == 2)
-			printUnitSpecific("Papalymo", 15537);
+			printUnitSpecific("Exdeath", 13583);
 		if(key == 3)
 			findMissing();
+		if(key == 4)
+			printAllAilments();
+		if(key == 5)
+			printAllAuras();
 	}
 
 	private static void printUnit(String unit, AttackName atn) {
@@ -71,15 +78,66 @@ public class Effect_Analyzer {
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
 			.flatMap(u -> u.getAilments().values().stream())
+			.flatMap(a -> a.getAuras().stream())
 			.forEach(hd -> {
-				for(Integer i : hd.getEffects()) {
-					if(i == -1) continue;
-					if(Constants.AILMENT_EFFECT.get(i) != null && Constants.AILMENT_EFFECT.get(i).getBaseDescription().length() > 0) continue;
-					if(!map.containsKey(i))
-						map.put(i, new LinkedList<Unit>());
-					if(!map.get(i).contains(hd.getUnit()))
-						map.get(i).add(hd.getUnit());
+				Integer i = hd.getEffectId();
+				if(i != -1) {
+					if(!(Constants.AILMENT_EFFECT.get(i) != null && Constants.AILMENT_EFFECT.get(i).getBaseDescription().length() > 0)){
+						if(!map.containsKey(i))
+							map.put(i, new LinkedList<Unit>());
+						if(!map.get(i).contains(hd.getAilment().getUnit()))
+							map.get(i).add(hd.getAilment().getUnit());
+					}
 				}
+			});
+		map.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map.get(k).toString());
+		});
+	}
+	
+	private static void printAllAilments() {
+		HashMap<Integer, List<Unit>> map = new HashMap<Integer, List<Unit>>();
+		
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> 
+				Streams.concat(
+						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getEffects()).stream()),
+						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream()).map(a -> a.getEffectId())
+				)
+			)
+			.distinct()
+			.sorted()
+			.forEach(aid -> {
+				_AilmentEffect a = Constants.AILMENT_EFFECT.get(aid);
+				if(a == null)
+					System.out.println(aid + " - Effect not parsed!!!!!");
+				else
+					System.out.println(aid + " - " + a.getBaseDescription());
+			});
+		map.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map.get(k).toString());
+		});
+	}
+	
+	private static void printAllAuras() {
+		HashMap<Integer, List<Unit>> map = new HashMap<Integer, List<Unit>>();
+		
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> 
+				Streams.concat(
+						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream()).map(a -> a.getTypeId())
+				)
+			)
+			.distinct()
+			.sorted()
+			.forEach(aid -> {
+				_AuraEffect a = Constants.AURA_EFFECT.get(aid);
+				if(a == null)
+					System.out.println(aid + " - Effect not parsed!!!!!");
+				else
+					System.out.println(aid + " - " + a.getBaseDescription());
 			});
 		map.keySet().stream().distinct().sorted().forEach(k -> {
 			System.out.println(k + " - " + map.get(k).toString());

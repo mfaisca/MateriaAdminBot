@@ -57,7 +57,7 @@ public class AilmentParser {
 			try {
 				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getIntArray("" + i)));
 			} catch(Exception e) {
-				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getStringArray("" + i)));
+				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getStringArray("" + i)));;;;;;;;;
 			}
 			ail.getRankData().put(i, rd);
 		}

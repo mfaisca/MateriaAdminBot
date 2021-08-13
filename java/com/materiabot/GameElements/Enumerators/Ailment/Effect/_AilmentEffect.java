@@ -22,7 +22,7 @@ public abstract class _AilmentEffect {
 	public String getDescription(Ailment a, int effectIndex, int rank, boolean isAuraEffect) {
 		return applyReplaces(a, effectIndex, getBaseDescription(), rank, isAuraEffect);
 	}
-	public String getDescription(Aura aura) {
+	public static final String getDescription(Aura aura) {
 		Ailment a = new Ailment();
 		a.setName(aura.getAilment().getName());
 		a.setConditions(aura.getAilment().getConditions());
@@ -40,24 +40,29 @@ public abstract class _AilmentEffect {
 			return "Unknown Effect " + aura.getEffectId();
 		return ae.getDescription(a, 0, a.getRank(), true);
 	}
-
-	protected final String applyReplaces(Ailment a, int effectIndex, String description, boolean isAuraEffect) {
-		return applyReplaces(a, effectIndex, description, a.getRank(), isAuraEffect);
-	}
-	protected final String applyReplaces(Ailment a, int effectIndex, String description, int rank, boolean isAuraEffect) {
-		//if(a.getEffects()[effectIndex] != id && a.getEffects()[effectIndex] != 53) return null; //53 = Multifunction effect - hardcoded stuff ingame
+	
+	protected static final Integer[] getArgs(Ailment a, int effectIndex, int rank, boolean isAuraEffect) {
 		Integer[] values = new Integer[0];
-		boolean isValType16 = false; //Special ValueType for some effects that scale off something else other than stacks(I think)
 		if(isAuraEffect) {
 			com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes._ValType type;
 			type = com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes._ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]);
 			values = type == null ? null : type.getValues(a);
 		}
 		else {
-			_ValType type = _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]);
+			_ValType type = _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]); //TODO Check all ailment effects to swap this to the new function
 			values = type == null ? null : type.getValues(a, effectIndex, rank);
-			isValType16 = type != null && type.getValType() == 16;
 		}
+		return values;
+	}
+
+	protected static final String applyReplaces(Ailment a, int effectIndex, String description, boolean isAuraEffect) {
+		return applyReplaces(a, effectIndex, description, a.getRank(), isAuraEffect);
+	}
+	
+	protected static final String applyReplaces(Ailment a, int effectIndex, String description, int rank, boolean isAuraEffect) {
+		//if(a.getEffects()[effectIndex] != id && a.getEffects()[effectIndex] != 53) return null; //53 = Multifunction effect - hardcoded stuff ingame
+		Integer[] values = getArgs(a, effectIndex, rank, isAuraEffect);
+		boolean isValType16 = !isAuraEffect && a.getValTypes()[effectIndex] == 16; //Special ValueType for some effects that scale off something else other than stacks(I think)
 		String stack = "";
 		if(a.getMaxStacks() > 1 || (isValType16 && values != null)) {
 			stack = Arrays.asList(values).stream().map(i1 -> i1.toString()).reduce((i1, i2) -> i1 + "/" + i2).orElse("ERROR");
@@ -68,9 +73,9 @@ public abstract class _AilmentEffect {
 		
 		if(values != null)
 			for(int i = 0; i < values.length; i++) {
-				description = description.replace("{ail" + i + "}", "「**" + a.getUnit().getSpecificAilment(values[i]).getName().getBest() + "**」");
-				description = description.replace("{ab" + i + "}", "「**" + a.getUnit().getSpecificAbility(values[i]).getName().getBest() + "**」");
-				description = description.replace("{p" + i + "}", "「**" + a.getUnit().getSpecificPassive(values[i]).getName().getBest() + "**」");
+				description = description.replace("{ail" + i + "}", Methods.enframe(a.getUnit().getSpecificAilment(values[i]).getName().getBest()));
+				description = description.replace("{ab" + i + "}", Methods.enframe(a.getUnit().getSpecificAbility(values[i]).getName().getBest()));
+				description = description.replace("{p" + i + "}", Methods.enframe(a.getUnit().getSpecificPassive(values[i]).getName().getBest()));
 				if(a.getMaxStacks() > 1 || isValType16)
 					description = description.replace("{" + i + "}", stack);
 				else
@@ -79,17 +84,17 @@ public abstract class _AilmentEffect {
 		if(description.contains("{u}"))
 			description = description.replace("{u}", a.getUnit().getName());
 		if(description.contains("{s1}"))
-			description = description.replace("{s1}", "「**" + a.getUnit().getAbility(AttackName.S1).get(0).getName().getBest() + "**」");
+			description = description.replace("{s1}", Methods.enframe(a.getUnit().getAbility(AttackName.S1).get(0).getName().getBest()));
 		if(description.contains("{s2}"))
-			description = description.replace("{s2}", "「**" + a.getUnit().getAbility(AttackName.S2).get(0).getName().getBest() + "**」");
+			description = description.replace("{s2}", Methods.enframe(a.getUnit().getAbility(AttackName.S2).get(0).getName().getBest()));
 		if(description.contains("{sEX}"))
-			description = description.replace("{sEX}", "「**" + a.getUnit().getAbility(AttackName.EX).get(0).getName().getBest() + "**」");
+			description = description.replace("{sEX}", Methods.enframe(a.getUnit().getAbility(AttackName.EX).get(0).getName().getBest()));
 		if(description.contains("{sLD}"))
-			description = description.replace("{sLD}", "「**" + a.getUnit().getAbility(AttackName.LD).get(0).getName().getBest() + "**」");
+			description = description.replace("{sLD}", Methods.enframe(a.getUnit().getAbility(AttackName.LD).get(0).getName().getBest()));
 		if(description.contains("{sBT}"))
-			description = description.replace("{sBT}", "「**" + a.getUnit().getAbility(AttackName.BT).get(0).getName().getBest() + "**」");
+			description = description.replace("{sBT}", Methods.enframe(a.getUnit().getAbility(AttackName.BT).get(0).getName().getBest()));
 		if(description.contains("{sAA}"))
-			description = description.replace("{sAA}", "「**" + a.getUnit().getAbility(AttackName.AA).get(0).getName().getBest() + "**」");
+			description = description.replace("{sAA}", Methods.enframe(a.getUnit().getAbility(AttackName.AA).get(0).getName().getBest()));
 		while(description.contains("{s") && values != null) { //{s1} = +10 || -10
 			String skill = description.substring(description.indexOf("{s"), description.indexOf("}", description.indexOf("{s")) + 1);
 			int idx = skill.charAt(2) - '0';
