@@ -2,48 +2,45 @@ package com.materiabot.GameElements.Enumerators.Ailment;
 import java.util.LinkedList;
 import java.util.List;
 import com.materiabot.GameElements.Ailment;
-import com.materiabot.GameElements.Enumerators.Ailment.Condition.ConditionTarget;
-import com.materiabot.GameElements.Enumerators.Ailment.Condition._Condition;
+import com.materiabot.GameElements.Enumerators.Passive.RequiredTarget;
+import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
 
-public class ConditionBlock {
-	private Integer simpleValue;
-	
-	public Integer getSimpleValue() { return simpleValue; }
-	public void setSimpleValue(Integer simpleValue) { this.simpleValue = simpleValue; }
-	///
+public class ConditionBlock{
 	private Ailment ailment;
-	private int id;
+	private Integer id;
 	private List<ConditionBlock> conditions = new LinkedList<ConditionBlock>();
 	private String name;
-	private int targetId;
-	private ConditionTarget target;
-	private int conditionId;
-	private _Condition condition;
-	private Integer[] values;
+	private Integer targetId;
+	private RequiredTarget target;
+	private Integer conditionId;
+	private _PassiveRequired condition;
+	private Integer[] values;	
 	
+	public ConditionBlock(Ailment a) {
+		ailment = a;
+	}
+
 	public Ailment getAilment() { return ailment; }
 	public void setAilment(Ailment a) { ailment = a; }
-	public int getId() { return id; }
-	public void setId(int id) { this.id = id; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
-	public int getTargetId() { return targetId; }
-	public void setTargetId(int target) { this.targetId = target; }
-	public ConditionTarget getTarget() { return target; }
-	public void setTarget(ConditionTarget target) { this.target = target; }
-	public int getConditionId() { return conditionId; }
-	public void setConditionId(int conditionId) { this.conditionId = conditionId; }
-	public _Condition getCondition() { return condition; }
-	public void setCondition(_Condition condition) { this.condition = condition; }
+	public Integer getTargetId() { return targetId; }
+	public void setTargetId(Integer target) { this.targetId = target; }
+	public RequiredTarget getTarget() { return target; }
+	public void setTarget(RequiredTarget target) { this.target = target; }
+	public Integer getConditionId() { return conditionId; }
+	public void setConditionId(Integer conditionId) { this.conditionId = conditionId; }
+	public _PassiveRequired getCondition() { return condition; }
+	public void setCondition(_PassiveRequired condition) { this.condition = condition; }
 	public Integer[] getValues() { return values; }
 	public void setValues(Integer[] values) { this.values = values; }
 	public List<ConditionBlock> getConditions() { return conditions; }
 	
 	public String getDescription() {
-		if(simpleValue != null)
-			return simpleValue.intValue() + "";
 		if(condition == null)
-			return "Unknown Condition: " + conditionId;
+			return "Unknown Condition: " + getConditionId();
 		return condition.getDescription(this);
 	}
 }

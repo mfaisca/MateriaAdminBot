@@ -57,6 +57,24 @@ public class JSONParser {
 				return null; 
 			}
 		}
+		
+		public Integer[] getIntArray(String name, Integer defaultt) { 
+			try {
+				JSONArray arr = name == null ? (JSONArray)(Object)json : json.getJSONArray(name);
+				Integer[] ret = new Integer[arr.length()];
+				for(int i = 0; i < ret.length; i++)
+					try {
+						ret[i] = arr.getInt(i);
+					} catch(Exception e) {
+						if(defaultt == null)
+							throw e;
+						ret[i] = defaultt;
+					}
+				return ret;
+			} catch(Exception e) {
+				return null; 
+			}
+		}
 		public MyJSONObject[] getObjectArray(String name) {
 			try {
 				JSONArray arr = json.getJSONArray(name);

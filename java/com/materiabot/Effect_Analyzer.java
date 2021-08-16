@@ -17,10 +17,10 @@ public class Effect_Analyzer {
 		//PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 5;
+		int key = 1;
 		
 		if(key == 1)
-			printUnit("Tidus", AttackName.S1);
+			printUnit("Rosa", AttackName.LD);
 		if(key == 2)
 			printUnitSpecific("Exdeath", 13583);
 		if(key == 3)
@@ -33,7 +33,7 @@ public class Effect_Analyzer {
 
 	private static void printUnit(String unit, AttackName atn) {
 		//Arrays.asList(
-				_Library.L.getUnit(unit).getAbility(atn).stream()
+				_Library.L.getUnit(unit).getAbility(atn, "JP").stream()
 		//		.reduce((a1, a2) -> new Ability.MultiAbility(a1, a2)).orElse(null))
 		.forEach(p -> {
 			String text = p.generateDescription();
@@ -77,20 +77,24 @@ public class Effect_Analyzer {
 		
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
-			.flatMap(u -> u.getAilments().values().stream())
+			.flatMap(a -> a.getAbilities().values().stream())
+			.flatMap(a -> a.getAilments().stream())
 			.flatMap(a -> a.getAuras().stream())
 			.forEach(hd -> {
-				Integer i = hd.getEffectId();
-				if(i != -1) {
-					if(!(Constants.AILMENT_EFFECT.get(i) != null && Constants.AILMENT_EFFECT.get(i).getBaseDescription().length() > 0)){
-						if(!map.containsKey(i))
-							map.put(i, new LinkedList<Unit>());
-						if(!map.get(i).contains(hd.getAilment().getUnit()))
-							map.get(i).add(hd.getAilment().getUnit());
+				Integer[] ii = hd.getRequiredConditionsIds();
+				for(Integer i : ii)
+					if(i != null && i.intValue() != -1) {
+						if(!(Constants.AURA_REQUIRED.get(i) != null && Constants.AURA_REQUIRED.get(i).getBaseDescription().length() > 0)){
+							if(!map.containsKey(i))
+								map.put(i, new LinkedList<Unit>());
+							if(!map.get(i).contains(hd.getAilment().getUnit()))
+								map.get(i).add(hd.getAilment().getUnit());
+						}
 					}
-				}
 			});
 		map.keySet().stream().distinct().sorted().forEach(k -> {
+//			boolean ok = Constants.PASSIVE_REQUIRED.get(k) != null && Constants.PASSIVE_REQUIRED.get(k).getBaseDescription().length() > 0;
+//			System.out.println(k + " - " + (ok ? "OK" : "NO") + " - " + map.get(k).toString());
 			System.out.println(k + " - " + map.get(k).toString());
 		});
 	}

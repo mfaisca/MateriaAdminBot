@@ -167,9 +167,42 @@ public class Ailment { //TODO Missing icons
 		return generateDescription(false);
 	}
 	
+	private static final class AilmentBlock implements Comparable<AilmentBlock>{
+		public String condi;
+		public List<String> desc = new LinkedList<String>();
+		
+		public AilmentBlock(String c, String... desc) {
+			condi = c; add(desc);
+		}
+		public void add(String... desc) {
+			this.desc.addAll(Arrays.asList(desc));
+		}
+		
+		@Override
+		public boolean equals(Object other) {
+			if(this.condi == null) 
+				return ((AilmentBlock)other).condi == null;
+			return this.condi.equals(((AilmentBlock)other).condi);
+		}
+		
+		@Override
+		public String toString() {
+			return (condi != null && condi.length() > 0 ? condi + System.lineSeparator() : "") + 
+						desc.stream()
+						.map(d -> (condi != null && condi.length() > 0 ? "\t" : "") + d)
+						.reduce((d1, d2) -> d1 + System.lineSeparator() + d2).orElse("Error Parsing Ailment Block");
+		}
+		@Override
+		public int compareTo(AilmentBlock other) {
+			if(this.condi == null) return -1;
+			if(other.condi == null) return 1;
+			return this.condi.length() - other.condi.length();
+		}
+	}
+	
 	public String generateDescription(boolean isAuraEffect) {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
-		List<String> finalDescription = new LinkedList<String>();
+		List<AilmentBlock> finalDescription = new LinkedList<AilmentBlock>();
 		String ret = "";
 		if(isDeadEffect()) return "";
 		if(!isAuraEffect) {
@@ -181,55 +214,69 @@ public class Ailment { //TODO Missing icons
 				ret += "unknown target (" + this.getTargetId() + ")";
 			if(this.getDuration() > 0)
 				ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
-			//ret += System.lineSeparator();
-			finalDescription.add(ret);
+			finalDescription.add(new AilmentBlock(null, ret));
 		}
 		boolean hasAuras = false;
 		for(int i = 0; i < this.getEffects().length; i++) {
 			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69) continue; //69 is a "meta" effect related to countering, other effects will use it.
 			if(this.getEffects()[i] == 60) { hasAuras = true; continue; }
+			String condi = "";
+			for(int ic = 0; ic < this.getConditions()[i].getConditions().size(); ic++) {
+				ConditionBlock cond = this.getConditions()[i].getConditions().get(ic);
+				if(cond.getCondition() != null)
+					condi += cond.getCondition().getDescription(cond) + System.lineSeparator();
+				else
+					condi += "Unknown Ailment Condition: " + cond.getConditionId() + System.lineSeparator();
+			}
+			condi = condi.trim(); //Remove the last lineSeparator
 			_AilmentEffect effect = Constants.AILMENT_EFFECT.get(this.getEffects()[i]);
+			String effStr;
 			if(effect == null)
-				finalDescription.add("Unknown Effect " + this.getEffects()[i]);
-				//ret += "Unknown Effect " + this.getEffects()[i] + System.lineSeparator();
+				effStr = "Unknown Effect " + this.getEffects()[i];
 			else {
-				String condi = "";
-				if(this.getConditions()[i].getConditions().size() > 0){
-					ConditionBlock cond = this.getConditions()[i].getConditions().get(0);
-					if(cond.getCondition() != null)
-						condi += cond.getCondition().getDescription(cond) + System.lineSeparator();
-					else
-						condi += "Unknown Ailment Condition: " + cond.getConditionId() + System.lineSeparator();
-				}
-				String effStr = effect.getDescription(this, i, getRank(), false);
+				effStr = effect.getDescription(this, i, getRank(), false);
 				if(effStr == null)
-					return "Error parsing Ailment";
-				if(effStr.length() > 0)
-					finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + effStr);
+					effStr = "Error parsing Ailment " +  + this.getEffects()[i];
+			}
+			if(effStr.length() > 0) {
+				AilmentBlock ab = new AilmentBlock(condi, effStr);
+				if(finalDescription.contains(ab))
+					finalDescription.get(finalDescription.indexOf(ab)).add(effStr);
+				else
+					finalDescription.add(ab);
 			}
 		}
 		if(hasAuras) {
-			for(Aura a : this.getAuras()) {
+			for(Aura a : this.getAuras()) { //I'm parsing the conditions here instead of in the Aura so that in the future I can merge effects that have the same conditions 
 				String condi = "";
 				for(int i = 0; i < a.getRequiredConditions().length; i++) {
-					if(a.getRequiredConditions()[i] == null) {
-						if(a.getRequiredConditionsIds()[i] == -1)
-							continue;
-						else
-							condi += "Unknown Aura Condition: " + a.getRequiredConditionsIds()[i] + System.lineSeparator();
+					if(a.getRequiredConditions()[i] != null) {
+						String cond = a.getRequiredConditions()[i].getDescription(a, i);
+						if(cond.length() > 0)
+							condi += cond + System.lineSeparator();
 					}
-					if(a.getRequiredConditions()[i] != null)
-						condi += a.getRequiredConditions()[i].getDescription(a, i) + System.lineSeparator();
+					else {
+						if(a.getRequiredConditionsIds()[i] != -1)
+							condi += "Unknown Aura Condition: " + a.getRequiredConditionsIds()[i] + System.lineSeparator();
+						else
+							continue;
+					}
 				}
+				condi = condi.trim();
 				String auraDesc = a.getDescription();
 				if(auraDesc == null)
-					return "Error parsing Aura";
-				if(auraDesc.length() > 0)
-					finalDescription.add((condi.length() > 0 ? condi + "\t" : "") + auraDesc);
+					auraDesc = "Error parsing Aura " + a.getId() + " on " + a.getAilment().getUnit().getName() + "/" + a.getAilment().getId();
+				if(auraDesc.length() > 0) {
+					AilmentBlock ab = new AilmentBlock(condi, auraDesc);
+					if(finalDescription.contains(ab))
+						finalDescription.get(finalDescription.indexOf(ab)).add(auraDesc);
+					else
+						finalDescription.add(ab);
+				}
 			}
 		}
 		//return ret.trim();
-		return finalDescription.stream().distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
+		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
 	}
 	public static final Ailment NULL(int id) {
 		return new Ailment("Unknown Ailment " + id) {};

@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public enum AuraTarget {
 	Target(1, ""),
-	Self(2, ""),
+	Self(2, "Self"),
 	Random(3, "Random"),
 	Enemies(5, "All Enemies"),
 	Party(6, "Party"),

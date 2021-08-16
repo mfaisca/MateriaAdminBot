@@ -6,7 +6,7 @@ import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.AuraTarget;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Required._AuraRequired;
-import com.materiabot.GameElements.Enumerators.Ailment.Condition.ConditionTarget;
+import com.materiabot.GameElements.Enumerators.Passive.RequiredTarget;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Aura;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
@@ -50,19 +50,20 @@ public class AilmentParser {
 		ail.setValEditTypes(ailment.getObject("type_data").getIntArray("val_edit_types"));
 		ail.setValSpecify(ailment.getObject("type_data").getIntArray("val_specify"));
 		ail.setRankTables(ailment.getObject("type_data").getIntArray("rank_tables"));
-		ail.setConditions(parseConditionBlocks(ail, ailment.getObject("type_data"), "conditions", -1));
+		ail.setConditions(parseConditionBlocks(ail, ailment.getObject("type_data"), "conditions"));
 		for(Integer i : ail.getRankTables()) {
 			if(i == -1) continue;
 			RankData rd = new RankData(i.intValue());
 			try {
 				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getIntArray("" + i)));
 			} catch(Exception e) {
-				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getStringArray("" + i)));;;;;;;;;
+				rd.setValues(Methods.splitRankData(ailment.getObject("rank_data").getStringArray("" + i)));
 			}
 			ail.getRankData().put(i, rd);
 		}
 		for(MyJSONObject aura : ailment.getObjectArray("auras")) {
 			Aura a = new Aura();
+			a.setAilment(ail);
 			a.setId(aura.getInt("id"));
 			a.setRequiredConditionsIds(aura.getIntArray("required_conditions"));
 			_AuraRequired[] aurasConditions = new _AuraRequired[3];
@@ -75,7 +76,10 @@ public class AilmentParser {
 				aurasConditions[i] = ar;
 			}
 			a.setRequiredConditions(aurasConditions);
-			a.setRequiredValues(parseConditionBlocks(ail, aura, "required_values", 0));
+			if(a.getAilment().getId() == 2791 && a.getId() == 1291)
+				System.out.println();
+			a.setRequiredValues(aura.getIntArray("required_values", 0));
+			a.setRequiredConditionObjectValues(parseConditionBlocks(ail, aura, "required_values"));
 			a.setEffectDataId(aura.getObject("effect_data").getInt("id"));
 			a.setEffectId(aura.getObject("effect_data").getInt("ailment_effect"));
 			a.setTypeId(aura.getObject("effect_data").getInt("type_id"));
@@ -87,31 +91,30 @@ public class AilmentParser {
 			a.setTarget(AuraTarget.get(a.getTargetId()));
 			a.setValueType(aura.getObject("effect_data").getInt("value_type"));
 			a.setRankData(aura.getObject("effect_data").getIntArray("rank_data"));
-			a.setAilment(ail);
 			ail.getAuras().add(a);
 		}
 		return ail;
 	}
 	
-	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name, int nullValue) {
+	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
 		List<ConditionBlock> conds = new LinkedList<ConditionBlock>();
 		for(int i = 0; i < root.getJSON().getJSONArray(name).length(); i++) {
-			ConditionBlock c = new ConditionBlock();
-			try { //IsNumber
-				c.setSimpleValue(root.getJSON().getJSONArray(name).getInt(i));
-			} catch(Exception e) { //IsConditionBlock
+			ConditionBlock c = new ConditionBlock(a);
+			try {
 				MyJSONObject cond = new MyJSONObject(root.getJSON().getJSONArray(name).getJSONObject(i));
 				c.setId(cond.getInt("id"));
 				for(MyJSONObject cond2 : cond.getObjectArray("conds")) {
-					ConditionBlock c2 = new ConditionBlock();
+					ConditionBlock c2 = new ConditionBlock(a);
 					c2.setAilment(a);
 					c2.setConditionId(cond2.getInt("id"));
-					c2.setCondition(Constants.AILMENT_CONDITION.get(c2.getConditionId()));
+					c2.setCondition(Constants.PASSIVE_REQUIRED.get(c2.getConditionId()));
 					c2.setTargetId(cond2.getInt("target"));
-					c2.setTarget(ConditionTarget.get(c2.getTargetId()));
+					c2.setTarget(RequiredTarget.get(c2.getTargetId()));
 					c2.setValues(cond2.getIntArray("values"));
 					c.getConditions().add(c2);
 				}
+			} catch(Exception e) {
+				//-1
 			}
 			conds.add(c);
 		}

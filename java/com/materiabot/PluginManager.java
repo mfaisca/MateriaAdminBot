@@ -11,9 +11,7 @@ import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Required._AuraRequired;
-import com.materiabot.GameElements.Enumerators.Ailment.Condition._Condition;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
-import com.materiabot.GameElements.Enumerators.Ailment.Required._AilmentRequired;
 
 public class PluginManager {
 	@SuppressWarnings("rawtypes")
@@ -37,23 +35,17 @@ public class PluginManager {
 		.map(p -> (_AbilityEffect)p.get())
 		.forEach(c -> Constants.ABILITY_EFFECT.put(c.getId(), c));
 		manager.getAllPlugins().stream()
-		.filter(p -> {
-			if(p.getName().equals("Ailment.Effect.69"))
-				System.out.println();
-			return p.getName().contains("Ailment.Effect");
-		})
+		.filter(p -> p.getName().contains("Ailment.Effect"))
 		.map(p -> (_AilmentEffect)p.get())
-		.forEach(c -> {
-			Constants.AILMENT_EFFECT.put(c.getId(), c);
-		});
-		manager.getAllPlugins().stream()
-		.filter(p -> p.getName().contains("Ailment.Required"))
-		.map(p -> (_AilmentRequired)p.get())
-		.forEach(c -> Constants.AILMENT_REQUIRED.put(c.getId(), c));
-		manager.getAllPlugins().stream()
-		.filter(p -> p.getName().contains("Ailment.Condition"))
-		.map(p -> (_Condition)p.get())
-		.forEach(c -> Constants.AILMENT_CONDITION.put(c.getId(), c));
+		.forEach(c -> Constants.AILMENT_EFFECT.put(c.getId(), c));
+//		manager.getAllPlugins().stream()
+//		.filter(p -> p.getName().contains("Ailment.Required"))
+//		.map(p -> (_AilmentRequired)p.get())
+//		.forEach(c -> Constants.AILMENT_REQUIRED.put(""+c.getId(), c));
+//		manager.getAllPlugins().stream()
+//		.filter(p -> p.getName().contains("Ailment.Condition"))
+//		.map(p -> (_Condition)p.get())
+//		.forEach(c -> Constants.AILMENT_CONDITION.put(c.getId(), c));
 		manager.getAllPlugins().stream()
 		.filter(p -> p.getName().contains("Aura.Effect"))
 		.map(p -> (_AuraEffect)p.get())

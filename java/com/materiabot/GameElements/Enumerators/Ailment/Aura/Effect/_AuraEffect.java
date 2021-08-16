@@ -1,4 +1,5 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect;
+import java.util.Arrays;
 import com.materiabot.GameElements.Aura;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes._ValType;
@@ -22,6 +23,13 @@ public abstract class _AuraEffect {
 	public String applyReplaces(Aura a, String description) {
 		description = description.replace("{t}", a.getTarget().getDescription());
 		Integer[] values = _ValType.VAL_TYPES.get(a.getValueType()).getValues(a);
+		String stack = "";
+		if(a.getAilment().getMaxStacks() > 1) {
+			stack = Arrays.asList(values).stream().map(i1 -> i1.toString()).reduce((i1, i2) -> i1 + "/" + i2).orElse("ERROR");
+			String[] stacks = stack.split("/");
+			if(Arrays.asList(stacks).stream().distinct().count() == 1)
+				stack = stacks[0];
+		}
 		if(description.contains("{u}"))
 			description = description.replace("{u}", a.getAilment().getUnit().getName());
 		if(description.contains("{s1}"))
@@ -40,12 +48,15 @@ public abstract class _AuraEffect {
 			description = description.replace("{ail" + i + "}", a.getAilment().getUnit().getSpecificAilment(values[i]).getName().getBest());
 			description = description.replace("{ab" + i + "}", a.getAilment().getUnit().getSpecificAbility(values[i]).getName().getBest());
 			description = description.replace("{p" + i + "}", a.getAilment().getUnit().getSpecificPassive(values[i]).getName().getBest());
-			description = description.replace("{" + i + "}", "" + values[i]);
+			if(a.getAilment().getMaxStacks() > 1)
+				description = description.replace("{" + i + "}", stack);
+			else
+				description = description.replace("{" + i + "}", values[i]+"");
 		}
 		while(description.contains("{s") && values != null) { //{s1} = +10 || -10
 			String plurality = description.substring(description.indexOf("{s"), description.indexOf("}", description.indexOf("{s")) + 1);
 			int idx = plurality.charAt(2) - '0';
-			String ret = (values[idx] > 0 ? "+" : "") + values[idx];
+			String ret = (values[idx] > 0 ? "+" : "") + (a.getAilment().getMaxStacks() > 1 ? stack : values[idx]);
 			description = description.replace(plurality, ret);
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

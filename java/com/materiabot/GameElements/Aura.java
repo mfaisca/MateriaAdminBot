@@ -8,15 +8,15 @@ import com.materiabot.Utils.Constants;
 
 public class Aura {
 	private int id, effectDataId;
-	private Integer[] requiredConditionsIds, rankData;
+	private Integer[] requiredConditionsIds, requiredValues, rankData;
 	private _AuraRequired[] requiredConditions;
-	private ConditionBlock[] requiredValues;
 	private int effectId, typeId; //same thing, but typeId is used if effectId is 0 or -1, for whatever reason
 	private _AuraEffect effect;
 	private int targetId;
 	private AuraTarget target;
 	private int valueType, valueEditType;
 	private Ailment ailment;
+	private ConditionBlock[] requiredConditionObjectValues;
 	
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
@@ -26,8 +26,14 @@ public class Aura {
 	public void setRequiredConditionsIds(Integer[] requiredConditions) { this.requiredConditionsIds = requiredConditions; }
 	public _AuraRequired[] getRequiredConditions() { return requiredConditions; }
 	public void setRequiredConditions(_AuraRequired[] requiredConditions) { this.requiredConditions = requiredConditions; }
-	public ConditionBlock[] getRequiredValues() { return requiredValues; }
-	public void setRequiredValues(ConditionBlock[] requiredValues) { this.requiredValues = requiredValues; }
+	public ConditionBlock[] getRequiredConditionObjectValues() { return requiredConditionObjectValues; }
+	public void setRequiredConditionObjectValues(ConditionBlock[] requiredConditionObjectValues) { this.requiredConditionObjectValues = requiredConditionObjectValues; }
+	public Integer[] getRequiredValues() { return requiredValues; }
+	public void setRequiredValues(Integer[] requiredValues) { 
+		if(requiredValues == null && this.requiredValues != null)
+			System.out.println();
+		this.requiredValues = requiredValues; 
+	}
 	public Integer[] getRankData() { return rankData; }
 	public void setRankData(Integer[] rankData) { this.rankData = rankData; }
 	public int getEffectId() { return effectId; }
@@ -47,7 +53,7 @@ public class Aura {
 	public Ailment getAilment() { return ailment; }
 	public void setAilment(Ailment ailment) { this.ailment = ailment; }
 	
-	public String getDescription() {
+	public String getDescription() {		
 		String description = null;
 		if(typeId != -1) { 			//TypeEffect
 			_AuraEffect ae = Constants.AURA_EFFECT.get(typeId);
@@ -57,7 +63,7 @@ public class Aura {
 		else if(effectId != -1) {	//Ailment Effect
 			_AilmentEffect ae = Constants.AILMENT_EFFECT.get(effectId);
 			if(ae != null)
-				description = this.getTarget().getDescription() + " " + ae.getDescription(this);
+				description = this.getTarget().getDescription() + " " + _AilmentEffect.getDescriptionAsAura(this);
 		}
 		return description != null ? description.trim() : "Unknown Aura Effect: " + getEffectId() + "/" + getTypeId();
 	}
