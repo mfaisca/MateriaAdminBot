@@ -7,6 +7,7 @@ public enum MiscConditionTarget {  //XXX FIGURE THESE OUT OR ASK REM
 	Enemy(5, "Any Enemy"),
 	Self2(6, "Self"), //??
 	NumOfPartyMembers(7, "Number of Party Members"),
+	Target2(25, "Target"),
 	
 	;private int id;
 	private String description;

@@ -1,25 +1,26 @@
 package com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel;
-import java.util.HashMap;
 import com.materiabot.GameElements.MiscCondition;
+import com.materiabot.GameElements.Enumerators._Plugin;
 
-public class _MiscConditionLabel {
-	public static final HashMap<Integer, _MiscConditionLabel> LABELS = new HashMap<Integer, _MiscConditionLabel>();
-	
+public class _MiscConditionLabel implements _Plugin{	
 	protected int id;
 	protected String baseDescription;
 	
 	protected _MiscConditionLabel(int id, String desc) {
 		this.id = id;
 		this.baseDescription = desc;
-		LABELS.put(Integer.valueOf(id), this);
 	}
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 
 	public String getDescription(MiscCondition a) {
+		return applyReplaces(a, getBaseDescription());
+	}
+	protected static final String applyReplaces(MiscCondition a, String description) {
 		Integer[] values = a.getValues();
-		String description = getBaseDescription().replace("{t}", a.getTarget().getDescription());
+		description = description.replace("{t}", a.getTarget().getDescription());
+		description = description.replace("{u}", a.getAb().getUnit().getName());
 		for(int i = 0; i < values.length; i++) {
 			description = description.replace("{ail" + i + "}", a.getAb().getUnit().getSpecificAilment(values[i]).getName().getBest());
 			description = description.replace("{ab" + i + "}", a.getAb().getUnit().getSpecificAbility(values[i]).getName().getBest());

@@ -11,7 +11,6 @@ import com.materiabot.GameElements.Summon;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Summon.SummonPassive;
 import com.materiabot.IO.JSON.UnitParser;
-import com.materiabot.Utils.Constants;
 
 public class _Library {
 	public static final _Library L = new _Library();
@@ -155,11 +154,5 @@ public class _Library {
 	}
 	public static Summon getSummon(String summonName) {
 		return SUMMON_LIST.stream().filter(s -> s.getNicknames().contains(summonName.toLowerCase())).findFirst().orElse(null);
-	}
-
-	public static void reset() {
-		L.UNIT_CACHE.invalidateAll();
-		Constants.COMMANDS.clear();
-		UnitParser.UNITS.clear();
 	}
 }

@@ -1,5 +1,4 @@
 package com.materiabot.GameElements;
-
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel._MiscConditionLabel;
 

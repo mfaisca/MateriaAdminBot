@@ -4,6 +4,7 @@ import java.util.List;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveCondition;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveTarget;
+import com.materiabot.Utils.MessageUtils;
 
 public class Passive implements Comparable<Passive>{
 	private int id;
@@ -53,7 +54,7 @@ public class Passive implements Comparable<Passive>{
 		ret.add(buildCondition());
 		boolean hasCondition = ret.get(0).length() > 0;
 		for(PassiveEffect pe : getEffects())
-			ret.add((hasCondition ? "\t" : "") + pe.getDescription());
+			ret.add((hasCondition ? MessageUtils.tab() : "") + pe.getDescription());
 		return ret.stream().distinct().filter(s -> s.length() > 0).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").trim();
 	}
 	private String buildCondition() {

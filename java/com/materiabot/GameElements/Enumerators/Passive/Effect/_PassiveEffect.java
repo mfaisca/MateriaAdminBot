@@ -1,11 +1,12 @@
 package com.materiabot.GameElements.Enumerators.Passive.Effect;
 import java.util.Arrays;
 import java.util.List;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveEffect;
 
-public abstract class _PassiveEffect {
-	public static enum TAG{
+public abstract class _PassiveEffect implements _Plugin{
+	public enum TAG{
 		ABILITY1; //Show ability ID from Argument 1
 	}
 	

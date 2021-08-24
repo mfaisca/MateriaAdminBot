@@ -28,7 +28,8 @@ public class SQLAccess {
 	public static final String BOT_TOKEN_KEY = "BOT_TOKEN_KEY_DEBUG";//!Constants.isHeaven() ? "BOT_TOKEN_KEY" : "BOT_TOKEN_KEY_DEBUG";
 	public static final String PATREON_ACCESS_TOKEN = "PATREON_ACCESS_TOKEN";
 	public static final String PATREON_TT_ACCESS_TOKEN = "PATREON_TT_ACCESS_TOKEN";
-	public static final String CLEVERBOT_TOKEN_KEY = "CLEVERBOT_TOKEN_KEY"; 
+	public static final String CLEVERBOT_TOKEN_KEY = "CLEVERBOT_TOKEN_KEY";
+	public static final String REDDIT_PASSWORD = "REDDIT_PASSWORD"; 
 
 	static{ 
 		try {
@@ -177,9 +178,9 @@ public class SQLAccess {
 				throw new BotException(e, BotException.ERROR_CODE);
 			} 
 		}
-		public static Friend getFriendByCode(String code, String region) throws BotException {
+		public static Friend getFriendByCode(Integer code, String region) throws BotException {
 			try {
-				ResultSet ret = SQLAccess.executeSelect("SELECT * FROM Friend_Codes WHERE code = ? AND region = ?", code, region);
+				ResultSet ret = SQLAccess.executeSelect("SELECT * FROM Friend_Codes WHERE code = ? AND region = ?", ""+code, region);
 				if(!ret.next()) return null;
 				Friend f = new Friend();
 				f.userId = ret.getLong("userId");
@@ -210,7 +211,7 @@ public class SQLAccess {
 				throw new BotException(e, BotException.ERROR_CODE);
 			} 
 		}
-		public static void setFriend(long userId, String region, String fcCode, String unit, String note) throws BotException {
+		public static void setFriend(long userId, String region, Integer fcCode, String unit, String note) throws BotException {
 			Friend get = getFriend(userId, region);
 			if(get != null) 
 				if(get.userId != userId)
@@ -237,7 +238,7 @@ public class SQLAccess {
 			}
 		}
 	}
-	public static abstract class Event{		
+	public abstract static class Event{		
 		public static com.materiabot.GameElements.Event getEvent(String name, String region) throws BotException {
 			try {
 				ResultSet r = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND region = ? ORDER BY startDate DESC", name, region);
@@ -320,7 +321,7 @@ public class SQLAccess {
 		public static List<com.materiabot.GameElements.Event> getCurrentAndFutureEvents(String region){
 			try {
 				ResultSet r = SQLAccess.executeSelect("SELECT * FROM Events WHERE region = ? AND endDate > ? ORDER BY startDate ASC", region, new Timestamp(System.currentTimeMillis()).toString());
-				List<com.materiabot.GameElements.Event> list = new LinkedList<com.materiabot.GameElements.Event>();
+				List<com.materiabot.GameElements.Event> list = new LinkedList<>();
 				while(r.next()) {
 					com.materiabot.GameElements.Event e = new com.materiabot.GameElements.Event();
 					e.setId(r.getInt("id"));
@@ -356,7 +357,7 @@ public class SQLAccess {
 				return list;
 			} catch (BotException | SQLException e) {
 				e.printStackTrace();
-				return new LinkedList<com.materiabot.GameElements.Event>();
+				return new LinkedList<>();
 			}
 		}
 		

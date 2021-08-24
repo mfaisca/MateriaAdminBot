@@ -1,10 +1,11 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect;
 import java.util.Arrays;
 import com.materiabot.GameElements.Aura;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes._ValType;
 
-public abstract class _AuraEffect {
+public abstract class _AuraEffect implements _Plugin {
 	protected int id;
 	protected String baseDescription;
 	

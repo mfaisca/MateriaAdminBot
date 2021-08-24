@@ -4,8 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 import com.google.common.collect.Streams;
+import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
+import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
@@ -14,21 +17,22 @@ import com.materiabot.Utils.Constants;
 
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
-		//PluginManager.loadCommands();
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
 		int key = 1;
 		
 		if(key == 1)
-			printUnit("Rosa", AttackName.LD);
+			printUnit("Ace", AttackName.LD);
 		if(key == 2)
-			printUnitSpecific("Exdeath", 13583);
+			printUnitSpecific("The Emperor", 6058);
 		if(key == 3)
 			findMissing();
 		if(key == 4)
 			printAllAilments();
 		if(key == 5)
 			printAllAuras();
+		if(key == 6)
+			findLabels();
 	}
 
 	private static void printUnit(String unit, AttackName atn) {
@@ -73,23 +77,18 @@ public class Effect_Analyzer {
 	}
 	
 	private static void findMissing() {
-		HashMap<Integer, List<Unit>> map = new HashMap<Integer, List<Unit>>();
+		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
-			.flatMap(a -> a.getAbilities().values().stream())
-			.flatMap(a -> a.getAilments().stream())
-			.flatMap(a -> a.getAuras().stream())
+			.flatMap(u -> Streams.concat(u.getUpgradedAbilities().stream(), u.getTriggeredAbilities().stream()))
 			.forEach(hd -> {
-				Integer[] ii = hd.getRequiredConditionsIds();
-				for(Integer i : ii)
-					if(i != null && i.intValue() != -1) {
-						if(!(Constants.AURA_REQUIRED.get(i) != null && Constants.AURA_REQUIRED.get(i).getBaseDescription().length() > 0)){
-							if(!map.containsKey(i))
-								map.put(i, new LinkedList<Unit>());
-							if(!map.get(i).contains(hd.getAilment().getUnit()))
-								map.get(i).add(hd.getAilment().getUnit());
-						}
+				for(Integer i : hd.getReqMiscConditions().stream().map(mc -> Integer.valueOf(mc.getLabelId())).collect(Collectors.toList()))
+					if(!(Constants.LABELS.get(i) != null && Constants.LABELS.get(i).getBaseDescription().length() > 0)){
+						if(!map.containsKey(i))
+							map.put(i, new LinkedList<>());
+						if(!map.get(i).contains(hd.getUnit()))
+							map.get(i).add(hd.getUnit());
 					}
 			});
 		map.keySet().stream().distinct().sorted().forEach(k -> {
@@ -125,7 +124,7 @@ public class Effect_Analyzer {
 	}
 	
 	private static void printAllAuras() {
-		HashMap<Integer, List<Unit>> map = new HashMap<Integer, List<Unit>>();
+		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
@@ -146,5 +145,28 @@ public class Effect_Analyzer {
 		map.keySet().stream().distinct().sorted().forEach(k -> {
 			System.out.println(k + " - " + map.get(k).toString());
 		});
+	}
+	
+	private static void findLabels() {
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> Streams.concat(u.getUpgradedAbilities().stream(), u.getTriggeredAbilities().stream()))
+			.forEach(hd -> {
+				Ability oga = hd.getUnit().getSpecificAbility(hd.getOriginalId());
+				String ogaS = (oga == null ? "Unknown Ability(" : (oga.getName().getBest() + "(")) + oga.getId() + ")";
+				Ability tga = hd.getUnit().getSpecificAbility(hd.getSecondaryId());
+				String tgaS = (tga == null ? "Unknown Ability(" : (tga.getName().getBest() + "(")) + tga.getId() + ")";
+				boolean allValues = true, isRight = false;
+				String builder = "";
+				for(MiscCondition mc : hd.getReqMiscConditions()) {
+					if(mc.getLabel() == null)
+						allValues = false;
+					builder += System.lineSeparator() + "\tLabel:" + mc.getLabelId() + "/T:" + mc.getTargetId() + "(" + mc.getValues()[0] + "," + mc.getValues()[1] + "," + mc.getValues()[2] + ")";
+					if(mc.getLabelId() == 1)
+						isRight = true;
+				}
+				if(!allValues && isRight)
+					System.out.println(hd.getUnit().getName() + " - " + ogaS + " -> " + tgaS + builder);
+			});
 	}
 }

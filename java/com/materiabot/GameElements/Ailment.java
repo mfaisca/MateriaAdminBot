@@ -8,6 +8,7 @@ import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.MessageUtils;
 
 public class Ailment { //TODO Missing icons	
 	/* Regarding iconType and dispType
@@ -15,24 +16,24 @@ public class Ailment { //TODO Missing icons
 	and then is disp_type is not 0 or -1, then it is a special effect
 	else, it is a hidden ailment
 	 */
-	
+
 	private int id, castId;
 	private Text name, desc, fakeName, fakeDesc, fakeEmote;
 	private int rate, rank, duration, maxStacks, buffType, iconType, dispType, spStacks, targetId;
 	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId, auraRankData; //auraRankData is for Fake Ailments for Auras
 	private ConditionBlock[] conditions;
 	private TargetType target;
-	private boolean extendable, framed;
+	private boolean extendable, burstExtendable, framed;
 	private Unit unit;
 	private Ability ability;
-	private HashMap<Integer, RankData> rankData = new HashMap<Integer, RankData>();
-	private List<Aura> auras = new LinkedList<Aura>();
+	private HashMap<Integer, RankData> rankData = new HashMap<>();
+	private List<Aura> auras = new LinkedList<>();
 
 	public Ailment() {}
 	public Ailment(String text) { setName(new Text(text)); setFakeDesc(new Text(text)); }
-	
+
 	public boolean isStackable() { return getMaxStacks() > 0; }
-	
+
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
 
@@ -101,10 +102,10 @@ public class Ailment { //TODO Missing icons
 
 	public Integer[] getGroupId() { return groupId; }
 	public void setGroupId(Integer[] groupId) { this.groupId = groupId; }
-	
+
 	public Integer[] getAuraRankData() { return auraRankData; }
 	public void setAuraRankData(Integer[] auraRankData) { this.auraRankData = auraRankData; }
-	
+
 	public ConditionBlock[] getConditions() { return conditions; }
 	public void setConditions(ConditionBlock[] conditions) { this.conditions = conditions; }
 
@@ -113,6 +114,9 @@ public class Ailment { //TODO Missing icons
 
 	public boolean isExtendable() { return extendable; }
 	public void setExtendable(boolean extendable) { this.extendable = extendable; }
+
+	public boolean isBurstExtendable() { return burstExtendable; }
+	public void setBurstExtendable(boolean burstExtendable) { this.burstExtendable = burstExtendable; }
 
 	public boolean isFramed() { return framed; }
 	public void setFramed(boolean framed) { this.framed = framed; }
@@ -135,7 +139,7 @@ public class Ailment { //TODO Missing icons
 	public boolean isSpecial() {
 		return !isVisible() && getDispType() > 0;
 	}
-	
+
 	public boolean isInvisibleSiphon() {
 		boolean isSiphon = false;
 		int effectCount = 0;
@@ -145,52 +149,55 @@ public class Ailment { //TODO Missing icons
 		}
 		return isSiphon && effectCount == 1 && !isVisible();
 	}
-	
+
 	public boolean isDeadEffect() {
 		for(int e : this.getEffects())
 			if(e > 0) return false;
 		return true;
 	}
-	
+
 	@Override
 	public boolean equals(Object o) {
 		return this.getId() == ((Ailment)o).getId();
 	}
-	
+
 	public String generateTitle() {
 		if(this.getFakeName() != null) return getFakeName().getBest();
 		if(isDeadEffect()) return "";
-		return this.getName().getBest() + " (" + this.getId() + ")" + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
+		return this.getName().getBest() + (Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}
 
 	public String generateDescription() {
 		return generateDescription(false);
 	}
-	
+
 	private static final class AilmentBlock implements Comparable<AilmentBlock>{
 		public String condi;
-		public List<String> desc = new LinkedList<String>();
-		
+		public List<String> desc = new LinkedList<>();
+
 		public AilmentBlock(String c, String... desc) {
 			condi = c; add(desc);
 		}
 		public void add(String... desc) {
 			this.desc.addAll(Arrays.asList(desc));
 		}
-		
+
 		@Override
-		public boolean equals(Object other) {
-			if(this.condi == null) 
-				return ((AilmentBlock)other).condi == null;
-			return this.condi.equals(((AilmentBlock)other).condi);
+		public boolean equals(Object obj) {
+			if (obj == null || this.getClass() != obj.getClass())
+				return false;
+			AilmentBlock other = (AilmentBlock)obj;
+			if(this.condi == null)
+				return other.condi == null;
+			return this.condi.equals(other.condi);
 		}
-		
+
 		@Override
 		public String toString() {
 			return (condi != null && condi.length() > 0 ? condi + System.lineSeparator() : "") + 
-						desc.stream()
-						.map(d -> (condi != null && condi.length() > 0 ? "\t" : "") + d)
-						.reduce((d1, d2) -> d1 + System.lineSeparator() + d2).orElse("Error Parsing Ailment Block");
+					desc.stream()
+			.map(d -> (condi != null && condi.length() > 0 ? MessageUtils.tab() : "") + d)
+			.reduce((d1, d2) -> d1 + System.lineSeparator() + d2).orElse("Error Parsing Ailment Block");
 		}
 		@Override
 		public int compareTo(AilmentBlock other) {
@@ -199,23 +206,27 @@ public class Ailment { //TODO Missing icons
 			return this.condi.length() - other.condi.length();
 		}
 	}
-	
+
 	public String generateDescription(boolean isAuraEffect) {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
-		List<AilmentBlock> finalDescription = new LinkedList<AilmentBlock>();
+		List<AilmentBlock> finalDescription = new LinkedList<>();
 		String ret = "";
 		if(isDeadEffect()) return "";
 		if(!isAuraEffect) {
 			if(this.isStackable() && this.getArgs()[0] > 0)
 				ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
 			if(this.getTarget() != null) 
-				ret += this.isStackable() ? this.getTarget().getDescription() : this.getTarget().getDescription();
+				ret += ret.length() == 0 ? this.getTarget().getDescription() : this.getTarget().getDescription().toLowerCase();
 			else 
 				ret += "unknown target (" + this.getTargetId() + ")";
 			if(this.getDuration() > 0)
 				ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
 			finalDescription.add(new AilmentBlock(null, ret));
 		}
+		if(!isExtendable())
+			finalDescription.add(0, new AilmentBlock(null, "Cannot be extended"));
+		if(!isBurstExtendable())
+			finalDescription.add(0, new AilmentBlock(null, "Decreases in BURST mode"));
 		boolean hasAuras = false;
 		for(int i = 0; i < this.getEffects().length; i++) {
 			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69) continue; //69 is a "meta" effect related to countering, other effects will use it.
@@ -258,8 +269,6 @@ public class Ailment { //TODO Missing icons
 					else {
 						if(a.getRequiredConditionsIds()[i] != -1)
 							condi += "Unknown Aura Condition: " + a.getRequiredConditionsIds()[i] + System.lineSeparator();
-						else
-							continue;
 					}
 				}
 				condi = condi.trim();
@@ -275,7 +284,6 @@ public class Ailment { //TODO Missing icons
 				}
 			}
 		}
-		//return ret.trim();
 		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
 	}
 	public static final Ailment NULL(int id) {

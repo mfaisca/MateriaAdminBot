@@ -10,7 +10,7 @@ public class Aura {
 	private int id, effectDataId;
 	private Integer[] requiredConditionsIds, requiredValues, rankData;
 	private _AuraRequired[] requiredConditions;
-	private int effectId, typeId; //same thing, but typeId is used if effectId is 0 or -1, for whatever reason
+	private int effectId, typeId; //Effect ID uses Ailment effects, Type ID uses Aura Effects
 	private _AuraEffect effect;
 	private int targetId;
 	private AuraTarget target;
@@ -29,11 +29,7 @@ public class Aura {
 	public ConditionBlock[] getRequiredConditionObjectValues() { return requiredConditionObjectValues; }
 	public void setRequiredConditionObjectValues(ConditionBlock[] requiredConditionObjectValues) { this.requiredConditionObjectValues = requiredConditionObjectValues; }
 	public Integer[] getRequiredValues() { return requiredValues; }
-	public void setRequiredValues(Integer[] requiredValues) { 
-		if(requiredValues == null && this.requiredValues != null)
-			System.out.println();
-		this.requiredValues = requiredValues; 
-	}
+	public void setRequiredValues(Integer[] requiredValues) { this.requiredValues = requiredValues; }
 	public Integer[] getRankData() { return rankData; }
 	public void setRankData(Integer[] rankData) { this.rankData = rankData; }
 	public int getEffectId() { return effectId; }
@@ -44,7 +40,9 @@ public class Aura {
 	public void setEffect(_AuraEffect effect) { this.effect = effect; }
 	public int getTargetId() { return targetId; }
 	public void setTargetId(int targetId) { this.targetId = targetId; }
-	public AuraTarget getTarget() { return target; }
+	public AuraTarget getTarget() { 
+		return target; 
+	}
 	public void setTarget(AuraTarget target) { this.target = target; }
 	public int getValueType() { return valueType; }
 	public void setValueType(int valueType) { this.valueType = valueType; }

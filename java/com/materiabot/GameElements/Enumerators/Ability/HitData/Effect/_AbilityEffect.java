@@ -4,10 +4,11 @@ import java.util.List;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Unit;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
-public class _AbilityEffect {
-	public static enum TAG{
+public class _AbilityEffect implements _Plugin {
+	public enum TAG{
 		PRE_EFFECT, POST_EFFECT, BRV, HP, FULLHP, SPLASH, NOREPEAT, MERGE;
 	}
 	
@@ -29,7 +30,10 @@ public class _AbilityEffect {
 	}
 	
 	protected final String applyReplaces(HitData hd, String description) {
-		description = description.replace("{t}", hd.getTarget().getDescription());
+		if(hd.getTarget() != null)
+			description = description.replace("{t}", hd.getTarget().getDescription());
+		else
+			description = description.replace("{t}", "Unknown Target: " + hd.getTargetId());
 		if(hd.getMaxBrvOverflow() > 100)
 			description = description.replace("{of}", " (" + hd.getMaxBrvOverflow() + "% overflow)");
 		else

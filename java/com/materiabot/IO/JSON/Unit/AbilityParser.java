@@ -14,21 +14,21 @@ import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.Utils.Constants;
 
 public class AbilityParser {	
+	private AbilityParser() {}
+	
 	public static List<Ability> parseAbilities(MyJSONObject obj, String abilityArray) {
-		List<Ability> abilities = new LinkedList<Ability>();
+		List<Ability> abilities = new LinkedList<>();
 		for(MyJSONObject s : obj.getObjectArray(abilityArray)) {
 			if(s.getInt("error") != null) continue; //Some abilities have error
 			Ability a = parseAbility(s);
-			if(a != null) {
-				for(Ailment ail : AilmentParser.parseAilments(s, "ailments"))
-					if(ail.isInvisibleSiphon()) {
-						HitData hd = new HitData(a);
-						hd.setManualDescription("Free ability use next turn(S1/S2/AA only)");
-						a.getHitData().add(hd);
-					}else
-						a.getAilments().add(ail);
-				abilities.add(a);
-			}
+			for(Ailment ail : AilmentParser.parseAilments(s, "ailments"))
+				if(ail.isInvisibleSiphon()) {
+					HitData hd = new HitData(a);
+					hd.setManualDescription("Free ability use next turn(S1/S2/AA only)");
+					a.getHitData().add(hd);
+				}else
+					a.getAilments().add(ail);
+			abilities.add(a);
 		}
 		return abilities;
 	}
@@ -68,13 +68,9 @@ public class AbilityParser {
 			hd.setSingleTargetBrvRate(data.getObject("brv_data").getInt("single_target_brv_rate"));
 			hd.setBrvDamageLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up"));
 			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up"));
-//			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("brv_damage_limit_up_direct"));
-//			hd.setMaxBrvLimitUp(data.getObject("brv_data").getInt("max_brv_limit_up_direct"));
 			hd.setTargetId(data.getInt("target"));
 			hd.setTarget(Target.get(hd.getTargetId()));
 			hd.setEffectId(data.getInt("effect"));
-			if(hd.getEffectId() == 238)
-				System.out.print("");
 			hd.setEffect(Constants.ABILITY_EFFECT.get(hd.getEffectId()));
 			hd.setEffectValueType(data.getInt("effect_value_type"));
 			a.getHitData().add(hd);

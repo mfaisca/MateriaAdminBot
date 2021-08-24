@@ -15,7 +15,7 @@ import Shared.Methods;
 
 public class AilmentParser {
 	public static List<Ailment> parseAilments(MyJSONObject obj, String ailmentArray) {
-		List<Ailment> ret = new LinkedList<Ailment>();
+		List<Ailment> ret = new LinkedList<>();
 		for(MyJSONObject a : obj.getObjectArray(ailmentArray)) {
 			Ailment aa = parseAilment(a);
 			if(aa != null)
@@ -41,6 +41,7 @@ public class AilmentParser {
 		ail.setBuffType(ailment.getObject("type_data").getInt("buff_type"));
 		ail.setIconType(ailment.getObject("type_data").getInt("icon_type"));
 		ail.setExtendable(ailment.getObject("type_data").getBoolean("extendable"));
+		ail.setBurstExtendable(ailment.getObject("type_data").getBoolean("burst_ext"));
 		ail.setFramed(ailment.getObject("type_data").getInt("removable") == 0);
 		ail.setMaxStacks(ailment.getObject("type_data").getInt("max_stacks"));
 		if(ail.getMaxStacks() == -1) //Example: Ardyn Spectral Charge overhead
@@ -67,11 +68,14 @@ public class AilmentParser {
 			a.setId(aura.getInt("id"));
 			a.setRequiredConditionsIds(aura.getIntArray("required_conditions"));
 			_AuraRequired[] aurasConditions = new _AuraRequired[3];
+			boolean isSelf = false;
 			for(int i = 0; i < 3; i++) {
 				if(a.getRequiredConditionsIds()[i].intValue() == -1){
 					aurasConditions[i] = null; 
 					continue;
 				}
+				else if(a.getRequiredConditionsIds()[i].intValue() == 4 || (a.getRequiredConditionsIds()[i].intValue() == 3 && a.getId() == 576)) //Caius Special Weird Effect
+					isSelf = true;
 				_AuraRequired ar = Constants.AURA_REQUIRED.get(a.getRequiredConditionsIds()[i]);
 				aurasConditions[i] = ar;
 			}
@@ -87,7 +91,10 @@ public class AilmentParser {
 				a.setEffect(Constants.AURA_EFFECT.get(a.getTypeId()));
 			else
 				a.setEffect(Constants.AURA_EFFECT.get(a.getEffectId()));
-			a.setTargetId(aura.getObject("effect_data").getInt("target_id"));
+			if(isSelf)
+				a.setTargetId(99);
+			else
+				a.setTargetId(aura.getObject("effect_data").getInt("target_id"));
 			a.setTarget(AuraTarget.get(a.getTargetId()));
 			a.setValueType(aura.getObject("effect_data").getInt("value_type"));
 			a.setRankData(aura.getObject("effect_data").getIntArray("rank_data"));

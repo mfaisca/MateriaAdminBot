@@ -1,37 +1,75 @@
 package com.materiabot.commands.general;
-import com.materiabot._Library;
+import com.materiabot.PluginManager;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands._BaseCommand;
-import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.interactions.commands.Command;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 public class AdminCommand extends _BaseCommand{
-	public AdminCommand() {
-		super("admin");
-	}
+	public AdminCommand() { super("admin", "Pretend this command doesn't exist!", true); }
 
 	@Override
-	public void doStuff(final Message event) {
-		try {
-			String[] msg = event.getContentDisplay().split(" ");
-			if(msg.length == 1) {
-				MessageUtils.sendMessage(event.getChannel(), "$admin [reload/ttpatreon/monsterupdate]");
-				return;
+	public void doStuff(final SlashCommandEvent event) {
+		if(event.getMember().getIdLong() == Constants.QUETZ_ID || event.getMember().getIdLong() == Constants.INK_ID || event.getMember().getIdLong() == Constants.DREAMY_ID)
+			try {
+				if(event.getOption("op") != null) {
+					if(event.getOption("op").getAsString().equals("reload") && event.getMember().getIdLong() == Constants.QUETZ_ID) {
+						PluginManager.reset(); 
+						MessageUtils.sendMessage(event.getHook(), "Done");
+					} else if(event.getOption("op").getAsString().equals("ttpatreon")) {
+						PatreonCommand.updateServerTonberryTroupe(); 
+						MessageUtils.sendMessage(event.getHook(), "Done");
+					}
+					else
+						MessageUtils.sendStatusMessageError(event.getHook(), "You fucked up");
+				} else if(event.getOption("patreonkey") != null) {
+					if(PatreonCommand.updatePatreonKey(event.getMember(), event.getOption("patreonkey").getAsString()))
+						MessageUtils.sendMessage(event.getHook(), "Patreon API Key Updated");
+					else
+						MessageUtils.sendStatusMessageError(event.getHook(), "Error updating Patreon API Key");
+				} else if(event.getOption("status") != null && event.getMember().getIdLong() == Constants.QUETZ_ID) {
+					Activity a = null;
+					switch(event.getOption("status").getAsString()) {
+						case "playing": a = Activity.playing("Opera Omnia"); break;
+						case "servers": a = Activity.watching("Watching " + Constants.getClient().getGuilds().size() + " servers"); break;
+						case "stream": a = Activity.streaming("DFFOO Livestream", "https://www.twitch.tv/squareenix"); break;
+					}
+					if(a != null) {
+						Constants.getClient().getPresence().setPresence(OnlineStatus.ONLINE, a);
+						MessageUtils.sendMessage(event.getHook(), "Status updated to " + a.getName());
+					}else
+						MessageUtils.sendStatusMessageError(event.getHook(), "Something went wrong with changing status");
+				}
+				else
+					MessageUtils.sendStatusMessageError(event.getHook(), "You fucked up");
+			} catch(Exception e) {
+				MessageUtils.sendStatusMessageError(event.getHook(), "You fucked up");
 			}
-			switch(msg[1].toLowerCase()) {
-				case "reload":
-				case "reset": reloadPlugins(); break;
-				case "exit": System.exit(0); break;
-				case "ttpatreon": PatreonCommand.joinServerTonberryTroupeUpdate(); break;
-			}
-			MessageUtils.sendMessage(event.getChannel(), "Done");
-		} catch(Exception e) {
-			MessageUtils.sendMessage(event.getChannel(), "You fucked up");
-		}
+		else
+			MessageUtils.sendStatusMessageError(event.getHook(), "GTFO");
 	}
 	
-	private void reloadPlugins() {
-		_Library.reset();
+	@Override
+	public CommandData getCommandData() {
+		CommandData cd = new CommandData("admin", help);
+			OptionData od2 = new OptionData(OptionType.STRING, "op", "Operation");
+				od2.addChoices(new Command.Choice("reload", "reload"));
+				od2.addChoices(new Command.Choice("ttpatreon", "ttpatreon"));
+			OptionData od3 = new OptionData(OptionType.STRING, "patreonkey", "Insert Patreon Key Here");
+			OptionData od4 = new OptionData(OptionType.STRING, "status", "MateriaBot status");
+				od4.addChoices(new Command.Choice("playing", "playing"));
+				od4.addChoices(new Command.Choice("servers", "servers"));
+				od4.addChoices(new Command.Choice("stream", "stream"));
+		cd.addOptions(od2);
+		cd.addOptions(od3);
+		cd.addOptions(od4);
+		return cd;
 	}
 	
 //	private void onetimemessagetoallserverowners() {
@@ -67,9 +105,4 @@ public class AdminCommand extends _BaseCommand{
 //			}
 //		}
 //	}
-
-	@Override
-	public boolean validatePermission(Message event) {
-		return event.getAuthor().getIdLong() == Constants.QUETZ_ID;
-	}
 }

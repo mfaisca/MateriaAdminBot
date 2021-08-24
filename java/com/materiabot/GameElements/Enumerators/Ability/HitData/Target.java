@@ -12,7 +12,7 @@ public enum Target{
 	Alternating(11, 18, "split between enemies"),
 	Ally(13, "ally"),
 	Traps(18, "traps???"), //Emperor only(S2 / EX)
-	Terra(29, "Terra"),
+	CalledUnit(29, "own"), //???
 	AOE(23, "traps???"), //Emperor only
 	Machina(28, "Machina"),
 	Caller(29, "caller"),

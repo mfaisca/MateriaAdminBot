@@ -18,14 +18,13 @@ import Shared.Methods;
 
 public class Ability implements Comparable<Ability>{
 	public static class MultiAbility extends Ability{
-		private LinkedList<Ability> merged = new LinkedList<Ability>();
+		private LinkedList<Ability> merged = new LinkedList<>();
 		
 		public MultiAbility(Ability... abilities) {
 			try {
 				BeanUtils.copyProperties(this, abilities[0]);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				this.setName(new Text("Error"));
 			}
 			merged.addAll(Arrays.asList(abilities));
 		}
@@ -38,13 +37,6 @@ public class Ability implements Comparable<Ability>{
 		public List<Ailment> getAilments(){
 			return merged.stream().flatMap(a -> a.getAilments().stream()).distinct().collect(Collectors.toList());
 		}
-	}
-	
-	public static final class MiscCondition{
-		public int label;
-		public int target;
-		public int[] values;
-		
 	}
 	
 	private int id = -1;
@@ -68,8 +60,8 @@ public class Ability implements Comparable<Ability>{
 	private TargetType targetType;
 	private int targetRangeId;
 	private TargetRange targetRange;
-	private List<HitData> hitData = new LinkedList<HitData>();
-	private List<Ailment> ailments = new LinkedList<Ailment>();
+	private List<HitData> hitData = new LinkedList<>();
+	private List<Ailment> ailments = new LinkedList<>();
 	private int[] arguments; //Unknown use
 	private Unit unit;
 	
@@ -125,8 +117,13 @@ public class Ability implements Comparable<Ability>{
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
 	
-	public int getTotalUseCount() { 
-		Ability base = getUnit().getBaseAbility(this.getAttackName()).get(0);
+	public int getTotalUseCount() {
+		Ability base2 = null;
+		if(getUnit().getBaseAbility(this.getAttackName()) == null)
+			base2 = this;
+		else
+			base2 = getUnit().getBaseAbility(this.getAttackName()).get(0);
+		Ability base = base2;
 		int useCount = base.getBaseUseCount();
 		useCount += Streams.concat(	getUnit().getEquipment().stream().flatMap(e -> e.getPassives().stream()),
 									getUnit().getPassives().values().stream(),
@@ -161,6 +158,7 @@ public class Ability implements Comparable<Ability>{
 				+ (this.getAttackName().equals(AttackName.EX) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + ")" : "")
 				+ " (ID: " + getId() + ")";
 	}
+
 	public String generateDescription() {
 		if(getManualDesc() != null)
 			return getManualDesc();
@@ -187,11 +185,11 @@ public class Ability implements Comparable<Ability>{
 				.map(h -> h.getMaxBrvLimitUp())
 				.filter(o -> o > 0)
 				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
-		List<String> preEffects = new LinkedList<String>();
-		List<String> effectList = new LinkedList<String>();
-		List<String> postEffects = new LinkedList<String>();
-		List<List<HitData>> effects = new LinkedList<List<HitData>>();
-		List<HitData> currentChain = new LinkedList<HitData>();
+		List<String> preEffects = new LinkedList<>();
+		List<String> effectList = new LinkedList<>();
+		List<String> postEffects = new LinkedList<>();
+		List<List<HitData>> effects = new LinkedList<>();
+		List<HitData> currentChain = new LinkedList<>();
 		
 		List<Element> sameElements = null;
 		com.materiabot.GameElements.Enumerators.Ability.HitData.AttackType sameAttackTypes = null;
@@ -203,19 +201,12 @@ public class Ability implements Comparable<Ability>{
 				effectList.add(hd.getManualDescription());
 				continue;
 			}
-			if(hd.getEffect() == null) {
-				effectList.add("Unknown active effect type '" + hd.getEffectId() + "/" + hd.getEffectValueType() + "': " + Arrays.toString(hd.getArguments()));
-				continue;
-			}
-//			boolean post = false;
 			hd.getDescription(); //To apply any fixes that might be needed to other stuff
 			if(hd.getEffect().isPreEffect(hd.getEffectValueType()) && !preEffects.contains(hd.getDescription()))
 				preEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
 			else if(hd.getEffect().isPostEffect(hd.getEffectValueType()) && !postEffects.contains(hd.getDescription()))
 				postEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
-//			else
-//				post = true;
-			if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()) && (currentChain.size() == 0 || currentChain.get(0).getEffect().isBRV())) {
+			if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()) && (currentChain.isEmpty() || currentChain.get(0).getEffect().isBRV())) {
 				currentChain.add(hd);
 				if(sameElements == null) //First
 					sameElements = hd.getElements();
@@ -223,30 +214,29 @@ public class Ability implements Comparable<Ability>{
 					sameAttackTypes = hd.getAttackType();
 				sameElement = sameElement && sameElements.size() == hd.getElements().size() && sameElements.containsAll(hd.getElements()) && hd.getElements().containsAll(sameElements);
 				sameAttackType = sameAttackType && sameAttackTypes.getId() == hd.getAttackType().getId();
-			}else if(hd.getEffect().isHP() && Type.isHP(hd.getType()) && (currentChain.size() == 0 || currentChain.get(0).getEffect().isBRV())) {
+			}else if(hd.getEffect().isHP() && Type.isHP(hd.getType()) && (currentChain.isEmpty() || currentChain.get(0).getEffect().isBRV())) {
 				currentChain.add(hd);
 				effects.add(currentChain);
-				currentChain = new LinkedList<HitData>();
-//				if(post && hd.getDescription().length() > 0) {
-//					currentChain.add(hd);
-//					effects.add(currentChain);
-//					currentChain = new LinkedList<HitData>();
-//				}
+				currentChain = new LinkedList<>();
 			}
 			else if(!hd.getEffect().isPostEffect(hd.getEffectValueType()) && !hd.getEffect().isPreEffect(hd.getEffectValueType())){
-				if(currentChain.size() > 0) {
+				if(currentChain.isEmpty()) {
 					effects.add(currentChain);
-					currentChain = new LinkedList<HitData>();
+					currentChain = new LinkedList<>();
 				}
 				currentChain.add(hd);
 				effects.add(currentChain);
-				currentChain = new LinkedList<HitData>();
+				currentChain = new LinkedList<>();
 			}
 		}
 		StringBuilder brvPotency = new StringBuilder();
 		int totalPotency = 0;
-		if(currentChain.size() > 0)
+		if(!currentChain.isEmpty())
 			effects.add(currentChain);
+		if(this.getMovementCost() > 30)
+			preEffects.add(0, "Low Turn Rate");
+		else if(this.getMovementCost() < 30)
+			preEffects.add(0, "High Turn Rate");
 		if(stBrvIncrease > 0)
 			preEffects.add(0, "Raises BRV Damage by " + stBrvIncrease + "% against ST");
 		if(brvDamageLimit > 0)
@@ -278,10 +268,8 @@ public class Ability implements Comparable<Ability>{
 				effectList.add("Followed by an HP Attack");
 			else {
 				String text = (chain.get(0).getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + chain.get(0).getDescription();
-				if(chain.get(0).getEffect().blockRepeats())
-					if(effectList.contains(text))
-						continue;
-				effectList.add(text);
+				if(!(chain.get(0).getEffect().blockRepeats() && effectList.contains(text)))
+					effectList.add(text);
 			}
 		}
 		effectList.addAll(postEffects);

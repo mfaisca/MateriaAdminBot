@@ -16,19 +16,20 @@ public class Unit {
 	private Region region = Region.GL;
 	private String name;
 	private int series = -1;
-	private List<String> nicknames = new LinkedList<String>();
+	private List<String> nicknames = new LinkedList<>();
 	private Crystal crystal;
 	private Equipment.Type equipmentType;
 	private Integer[] baseAbilities = new Integer[8];
-	private List<ChainAbility> triggeredAbilities = new LinkedList<ChainAbility>();
-	private List<ChainAbility> upgradedAbilities = new LinkedList<ChainAbility>();
-	private HashMap<Integer, Ability> abilities = new HashMap<Integer, Ability>();
-	private HashMap<Integer, Passive> jpPassives = new HashMap<Integer, Passive>();
-	private HashMap<Integer, Passive> glPassives = new HashMap<Integer, Passive>();
-	private List<Passive> charaBoards = new LinkedList<Passive>();
-	private HashMap<Integer, Ailment> ailments = new HashMap<Integer, Ailment>();
-	private List<Equipment> equipment = new LinkedList<Equipment>();
-	private List<Passive> artifacts = new LinkedList<Passive>();
+	private List<ChainAbility> triggeredAbilities = new LinkedList<>();
+	private List<ChainAbility> upgradedAbilities = new LinkedList<>();
+	private Ability call, callLd = null;
+	private HashMap<Integer, Ability> abilities = new HashMap<>();
+	private HashMap<Integer, Passive> jpPassives = new HashMap<>();
+	private HashMap<Integer, Passive> glPassives = new HashMap<>();
+	private List<Passive> charaBoards = new LinkedList<>();
+	private HashMap<Integer, Ailment> ailments = new HashMap<>();
+	private List<Equipment> equipment = new LinkedList<>();
+	private List<Passive> artifacts = new LinkedList<>();
 	private SphereType[] sphereSlots = new SphereType[3];
 	private Sphere weaponSphere, basicSphere;
 
@@ -87,11 +88,15 @@ public class Unit {
 		return getAbility(type, null);
 	}
 	public List<Ability> getAbility(AttackName type, String region) {
+		if(type.equals(AttackName.CA))
+			return Arrays.asList(this.getCall());
+		else if(type.equals(AttackName.CALD))
+			return Arrays.asList(this.getCallLd());
 		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
 		List<Integer> passivesIds = Streams.concat(	passives.stream().map(p -> p.getId()), 
 													getCharaBoards().stream().map(p -> p.getId()))
 											.collect(Collectors.toList());
-		List<Integer> ret = new LinkedList<Integer>();
+		List<Integer> ret = new LinkedList<>();
 		int passiveCount = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
 			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
@@ -106,7 +111,7 @@ public class Unit {
 				ret.add(ca.getSecondaryId());
 			}
 		}
-		LinkedList<Integer> ret2 = new LinkedList<Integer>();
+		LinkedList<Integer> ret2 = new LinkedList<>();
 		ret2.addAll(ret);
 		for(int abId : ret2) {
 			int recursiveId = abId;
@@ -157,7 +162,17 @@ public class Unit {
 		if(id == null) return null;
 		return Objects.requireNonNullElse(ailments.get(id), Ailment.NULL(id));
 	}
+	public List<ChainAbility> getUpgradedAbilities(Integer id){
+		return this.getUpgradedAbilities().stream().filter(ta -> ta.getOriginalId() == id.intValue()).collect(Collectors.toList());
+	}
+	public List<ChainAbility> getTriggeredAbilities(Integer id){
+		return this.getTriggeredAbilities().stream().filter(ta -> ta.getOriginalId() == id.intValue()).collect(Collectors.toList());
+	}
 
+	public Ability getCall() { return call; }
+	public void setCall(Ability call) { this.call = call; }
+	public Ability getCallLd() { return callLd; }
+	public void setCallLd(Ability callLd) { this.callLd = callLd; }
 	public String toString() {
 		return this.getName();
 	}

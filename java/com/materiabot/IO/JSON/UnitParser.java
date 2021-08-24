@@ -1,8 +1,6 @@
 package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.ChainAbility;
@@ -17,16 +15,16 @@ import com.materiabot.GameElements.Text;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
-import com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel._MiscConditionLabel;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.IO.JSON.Unit.AbilityParser;
 import com.materiabot.IO.JSON.Unit.AilmentParser;
 import com.materiabot.IO.JSON.Unit.PassiveParser;
+import com.materiabot.Utils.Constants;
 import Shared.Methods;
 
 public class UnitParser {
-	public static List<Unit> UNITS = new LinkedList<Unit>();
-
+	private UnitParser() {}
+	
 	public static Unit parseUnit(String name) {
 		return createUnit(name, false);
 	}
@@ -35,7 +33,7 @@ public class UnitParser {
 	}
 	private static Unit createUnit(String name, boolean quickRead) {
 		try{
-			Unit u = UNITS.stream()
+			Unit u = Constants.UNITS.stream()
 						.filter(uu -> uu.getNicknames().contains(name.replace("_", " ").toLowerCase()))
 						.findFirst().orElse(null);
 			if(u == null)
@@ -56,6 +54,7 @@ public class UnitParser {
 			parseBaseAbilities(u, obj);
 			parseOptionalAbilities(u, obj);
 			parseTriggeredAbilities(u, obj);
+			parseCalls(u, obj);
 			parsePassives(u, obj);
 			parseCharaBoards(u, obj);
 			parseArtifacts(u, obj);
@@ -67,6 +66,7 @@ public class UnitParser {
 			return null;
 		}
 	}
+
 	private static void parseProfile(Unit u, MyJSONObject obj) {
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
@@ -124,7 +124,7 @@ public class UnitParser {
 					MiscCondition mc = new MiscCondition();
 					mc.setAb(ca);
 					mc.setLabelId(miscC.getInt("label"));
-					mc.setLabel(_MiscConditionLabel.LABELS.get(mc.getLabelId()));
+					mc.setLabel(Constants.LABELS.get(mc.getLabelId()));
 					mc.setTargetId(miscC.getInt("target"));
 					mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
 					mc.setValues(miscC.getIntArray("values"));
@@ -153,7 +153,7 @@ public class UnitParser {
 				MiscCondition mc = new MiscCondition();
 				mc.setAb(ca);
 				mc.setLabelId(miscC.getInt("label"));
-				mc.setLabel(_MiscConditionLabel.LABELS.get(mc.getLabelId()));
+				mc.setLabel(Constants.LABELS.get(mc.getLabelId()));
 				mc.setTargetId(miscC.getInt("target"));
 				mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
 				mc.setValues(miscC.getIntArray("values"));
@@ -163,6 +163,23 @@ public class UnitParser {
 				continue;
 			u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
 			u.getTriggeredAbilities().add(ca);
+		}
+	}
+	private static void parseCalls(Unit u, MyJSONObject obj) {
+		{
+			if(obj.getObject("assistAbility").getInt("id") == null)
+				return;
+			Integer callId = obj.getObject("assistAbility").getObject("ability").getInt("rank_up");
+			if(callId == null)
+				return;
+			u.setCall(u.getAbilities().get(callId));
+		}{
+			if(obj.getObject("ldAssistAbility").getInt("id") == null)
+				return;
+			Integer callLdId = obj.getObject("ldAssistAbility").getObject("ability").getInt("rank_up");
+			if(callLdId == null)
+				return;
+			u.setCallLd(u.getAbilities().get(callLdId));
 		}
 	}
 	private static void parseCharaBoards(Unit u, MyJSONObject obj) {

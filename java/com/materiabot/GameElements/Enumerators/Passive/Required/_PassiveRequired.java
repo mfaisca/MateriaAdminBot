@@ -1,11 +1,12 @@
 package com.materiabot.GameElements.Enumerators.Passive.Required;
 import com.materiabot.GameElements.Unit;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveCondition;
 import com.materiabot.GameElements.Enumerators.Passive.RequiredTarget;
 
-public abstract class _PassiveRequired {
+public abstract class _PassiveRequired implements _Plugin {
 	protected int id;
 	protected String baseDescription;
 	

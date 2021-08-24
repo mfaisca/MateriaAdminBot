@@ -1,7 +1,7 @@
 package com.materiabot;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
-import com.materiabot.IO.JSON.UnitParser;
+import com.materiabot.Utils.Constants;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +17,7 @@ public class Builder {
 		if(!output.exists())
 			output.mkdir();
 		String defaultText = Files.readAllLines(Paths.get(".\\resources\\builder\\_example.txt"), StandardCharsets.UTF_8).stream().reduce((s1,  s2) -> s1 + System.lineSeparator() + s2).get();
-		List<Unit> units = UnitParser.UNITS.stream()
+		List<Unit> units = Constants.UNITS.stream()
 									//.flatMap(c -> c.getAllUnits().stream())
 									.map(c -> _Library.L.getUnit(c.getName()))
 									.sorted((u1, u2) -> u1.getSeries() - u2.getSeries()).collect(Collectors.toList());

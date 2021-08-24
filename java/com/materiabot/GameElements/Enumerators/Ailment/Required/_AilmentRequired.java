@@ -1,8 +1,9 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Required;
 import com.materiabot.GameElements.Ailment;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.AuraTarget;
 
-public abstract class _AilmentRequired {
+public abstract class _AilmentRequired implements _Plugin {
 	protected int id;
 	protected String baseDescription;
 	

@@ -1,17 +1,15 @@
 package com.materiabot.commands.general;
-import com.materiabot.Utils.Constants;
+import java.util.concurrent.ExecutionException;
 import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands._BaseCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 public class AboutCommand extends _BaseCommand{	
-	public AboutCommand() {
-		super("about", "credits", "credit", "author", "discord", "server", "thanks");
-	}
+	public AboutCommand() { super("about", "Shows info about who created this bot."); }
 
 	@Override
-	public void doStuff(final Message event) {
+	public void doStuff(SlashCommandEvent event) {
 		EmbedBuilder builder = new EmbedBuilder();
 		builder.setAuthor("About MateriaBot", "https://discord.gg/XCTC7jY", event.getJDA().getSelfUser().getAvatarUrl());
 		builder.addField("Developer", 
@@ -23,7 +21,7 @@ public class AboutCommand extends _BaseCommand{
 				"", false);
 		builder.addField("Friends & Other Contributors", 
 				"**Tonberry Troupe** - [Infographs and more](https://www.tonberrytroupe.com/) - Testers of the bot during development, did a lot of ideas bouncing on them to figure out the best way to present information" + System.lineSeparator() + 
-				//"**Caius**, **Shinri**, **Eons** - Monster Info - These are the guys that provide all the information regarding the monsters" + System.lineSeparator() + 
+				"**Caius**, **Shinri**, **Eons** - Monster Info - These are the guys that provide all the information regarding the monsters" + System.lineSeparator() + 
 				"**Moyama** - Schedule Updating - Administrator of [Maincord](http://discord.gg/dffoo), he's usually the person that updates and adds all the new content to the $schedule" + System.lineSeparator() + 
 				"", false);
 		builder.addField("Friends & Other Contributors", 
@@ -37,25 +35,10 @@ public class AboutCommand extends _BaseCommand{
 				"", false);
 		builder.addField("Special Mentions", "All the patrons that monetarily support the bot's cost through [Patreon](https://www.patreon.com/MateriaBot)! Check them out with $patreon", false);
 		builder.setFooter("");
-		MessageUtils.sendEmbed(event.getChannel(), builder);
-	}
-	
-	@Override
-	public String help(HelpCommand.HELP_TYPE helpType) {
-		String ret = "";
-		if(HelpCommand.HELP_TYPE.SHORT.equals(helpType)){
-			ret += "Shows info about who created this bot.";
-		}else{
-			ret += "```md" + System.lineSeparator();
-			ret += "Author Command" + System.lineSeparator();
-			ret += "===============" + System.lineSeparator();
-			ret += help(HelpCommand.HELP_TYPE.SHORT) + System.lineSeparator();
-			ret += System.lineSeparator();
-			ret += "[*][Usage][*]" + System.lineSeparator();
-			ret += "* " + Constants.DEFAULT_PREFIX + "about" + System.lineSeparator();
-			ret += ">    Pretty obvious, don't you think?" + System.lineSeparator();
-			ret += "```";
+		try {
+			MessageUtils.sendEmbed(event.getHook(), builder).get();
+		} catch (InterruptedException | ExecutionException e) {
+			e.printStackTrace();
 		}
-		return ret;
 	}
 }

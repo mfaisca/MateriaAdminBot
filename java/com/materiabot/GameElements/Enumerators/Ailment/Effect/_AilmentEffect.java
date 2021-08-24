@@ -2,12 +2,13 @@ package com.materiabot.GameElements.Enumerators.Ailment.Effect;
 import java.util.Arrays;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Aura;
+import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect.ValTypes._ValType;
 import com.materiabot.Utils.Constants;
 import Shared.Methods;
 
-public abstract class _AilmentEffect {
+public abstract class _AilmentEffect implements _Plugin {
 	protected int id;
 	protected String baseDescription;
 	

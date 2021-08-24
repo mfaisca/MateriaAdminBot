@@ -3,101 +3,87 @@ import java.sql.ResultSet;
 import org.apache.commons.lang3.StringUtils;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
-import com.materiabot.Utils.LogUtils;
 import com.materiabot.Utils.MessageUtils;
-import com.materiabot.commands.general.HelpCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class UpdateableSimpleCommand extends _BaseCommand{
-	private final String help, reply;
-	private final Long guildId;
-	private final String ownerStr;
+	private final String reply, ownerStr;
 	
-	public UpdateableSimpleCommand(final String command, final long guildId, final String reply, final String owner, final String help) {
-		super(null, command.split(";;"));
-		this.guildId = guildId == 0 ? null : new Long(guildId);
+	public UpdateableSimpleCommand(String command, String reply, String owner, String help) {
+		super(command, help);
 		this.reply = reply;
-		this.help = help;
 		ownerStr = owner;
 	}
 
 	@Override
-	public boolean validateCommand(Message event) {
-		if(super.validateCommand(event))
-			return guildId == null || event.getGuild().getIdLong() == guildId.longValue();
-		return false;
-	}
-	@Override
-	public boolean validatePermission(Message event) {
-		String message = event.getContentRaw();
-		if(message.trim().contains(" "))
-			return event.getAuthor().getId().equals(ownerStr) || event.getAuthor().getIdLong() == Constants.QUETZ_ID;
-		return true;
-	}
-
-	@Override
-	public void doStuff(Message message) {
+	public void doStuff(SlashCommandEvent event) {
 		String text = null;
 		try {
-			String msg = message.getContentRaw().trim();
-			if(msg.contains(" ")){
-				msg = msg.substring(msg.indexOf(" ") + 1).trim();
+			OptionMapping map = event.getOption("update");
+			if(map != null && event.getMember().getIdLong() == Constants.QUETZ_ID) {
+				String msg = event.getOption("update").getAsString();
 				if(msg.equalsIgnoreCase("clear")){
-					SQLAccess.executeInsert("UPDATE Commands SET data = NULL WHERE name = ?", triggerWords.stream().reduce((o1, o2) -> o1 + ";;" + o2).get());
-					MessageUtils.sendMessage(message.getChannel(), "Cleared");
-				}else if(msg.length() > 0){
-					SQLAccess.executeInsert("UPDATE Commands SET data = ? WHERE name = ?", msg, triggerWords.stream().reduce((o1, o2) -> o1 + ";;" + o2).get());
-					MessageUtils.sendMessage(message.getChannel(), "Updated");
+					SQLAccess.executeInsert("UPDATE Commands SET data = NULL WHERE name = ?", this.getCommand());
+					MessageUtils.sendMessage(event.getHook(), "Cleared");
 				}else{
-					MessageUtils.sendMessage(message.getChannel(), "Error reading line. Let Quetz know!");
+					SQLAccess.executeInsert("UPDATE Commands SET data = ? WHERE name = ?", msg, this.getCommand());
+					MessageUtils.sendMessage(event.getHook(), "Updated");
 				}
 			}
 			else{
-				ResultSet rs = SQLAccess.executeSelect("SELECT data FROM Commands WHERE name LIKE ?", "%" + triggerWords.stream().reduce((o1, o2) -> o1 + ";;" + o2).get() + "%");
-				if(!rs.next())
-					MessageUtils.sendMessage(message.getChannel(), "Nothing has been set for this command yet!");
-				else
+				ResultSet rs = SQLAccess.executeSelect("SELECT data FROM Commands WHERE name = ?", this.getCommand());
+				if(!rs.next()) {
+					MessageUtils.sendMessage(event.getHook(), "Nothing has been set for this command yet!");
+					return;
+				}else
 					text = rs.getString("data").trim();
 			}
-		} catch (Exception e) {
-			LogUtils.error(message, e.getMessage(), e);
-			e.printStackTrace();
-		}
-		if(text == null)
-			return;
-		if(isImage()) {
-			EmbedBuilder embed = new EmbedBuilder();
-			embed.setImage(text);
-			if(ownerStr != null && StringUtils.isNumeric(ownerStr)) {
-				User owner = message.getJDA().retrieveUserById(ownerStr).complete();
-				embed.setFooter("Credits to " + owner.getName() + "#" + owner.getDiscriminator(), owner.getAvatarUrl());
+			if(text == null){
+				MessageUtils.sendMessage(event.getHook(), "Nothing has been set for this command yet!");
+				return;
 			}
-			else if(ownerStr != null)
-				embed.setFooter("Credits to " + ownerStr);
-			MessageUtils.sendEmbed(message.getChannel(), embed);
-		}else {
-			if(ownerStr != null)
-				if(StringUtils.isNumeric(ownerStr)) {
-					User owner = message.getJDA().retrieveUserById(ownerStr).complete();
-					text += System.lineSeparator() + "Credits to " + owner.getName() + "#" + owner.getDiscriminator();
+			if(isImage()) {
+				EmbedBuilder embed = new EmbedBuilder();
+				embed.setImage(text);
+				if(ownerStr != null && StringUtils.isNumeric(ownerStr)) {
+					User owner = event.getJDA().retrieveUserById(ownerStr).complete();
+					embed.setFooter("Credits to " + owner.getName() + "#" + owner.getDiscriminator(), owner.getAvatarUrl());
+				}
+				else if(ownerStr != null)
+					embed.setFooter("Credits to " + ownerStr);
+				MessageUtils.sendEmbed(event.getHook(), embed);
+			}else {
+				if(ownerStr != null) {
+					if(StringUtils.isNumeric(ownerStr)) {
+						User owner = event.getJDA().retrieveUserById(ownerStr).complete();
+						text += System.lineSeparator() + "Credits to " + owner.getName() + "#" + owner.getDiscriminator();
+					}
 				} else
 					text += System.lineSeparator() + "Credits to " + ownerStr;
-			MessageUtils.sendMessage(message.getChannel(), text);
+				MessageUtils.sendMessage(event.getHook(), text);
+			}
+		} catch(Exception e) {
+			MessageUtils.sendStatusMessageCrash(event.getHook(), "Unexpected error executing command");
 		}
 	}
 	
 	private boolean isImage() {
-		String[] imageExtensions = new String[]{".png", ".jpg", ".jpeg", ".bmp", ".gif"};
+		final String[] imageExtensions = new String[]{".png", ".jpg", ".jpeg", ".gif"};
 		for(String a : imageExtensions)
 			if(reply.toLowerCase().endsWith(a))
 				return true;
 		return false;
 	}
-
+	
 	@Override
-	public String help(HelpCommand.HELP_TYPE helpType) {
-		return help;
+	public CommandData getCommandData() {
+		CommandData cmd = new CommandData(super.getCommand(), help);
+		cmd.addOption(OptionType.STRING, "update", "Ignored if you don't have permissions");
+		return cmd;
 	}
 }
