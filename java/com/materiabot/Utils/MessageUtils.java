@@ -1,6 +1,7 @@
 package com.materiabot.Utils;
 import java.util.concurrent.CompletableFuture;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Emoji;
 import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -8,6 +9,10 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.MessageReaction;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.interactions.InteractionHook;
+import net.dv8tion.jda.api.interactions.components.ActionRow;
+import net.dv8tion.jda.api.interactions.components.Button;
+import net.dv8tion.jda.api.interactions.components.ButtonStyle;
+import net.dv8tion.jda.api.requests.restaction.WebhookMessageAction;
 
 public abstract class MessageUtils {
 	public enum DefaultMessages{
@@ -24,7 +29,9 @@ public abstract class MessageUtils {
 
 	public static final String E = "‎";
 	public static final String S = "‎　";
-	public static final int DISCORD_MESSAGE_LIMIT = 1900;
+	public static final String SEPARATOR = ";;";
+	public static final int DISCORD_MESSAGE_LIMIT = 2000;
+	public static final int FIELD_MESSAGE_LIMIT = 1024;
 
 	public static final String empty(int l) {
 		StringBuilder sb = new StringBuilder();
@@ -71,15 +78,28 @@ public abstract class MessageUtils {
 		builder.setDescription(message);
 		return sendEmbed(hook, builder);
 	}
-	public static final CompletableFuture<Message> sendEmbed(InteractionHook hook, EmbedBuilder embed){
+	public static final CompletableFuture<Message> sendEmbed(InteractionHook hook, EmbedBuilder embed, ActionRow... actions){
 		MessageEmbed eb = embed.build();
     	if(eb.getFooter() == null) {
     		String footer = "If you like the bot, consider becoming a Patron:" + System.lineSeparator() + "https://patreon.com/MateriaBot";
     		embed.setFooter(footer, ImageUtils.getEmoteClassByName("patreon").getImageUrl());
     		eb = embed.build();
     	}
-    	MessageEmbed eb2 = eb;
-    	return hook.sendMessageEmbeds(eb2).submit();
+    	
+//    	Button b4s = Button.secondary("4*", Emoji.fromEmote(ImageUtils.getEmoteClassByName("10cp")));
+//    	Button b15 = Button.secondary("15cp", Emoji.fromEmote(ImageUtils.getEmoteClassByName("15cp")));
+//    	Button bwoi = Button.secondary("WoI", Emoji.fromEmote(ImageUtils.getEmoteClassByName("IfritCrystal")));
+//    	Button b35 = Button.secondary("35cp", Emoji.fromEmote(ImageUtils.getEmoteClassByName("35cp")));
+//    	Button bnt = Button.secondary("NT", Emoji.fromEmote(ImageUtils.getEmoteClassByName("ntlogo")));
+//    	Button bmw = Button.secondary("MW", Emoji.fromEmote(ImageUtils.getEmoteClassByName("ironManikin")));
+//    	Button bex = Button.secondary("EX", Emoji.fromEmote(ImageUtils.getEmoteClassByName("70cpSquare")));
+//    	Button bexp = Button.secondary("EX+", Emoji.fromEmote(ImageUtils.getEmoteClassByName("100cpSquare")));
+//    	Button bld = Button.secondary("LD", Emoji.fromEmote(ImageUtils.getEmoteClassByName("90cpSquare")));
+//    	Button bbt = Button.secondary("BT", Emoji.fromEmote(ImageUtils.getEmoteClassByName("140cpSquare")));
+//    	Button bbtp = Button.secondary("BT+", Emoji.fromEmote(ImageUtils.getEmoteClassByName("140cpSquare")));
+    	WebhookMessageAction<Message> ret = hook.sendMessageEmbeds(eb);
+    	ret.addActionRows(actions);
+    	return ret.submit();
 	}
 
 	public static final CompletableFuture<Message> editMessage(CompletableFuture<Message> message, String msg) {
@@ -94,6 +114,18 @@ public abstract class MessageUtils {
     	}
     	MessageEmbed eb2 = eb;
 		return hook.thenApply(r -> r.editMessage(eb2).complete());
+	}
+	
+	public static Button createButton(ButtonStyle style, String command, String id, String text, String emote) {
+		id = command + "" + SEPARATOR + id;
+		if(style == null) style = ButtonStyle.SECONDARY;
+		if(text != null) {
+			if(emote != null)
+				return Button.of(style, id, text).withEmoji(Emoji.fromEmote(ImageUtils.getEmoteClassByName(emote)));
+			else
+				return Button.of(style, id, text);
+		}
+		return Button.of(style, id, Emoji.fromEmote(ImageUtils.getEmoteClassByName(emote)));
 	}
 
 	public static final CompletableFuture<Message> addReactions(CompletableFuture<Message> hook, String... reactions) {

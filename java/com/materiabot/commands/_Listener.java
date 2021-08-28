@@ -33,7 +33,13 @@ public class _Listener extends ListenerAdapter{
 			}},
 			BUTTON_CLICK{public void run(Event e) {
 				ButtonClickEvent event = (ButtonClickEvent)e;
-				
+				String cmd = event.getButton().getId().split(";;")[0].trim();
+				for(_BaseCommand c : Constants.COMMANDS)
+					if(c.getCommand().equals(cmd)) {
+						event.deferEdit().queue();
+						c.doStuff(event);
+						return;
+					}
 			}},
 			MESSAGE_RECEIVED{public void run(Event e) {
 				MessageReceivedEvent event = (MessageReceivedEvent)e;

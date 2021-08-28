@@ -14,6 +14,7 @@ public class Methods {
 	public static final String urlizeTT(String s) {
 		s = s.toLowerCase();
 		if(s.equalsIgnoreCase("cecil")) s = "cecil-dark-knight";
+		if(s.equalsIgnoreCase("leonhart")) s = "leon";
 		if(s.equalsIgnoreCase("lann&reynn")) s = "lann-reynn";
 		return s.substring(0, s.contains("(") ? s.indexOf("(") : s.length()).replace("'", "").trim().replace(" ", "-");
 	}
