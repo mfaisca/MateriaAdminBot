@@ -22,7 +22,7 @@ public class HitData {
 			else if(Type.isBRV(t.type))
 				return (count > 0 ? count + "x " : "") + t.target.name() + 
 					(showType && t.attackType != null ? " " + t.attackType.getEmote() : "") + 
-					(showElements && t.elements != null && t.elements.size() > 0 ? " " + t.elements.stream().map(e -> e.getEmote()).reduce((s1,  s2) -> s1 + s2).orElse("") : "") + 
+					(showElements && t.elements != null && t.elements.isEmpty() ? " " + t.elements.stream().map(e -> e.getEmote()).reduce((s1,  s2) -> s1 + s2).orElse("") : "") + 
 					" BRV" + (hp != null ? (" + " + hp.getHitsDescription()) : ""); 
 			else
 				return "";
@@ -35,7 +35,7 @@ public class HitData {
 	private Type type;
 	private int attackTypeId;
 	private AttackType attackType;
-	private List<Element> elements = new LinkedList<Element>();
+	private List<Element> elements = new LinkedList<>();
 	private int targetId;
 	private Target target;
 	private int effectId;

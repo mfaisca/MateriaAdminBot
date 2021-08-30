@@ -21,9 +21,9 @@ public class PassiveParser {
 		Passive p = new Passive();
 		if(s.getInt("error") != null) return null;
 		p.setId(s.getInt("id"));
-		p.setName(s.getText(s.getObject("name")));
-		p.setDesc(s.getText(s.getObject("desc")));
-		p.setShortDesc(s.getText(s.getObject("short_desc")));
+		p.setName(s.getText("name"));
+		p.setDesc(s.getText("desc"));
+		p.setShortDesc(s.getText("short_desc"));
 		p.setCp(s.getObject("meta_data").getInt("cp"));
 		p.setLevel(s.getObject("meta_data").getInt("level"));
 		p.setTargetId(s.getObject("meta_data").getInt("target"));

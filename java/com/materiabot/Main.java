@@ -35,4 +35,10 @@ public class Main {
 		_Scheduler.start();
 		System.out.println("Bot is ready!!");
 	}
+	
+	
+	
+	//TODO Passive Effect 185 and 210 Missing
+	//185 - Selphie CL85, one of the 80%
+	//210 - "Activate Passive {0}" - That thing that Rem explained about chained passives
 }

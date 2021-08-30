@@ -11,15 +11,18 @@ import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
+import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
+import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
 import com.materiabot.Utils.Constants;
 
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 1;
+		int key = 4;
 		
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -33,6 +36,10 @@ public class Effect_Analyzer {
 			printAllAuras();
 		if(key == 6)
 			findLabels();
+		if(key == 7)
+			printAllAbilityEffects();
+		if(key == 8)
+			printAllPassives();
 	}
 
 	private static void printUnit(String unit, AttackName atn) {
@@ -98,8 +105,68 @@ public class Effect_Analyzer {
 		});
 	}
 	
+	private static void printAllAbilityEffects() {
+		HashMap<Integer, List<Unit>> map = new HashMap<>();
+		
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> u.getAbilities().values().stream())
+			.flatMap(a -> a.getHitData().stream())
+			.distinct()
+			.forEach(aid -> {
+				_AbilityEffect a = Constants.ABILITY_EFFECT.get(aid.getEffectId());
+				if(a == null) {
+					if(!map.containsKey(aid.getEffectId()))
+						map.put(aid.getEffectId(), new LinkedList<>());
+					map.get(aid.getEffectId()).add(aid.getAbility().getUnit());
+				}
+			});
+		map.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map.get(k).toString());
+		});
+	}
+	
+	private static void printAllPassives() {
+		HashMap<Integer, List<Unit>> map = new HashMap<>();
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> u.getPassives().values().stream())
+			.flatMap(a -> a.getEffects().stream())
+			.distinct()
+			.forEach(aid -> {
+				_PassiveEffect a = Constants.PASSIVE_EFFECT.get(aid.getEffectId());
+				if(a == null) {
+					if(!map.containsKey(aid.getEffectId()))
+						map.put(aid.getEffectId(), new LinkedList<>());
+					map.get(aid.getEffectId()).add(aid.getPassive().getUnit());
+				}
+			});
+		System.out.println("PASSIVE EFFECTS:");
+		map.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map.get(k).toString());
+		});
+		HashMap<Integer, List<Unit>> map2 = new HashMap<>();
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> u.getPassives().values().stream())
+			.flatMap(a -> a.getConditions().stream())
+			.distinct()
+			.forEach(aid -> {
+				_PassiveRequired a = Constants.PASSIVE_REQUIRED.get(aid.getRequiredId());
+				if(a == null) {
+					if(!map2.containsKey(aid.getRequiredId()))
+						map2.put(aid.getRequiredId(), new LinkedList<>());
+					map2.get(aid.getRequiredId()).add(aid.getPassive().getUnit());
+				}
+			});
+		System.out.println("PASSIVE REQUIREDS:");
+		map2.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map2.get(k).toString());
+		});
+	}
+	
 	private static void printAllAilments() {
-		HashMap<Integer, List<Unit>> map = new HashMap<Integer, List<Unit>>();
+		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
@@ -113,13 +180,37 @@ public class Effect_Analyzer {
 			.sorted()
 			.forEach(aid -> {
 				_AilmentEffect a = Constants.AILMENT_EFFECT.get(aid);
-				if(a == null)
-					System.out.println(aid + " - Effect not parsed!!!!!");
-				else
-					System.out.println(aid + " - " + a.getBaseDescription());
+				if(a == null){
+					if(!map.containsKey(aid))
+						map.put(aid, new LinkedList<>());
+					map.get(aid).add(null);
+				}
 			});
+		System.out.println("AILMENT EFFECTS:");
 		map.keySet().stream().distinct().sorted().forEach(k -> {
-			System.out.println(k + " - " + map.get(k).toString());
+			System.out.println(k + " - " + map.get(k));
+		});
+		HashMap<Integer, List<Unit>> map2 = new HashMap<>();
+		
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+			.flatMap(u -> 
+				Streams.concat(
+						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getConditions()).stream())
+				)
+			)
+			.flatMap(aid -> aid.getConditions().stream())
+			.distinct()
+			.forEach(aid -> {
+				if(aid.getCondition() == null){
+					if(!map.containsKey(aid.getConditionId()))
+						map.put(aid.getConditionId(), new LinkedList<>());
+					map.get(aid.getConditionId()).add(aid.getAilment().getUnit());
+				}
+			});
+		System.out.println("AILMENT CONDITIONS:");
+		map2.keySet().stream().distinct().sorted().forEach(k -> {
+			System.out.println(k + " - " + map2.get(k).toString());
 		});
 	}
 	
@@ -134,7 +225,6 @@ public class Effect_Analyzer {
 				)
 			)
 			.distinct()
-			.sorted()
 			.forEach(aid -> {
 				_AuraEffect a = Constants.AURA_EFFECT.get(aid);
 				if(a == null)

@@ -41,7 +41,7 @@ public class UnitParser {
 			else if(quickRead)
 				return u;
 			else
-				u = u.clone();
+				u = u.copy();
 			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();
 			File f = new File("./resources/units/db_" + unitName + ".json");
 			if(!f.exists()) return null;
@@ -68,6 +68,8 @@ public class UnitParser {
 	}
 
 	private static void parseProfile(Unit u, MyJSONObject obj) {
+		u.setName(obj.getObject("profile").getObject("fullName").getString("en"));
+		u.setFullName(obj.getObject("profile").getText("fullName"));
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
 		u.setSeries(obj.getObject("profile").getInt("world"));
@@ -172,14 +174,18 @@ public class UnitParser {
 			Integer callId = obj.getObject("assistAbility").getObject("ability").getInt("rank_up");
 			if(callId == null)
 				return;
-			u.setCall(u.getAbilities().get(callId));
+			Ability a = u.getSpecificAbility(callId);
+			a.setAttackName(AttackName.CA);
+			u.setCall(a);
 		}{
 			if(obj.getObject("ldAssistAbility").getInt("id") == null)
 				return;
 			Integer callLdId = obj.getObject("ldAssistAbility").getObject("ability").getInt("rank_up");
 			if(callLdId == null)
 				return;
-			u.setCallLd(u.getAbilities().get(callLdId));
+			Ability a = u.getSpecificAbility(callLdId);
+			a.setAttackName(AttackName.CALD);
+			u.setCallLd(a);
 		}
 	}
 	private static void parseCharaBoards(Unit u, MyJSONObject obj) {
@@ -206,7 +212,7 @@ public class UnitParser {
 			if(gear.getInt("id") == null) continue;
 			Equipment equip = new Equipment();
 			equip.setId(gear.getInt("id"));
-			equip.setName(gear.getText(gear.getObject("name")));
+			equip.setName(gear.getText("name"));
 			equip.setType(gearType.contains("Armor") ? Equipment.Type.Armor : u.getEquipmentType());
 			equip.setRarity(Equipment.Rarity.getByName(gearType));
 			equip.setUnit(u);
@@ -243,6 +249,7 @@ public class UnitParser {
 			sphere.setType(SphereType.valueOf(gear.getString("category")));
 			MyJSONObject gearPassive = gear.getObject("passive");
 			sphere.setPassive(new PassiveParser().parsePassive(gearPassive));
+			sphere.getPassive().setUnit(u);
 			s2 = s1 == null ? null : sphere;
 			s1 = s1 == null ? sphere : s1;
 		}

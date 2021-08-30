@@ -29,8 +29,8 @@ public class AilmentParser {
 		if(ail.getId() == -1)
 			return null;
 		ail.setCastId(ailment.getInt("cast_id"));
-		ail.setName(ailment.getText(ailment.getObject("name")));
-		ail.setDesc(ailment.getText(ailment.getObject("desc")));
+		ail.setName(ailment.getText("name"));
+		ail.setDesc(ailment.getText("desc"));
 		ail.setRate(ailment.getObject("meta_data").getInt("rate"));
 		ail.setRank(ailment.getObject("meta_data").getInt("rank")-1); //Indexing on source files starts at 1 instead of 0
 		ail.setTargetId(ailment.getObject("meta_data").getInt("target"));

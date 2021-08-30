@@ -14,6 +14,8 @@ import com.materiabot.GameElements.Enumerators.Ability.TargetRange;
 import com.materiabot.GameElements.Enumerators.Ability.TargetType;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect.TAG;
+import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.ImageUtils;
 import Shared.Methods;
 
 public class Ability implements Comparable<Ability>{
@@ -151,12 +153,12 @@ public class Ability implements Comparable<Ability>{
 		return (int)(chargeRate * (mult/100));
 	}
 	public String generateTitle() {
-		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> hd.getEmote()).distinct().reduce("", (s1, s2) -> s1 + s2)
-				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> e.getEmote()).distinct().reduce("", (s1, s2) -> s1 + s2)
+		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> ImageUtils.getEmoteText(hd.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
+				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> ImageUtils.getEmoteText(e.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getName().getBest()
 				+ (getTotalUseCount() > 0 && !this.getAttackName().equals(AttackName.EX) && !this.getAttackName().equals(AttackName.BT) ? " (Uses: " + getTotalUseCount() + ")" : "")
-				+ (this.getAttackName().equals(AttackName.EX) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + ")" : "")
-				+ " (ID: " + getId() + ")";
+				+ (this.getAttackName() != null && this.getAttackName().equals(AttackName.EX) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + " (" + getChargeRate() + "))" : "")
+				+ (Constants.DEBUG ? " (ID: " + getId() + ")" : "");
 	}
 
 	public String generateDescription() {
@@ -233,10 +235,12 @@ public class Ability implements Comparable<Ability>{
 		int totalPotency = 0;
 		if(!currentChain.isEmpty())
 			effects.add(currentChain);
-		if(this.getMovementCost() > 30)
-			preEffects.add(0, "Low Turn Rate");
+		if(this.getMovementCost() == 0)
+			preEffects.add(0, "Instant Turn Rate (" + this.getMovementCost() + ")");
 		else if(this.getMovementCost() < 30)
-			preEffects.add(0, "High Turn Rate");
+			preEffects.add(0, "High Turn Rate (" + this.getMovementCost() + ")");
+		else if(this.getMovementCost() > 30)
+			preEffects.add(0, "Low Turn Rate (" + this.getMovementCost() + ")");
 		if(stBrvIncrease > 0)
 			preEffects.add(0, "Raises BRV Damage by " + stBrvIncrease + "% against ST");
 		if(brvDamageLimit > 0)
@@ -246,6 +250,8 @@ public class Ability implements Comparable<Ability>{
 		effectList.addAll(preEffects);
 		for(List<HitData> chain : effects) {
 			if(chain.isEmpty()) continue;
+			if(chain.get(0).getEffect() == null)
+				;
 			if(chain.get(0).getEffect().isBRV() && Type.isBRV(chain.get(0).getType())) {
 				HitData.Extra help = new HitData.Extra(chain.get(0));
 				help.showElements = !sameElement;

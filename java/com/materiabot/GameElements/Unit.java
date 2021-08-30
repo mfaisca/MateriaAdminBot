@@ -15,6 +15,7 @@ public class Unit {
 	private int id;
 	private Region region = Region.GL;
 	private String name;
+	private Text fullName;
 	private int series = -1;
 	private List<String> nicknames = new LinkedList<>();
 	private Crystal crystal;
@@ -53,6 +54,9 @@ public class Unit {
 	public void setId(int id) { this.id = id; }
 	public Region getRegion() { return region; }
 	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
+	public Text getFullName() { return fullName; }
+	public void setFullName(Text fullName) { this.fullName = fullName; }
 	public int getSeries() { return series; }
 	public void setSeries(int series) { this.series = series; }
 	public List<String> getNicknames() { return nicknames; }
@@ -147,7 +151,7 @@ public class Unit {
 		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).findFirst().orElse(null);
 	}
 	public Passive getEquipmentPassive(Equipment.Rarity rarity, int idx) {
-		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).findFirst().orElse(null).getPassives().get(idx);
+		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).map(e -> e.getPassives().get(idx)).findFirst().orElse(null);
 	}
 	
 	public Ability getSpecificAbility(Integer id) {
@@ -168,15 +172,15 @@ public class Unit {
 	public List<ChainAbility> getTriggeredAbilities(Integer id){
 		return this.getTriggeredAbilities().stream().filter(ta -> ta.getOriginalId() == id.intValue()).collect(Collectors.toList());
 	}
-
 	public Ability getCall() { return call; }
 	public void setCall(Ability call) { this.call = call; }
 	public Ability getCallLd() { return callLd; }
 	public void setCallLd(Ability callLd) { this.callLd = callLd; }
+	
 	public String toString() {
 		return this.getName();
 	}
-	public Unit clone() { //Generic copy so that I can create a constructor for the right class that has the overridden methods
+	public Unit copy() { //Generic copy so that I can create a constructor for the right class that has the overridden methods
 		try {
 			return (Unit)this.getClass().getConstructors()[0].newInstance();
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {

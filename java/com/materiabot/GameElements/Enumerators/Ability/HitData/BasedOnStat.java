@@ -27,6 +27,7 @@ public enum BasedOnStat{
 	Stat42(42, "HP Damage Dealt"),
 	Stat46(46, "Attack at random"), //Wakka EX only, Random between 4 values on arguments
 	Stat49(49, "Attack"),
+	Stat58(49, "Ailment Value"), //Sherlotta LD Staff
 	Stat1014(1014, "HP Damage Dealt (based on the number of 「**Note**」 on the party)"),
 	;
 	

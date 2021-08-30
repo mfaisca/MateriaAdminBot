@@ -40,7 +40,17 @@ public class Ailment { //TODO Missing icons
 	public int getCastId() { return castId; }
 	public void setCastId(int castId) { this.castId = castId; }
 
-	public Text getName() { return name; }
+	public Text getName() { 
+		String name = this.name.getBest();
+		if(name == null || name.length() == 0) {
+			name = this.getDesc().getBest();
+			if(name.contains(":"))
+				return new Text(name.substring(0, name.indexOf(":")).trim());
+			if(name.contains("from"))
+				return new Text(name.substring(name.indexOf("from")+5).trim());
+		}
+		return this.name;
+	}
 	public void setName(Text name) { this.name = name; }
 
 	public Text getDesc() { return desc; }

@@ -30,6 +30,8 @@ public class Equipment{
 		}
 
 		public static Type find(int id) {
+			if((id-1) > Type.values().length)
+				System.out.println();
 			return values()[id-1];
 		}
 	}

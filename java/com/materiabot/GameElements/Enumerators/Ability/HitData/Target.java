@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public enum Target{
 	ST(1, "target"),
-	Self(2, "own"),
+	Self(2, "own", "self"),
 	Random(3, "random targets"), //Kuja/Lenna only
 	AoE(5, 21, "all enemies"),
 	Party(6, 8, "party"),
@@ -18,10 +18,11 @@ public enum Target{
 	Caller(29, "caller"),
 	
 	;private int id, id2;
-	private String desc;
+	private String desc, desc2;
 
-	private Target(int id, String desc) {this.id = id; this.desc = desc; }
-	private Target(int id, int id2, String desc) {this.id = id; this.id2 = id2; this.desc = desc; }
+	private Target(int id, String desc) {this.id = id; this.desc = this.desc2 = desc; }
+	private Target(int id, String desc, String desc2) {this.id = id; this.desc = desc; this.desc2 = desc2; }
+	private Target(int id, int id2, String desc) {this.id = id; this.id2 = id2; this.desc = this.desc2 = desc; }
 
 	public int getId() {
 		return id;
@@ -31,6 +32,9 @@ public enum Target{
 	}
 	public String getDescription() {
 		return desc;
+	}
+	public String getDescription2() {
+		return desc2;
 	}
 	public static Target get(int id) {
 		return Arrays.asList(values()).stream().filter(t -> t.getId() == id || t.getId2() == id).findFirst().orElse(null);

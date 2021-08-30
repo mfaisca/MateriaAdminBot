@@ -30,10 +30,13 @@ public class _AbilityEffect implements _Plugin {
 	}
 	
 	protected final String applyReplaces(HitData hd, String description) {
-		if(hd.getTarget() != null)
+		if(hd.getTarget() != null) {
+			description = description.replace("{t2}", hd.getTarget().getDescription2());
 			description = description.replace("{t}", hd.getTarget().getDescription());
-		else
+		}else {
+			description = description.replace("{t2}", "Unknown Target: " + hd.getTargetId());
 			description = description.replace("{t}", "Unknown Target: " + hd.getTargetId());
+		}
 		if(hd.getMaxBrvOverflow() > 100)
 			description = description.replace("{of}", " (" + hd.getMaxBrvOverflow() + "% overflow)");
 		else
@@ -68,5 +71,9 @@ public class _AbilityEffect implements _Plugin {
 
 	protected static Ability convertIdToAbility(Unit u, int id) {
 		return u.getAbilities().get(id);
+	}
+
+	public static _AbilityEffect MissingEffect(int effectId) {
+		return new _AbilityEffect(effectId, "Unknown Effect " + effectId);
 	}
 }
