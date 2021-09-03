@@ -71,7 +71,13 @@ public class PatreonCommand extends _BaseCommand{
 		try {
 			Guild materiaServer = Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID);
 			final PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_TT_ACCESS_TOKEN));
-			final Campaign campaign = apiClient.fetchCampaigns().get().get(0);
+			Campaign campaign = null;
+			try {
+				campaign = apiClient.fetchCampaigns().get().get(0);
+			} catch(Exception e) {
+				System.out.println("Error when fetching data from TT Patreon");
+				return;
+			}
 			final List<Pledge> pledges = apiClient.fetchAllPledges(campaign.getId());
 			final List<String> patreonDiscordIdsT2 = new LinkedList<>();
 			final List<String> patreonDiscordIdsT3 = new LinkedList<>();

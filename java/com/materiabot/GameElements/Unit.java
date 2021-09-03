@@ -101,6 +101,7 @@ public class Unit {
 													getCharaBoards().stream().map(p -> p.getId()))
 											.collect(Collectors.toList());
 		List<Integer> ret = new LinkedList<>();
+		ret.add(this.getBaseAbility(type).get(0).getId());
 		int passiveCount = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
 			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
@@ -131,7 +132,7 @@ public class Unit {
 					break;
 			}
 		}
-		return ret.stream().map(a -> this.getSpecificAbility(a)).sorted((a1, a2) -> a1.getId() - a2.getId()).distinct().collect(Collectors.toList());
+		return ret.stream().distinct().sorted().map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
 	}
 	public Passive getPassive(int level) {
 		return getPassive(level, null);

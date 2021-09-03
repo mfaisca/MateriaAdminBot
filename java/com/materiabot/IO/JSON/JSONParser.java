@@ -8,14 +8,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.materiabot.GameElements.Text;
 
-public class JSONParser {
+public abstract class JSONParser {
 	public static class MyJSONObject{
 		private JSONObject json;
 
@@ -39,6 +38,8 @@ public class JSONParser {
 		public Text getText(String objName) {
 			MyJSONObject obj = this.getObject(objName);
 			Text t = new Text();
+			if(obj == null)
+				System.out.println();
 			t.setEn(fix(obj.getString("en")));
 			t.setGl(fix(obj.getString("gl")));
 			t.setJp(fix(obj.getString("jp")));
@@ -52,6 +53,7 @@ public class JSONParser {
 			return t;
 		}
 		private static String fix(String c) { //Fix Special Characters
+			if(c == null) return null;
 			return c.replace("\\n", System.lineSeparator()).replace("\\bQp", "+").replace("''", "'");
 		}
 		
@@ -132,6 +134,7 @@ public class JSONParser {
 		public JSONObject getJSON() { return json; }
 	}
 
+	private JSONParser() {}
 	private static final JSONObject parse(InputStream is) throws IOException{
 		BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
 		StringBuilder sb = new StringBuilder();
@@ -159,9 +162,9 @@ public class JSONParser {
 			throw new IOException(e);
 		}
 	}
-	public static final MyJSONObject loadContent(String path, boolean urlTrue_fileFalse) {
+	public static final MyJSONObject loadContent(String path, boolean urlTrueFileFalse) {
 		try {
-			return new MyJSONObject(urlTrue_fileFalse ? parseURL(path) : parseFile(path));
+			return new MyJSONObject(urlTrueFileFalse ? parseURL(path) : parseFile(path));
 		} catch (IOException e) {
 			return null;
 		}

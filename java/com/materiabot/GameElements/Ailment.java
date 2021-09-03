@@ -161,8 +161,11 @@ public class Ailment { //TODO Missing icons
 	}
 
 	public boolean isDeadEffect() {
-		for(int e : this.getEffects())
-			if(e > 0) return false;
+		int effectCount = 0;
+		for(@SuppressWarnings("unused") int e : this.getEffects())
+			effectCount++;
+		if(effectCount > 0 && !generateEffectDescription().isEmpty())
+			return false;
 		return true;
 	}
 
@@ -174,7 +177,7 @@ public class Ailment { //TODO Missing icons
 	public String generateTitle() {
 		if(this.getFakeName() != null) return getFakeName().getBest();
 		if(isDeadEffect()) return "";
-		return this.getName().getBest() + (Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
+		return this.getName().getBest() + (this.getName().getBest() == null || Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}
 
 	public String generateDescription() {
@@ -216,7 +219,7 @@ public class Ailment { //TODO Missing icons
 			return this.condi.length() - other.condi.length();
 		}
 	}
-
+	
 	public String generateDescription(boolean isAuraEffect) {
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		List<AilmentBlock> finalDescription = new LinkedList<>();
@@ -237,6 +240,12 @@ public class Ailment { //TODO Missing icons
 			finalDescription.add(0, new AilmentBlock(null, "Cannot be extended"));
 		if(!isBurstExtendable())
 			finalDescription.add(0, new AilmentBlock(null, "Decreases in BURST mode"));
+		finalDescription.addAll(generateEffectDescription());
+		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
+	}
+	private List<AilmentBlock> generateEffectDescription() {
+		if(this.getFakeDesc() != null) return null;
+		List<AilmentBlock> finalDescription = new LinkedList<>();
 		boolean hasAuras = false;
 		for(int i = 0; i < this.getEffects().length; i++) {
 			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69) continue; //69 is a "meta" effect related to countering, other effects will use it.
@@ -294,8 +303,11 @@ public class Ailment { //TODO Missing icons
 				}
 			}
 		}
-		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
+//		if(finalDescription.size() == finalCountBeforeEffects) //If the ailment doesn't have any effect, hide it
+//			return "";
+		return finalDescription;
 	}
+	
 	public static final Ailment NULL(int id) {
 		return new Ailment("Unknown Ailment " + id) {};
 	}

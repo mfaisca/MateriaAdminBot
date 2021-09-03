@@ -68,7 +68,7 @@ public class UnitParser {
 	}
 
 	private static void parseProfile(Unit u, MyJSONObject obj) {
-		u.setName(obj.getObject("profile").getObject("fullName").getString("en"));
+		u.setName(obj.getObject("profile").getText("shortName").getBest());
 		u.setFullName(obj.getObject("profile").getText("fullName"));
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
@@ -93,9 +93,11 @@ public class UnitParser {
 		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
 			a.setUnit(u);
 			a.getAilments().stream()
-				.peek(ail -> ail.setAbility(a))
-				.peek(ail -> u.getAilments().put(ail.getId(), ail))
-				.forEach(ail -> ail.setUnit(u));
+				.forEach(ail -> {
+					ail.setAbility(a);
+					u.getAilments().put(ail.getId(), ail);
+					ail.setUnit(u);
+				});
 			u.getAbilities().put(a.getId(), a);
 		}
 	}

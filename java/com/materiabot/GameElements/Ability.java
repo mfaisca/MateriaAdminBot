@@ -244,9 +244,9 @@ public class Ability implements Comparable<Ability>{
 		if(stBrvIncrease > 0)
 			preEffects.add(0, "Raises BRV Damage by " + stBrvIncrease + "% against ST");
 		if(brvDamageLimit > 0)
-			preEffects.add("Maximum BRV damage limit +" + brvDamageLimit + "% (up to " + Math.round(9999 * (1 + brvDamageLimit / 100f)) + ")");
+			preEffects.add("+" + brvDamageLimit + "% Maximum BRV damage limit (up to " + Math.round(9999 * (1 + brvDamageLimit / 100f)) + ")");
 		if(maxBrvLimit > 0)
-			preEffects.add("Maximum obtainable BRV & HP damage limit +" + maxBrvLimit + "% (up to " + Math.round(99999 * (1 + maxBrvLimit / 100f)) + ")");
+			preEffects.add("+" + maxBrvLimit + "% Maximum obtainable BRV & HP damage limit (up to " + Math.round(99999 * (1 + maxBrvLimit / 100f)) + ")");
 		effectList.addAll(preEffects);
 		for(List<HitData> chain : effects) {
 			if(chain.isEmpty()) continue;

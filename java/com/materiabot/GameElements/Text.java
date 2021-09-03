@@ -1,4 +1,5 @@
 package com.materiabot.GameElements;
+import com.materiabot.Utils.MessageUtils;
 
 public class Text {
 	private String en;
@@ -19,6 +20,6 @@ public class Text {
 		if(gl != null && gl.length() > 0) return getGl();
 		if(en != null && en.length() > 0) return getEn();
 		if(jp != null && jp.length() > 0) return getJp();
-		return null;
+		return MessageUtils.NOTEXT;
 	}
 }

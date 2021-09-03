@@ -32,6 +32,7 @@ public abstract class MessageUtils {
 	public static final String SEPARATOR = ";;";
 	public static final int DISCORD_MESSAGE_LIMIT = 2000;
 	public static final int FIELD_MESSAGE_LIMIT = 1024;
+	public static final String NOTEXT = "~~NoText~~";
 
 	public static final String empty(int l) {
 		StringBuilder sb = new StringBuilder();

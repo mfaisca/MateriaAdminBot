@@ -165,6 +165,13 @@ public class Effect_Analyzer {
 		});
 	}
 	
+	private static class IDUnitContainer{
+		public int id;
+		public Unit u;
+		
+		public IDUnitContainer(int id, Unit u) {this.id = id; this.u = u; }
+	}
+	
 	private static void printAllAilments() {
 		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
@@ -172,18 +179,19 @@ public class Effect_Analyzer {
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
 			.flatMap(u -> 
 				Streams.concat(
-						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getEffects()).stream()),
-						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream()).map(a -> a.getEffectId())
+						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getEffects()).stream().map(ae -> new IDUnitContainer(ae, u))),
+						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream()).map(a -> new IDUnitContainer(a.getEffectId(), u))
 				)
 			)
-			.distinct()
-			.sorted()
-			.forEach(aid -> {
+			.sorted((a1, a2) -> Integer.compare(a1.id, a2.id))
+			.forEach(idu -> {
+				int aid = idu.id;
 				_AilmentEffect a = Constants.AILMENT_EFFECT.get(aid);
 				if(a == null){
 					if(!map.containsKey(aid))
 						map.put(aid, new LinkedList<>());
-					map.get(aid).add(null);
+					if(!map.get(aid).contains(idu.u))
+						map.get(aid).add(idu.u);
 				}
 			});
 		System.out.println("AILMENT EFFECTS:");
@@ -203,9 +211,9 @@ public class Effect_Analyzer {
 			.distinct()
 			.forEach(aid -> {
 				if(aid.getCondition() == null){
-					if(!map.containsKey(aid.getConditionId()))
-						map.put(aid.getConditionId(), new LinkedList<>());
-					map.get(aid.getConditionId()).add(aid.getAilment().getUnit());
+					if(!map2.containsKey(aid.getConditionId()))
+						map2.put(aid.getConditionId(), new LinkedList<>());
+					map2.get(aid.getConditionId()).add(aid.getAilment().getUnit());
 				}
 			});
 		System.out.println("AILMENT CONDITIONS:");
@@ -221,16 +229,17 @@ public class Effect_Analyzer {
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
 			.flatMap(u -> 
 				Streams.concat(
-						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream()).map(a -> a.getTypeId())
+						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream())
 				)
 			)
 			.distinct()
 			.forEach(aid -> {
-				_AuraEffect a = Constants.AURA_EFFECT.get(aid);
-				if(a == null)
-					System.out.println(aid + " - Effect not parsed!!!!!");
-				else
-					System.out.println(aid + " - " + a.getBaseDescription());
+				_AuraEffect a = Constants.AURA_EFFECT.get(aid.getTypeId());
+				if(a == null) {
+					if(!map.containsKey(aid.getTypeId()))
+						map.put(aid.getTypeId(), new LinkedList<Unit>());
+					map.get(aid.getTypeId()).add(aid.getAilment().getUnit());
+				}
 			});
 		map.keySet().stream().distinct().sorted().forEach(k -> {
 			System.out.println(k + " - " + map.get(k).toString());

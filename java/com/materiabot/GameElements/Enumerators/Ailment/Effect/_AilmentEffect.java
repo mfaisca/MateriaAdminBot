@@ -19,9 +19,11 @@ public abstract class _AilmentEffect implements _Plugin {
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
-	
+
+	//@Override
 	public String getDescription(Ailment a, int effectIndex, int rank, boolean isAuraEffect) {
-		return applyReplaces(a, effectIndex, getBaseDescription(), rank, isAuraEffect);
+		String desc = getBaseDescription();
+		return applyReplaces(a, effectIndex, desc, rank, isAuraEffect);
 	}
 	public static final String getDescriptionAsAura(Aura aura) {
 		Ailment a = new Ailment();
@@ -62,7 +64,7 @@ public abstract class _AilmentEffect implements _Plugin {
 	
 	protected static final String applyReplaces(Ailment a, int effectIndex, String description, int rank, boolean isAuraEffect) {
 		//if(a.getEffects()[effectIndex] != id && a.getEffects()[effectIndex] != 53) return null; //53 = Multifunction effect - hardcoded stuff ingame
-		Integer[] values = getArgs(a, effectIndex, rank, isAuraEffect);;
+		Integer[] values = getArgs(a, effectIndex, rank, isAuraEffect);
 		boolean isValType16 = !isAuraEffect && a.getValTypes()[effectIndex] == 16; //Special ValueType for some effects that scale off something else other than stacks(I think)
 		String stack = "";
 		if(a.getMaxStacks() > 1 || (isValType16 && values != null)) {

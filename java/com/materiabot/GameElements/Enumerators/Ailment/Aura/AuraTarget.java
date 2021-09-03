@@ -2,8 +2,8 @@ package com.materiabot.GameElements.Enumerators.Ailment.Aura;
 import java.util.Arrays;
 
 public enum AuraTarget {
-	PARTY(1, "Party"),
-	ENEMIES(2, "All Enemies"),
+	PARTY(1, "Party "),
+	ENEMIES(2, "All Enemies "),
 	SELF(99, ""), //Fake created by me
 	
 //	Target(1, ""),
