@@ -2,13 +2,13 @@ package com.materiabot.GameElements.Enumerators.Ability;
 import java.util.Arrays;
 
 public enum MiscConditionTarget {
-	Target(1, "Target "),
-	Self(2, "Self "),
-	Party(3, "Party "),
-	Enemy(5, "Any Enemy "),
-	Self2(6, "Self "), //??
-	NumOfPartyMembers(7, "Number of Party Members "),
-	Target2(25, "Target "),
+	Target(1, "target"),
+	Self(2, "self"),
+	Party(3, "party"),
+	Enemy(5, "any enemy"),
+	Party2(6, "party"), //Used MiscCondition 39 at least
+	Party3(7, "party"),
+	Target2(25, "target"),
 	
 	;private int id;
 	private String description;

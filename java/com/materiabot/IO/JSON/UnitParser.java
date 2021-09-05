@@ -122,6 +122,7 @@ public class UnitParser {
 				ca.setId(skillLevel.getInt("id"));
 				ca.setOriginalId(skillLevel.getInt("originalAbility"));
 				ca.setSecondaryId(skillLevel.getInt("upgradedAbility"));
+				ca.setUpgraded(true);
 				ca.setReqExtendPassives(Arrays.asList(skillLevel.getIntArray("reqExtendPassives")));
 				ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
 				for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
@@ -151,6 +152,7 @@ public class UnitParser {
 			ca.setId(skillLevel.getInt("id"));
 			ca.setOriginalId(skillLevel.getInt("originalAbility"));
 			ca.setSecondaryId(skillLevel.getInt("triggeredAbility"));
+			ca.setTriggered(true);
 			ca.setReqExtendPassives(Arrays.asList(skillLevel.getIntArray("reqExtendPassives")));
 			ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
 			for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
