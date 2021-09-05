@@ -18,11 +18,15 @@ public abstract class _PassiveRequired implements _Plugin {
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 
+	//@Override
 	public String getDescription(PassiveCondition pc) {
-		return applyReplaces(pc, getBaseDescription());
+		String desc = getBaseDescription();
+		return applyReplaces(pc, desc);
 	}
+	//@Override
 	public String getDescription(ConditionBlock cb) {
-		return applyReplaces(cb, getBaseDescription());
+		String desc = getBaseDescription();
+		return applyReplaces(cb, desc);
 	}
 	protected final String applyReplaces(PassiveCondition pc, String description) {
 		return applyReplaces(pc.getPassive().getUnit(), pc.getTarget(), pc.getTargetId(), description, pc.getValues());

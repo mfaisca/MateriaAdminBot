@@ -1,13 +1,14 @@
 package com.materiabot.GameElements.Enumerators.Ability;
 import java.util.Arrays;
 
-public enum MiscConditionTarget {  //XXX FIGURE THESE OUT OR ASK REM
-	Target(1, "Target"),
-	Self(2, "Self"),
-	Enemy(5, "Any Enemy"),
-	Self2(6, "Self"), //??
-	NumOfPartyMembers(7, "Number of Party Members"),
-	Target2(25, "Target"),
+public enum MiscConditionTarget {
+	Target(1, "Target "),
+	Self(2, "Self "),
+	Party(3, "Party "),
+	Enemy(5, "Any Enemy "),
+	Self2(6, "Self "), //??
+	NumOfPartyMembers(7, "Number of Party Members "),
+	Target2(25, "Target "),
 	
 	;private int id;
 	private String description;

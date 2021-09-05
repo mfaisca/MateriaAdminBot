@@ -14,8 +14,10 @@ public class _MiscConditionLabel implements _Plugin{
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 
+	//@Override
 	public String getDescription(MiscCondition a) {
-		return applyReplaces(a, getBaseDescription());
+		String desc = getBaseDescription();
+		return applyReplaces(a, desc);
 	}
 	protected static final String applyReplaces(MiscCondition a, String description) {
 		Integer[] values = a.getValues();

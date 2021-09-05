@@ -22,7 +22,7 @@ public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 4;
+		int key = 6;
 		
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -30,15 +30,15 @@ public class Effect_Analyzer {
 			printUnitSpecific("The Emperor", 6058);
 		if(key == 3)
 			findMissing();
-		if(key == 4)
+		if(key == 4 || key == 99)
 			printAllAilments();
-		if(key == 5)
+		if(key == 5 || key == 99)
 			printAllAuras();
-		if(key == 6)
+		if(key == 6 || key == 99)
 			findLabels();
-		if(key == 7)
+		if(key == 7 || key == 99)
 			printAllAbilityEffects();
-		if(key == 8)
+		if(key == 8 || key == 99)
 			printAllPassives();
 	}
 
@@ -247,6 +247,7 @@ public class Effect_Analyzer {
 	}
 	
 	private static void findLabels() {
+		HashMap<Integer, List<String>> map = new HashMap<>();
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
 			.flatMap(u -> Streams.concat(u.getUpgradedAbilities().stream(), u.getTriggeredAbilities().stream()))
@@ -255,17 +256,21 @@ public class Effect_Analyzer {
 				String ogaS = (oga == null ? "Unknown Ability(" : (oga.getName().getBest() + "(")) + oga.getId() + ")";
 				Ability tga = hd.getUnit().getSpecificAbility(hd.getSecondaryId());
 				String tgaS = (tga == null ? "Unknown Ability(" : (tga.getName().getBest() + "(")) + tga.getId() + ")";
-				boolean allValues = true, isRight = false;
+				boolean allValues = true;
 				String builder = "";
 				for(MiscCondition mc : hd.getReqMiscConditions()) {
-					if(mc.getLabel() == null)
-						allValues = false;
-					builder += System.lineSeparator() + "\tLabel:" + mc.getLabelId() + "/T:" + mc.getTargetId() + "(" + mc.getValues()[0] + "," + mc.getValues()[1] + "," + mc.getValues()[2] + ")";
-					if(mc.getLabelId() == 1)
-						isRight = true;
+					if(mc.getLabel() == null) {
+						if(!map.containsKey(mc.getLabelId()))
+							map.put(mc.getLabelId(), new LinkedList<>());
+						String tn = (mc.getTarget() == null ? "" : mc.getTarget().getDescription()) + "(" + mc.getTargetId() + ")";
+						map.get(mc.getLabelId()).add(hd.getUnit().getName() + " -- " + ogaS +"->" + tgaS + "T:" + tn + " -- " + Arrays.toString(mc.getValues()));
+					}	
 				}
-				if(!allValues && isRight)
-					System.out.println(hd.getUnit().getName() + " - " + ogaS + " -> " + tgaS + builder);
 			});
+		for(int k : map.keySet()) {
+			System.out.println("Label:" + k);
+			for(String s : map.get(k).stream().distinct().collect(Collectors.toList()))
+				System.out.println("\t" + s);
+		}
 	}
 }

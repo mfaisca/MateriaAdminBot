@@ -14,7 +14,7 @@ public enum Target{
 	Traps(18, "traps???"), //Emperor only(S2 / EX)
 	CalledUnit(29, "own"), //???
 	AOE(23, "traps???"), //Emperor only
-	Machina(28, "Machina"),
+	SelfCall(28, "own"),
 	Caller(29, "caller"),
 	
 	;private int id, id2;
