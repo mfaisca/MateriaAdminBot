@@ -5,6 +5,8 @@ import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
 import com.materiabot.GameElements.Enumerators.Passive.PassiveCondition;
 import com.materiabot.GameElements.Enumerators.Passive.RequiredTarget;
+import com.materiabot.Utils.ImageUtils;
+import Shared.Methods;
 
 public abstract class _PassiveRequired implements _Plugin {
 	protected int id;
@@ -39,11 +41,11 @@ public abstract class _PassiveRequired implements _Plugin {
 				.replace("{t}", target == null ? "Unknown Target: " + targetId : target.getDescription())
 				.replace("{pt}", target == null ? "Unknown Target: " + targetId : target.getDescription());
 		for(int i = 0; i < values.length; i++) {
-			description = description.replace("{ail" + i + "}", "「**" + u.getSpecificAilment(values[i]).getName().getBest() + "**」");
-			description = description.replace("{ab" + i + "}", "「**" + u.getSpecificAbility(values[i]).getName().getBest() + "**」");
-			description = description.replace("{p" + i + "}", "「**" + u.getSpecificPassive(values[i]).getName().getBest() + "**」");
-			description = description.replace("{s1}", "「**" + u.getAbility(AttackName.S1).get(0).getName().getBest() + "**」");
-			description = description.replace("{s2}", "「**" + u.getAbility(AttackName.S2).get(0).getName().getBest() + "**」");
+			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(u, values[i]) + Methods.enframe(u.getSpecificAilment(values[i]).getName().getBest()));
+			description = description.replace("{ab" + i + "}", Methods.enframe(u.getSpecificAbility(values[i]).getName().getBest()));
+			description = description.replace("{p" + i + "}", Methods.enframe(u.getSpecificPassive(values[i]).getName().getBest()));
+			description = description.replace("{s1}", "「**" + Methods.enframe(u.getAbility(AttackName.S1).get(0).getName().getBest() + "**」"));
+			description = description.replace("{s2}", "「**" + Methods.enframe(u.getAbility(AttackName.S2).get(0).getName().getBest() + "**」"));
 			description = description.replace("{" + i + "}", ""+values[i]);
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

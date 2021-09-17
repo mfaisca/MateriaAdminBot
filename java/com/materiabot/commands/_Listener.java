@@ -16,6 +16,7 @@ import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
+import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -26,20 +27,30 @@ public class _Listener extends ListenerAdapter{
 				SlashCommandEvent event = (SlashCommandEvent)e;
 				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.getCommand().equals(event.getName())) {
-						event.deferReply().queue();
+						event.deferReply(c.isEtherealReply(event)).queue();
 						c.doStuff(event);
 						return;
 					}
 			}},
 			BUTTON_CLICK{public void run(Event e) {
 				ButtonClickEvent event = (ButtonClickEvent)e;
-				String cmd = event.getButton().getId().split(";;")[0].trim();
+				String cmd = event.getButton().getId().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
 				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.getCommand().equals(cmd)) {
 						event.deferEdit().queue();
 						c.doStuff(event);
 						return;
 					}
+			}},
+			SELECT_MENU{public void run(Event e) {
+//				SelectionMenuEvent event = (SelectionMenuEvent)e;
+//				String cmd = event.getSelectedOptions().get(0).get
+//				for(_BaseCommand c : Constants.COMMANDS)
+//					if(c.getCommand().equals(cmd)) {
+//						event.deferEdit().queue();
+//						c.doStuff(event);
+//						return;
+//					}
 			}},
 			MESSAGE_RECEIVED{public void run(Event e) {
 				MessageReceivedEvent event = (MessageReceivedEvent)e;
@@ -107,6 +118,10 @@ public class _Listener extends ListenerAdapter{
 	@Override
 	public final void onButtonClick(ButtonClickEvent event) {
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.BUTTON_CLICK, event));
+	}
+	@Override
+	public final void onSelectionMenu(SelectionMenuEvent event) {
+		THREAD_MANAGER.execute(new Analyze(Analyze.Action.SELECT_MENU, event));
 	}
 	@Override
 	public final void onMessageReceived(final MessageReceivedEvent event) {

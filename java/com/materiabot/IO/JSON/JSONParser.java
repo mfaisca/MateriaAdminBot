@@ -39,7 +39,7 @@ public abstract class JSONParser {
 			MyJSONObject obj = this.getObject(objName);
 			Text t = new Text();
 			if(obj == null)
-				System.out.println();
+				return null;
 			t.setEn(fix(obj.getString("en")));
 			t.setGl(fix(obj.getString("gl")));
 			t.setJp(fix(obj.getString("jp")));
@@ -94,7 +94,7 @@ public abstract class JSONParser {
 					ret[i] = new MyJSONObject(arr.getJSONObject(i));
 				return ret;
 			} catch(Exception e) {
-				return null;
+				return new MyJSONObject[0];
 			}
 		}
 		public MyJSONObject[] getObjectArray(String name, int nullValue) {

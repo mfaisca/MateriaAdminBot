@@ -8,7 +8,6 @@ import com.materiabot.GameElements.Crystal;
 import com.materiabot.GameElements.Equipment;
 import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Passive;
-import com.materiabot.GameElements.Region;
 import com.materiabot.GameElements.Sphere;
 import com.materiabot.GameElements.Sphere.SphereType;
 import com.materiabot.GameElements.Text;
@@ -68,7 +67,10 @@ public class UnitParser {
 	}
 
 	private static void parseProfile(Unit u, MyJSONObject obj) {
-		u.setName(obj.getObject("profile").getText("shortName").getBest());
+		Text name = obj.getObject("profile").getText("shortName");
+		if(name == null)
+			name = obj.getObject("profile").getText("fullName");
+		u.setName(name.getBest());
 		u.setFullName(obj.getObject("profile").getText("fullName"));
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
@@ -78,16 +80,14 @@ public class UnitParser {
 			u.getSphereSlots()[i] = SphereType.get(obj.getObject("profile").getObject("traits").getStringArray("spheres")[i]);
 	}
 	private static void parsePassives(Unit u, MyJSONObject obj) {
-		if(u.getRegion().equals(Region.JP))
-			for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
-				p.setUnit(u);
-				u.getJPPassives().put(p.getLevel(), p);
-			}
-		if(u.getRegion().equals(Region.GL))
-			for(Passive p : new PassiveParser().parsePassives(obj, "glAwakeningPassives")) {
-				p.setUnit(u);
-				u.getGLPassives().put(p.getLevel(), p);
-			}
+		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
+			p.setUnit(u);
+			u.getJPPassives().put(p.getLevel(), p);
+		}
+		for(Passive p : new PassiveParser().parsePassives(obj, "glAwakeningPassives")) {
+			p.setUnit(u);
+			u.getGLPassives().put(p.getLevel(), p);
+		}
 	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
 		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
@@ -202,9 +202,9 @@ public class UnitParser {
 	}
 	private static void parseArtifacts(Unit u, MyJSONObject obj) {
 		u.getArtifacts().clear();
-		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
+		for(Passive p : new PassiveParser().parsePassives(obj, "artifactList")) {
 			p.setUnit(u);
-			u.getPassives().put(p.getLevel(), p);
+			u.getArtifacts().add(p);
 		}
 	}
 	private static void parseGear(Unit u, MyJSONObject obj) {

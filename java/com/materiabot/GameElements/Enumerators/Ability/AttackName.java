@@ -8,13 +8,14 @@ public enum AttackName{
 	S1("s1", "1"), S2("s2", "2"), AA("aa", "additional"), EX("ex", "ex+", "ex++"), 
 	LD("ld", "limited"), BT("bt", "burst", "bt+", "burst+"), 
 	CA("ca", "call"), CALD("cald", "ldcall", "ldca", "callld");
-	private List<String> names = new LinkedList<String>();
+	private List<String> names = new LinkedList<>();
 	
 	private AttackName(String... skillNames) { 
 		names = Arrays.asList(skillNames);
 	}
 	
 	public List<String> getNames(){ return names; }
+	public String getEmoteName() { return "S_" + name(); }
 	
 	public static AttackName getByTags(String s) {
 		for(AttackName t : values())

@@ -6,6 +6,7 @@ import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect.ValTypes._ValType;
 import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.ImageUtils;
 import Shared.Methods;
 
 public abstract class _AilmentEffect implements _Plugin {
@@ -65,9 +66,9 @@ public abstract class _AilmentEffect implements _Plugin {
 	protected static final String applyReplaces(Ailment a, int effectIndex, String description, int rank, boolean isAuraEffect) {
 		//if(a.getEffects()[effectIndex] != id && a.getEffects()[effectIndex] != 53) return null; //53 = Multifunction effect - hardcoded stuff ingame
 		Integer[] values = getArgs(a, effectIndex, rank, isAuraEffect);
-		boolean isValType16 = !isAuraEffect && a.getValTypes()[effectIndex] == 16; //Special ValueType for some effects that scale off something else other than stacks(I think)
+		boolean isSpecialValType = !isAuraEffect && _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]).isSpecial(a.getValEditTypes()[effectIndex]); //Special ValueType for some effects that scale off something else other than stacks(I think)
 		String stack = "";
-		if(a.getMaxStacks() > 1 || (isValType16 && values != null)) {
+		if(a.getMaxStacks() > 1 || (isSpecialValType && values != null)) {
 			stack = Arrays.asList(values).stream().map(i1 -> i1.toString()).reduce((i1, i2) -> i1 + "/" + i2).orElse("ERROR");
 			String[] stacks = stack.split("/");
 			if(Arrays.asList(stacks).stream().distinct().count() == 1)
@@ -76,10 +77,10 @@ public abstract class _AilmentEffect implements _Plugin {
 		
 		if(values != null)
 			for(int i = 0; i < values.length; i++) {
-				description = description.replace("{ail" + i + "}", Methods.enframe(a.getUnit().getSpecificAilment(values[i]).getName().getBest()));
+				description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(a.getUnit(), values[i]) + Methods.enframe(a.getUnit().getSpecificAilment(values[i]).getName().getBest()));
 				description = description.replace("{ab" + i + "}", Methods.enframe(a.getUnit().getSpecificAbility(values[i]).getName().getBest()));
 				description = description.replace("{p" + i + "}", Methods.enframe(a.getUnit().getSpecificPassive(values[i]).getName().getBest()));
-				if(a.getMaxStacks() > 1 || isValType16)
+				if(a.getMaxStacks() > 1 || isSpecialValType)
 					description = description.replace("{" + i + "}", stack);
 				else
 					description = description.replace("{" + i + "}", values[i]+"");
@@ -103,7 +104,7 @@ public abstract class _AilmentEffect implements _Plugin {
 		while(description.contains("{s") && values != null) { //{s1} = +10 || -10
 			String skill = description.substring(description.indexOf("{s"), description.indexOf("}", description.indexOf("{s")) + 1);
 			int idx = skill.charAt(2) - '0';
-			String ret = (values[idx] > 0 ? "+" : "") + (a.getMaxStacks() > 1 || isValType16 ? stack : values[idx]);
+			String ret = (values[idx] > 0 ? "+" : "") + (a.getMaxStacks() > 1 || isSpecialValType ? stack : values[idx]);;
 			description = description.replace(skill, ret);
 		}
 		while(description.contains("{a") && values != null) { //{a1234} = Frame Ailment
@@ -122,9 +123,10 @@ public abstract class _AilmentEffect implements _Plugin {
 							plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
 			description = description.replace(plurality, ret);
 		}
-		if(isValType16) {
+		if(isSpecialValType) {
 			Ailment t = a.getUnit().getAilments().get(a.getValSpecify()[effectIndex]);
-			description += " based on " + Methods.enframe(t != null ? t.getName().getBest() : "Unknown Ailment: " + a.getValSpecify()[effectIndex]) + " stacks on target";
+			description += " " + _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]).getSpecialText()
+										.replace("{0}", Methods.enframe(t != null ? t.getName().getBest() : "Unknown Ailment: " + a.getValSpecify()[effectIndex]));
 		}
 		return description.trim();
 	}

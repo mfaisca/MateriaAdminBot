@@ -69,8 +69,19 @@ public class Unit {
 	public HashMap<Integer, Ability> getAbilities() { return abilities; }
 	public HashMap<Integer, Passive> getJPPassives() { return jpPassives; }
 	public HashMap<Integer, Passive> getGLPassives() { return glPassives; }
-	public HashMap<Integer, Passive> getPassives() { return region.equals("GL") ? getGLPassives() : getJPPassives(); }
-	public List<Passive> getCharaBoards() { return charaBoards; }
+	public HashMap<Integer, Passive> getPassives() { return region.equals(Region.GL) ? getGLPassives() : getJPPassives(); }
+	public HashMap<Integer, Passive> getPassives(Region region) { return region.equals(Region.GL) ? getGLPassives() : getJPPassives(); }
+	public List<Passive> getCharaBoards() { return getCharaBoards(null); }
+	public List<Passive> getCharaBoards(AttackName attackName) {
+		if(attackName == null) return charaBoards;
+		switch(attackName) {
+		case S1: return charaBoards.subList(0, 6);
+		case S2: return charaBoards.subList(6, 12);
+		case EX: return charaBoards.subList(12, 18);
+		case LD: return charaBoards.subList(18, charaBoards.size());
+		default: return null; //Never
+		}
+	}
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
 	public List<Equipment> getEquipment() { return equipment; }
 	public List<Passive> getArtifacts() { return artifacts; }
@@ -137,8 +148,8 @@ public class Unit {
 	public Passive getPassive(int level) {
 		return getPassive(level, null);
 	}
-	public Passive getPassive(int level, String region) {
-		return ((region == null ? "GL" : region).equals("GL") ? getPassives() : getJPPassives())
+	public Passive getPassive(int level, Region region) {
+		return ((region == null ? Region.GL : region).equals(Region.GL) ? getPassives() : getJPPassives())
 				.entrySet().stream()
 				.filter(e -> e.getValue().getLevel() == level)
 				.map(e -> e.getValue())

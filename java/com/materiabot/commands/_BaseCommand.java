@@ -1,6 +1,5 @@
 package com.materiabot.commands;
 import com.materiabot.Utils.CooldownManager;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -16,12 +15,13 @@ public abstract class _BaseCommand{
 
 	protected _BaseCommand(String keyword, String help) { this(keyword, help, false); }
 	protected _BaseCommand(String keyword, String help, boolean materiaOnly) {
-		this.commandName = keyword;
+		this.commandName = keyword.toLowerCase();
 		this.help = help;
 		this.materiaOnly = materiaOnly;
 	}
 	public boolean isMateriaOnly() { return materiaOnly; }
-	public CooldownManager.Type getCooldown(final Message message) { return CooldownManager.Type.REGULAR; }
+	public boolean isEtherealReply(SlashCommandEvent event) { return false; }
+	public CooldownManager.Type getCooldown(SlashCommandEvent event) { return CooldownManager.Type.REGULAR; }
 
 	public void doStuff(SlashCommandEvent event) {};
 	public void doStuff(ButtonClickEvent event) {};

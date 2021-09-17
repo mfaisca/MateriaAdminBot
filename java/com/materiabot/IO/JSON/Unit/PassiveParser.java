@@ -9,7 +9,7 @@ import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 
 public class PassiveParser {
 	public List<Passive> parsePassives(MyJSONObject obj, String passiveArray) {
-		List<Passive> passives = new LinkedList<Passive>();
+		List<Passive> passives = new LinkedList<>();
 		for(MyJSONObject s : obj.getObjectArray(passiveArray)) {
 			Passive p = parsePassive(s);
 			if(p != null)
@@ -24,9 +24,14 @@ public class PassiveParser {
 		p.setName(s.getText("name"));
 		p.setDesc(s.getText("desc"));
 		p.setShortDesc(s.getText("short_desc"));
-		p.setCp(s.getObject("meta_data").getInt("cp"));
-		p.setLevel(s.getObject("meta_data").getInt("level"));
+		if(s.getObject("meta_data").getInt("cp") != null)
+			p.setCp(s.getObject("meta_data").getInt("cp"));
+		if(s.getObject("meta_data").getInt("level") != null)
+			p.setLevel(s.getObject("meta_data").getInt("level"));
 		p.setTargetId(s.getObject("meta_data").getInt("target"));
+		p.setRequiredPassive(s.getObject("meta_data").getInt("required_passive"));
+		if(s.getObject("type_data") != null)
+			p.setDisplayType(s.getObject("type_data").getInt("disp_type"));
 		p.setTarget(PassiveTarget.get(s.getObject("meta_data").getInt("target")));
 
 		for(MyJSONObject o : s.getObjectArray("effects")) {

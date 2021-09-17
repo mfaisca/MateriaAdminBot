@@ -6,6 +6,7 @@ public abstract class _ValType {
 	public static final HashMap<Integer, _ValType> VAL_TYPES = new HashMap<Integer, _ValType>();
 	
 	private int valType;
+	private boolean special = false;
 	
 	static {
 		new ValType0();
@@ -24,13 +25,17 @@ public abstract class _ValType {
 		new ValType18();
 		new ValType20();
 	}
-	
-	public _ValType(int valType) {
+
+	protected _ValType(int valType) { this(valType, false); }
+	protected _ValType(int valType, boolean special) {
 		this.valType = valType;
+		this.special = special;
 		VAL_TYPES.put(valType, this);
 	}
 
 	public int getValType() { return valType; }
 
 	public abstract Integer[] getValues(Ailment ailment, int index, int rank);
+	public boolean isSpecial(int valEditType) { return special; }
+	public String getSpecialText() { return null; }
 }

@@ -14,9 +14,11 @@ public class Passive implements Comparable<Passive>{
 	private String manualDesc;
 	private int cp, level;
 	private int targetId;
+	private int displayType;
+	private int requiredPassive;
 	private PassiveTarget target;
-	private List<PassiveEffect> effects = new LinkedList<PassiveEffect>();
-	private List<PassiveCondition> conditions = new LinkedList<PassiveCondition>();
+	private List<PassiveEffect> effects = new LinkedList<>();
+	private List<PassiveCondition> conditions = new LinkedList<>();
 	
 	public Passive() {}
 	public Passive(String text) { setName(new Text(text)); setManualDesc(text); }
@@ -44,13 +46,37 @@ public class Passive implements Comparable<Passive>{
 	public PassiveTarget getTarget() { return target; }
 	public void setTarget(PassiveTarget target) { this.target = target; }
 	
+	/**
+	 * @return the displayType
+	 */
+	public int getDisplayType() {
+		return displayType;
+	}
+	/**
+	 * @param displayType the displayType to set
+	 */
+	public void setDisplayType(int displayType) {
+		this.displayType = displayType;
+	}
+	/**
+	 * @return the requiredPassive
+	 */
+	public int getRequiredPassive() {
+		return requiredPassive;
+	}
+	/**
+	 * @param requiredPassive the requiredPassive to set
+	 */
+	public void setRequiredPassive(Integer requiredPassive) {
+		this.requiredPassive = requiredPassive == null ? -1 : requiredPassive;
+	}
 	public String generateDescription() {
 		if(getManualDesc() != null)
 			return getManualDesc();
 		if(this.getLevel() == 20 || this.getLevel() == 55 || this.getLevel() == 60 || 
 			this.getLevel() == 70 || this.getLevel() == 75 || this.getLevel() == 80 || this.getLevel() == 85 || this.getLevel() == 90)
 			return this.getDesc().getBest();
-		List<String> ret = new LinkedList<String>();
+		List<String> ret = new LinkedList<>();
 		ret.add(buildCondition());
 		boolean hasCondition = ret.get(0).length() > 0;
 		for(PassiveEffect pe : getEffects())
@@ -58,8 +84,8 @@ public class Passive implements Comparable<Passive>{
 		return ret.stream().distinct().filter(s -> s.length() > 0).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").trim();
 	}
 	private String buildCondition() {
-		String condition1 = getConditions().get(0).getDescription().trim();
-		String condition2 = getConditions().get(1).getDescription().trim();
+		String condition1 = getConditions().size() > 0 ? getConditions().get(0).getDescription().trim() : "";
+		String condition2 = getConditions().size() > 1 ? getConditions().get(1).getDescription().trim() : "";
 		if(condition1.length() == 0)
 			condition1 = condition2;
 		else if(getConditions().get(1).getRequiredId() == 53)

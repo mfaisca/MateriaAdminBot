@@ -8,6 +8,7 @@ import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands._BaseCommand;
 import com.michaelwflaherty.cleverbotapi.CleverBotQuery;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class CleverbotCommand extends _BaseCommand {
@@ -41,5 +42,5 @@ public class CleverbotCommand extends _BaseCommand {
 	}
 	
 	@Override
-	public CooldownManager.Type getCooldown(Message message) { return CooldownManager.Type.CLEVERBOT; }
+	public CooldownManager.Type getCooldown(SlashCommandEvent event) { return CooldownManager.Type.CLEVERBOT; }
 }

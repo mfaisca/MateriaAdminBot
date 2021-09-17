@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Ability;
@@ -22,8 +23,8 @@ public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 6;
-		
+		int key = 99;
+
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
 		if(key == 2)
@@ -84,24 +85,25 @@ public class Effect_Analyzer {
 	}
 	
 	private static void findMissing() {
-		HashMap<Integer, List<Unit>> map = new HashMap<>();
+		HashMap<String, List<String>> map = new HashMap<>();
 		
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
-			.flatMap(u -> Streams.concat(u.getUpgradedAbilities().stream(), u.getTriggeredAbilities().stream()))
-			.forEach(hd -> {
-				for(Integer i : hd.getReqMiscConditions().stream().map(mc -> Integer.valueOf(mc.getLabelId())).collect(Collectors.toList()))
-					if(!(Constants.LABELS.get(i) != null && Constants.LABELS.get(i).getBaseDescription().length() > 0)){
-						if(!map.containsKey(i))
-							map.put(i, new LinkedList<>());
-						if(!map.get(i).contains(hd.getUnit()))
-							map.get(i).add(hd.getUnit());
-					}
+			.flatMap(u -> u.getAilments().values().stream())
+			.forEach(a -> {
+				int icon3 = a.getBuffType();
+				int icon = a.getIconType();
+				int icon2 = a.getDispType();
+				String key = icon3 + "/" + icon + "/" + icon2;
+				if(!map.containsKey(key))
+					map.put(key, new LinkedList<>());
+				if(a.getUnit() != null)
+					map.get(key).add(a.getUnit().getName() + "/" + a.getName().getBest());
+				else
+					map.get(key).add(a.getAbility().getUnit().getName() + "/" + a.getName().getBest());
 			});
-		map.keySet().stream().distinct().sorted().forEach(k -> {
-//			boolean ok = Constants.PASSIVE_REQUIRED.get(k) != null && Constants.PASSIVE_REQUIRED.get(k).getBaseDescription().length() > 0;
-//			System.out.println(k + " - " + (ok ? "OK" : "NO") + " - " + map.get(k).toString());
-			System.out.println(k + " - " + map.get(k).toString());
+		map.keySet().stream().sorted().forEach(k -> {
+			System.out.println(k + " - " + map.get(k).stream().distinct().collect(Collectors.toList()).toString());
 		});
 	}
 	
@@ -121,6 +123,7 @@ public class Effect_Analyzer {
 					map.get(aid.getEffectId()).add(aid.getAbility().getUnit());
 				}
 			});
+		System.out.println("ABILITY EFFECTS:");
 		map.keySet().stream().distinct().sorted().forEach(k -> {
 			System.out.println(k + " - " + map.get(k).toString());
 		});
@@ -237,10 +240,11 @@ public class Effect_Analyzer {
 				_AuraEffect a = Constants.AURA_EFFECT.get(aid.getTypeId());
 				if(a == null) {
 					if(!map.containsKey(aid.getTypeId()))
-						map.put(aid.getTypeId(), new LinkedList<Unit>());
+						map.put(aid.getTypeId(), new LinkedList<>());
 					map.get(aid.getTypeId()).add(aid.getAilment().getUnit());
 				}
 			});
+		System.out.println("AURA EFFECTS:");
 		map.keySet().stream().distinct().sorted().forEach(k -> {
 			System.out.println(k + " - " + map.get(k).toString());
 		});
@@ -256,8 +260,6 @@ public class Effect_Analyzer {
 				String ogaS = (oga == null ? "Unknown Ability(" : (oga.getName().getBest() + "(")) + oga.getId() + ")";
 				Ability tga = hd.getUnit().getSpecificAbility(hd.getSecondaryId());
 				String tgaS = (tga == null ? "Unknown Ability(" : (tga.getName().getBest() + "(")) + tga.getId() + ")";
-				boolean allValues = true;
-				String builder = "";
 				for(MiscCondition mc : hd.getReqMiscConditions()) {
 					if(mc.getLabel() == null) {
 						if(!map.containsKey(mc.getLabelId()))
@@ -267,9 +269,9 @@ public class Effect_Analyzer {
 					}	
 				}
 			});
-		for(int k : map.keySet()) {
-			System.out.println("Label:" + k);
-			for(String s : map.get(k).stream().distinct().collect(Collectors.toList()))
+		for(Entry<Integer, List<String>> k : map.entrySet()) {
+			System.out.println("Label:" + k.getKey());
+			for(String s : k.getValue().stream().distinct().collect(Collectors.toList()))
 				System.out.println("\t" + s);
 		}
 	}

@@ -21,7 +21,7 @@ public class Main {
 			return;
 		}
 		System.out.println("Connected to DB");
-		final List<GatewayIntent> gateways = Arrays.asList(GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS, GatewayIntent.GUILD_MESSAGES);
+		final List<GatewayIntent> gateways = Arrays.asList(GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS);
 		JDA client = JDABuilder.createDefault(privateToken).setAutoReconnect(true)
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();
@@ -37,7 +37,6 @@ public class Main {
 	}
 	
 	
-	//TODO Passive Effect 185 and 210 Missing
-	//185 - Selphie CL85, one of the 80%
+	//TODO Passive Effect 210 Missing
 	//210 - "Activate Passive {0}" - That thing that Rem explained about chained passives
 }

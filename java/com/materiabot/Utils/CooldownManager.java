@@ -8,7 +8,7 @@ import com.materiabot.commands.general.PatreonCommand;
 import net.dv8tion.jda.api.entities.User;
 
 public class CooldownManager {
-	public static enum Type{
+	public enum Type{
 		REGULAR(5, 2), PULL(30, 20), GOLDPULL(600, 60), CLEVERBOT(30, 2);
 		private int regularCD, patreonCD;
 		
@@ -22,7 +22,7 @@ public class CooldownManager {
 	public static final LoadingCache<String, HashMap<Type, Long>> USER_COOLDOWNS = 
 			CacheBuilder.newBuilder()
 			.expireAfterAccess(15, TimeUnit.MINUTES).build(new CacheLoader<String, HashMap<Type, Long>>(){
-				public HashMap<Type, Long> load(String key) throws Exception { return new HashMap<Type, Long>(); }
+				public HashMap<Type, Long> load(String key) throws Exception { return new HashMap<>(); }
 			});
     
 	private CooldownManager() {}

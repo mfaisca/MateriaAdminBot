@@ -1,11 +1,16 @@
 package com.materiabot.Utils;
 import java.util.Optional;
+import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Equipment;
 import com.materiabot.GameElements.Unit;
+import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import net.dv8tion.jda.api.entities.Emote;
 
-public abstract class ImageUtils {
-	public static enum Emotes{
+public interface ImageUtils {
+	public enum Emotes{
+		GTFO("gtfo"),
+		INVISIBLE("invisible"),
+		BASE_DESC("baseDesc"),
 		UNKNOWN_EMOTE("unknownEmote"),
 		GEAR_NO_LB("iconnolb"),
 		GEAR_LB("iconlb"),
@@ -23,9 +28,8 @@ public abstract class ImageUtils {
 		private Emotes(String s) { text = s; }
 		public String get() { return text; }
 	}
-	public static enum Images{
+	public enum Images{
 		BLUE_ANIM("https://cdn.discordapp.com/attachments/570156853296758794/719123410223104020/blue_1.gif"),
-		SILVER_ANIM("https://cdn.discordapp.com/attachments/570156853296758794/719123423921438750/silverfast.gif"),
 		GOLD_ANIM("https://cdn.discordapp.com/attachments/570156853296758794/719123419945369640/goldfast.gif"),
 		BURST_ANIM("https://cdn.discordapp.com/attachments/570156853296758794/719123430124814374/burst_1.gif"),
 		SORRY_MOOGLE_URL("https://dissidiadb.com/static/img/0002.0260da5.png"),
@@ -38,31 +42,59 @@ public abstract class ImageUtils {
 	}
 	
 	public static String getCharacterGearURL(Unit u, Equipment.Rarity equip) {
-//		String unitName = u.getName().replace(" ", "").replace("'", "");
-//		String gearTag = equip.getImageName();
-		//http://dissidiacompendium.com/images/static/characters/Ace/4a.png
 		return "https://dissidiadb.com/static/img/gear/" + u.getEquipment(equip).getId() + ".png";
+	}
+
+	public static String getAilmentEmote(Unit u, int ailmentId) {
+		return getAilmentEmote(u.getAilments().get(ailmentId));
+	}
+	public static String getAilmentEmote(Ailment a) {
+		if(a == null)
+			return ImageUtils.Emotes.UNKNOWN_EMOTE.get();
+		return getAilmentEmote(a.getIconType(), a.getDispType(), 
+					a.getTarget() == TargetType.Target || a.getTarget() == TargetType.AllEnemies, a.getMaxStacks() > 0 ? 1 : -1, a.getId());
+	}
+	public static String getAilmentEmote(int iconType, int dispType, boolean enemy, int stacks, int buffId) {
+		String emote = null;
+		if(iconType > 0 && iconType != 14) {
+			if(stacks > 0)
+				emote = enemy ? "ailment3" : "ailment17";
+			else
+				emote = "ailment" + iconType;
+		}
+		else if(iconType == 14 && dispType > 0)
+			emote = "specialAilment" + dispType;
+		else if(buffId > 0)
+			switch(buffId) {
+				case 88: emote = "ailmentNinjaOK"; break;
+				case 89: emote = "ailmentSageOK"; break;
+				case 115: emote = "ailmentAce"; break;
+				case 1508: emote = "ailmentTrey"; break;
+				case 3053: emote = "ailmentJegran"; break;
+			}
+		if(stacks > 0 && emote != null)
+			emote = emote + "_" + stacks;
+		if(emote == null || ImageUtils.Emotes.UNKNOWN_EMOTE.get().equals(emote))
+			return getEmoteText("ailmentInvisible");
+		return getEmoteText(emote);
 	}
 	
 	public static Emote getEmoteClassByName(String name) {
-		final String name2 = name.replaceAll(" ", "").replaceAll("'", "").replaceAll("&", "");
+		final String name2 = name.replace(" ", "").replace("'", "").replace("&", "").replace("(", "").replace(")", "");
 		if(Constants.getClient() == null) return null;
 		Emote emo = Constants.getClient().getGuilds().stream()
-				.filter(s -> {
-					return s.getOwnerIdLong() == Constants.QUETZ_ID && s.getIdLong() != Constants.MATERIABOT_SERVER_ID;
-				})
-				.flatMap(g -> {
-					return g.getEmotes().stream();
-				})
-				.filter(e -> {
-					return e.getName().equalsIgnoreCase(name2);
-				})
+				.filter(s -> s.getOwnerIdLong() == Constants.QUETZ_ID && s.getIdLong() != Constants.MATERIABOT_SERVER_ID)
+				.flatMap(g -> g.getEmotes().stream())
+				.filter(e -> e.getName().equalsIgnoreCase(name2))
 				.findFirst()
 				.orElse(name2.equalsIgnoreCase(ImageUtils.Emotes.UNKNOWN_EMOTE.get()) ? null : getEmoteClassByName(ImageUtils.Emotes.UNKNOWN_EMOTE.get()));
 		return emo;
 	}
-	public static final String getEmoteText(String name) {
+	public static String getEmoteText(String name) {
 		Optional<Emote> o = Optional.ofNullable(getEmoteClassByName(name));
 		return o.isPresent() ? "<:" + o.get().getName() + ":" + o.get().getId() + ">" : (name.equalsIgnoreCase(ImageUtils.Emotes.UNKNOWN_EMOTE.get()) ? null : getEmoteText(ImageUtils.Emotes.UNKNOWN_EMOTE.get()));
+	}
+	public static String getEmoteText(Emotes e) {
+		return getEmoteText(e.get());
 	}
 }

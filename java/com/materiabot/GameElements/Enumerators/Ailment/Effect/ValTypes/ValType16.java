@@ -3,7 +3,7 @@ import com.materiabot.GameElements.Ailment;
 
 public class ValType16 extends _ValType{
 	public ValType16() {
-		super(16);
+		super(16, true);
 	}
 
 	@Override
@@ -30,5 +30,9 @@ public class ValType16 extends _ValType{
 					ret[i] = -ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[i][2]; break;
 			}
 		return ret;
+	}
+	@Override
+	public String getSpecialText() { 
+		return "based on {0} stacks on target";
 	}
 }

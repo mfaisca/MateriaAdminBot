@@ -3,12 +3,12 @@ import com.materiabot.GameElements.Ailment;
 
 public class ValType18 extends _ValType{
 	public ValType18() {
-		super(18);
+		super(18, true);
 	}
 
 	@Override
 	public Integer[] getValues(Ailment ailment, int index, int rank) { //Returns all rank_data for debuff-based ailment, from 0 to 8
-		Integer[] ret = new Integer[8];
+		Integer[] ret = new Integer[9];
 		for(int i = 0; i < ret.length; i++)
 			switch(ailment.getValEditTypes()[index]) {
 				case 0: //Rank Table direct value
@@ -29,5 +29,9 @@ public class ValType18 extends _ValType{
 					ret[i] = -ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[i][2]; break;
 			}
 		return ret;
+	}
+	@Override
+	public String getSpecialText() { 
+		return "based on number of existing debuffs on enemies";
 	}
 }

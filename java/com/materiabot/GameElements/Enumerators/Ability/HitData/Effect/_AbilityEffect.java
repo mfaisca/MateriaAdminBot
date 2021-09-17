@@ -6,6 +6,8 @@ import com.materiabot.GameElements.HitData;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
+import com.materiabot.Utils.ImageUtils;
+import Shared.Methods;
 
 public class _AbilityEffect implements _Plugin {
 	public enum TAG{
@@ -42,11 +44,11 @@ public class _AbilityEffect implements _Plugin {
 		else
 			description = description.replace("{of}", "");
 		for(int i = 0; i < hd.getArguments().length; i++) {
-			description = description.replace("{ail" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest() + "**」");
-			description = description.replace("{ab" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest() + "**」");
-			description = description.replace("{p" + i + "}", "「**" + hd.getAbility().getUnit().getSpecificPassive(hd.getArguments()[i]).getName().getBest() + "**」");
-			description = description.replace("{s1}", "「**" + hd.getAbility().getUnit().getAbility(AttackName.S1).get(0).getName().getBest() + "**」");
-			description = description.replace("{s2}", "「**" + hd.getAbility().getUnit().getAbility(AttackName.S2).get(0).getName().getBest() + "**」");
+			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(hd.getAbility().getUnit(), hd.getArguments()[i]) + Methods.enframe(hd.getAbility().getUnit().getSpecificAilment(hd.getArguments()[i]).getName().getBest()));
+			description = description.replace("{ab" + i + "}", Methods.enframe(hd.getAbility().getUnit().getSpecificAbility(hd.getArguments()[i]).getName().getBest()));
+			description = description.replace("{p" + i + "}", Methods.enframe(hd.getAbility().getUnit().getSpecificPassive(hd.getArguments()[i]).getName().getBest()));
+			description = description.replace("{s1}", Methods.enframe(hd.getAbility().getUnit().getAbility(AttackName.S1).get(0).getName().getBest()));
+			description = description.replace("{s2}", Methods.enframe(hd.getAbility().getUnit().getAbility(AttackName.S2).get(0).getName().getBest()));
 			description = description.replace("{" + i + "}", hd.getArguments()[i]+"");
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

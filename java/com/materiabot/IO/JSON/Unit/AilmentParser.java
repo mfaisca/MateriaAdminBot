@@ -40,6 +40,7 @@ public class AilmentParser {
 		ail.setArgs(ailment.getObject("meta_data").getIntArray("arguments"));
 		ail.setBuffType(ailment.getObject("type_data").getInt("buff_type"));
 		ail.setIconType(ailment.getObject("type_data").getInt("icon_type"));
+		ail.setDispType(ailment.getObject("type_data").getInt("disp_type"));
 		ail.setExtendable(ailment.getObject("type_data").getBoolean("extendable"));
 		ail.setBurstExtendable(ailment.getObject("type_data").getBoolean("burst_ext"));
 		ail.setFramed(ailment.getObject("type_data").getInt("removable") == 0);

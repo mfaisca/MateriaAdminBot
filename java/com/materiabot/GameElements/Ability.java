@@ -199,6 +199,8 @@ public class Ability implements Comparable<Ability>{
 		boolean sameAttackType = true;
 		
 		for(HitData hd : this.getHitData()) {
+			if(hd.getId() == 10827)
+				System.out.println();
 			if(hd.getManualDescription() != null) {
 				effectList.add(hd.getManualDescription());
 				continue;
@@ -241,6 +243,12 @@ public class Ability implements Comparable<Ability>{
 			preEffects.add(0, "High Turn Rate (" + this.getMovementCost() + ")");
 		else if(this.getMovementCost() > 30)
 			preEffects.add(0, "Low Turn Rate (" + this.getMovementCost() + ")");
+		if(chaseDmg == 50)
+			postEffects.add("Initiates a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
+		else if(chaseDmg > 6)
+			postEffects.add("Easier to initiate a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
+		else if(chaseDmg == 0)
+			preEffects.add("Cannot initiate a chase sequence");
 		if(stBrvIncrease > 0)
 			preEffects.add(0, "Raises BRV Damage by " + stBrvIncrease + "% against ST");
 		if(brvDamageLimit > 0)

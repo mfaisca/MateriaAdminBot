@@ -1,4 +1,4 @@
-package com.materiabot.GameElements;
+package com.materiabot.GameElements.Summon;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,8 +6,10 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 
 import com.materiabot._Library;
+import com.materiabot.GameElements.Element;
+import com.materiabot.GameElements.Unit;
 
-public class Summon{	
+public abstract class _Summon{
 	public static class SummonPassive{
 		private String name, description, shortDesc;
 		private boolean recommended = false;
@@ -32,18 +34,42 @@ public class Summon{
 		public void setRecommended(boolean recommended) { this.recommended = recommended; }
 	}
 	
+	static {
+		new Ifrit30();
+		new Ifrit40();
+		new Shiva30();
+		new Shiva40();
+		new Ramuh30();
+		new Ramuh40();
+		new Leviathan30();
+		new Leviathan40();
+		new Brothers30();
+		new Brothers40();
+		new Pandemonium30();
+		new Pandemonium40();
+		new Alexander30();
+		new Alexander40();
+		new Diabolos30();
+		new Diabolos40();
+		new Odin30();
+		new Bahamut30();
+		new Chocobo20();
+		new Sylph20();
+		new SpiritMoogle20();
+	}
+	
 	private Element element;
 	private String attackName, blessing, ability, chargeType, nodeCount;
-	private List<String> nicknames = new LinkedList<String>();
+	private List<String> nicknames = new LinkedList<>();
 	private int turns, maxBrvBonus, maxLevel;
 	private SummonPassive[] boardPassives;
 	private String specialBoostedChars;
 	private Unit[] chars = new Unit[6];
 	
-	public Summon(List<String> names, int level, Element element, String attackName, String blessing, String ability, int turns, int maxbrvBonus, String chargeSpeed) {
+	protected _Summon(List<String> names, int level, Element element, String attackName, String blessing, String ability, int turns, int maxbrvBonus, String chargeSpeed) {
 		this(names, level, element, attackName, blessing, null, ability, null, turns, maxbrvBonus, chargeSpeed);
 	}
-	public Summon(List<String> names, int level, Element element, String attackName, String blessing, String ability, 
+	protected _Summon(List<String> names, int level, Element element, String attackName, String blessing, String ability, 
 					String nodeCount, String specialBoostedChars, int turns, int maxbrvBonus, String chargeSpeed, 
 					SummonPassive... boardPassives) {
 		nicknames = names.stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
@@ -58,6 +84,7 @@ public class Summon{
 		this.maxBrvBonus = maxbrvBonus;
 		this.chargeType = chargeSpeed;
 		this.specialBoostedChars = specialBoostedChars;
+		_Library.SUMMON_LIST.add(this);
 	}
 	
 	public String getName() {
@@ -104,11 +131,23 @@ public class Summon{
 		return chars;
 	}
 	public String getEmoteFrame() { return getName().replace(" ", "").toLowerCase() + "Frame"; }
+	public String getEmoteGoldFrame() { return getName().replace(" ", "").toLowerCase() + "GFrame"; }
 	public String getEmoteCrystal() { return getName().replace(" ", "").toLowerCase() + "Crystal"; }
 	public String getEmoteFace() { return getName().replace(" ", "").toLowerCase() + "Face"; }
+	public String getEmoteFrameLevelled() { return getMaxLevel() == 40 ? getEmoteGoldFrame() : getMaxLevel() == 30 ? getEmoteFrame() : getEmoteFace(); }
 
-	public static final Summon getSummonFromWoIWeapon(Unit u) {
-		Summon s = null;
+	public static final _Summon getSummon(String name) {
+		return getSummon(name, -1);
+	}
+	public static final _Summon getSummon(String name, int level) {
+		return _Library.SUMMON_LIST.stream()
+					.filter(s -> s.getNicknames().contains(name) && (level == -1 || s.getMaxLevel() == level))
+					.sorted((s1, s2) -> Integer.compare(s2.getMaxLevel(), s1.getMaxLevel()))
+					.findFirst().orElse(null);
+	}
+	
+	public static final _Summon getSummonFromWoIWeapon(Unit u) {
+		_Summon s = null;
 		switch(u.getName().toLowerCase()){
 			case "cloud": s = _Library.getSummon("Ifrit"); break;
 			case "rem": s = _Library.getSummon("Shiva"); break;

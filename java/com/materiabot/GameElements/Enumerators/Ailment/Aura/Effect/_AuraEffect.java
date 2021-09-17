@@ -4,6 +4,8 @@ import com.materiabot.GameElements.Aura;
 import com.materiabot.GameElements.Enumerators._Plugin;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect.ValTypes._ValType;
+import com.materiabot.Utils.ImageUtils;
+import Shared.Methods;
 
 public abstract class _AuraEffect implements _Plugin {
 	protected int id;
@@ -46,9 +48,9 @@ public abstract class _AuraEffect implements _Plugin {
 		if(description.contains("{sAA}"))
 			description = description.replace("{sAA}", "「**" + a.getAilment().getUnit().getAbility(AttackName.AA).get(0).getName().getBest() + "**」");
 		for(int i = 0; i < values.length; i++) {
-			description = description.replace("{ail" + i + "}", a.getAilment().getUnit().getSpecificAilment(values[i]).getName().getBest());
-			description = description.replace("{ab" + i + "}", a.getAilment().getUnit().getSpecificAbility(values[i]).getName().getBest());
-			description = description.replace("{p" + i + "}", a.getAilment().getUnit().getSpecificPassive(values[i]).getName().getBest());
+			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(a.getAilment().getUnit(), values[i]) + Methods.enframe(a.getAilment().getUnit().getSpecificAilment(values[i]).getName().getBest()));
+			description = description.replace("{ab" + i + "}", Methods.enframe(a.getAilment().getUnit().getSpecificAbility(values[i]).getName().getBest()));
+			description = description.replace("{p" + i + "}", Methods.enframe(a.getAilment().getUnit().getSpecificPassive(values[i]).getName().getBest()));
 			if(a.getAilment().getMaxStacks() > 1)
 				description = description.replace("{" + i + "}", stack);
 			else

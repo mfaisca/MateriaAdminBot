@@ -8,6 +8,7 @@ import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.ImageUtils;
 import com.materiabot.Utils.MessageUtils;
 
 public class Ailment { //TODO Missing icons	
@@ -171,13 +172,17 @@ public class Ailment { //TODO Missing icons
 
 	@Override
 	public boolean equals(Object o) {
+		if(o == null || !o.getClass().equals(Ailment.class)) return false;
 		return this.getId() == ((Ailment)o).getId();
 	}
 
 	public String generateTitle() {
 		if(this.getFakeName() != null) return getFakeName().getBest();
 		if(isDeadEffect()) return "";
-		return this.getName().getBest() + (this.getName().getBest() == null || Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
+		String icon = ImageUtils.getAilmentEmote(this);
+		if(!(icon.startsWith("<:specialAilment") || icon.contains("Invisible")))
+			icon = (this.isGolden() ? ImageUtils.getEmoteText("ailmentGolden") : (this.isFramed() ? ImageUtils.getEmoteText("ailmentSilver") : "")) + icon;
+		return icon + this.getName().getBest() + (this.getName().getBest() == null || Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}
 
 	public String generateDescription() {
@@ -209,8 +214,9 @@ public class Ailment { //TODO Missing icons
 		public String toString() {
 			return (condi != null && condi.length() > 0 ? condi + System.lineSeparator() : "") + 
 					desc.stream()
-			.map(d -> (condi != null && condi.length() > 0 ? MessageUtils.tab() : "") + d)
-			.reduce((d1, d2) -> d1 + System.lineSeparator() + d2).orElse("Error Parsing Ailment Block");
+						.map(d -> (condi != null && condi.length() > 0 ? MessageUtils.tab() : "") + d)
+						.distinct()
+						.reduce((d1, d2) -> d1 + System.lineSeparator() + d2).orElse("Error Parsing Ailment Block");
 		}
 		@Override
 		public int compareTo(AilmentBlock other) {
@@ -241,7 +247,7 @@ public class Ailment { //TODO Missing icons
 		if(!isBurstExtendable())
 			finalDescription.add(0, new AilmentBlock(null, "Decreases in BURST mode"));
 		finalDescription.addAll(generateEffectDescription());
-		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
+		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
 	}
 	private List<AilmentBlock> generateEffectDescription() {
 		if(this.getFakeDesc() != null) return null;

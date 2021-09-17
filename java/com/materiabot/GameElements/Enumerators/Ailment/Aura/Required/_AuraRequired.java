@@ -1,6 +1,7 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Aura.Required;
 import com.materiabot.GameElements.Aura;
 import com.materiabot.GameElements.Enumerators._Plugin;
+import com.materiabot.Utils.ImageUtils;
 import Shared.Methods;
 
 public abstract class _AuraRequired implements _Plugin {
@@ -24,7 +25,7 @@ public abstract class _AuraRequired implements _Plugin {
 		description = description.replace("{u}", a.getAilment().getUnit().getName());
 		description = description.replace("{ail}", a.getAilment().getName().getBest());
 		for(int i = 0; i < 2; i++) {
-			description = description.replace("{ail" + i + "}", Methods.enframe(a.getAilment().getUnit().getSpecificAilment(a.getRequiredValues()[index * 2 + i]).getName().getBest()));
+			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(a.getAilment().getUnit(), a.getRequiredValues()[index * 2 + i]) + Methods.enframe(a.getAilment().getUnit().getSpecificAilment(a.getRequiredValues()[index * 2 + i]).getName().getBest()));
 			description = description.replace("{ab" + i + "}", Methods.enframe(a.getAilment().getUnit().getSpecificAbility(a.getRequiredValues()[index * 2 + i]).getName().getBest()));
 			description = description.replace("{p" + i + "}", Methods.enframe(a.getAilment().getUnit().getSpecificPassive(a.getRequiredValues()[index * 2 + i]).getName().getBest()));
 			description = description.replace("{" + i + "}", ""+a.getRequiredValues()[index * 2 + i]);
