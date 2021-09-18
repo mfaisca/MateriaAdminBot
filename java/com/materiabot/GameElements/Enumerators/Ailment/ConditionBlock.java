@@ -8,7 +8,7 @@ import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired
 public class ConditionBlock{
 	private Ailment ailment;
 	private Integer id;
-	private List<ConditionBlock> conditions = new LinkedList<ConditionBlock>();
+	private List<ConditionBlock> conditions = new LinkedList<>();
 	private String name;
 	private Integer targetId;
 	private RequiredTarget target;

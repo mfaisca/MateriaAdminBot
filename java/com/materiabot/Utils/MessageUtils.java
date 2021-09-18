@@ -18,11 +18,16 @@ import net.dv8tion.jda.api.interactions.components.Button;
 import net.dv8tion.jda.api.interactions.components.ButtonStyle;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import net.dv8tion.jda.api.interactions.components.selections.SelectionMenu;
+import net.dv8tion.jda.api.requests.restaction.MessageAction;
 import net.dv8tion.jda.api.requests.restaction.WebhookMessageAction;
 
 public abstract class MessageUtils {
 	public static final class Embed extends EmbedBuilder{
 		private List<ActionRow> rows = new LinkedList<>();
+		private boolean deleteActions = false;
+		
+		public boolean isDeleteActions() { return deleteActions; }
+		public void setDeleteActions(boolean deleteActions) { this.deleteActions = deleteActions; }
 		
 		public static Button createEmptyButton(ButtonStyle style) {
 			return createButton(style, "donotuse", ""+Methods.RNG.nextInt(500), "", ImageUtils.Emotes.INVISIBLE.get());
@@ -119,6 +124,18 @@ public abstract class MessageUtils {
 		builder.setDescription(message);
 		return sendEmbed(hook, builder);
 	}
+	public static final CompletableFuture<Message> sendEmbedToChannel(MessageChannel channel, EmbedBuilder embed){
+		MessageEmbed eb = embed.build();
+    	if(eb.getFooter() == null) {
+    		String footer = "If you like the bot, consider becoming a Patron:" + System.lineSeparator() + "https://patreon.com/MateriaBot";
+    		embed.setFooter(footer, ImageUtils.getEmoteClassByName("patreon").getImageUrl());
+    		eb = embed.build();
+    	}
+    	MessageAction ret = channel.sendMessageEmbeds(eb);
+    	if(embed.getClass().equals(Embed.class))
+    		ret.setActionRows(((Embed)embed).rows);
+    	return ret.submit();
+	}
 	public static final CompletableFuture<Message> sendEmbed(InteractionHook hook, EmbedBuilder embed){
 		MessageEmbed eb = embed.build();
     	if(eb.getFooter() == null) {
@@ -126,18 +143,6 @@ public abstract class MessageUtils {
     		embed.setFooter(footer, ImageUtils.getEmoteClassByName("patreon").getImageUrl());
     		eb = embed.build();
     	}
-    	
-//    	Button b4s = Button.secondary("4*", Emoji.fromEmote(ImageUtils.getEmoteClassByName("10cp")));
-//    	Button b15 = Button.secondary("15cp", Emoji.fromEmote(ImageUtils.getEmoteClassByName("15cp")));
-//    	Button bwoi = Button.secondary("WoI", Emoji.fromEmote(ImageUtils.getEmoteClassByName("IfritCrystal")));
-//    	Button b35 = Button.secondary("35cp", Emoji.fromEmote(ImageUtils.getEmoteClassByName("35cp")));
-//    	Button bnt = Button.secondary("NT", Emoji.fromEmote(ImageUtils.getEmoteClassByName("ntlogo")));
-//    	Button bmw = Button.secondary("MW", Emoji.fromEmote(ImageUtils.getEmoteClassByName("ironManikin")));
-//    	Button bex = Button.secondary("EX", Emoji.fromEmote(ImageUtils.getEmoteClassByName("70cpSquare")));
-//    	Button bexp = Button.secondary("EX+", Emoji.fromEmote(ImageUtils.getEmoteClassByName("100cpSquare")));
-//    	Button bld = Button.secondary("LD", Emoji.fromEmote(ImageUtils.getEmoteClassByName("90cpSquare")));
-//    	Button bbt = Button.secondary("BT", Emoji.fromEmote(ImageUtils.getEmoteClassByName("140cpSquare")));
-//    	Button bbtp = Button.secondary("BT+", Emoji.fromEmote(ImageUtils.getEmoteClassByName("140cpSquare")));
     	WebhookMessageAction<Message> ret = hook.sendMessageEmbeds(eb);
     	if(embed.getClass().equals(Embed.class))
     		ret.addActionRows(((Embed)embed).rows);
@@ -150,18 +155,22 @@ public abstract class MessageUtils {
 	public static final CompletableFuture<Message> editMessage(Message message, String msg) {
 		return message.editMessage(msg).submit();
 	}
-	public static final CompletableFuture<Message> editMessage(CompletableFuture<Message> hook, EmbedBuilder embed) {
+	public static final CompletableFuture<Message> editMessage(CompletableFuture<Message> hook, Embed embed) {
 		return hook.thenApply(r -> editMessage(r, embed).join());
 	}
-	public static final CompletableFuture<Message> editMessage(Message message, EmbedBuilder embed) {
+	public static final CompletableFuture<Message> editMessage(Message message, Embed embed) {
 		MessageEmbed eb = embed.build();
 		if(eb.getFooter() == null) {
     		String footer = "If you like the bot, consider becoming a Patron:" + System.lineSeparator() + "https://patreon.com/MateriaBot";
     		embed.setFooter(footer, ImageUtils.getEmoteClassByName("patreon").getImageUrl());
     		eb = embed.build();
     	}
-    	MessageEmbed eb2 = eb;
-		return message.editMessageEmbeds(eb2).submit();
+    	MessageAction eb2 = message.editMessageEmbeds(eb);
+    	if(embed.isDeleteActions()) {
+	    	eb2.override(true);
+	    	eb2.setActionRows(ActionRow.of());
+    	}
+		return eb2.submit();
 	}
 
 	public static final CompletableFuture<Message> addReactions(CompletableFuture<Message> hook, String... reactions) {

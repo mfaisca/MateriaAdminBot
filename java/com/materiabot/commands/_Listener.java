@@ -26,7 +26,7 @@ public class _Listener extends ListenerAdapter{
 			SLASH_COMMANDS{public void run(Event e) {
 				SlashCommandEvent event = (SlashCommandEvent)e;
 				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.getCommand().equals(event.getName())) {
+					if(c.getCommand().equalsIgnoreCase(event.getName())) {
 						event.deferReply(c.isEtherealReply(event)).queue();
 						c.doStuff(event);
 						return;
@@ -36,7 +36,7 @@ public class _Listener extends ListenerAdapter{
 				ButtonClickEvent event = (ButtonClickEvent)e;
 				String cmd = event.getButton().getId().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
 				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.getCommand().equals(cmd)) {
+					if(c.getCommand().equalsIgnoreCase(cmd)) {
 						event.deferEdit().queue();
 						c.doStuff(event);
 						return;

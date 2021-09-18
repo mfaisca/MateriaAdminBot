@@ -12,10 +12,8 @@ import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Required._AilmentRequired;
 import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
-import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.commands._BaseCommand;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Guild;
 
 public class Constants {
 	private static JDA client;
@@ -24,7 +22,6 @@ public class Constants {
 	public static final long QUETZ_ID = 141599746987917312L;
 	public static final long INK_ID = 290867157435416577L;
 	public static final long DREAMY_ID = 194476008395505664L;
-	public static final long JDOTA_ID = 521836678130827316L; //To create the votes
 	public static final Long MATERIABOT_SERVER_ID = 544340710862618624L;
 	public static final List<Unit> UNITS = new LinkedList<>();
 	public static final List<_BaseCommand> COMMANDS = new ArrayList<>();
@@ -50,15 +47,15 @@ public class Constants {
 	public static final void sleep(int sleep){
 		try {
 			Thread.sleep(sleep);
-		} catch (InterruptedException e) {}
+		} catch (InterruptedException e) {;}
 	}
-	public static String getGuildPrefix(Guild g) {
-		if(g == null || client.isUnavailable(g.getIdLong())) 
-			return Constants.DEFAULT_PREFIX;
-		if(!PREFIX.containsKey(g.getIdLong())) {
-			String p = SQLAccess.getGuildPrefix(g);
-			PREFIX.put(g.getIdLong(), p);
+	public static boolean userHasMateriaRole(long userId, long roleId) {
+		try {
+			return client.getGuildById(Constants.MATERIABOT_SERVER_ID)
+						.retrieveMemberById(userId).complete()
+						.getRoles().stream().anyMatch(r -> r.getIdLong() == roleId);
+		} catch(Exception e) {
+			return false;
 		}
-		return PREFIX.get(g.getIdLong());
 	}
 }

@@ -110,6 +110,7 @@ public class UnitParser {
 	private static void parseDefaultAilments(Unit u, MyJSONObject obj) {
 		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments")) {
 			a.setUnit(u);
+			a.setDefault(true);
 			u.getAilments().put(a.getId(), a);
 		}
 	}
@@ -132,7 +133,11 @@ public class UnitParser {
 					mc.setLabel(Constants.LABELS.get(mc.getLabelId()));
 					mc.setTargetId(miscC.getInt("target"));
 					mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
-					mc.setValues(miscC.getIntArray("values"));
+					try {
+						mc.setValues(miscC.getIntArray("values"));
+					} catch(Exception e) {
+						mc.setCondition(AilmentParser.parseConditionBlocks(null, miscC, "values")[0]);
+					}
 					ca.getReqMiscConditions().add(mc);
 				}
 				if(u.getSpecificAbility(ca.getSecondaryId()) == null) 

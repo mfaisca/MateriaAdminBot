@@ -104,8 +104,8 @@ public class AilmentParser {
 		return ail;
 	}
 	
-	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
-		List<ConditionBlock> conds = new LinkedList<ConditionBlock>();
+	public static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
+		List<ConditionBlock> conds = new LinkedList<>();
 		for(int i = 0; i < root.getJSON().getJSONArray(name).length(); i++) {
 			ConditionBlock c = new ConditionBlock(a);
 			try {

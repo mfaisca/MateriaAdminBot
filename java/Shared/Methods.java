@@ -6,6 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Methods {
+	private Methods() {}
 	public static final Random RNG = new Random();
 
 	public static final String urlizeDB(String s) {

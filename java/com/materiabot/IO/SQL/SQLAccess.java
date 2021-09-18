@@ -162,17 +162,40 @@ public class SQLAccess {
 		public String fcCode;
 		public String unit;
 		public String note;
+		public long totalGems = 0;
+		public long totalTickets = 0;
+		public long skipCount = 0;
+		public long ticketCount = 0;
+		public long gemCount = 0;
+		public long ldPityCount = 0;
+		public long btPityCount = 0;
 
 		public static Friend getFriend(Long userId, String region) throws BotException {
 			try {
 				ResultSet ret = SQLAccess.executeSelect("SELECT * FROM Friend_Codes WHERE userId = ? AND region = ?", userId, region);
-				if(!ret.next()) return null;
 				Friend f = new Friend();
+				if(!ret.next())
+					return null;
 				f.userId = ret.getLong("userId");
 				f.region = ret.getString("region");
 				f.fcCode = ret.getString("code");
 				f.unit = ret.getString("unit");
 				f.note = ret.getString("note");
+				ret = SQLAccess.executeSelect("SELECT SUM(gemCount) gemTotal, SUM(ticketCount) ticketTotal FROM User_Banner_Costs WHERE userId = ?", userId);
+				if(ret.next()) {
+					f.totalGems = ret.getLong("gemTotal");
+					f.totalTickets = ret.getLong("ticketCount");
+				}
+				ret = SQLAccess.executeSelect("SELECT vote, COUNT(*) cc FROM (SELECT DISTINCT bannerHash, vote FROM Vote_User_Data WHERE userId = ?) a GROUP BY vote", userId);
+				while(ret.next()) {
+					switch(ret.getString("vote")) {
+						case "SKIP": f.skipCount = ret.getLong("cc"); break;
+						case "TICKET": f.ticketCount = ret.getLong("cc"); break;
+						case "GEM": f.gemCount = ret.getLong("cc"); break;
+						case "LDPITY": f.ldPityCount = ret.getLong("cc"); break;
+						case "BTPITY": f.btPityCount = ret.getLong("cc"); break;
+					}
+				}
 				return f;
 			} catch (BotException | SQLException e) {
 				throw new BotException(e, BotException.ERROR_CODE);
@@ -181,13 +204,29 @@ public class SQLAccess {
 		public static Friend getFriendByCode(Integer code, String region) throws BotException {
 			try {
 				ResultSet ret = SQLAccess.executeSelect("SELECT * FROM Friend_Codes WHERE code = ? AND region = ?", ""+code, region);
-				if(!ret.next()) return null;
 				Friend f = new Friend();
+				if(!ret.next())
+					return null;
 				f.userId = ret.getLong("userId");
 				f.region = ret.getString("region");
 				f.fcCode = ret.getString("code");
 				f.unit = ret.getString("unit");
 				f.note = ret.getString("note");
+				ret = SQLAccess.executeSelect("SELECT SUM(gemCount) gemTotal, SUM(ticketCount) ticketTotal FROM User_Banner_Costs WHERE userId = ?", f.userId);
+				if(ret.next()) {
+					f.totalGems = ret.getLong("gemTotal");
+					f.totalTickets = ret.getLong("ticketCount");
+				}
+				ret = SQLAccess.executeSelect("SELECT vote, COUNT(*) cc FROM (SELECT DISTINCT bannerHash, vote FROM Vote_User_Data WHERE userId = ?) a GROUP BY vote", f.userId);
+				while(ret.next()) {
+					switch(ret.getString("vote")) {
+						case "SKIP": f.skipCount = ret.getLong("cc"); break;
+						case "TICKET": f.ticketCount = ret.getLong("cc"); break;
+						case "GEM": f.gemCount = ret.getLong("cc"); break;
+						case "LDPITY": f.ldPityCount = ret.getLong("cc"); break;
+						case "BTPITY": f.btPityCount = ret.getLong("cc"); break;
+					}
+				}
 				return f;
 			} catch (BotException | SQLException e) {
 				throw new BotException(e, BotException.ERROR_CODE);
@@ -196,7 +235,7 @@ public class SQLAccess {
 		public static List<Friend> getFriends(String region, String unit) throws BotException {
 			try {
 				ResultSet ret = SQLAccess.executeSelect("SELECT * FROM Friend_Codes WHERE region = ? AND unit = ?", region, unit);
-				List<Friend> rett = new LinkedList<Friend>();
+				List<Friend> rett = new LinkedList<>();
 				while(ret.next()) {
 					Friend f = new Friend();
 					f.userId = ret.getLong("userId");
@@ -238,7 +277,7 @@ public class SQLAccess {
 			}
 		}
 	}
-	public abstract static class Event{		
+	public abstract static class Event{ private Event() {}
 		public static com.materiabot.GameElements.Event getEvent(String name, String region) throws BotException {
 			try {
 				ResultSet r = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND region = ? ORDER BY startDate DESC", name, region);
@@ -268,7 +307,6 @@ public class SQLAccess {
 				throw new BotException("Error loading event " + name + " from " + region, e);
 			}
 		}
-		
 		public static int saveEvent(com.materiabot.GameElements.Event event) throws BotException {
 			ResultSet result = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND startDate >= ?", event.getName(), new Timestamp(System.currentTimeMillis()).toString());
 			try {
@@ -284,7 +322,6 @@ public class SQLAccess {
 				throw new BotException(e);
 			}
 		}
-		
 		public static int updateEvent(com.materiabot.GameElements.Event event) throws BotException {
 			ResultSet result = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND startDate >= ?", event.getName(), new Timestamp(System.currentTimeMillis()).toString());
 			try {
@@ -299,7 +336,6 @@ public class SQLAccess {
 				throw new BotException(e);
 			}
 		}
-		
 		public static int deleteEvent(String name, String region) throws BotException {
 			ResultSet result = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND region = ? AND endDate >= ?", 
 					name, region, new Timestamp(System.currentTimeMillis()).toString());
@@ -317,7 +353,6 @@ public class SQLAccess {
 				throw new BotException(e);
 			}
 		}
-		
 		public static List<com.materiabot.GameElements.Event> getCurrentAndFutureEvents(String region){
 			try {
 				ResultSet r = SQLAccess.executeSelect("SELECT * FROM Events WHERE region = ? AND endDate > ? ORDER BY startDate ASC", region, new Timestamp(System.currentTimeMillis()).toString());
@@ -360,7 +395,6 @@ public class SQLAccess {
 				return new LinkedList<>();
 			}
 		}
-		
 		public static int saveEventLink(com.materiabot.GameElements.Event.EventLink link) throws BotException {
 			try {
 				ResultSet result = executeSelect("SELECT * FROM Event_Details WHERE eventId = ? AND text = ?", link.getEventId(), link.getText());
@@ -400,9 +434,10 @@ public class SQLAccess {
 				UserCosts uc = new UserCosts();
 				uc.userId = userId;
 				uc.bannerHash = bannerHash;
-				ResultSet r = SQLAccess.executeSelect("SELECT * FROM User_Data ud LEFT JOIN User_Banner_Costs ubc "
-																		+ "ON ud.userId = ubc.userId AND ubc.bannerHash = ? "
-																		+ "WHERE ud.userId = ?", bannerHash, userId);
+				ResultSet r = SQLAccess.executeSelect("SELECT ubc2.bannerHash, ubc2.gemCount, ubc2.ticketCount, SUM(ubc.gemCount) totalGems, SUM(ubc.ticketCount) totalTickets "
+														+ "FROM User_Banner_Costs ubc "
+															+ "LEFT JOIN User_Banner_Costs ubc2 ON ubc.userId = ubc2.userId AND ubc2.bannerHash = ? "
+														+ "WHERE ubc.userId = ?", bannerHash, userId);
 				if(r.next()) {
 					uc.gemCount = r.getInt("gemCount");
 					uc.ticketCount = r.getInt("ticketCount");
@@ -417,7 +452,6 @@ public class SQLAccess {
 		}
 		public static void saveUserCosts(UserCosts uc) {
 			try {
-				SQLAccess.executeInsert("REPLACE INTO User_Data(userId, totalGems, totalTickets) VALUES(?, ?, ?);", uc.userId, uc.totalGems, uc.totalTickets);
 				SQLAccess.executeInsert("REPLACE INTO User_Banner_Costs VALUES(?, ?, ?, ?);", uc.userId, uc.bannerHash, uc.gemCount, uc.ticketCount);
 			} catch (BotException e) {
 				e.printStackTrace();

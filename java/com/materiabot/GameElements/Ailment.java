@@ -24,7 +24,7 @@ public class Ailment { //TODO Missing icons
 	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId, auraRankData; //auraRankData is for Fake Ailments for Auras
 	private ConditionBlock[] conditions;
 	private TargetType target;
-	private boolean extendable, burstExtendable, framed;
+	private boolean extendable, burstExtendable, framed, defaultAilment;
 	private Unit unit;
 	private Ability ability;
 	private HashMap<Integer, RankData> rankData = new HashMap<>();
@@ -133,6 +133,12 @@ public class Ailment { //TODO Missing icons
 	public void setFramed(boolean framed) { this.framed = framed; }
 	public boolean isGolden() { return Arrays.asList(this.getEffects()).stream().anyMatch(i -> i.intValue() == 413); }
 
+	public boolean isDefault() {
+		return defaultAilment;
+	}
+	public void setDefault(boolean defaultAilment) {
+		this.defaultAilment = defaultAilment;
+	}
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
 

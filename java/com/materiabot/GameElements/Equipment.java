@@ -67,7 +67,7 @@ public class Equipment{
 		public int getRarity() { return rarity; }
 		public String getName() { return name; }
 		public String getEmoteName() { return emoteName; }
-		public String getEmoteName(Unit u) { return _Summon.getSummonFromWoIWeapon(u).getEmoteCrystal(); }
+		public String getEmoteName(Unit u) { return this.equals(W_WoI) ? _Summon.getSummonFromWoIWeapon(u).getEmoteCrystal() : getEmoteName(); }
 //		public String getEmoteNameC() { return emoteName + "Circle"; }
 //		public String getEmoteNameS() { return emoteName + "Square"; }
 

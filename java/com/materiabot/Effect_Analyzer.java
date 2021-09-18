@@ -187,6 +187,7 @@ public class Effect_Analyzer {
 				)
 			)
 			.sorted((a1, a2) -> Integer.compare(a1.id, a2.id))
+			.filter(idu -> idu.id != 69) 
 			.forEach(idu -> {
 				int aid = idu.id;
 				_AilmentEffect a = Constants.AILMENT_EFFECT.get(aid);

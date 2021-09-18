@@ -10,6 +10,8 @@ public enum TargetType{
 	Allies2(7, "Allies"),
 	CallUnit(11, "Called Unit"),
 	SelfAndAlly(13, "Self & Ally"),
+	RightAlly(16, "Right Side"),
+	LeftAlly(17, "Left Side"),
 	Allies3(15, "Allies"),
 	Ally(24, "Ally"),
 	CallerAllies(27, "Allies"),
