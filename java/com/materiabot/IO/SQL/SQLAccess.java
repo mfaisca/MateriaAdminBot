@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import javax.sql.rowset.CachedRowSet;
@@ -20,8 +19,6 @@ import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.MessageUtils;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import Shared.BotException;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.User;
 
 public class SQLAccess {
 	private static MysqlConnectionPoolDataSource dataSource;
@@ -73,7 +70,6 @@ public class SQLAccess {
 		try(PreparedStatement ps = prepare(query, params)) {
 			int result = ps.executeUpdate();
 			ps.getConnection().close();
-			ps.close();
 			return result;
 		} catch(Exception e) { 
 			final String textParams = Arrays.stream(params).map(o -> o.toString()).reduce((o1, o2) -> o1 + " || " + o2).orElse("null");
@@ -87,41 +83,11 @@ public class SQLAccess {
 				CachedRowSet crs = RowSetProvider.newFactory().createCachedRowSet();
 				crs.populate(rs);
 				ps.getConnection().close();
-				ps.close();
 				return crs;
 			}
 		} catch(Exception e) { 
 			final String textParams = Arrays.stream(params).map(o -> o.toString()).reduce((o1, o2) -> o1 + " || " + o2).orElse("null");
 			throw new BotException("Error when running the select query '" + query + "' with parameters: " + textParams, e);
-		}
-	}
-
-	public static String getGuildPrefix(Guild guild) {
-		try {
-			ResultSet rs = executeSelect("SELECT prefix FROM Servers WHERE id = ?", guild.getIdLong());
-			rs.next();
-			return rs.getString("prefix");
-		} catch (Exception e) {
-			return Constants.DEFAULT_PREFIX;
-		}
-	}
-	public static void setGuildPrefix(Guild guild, String prefix) throws BotException {
-		SQLAccess.executeInsert("INSERT OR REPLACE INTO Servers VALUES(?, ?, ?)", guild.getIdLong(), prefix, 0);
-	}
-
-	private static HashMap<Long, Boolean> BANNED_USERS = new HashMap<Long, Boolean>();
-	public static boolean isBanned(User u) {
-		if(BANNED_USERS.containsKey(u.getIdLong()))
-			return BANNED_USERS.get(u.getIdLong());
-		try {
-			ResultSet rs = executeSelect("SELECT * FROM User_Data WHERE userId = ?", u.getIdLong());
-			if(!rs.next())
-				throw new RuntimeException();
-			BANNED_USERS.put(u.getIdLong(), rs.getBoolean("banned"));
-			return rs.getBoolean("banned");
-		} catch (Exception e) {
-			BANNED_USERS.put(u.getIdLong(), false);
-			return false;
 		}
 	}
 
@@ -162,13 +128,14 @@ public class SQLAccess {
 		public String fcCode;
 		public String unit;
 		public String note;
-		public long totalGems = 0;
-		public long totalTickets = 0;
-		public long skipCount = 0;
-		public long ticketCount = 0;
-		public long gemCount = 0;
-		public long ldPityCount = 0;
-		public long btPityCount = 0;
+		public String ffootipId;
+		public int totalGems = 0;
+		public int totalTickets = 0;
+		public int skipCount = 0;
+		public int ticketCount = 0;
+		public int gemCount = 0;
+		public int ldPityCount = 0;
+		public int btPityCount = 0;
 
 		public static Friend getFriend(Long userId, String region) throws BotException {
 			try {
@@ -181,19 +148,20 @@ public class SQLAccess {
 				f.fcCode = ret.getString("code");
 				f.unit = ret.getString("unit");
 				f.note = ret.getString("note");
+				f.ffootipId = ret.getString("ffootipId");
 				ret = SQLAccess.executeSelect("SELECT SUM(gemCount) gemTotal, SUM(ticketCount) ticketTotal FROM User_Banner_Costs WHERE userId = ?", userId);
 				if(ret.next()) {
-					f.totalGems = ret.getLong("gemTotal");
-					f.totalTickets = ret.getLong("ticketCount");
+					f.totalGems = (int)ret.getLong("gemTotal");
+					f.totalTickets = (int)ret.getLong("ticketTotal");
 				}
 				ret = SQLAccess.executeSelect("SELECT vote, COUNT(*) cc FROM (SELECT DISTINCT bannerHash, vote FROM Vote_User_Data WHERE userId = ?) a GROUP BY vote", userId);
 				while(ret.next()) {
 					switch(ret.getString("vote")) {
-						case "SKIP": f.skipCount = ret.getLong("cc"); break;
-						case "TICKET": f.ticketCount = ret.getLong("cc"); break;
-						case "GEM": f.gemCount = ret.getLong("cc"); break;
-						case "LDPITY": f.ldPityCount = ret.getLong("cc"); break;
-						case "BTPITY": f.btPityCount = ret.getLong("cc"); break;
+						case "SKIP": f.skipCount = (int)ret.getLong("cc"); break;
+						case "TICKET": f.ticketCount = (int)ret.getLong("cc"); break;
+						case "GEM": f.gemCount = (int)ret.getLong("cc"); break;
+						case "LD": f.ldPityCount = (int)ret.getLong("cc"); break;
+						case "BT": f.btPityCount = (int)ret.getLong("cc"); break;
 					}
 				}
 				return f;
@@ -212,19 +180,20 @@ public class SQLAccess {
 				f.fcCode = ret.getString("code");
 				f.unit = ret.getString("unit");
 				f.note = ret.getString("note");
+				f.ffootipId = ret.getString("ffootipId");
 				ret = SQLAccess.executeSelect("SELECT SUM(gemCount) gemTotal, SUM(ticketCount) ticketTotal FROM User_Banner_Costs WHERE userId = ?", f.userId);
 				if(ret.next()) {
-					f.totalGems = ret.getLong("gemTotal");
-					f.totalTickets = ret.getLong("ticketCount");
+					f.totalGems = (int)ret.getLong("gemTotal");
+					f.totalTickets = (int)ret.getLong("ticketCount");
 				}
 				ret = SQLAccess.executeSelect("SELECT vote, COUNT(*) cc FROM (SELECT DISTINCT bannerHash, vote FROM Vote_User_Data WHERE userId = ?) a GROUP BY vote", f.userId);
 				while(ret.next()) {
 					switch(ret.getString("vote")) {
-						case "SKIP": f.skipCount = ret.getLong("cc"); break;
-						case "TICKET": f.ticketCount = ret.getLong("cc"); break;
-						case "GEM": f.gemCount = ret.getLong("cc"); break;
-						case "LDPITY": f.ldPityCount = ret.getLong("cc"); break;
-						case "BTPITY": f.btPityCount = ret.getLong("cc"); break;
+						case "SKIP": f.skipCount = (int)ret.getLong("cc"); break;
+						case "TICKET": f.ticketCount = (int)ret.getLong("cc"); break;
+						case "GEM": f.gemCount = (int)ret.getLong("cc"); break;
+						case "LD": f.ldPityCount = (int)ret.getLong("cc"); break;
+						case "BT": f.btPityCount = (int)ret.getLong("cc"); break;
 					}
 				}
 				return f;
@@ -243,6 +212,7 @@ public class SQLAccess {
 					f.fcCode = ret.getString("code");
 					f.unit = ret.getString("unit");
 					f.note = ret.getString("note");
+					f.ffootipId = ret.getString("ffootipId");
 					rett.add(f);
 				}
 				return rett;
@@ -250,11 +220,14 @@ public class SQLAccess {
 				throw new BotException(e, BotException.ERROR_CODE);
 			} 
 		}
-		public static void setFriend(long userId, String region, Integer fcCode, String unit, String note) throws BotException {
+		public static void setFriend(long userId, String region, Integer fcCode, String unit, String note, String ffootip) throws BotException {
 			Friend get = getFriend(userId, region);
-			if(get != null) 
+			if(get != null) {
 				if(get.userId != userId)
 					throw new BotException("You cannot update a unit for a code that isn't yours!", BotException.INFO_CODE);
+				if(ffootip == null)
+					ffootip = get.ffootipId;
+			}
 			if(fcCode == null && unit == null) { //Delete
 				int res = SQLAccess.executeInsert("DELETE FROM Friend_Codes WHERE userId = ? AND region = ?", userId, region);
 				if(res == 0)
@@ -264,15 +237,15 @@ public class SQLAccess {
 				if(fcCode == null) { 			//Update unit
 					if(get == null)
 						throw new BotException("You must associate a friend id before setting your unit!", BotException.INFO_CODE);
-					SQLAccess.executeInsert("UPDATE Friend_Codes SET unit = ?, note = ? WHERE userId = ? AND region = ?", unit, note, userId, region);
+					SQLAccess.executeInsert("UPDATE Friend_Codes SET unit = ?, note = ?, ffootipId = ? WHERE userId = ? AND region = ?", unit, note, ffootip, userId, region);
 				}
 				else if(unit == null) 			//Only set code
-					SQLAccess.executeInsert("REPLACE INTO Friend_Codes VALUES(?, ?, ?, ?, ?);", userId, region, fcCode, null, note);
+					SQLAccess.executeInsert("REPLACE INTO Friend_Codes VALUES(?, ?, ?, ?, ?, ?);", userId, region, fcCode, null, note, ffootip);
 				else { 						//Set both
 					Friend f = getFriendByCode(fcCode, region);
 					if(f != null && f.userId != userId)
 						throw new BotException("Another user has registered this code, if this is your code and someone stole it, please contact Quetz(don't be afraid, he doesn't bite)", BotException.INFO_CODE);
-					SQLAccess.executeInsert("REPLACE INTO Friend_Codes VALUES(?, ?, ?, ?, ?);", userId, region, fcCode, unit, note);
+					SQLAccess.executeInsert("REPLACE INTO Friend_Codes VALUES(?, ?, ?, ?, ?, ?);", userId, region, fcCode, unit, note, ffootip);
 				}
 			}
 		}

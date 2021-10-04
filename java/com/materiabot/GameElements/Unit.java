@@ -188,7 +188,7 @@ public class Unit {
 	public void setCall(Ability call) { this.call = call; }
 	public Ability getCallLd() { return callLd; }
 	public void setCallLd(Ability callLd) { this.callLd = callLd; }
-	
+		
 	public String toString() {
 		return this.getName();
 	}

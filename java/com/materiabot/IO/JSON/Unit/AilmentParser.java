@@ -81,8 +81,6 @@ public class AilmentParser {
 				aurasConditions[i] = ar;
 			}
 			a.setRequiredConditions(aurasConditions);
-			if(a.getAilment().getId() == 2791 && a.getId() == 1291)
-				System.out.println();
 			a.setRequiredValues(aura.getIntArray("required_values", 0));
 			a.setRequiredConditionObjectValues(parseConditionBlocks(ail, aura, "required_values"));
 			a.setEffectDataId(aura.getObject("effect_data").getInt("id"));

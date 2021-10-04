@@ -199,8 +199,6 @@ public class Ability implements Comparable<Ability>{
 		boolean sameAttackType = true;
 		
 		for(HitData hd : this.getHitData()) {
-			if(hd.getId() == 10827)
-				System.out.println();
 			if(hd.getManualDescription() != null) {
 				effectList.add(hd.getManualDescription());
 				continue;

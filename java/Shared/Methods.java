@@ -74,8 +74,6 @@ public class Methods {
 	public static final Integer[][] splitRankData(String[] rdd) {
 		int[][] ret = new int[10][3];
 		int idx = 2; int mult = 1;
-		if(rdd == null)
-			System.out.println();
 		for(int i2 = 0; i2 < rdd.length; i2++) {
 			String rd = rdd[i2];
 			for(int i = rd.length()-1; i >= 0; i--) {

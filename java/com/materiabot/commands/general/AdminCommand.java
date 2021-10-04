@@ -12,7 +12,7 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 public class AdminCommand extends _BaseCommand{
-	public AdminCommand() { super("admin", "Pretend this command doesn't exist!", true); }
+	public AdminCommand() { super("admin", "Pretend this command doesn't exist!"); }
 
 	@Override
 	public void doStuff(final SlashCommandEvent event) {
@@ -52,11 +52,16 @@ public class AdminCommand extends _BaseCommand{
 				MessageUtils.sendStatusMessageError(event.getHook(), "You fucked up");
 			}
 		else
-			MessageUtils.sendStatusMessageError(event.getHook(), "GTFO");
+			MessageUtils.sendGTFO(event.getHook());
 	}
 	
 	@Override
 	public CommandData getCommandData() {
+		return null;
+	}
+	
+	@Override
+	public CommandData getAdminCommandData() {
 		CommandData cd = new CommandData("admin", help);
 			OptionData od2 = new OptionData(OptionType.STRING, "op", "Operation");
 				od2.addChoices(new Command.Choice("reload", "reload"));

@@ -3,6 +3,9 @@ import java.awt.Color;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +31,7 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class PatreonCommand extends _BaseCommand{
 	private static final String PATREON_LINK = "https://www.patreon.com/MateriaBot";
-	private static final int NUMBER_OF_VISIBLE_PATRONS = 15;
+	private static final int NUMBER_OF_VISIBLE_PATRONS = 10;
 
 	public PatreonCommand() { 
 		super("patreon", "Shows Patreon Supporters for MateriaBot <3");
@@ -154,11 +157,16 @@ public class PatreonCommand extends _BaseCommand{
 					try { return f.parse(p1.getCreatedAt()).compareTo(f.parse(p2.getCreatedAt()));}
 					catch (ParseException e) { ; } return 0;
 				}).findFirst().map(p -> (p.getReward() == null ? ImageUtils.getEmoteText(Emotes.UNKNOWN_EMOTE.get()) : ImageUtils.getEmoteText(p.getReward().getTitle())) + " " + p.getPatron().getFullName()).orElse(null);
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 				List<String> patrons = pledges.stream()
 						.sorted((p1, p2) -> p2.getAmountCents() - p1.getAmountCents())
-						.map(p -> (p.getReward() == null ? ImageUtils.getEmoteText(Emotes.UNKNOWN_EMOTE.get()) : ImageUtils.getEmoteText(p.getReward().getTitle())) + " " + p.getPatron().getFullName()).collect(Collectors.toList());
+						.map(p -> (p.getReward() == null ? 
+								ImageUtils.getEmoteText(Emotes.UNKNOWN_EMOTE.get()) : ImageUtils.getEmoteText(p.getReward().getTitle()))
+								+ " " + p.getPatron().getFullName() + 
+								" (" + ChronoUnit.MONTHS.between(LocalDate.parse(p.getCreatedAt().substring(0, 10), formatter), LocalDate.now()) + " months)")
+						.collect(Collectors.toList());
 				MessageUtils.sendEmbed(event.getHook(), build(campaign.getImageUrl(), patrons, oldest, mostRecent, totalPatrons));
-			}
+			} 
 		} catch (IOException | BotException e) {
 			MessageUtils.sendWhisper(Constants.QUETZ_ID, "Patreon Key is dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients" + System.lineSeparator() + "Use '$patreon <key>' to update the key");
 			MessageUtils.sendMessage(event.getHook(), "Error connecting with Patreon API. Try again later.");
@@ -178,7 +186,7 @@ public class PatreonCommand extends _BaseCommand{
 	}
 
 	@Override
-	public CommandData getCommandData() {
+	public CommandData getAdminCommandData() {
 		CommandData cmd = new CommandData(super.getCommand(), help);
 		cmd.addOption(OptionType.STRING, "update", "Ignored if you don't have permissions");
 		return cmd;

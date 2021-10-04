@@ -17,12 +17,12 @@ import net.dv8tion.jda.api.JDA;
 
 public class Constants {
 	private static JDA client;
-	public static final String DEFAULT_PREFIX;
 	public static final HashMap<Long, String> PREFIX = new HashMap<>();
 	public static final long QUETZ_ID = 141599746987917312L;
 	public static final long INK_ID = 290867157435416577L;
 	public static final long DREAMY_ID = 194476008395505664L;
 	public static final Long MATERIABOT_SERVER_ID = 544340710862618624L;
+	public static final Long MATERIABOT_ADMIN_SERVER_ID = 894309469670998026L;
 	public static final List<Unit> UNITS = new LinkedList<>();
 	public static final List<_BaseCommand> COMMANDS = new ArrayList<>();
 	public static final HashMap<Integer, _AbilityEffect> ABILITY_EFFECT = new HashMap<>();
@@ -37,7 +37,6 @@ public class Constants {
 
 	static {
 		DEBUG = true;
-		DEFAULT_PREFIX = "%";
 	}
 	private Constants() {}
 	

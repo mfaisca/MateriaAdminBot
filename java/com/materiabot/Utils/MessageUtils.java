@@ -67,8 +67,10 @@ public abstract class MessageUtils {
 		}
 	}
 
+	/** Invisible Character */
 	public static final String E = "‎";
-	public static final String S = "‎　";
+	/** Invisible Space Character */
+	public static final String S = "‎　"; //Invisible Space Character
 	public static final String SEPARATOR = ";;";
 	public static final int DISCORD_MESSAGE_LIMIT = 2000;
 	public static final int FIELD_MESSAGE_LIMIT = 1024;
@@ -113,6 +115,14 @@ public abstract class MessageUtils {
 	}
 	public static final CompletableFuture<Message> sendImage(InteractionHook hook, String imageURL){
 		return sendEmbed(hook, new EmbedBuilder().setImage(imageURL));
+	}
+	public static CompletableFuture<Message> sendGTFO(InteractionHook hook) {
+		return sendGTFO(hook, "You don't have permission to use this.");
+	}
+	public static CompletableFuture<Message> sendGTFO(InteractionHook hook, String msg) {
+		Embed embed = new Embed();
+		embed.setFooter(msg).setImage(ImageUtils.getEmoteClassByName(ImageUtils.Emotes.GTFO.get()).getImageUrl());
+		return sendEmbed(hook, embed);
 	}
 	public static final CompletableFuture<Message> sendFile(InteractionHook hook, String name, byte[] f) {
 		return hook.sendFile(f, name).submit();

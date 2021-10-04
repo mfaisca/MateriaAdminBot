@@ -8,19 +8,17 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 public abstract class _BaseCommand{
 	public static _BaseCommand CLEVERBOT = null;
 	protected String commandName;
-	protected boolean materiaOnly = false;
 	protected String help;
 	
 	public String getCommand() { return commandName; }
 
-	protected _BaseCommand(String keyword, String help) { this(keyword, help, false); }
-	protected _BaseCommand(String keyword, String help, boolean materiaOnly) {
+	protected _BaseCommand(String keyword, String help) {
 		this.commandName = keyword.toLowerCase();
 		this.help = help;
-		this.materiaOnly = materiaOnly;
 	}
-	public boolean isMateriaOnly() { return materiaOnly; }
 	public boolean isEtherealReply(SlashCommandEvent event) { return false; }
+	public boolean isEtherealReply(ButtonClickEvent event) { return false; }
+	public boolean isEditButton(ButtonClickEvent event) { return true; }
 	public CooldownManager.Type getCooldown(SlashCommandEvent event) { return CooldownManager.Type.REGULAR; }
 
 	public void doStuff(SlashCommandEvent event) {};
@@ -28,4 +26,5 @@ public abstract class _BaseCommand{
 	public void doStuff(MessageReceivedEvent message) {};
 
 	public CommandData getCommandData() { return new CommandData(getCommand(), help); };
+	public CommandData getAdminCommandData() { return null; };
 }

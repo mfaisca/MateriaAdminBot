@@ -37,7 +37,10 @@ public class _Listener extends ListenerAdapter{
 				String cmd = event.getButton().getId().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
 				for(_BaseCommand c : Constants.COMMANDS)
 					if(c.getCommand().equalsIgnoreCase(cmd)) {
-						event.deferEdit().queue();
+						if(c.isEditButton(event))
+							event.deferEdit().queue();
+						else
+							event.deferReply(c.isEtherealReply(event)).queue();
 						c.doStuff(event);
 						return;
 					}

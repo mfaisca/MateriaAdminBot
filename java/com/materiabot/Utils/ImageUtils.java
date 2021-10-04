@@ -6,7 +6,7 @@ import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import net.dv8tion.jda.api.entities.Emote;
 
-public interface ImageUtils {
+public abstract class ImageUtils {
 	public enum Emotes{
 		GTFO("gtfo"),
 		INVISIBLE("invisible"),
@@ -72,8 +72,11 @@ public interface ImageUtils {
 				case 1508: emote = "ailmentTrey"; break;
 				case 3053: emote = "ailmentJegran"; break;
 			}
-		if(stacks > 0 && emote != null)
-			emote = emote + "_" + stacks;
+		if(stacks > 0 && emote != null) {
+			String ret = getEmoteText(emote + "_" + stacks);
+			if(!ret.contains(ImageUtils.Emotes.UNKNOWN_EMOTE.get()))
+				return ret;
+		}
 		if(emote == null || ImageUtils.Emotes.UNKNOWN_EMOTE.get().equals(emote))
 			return getEmoteText("ailmentInvisible");
 		return getEmoteText(emote);
@@ -92,7 +95,11 @@ public interface ImageUtils {
 	}
 	public static String getEmoteText(String name) {
 		Optional<Emote> o = Optional.ofNullable(getEmoteClassByName(name));
-		return o.isPresent() ? "<:" + o.get().getName() + ":" + o.get().getId() + ">" : (name.equalsIgnoreCase(ImageUtils.Emotes.UNKNOWN_EMOTE.get()) ? null : getEmoteText(ImageUtils.Emotes.UNKNOWN_EMOTE.get()));
+		return o.isPresent() ? "<:" + o.get().getName() + ":" + o.get().getId() + ">" : getEmoteText2(ImageUtils.Emotes.UNKNOWN_EMOTE.get());
+	}
+	private static final String getEmoteText2(String name) {
+		Optional<Emote> o = Optional.ofNullable(getEmoteClassByName(name));
+		return o.isPresent() ? "<:" + o.get().getName() + ":" + o.get().getId() + ">" : null;
 	}
 	public static String getEmoteText(Emotes e) {
 		return getEmoteText(e.get());
