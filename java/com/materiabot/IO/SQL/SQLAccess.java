@@ -280,17 +280,17 @@ public class SQLAccess {
 				throw new BotException("Error loading event " + name + " from " + region, e);
 			}
 		}
-		public static int saveEvent(com.materiabot.GameElements.Event event) throws BotException {
+		public static boolean saveEvent(com.materiabot.GameElements.Event event) throws BotException {
 			ResultSet result = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND startDate >= ?", event.getName(), new Timestamp(System.currentTimeMillis()).toString());
 			try {
 				if(result.next()) 
-					return 1;
+					return false;
 				String units = event.getUnits().size() > 1 ? event.getUnits().stream().reduce((s1, s2) -> s1 + ";" + s2).orElse(null) : null;
 				SQLAccess.executeInsert("REPLACE INTO Events(name, region, featuredUnits, startDate, endDate) VALUES(?, ?, ?, ?, ?)", 
 						event.getName(), event.getRegion(), 
 						units,
 						event.getStartDate().toString(), event.getEndDate().toString());
-				return 0;
+				return true;
 			} catch (SQLException | BotException e) {
 				throw new BotException(e);
 			}
@@ -309,19 +309,16 @@ public class SQLAccess {
 				throw new BotException(e);
 			}
 		}
-		public static int deleteEvent(String name, String region) throws BotException {
+		public static boolean deleteEvent(String name, String region) throws BotException {
 			ResultSet result = SQLAccess.executeSelect("SELECT * FROM Events WHERE name = ? AND region = ? AND endDate >= ?", 
 					name, region, new Timestamp(System.currentTimeMillis()).toString());
 			try {
 				if(result.next()) {
-					ResultSet result2 = SQLAccess.executeSelect("SELECT * FROM Event_Details WHERE eventId = ?", result.getInt("id"));
-					if(result2.next())
-						return 2;
 					SQLAccess.executeInsert("DELETE FROM Events WHERE id = ?", result.getInt("id"));
-					return 0;
+					return true;
 				}
-				else 
-					return 1;
+				else
+					return false;
 			} catch (SQLException | BotException e) {
 				throw new BotException(e);
 			}

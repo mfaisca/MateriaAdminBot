@@ -50,7 +50,7 @@ public class Constants {
 	}
 	public static boolean userHasMateriaRole(long userId, long roleId) {
 		try {
-			return client.getGuildById(Constants.MATERIABOT_SERVER_ID)
+			return client.getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID)
 						.retrieveMemberById(userId).complete()
 						.getRoles().stream().anyMatch(r -> r.getIdLong() == roleId);
 		} catch(Exception e) {

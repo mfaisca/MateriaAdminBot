@@ -134,17 +134,17 @@ public class PatreonCommand extends _BaseCommand{
 	@Override
 	public void doStuff(final SlashCommandEvent event) {
 		try {
-			PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_ACCESS_TOKEN));
 			if((event.getMember().getIdLong() == Constants.QUETZ_ID || event.getMember().getIdLong() == Constants.INK_ID || event.getMember().getIdLong() == Constants.DREAMY_ID) && event.getOption("update") != null) {
-				if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID && event.getMember().getIdLong() == Constants.QUETZ_ID) {
+				if(event.getGuild().getIdLong() == Constants.MATERIABOT_ADMIN_SERVER_ID && event.getMember().getIdLong() == Constants.QUETZ_ID) {
 					SQLAccess.executeInsert("UPDATE Configs SET value = ? WHERE keyy = 'PATREON_ACCESS_TOKEN'", event.getOption("update").getAsString());
 					MessageUtils.sendMessage(event.getHook(), "Patreon API Key Updated");
 				}
-				else if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID && (event.getMember().getIdLong() == Constants.INK_ID || event.getMember().getIdLong() == Constants.DREAMY_ID)) {
+				else if(event.getGuild().getIdLong() == Constants.MATERIABOT_ADMIN_SERVER_ID && (event.getMember().getIdLong() == Constants.INK_ID || event.getMember().getIdLong() == Constants.DREAMY_ID)) {
 					SQLAccess.executeInsert("UPDATE Configs SET value = ? WHERE keyy = 'PATREON_TT_ACCESS_TOKEN'", event.getOption("update").getAsString());
 					MessageUtils.sendMessage(event.getHook(), "Patreon API Key Updated");
 				}
 			}else {
+				PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_ACCESS_TOKEN));
 				final SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 				Campaign campaign = apiClient.fetchCampaigns().get().get(0);
 				List<Pledge> pledges = apiClient.fetchAllPledges(campaign.getId());

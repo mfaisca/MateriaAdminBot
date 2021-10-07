@@ -80,22 +80,26 @@ public class PluginManager {
 		_Listener.unloadPluginCommands();
         Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).retrieveCommands().complete().stream()
     		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).deleteCommandById(c.getId()));
-//        Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream()
-//    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).deleteCommandById(c.getId()));
+        Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream()
+    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).deleteCommandById(c.getId()));
 		manager.getAllPlugins().stream()
 			.filter(p -> p.getName().contains("Command."))
 			.map(p -> (_BaseCommand)p.get())
 			.forEach(c -> Constants.COMMANDS.add(c));
 		CommandListUpdateAction commands = Constants.getClient().updateCommands();
 		for(_BaseCommand c : Constants.COMMANDS) {
+			if(c.getAdminCommandData() != null) {
+				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
+				continue;
+			}
 			if(c.getCommandData() == null)
 				;
-//			else if(Constants.DEBUG)
-//				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).upsertCommand(c.getCommandData()).queue();
+			else if(Constants.DEBUG) {
+				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).upsertCommand(c.getCommandData()).queue();
+				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getCommandData()).queue();
+			}
 			else
 				commands.addCommands(c.getCommandData());
-			if(c.getAdminCommandData() != null)
-				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
 		}
         commands.queue();
 	}

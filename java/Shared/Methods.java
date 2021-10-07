@@ -1,4 +1,5 @@
 package Shared;
+import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
@@ -97,6 +98,22 @@ public class Methods {
 				rett[i][i2] = ret[i][i2];
 		}
 		return rett;
+	}
+	public static String timeDifference(Timestamp from, Timestamp to) {
+		long s = (from.getTime() - to.getTime())/1000;
+		long m = s / 60; s -= m * 60;
+		long h = m / 60; m -= h * 60;
+		long d = h / 24; h -= d * 24;
+		String ret = "";
+		if((m + h + d) == 0)
+			return ret = ret.length() == 0 ? "less than a minute" : ret;
+		if(d > 0)
+			ret += d + " Day" + (d >= 2 ? "s, " : ", ");
+		if(d == 0 && h == 0)
+			ret += String.format("%02dm", m);
+		else
+			ret += String.format("%dh:%02dm", h, m);
+		return ret;
 	}
 	public static final Integer[][] splitRankData(Integer[] rdd) {
 		int[][] ret = new int[10][3];
