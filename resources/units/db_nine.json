@@ -167,7 +167,7 @@
         },
         "rank_up_desc": {
             "en": "",
-            "gl": "When using White Knight (C):\\n • Slight boost to BRV granted\\n • Increased BRV may exceed MAX BRV up to 120%\\n\\nAdds following effects to White Knight buff:\\n • Slightly raises own MAX BRV\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly raises own BRV damage dealt\\n • Tremendously raises own critical hit rate",
+            "gl": "When using White Knight (C):\\n • Slight boost to BRV granted\\n • Increased BRV may exceed MAX BRV up to 120%\\n\\nAdds following effects to White Knight buff:\\n • Slightly raises own MAX BRV\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly increases own BRV damage dealt\\n • Tremendously raises own critical hit rate",
             "jp": "「セーフティガード【C】」使用時\\n・BRV加算量小アップ\\n・加算したBRVを最大BRVを越えて加算する\\n　上限は最大BRVの120％分\\n\\n強化効果「セーフティガード」に以下の効果が追加\\n・自身の最大BRV小アップ\\n\\n「反抗の牙」に以下の効果が追加\\n・自身の最大BRV中アップ\\n・自身の与えるBRVダメージ小アップ\\n・自身のクリティカル発生率極大アップ"
         },
         "ability": {
@@ -8147,28 +8147,6 @@
                     "effect_value_type": 1
                 },
                 {
-                    "id": 7063,
-                    "type": 6,
-                    "arguments": [
-                        40
-                    ],
-                    "brv_data": {
-                        "brv_rate": 100.0,
-                        "max_brv_overflow": 100,
-                        "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0,
-                        "brv_damage_limit_up": 0,
-                        "max_brv_limit_up": 0,
-                        "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 0
-                    },
-                    "attack_type": -1,
-                    "element": [],
-                    "target": 6,
-                    "effect": 41,
-                    "effect_value_type": 9
-                },
-                {
                     "id": 16332,
                     "type": 6,
                     "arguments": [
@@ -8190,6 +8168,28 @@
                     "target": 6,
                     "effect": 37,
                     "effect_value_type": 1
+                },
+                {
+                    "id": 7063,
+                    "type": 6,
+                    "arguments": [
+                        40
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 6,
+                    "effect": 41,
+                    "effect_value_type": 9
                 }
             ],
             "arguments": [],
@@ -8242,7 +8242,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -8254,7 +8254,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -8278,7 +8278,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -8316,7 +8316,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -8568,28 +8582,6 @@
                     "effect_value_type": 1
                 },
                 {
-                    "id": 7065,
-                    "type": 6,
-                    "arguments": [
-                        60
-                    ],
-                    "brv_data": {
-                        "brv_rate": 100.0,
-                        "max_brv_overflow": 100,
-                        "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0,
-                        "brv_damage_limit_up": 0,
-                        "max_brv_limit_up": 0,
-                        "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 0
-                    },
-                    "attack_type": -1,
-                    "element": [],
-                    "target": 6,
-                    "effect": 41,
-                    "effect_value_type": 9
-                },
-                {
                     "id": 16332,
                     "type": 6,
                     "arguments": [
@@ -8611,6 +8603,28 @@
                     "target": 6,
                     "effect": 37,
                     "effect_value_type": 1
+                },
+                {
+                    "id": 7065,
+                    "type": 6,
+                    "arguments": [
+                        60
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 6,
+                    "effect": 41,
+                    "effect_value_type": 9
                 }
             ],
             "arguments": [],
@@ -8663,7 +8677,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -8675,7 +8689,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -8699,7 +8713,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -8737,7 +8751,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -8989,28 +9017,6 @@
                     "effect_value_type": 1
                 },
                 {
-                    "id": 7065,
-                    "type": 6,
-                    "arguments": [
-                        60
-                    ],
-                    "brv_data": {
-                        "brv_rate": 100.0,
-                        "max_brv_overflow": 100,
-                        "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0,
-                        "brv_damage_limit_up": 0,
-                        "max_brv_limit_up": 0,
-                        "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 0
-                    },
-                    "attack_type": -1,
-                    "element": [],
-                    "target": 6,
-                    "effect": 41,
-                    "effect_value_type": 9
-                },
-                {
                     "id": 16332,
                     "type": 6,
                     "arguments": [
@@ -9032,6 +9038,28 @@
                     "target": 6,
                     "effect": 37,
                     "effect_value_type": 1
+                },
+                {
+                    "id": 7065,
+                    "type": 6,
+                    "arguments": [
+                        60
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 6,
+                    "effect": 41,
+                    "effect_value_type": 9
                 }
             ],
             "arguments": [],
@@ -9084,7 +9112,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -9096,7 +9124,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -9120,7 +9148,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -9158,7 +9186,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -10895,7 +10937,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Grants party BRV based on own MAX BRV\\nExtends own active buff duration 1 turn\\nIncreased BRV may exceed individual MAX BRV up to 120%\\nCancels party's Rebellious Fang\\nParty: 10 turns White Knight buff\\nSelf: 10 turns 5 levels of Wild Roar (limit 5)\\nPrimal Roar use +1 after use (with upper limit)\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\n\\nWhen taking HP damage from HP attack while White Knight buff active:\\n • HP damage reduced to 0\\n • White Knight buff canceled\\n • Grants 6 turns Rebellious Fang\\n \\nAdds following effects to Wild Roar (does not stack):\\n • Reduces party's BRV damage taken\\n • Slightly increases own BRV damage dealt\\n\\nAdds following effects with 5 levels of Wild Roar (does not stack):\\n • Slightly raises party's ATK\\n • Slightly raises party's limit of BRV that may be stolen in excess of MAX BRV\\n • Moderately increases own BRV damage dealt with critical hits\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly raises own BRV damage dealt\\n • Tremendously raises own critical hit rate",
+                "gl": "Grants party BRV based on own MAX BRV\\nExtends own active buff duration 1 turn\\nIncreased BRV may exceed individual MAX BRV up to 120%\\nCancels party's Rebellious Fang\\nParty: 10 turns White Knight buff\\nSelf: 10 turns 5 levels of Wild Roar (limit 5)\\nPrimal Roar use +1 after use (with upper limit)\\nInstant turn rate\\nDoes not add to turn count; does consume turn during summoning, support\\n\\nWhen taking HP damage from HP attack while White Knight buff active:\\n • HP damage reduced to 0\\n • White Knight buff canceled\\n • Grants 6 turns Rebellious Fang\\n \\nAdds following effects to Wild Roar (does not stack):\\n • Reduces party's BRV damage taken\\n • Slightly increases own BRV damage dealt\\n\\nAdds following effects with 5 levels of Wild Roar (does not stack):\\n • Slightly raises party's ATK\\n • Slightly raises party's limit of BRV that may be stolen in excess of MAX BRV\\n • Moderately increases own BRV damage dealt with critical hits\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly increases own BRV damage dealt\\n • Tremendously raises own critical hit rate",
                 "jp": "味方全員に自身の最大BRVに依存した量のBRVを加算　自身に付与されている強化効果を1ACTION延長\\n加算したBRVを最大BRVを超えて加算する　上限はそれぞれの最大BRVの120％分\\nその後 味方全員の「反抗の牙」を解除し　味方全員に10ACTION強化効果「セーフティガード」付与\\n自身に10ACTION「ワイルドロアー」5段階（上限5）付与使用後 「咆哮」の使用回数＋1（上限あり）\\n行動負荷がない総ACTION数に加算されない召喚中およびフレンドサポートの残りACTIONは消費される\\n強化効果「セーフティガード」は付与された対象が　HP攻撃によるHPダメージを受けると\\n受けるHPダメージを0にし　強化効果「セーフティガード」は解除される\\n解除後 対象に6ACTION「反抗の牙」が付与される\\n「ワイルドロアー」に以下の効果が追加（同名の強化効果は重複しない）\\n・味方全員の受けるBRVダメージ軽減と自身の与えるBRVダメージ小アップ\\n「ワイルドロアー」5段階時　以下の効果が追加（同名の強化効果は重複しない）\\n・味方全員の攻撃力と奪ったBRVを最大BRVを越えて加算する上限が小アップ\\n・自身のクリティカル時　与えるBRVダメージ中アップ\\n「セーフティガード」に自身の最大BRV小アップの効果が追加\\n「反抗の牙」に自身の最大BRV中アップ\\n与えるBRVダメージ小アップ　クリティカル発生率極大アップの効果が追加"
             },
             "rank": 0,
@@ -11082,7 +11124,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -11094,7 +11136,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -11118,7 +11160,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -11156,7 +11198,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -13010,7 +13066,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -13022,7 +13078,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -13046,7 +13102,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -13084,7 +13140,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -13245,7 +13315,7 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Nine's ability when called:\\n • Moderately raises own MAX BRV\\n • Grants party BRV based on own MAX BRV\\n • Increased BRV may exceed individual MAX BRV up to 120%\\n • Cancels party's Rebellious Fang\\n • Party: 3 turns White Knight buff\\n\\nWhen taking HP damage from HP attack while White Knight buff active:\\n • HP damage reduced to 0\\n • White Knight buff canceled\\n • Grants 2 turns Rebellious Fang\\n\\nAdds following effects to White Knight:\\n • Slightly raises own MAX BRV\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly raises own BRV damage dealt\\n • Tremendously raises own critical hit rate",
+                "gl": "Nine's ability when called:\\n • Moderately raises own MAX BRV\\n • Grants party BRV based on own MAX BRV\\n • Increased BRV may exceed individual MAX BRV up to 120%\\n • Cancels party's Rebellious Fang\\n • Party: 3 turns White Knight buff\\n\\nWhen taking HP damage from HP attack while White Knight buff active:\\n • HP damage reduced to 0\\n • White Knight buff canceled\\n • Grants 2 turns Rebellious Fang\\n\\nAdds following effects to White Knight:\\n • Slightly raises own MAX BRV\\n\\nAdds following effects to Rebellious Fang:\\n • Moderately raises own MAX BRV\\n • Slightly increases own BRV damage dealt\\n • Tremendously raises own critical hit rate",
                 "jp": "コールされたナインが以下の行動を行う\\n自身の最大BRV中アップし\\n味方全員に自身の最大BRVに依存した量のBRVを加算\\n加算したBRVを最大BRVを超えて加算する\\n上限はそれぞれの最大BRVの120％分\\n味方全員の「反抗の牙」を解除し\\n味方全員に3ACTION強化効果「セーフティガード」付与\\n\\n強化効果「セーフティガード」は付与された対象が\\nHP攻撃によるHPダメージを受けると 受けるHPダメージを0にし\\n強化効果「セーフティガード」は解除される\\n解除後 対象に2ACTION「反抗の牙」が付与される\\n「セーフティガード」に自身の最大BRV小アップの効果が追加\\n「反抗の牙」に自身の最大BRV中アップ\\n与えるBRVダメージ小アップ　クリティカル発生率極大アップの効果が追加"
             },
             "rank": 0,
@@ -13513,7 +13583,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -13525,7 +13595,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -13549,7 +13619,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -13587,7 +13657,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -19216,7 +19300,7 @@
             "group": [],
             "motion": 57,
             "movement_cost": 0,
-            "hit_count": 7,
+            "hit_count": 6,
             "use_count": 3,
             "is_default": 0,
             "same_ability": 0,
@@ -19300,6 +19384,29 @@
                     "effect_value_type": 1
                 },
                 {
+                    "id": 16332,
+                    "type": 6,
+                    "arguments": [
+                        1,
+                        3579
+                    ],
+                    "brv_data": {
+                        "brv_rate": 100.0,
+                        "max_brv_overflow": 100,
+                        "max_brv_overflow_with_break": 0,
+                        "single_target_brv_rate": 0,
+                        "brv_damage_limit_up": 0,
+                        "max_brv_limit_up": 0,
+                        "brv_damage_limit_up_direct": 0,
+                        "max_brv_limit_up_direct": 0
+                    },
+                    "attack_type": -1,
+                    "element": [],
+                    "target": 6,
+                    "effect": 37,
+                    "effect_value_type": 1
+                },
+                {
                     "id": 16038,
                     "type": 6,
                     "arguments": [
@@ -19343,52 +19450,6 @@
                     "element": [],
                     "target": 2,
                     "effect": 136,
-                    "effect_value_type": 1
-                },
-                {
-                    "id": 16332,
-                    "type": 6,
-                    "arguments": [
-                        1,
-                        3579
-                    ],
-                    "brv_data": {
-                        "brv_rate": 100.0,
-                        "max_brv_overflow": 100,
-                        "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0,
-                        "brv_damage_limit_up": 0,
-                        "max_brv_limit_up": 0,
-                        "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 0
-                    },
-                    "attack_type": -1,
-                    "element": [],
-                    "target": 6,
-                    "effect": 37,
-                    "effect_value_type": 1
-                },
-                {
-                    "id": 10054,
-                    "type": 6,
-                    "arguments": [
-                        1,
-                        1712
-                    ],
-                    "brv_data": {
-                        "brv_rate": 100.0,
-                        "max_brv_overflow": 100,
-                        "max_brv_overflow_with_break": 0,
-                        "single_target_brv_rate": 0,
-                        "brv_damage_limit_up": 0,
-                        "max_brv_limit_up": 0,
-                        "brv_damage_limit_up_direct": 0,
-                        "max_brv_limit_up_direct": 0
-                    },
-                    "attack_type": -1,
-                    "element": [],
-                    "target": 6,
-                    "effect": 37,
                     "effect_value_type": 1
                 }
             ],
@@ -19442,7 +19503,7 @@
                             5,
                             85,
                             437,
-                            -1,
+                            437,
                             -1,
                             -1
                         ],
@@ -19454,7 +19515,7 @@
                             0,
                             0,
                             6,
-                            0,
+                            6,
                             0,
                             0
                         ],
@@ -19478,7 +19539,7 @@
                             0,
                             0,
                             218,
-                            0,
+                            241,
                             0,
                             0
                         ],
@@ -19516,7 +19577,21 @@
                                     }
                                 ]
                             },
-                            -1,
+                            {
+                                "id": 331,
+                                "conds": [
+                                    {
+                                        "id": 78,
+                                        "name": "HAS_BUFF",
+                                        "target": 2,
+                                        "values": [
+                                            3631,
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            },
                             -1,
                             -1
                         ]
@@ -22826,7 +22901,7 @@
                 "id": 1477,
                 "name": {
                     "en": "",
-                    "gl": "Class Zero's Ruckusmaker Extension",
+                    "gl": "Laser Lance Extension",
                     "jp": "ストライクランサーエクステンド"
                 },
                 "desc": {
@@ -22836,7 +22911,7 @@
                 },
                 "short_desc": {
                     "en": "",
-                    "gl": "Class Zero's Ruckusmaker Extension: Boost to Laser Lance",
+                    "gl": "Laser Lance Extension: Boost to Laser Lance",
                     "jp": "ストライクランサーエクステンド：「ストライクランサー」の性能アップ"
                 },
                 "meta_data": {
@@ -22925,17 +23000,17 @@
                     "id": 1478,
                     "name": {
                         "en": "",
-                        "gl": "Class Zero's Ruckusmaker Extension Attack Boost All",
+                        "gl": "Laser Lance Extension Attack Boost All",
                         "jp": "ストライクランサーエクステンドアタックブーストオール"
                     },
                     "desc": {
                         "en": "",
-                        "gl": "While equipping EX+ weapon Wyvern Horn (T0)+ or passive ability Class Zero's Ruckusmaker Extension:\\n • Moderately raises party's MAX BRV, ATK",
+                        "gl": "While equipping EX+ weapon Wyvern Horn (T0)+ or passive ability Laser Lance Extension:\\n • Moderately raises party's MAX BRV, ATK",
                         "jp": "EX+武器「竜角の槍【零式】+」または\\nパッシブ「ストライクランサーエクステンド」装備時\\n味方全員の最大BRVと攻撃力を中アップ"
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "Class Zero's Ruckusmaker Extension Attack Boost All: Raises party's MAX BRV, ATK",
+                        "gl": "Laser Lance Extension Attack Boost All: Raises party's MAX BRV, ATK",
                         "jp": "ストライクランサーエクステンドアタックブーストオール：味方全員の最大BRVと攻撃力がアップ"
                     },
                     "meta_data": {
@@ -23372,7 +23447,7 @@
         "burstWeapon": {},
         "rzBurstWeapon": {},
         "ultimaWeapon": {
-            "id": 2813,
+            "id": 2810,
             "series_id": -1,
             "name": {
                 "en": "",
@@ -23394,12 +23469,12 @@
                 "is_private": -1
             },
             "passive_data": {
-                "passive_id": 3576,
+                "passive_id": 3555,
                 "sphere_id": -1,
                 "is_multi_passive": 1
             },
             "passive": {
-                "id": 3576,
+                "id": 3555,
                 "name": {
                     "en": "",
                     "gl": "",
@@ -23419,7 +23494,7 @@
                     "cp": -1,
                     "level": -1,
                     "target": 2,
-                    "is_weapon_passive": 3576,
+                    "is_weapon_passive": 3555,
                     "required_passive": -1
                 },
                 "type_data": {
@@ -23432,7 +23507,7 @@
                         "effect_id": 117,
                         "effect_target": 2,
                         "effect_values": [
-                            2813,
+                            2810,
                             0,
                             0
                         ]
@@ -23454,7 +23529,7 @@
             },
             "passives": [
                 {
-                    "id": 3575,
+                    "id": 3554,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23474,7 +23549,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3575,
+                        "is_weapon_passive": 3554,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -23527,7 +23602,7 @@
                     "auras": []
                 },
                 {
-                    "id": 3577,
+                    "id": 3556,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23547,7 +23622,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3577,
+                        "is_weapon_passive": 3556,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -23600,7 +23675,7 @@
                     "auras": []
                 },
                 {
-                    "id": 3578,
+                    "id": 3557,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23620,7 +23695,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3578,
+                        "is_weapon_passive": 3557,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -23673,7 +23748,7 @@
                     "auras": []
                 },
                 {
-                    "id": 3579,
+                    "id": 3558,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23693,7 +23768,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3579,
+                        "is_weapon_passive": 3558,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -23746,7 +23821,7 @@
                     "auras": []
                 },
                 {
-                    "id": 3580,
+                    "id": 3559,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23766,7 +23841,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3580,
+                        "is_weapon_passive": 3559,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -23819,7 +23894,7 @@
                     "auras": []
                 },
                 {
-                    "id": 3581,
+                    "id": 3560,
                     "name": {
                         "en": "",
                         "gl": "",
@@ -23839,7 +23914,7 @@
                         "cp": -1,
                         "level": -1,
                         "target": 2,
-                        "is_weapon_passive": 3581,
+                        "is_weapon_passive": 3560,
                         "required_passive": -1
                     },
                     "type_data": {
@@ -25463,6 +25538,152 @@
                     }
                 }
             ]
+        },
+        {
+            "id": 3631,
+            "cast_id": 3593,
+            "name": {
+                "en": "",
+                "gl": "LD Extend Rework Off",
+                "jp": "LDエクステンド調整非装備"
+            },
+            "desc": {
+                "en": "",
+                "gl": "",
+                "jp": "N"
+            },
+            "group": [],
+            "meta_data": {
+                "target": 2,
+                "rate": 100,
+                "rank": 1,
+                "arguments": [
+                    0,
+                    0
+                ],
+                "arguments_alt": [
+                    -1,
+                    -1
+                ],
+                "battle_start": 1,
+                "wave_start": 0,
+                "conditions": [
+                    {
+                        "id": 3,
+                        "args": [
+                            1814,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "args": [
+                            6145,
+                            0
+                        ]
+                    }
+                ],
+                "duration": -1
+            },
+            "type_data": {
+                "buff_type": 1,
+                "icon_type": 14,
+                "disp_type": 0,
+                "stackable": -1,
+                "extendable": 0,
+                "burst_ext": 1,
+                "range_limit": 0,
+                "removable": 0,
+                "max_stacks": 0,
+                "sp_stacks": 0,
+                "effects": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "val_types": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "val_edit_types": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "val_specify": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "rank_tables": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "conditions": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ]
+            },
+            "rank_data": {
+                "3631": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "auras": []
         }
     ],
     "assocAilments": [],
@@ -27981,6 +28202,10 @@
         "awakening": {
             "gl": "",
             "jp": "2021-09-16 15:00:00"
+        },
+        "synergy": {
+            "gl": "2021-06-07 02:00:00",
+            "jp": "2021-09-17 15:00:00"
         }
     }
 }
