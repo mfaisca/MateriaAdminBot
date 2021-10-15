@@ -17,10 +17,12 @@ import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
 import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
+import com.materiabot.IO.JSON.UnitParser;
 import com.materiabot.Utils.Constants;
 
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
+		UnitParser.setDebug(true);
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
 		int key = 99;
@@ -187,7 +189,7 @@ public class Effect_Analyzer {
 				)
 			)
 			.sorted((a1, a2) -> Integer.compare(a1.id, a2.id))
-			.filter(idu -> idu.id != 69) 
+			.filter(idu -> idu.id != 69)
 			.forEach(idu -> {
 				int aid = idu.id;
 				_AilmentEffect a = Constants.AILMENT_EFFECT.get(aid);
@@ -237,6 +239,7 @@ public class Effect_Analyzer {
 				)
 			)
 			.distinct()
+			.filter(aid -> aid.getTypeId() != -1)
 			.forEach(aid -> {
 				_AuraEffect a = Constants.AURA_EFFECT.get(aid.getTypeId());
 				if(a == null) {

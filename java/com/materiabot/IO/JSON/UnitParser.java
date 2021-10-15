@@ -24,7 +24,11 @@ import Shared.Methods;
 
 public class UnitParser {
 	private UnitParser() {}
+	private static boolean debug = false;
 	
+	public static void setDebug(boolean d) {
+		debug = d;
+	}
 	public static Unit parseUnit(String name) {
 		return createUnit(name, false);
 	}
@@ -33,7 +37,7 @@ public class UnitParser {
 	}
 	private static Unit createUnit(String n, boolean quickRead) {
 		try{
-			String name = SQLAccess.getUnitNameFromNickname(n);
+			String name = debug ? n : SQLAccess.getUnitNameFromNickname(n);
 			Unit u = Constants.UNITS.stream()
 						.filter(uu -> uu.getName().equalsIgnoreCase(name))
 						.findFirst().orElse(null);
