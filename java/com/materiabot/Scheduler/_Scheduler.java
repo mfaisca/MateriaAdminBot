@@ -32,7 +32,9 @@ public class _Scheduler {
 	public static void setup() {
 		try {
 			SCHEDULER = StdSchedulerFactory.getDefaultScheduler();
+			/////REPEAT THIS LINE AND CREATE A NEW CLASS FOR EACH SCHEDULED THING/////
 			SCHEDULER.scheduleJob(JobBuilder.newJob(JobChangeStatus.class).withIdentity("Change Status").build(), TRIGGER.T_1MINUTE.get());
+			/////REPEAT THIS LINE AND CREATE A NEW CLASS FOR EACH SCHEDULED THING/////
 		} catch (SchedulerException e) {
 			MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error starting Scheduler: " + e.getMessage());
 		}

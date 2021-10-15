@@ -18,6 +18,7 @@ import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.IO.JSON.Unit.AbilityParser;
 import com.materiabot.IO.JSON.Unit.AilmentParser;
 import com.materiabot.IO.JSON.Unit.PassiveParser;
+import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import Shared.Methods;
 
@@ -30,20 +31,20 @@ public class UnitParser {
 	public static Unit parseUnitQuick(String name) {
 		return createUnit(name, true);
 	}
-	private static Unit createUnit(String name, boolean quickRead) {
+	private static Unit createUnit(String n, boolean quickRead) {
 		try{
+			String name = SQLAccess.getUnitNameFromNickname(n);
 			Unit u = Constants.UNITS.stream()
-						.filter(uu -> uu.getNicknames().contains(name.replace("_", " ").toLowerCase()))
+						.filter(uu -> uu.getName().equalsIgnoreCase(name))
 						.findFirst().orElse(null);
-			if(u == null)
-				u = new Unit(name);
-			else if(quickRead)
-				return u;
-			else
+			if(u != null && u.getName() != null)
 				u = u.copy();
+			else
+				u = new Unit(n);
 			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();
 			File f = new File("./resources/units/db_" + unitName + ".json");
-			if(!f.exists()) return null;
+			if(!f.exists())
+				return new Unit(null);
 			MyJSONObject obj = JSONParser.loadContent(f.getAbsolutePath(), false);
 			parseProfile(u, obj);
 			if(quickRead)
@@ -62,7 +63,7 @@ public class UnitParser {
 			return u;
 		} catch(Exception e) {
 			e.printStackTrace();
-			return null;
+			return new Unit(null);
 		}
 	}
 

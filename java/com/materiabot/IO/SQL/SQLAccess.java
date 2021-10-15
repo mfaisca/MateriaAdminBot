@@ -43,9 +43,21 @@ public class SQLAccess {
 			System.exit(0);
 		}
 	}
+	
+	private SQLAccess() {}
 
 	public static Connection getConnection() throws SQLException{ 
 		return dataSource.getConnection();
+	}
+	
+	public static String getUnitNameFromNickname(String nick){
+		try(ResultSet rs = executeSelect("SELECT unit FROM Unit_Nicknames WHERE nickname = ? OR unit = ?", nick, nick)) {
+			if(rs.next())
+				return rs.getString("unit");
+		} catch (BotException | SQLException e) {
+			;
+		}
+		return null;
 	}
 
 	private static PreparedStatement prepare(String query, Object...params) throws SQLException {

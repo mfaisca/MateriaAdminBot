@@ -17,7 +17,6 @@ public class Unit {
 	private String name;
 	private Text fullName;
 	private int series = -1;
-	private List<String> nicknames = new LinkedList<>();
 	private Crystal crystal;
 	private Equipment.Type equipmentType;
 	private Integer[] baseAbilities = new Integer[8];
@@ -35,14 +34,11 @@ public class Unit {
 	private Sphere weaponSphere, basicSphere;
 
 	public Unit(String name, String... nicknames) {
-		if(name.endsWith("_JP")) {
+		if(name != null && name.endsWith("_JP")) {
 			region = Region.JP;
 			name = name.replace("_JP", "");
 		}
 		this.name = name;
-		this.nicknames.add(name.toLowerCase());
-		if(nicknames != null)
-			this.nicknames.addAll(Arrays.asList(nicknames).stream().map(s -> s.toLowerCase()).collect(Collectors.toList()));
 	}
 	public Unit(String name, Crystal color, Equipment.Type eqType, String... nicknames) {
 		this(name, nicknames);
@@ -59,7 +55,6 @@ public class Unit {
 	public void setFullName(Text fullName) { this.fullName = fullName; }
 	public int getSeries() { return series; }
 	public void setSeries(int series) { this.series = series; }
-	public List<String> getNicknames() { return nicknames; }
 	public Crystal getCrystal() { return crystal; }
 	public void setCrystal(Crystal c) { crystal = c; }
 	public Equipment.Type getEquipmentType() { return equipmentType; }

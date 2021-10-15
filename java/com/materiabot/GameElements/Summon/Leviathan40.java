@@ -6,7 +6,7 @@ import Shared.Methods;
 
 public class Leviathan40 extends _Summon{
 	protected Leviathan40() {
-		super(Arrays.asList("Leviathan", "Levi"), 40, Element.Water, "Tidal Wave+", 
+		super(Arrays.asList("Leviathan", "Levi", "Danger Noodle", "Snek"), 40, Element.Water, "Tidal Wave+", 
 				"Lowers enemy Speed by 15%" + System.lineSeparator() + "Grants 80% Initial BRV Regen after hitting HP < 80% once", 
 					"Water BRV-HP Magic damage" + System.lineSeparator() + 
 					"Grants Water attribute to the party" + System.lineSeparator() + 

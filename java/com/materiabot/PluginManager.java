@@ -15,7 +15,7 @@ public class PluginManager {
 	private PluginManager() {}
 
 	public static void reset() throws Exception {
-		_Library.L.UNIT_CACHE.invalidateAll();
+		_Library.L.clearUnitCache();
 		Constants.COMMANDS.clear();
 		Constants.UNITS.clear();
 		Constants.ABILITY_EFFECT.clear();
@@ -78,20 +78,16 @@ public class PluginManager {
 		manager.loadPlugins(PluginSources.jarSource("file:///" + new java.io.File("plugins").getAbsolutePath().replace("\\", "/")));
 		//LoadCommands
 		_Listener.unloadPluginCommands();
-        Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).retrieveCommands().complete().stream()
-    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).deleteCommandById(c.getId()));
-        Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream()
-    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).deleteCommandById(c.getId()));
+//        Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).retrieveCommands().complete().stream()
+//    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).deleteCommandById(c.getId()).queue());
+//        Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream()
+//    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).deleteCommandById(c.getId()).queue());
 		manager.getAllPlugins().stream()
 			.filter(p -> p.getName().contains("Command."))
 			.map(p -> (_BaseCommand)p.get())
 			.forEach(c -> Constants.COMMANDS.add(c));
 		CommandListUpdateAction commands = Constants.getClient().updateCommands();
 		for(_BaseCommand c : Constants.COMMANDS) {
-			if(c.getAdminCommandData() != null) {
-				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
-				continue;
-			}
 			if(c.getCommandData() == null)
 				;
 			else if(Constants.DEBUG) {
@@ -101,7 +97,11 @@ public class PluginManager {
 			else
 				commands.addCommands(c.getCommandData());
 		}
-        commands.queue();
+//        commands.queue();
+		for(_BaseCommand c : Constants.COMMANDS) {
+			if(c.getAdminCommandData() != null)
+				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
+		}
 	}
 
 	@SuppressWarnings("rawtypes")

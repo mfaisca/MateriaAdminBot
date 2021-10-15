@@ -4,7 +4,7 @@ import com.materiabot.GameElements.Element;
 
 public class Leviathan30 extends _Summon{
 	protected Leviathan30() {
-		super(Arrays.asList("Leviathan", "Levi"), 30, Element.Water, "Tidal Wave", 
+		super(Arrays.asList("Leviathan", "Levi", "Danger Noodle", "Snek"), 30, Element.Water, "Tidal Wave", 
 				"Lowers enemy Speed by 15%" + System.lineSeparator() + "Grants 80% Initial BRV Regen after hitting HP < 80% once", 
 					"Water BRV Magic damage" + System.lineSeparator() + 
 					"Grants Water attribute to the party", 
