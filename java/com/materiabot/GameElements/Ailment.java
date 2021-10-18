@@ -289,7 +289,7 @@ public class Ailment { //TODO Missing icons
 			}
 		}
 		if(hasAuras) {
-			for(Aura a : this.getAuras()) { //I'm parsing the conditions here instead of in the Aura so that in the future I can merge effects that have the same conditions 
+			for(Aura a : this.getAuras()) { //I'm parsing the conditions here instead of in the Aura so that I can merge effects that have the same conditions 
 				String condi = "";
 				for(int i = 0; i < a.getRequiredConditions().length; i++) {
 					if(a.getRequiredConditions()[i] != null) {

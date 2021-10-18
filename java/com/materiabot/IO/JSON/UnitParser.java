@@ -1,6 +1,7 @@
 package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
+import java.util.Optional;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.ChainAbility;
@@ -24,7 +25,7 @@ import Shared.Methods;
 
 public class UnitParser {
 	private UnitParser() {}
-	private static boolean debug = false;
+	private static boolean debug = false; //Debug only for the Effect Analyzer for faster processing
 	
 	public static void setDebug(boolean d) {
 		debug = d;
@@ -37,14 +38,14 @@ public class UnitParser {
 	}
 	private static Unit createUnit(String n, boolean quickRead) {
 		try{
-			String name = debug ? n : SQLAccess.getUnitNameFromNickname(n);
+			String name = debug ? n : Optional.ofNullable(SQLAccess.getUnitNameFromNickname(n)).orElse(n);
 			Unit u = Constants.UNITS.stream()
 						.filter(uu -> uu.getName().equalsIgnoreCase(name))
 						.findFirst().orElse(null);
 			if(u != null && u.getName() != null)
 				u = u.copy();
 			else
-				u = new Unit(n);
+				u = new Unit(name);
 			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();
 			File f = new File("./resources/units/db_" + unitName + ".json");
 			if(!f.exists())

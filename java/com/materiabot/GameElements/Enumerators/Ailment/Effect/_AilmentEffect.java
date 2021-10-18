@@ -86,7 +86,7 @@ public abstract class _AilmentEffect implements _Plugin {
 					description = description.replace("{" + i + "}", values[i]+"");
 			}
 		if(description.contains("{a}"))
-			description = description.replace("{a}", Methods.enframe(a.getName().getBest()));
+			description = description.replace("{a}", ImageUtils.getAilmentEmote(a.getUnit(), a.getId()) + Methods.enframe(a.getName().getBest()));
 		if(description.contains("{u}"))
 			description = description.replace("{u}", a.getUnit().getName());
 		if(description.contains("{s1}"))

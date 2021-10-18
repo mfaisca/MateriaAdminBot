@@ -36,7 +36,7 @@ public class _Library {
 		Unit unit = null;
 		try {
 			unit = UNIT_CACHE.get(u);
-			if(unit != null && !u.contains("_short"))
+			if(unit != null && unit.getName() != null && !u.contains("_short"))
 				UNIT_CACHE.invalidate(u + "_short");
 		} catch (Exception e) {}
 		return unit != null && unit.getName() != null ? unit : null;
