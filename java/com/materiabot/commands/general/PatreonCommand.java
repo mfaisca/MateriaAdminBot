@@ -23,6 +23,7 @@ import com.patreon.resources.Pledge;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
@@ -73,60 +74,51 @@ public class PatreonCommand extends _BaseCommand{
 	public static final void updateServerTonberryTroupe() {
 		try {
 			Guild materiaServer = Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID);
+			final MessageChannel troupeNotes = materiaServer.getTextChannelById(636300936993701917L);
+			MessageUtils.sendMessageToChannel(troupeNotes, "Executing a TT Patreon update...");
 			final PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_TT_ACCESS_TOKEN));
-			Campaign campaign = null;
-			try {
-				campaign = apiClient.fetchCampaigns().get().get(0);
-			} catch(Exception e) {
-				System.out.println("Error when fetching data from TT Patreon");
-				return;
-			}
+			Campaign campaign = apiClient.fetchCampaigns().get().get(0);
 			final List<Pledge> pledges = apiClient.fetchAllPledges(campaign.getId());
-			final List<String> patreonDiscordIdsT2 = new LinkedList<>();
-			final List<String> patreonDiscordIdsT3 = new LinkedList<>();
+			final List<Long> patreonDiscordIdsT2 = new LinkedList<>();
+			final List<Long> patreonDiscordIdsT3 = new LinkedList<>();
+			final List<String> patronsMissingDiscordTag = new LinkedList<>();
 			for(Pledge p : pledges)
-				if(p.getPatron().getSocialConnections() != null)
-					if(p.getPatron().getSocialConnections().getDiscord() != null)
-						if(p.getReward().getTitle().equals("Tonberry")) {
-							if(p.getReward().getTitle().equals("Tonberry King"))
-								patreonDiscordIdsT3.add(p.getPatron().getSocialConnections().getDiscord().getUser_id());
-							patreonDiscordIdsT2.add(p.getPatron().getSocialConnections().getDiscord().getUser_id());
+				if(p.getPatron().getSocialConnections() != null) {
+					if(p.getPatron().getSocialConnections().getDiscord() != null) {
+						if(p.getReward().getTitle().equals("Tonberry Chef"))
+							patreonDiscordIdsT2.add(Long.parseLong(p.getPatron().getSocialConnections().getDiscord().getUser_id()));
+						else if(p.getReward().getTitle().equals("Tonberry King")) {
+							patreonDiscordIdsT2.add(Long.parseLong(p.getPatron().getSocialConnections().getDiscord().getUser_id()));
+							patreonDiscordIdsT3.add(Long.parseLong(p.getPatron().getSocialConnections().getDiscord().getUser_id()));
 						}
-			final Role tonberry = materiaServer.getRoleById(679814832626991129L);
-			final Role tonberryKing = materiaServer.getRoleById(682232684466274307L);
-			for(final Member m : materiaServer.getMembersWithRoles(tonberryKing)) {
-				if(!patreonDiscordIdsT3.contains(m.getId())) {
-					MessageUtils.sendWhisper(Constants.INK_ID, m.getEffectiveName() + " is no longer a Tonberry King.");
-					materiaServer.removeRoleFromMember(m, tonberryKing).submit();
+					}
+					else if(p.getReward().getTitle().equals("Tonberry Chef") || p.getReward().getTitle().equals("Tonberry King"))
+						patronsMissingDiscordTag.add(p.getPatron().getFullName() + " - " + p.getReward().getTitle());
 				}
-			}
-			for(final Member m : materiaServer.getMembersWithRoles(tonberry)) {
-				if(!patreonDiscordIdsT2.contains(m.getId())) {
-					MessageUtils.sendWhisper(Constants.INK_ID, m.getEffectiveName() + " is no longer a Tonberry.");
-					materiaServer.removeRoleFromMember(m, tonberry).submit();
-				}
-			}
-			for(final String mm : patreonDiscordIdsT2) {
-				Member m = materiaServer.getMemberById(mm);
-				if(m == null) continue;
-				if(!m.getRoles().contains(tonberry)) {
-					MessageUtils.sendWhisper(Constants.INK_ID, m.getEffectiveName() + " is a new Tonberry.");
-					materiaServer.addRoleToMember(m, tonberry).submit();
-				}
-			}
-			for(final String mm : patreonDiscordIdsT3) {
-				final Member m = materiaServer.getMemberById(mm);
-				if(m == null) continue;
-				if(!m.getRoles().contains(tonberryKing)) {
-					MessageUtils.sendWhisper(Constants.INK_ID, m.getEffectiveName() + " is a new Tonberry King.");
-					materiaServer.addRoleToMember(m, tonberry).submit();
-					materiaServer.addRoleToMember(m, tonberryKing).submit();
-				}
-			}
+			final Role tonberryChef = materiaServer.getRoleById(744314490946060320L);
+			final Role tonberryKing = materiaServer.getRoleById(744314477490470932L);
+			materiaServer.findMembersWithRoles(tonberryKing).onSuccess(lm -> lm.stream().filter(m -> !patreonDiscordIdsT3.contains(m.getIdLong())).forEach(m -> 
+				materiaServer.removeRoleFromMember(m, tonberryKing).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry King."))
+			)).onSuccess(v1 -> 
+			materiaServer.findMembersWithRoles(tonberryChef).onSuccess(lm -> lm.stream().filter(m -> !patreonDiscordIdsT2.contains(m.getIdLong())).forEach(m -> 
+				materiaServer.removeRoleFromMember(m, tonberryChef).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry Chef."))
+			))).onSuccess(v1 -> 
+			materiaServer.retrieveMembersByIds(patreonDiscordIdsT2).onSuccess(lm -> lm.stream().filter(m -> !m.getRoles().contains(tonberryChef)).forEach(m -> 
+				materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry Chef."))
+			))).onSuccess(v1 -> 
+			materiaServer.retrieveMembersByIds(patreonDiscordIdsT3).onSuccess(lm -> lm.stream().filter(m -> !m.getRoles().contains(tonberryKing)).forEach(m -> 
+				materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
+				materiaServer.addRoleToMember(m, tonberryKing).submit()).thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry King."))
+			))).onSuccess(v1 -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed"));
 		} catch (IOException e) {
-			MessageUtils.sendWhisper(Constants.INK_ID, "Patreon Key is dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
-			MessageUtils.sendWhisper(Constants.DREAMY_ID, "Patreon Key is dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
-			MessageUtils.sendWhisper(Constants.QUETZ_ID, "**Tonberry Troupe** Patreon Key is dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
+			MessageUtils.sendWhisper(Constants.INK_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
+			MessageUtils.sendWhisper(Constants.DREAMY_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
+			MessageUtils.sendWhisper(Constants.QUETZ_ID, "**Tonberry Troupe** Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
 			e.printStackTrace();
 		}
 	}
