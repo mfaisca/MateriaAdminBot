@@ -33,8 +33,30 @@ public class Constants {
 	public static final HashMap<Integer, _AuraEffect> AURA_EFFECT = new HashMap<>();
 	public static final HashMap<Integer, _AuraRequired> AURA_REQUIRED = new HashMap<>();
 	public static final HashMap<Integer, _MiscConditionLabel> LABELS = new HashMap<>();
+	public static final List<Integer> EFFECTS_THAT_CAN_REFUND = new LinkedList<>();
 	public static final boolean DEBUG;
 
+	public static final class DupeMerger {
+		public String text;
+		public int count = 1;
+		public DupeMerger real = this;
+		
+		public DupeMerger(String t) { text = t; }
+		
+		public void merge(DupeMerger other) {
+			if(this.real.text.equals(other.text)) {
+				this.real.count++; other.count--;
+				other.real = this.real;
+			}
+		}
+		@Override
+		public String toString() {
+			if(count < 1) return "";
+			if(count > 1) return text + " **__" + count + " times__**";
+			return text;
+		}
+	}
+	
 	static {
 		DEBUG = true;
 	}

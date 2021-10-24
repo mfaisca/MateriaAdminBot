@@ -45,31 +45,11 @@ public class Passive implements Comparable<Passive>{
 	public void setTargetId(int targetId) { this.targetId = targetId; }
 	public PassiveTarget getTarget() { return target; }
 	public void setTarget(PassiveTarget target) { this.target = target; }
+	public int getDisplayType() { return displayType; }
+	public void setDisplayType(int displayType) { this.displayType = displayType; }
+	public int getRequiredPassive() { return requiredPassive; }
+	public void setRequiredPassive(Integer requiredPassive) { this.requiredPassive = requiredPassive == null ? -1 : requiredPassive; }
 	
-	/**
-	 * @return the displayType
-	 */
-	public int getDisplayType() {
-		return displayType;
-	}
-	/**
-	 * @param displayType the displayType to set
-	 */
-	public void setDisplayType(int displayType) {
-		this.displayType = displayType;
-	}
-	/**
-	 * @return the requiredPassive
-	 */
-	public int getRequiredPassive() {
-		return requiredPassive;
-	}
-	/**
-	 * @param requiredPassive the requiredPassive to set
-	 */
-	public void setRequiredPassive(Integer requiredPassive) {
-		this.requiredPassive = requiredPassive == null ? -1 : requiredPassive;
-	}
 	public String generateDescription() {
 		if(getManualDesc() != null)
 			return getManualDesc();
@@ -102,5 +82,9 @@ public class Passive implements Comparable<Passive>{
 	public int compareTo(Passive other) {
 		int ret = Integer.compare(this.getLevel(), other.getLevel());
 		return ret != 0 ? ret : Integer.compare(this.getId(), other.getId());
+	}
+	@Override
+	public String toString() {
+		return (getLevel() > 0 ? "CL" + getLevel() : "") + " - " + getName().getBest() + " (" + getId() + ")";
 	}
 }

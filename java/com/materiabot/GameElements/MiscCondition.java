@@ -26,4 +26,8 @@ public class MiscCondition {
 	public void setValues(Integer[] values) { this.values = values; }
 	public ConditionBlock getCondition() { return condition; }
 	public void setCondition(ConditionBlock condition) { this.condition = condition; }
+	
+	public String generateDescription() {
+		return condition != null ? getCondition().getDescription() : getLabel().getDescription(this);
+	}
 }

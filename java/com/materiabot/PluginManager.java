@@ -115,15 +115,7 @@ public class PluginManager {
 		Constants.UNITS.addAll(manager.getAllPlugins().stream()
 							.filter(p -> p.getName().contains("Unit."))
 							.map(p -> (Unit)p.get())
-							.map(p -> {
-								System.out.print("Reading " + p.getName() + "...");
-								Unit u = _Library.L.getQuickUnit(p.getName());
-								p.setCrystal(u.getCrystal());
-								p.setEquipmentType(u.getEquipmentType());
-								p.setSphereSlots(u.getSphereSlots());;
-								System.out.println(" OK");
-								return u;
-							})
+							.peek(p -> System.out.println("Unit Override: " + p.getName()))
 							.collect(Collectors.toList()));
 	}
 }

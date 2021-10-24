@@ -1,5 +1,6 @@
 package com.materiabot.GameElements.Enumerators.Ability.HitData;
 import java.util.Arrays;
+import java.util.List;
 
 public enum BasedOnStat{
 	Stat1(1, "???"),
@@ -30,6 +31,8 @@ public enum BasedOnStat{
 	Stat58(49, "Ailment Value"), //Sherlotta LD Staff
 	Stat1014(1014, "HP Damage Dealt (based on the number of 「**Note**」 on the party)"),
 	;
+	
+	public static final List<Integer> STATS_THAT_CAN_REFUND = Arrays.asList(14, 36, 42);
 	
 	private int id;
 	private String stat;

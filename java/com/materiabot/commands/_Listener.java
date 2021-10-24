@@ -25,12 +25,18 @@ public class _Listener extends ListenerAdapter{
 		public enum Action{
 			SLASH_COMMANDS{public void run(Event e) {
 				SlashCommandEvent event = (SlashCommandEvent)e;
-				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.getCommand().equalsIgnoreCase(event.getName())) {
-						event.deferReply(c.isEtherealReply(event)).queue();
-						c.doStuff(event);
-						return;
-					}
+				if(_BaseCommand.canPost(event)) {
+					for(_BaseCommand c : Constants.COMMANDS)
+						if(c.getCommand().equalsIgnoreCase(event.getName())) {
+							event.deferReply(c.isEtherealReply(event)).queue();
+							c.doStuff(event);
+							return;
+						}
+				}
+				else {
+					event.deferReply(true).queue();
+					MessageUtils.sendMessage(event.getHook(), "Cannot reply in this channel due to missing permissions.");
+				}
 			}},
 			BUTTON_CLICK{public void run(Event e) {
 				ButtonClickEvent event = (ButtonClickEvent)e;
@@ -46,14 +52,14 @@ public class _Listener extends ListenerAdapter{
 					}
 			}},
 			SELECT_MENU{public void run(Event e) {
-//				SelectionMenuEvent event = (SelectionMenuEvent)e;
-//				String cmd = event.getSelectedOptions().get(0).get
-//				for(_BaseCommand c : Constants.COMMANDS)
-//					if(c.getCommand().equals(cmd)) {
-//						event.deferEdit().queue();
-//						c.doStuff(event);
-//						return;
-//					}
+				SelectionMenuEvent event = (SelectionMenuEvent)e;
+				String cmd = event.getSelectedOptions().get(0).getValue().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
+				for(_BaseCommand c : Constants.COMMANDS)
+					if(c.getCommand().equals(cmd)) {
+						event.deferEdit().queue();
+						c.doStuff(event);
+						return;
+					}
 			}},
 			MESSAGE_RECEIVED{public void run(Event e) {
 				MessageReceivedEvent event = (MessageReceivedEvent)e;
@@ -86,13 +92,14 @@ public class _Listener extends ListenerAdapter{
 		Constants.COMMANDS.addAll(Arrays.asList(
 									new AboutCommand(),
 									new PatreonCommand(),
-									new AdminCommand()
+									new AdminCommand(),
+									new ScheduleCommand()
 									));
 		try {
 			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
 			while(rs.next())
 				if(rs.getBoolean("simple"))
-					Constants.COMMANDS.add(new SimpleCommand(rs.getString("name").split(";;")[0].trim(), rs.getString("data"), rs.getString("help")));
+					Constants.COMMANDS.add(new SimpleCommand(rs.getString("name").split(";;")[0].trim(), rs.getString("data"), rs.getString("help"), rs.getBoolean("subCommand")));
 				else
 					Constants.COMMANDS.add(new UpdateableSimpleCommand(rs.getString("name").split(";;")[0].trim(), rs.getString("data"), rs.getString("owner"), rs.getString("help")));
 		} catch (BotException | SQLException e) {

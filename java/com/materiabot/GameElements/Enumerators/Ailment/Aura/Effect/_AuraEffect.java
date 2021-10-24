@@ -25,6 +25,7 @@ public abstract class _AuraEffect implements _Plugin {
 	
 	public String applyReplaces(Aura a, String description) {
 		description = description.replace("{t}", a.getTarget().getDescription());
+		if(a.getValueType() <= 0) return description;
 		Integer[] values = _ValType.VAL_TYPES.get(a.getValueType()).getValues(a);
 		String stack = "";
 		if(a.getAilment().getMaxStacks() > 1) {

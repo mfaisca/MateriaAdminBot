@@ -1,7 +1,10 @@
 package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.ChainAbility;
@@ -62,6 +65,7 @@ public class UnitParser {
 			parseCalls(u, obj);
 			parsePassives(u, obj);
 			parseCharaBoards(u, obj);
+			mergeFakeFollowups(u);
 			parseArtifacts(u, obj);
 			parseSpheres(u, obj);
 			parseGear(u, obj);
@@ -71,7 +75,7 @@ public class UnitParser {
 			return new Unit(null);
 		}
 	}
-
+	
 	private static void parseProfile(Unit u, MyJSONObject obj) {
 		Text name = obj.getObject("profile").getText("shortName");
 		if(name == null)
@@ -269,5 +273,34 @@ public class UnitParser {
 			s1 = s1 == null ? sphere : s1;
 		}
 		u.setSpheres(s1, s2);
+	}
+	private static void mergeFakeFollowups(Unit u) {
+		List<ChainAbility> c = null;
+		HashMap<Integer, Integer> map = new HashMap<>();
+		c = u.getTriggeredAbilities().stream().map(ca -> {
+			Ability a = null;
+			Ability b = null;
+			if(map.containsKey(ca.getOriginalId()) && ca.getReqMiscConditions().isEmpty()) {
+				a = u.getSpecificAbility(map.get(ca.getOriginalId()));
+				b = u.getSpecificAbility(ca.getSecondaryId());
+			}
+			else if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() == 0) {
+				a = u.getSpecificAbility(ca.getOriginalId());
+				b = u.getSpecificAbility(ca.getSecondaryId());
+			}
+			if(a != null && b != null) {
+				a.getHitData().addAll(b.getHitData());
+				a.getAilments().addAll(b.getAilments());
+				if(b.getMovementCost() > a.getMovementCost())
+					a.setMovementCost(b.getMovementCost());
+				a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
+				if(b.getChaseDmg() > a.getChaseDmg())
+					a.setChaseDmg(b.getChaseDmg());
+				map.put(b.getId(), a.getId());
+			}
+			return ca;
+		}).filter(ca -> !ca.getReqMiscConditions().isEmpty()).collect(Collectors.toList());
+		u.getTriggeredAbilities().clear();
+		u.getTriggeredAbilities().addAll(c);
 	}
 }

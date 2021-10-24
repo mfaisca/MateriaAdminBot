@@ -41,4 +41,5 @@ public class _MiscConditionLabel implements _Plugin{
 		}
 		return description;
 	}
+	public boolean isInvisibleCondition(MiscCondition a) { return false; }
 }

@@ -7,24 +7,28 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
 public class SimpleCommand extends _BaseCommand{
 	private final String message;
-	private final boolean isImage;
+	private final boolean isImage, subcommand;
 	private final Long ownerID;
 	private String owner = null;
 	
-	public SimpleCommand(String command, String message, String help) {
+	public SimpleCommand(String command, String message, String help, boolean subcommand) {
 		super(command, help.replace("\n", System.lineSeparator()));
 		this.message = message.replace("\n", System.lineSeparator());
 		isImage = false;
 		ownerID = null;
+		this.subcommand = subcommand;
 	}
 
-	public SimpleCommand(String command, String owner, boolean image, String message, String help) {
+	public SimpleCommand(String command, String owner, boolean image, String message, String help, boolean subcommand) {
 		super(command, help.replace("\n", System.lineSeparator()));
 		this.message = message.replace("\n", System.lineSeparator());
 		isImage = image;
 		this.ownerID = null;
 		this.owner = owner;
+		this.subcommand = subcommand;
 	}
+
+	public boolean isSubcommand() { return subcommand; }
 
 	@Override
 	public void doStuff(SlashCommandEvent event) {

@@ -72,9 +72,9 @@ public class PatreonCommand extends _BaseCommand{
 
 	//This method exists to update Tonberry Troupe Patreon roles on MateriaBot Server due to PatreonBot not working with multiple accounts
 	public static final void updateServerTonberryTroupe() {
+		Guild materiaServer = Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID);
+		final MessageChannel troupeNotes = materiaServer.getTextChannelById(636300936993701917L);
 		try {
-			Guild materiaServer = Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID);
-			final MessageChannel troupeNotes = materiaServer.getTextChannelById(636300936993701917L);
 			MessageUtils.sendMessageToChannel(troupeNotes, "Executing a TT Patreon update...");
 			final PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_TT_ACCESS_TOKEN));
 			Campaign campaign = apiClient.fetchCampaigns().get().get(0);
@@ -97,29 +97,46 @@ public class PatreonCommand extends _BaseCommand{
 				}
 			final Role tonberryChef = materiaServer.getRoleById(744314490946060320L);
 			final Role tonberryKing = materiaServer.getRoleById(744314477490470932L);
-			materiaServer.findMembersWithRoles(tonberryKing).onSuccess(lm -> lm.stream().filter(m -> !patreonDiscordIdsT3.contains(m.getIdLong())).forEach(m -> 
-				materiaServer.removeRoleFromMember(m, tonberryKing).submit().thenAccept(v -> 
-				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry King."))
+			materiaServer.findMembersWithRoles(tonberryKing).onSuccess(lm ->
+				lm.stream().filter(m -> !patreonDiscordIdsT3.contains(m.getIdLong())).forEach(m -> 
+					materiaServer.removeRoleFromMember(m, tonberryKing).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry King.")))
+			).onSuccess(v1 -> 
+			materiaServer.findMembersWithRoles(tonberryChef).onSuccess(lm ->
+				lm.stream().filter(m -> !patreonDiscordIdsT2.contains(m.getIdLong())).forEach(m -> 
+					materiaServer.removeRoleFromMember(m, tonberryChef).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry Chef.")))
 			)).onSuccess(v1 -> 
-			materiaServer.findMembersWithRoles(tonberryChef).onSuccess(lm -> lm.stream().filter(m -> !patreonDiscordIdsT2.contains(m.getIdLong())).forEach(m -> 
-				materiaServer.removeRoleFromMember(m, tonberryChef).submit().thenAccept(v -> 
-				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is no longer a Tonberry Chef."))
-			))).onSuccess(v1 -> 
-			materiaServer.retrieveMembersByIds(patreonDiscordIdsT2).onSuccess(lm -> lm.stream().filter(m -> !m.getRoles().contains(tonberryChef)).forEach(m -> 
-				materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
-				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry Chef."))
-			))).onSuccess(v1 -> 
-			materiaServer.retrieveMembersByIds(patreonDiscordIdsT3).onSuccess(lm -> lm.stream().filter(m -> !m.getRoles().contains(tonberryKing)).forEach(m -> 
-				materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
-				materiaServer.addRoleToMember(m, tonberryKing).submit()).thenAccept(v -> 
-				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry King."))
-			))).onSuccess(v1 -> 
-				MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed"));
+			materiaServer.retrieveMembersByIds(patreonDiscordIdsT2).onSuccess(lm ->
+				lm.stream().filter(m -> !m.getRoles().contains(tonberryChef)).forEach(m -> 
+					materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry Chef.")))
+			)).onSuccess(v1 -> 
+			materiaServer.retrieveMembersByIds(patreonDiscordIdsT3).onSuccess(lm ->
+				lm.stream().filter(m -> !m.getRoles().contains(tonberryKing)).forEach(m -> 
+					materiaServer.addRoleToMember(m, tonberryChef).submit().thenAccept(v -> 
+					materiaServer.addRoleToMember(m, tonberryKing).submit()).thenAccept(v -> 
+				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry King.")))
+			)).onSuccess(v1 -> {
+				MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed");
+			});
 		} catch (IOException e) {
 			MessageUtils.sendWhisper(Constants.INK_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
-			MessageUtils.sendWhisper(Constants.DREAMY_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
+			MessageUtils.sendMessageToChannel(materiaServer.getTextChannelById(623171253796077589L), "**Tonberry Troupe** Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
+			//MessageUtils.sendWhisper(Constants.DREAMY_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
 			MessageUtils.sendWhisper(Constants.QUETZ_ID, "**Tonberry Troupe** Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");
 			e.printStackTrace();
+		}
+	}
+
+	public static long getPatreonCount() {
+		try {
+			PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_ACCESS_TOKEN));
+			Campaign campaign = apiClient.fetchCampaigns().get().get(0);
+			List<Pledge> pledges = apiClient.fetchAllPledges(campaign.getId());
+			return pledges.size();
+		} catch (IOException e) {
+			return -1;
 		}
 	}
 

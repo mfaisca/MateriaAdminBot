@@ -169,8 +169,9 @@ public class Ailment { //TODO Missing icons
 
 	public boolean isDeadEffect() {
 		int effectCount = 0;
-		for(@SuppressWarnings("unused") int e : this.getEffects())
-			effectCount++;
+		if(this.getEffects() != null)
+			for(@SuppressWarnings("unused") int e : this.getEffects())
+				effectCount++;
 		if(effectCount > 0 && !generateEffectDescription().isEmpty())
 			return false;
 		return true;
@@ -184,7 +185,8 @@ public class Ailment { //TODO Missing icons
 
 	public String generateTitle() {
 		if(this.getFakeName() != null) return getFakeName().getBest();
-		if(isDeadEffect()) return "";
+		if(this.getName().getBest().equals("Attack Change")) ;
+		else if(isDeadEffect()) return "";
 		String icon = ImageUtils.getAilmentEmote(this);
 		if(!(icon.startsWith("<:specialAilment") || icon.contains("Invisible")))
 			icon = (this.isGolden() ? ImageUtils.getEmoteText("ailmentGolden") : (this.isFramed() ? ImageUtils.getEmoteText("ailmentSilver") : "")) + icon;
@@ -236,7 +238,13 @@ public class Ailment { //TODO Missing icons
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		List<AilmentBlock> finalDescription = new LinkedList<>();
 		String ret = "";
-		if(isDeadEffect()) return "";
+		if(this.getName().getBest().equals("Attack Change")) {
+			finalDescription.add(new AilmentBlock(null, "Enables special abilities"));
+			if(this.getDuration() < 1)
+				finalDescription.add(new AilmentBlock(null, "{retline} for 1 use"));
+		}
+		else if(isDeadEffect())
+			return "";
 		if(!isAuraEffect) {
 			if(this.isStackable() && this.getArgs()[0] > 0)
 				ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
@@ -253,7 +261,7 @@ public class Ailment { //TODO Missing icons
 		if(!isBurstExtendable())
 			finalDescription.add(0, new AilmentBlock(null, "Decreases in BURST mode"));
 		finalDescription.addAll(generateEffectDescription());
-		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("");
+		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retline}", "");
 	}
 	private List<AilmentBlock> generateEffectDescription() {
 		if(this.getFakeDesc() != null) return null;

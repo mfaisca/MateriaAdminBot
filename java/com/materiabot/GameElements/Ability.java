@@ -1,4 +1,5 @@
 package com.materiabot.GameElements;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,9 +13,12 @@ import com.materiabot.GameElements.Enumerators.Ability.CommandType;
 import com.materiabot.GameElements.Enumerators.Ability.HitType;
 import com.materiabot.GameElements.Enumerators.Ability.TargetRange;
 import com.materiabot.GameElements.Enumerators.Ability.TargetType;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.BasedOnStat;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Target;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect.TAG;
 import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.Constants.DupeMerger;
 import com.materiabot.Utils.ImageUtils;
 import Shared.Methods;
 
@@ -66,6 +70,8 @@ public class Ability implements Comparable<Ability>{
 	private List<Ailment> ailments = new LinkedList<>();
 	private int[] arguments; //Unknown use
 	private Unit unit;
+	private String icon; //To be used on skill command menu
+	private boolean main = false;
 	
 	public Ability() {}
 	public Ability(String text) { setName(new Text(text)); setManualDesc(text); }
@@ -118,7 +124,23 @@ public class Ability implements Comparable<Ability>{
 	public void setTargetRangeId(int targetRangeId) { this.targetRangeId = targetRangeId; }
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
+	public String getIcon() { return icon; }
+	public void setIcon(String icon) { this.icon = icon; }
+	public boolean isMain() { return main; }
+	public void setMain(boolean main) { this.main = main; }
+	public boolean isFollowup() {
+		return this.getUnit().getTriggeredAbilities().stream().anyMatch(ta -> ta.getSecondaryId() == this.getId());
+	}
 	
+	public String getSelectionMenuText() {
+		if(this.getAttackName().equals(AttackName.BT)) {
+			if(this.getUnit().getBaseAbility(AttackName.BT).get(0).getId() == this.getId())
+				return getName().getBest() + " (BT Only)";
+			else
+				return getName().getBest() + " (BT+ 2/3)";
+		}else
+			return getName().getBest(); 
+	}
 	public int getTotalUseCount() {
 		Ability base2 = null;
 		if(getUnit().getBaseAbility(this.getAttackName()) == null)
@@ -152,6 +174,7 @@ public class Ability implements Comparable<Ability>{
 							.reduce(100, (v1, v2) -> v1 - v2).intValue();
 		return (int)(chargeRate * (mult/100));
 	}
+	
 	public String generateTitle() {
 		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> ImageUtils.getEmoteText(hd.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> ImageUtils.getEmoteText(e.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
@@ -210,9 +233,9 @@ public class Ability implements Comparable<Ability>{
 				postEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
 			if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()) && (currentChain.isEmpty() || currentChain.get(0).getEffect().isBRV())) {
 				currentChain.add(hd);
-				if(sameElements == null) //First
+				if(sameElements == null)
 					sameElements = hd.getElements();
-				if(sameAttackTypes == null) //First
+				if(sameAttackTypes == null)
 					sameAttackTypes = hd.getAttackType();
 				sameElement = sameElement && sameElements.size() == hd.getElements().size() && sameElements.containsAll(hd.getElements()) && hd.getElements().containsAll(sameElements);
 				sameAttackType = sameAttackType && sameAttackTypes.getId() == hd.getAttackType().getId();
@@ -278,6 +301,9 @@ public class Ability implements Comparable<Ability>{
 				totalPotency += Math.round(chain.get(0).getBrvRate() * help.count);
 			} else if(chain.get(0).getEffect().isHP() && Type.isHP(chain.get(0).getType()))
 				effectList.add("Followed by an HP Attack");
+			else if(Constants.EFFECTS_THAT_CAN_REFUND.contains(chain.get(0).getEffectId()) && BasedOnStat.STATS_THAT_CAN_REFUND.contains(chain.get(0).getEffectValueType()) && chain.get(0).getTarget() == Target.Self) {
+				effectList.add("{retLine} (" + chain.get(0).getArguments()[0] + "% refund)");
+			}
 			else {
 				String text = (chain.get(0).getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + chain.get(0).getDescription();
 				if(!(chain.get(0).getEffect().blockRepeats() && effectList.contains(text)))
@@ -295,7 +321,15 @@ public class Ability implements Comparable<Ability>{
 				brvPotency.append(")");
 			effectList.add(System.lineSeparator() + "BRV Potency: " + brvPotency.substring(2).trim());
 		}
-		return effectList.stream().filter(s -> !s.isEmpty()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retLine}", "");
+		List<DupeMerger> as = new ArrayList<>(Arrays.asList(effectList.stream().filter(s -> !s.isEmpty())
+					.reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retLine}", "")
+					.split(System.lineSeparator())).stream().map(s -> new DupeMerger(s)).collect(Collectors.toList()));
+		for(int i = 1; i < as.size(); i++)
+			as.get(i-1).merge(as.get(i));
+		return as.stream()
+				.filter(m -> m.count >= 1)
+				.map(m -> m.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2
+				).orElse("");
 	}
 	public static final Ability NULL(int id) {
 		return new Ability("Unknown Ability " + id) {};

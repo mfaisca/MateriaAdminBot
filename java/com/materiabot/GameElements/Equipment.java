@@ -68,18 +68,10 @@ public class Equipment{
 		public String getName() { return name; }
 		public String getEmoteName() { return emoteName; }
 		public String getEmoteName(Unit u) { return this.equals(W_WoI) ? _Summon.getSummonFromWoIWeapon(u).getEmoteCrystal() : getEmoteName(); }
-//		public String getEmoteNameC() { return emoteName + "Circle"; }
-//		public String getEmoteNameS() { return emoteName + "Square"; }
 
 		public static Rarity getByName(String s) {
 			for(Rarity r : values())
 				if(r.getName().equals(s))
-					return r;
-			return null;
-		}
-		public static Rarity getByEmoji(String s) {
-			for(Rarity r : values())
-//				if(r.getEmoteName().equals(s)) || r.getEmoteNameC().equals(s) || r.getEmoteNameS().equals(s))
 					return r;
 			return null;
 		}
@@ -88,7 +80,7 @@ public class Equipment{
 			return Arrays.asList(W_15, W_35, W_WoI, W_NT, W_MW).contains(r);
 		}
 		public static boolean isUpperTierW(Rarity r) {
-			return Arrays.asList(W_EX, W_EXP, W_LD, W_BT).contains(r);
+			return Arrays.asList(W_EX, W_EXP, W_LD, W_BT, W_BTP).contains(r);
 		}
 		public static boolean isLowerTierA(Rarity r) {
 			return Arrays.asList(A_35, A_90, A_90P, BS).contains(r);

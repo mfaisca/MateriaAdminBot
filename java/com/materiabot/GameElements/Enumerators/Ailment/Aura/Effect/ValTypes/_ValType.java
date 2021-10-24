@@ -4,7 +4,7 @@ import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Aura;
 
 public abstract class _ValType {
-	public static final HashMap<Integer, _ValType> VAL_TYPES = new HashMap<Integer, _ValType>();
+	public static final HashMap<Integer, _ValType> VAL_TYPES = new HashMap<>();
 	
 	private int valType;
 	
@@ -15,7 +15,7 @@ public abstract class _ValType {
 		new ValType6();
 	}
 	
-	public _ValType(int valType) {
+	protected _ValType(int valType) {
 		this.valType = valType;
 		VAL_TYPES.put(valType, this);
 	}

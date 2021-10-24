@@ -81,8 +81,8 @@ public class Unit {
 	public List<Equipment> getEquipment() { return equipment; }
 	public List<Passive> getArtifacts() { return artifacts; }
 	public SphereType[] getSphereSlots() { return sphereSlots; }
-	public SphereType[] setSphereSlots(SphereType s1, SphereType s2, SphereType s3) { return sphereSlots = new SphereType[] {s1, s2, s3}; }
-	public SphereType[] setSphereSlots(SphereType... sph) { return sphereSlots = sph; }
+	public void setSphereSlots(SphereType s1, SphereType s2, SphereType s3) { setSphereSlots(new SphereType[]{s1, s2, s3}); }
+	public void setSphereSlots(SphereType... sph) { sphereSlots = sph; }
 	public Sphere getWeaponSphere() { return weaponSphere; }
 	public Sphere getBasicSphere() { return basicSphere; }
 	public void setSpheres(Sphere weapon, Sphere basic) { this.basicSphere = basic; this.weaponSphere = weapon; }
@@ -95,7 +95,7 @@ public class Unit {
 		return null;
 	}
 	public List<Ability> getAbility(AttackName type) {
-		return getAbility(type, null);
+		return getAbility(type, "GL");
 	}
 	public List<Ability> getAbility(AttackName type, String region) {
 		if(type.equals(AttackName.CA))
@@ -103,27 +103,37 @@ public class Unit {
 		else if(type.equals(AttackName.CALD))
 			return Arrays.asList(this.getCallLd());
 		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
-		List<Integer> passivesIds = Streams.concat(	passives.stream().map(p -> p.getId()), 
-													getCharaBoards().stream().map(p -> p.getId()))
+		List<Integer> passivesIds = Streams.concat(	passives.stream(), 
+													getCharaBoards().stream()).map(p -> p.getId())
 											.collect(Collectors.toList());
 		List<Integer> ret = new LinkedList<>();
 		ret.add(this.getBaseAbility(type).get(0).getId());
 		int passiveCount = 0;
+		int condiCount = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
 			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
 			if(!passivesIds.containsAll(ca.getReqExtendPassives())) continue;
 			
 			int reqCount = ca.getReqWeaponPassives().size() + ca.getReqExtendPassives().size();
-			if(reqCount == passiveCount)
-				ret.add(ca.getSecondaryId());
+			if(reqCount == passiveCount) {
+				if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() >= condiCount) {
+					condiCount = (int)ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+					ret.add(ca.getSecondaryId());
+				}
+			}
 			else if(reqCount > passiveCount) {
+				condiCount = 0;
 				passiveCount = reqCount;
 				ret.clear();
 				ret.add(ca.getSecondaryId());
 			}
 		}
 		LinkedList<Integer> ret2 = new LinkedList<>();
-		ret2.addAll(ret);
+		if(condiCount == 0)
+			ret2.add(ret.stream().max(Integer::compareTo).orElse(-1));
+		else
+			ret2.addAll(ret);
+		ret.clear();
 		for(int abId : ret2) {
 			int recursiveId = abId;
 			while(true) {
@@ -138,7 +148,9 @@ public class Unit {
 					break;
 			}
 		}
-		return ret.stream().distinct().sorted().map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
+		if(type.equals(AttackName.BT))
+			ret2.addFirst(this.getBaseAbility(AttackName.BT).get(0).getId());
+		return Streams.concat(ret2.stream(), ret.stream()).distinct().map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
 	}
 	public Passive getPassive(int level) {
 		return getPassive(level, null);
