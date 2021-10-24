@@ -93,6 +93,14 @@ public abstract class ImageUtils {
 				.orElse(name2.equalsIgnoreCase(ImageUtils.Emotes.UNKNOWN_EMOTE.get()) ? null : getEmoteClassByName(ImageUtils.Emotes.UNKNOWN_EMOTE.get()));
 		return emo;
 	}
+	public static String getRegionEmoteText(String region) {
+		switch(region) {
+		case "GL": return getEmoteText("GL_Version");
+		case "JP": return getEmoteText("JP_Version");
+		case "GL & JP": return getEmoteText("GL_Version") + getEmoteText("JP_Version");
+		}
+		return getEmoteText2(ImageUtils.Emotes.UNKNOWN_EMOTE.get());
+	}
 	public static String getEmoteText(String name) {
 		Optional<Emote> o = Optional.ofNullable(getEmoteClassByName(name));
 		return o.isPresent() ? "<:" + o.get().getName() + ":" + o.get().getId() + ">" : getEmoteText2(ImageUtils.Emotes.UNKNOWN_EMOTE.get());
