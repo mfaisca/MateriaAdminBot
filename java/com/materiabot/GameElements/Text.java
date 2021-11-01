@@ -22,4 +22,7 @@ public class Text {
 		if(jp != null && jp.length() > 0) return getJp();
 		return MessageUtils.NOTEXT;
 	}
+	public String toString() {
+		return this.getBest();
+	}
 }

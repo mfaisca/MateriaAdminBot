@@ -29,7 +29,7 @@ public class Constants {
 	public static final HashMap<Integer, _PassiveEffect> PASSIVE_EFFECT = new HashMap<>();
 	public static final HashMap<Integer, _PassiveRequired> PASSIVE_REQUIRED = new HashMap<>();
 	public static final HashMap<Integer, _AilmentEffect> AILMENT_EFFECT = new HashMap<>();
-	public static final HashMap<String, _AilmentRequired> AILMENT_REQUIRED = new HashMap<>();
+	public static final HashMap<Integer, _AilmentRequired> AILMENT_REQUIRED = new HashMap<>();
 	public static final HashMap<Integer, _AuraEffect> AURA_EFFECT = new HashMap<>();
 	public static final HashMap<Integer, _AuraRequired> AURA_REQUIRED = new HashMap<>();
 	public static final HashMap<Integer, _MiscConditionLabel> LABELS = new HashMap<>();

@@ -7,20 +7,17 @@ import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
 import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
+import com.materiabot.GameElements.Enumerators.Ailment.Required._AilmentRequired;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.ImageUtils;
 import com.materiabot.Utils.MessageUtils;
+import Shared.Methods;
 
-public class Ailment { //TODO Missing icons	
-	/* Regarding iconType and dispType
-	 14 means not visible buff/debuff icon
-	and then is disp_type is not 0 or -1, then it is a special effect
-	else, it is a hidden ailment
-	 */
-
+public class Ailment {
 	private int id, castId;
 	private Text name, desc, fakeName, fakeDesc, fakeEmote;
-	private int rate, rank, duration, maxStacks, buffType, iconType, dispType, spStacks, targetId;
+	private int rate, rank, duration, maxStacks, buffType, iconType, dispType, spStacks, targetId, 
+				hitOrder; //-1 = start | 0 = end | otherwise after said hit
 	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId, auraRankData; //auraRankData is for Fake Ailments for Auras
 	private ConditionBlock[] conditions;
 	private TargetType target;
@@ -29,6 +26,11 @@ public class Ailment { //TODO Missing icons
 	private Ability ability;
 	private HashMap<Integer, RankData> rankData = new HashMap<>();
 	private List<Aura> auras = new LinkedList<>();
+	private _AilmentRequired ailmentCondition;
+	private int ailmentConditionId;
+	private int ailmentConditionValue;
+	private ConditionBlock[] ailmentConditionBlocks; //When ailmentRequired = 26
+	
 
 	public Ailment() {}
 	public Ailment(String text) { setName(new Text(text)); setFakeDesc(new Text(text)); }
@@ -150,6 +152,18 @@ public class Ailment { //TODO Missing icons
 	public List<Aura> getAuras() { return auras; }
 	public void setAuras(List<Aura> auras) { this.auras = auras; }
 
+	public int getHitOrder() { return hitOrder; }
+	public void setHitOrder(int hitOrder) { this.hitOrder = hitOrder; }
+	
+	public _AilmentRequired getAilmentCondition() { return ailmentCondition; }
+	public void setAilmentCondition(_AilmentRequired ailmentCondition) { this.ailmentCondition = ailmentCondition; }
+	public int getAilmentConditionId() { return ailmentConditionId; }
+	public void setAilmentConditionId(int ailmentConditionId) { this.ailmentConditionId = ailmentConditionId; }
+	public int getAilmentConditionValue() { return ailmentConditionValue; }
+	public void setAilmentConditionValue(int ailmentConditionValue) { this.ailmentConditionValue = ailmentConditionValue; }
+	public ConditionBlock[] getAilmentConditionBlock() { return ailmentConditionBlocks; }
+	public void setAilmentConditionBlock(ConditionBlock[] conditionBlocks) { this.ailmentConditionBlocks = conditionBlocks; }
+	
 	public boolean isVisible() {
 		return getIconType() != 14;
 	}
@@ -193,6 +207,12 @@ public class Ailment { //TODO Missing icons
 		return icon + this.getName().getBest() + (this.getName().getBest() == null || Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}
 
+	/*public String generateInLineDescription() {
+		String ret = "Apply " + ImageUtils.getAilmentEmote(this) + Methods.enframe(this.getName().getBest()) + "to " + this.getTarget().getDescription();
+		if(this.getDuration() > 0)
+			ret += " for " + this.getDuration() + (this.getDuration() == 1 ? " turn" : " turns");
+		return ret;
+	}*/
 	public String generateDescription() {
 		return generateDescription(false);
 	}
@@ -238,12 +258,7 @@ public class Ailment { //TODO Missing icons
 		if(this.getFakeDesc() != null) return getFakeDesc().getBest();
 		List<AilmentBlock> finalDescription = new LinkedList<>();
 		String ret = "";
-		if(this.getName().getBest().equals("Attack Change")) {
-			finalDescription.add(new AilmentBlock(null, "Enables special abilities"));
-			if(this.getDuration() < 1)
-				finalDescription.add(new AilmentBlock(null, "{retline} for 1 use"));
-		}
-		else if(isDeadEffect())
+		if(isDeadEffect() && !this.getName().getBest().equals("Attack Change"))
 			return "";
 		if(!isAuraEffect) {
 			if(this.isStackable() && this.getArgs()[0] > 0)
@@ -260,8 +275,21 @@ public class Ailment { //TODO Missing icons
 			finalDescription.add(0, new AilmentBlock(null, "Cannot be extended"));
 		if(!isBurstExtendable())
 			finalDescription.add(0, new AilmentBlock(null, "Decreases in BURST mode"));
+		if(this.getName().getBest().equals("Attack Change")) {
+			String enabledAbilities = this.getUnit().getUpgradedAbilities().stream()
+										.flatMap(ca -> ca.getReqMiscConditions().stream())
+										.filter(mc -> Arrays.asList(mc.getValues()).stream().anyMatch(v -> v.intValue() == this.getId()))
+										.map(mc -> this.getUnit().getSpecificAbility(mc.getAb().getSecondaryId()))
+										.map(a -> Methods.enframe(a.getName().getBest())).distinct()
+										.reduce((n1, n2) -> n1 + "," + n2).orElse("special abilities");
+			String ret2 = "Enables " + enabledAbilities + (this.getDuration() < 1 ? " for 1 use" : "");
+			finalDescription.add(0, new AilmentBlock(null, ret2));
+		}
 		finalDescription.addAll(generateEffectDescription());
-		return finalDescription.stream().distinct().sorted().map(ab -> ab.toString()).distinct().reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retline}", "");
+		return finalDescription.stream().distinct().sorted()
+				.map(ab -> ab.toString()).distinct()
+				.reduce((s1, s2) -> s1 + System.lineSeparator() + s2)
+				.orElse("").replace(System.lineSeparator() + "{retline}", "");
 	}
 	private List<AilmentBlock> generateEffectDescription() {
 		if(this.getFakeDesc() != null) return null;

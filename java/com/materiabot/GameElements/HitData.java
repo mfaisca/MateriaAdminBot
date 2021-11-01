@@ -51,8 +51,9 @@ public class HitData {
 	private int brvDamageLimitUp;
 	private int maxBrvLimitUp;
 	private String manualDescription;
-	
+
 	public HitData(Ability a) { ability = a; }
+	public HitData(Ability a, String m) { this(a); this.setManualDescription(m); }
 	
 	public Ability getAbility() { return ability; }
 	public int getId() { return id; }

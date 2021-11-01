@@ -46,6 +46,7 @@ public class Unit {
 		this.equipmentType = eqType;
 	}
 
+	public void loadFix() {}
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
 	public Region getRegion() { return region; }
@@ -127,7 +128,7 @@ public class Unit {
 				ret.clear();
 				ret.add(ca.getSecondaryId());
 			}
-		}
+		};
 		LinkedList<Integer> ret2 = new LinkedList<>();
 		if(condiCount == 0)
 			ret2.add(ret.stream().max(Integer::compareTo).orElse(-1));
@@ -179,7 +180,12 @@ public class Unit {
 	}
 	public Passive getSpecificPassive(Integer id) {
 		if(id == null) return null;
-		return Objects.requireNonNullElse(glPassives.get(id), Passive.NULL(id));
+		return Objects.requireNonNullElse(
+					getGLPassives().get(id), Objects.requireNonNullElse(
+					getEquipment().stream().flatMap(e -> e.getPassives().stream()).filter(p -> p.getId() == id).findFirst().orElse(null), Objects.requireNonNullElse(
+					getCharaBoards().stream().filter(p -> p.getId() == id).findFirst().orElse(null), Objects.requireNonNullElse(
+					getJPPassives().get(id), 
+					Passive.NULL(id)))));
 	}
 	public Ailment getSpecificAilment(Integer id) {
 		if(id == null) return null;

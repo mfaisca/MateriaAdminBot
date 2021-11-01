@@ -1,7 +1,8 @@
 package com.materiabot.GameElements.Enumerators.Ailment.Required;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.Enumerators._Plugin;
-import com.materiabot.GameElements.Enumerators.Ailment.Aura.AuraTarget;
+import com.materiabot.Utils.ImageUtils;
+import Shared.Methods;
 
 public abstract class _AilmentRequired implements _Plugin {
 	protected int id;
@@ -14,19 +15,24 @@ public abstract class _AilmentRequired implements _Plugin {
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
-	
-	public String getDescription(Ailment p, AuraTarget target, Integer requireTargetValue, Integer... values) {
-		String description = getBaseDescription().replace("{t}", target.getDescription());
-		for(int i = 0; i < values.length; i++) {
-			description = description.replace("{ail" + i + "}", p.getUnit().getSpecificAilment(values[i]).getName().getBest());
-			description = description.replace("{ab" + i + "}", p.getUnit().getSpecificAbility(values[i]).getName().getBest());
-			description = description.replace("{p" + i + "}", p.getUnit().getSpecificPassive(values[i]).getName().getBest());
-			description = description.replace("{" + i + "}", ""+values[i]);
+
+	public String getDescription(Ailment a, int index) {
+		return applyReplaces(a, index, getBaseDescription());
+	}
+
+	protected static final String applyReplaces(Ailment a, int index, String description) {
+		description = description.replace("{t}", a.getTarget().getDescription());
+		description = description.replace("{u}", a.getUnit().getName());
+		description = description.replace("{ail}", a.getName().getBest());
+		for(int i = 0; i < 2; i++) {
+			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(a.getUnit(), a.getAilmentConditionValue()) + Methods.enframe(a.getUnit().getSpecificAilment(a.getAilmentConditionValue()).getName().getBest()));
+			description = description.replace("{ab" + i + "}", Methods.enframe(a.getUnit().getSpecificAbility(a.getAilmentConditionValue()).getName().getBest()));
+			description = description.replace("{p" + i + "}", Methods.enframe(a.getUnit().getSpecificPassive(a.getAilmentConditionValue()).getName().getBest()));
+			description = description.replace("{" + i + "}", ""+a.getAilmentConditionValue());
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}
 			String plurality = description.substring(description.indexOf("{pl"), description.indexOf("}", description.indexOf("{pl")) + 1);
-			int idx = plurality.charAt(3) - '0';
-			String ret = values[idx] == 1 ? 
+			String ret = a.getAilmentConditionValue() == 1 ? 
 							plurality.substring(plurality.indexOf(";") + 1, plurality.lastIndexOf(";")) : 
 							plurality.substring(plurality.lastIndexOf(";") + 1, plurality.indexOf("}"));
 			description = description.replace(plurality, ret);

@@ -1,6 +1,7 @@
 package com.materiabot.commands;
 import com.materiabot.Utils.CooldownManager;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.ChannelType;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
 import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
@@ -19,7 +20,14 @@ public abstract class _BaseCommand{
 		this.help = help;
 	}
 	public static final boolean canPost(SlashCommandEvent event) {
-		return event.getGuild().getSelfMember().getPermissions(event.getTextChannel()).stream().anyMatch(p -> Permission.MESSAGE_READ.equals(p));
+		try {
+			if(!event.getChannelType().equals(ChannelType.TEXT))
+				return false;
+			return event.getGuild().getSelfMember().getPermissions(event.getTextChannel()).stream()
+					.anyMatch(p -> Permission.MESSAGE_READ.equals(p));
+		} catch(Exception e) {
+			return false;
+		}
 	}
 	public boolean isEtherealReply(SlashCommandEvent event) { return false; }
 	public boolean isEtherealReply(ButtonClickEvent event) { return false; }

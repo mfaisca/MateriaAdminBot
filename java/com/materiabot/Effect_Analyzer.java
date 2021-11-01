@@ -25,7 +25,7 @@ public class Effect_Analyzer {
 		UnitParser.setDebug(true);
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 99;
+		int key = 3;
 
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -87,25 +87,25 @@ public class Effect_Analyzer {
 	}
 	
 	private static void findMissing() {
-		HashMap<String, List<String>> map = new HashMap<>();
-		
+		HashMap<Integer, List<String>> map = new HashMap<>();
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
 			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
-			.flatMap(u -> u.getAilments().values().stream())
-			.forEach(a -> {
-				int icon3 = a.getBuffType();
-				int icon = a.getIconType();
-				int icon2 = a.getDispType();
-				String key = icon3 + "/" + icon + "/" + icon2;
-				if(!map.containsKey(key))
-					map.put(key, new LinkedList<>());
-				if(a.getUnit() != null)
-					map.get(key).add(a.getUnit().getName() + "/" + a.getName().getBest());
-				else
-					map.get(key).add(a.getAbility().getUnit().getName() + "/" + a.getName().getBest());
-			});
-		map.keySet().stream().sorted().forEach(k -> {
-			System.out.println(k + " - " + map.get(k).stream().distinct().collect(Collectors.toList()).toString());
+				.flatMap(u -> u.getAbilities().values().stream())
+				.flatMap(a -> a.getAilments().stream())
+				.forEach(a -> {
+					if(a.getHitOrder() == 0)
+						System.out.println();
+					if(map.get(a.getHitOrder()) == null)
+						map.put(a.getHitOrder(), new LinkedList<>());
+					map.get(a.getHitOrder()).add(a.getUnit().getName() + "/" + a.getAbility().getName().getBest() + "(" + a.getAbility().getId() + ")/" + a.getName().getBest() + "(" + a.getId() + ")");
+				});
+//		map.keySet().stream().sorted().forEach(k -> {
+//			System.out.println(k + " - " + map.get(k).stream().distinct().collect(Collectors.toList()).toString());
+//		});
+		map.entrySet().stream().forEach(es -> {
+			if(es.getKey().intValue() == 0)
+				System.out.println();
+			System.out.println(es.getKey() + ": " + es.getValue().toString());
 		});
 	}
 	

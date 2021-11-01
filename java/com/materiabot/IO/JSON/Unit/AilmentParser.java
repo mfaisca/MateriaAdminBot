@@ -1,4 +1,5 @@
 package com.materiabot.IO.JSON.Unit;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
@@ -34,8 +35,19 @@ public class AilmentParser {
 		ail.setRate(ailment.getObject("meta_data").getInt("rate"));
 		ail.setRank(ailment.getObject("meta_data").getInt("rank")-1); //Indexing on source files starts at 1 instead of 0
 		ail.setTargetId(ailment.getObject("meta_data").getInt("target"));
+		if(ailment.getObject("meta_data").getInt("hit_order") != null)
+			ail.setHitOrder(ailment.getObject("meta_data").getInt("hit_order"));
+		else
+			ail.setHitOrder(-10); //Default Ailments
 		ail.setTarget(TargetType.get(ail.getTargetId()));
 		ail.setDuration(ailment.getObject("meta_data").getInt("duration"));
+		ail.setAilmentConditionId(ailment.getObject("meta_data").getInt("condition"));
+		ail.setAilmentCondition(Constants.AILMENT_REQUIRED.get(ail.getAilmentConditionId()));
+		try {
+			ail.setAilmentConditionValue(ailment.getObject("meta_data").getInt("condition_argument"));
+		}catch(Exception e) {
+			ail.setAilmentConditionBlock(parseConditionBlocks(ail, ailment.getObject("meta_data"), "condition_argument", true));
+		}
 		ail.setGroupId(ailment.getIntArray("group"));
 		ail.setArgs(ailment.getObject("meta_data").getIntArray("arguments"));
 		ail.setBuffType(ailment.getObject("type_data").getInt("buff_type"));
@@ -101,7 +113,48 @@ public class AilmentParser {
 		}
 		return ail;
 	}
-	
+
+	@Deprecated
+	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name, boolean fix) {
+		List<ConditionBlock> conds = new LinkedList<>();
+		ConditionBlock c = new ConditionBlock(a);
+		try {
+			MyJSONObject cond = new MyJSONObject(root.getJSON().getJSONObject(name));
+			c.setId(cond.getInt("id"));
+			for(MyJSONObject cond2 : cond.getObjectArray("conds")) {
+				ConditionBlock c2 = new ConditionBlock(a);
+				c2.setAilment(a);
+				c2.setConditionId(cond2.getInt("require_id"));
+				c2.setCondition(Constants.PASSIVE_REQUIRED.get(c2.getConditionId()));
+				c2.setValues(Arrays.asList(cond2.getInt("require_value1"),0,0).toArray(new Integer[3]));
+				c2.setTargetId(cond2.getInt("require_target"));
+				c2.setTarget(RequiredTarget.get(c2.getTargetId()));
+				c.getConditions().add(c2);
+			}
+		} catch(Exception e) {
+			//-1
+		}
+		conds.add(c);
+		c = new ConditionBlock(a);
+		try {
+			MyJSONObject cond = new MyJSONObject(root.getJSON().getJSONObject(name));
+			c.setId(cond.getInt("id"));
+			for(MyJSONObject cond2 : cond.getObjectArray("conds")) {
+				ConditionBlock c2 = new ConditionBlock(a);
+				c2.setAilment(a);
+				c2.setConditionId(cond2.getInt("require_id_1"));
+				c2.setCondition(Constants.PASSIVE_REQUIRED.get(c2.getConditionId()));
+				c2.setValues(Arrays.asList(cond2.getInt("require_value1_1"),0,0).toArray(new Integer[3]));
+				c2.setTargetId(cond2.getInt("require_target_1"));
+				c2.setTarget(RequiredTarget.get(c2.getTargetId()));
+				c.getConditions().add(c2);
+			}
+		} catch(Exception e) {
+			//-1
+		}
+		conds.add(c);
+		return conds.toArray(new ConditionBlock[conds.size()]);
+	}
 	public static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
 		List<ConditionBlock> conds = new LinkedList<>();
 		for(int i = 0; i < root.getJSON().getJSONArray(name).length(); i++) {

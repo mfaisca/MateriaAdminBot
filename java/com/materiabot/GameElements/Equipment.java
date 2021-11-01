@@ -46,6 +46,7 @@ public class Equipment{
 		W_EX(5, "exWeapon", "W_EX"), 
 		W_EXP(6, "realizedWeapon", "W_EXP"), 
 		W_LD(5, "limitedWeapon", "W_LD"), 
+		W_FR(7, "forceWeapon", "W_FR"), 
 		W_BT(1000, "burstWeapon", "W_BT"),
 		W_BTP(1001, "rzBurstWeapon", "W_BTP"),
 		A_3S(3, "bronzeArmor", "E_3star"), 
@@ -80,7 +81,10 @@ public class Equipment{
 			return Arrays.asList(W_15, W_35, W_WoI, W_NT, W_MW).contains(r);
 		}
 		public static boolean isUpperTierW(Rarity r) {
-			return Arrays.asList(W_EX, W_EXP, W_LD, W_BT, W_BTP).contains(r);
+			return Arrays.asList(W_EX, W_EXP, W_LD, W_FR).contains(r);
+		}
+		public static boolean isTopTierW(Rarity r) {
+			return Arrays.asList(W_BT, W_BTP).contains(r);
 		}
 		public static boolean isLowerTierA(Rarity r) {
 			return Arrays.asList(A_35, A_90, A_90P, BS).contains(r);
@@ -89,7 +93,7 @@ public class Equipment{
 			return Arrays.asList(A_7S, A_7SP).contains(r);
 		}
 		public static boolean isWeapon(Rarity r) {
-			return isLowerTierW(r) || isUpperTierW(r);
+			return isLowerTierW(r) || isUpperTierW(r) || isTopTierW(r);
 		}
 		public static boolean isArmor(Rarity r) {
 			return isLowerTierA(r) || isUpperTierA(r);

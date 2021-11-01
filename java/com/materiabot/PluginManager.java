@@ -57,6 +57,8 @@ public class PluginManager {
 					map = Constants.ABILITY_EFFECT; break;
 				case "Ailment.Effect":
 					map = Constants.AILMENT_EFFECT; break;
+				case "Ailment.Required":
+					map = Constants.AILMENT_REQUIRED; break;
 				case "Aura.Effect":
 					map = Constants.AURA_EFFECT; break;
 				case "Aura.Required":

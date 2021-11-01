@@ -113,7 +113,7 @@ public class Ability implements Comparable<Ability>{
 	public int getAttackTypeId() { return attackTypeId; }
 	public void setAttackTypeId(int attackTypeId) { this.attackTypeId = attackTypeId; }
 	public AttackName getAttackName() { return attackName; }
-	public void setAttackName(AttackName attackName) { this.attackName = attackName; }
+	public void setAttackName(AttackName attackName) { if(this.getAttackName() == null) this.attackName = attackName; }
 	public int getCommandTypeId() { return commandTypeId; }
 	public void setCommandTypeId(int commandTypeId) { this.commandTypeId = commandTypeId; }
 	public Integer[] getGroupId() { return groupId; }
@@ -179,8 +179,8 @@ public class Ability implements Comparable<Ability>{
 		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> ImageUtils.getEmoteText(hd.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> ImageUtils.getEmoteText(e.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getName().getBest()
-				+ (getTotalUseCount() > 0 && !this.getAttackName().equals(AttackName.EX) && !this.getAttackName().equals(AttackName.BT) ? " (Uses: " + getTotalUseCount() + ")" : "")
-				+ (this.getAttackName() != null && this.getAttackName().equals(AttackName.EX) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + " (" + getChargeRate() + "))" : "")
+				+ (getTotalUseCount() > 0 && !AttackName.EX.equals(this.getAttackName()) && !AttackName.BT.equals(this.getAttackName()) ? " (Uses: " + getTotalUseCount() + ")" : "")
+				+ (AttackName.EX.equals(this.getAttackName()) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + " (" + getChargeRate() + "))" : "")
 				+ (Constants.DEBUG ? " (ID: " + getId() + ")" : "");
 	}
 
@@ -245,7 +245,7 @@ public class Ability implements Comparable<Ability>{
 				currentChain = new LinkedList<>();
 			}
 			else if(!hd.getEffect().isPostEffect(hd.getEffectValueType()) && !hd.getEffect().isPreEffect(hd.getEffectValueType())){
-				if(currentChain.isEmpty()) {
+				if(!currentChain.isEmpty()) {
 					effects.add(currentChain);
 					currentChain = new LinkedList<>();
 				}
@@ -276,7 +276,6 @@ public class Ability implements Comparable<Ability>{
 			preEffects.add("+" + brvDamageLimit + "% Maximum BRV damage limit (up to " + Math.round(9999 * (1 + brvDamageLimit / 100f)) + ")");
 		if(maxBrvLimit > 0)
 			preEffects.add("+" + maxBrvLimit + "% Maximum obtainable BRV & HP damage limit (up to " + Math.round(99999 * (1 + maxBrvLimit / 100f)) + ")");
-		effectList.addAll(preEffects);
 		for(List<HitData> chain : effects) {
 			if(chain.isEmpty()) continue;
 			if(chain.get(0).getEffect() == null)
@@ -310,6 +309,13 @@ public class Ability implements Comparable<Ability>{
 					effectList.add(text);
 			}
 		}
+		for(Ailment a : this.getAilments()) {
+			if(a.getHitOrder() == -1)
+				preEffects.add("");
+			else if(a.getHitOrder() == 0)
+				postEffects.add("");
+		}
+		effectList.addAll(0, preEffects);
 		effectList.addAll(postEffects);
 		if(brvPotency.length() > 0) {
 			brvPotency.append(" = " + totalPotency + "%");
@@ -319,7 +325,7 @@ public class Ability implements Comparable<Ability>{
 				brvPotency.append(", " + (overflow + breakOverflow) + "% if target broken");
 			if((overflow > 100 && overflow < 5000) || (breakOverflow > 0 && breakOverflow < 5000))
 				brvPotency.append(")");
-			effectList.add(System.lineSeparator() + "BRV Potency: " + brvPotency.substring(2).trim());
+			effectList.add("{newLine}BRV Potency: " + brvPotency.substring(2).trim());
 		}
 		List<DupeMerger> as = new ArrayList<>(Arrays.asList(effectList.stream().filter(s -> !s.isEmpty())
 					.reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retLine}", "")
@@ -327,10 +333,180 @@ public class Ability implements Comparable<Ability>{
 		for(int i = 1; i < as.size(); i++)
 			as.get(i-1).merge(as.get(i));
 		return as.stream()
-				.filter(m -> m.count >= 1)
-				.map(m -> m.toString()).reduce((s1, s2) -> s1 + System.lineSeparator() + s2
-				).orElse("");
+				.map(m -> m.toString())
+				.filter(m -> !m.isBlank())
+				.reduce((s1, s2) -> s1 + System.lineSeparator() + s2
+				).orElse("").replace("{newLine}", System.lineSeparator());
 	}
+
+	/*public String generateDescription() {
+		if(getManualDesc() != null)
+			return getManualDesc();
+		int stBrvIncrease = this.getHitData().stream()
+				.map(h -> (int)Math.floor((h.getSingleTargetBrvRate() / h.getBrvRate()) * 100))
+				.filter(o -> o > 0)
+				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
+		int overflow = this.getCommandType() == null || this.getCommandType().equals(CommandType.BT) ? 100 : 
+			this.getHitData().stream()
+				.map(h -> h.getMaxBrvOverflow())
+				.filter(o -> o > 100)
+				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(100);
+		if(overflow <= 100)
+			overflow = this.getHitData().stream().filter(hd -> hd.getEffectId() == 106).map(hd -> hd.getArguments()[0]).findFirst().orElse(100);
+		int breakOverflow = this.getHitData().stream()
+				.map(h -> h.getMaxBrvOverflowBreak())
+				.filter(o -> o > 0)
+				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
+		int brvDamageLimit = this.getHitData().stream()
+				.map(h -> h.getBrvDamageLimitUp())
+				.filter(o -> o > 0)
+				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
+		int maxBrvLimit = this.getHitData().stream()
+				.map(h -> h.getMaxBrvLimitUp())
+				.filter(o -> o > 0)
+				.max((o1, o2) -> Integer.compare(o1, o2)).orElse(0);
+		List<String> preEffects = new LinkedList<>();
+		List<String> effectList = new LinkedList<>();
+		List<String> postEffects = new LinkedList<>();
+		List<List<HitData>> effects = new LinkedList<>();
+		List<HitData> currentChain = new LinkedList<>();
+		
+		List<Element> sameElements = null;
+		com.materiabot.GameElements.Enumerators.Ability.HitData.AttackType sameAttackTypes = null;
+		boolean sameElement = true;
+		boolean sameAttackType = true;
+		
+		List<Ailment> toAdd = new LinkedList<>();
+		List<Ailment> missing = this.getAilments();
+		int count = -1;
+		for(HitData hd : this.getHitData()) {
+			count++;
+			if(count > 0) {
+				int count2 = count;
+				List<Ailment> thisCountAilments = missing.stream().filter(a -> a.getHitOrder() == count2).collect(Collectors.toList());
+				if(!thisCountAilments.isEmpty())
+					toAdd.addAll(thisCountAilments);
+			}
+			if(hd.getManualDescription() != null) {
+				effectList.add(hd.getManualDescription());
+				continue;
+			}
+			hd.getDescription(); //To apply any fixes that might be needed to other stuff
+			if(hd.getEffect().isPreEffect(hd.getEffectValueType()) && !preEffects.contains(hd.getDescription()))
+				preEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
+			else if(hd.getEffect().isPostEffect(hd.getEffectValueType()) && !postEffects.contains(hd.getDescription()))
+				postEffects.add((hd.getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + hd.getDescription());
+			if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()) && (currentChain.isEmpty() || currentChain.get(0).getEffect().isBRV())) {
+				currentChain.add(hd);
+				if(sameElements == null)
+					sameElements = hd.getElements();
+				if(sameAttackTypes == null)
+					sameAttackTypes = hd.getAttackType();
+				sameElement = sameElement && sameElements.size() == hd.getElements().size() && sameElements.containsAll(hd.getElements()) && hd.getElements().containsAll(sameElements);
+				sameAttackType = sameAttackType && sameAttackTypes.getId() == hd.getAttackType().getId();
+			}else if(hd.getEffect().isHP() && Type.isHP(hd.getType()) && (currentChain.isEmpty() || currentChain.get(0).getEffect().isBRV())) {
+				currentChain.add(hd);
+				toAdd.stream().forEach(a -> effects.add(Arrays.asList(new HitData(this, a.generateInLineDescription()))));
+				toAdd = new LinkedList<>();
+				effects.add(currentChain);
+				currentChain = new LinkedList<>();
+			}
+			else if(!hd.getEffect().isPostEffect(hd.getEffectValueType()) && !hd.getEffect().isPreEffect(hd.getEffectValueType())){
+				if(!currentChain.isEmpty()) {
+					effects.add(currentChain);
+					currentChain = new LinkedList<>();
+				}
+				currentChain.add(hd);
+				toAdd.stream().forEach(a -> effects.add(Arrays.asList(new HitData(this, a.generateInLineDescription()))));
+				toAdd = new LinkedList<>();
+				effects.add(currentChain);
+				currentChain = new LinkedList<>();
+			}
+		}
+		StringBuilder brvPotency = new StringBuilder();
+		int totalPotency = 0;
+		if(!currentChain.isEmpty())
+			effects.add(currentChain);
+		if(this.getMovementCost() == 0)
+			preEffects.add(0, "Instant Turn Rate (" + this.getMovementCost() + ")");
+		else if(this.getMovementCost() < 30)
+			preEffects.add(0, "High Turn Rate (" + this.getMovementCost() + ")");
+		else if(this.getMovementCost() > 30)
+			preEffects.add(0, "Low Turn Rate (" + this.getMovementCost() + ")");
+		if(chaseDmg == 50)
+			postEffects.add("Initiates a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
+		else if(chaseDmg > 6)
+			postEffects.add("Easier to initiate a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
+		else if(chaseDmg == 0)
+			preEffects.add("Cannot initiate a chase sequence");
+		if(stBrvIncrease > 0)
+			preEffects.add("Raises BRV Damage by " + stBrvIncrease + "% against ST");
+		if(brvDamageLimit > 0)
+			preEffects.add("+" + brvDamageLimit + "% Maximum BRV damage limit (up to " + Math.round(9999 * (1 + brvDamageLimit / 100f)) + ")");
+		if(maxBrvLimit > 0)
+			preEffects.add("+" + maxBrvLimit + "% Maximum obtainable BRV & HP damage limit (up to " + Math.round(99999 * (1 + maxBrvLimit / 100f)) + ")");
+		for(List<HitData> chain : effects) {
+			if(chain.isEmpty()) continue;
+			if(chain.get(0).getEffect() != null && chain.get(0).getEffect().isBRV() && Type.isBRV(chain.get(0).getType())) {
+				HitData.Extra help = new HitData.Extra(chain.get(0));
+				help.showElements = !sameElement;
+				help.showType = !sameAttackType;
+				for(HitData hd : chain) {
+					if(hd.getEffect().isBRV() && Type.isBRV(hd.getType()))
+						help.count++;
+					else if(hd.getEffect().isHP() && Type.isHP(hd.getType())) {
+						help.hp = new HitData.Extra(hd);
+						help.showElements = !sameElement;
+						help.showType = !sameAttackType;
+					}
+				}
+				effectList.add(help.getHitsDescription());
+				brvPotency.append(" + " + Math.round(chain.get(0).getBrvRate()) + "%");
+				if(help.count > 1)
+					brvPotency.append(" x " + help.count);
+				totalPotency += Math.round(chain.get(0).getBrvRate() * help.count);
+			}
+			else if(chain.get(0).getEffect() != null && chain.get(0).getEffect().isHP() && Type.isHP(chain.get(0).getType()))
+				effectList.add("Followed by an HP Attack");
+			else if(Constants.EFFECTS_THAT_CAN_REFUND.contains(chain.get(0).getEffectId()) && BasedOnStat.STATS_THAT_CAN_REFUND.contains(chain.get(0).getEffectValueType()) && chain.get(0).getTarget() == Target.Self) {
+				effectList.add("{retLine} (" + chain.get(0).getArguments()[0] + "% refund)");
+			}
+			else {
+				String text = (chain.get(0).getEffect() != null && chain.get(0).getEffect().getTags().contains(TAG.MERGE) ? "{retLine} " : "") + chain.get(0).getDescription();
+				if(!(chain.get(0).getEffect() != null && chain.get(0).getEffect().blockRepeats() && effectList.contains(text)))
+					effectList.add(text);
+			}
+		}
+		effectList = effectList.stream().filter(s -> !s.isBlank()).collect(Collectors.toList());
+		for(Ailment a : this.getAilments())
+			if(a.getHitOrder() == -1)
+				preEffects.add(a.generateInLineDescription());
+			else if(a.getHitOrder() == 0)
+				postEffects.add(a.generateInLineDescription());
+		effectList.addAll(0, preEffects);
+		effectList.addAll(postEffects);
+		if(brvPotency.length() > 0) {
+			brvPotency.append(" = " + totalPotency + "%");
+			if(overflow > 100 && overflow < 5000)
+				brvPotency.append(" (" + overflow + "% overflow");
+			if(breakOverflow > 0 && breakOverflow < 5000)
+				brvPotency.append(", " + (overflow + breakOverflow) + "% if target broken");
+			if((overflow > 100 && overflow < 5000) || (breakOverflow > 0 && breakOverflow < 5000))
+				brvPotency.append(")");
+			effectList.add("{newLine}BRV Potency: " + brvPotency.substring(2));
+		}
+		List<DupeMerger> as = new ArrayList<>(Arrays.asList(effectList.stream().filter(s -> !s.isEmpty())
+					.reduce((s1, s2) -> s1 + System.lineSeparator() + s2).orElse("").replace(System.lineSeparator() + "{retLine}", "")
+					.split(System.lineSeparator())).stream().map(s -> new DupeMerger(s)).collect(Collectors.toList()));
+		for(int i = 1; i < as.size(); i++)
+			as.get(i-1).merge(as.get(i));
+		return as.stream()
+				.filter(dm -> !dm.toString().isBlank())
+				.map(m -> m.toString())
+				.reduce((s1, s2) -> s1 + System.lineSeparator() + s2
+				).orElse("").replace("{newLine}", System.lineSeparator());
+	}*/
+	
 	public static final Ability NULL(int id) {
 		return new Ability("Unknown Ability " + id) {};
 	}

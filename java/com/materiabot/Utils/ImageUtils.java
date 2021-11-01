@@ -94,7 +94,7 @@ public abstract class ImageUtils {
 		return emo;
 	}
 	public static String getRegionEmoteText(String region) {
-		switch(region) {
+		switch(region.toUpperCase()) {
 		case "GL": return getEmoteText("GL_Version");
 		case "JP": return getEmoteText("JP_Version");
 		case "GL & JP": return getEmoteText("GL_Version") + getEmoteText("JP_Version");

@@ -34,8 +34,14 @@ public class _Listener extends ListenerAdapter{
 						}
 				}
 				else {
-					event.deferReply(true).queue();
-					MessageUtils.sendMessage(event.getHook(), "Cannot reply in this channel due to missing permissions.");
+					if(event.getChannelType().equals(ChannelType.TEXT))
+						event.reply("Cannot reply in this channel due to missing permissions.").queue();
+					else if(event.getChannelType().equals(ChannelType.PRIVATE) || event.getChannelType().equals(ChannelType.GROUP))
+						event.reply("Using commands through DM's is no longer supported.").queue();
+					else if(event.getChannelType().equals(ChannelType.UNKNOWN))
+						event.reply("Currently not working in threads.").queue();
+					else
+						event.reply("Unable to post reply for some unexpected reason.").queue();
 				}
 			}},
 			BUTTON_CLICK{public void run(Event e) {

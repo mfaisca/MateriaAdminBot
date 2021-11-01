@@ -69,6 +69,7 @@ public class UnitParser {
 			parseArtifacts(u, obj);
 			parseSpheres(u, obj);
 			parseGear(u, obj);
+			u.loadFix();
 			return u;
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -131,6 +132,8 @@ public class UnitParser {
 				ChainAbility ca = new ChainAbility();
 				ca.setUnit(u);
 				ca.setId(skillLevel.getInt("id"));
+				if(ca.getId() == 99)
+					System.out.println();
 				ca.setOriginalId(skillLevel.getInt("originalAbility"));
 				ca.setSecondaryId(skillLevel.getInt("upgradedAbility"));
 				ca.setUpgraded(true);
@@ -275,6 +278,7 @@ public class UnitParser {
 		u.setSpheres(s1, s2);
 	}
 	private static void mergeFakeFollowups(Unit u) {
+		if(u.getId() == 130) return; //Emperor to avoid merging traps
 		List<ChainAbility> c = null;
 		HashMap<Integer, Integer> map = new HashMap<>();
 		c = u.getTriggeredAbilities().stream().map(ca -> {
