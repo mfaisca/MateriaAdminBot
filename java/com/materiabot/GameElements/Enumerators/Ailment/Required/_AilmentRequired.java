@@ -30,6 +30,14 @@ public abstract class _AilmentRequired implements _Plugin {
 			description = description.replace("{p" + i + "}", Methods.enframe(a.getUnit().getSpecificPassive(a.getAilmentConditionValue()).getName().getBest()));
 			description = description.replace("{" + i + "}", ""+a.getAilmentConditionValue());
 		}
+		while(description.contains("{a")) { //{a1234} = Frame Ailment
+			String ailm = description.substring(description.indexOf("{a"), description.indexOf("}", description.indexOf("{a")) + 1);
+			Ailment ail = a.getUnit().getSpecificAilment(Integer.valueOf(ailm.substring(2, ailm.length()-1)));
+			if(ail == null)
+				description = description.replace(ailm, Methods.enframe("Unknown Ailment: " + Integer.valueOf(ailm.substring(2, ailm.length()-1))));
+			else
+				description = description.replace(ailm, Methods.enframe(ail.getName().getBest()));
+		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}
 			String plurality = description.substring(description.indexOf("{pl"), description.indexOf("}", description.indexOf("{pl")) + 1);
 			String ret = a.getAilmentConditionValue() == 1 ? 

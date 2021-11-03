@@ -11,7 +11,7 @@ public class _MiscConditionLabel implements _Plugin{
 	protected _MiscConditionLabel(int id, String desc) {
 		this.id = id;
 		this.baseDescription = desc;
-	}
+		}
 	
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }

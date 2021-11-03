@@ -105,6 +105,7 @@ public class Unit {
 			return Arrays.asList(this.getCallLd());
 		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
 		List<Integer> passivesIds = Streams.concat(	passives.stream(), 
+													getEquipment().stream().flatMap(e -> e.getPassives().stream()),
 													getCharaBoards().stream()).map(p -> p.getId())
 											.collect(Collectors.toList());
 		List<Integer> ret = new LinkedList<>();

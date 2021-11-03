@@ -15,6 +15,8 @@ import com.materiabot.Utils.Constants;
 import Shared.Methods;
 
 public class AilmentParser {
+	private AilmentParser() {}
+	
 	public static List<Ailment> parseAilments(MyJSONObject obj, String ailmentArray) {
 		List<Ailment> ret = new LinkedList<>();
 		for(MyJSONObject a : obj.getObjectArray(ailmentArray)) {
@@ -34,6 +36,8 @@ public class AilmentParser {
 		ail.setDesc(ailment.getText("desc"));
 		ail.setRate(ailment.getObject("meta_data").getInt("rate"));
 		ail.setRank(ailment.getObject("meta_data").getInt("rank")-1); //Indexing on source files starts at 1 instead of 0
+		if(ail.getRank() < 0 && ailment.getObject("meta_data").getInt("rank_alt") != null)
+			ail.setRank(ailment.getObject("meta_data").getInt("rank_alt")-1); //Indexing on source files starts at 1 instead of 0
 		ail.setTargetId(ailment.getObject("meta_data").getInt("target"));
 		if(ailment.getObject("meta_data").getInt("hit_order") != null)
 			ail.setHitOrder(ailment.getObject("meta_data").getInt("hit_order"));
@@ -41,12 +45,15 @@ public class AilmentParser {
 			ail.setHitOrder(-10); //Default Ailments
 		ail.setTarget(TargetType.get(ail.getTargetId()));
 		ail.setDuration(ailment.getObject("meta_data").getInt("duration"));
-		ail.setAilmentConditionId(ailment.getObject("meta_data").getInt("condition"));
-		ail.setAilmentCondition(Constants.AILMENT_REQUIRED.get(ail.getAilmentConditionId()));
-		try {
-			ail.setAilmentConditionValue(ailment.getObject("meta_data").getInt("condition_argument"));
-		}catch(Exception e) {
-			ail.setAilmentConditionBlock(parseConditionBlocks(ail, ailment.getObject("meta_data"), "condition_argument", true));
+		if(ailment.getObject("meta_data").getInt("condition") != null) {
+			ail.setAilmentConditionId(ailment.getObject("meta_data").getInt("condition"));
+			ail.setAilmentCondition(Constants.AILMENT_REQUIRED.get(ail.getAilmentConditionId()));
+			try {
+				if(ailment.getObject("meta_data").getInt("condition_argument") != null)
+					ail.setAilmentConditionValue(ailment.getObject("meta_data").getInt("condition_argument"));
+			}catch(Exception e) {
+				ail.setAilmentConditionBlock(parseConditionBlocks(ail, ailment.getObject("meta_data"), "condition_argument", true));
+			}
 		}
 		ail.setGroupId(ailment.getIntArray("group"));
 		ail.setArgs(ailment.getObject("meta_data").getIntArray("arguments"));

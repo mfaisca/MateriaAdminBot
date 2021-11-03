@@ -132,8 +132,6 @@ public class UnitParser {
 				ChainAbility ca = new ChainAbility();
 				ca.setUnit(u);
 				ca.setId(skillLevel.getInt("id"));
-				if(ca.getId() == 99)
-					System.out.println();
 				ca.setOriginalId(skillLevel.getInt("originalAbility"));
 				ca.setSecondaryId(skillLevel.getInt("upgradedAbility"));
 				ca.setUpgraded(true);

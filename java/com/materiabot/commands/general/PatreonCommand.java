@@ -75,7 +75,7 @@ public class PatreonCommand extends _BaseCommand{
 		Guild materiaServer = Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID);
 		final MessageChannel troupeNotes = materiaServer.getTextChannelById(636300936993701917L);
 		try {
-			MessageUtils.sendMessageToChannel(troupeNotes, "Executing a TT Patreon update...");
+			//MessageUtils.sendMessageToChannel(troupeNotes, "Executing a TT Patreon update...");
 			final PatreonAPI apiClient = new PatreonAPI(SQLAccess.getKeyValue(SQLAccess.PATREON_TT_ACCESS_TOKEN));
 			Campaign campaign = apiClient.fetchCampaigns().get().get(0);
 			final List<Pledge> pledges = apiClient.fetchAllPledges(campaign.getId());
@@ -118,7 +118,7 @@ public class PatreonCommand extends _BaseCommand{
 					materiaServer.addRoleToMember(m, tonberryKing).submit()).thenAccept(v -> 
 				MessageUtils.sendMessageToChannel(troupeNotes, m.getEffectiveName() + " is a new Tonberry King.")))
 			)).onSuccess(v1 -> {
-				MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed");
+				;//MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed");
 			});
 		} catch (IOException e) {
 			MessageUtils.sendWhisper(Constants.INK_ID, "Patreon Key is probably dead, please refresh." + System.lineSeparator() + "https://www.patreon.com/portal/registration/register-clients");

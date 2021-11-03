@@ -32,13 +32,16 @@ public class _Library {
 
 	public String getName() { return name; }
 	public Unit getUnit(String u) {
-		if(u == null) return null;
+		if(u == null) 
+			return null;
 		Unit unit = null;
 		try {
 			unit = UNIT_CACHE.get(u);
 			if(unit != null && unit.getName() != null && !u.contains("_short"))
 				UNIT_CACHE.invalidate(u + "_short");
 		} catch (Exception e) {}
+		if(!(unit != null && unit.getName() != null))
+			System.out.println();
 		return unit != null && unit.getName() != null ? unit : null;
 	}
 	public Unit getQuickUnit(String u) {

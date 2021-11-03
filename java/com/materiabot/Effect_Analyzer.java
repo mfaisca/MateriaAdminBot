@@ -89,22 +89,20 @@ public class Effect_Analyzer {
 	private static void findMissing() {
 		HashMap<Integer, List<String>> map = new HashMap<>();
 		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json")))
+				.map(u -> _Library.L.getUnit(u))
 				.flatMap(u -> u.getAbilities().values().stream())
 				.flatMap(a -> a.getAilments().stream())
+				.filter(a -> a.getAilmentConditionId() > 0)
 				.forEach(a -> {
-					if(a.getHitOrder() == 0)
-						System.out.println();
-					if(map.get(a.getHitOrder()) == null)
-						map.put(a.getHitOrder(), new LinkedList<>());
-					map.get(a.getHitOrder()).add(a.getUnit().getName() + "/" + a.getAbility().getName().getBest() + "(" + a.getAbility().getId() + ")/" + a.getName().getBest() + "(" + a.getId() + ")");
+					if(map.get(a.getAilmentConditionId()) == null)
+						map.put(a.getAilmentConditionId(), new LinkedList<>());
+					map.get(a.getAilmentConditionId()).add(a.getUnit().getName() + "/" + a.getAbility().getName().getBest() + "(" + a.getAbility().getId() + ")/" + a.getName().getBest() + "(" + a.getId() + ")");
 				});
 //		map.keySet().stream().sorted().forEach(k -> {
 //			System.out.println(k + " - " + map.get(k).stream().distinct().collect(Collectors.toList()).toString());
 //		});
 		map.entrySet().stream().forEach(es -> {
-			if(es.getKey().intValue() == 0)
-				System.out.println();
 			System.out.println(es.getKey() + ": " + es.getValue().toString());
 		});
 	}

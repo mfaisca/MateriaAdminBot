@@ -14,7 +14,7 @@ import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEf
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.Utils.Constants;
 
-public class AbilityParser {	
+public class AbilityParser {
 	private AbilityParser() {}
 	
 	public static List<Ability> parseAbilities(MyJSONObject obj, String abilityArray) {
