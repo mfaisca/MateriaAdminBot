@@ -75,7 +75,7 @@ public class Unit {
 		case S2: return charaBoards.subList(6, 12);
 		case EX: return charaBoards.subList(12, 18);
 		case LD: return charaBoards.subList(18, charaBoards.size());
-		default: return null; //Never
+		default: return Arrays.asList();
 		}
 	}
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
@@ -177,7 +177,7 @@ public class Unit {
 	
 	public Ability getSpecificAbility(Integer id) {
 		if(id == null) return null;
-		return Objects.requireNonNullElse(abilities.get(id), Ability.NULL(id));
+		return Objects.requireNonNullElse(abilities.get(id), Ability.NULL(this, id));
 	}
 	public Passive getSpecificPassive(Integer id) {
 		if(id == null) return null;

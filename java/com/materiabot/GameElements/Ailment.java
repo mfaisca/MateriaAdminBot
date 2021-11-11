@@ -1,5 +1,7 @@
 package com.materiabot.GameElements;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -163,6 +165,21 @@ public class Ailment {
 	public void setAilmentConditionValue(int ailmentConditionValue) { this.ailmentConditionValue = ailmentConditionValue; }
 	public ConditionBlock[] getAilmentConditionBlock() { return ailmentConditionBlocks; }
 	public void setAilmentConditionBlock(ConditionBlock[] conditionBlocks) { this.ailmentConditionBlocks = conditionBlocks; }
+	public List<Integer> getTriggeredAbilities() {
+		List<Integer> ret = new LinkedList<>();		
+		for(int i = 0; i < this.getEffects().length; i++) {
+			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 60) 
+				continue;
+			_AilmentEffect effect = Constants.AILMENT_EFFECT.get(this.getEffects()[i]);
+			if(effect != null)
+				ret.addAll(effect.getTriggeredAbilities(this, i, getRank(), false));;
+		}
+		return Stream.concat(ret.stream(), 
+				this.getAuras().stream()
+					.filter(a -> a.getEffectId() != -1)
+					.flatMap(a -> _AilmentEffect.getTriggeredAbilitiesFromAura(a).stream())
+					.distinct()).collect(Collectors.toList());
+	}
 	
 	public boolean isVisible() {
 		return getIconType() != 14;
@@ -304,8 +321,7 @@ public class Ailment {
 		boolean hasAuras = Arrays.asList(this.getEffects()).stream().anyMatch(i -> i == 60);
 		if(this.getRank() >= 0)
 			for(int i = 0; i < this.getEffects().length; i++) {
-				if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69) continue; //69 is a "meta" effect related to countering, other effects will use it.
-				if(this.getEffects()[i] == 60) { continue; }
+				if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69 || this.getEffects()[i] == 60) continue; //69 is a "meta" effect related to countering, other effects will use it.
 				String condi = "";
 				for(int ic = 0; ic < this.getConditions()[i].getConditions().size(); ic++) {
 					ConditionBlock cond = this.getConditions()[i].getConditions().get(ic);

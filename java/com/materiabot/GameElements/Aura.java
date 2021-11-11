@@ -40,9 +40,7 @@ public class Aura {
 	public void setEffect(_AuraEffect effect) { this.effect = effect; }
 	public int getTargetId() { return targetId; }
 	public void setTargetId(int targetId) { this.targetId = targetId; }
-	public AuraTarget getTarget() { 
-		return target; 
-	}
+	public AuraTarget getTarget() { return target; }
 	public void setTarget(AuraTarget target) { this.target = target; }
 	public int getValueType() { return valueType; }
 	public void setValueType(int valueType) { this.valueType = valueType; }

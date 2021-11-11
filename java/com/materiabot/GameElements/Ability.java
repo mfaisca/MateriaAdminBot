@@ -122,7 +122,9 @@ public class Ability implements Comparable<Ability>{
 	public void setTargetTypeId(int targetTypeId) { this.targetTypeId = targetTypeId; }
 	public int getTargetRangeId() { return targetRangeId; }
 	public void setTargetRangeId(int targetRangeId) { this.targetRangeId = targetRangeId; }
-	public Unit getUnit() { return unit; }
+	public Unit getUnit() { 
+		return unit;
+	}
 	public void setUnit(Unit unit) { this.unit = unit; }
 	public String getIcon() { return icon; }
 	public void setIcon(String icon) { this.icon = icon; }
@@ -133,7 +135,7 @@ public class Ability implements Comparable<Ability>{
 	}
 	
 	public String getSelectionMenuText() {
-		if(this.getAttackName().equals(AttackName.BT)) {
+		if(AttackName.BT.equals(this.getAttackName())) {
 			if(this.getUnit().getBaseAbility(AttackName.BT).get(0).getId() == this.getId())
 				return getName().getBest() + " (BT Only)";
 			else
@@ -507,8 +509,10 @@ public class Ability implements Comparable<Ability>{
 				).orElse("").replace("{newLine}", System.lineSeparator());
 	}*/
 	
-	public static final Ability NULL(int id) {
-		return new Ability("Unknown Ability " + id) {};
+	public static final Ability NULL(Unit unit, int id) {
+		Ability a = new Ability("Unknown Ability " + id) {};
+		a.setUnit(unit);
+		return a;
 	}
     @Override
     public int compareTo(Ability other) {
