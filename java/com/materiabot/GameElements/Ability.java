@@ -106,6 +106,7 @@ public class Ability implements Comparable<Ability>{
 	public void setTargetRange(TargetRange targetRange) { this.targetRange = targetRange; }
 	public List<HitData> getHitData() { return hitData; }
 	public List<Ailment> getAilments() { return ailments; }
+	public void setAilments(List<Ailment> ails) { ailments = ails; }
 	public int[] getArguments() { return arguments; }
 	public void setArguments(int[] arguments) { this.arguments = arguments; }
 	public int getHitTypeId() { return hitTypeId; }
@@ -517,6 +518,16 @@ public class Ability implements Comparable<Ability>{
     @Override
     public int compareTo(Ability other) {
         return Integer.compare(this.getId(), other.getId());
+    }
+    @Override
+    public boolean equals(Object other) {
+    	if(other == null || Ability.class != other.getClass())
+    		return false;
+        return this.getId() == ((Ability)other).getId();
+    }
+    @Override
+    public int hashCode() {
+    	return this.getId();
     }
     @Override
     public String toString() {

@@ -1,4 +1,5 @@
 package com.materiabot.GameElements;
+import java.util.Arrays;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel._MiscConditionLabel;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
@@ -29,5 +30,11 @@ public class MiscCondition {
 	
 	public String generateDescription() {
 		return condition != null ? getCondition().getDescription() : getLabel().getDescription(this);
+	}
+	@Override
+	public boolean equals(Object other) {
+		if(other == null || !this.getClass().equals(other.getClass())) return false;
+		MiscCondition otherr = (MiscCondition) other;
+		return this.getLabelId() == otherr.getLabelId() && this.getTargetId() == otherr.getTargetId() && Arrays.equals(this.getValues(), otherr.getValues());
 	}
 }

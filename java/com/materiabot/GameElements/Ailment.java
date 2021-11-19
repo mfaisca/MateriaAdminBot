@@ -167,6 +167,14 @@ public class Ailment {
 	public void setAilmentConditionBlock(ConditionBlock[] conditionBlocks) { this.ailmentConditionBlocks = conditionBlocks; }
 	public List<Integer> getTriggeredAbilities() {
 		List<Integer> ret = new LinkedList<>();		
+		if(this.getName().getBest().equals("Attack Change")) {
+			List<Integer> enableds = this.getUnit().getUpgradedAbilities().stream()
+										.flatMap(ca -> ca.getReqMiscConditions().stream())
+										.filter(mc -> Arrays.asList(mc.getValues()).stream().anyMatch(v -> v.intValue() == this.getId()))
+										.map(mc -> mc.getAb().getSecondaryId())
+										.collect(Collectors.toList());
+			ret.addAll(enableds);
+		}
 		for(int i = 0; i < this.getEffects().length; i++) {
 			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 60) 
 				continue;
@@ -210,8 +218,10 @@ public class Ailment {
 
 	@Override
 	public boolean equals(Object o) {
-		if(o == null || !o.getClass().equals(Ailment.class)) return false;
-		return this.getId() == ((Ailment)o).getId();
+		if(o == null || !this.getClass().equals(o.getClass())) return false;
+		Ailment other = (Ailment)o;
+		if(this.getId() != other.getId()) return false;
+		return this.generateDescription().equals(other.generateDescription());
 	}
 
 	public String generateTitle() {

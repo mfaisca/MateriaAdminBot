@@ -2,9 +2,12 @@ package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
 import com.materiabot.GameElements.ChainAbility;
@@ -12,6 +15,7 @@ import com.materiabot.GameElements.Crystal;
 import com.materiabot.GameElements.Equipment;
 import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Passive;
+import com.materiabot.GameElements.Region;
 import com.materiabot.GameElements.Sphere;
 import com.materiabot.GameElements.Sphere.SphereType;
 import com.materiabot.GameElements.Text;
@@ -49,27 +53,59 @@ public class UnitParser {
 				u = u.copy();
 			else
 				u = new Unit(name);
-			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();
-			File f = new File("./resources/units/db_" + unitName + ".json");
-			if(!f.exists())
+			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();;
+			File fGL = new File("./resources/units/gl/db_" + unitName + ".json");
+			File fJP = new File("./resources/units/jp/db_" + unitName + ".json");
+			if(!fGL.exists() && !fJP.exists())
 				return new Unit(null);
-			MyJSONObject obj = JSONParser.loadContent(f.getAbsolutePath(), false);
-			parseProfile(u, obj);
+			MyJSONObject objGL = fGL.exists() ? JSONParser.loadContent(fGL.getAbsolutePath(), false) : null;
+			MyJSONObject objJP = fJP.exists() ? JSONParser.loadContent(fJP.getAbsolutePath(), false) : null;
+			if(objGL == null)
+				parseProfile(u, objJP);
+			else
+				parseProfile(u, objGL);
 			if(quickRead)
 				return u;
-			parseDefaultAilments(u, obj);
-			parseCompleteListAbilities(u, obj);
-			parseBaseAbilities(u, obj);
-			parseOptionalAbilities(u, obj);
-			parseTriggeredAbilities(u, obj);
-			parseCalls(u, obj);
-			parsePassives(u, obj);
-			parseCharaBoards(u, obj);
-			mergeFakeFollowups(u);
-			parseArtifacts(u, obj);
-			parseSpheres(u, obj);
-			parseGear(u, obj);
-			u.loadFix();
+			if(objGL != null) {
+				Unit u2 = u.copy();
+				u2.setRegion(Region.GL);;
+				parseProfile(u2, objGL);
+				parseDefaultAilments(u2, objGL);
+				parseCompleteListAbilities(u2, objGL);
+				parseBaseAbilities(u2, objGL);
+				parseOptionalAbilities(u2, objGL);
+				parseTriggeredAbilities(u2, objGL);
+				parseCalls(u2, objGL);
+				parsePassives(u2, objGL);
+				parseCharaBoards(u2, objGL);
+				parseArtifacts(u2, objGL);
+				parseSpheres(u2, objGL);
+				parseGear(u2, objGL);
+				u2.loadFixGL();
+				mergeFakeFollowups(u2);
+				u.setGL(u2);
+				u2.setCommon(u);
+			}
+			if(objJP != null) {
+				Unit u2 = u.copy();
+				u2.setRegion(Region.JP);
+				parseProfile(u2, objJP);
+				parseDefaultAilments(u2, objJP);
+				parseCompleteListAbilities(u2, objJP);
+				parseBaseAbilities(u2, objJP);
+				parseOptionalAbilities(u2, objJP);
+				parseTriggeredAbilities(u2, objJP);
+				parseCalls(u2, objJP);
+				parsePassives(u2, objJP);
+				parseCharaBoards(u2, objJP);
+				parseArtifacts(u2, objJP);
+				parseSpheres(u2, objJP);
+				parseGear(u2, objJP);
+				u2.loadFixJP();
+				mergeFakeFollowups(u2);
+				u.setJP(u2);
+				u2.setCommon(u);
+			}
 			return u;
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -93,11 +129,7 @@ public class UnitParser {
 	private static void parsePassives(Unit u, MyJSONObject obj) {
 		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
 			p.setUnit(u);
-			u.getJPPassives().put(p.getLevel(), p);
-		}
-		for(Passive p : new PassiveParser().parsePassives(obj, "glAwakeningPassives")) {
-			p.setUnit(u);
-			u.getGLPassives().put(p.getLevel(), p);
+			u.getPassives().put(p.getLevel(), p);
 		}
 	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
@@ -279,30 +311,90 @@ public class UnitParser {
 		if(u.getId() == 130) return; //Emperor to avoid merging traps
 		List<ChainAbility> c = null;
 		HashMap<Integer, Integer> map = new HashMap<>();
-		c = u.getTriggeredAbilities().stream().map(ca -> {
-			Ability a = null;
-			Ability b = null;
-			if(map.containsKey(ca.getOriginalId()) && ca.getReqMiscConditions().isEmpty()) {
-				a = u.getSpecificAbility(map.get(ca.getOriginalId()));
-				b = u.getSpecificAbility(ca.getSecondaryId());
+		HashMap<Integer, Integer> result = new HashMap<>();
+//		HashMap<Integer, List<Integer>> result = new HashMap<>();
+		List<Integer> passivesIds = Streams.concat(	u.getPassives().values().stream(), 
+													u.getEquipment().stream().flatMap(e -> e.getPassives().stream()),
+													u.getCharaBoards().stream()).map(p -> p.getId())
+											.collect(Collectors.toList());
+		c = u.getTriggeredAbilities().stream()
+				.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
+				.map(ca -> {
+							Ability a = null;
+							Ability b = null;
+							if(map.containsKey(ca.getOriginalId()) && ca.getReqMiscConditions().isEmpty()) {
+								a = u.getSpecificAbility(map.get(ca.getOriginalId()));
+								b = u.getSpecificAbility(ca.getSecondaryId());
+							}
+							else if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() == 0) {
+								a = u.getSpecificAbility(ca.getOriginalId());
+								b = u.getSpecificAbility(ca.getSecondaryId());
+							}
+							if(a != null && b != null) {
+//								if(!result.containsKey(a.getId()))
+//									result.put(a.getId(), new LinkedList<>());
+//								result.get(a.getId()).add(b.getId());
+								result.put(a.getId(), b.getId());
+								map.put(b.getId(), a.getId());
+							}
+							return ca;
+						}).filter(ca -> !ca.getReqMiscConditions().isEmpty()).collect(Collectors.toList());
+		for(Integer k : result.keySet().stream().collect(Collectors.toList())) {
+			int v = result.get(k);
+			//for(int v : result.get(k).stream().distinct().collect(Collectors.toList())) 
+			{
+//				if(!result.containsKey(v))
+					merge(u, k, v);
+//				else {
+//					int k2 = v;
+//					for(int v2 : result.get(k2)) {
+//						if(!result.containsKey(v2)) {
+//							merge(u, k2, v2);
+//							merge(u, k, k2);
+//						}
+	//					else {
+	//						int k3 = v;
+	//						int v3 = result.get(k3);
+	//						if(!result.containsKey(v3)) {
+	//							merge(u, k3, v3);
+	//							merge(u, k2, k3);
+	//							merge(u, k, k2);
+	//							result.remove(k3);
+	//							result.remove(k2);
+	//						}
+	//						else {
+	//							int k4 = v;
+	//							int v4 = result.get(k4);
+	//							if(!result.containsKey(v4)) {
+	//								merge(u, k4, v4);
+	//								merge(u, k3, k4);
+	//								merge(u, k2, k3);
+	//								merge(u, k, k2);
+	//								result.remove(k4);
+	//								result.remove(k3);
+	//								result.remove(k2);
+	//							}
+	//						}
+	//					}
+//					}
+//					result.remove(k2);
+//				}
 			}
-			else if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() == 0) {
-				a = u.getSpecificAbility(ca.getOriginalId());
-				b = u.getSpecificAbility(ca.getSecondaryId());
-			}
-			if(a != null && b != null) {
-				a.getHitData().addAll(b.getHitData());
-				a.getAilments().addAll(b.getAilments());
-				if(b.getMovementCost() > a.getMovementCost())
-					a.setMovementCost(b.getMovementCost());
-				a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
-				if(b.getChaseDmg() > a.getChaseDmg())
-					a.setChaseDmg(b.getChaseDmg());
-				map.put(b.getId(), a.getId());
-			}
-			return ca;
-		}).filter(ca -> !ca.getReqMiscConditions().isEmpty()).collect(Collectors.toList());
+		}
 		u.getTriggeredAbilities().clear();
 		u.getTriggeredAbilities().addAll(c);
+	}
+	
+	public static final void merge(Unit u, Integer ai, Integer bi) {
+		Ability a = u.getSpecificAbility(ai);
+		Ability b = u.getSpecificAbility(bi);
+		a.getHitData().addAll(b.getHitData());
+		a.getAilments().addAll(b.getAilments());
+//		a.setAilments(a.getAilments().stream().distinct().collect(Collectors.toList()));
+		if(b.getMovementCost() > a.getMovementCost())
+			a.setMovementCost(b.getMovementCost());
+		a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
+		if(b.getChaseDmg() > a.getChaseDmg())
+			a.setChaseDmg(b.getChaseDmg());
 	}
 }

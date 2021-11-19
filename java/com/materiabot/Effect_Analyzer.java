@@ -4,14 +4,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
+import com.materiabot.GameElements.ChainAbility;
 import com.materiabot.GameElements.MiscCondition;
+import com.materiabot.GameElements.Region;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
+import com.materiabot.GameElements.Enumerators.Ability.ChargeRate;
 import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
 import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
@@ -19,13 +23,14 @@ import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
 import com.materiabot.IO.JSON.UnitParser;
 import com.materiabot.Utils.Constants;
+import Shared.Dual;
 
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		UnitParser.setDebug(true);
 		PluginManager.loadUnits();
 		PluginManager.loadEffects();
-		int key = 3;
+		int key = 9;
 
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -43,11 +48,13 @@ public class Effect_Analyzer {
 			printAllAbilityEffects();
 		if(key == 8 || key == 99)
 			printAllPassives();
+		if(key == 9)
+			selphieCalculation();
 	}
 
 	private static void printUnit(String unit, AttackName atn) {
 		//Arrays.asList(
-				_Library.L.getUnit(unit).getAbility(atn, "JP").stream()
+				_Library.L.getUnit(unit).getJP().getAbility(atn).stream()
 		//		.reduce((a1, a2) -> new Ability.MultiAbility(a1, a2)).orElse(null))
 		.forEach(p -> {
 			String text = p.generateDescription();
@@ -276,5 +283,42 @@ public class Effect_Analyzer {
 			for(String s : k.getValue().stream().distinct().collect(Collectors.toList()))
 				System.out.println("\t" + s);
 		}
+	}
+	
+//	private static void biggestChain() {
+//		Dual<Integer, List<String>> results = new Dual<>(null, null);
+//		Streams.concat(	Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\gl").list()).stream(),
+//						Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\jp").list()).stream())
+//		.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).distinct()
+//		.map(u -> _Library.L.getUnit(u))
+//		.filter(u -> u != null)
+//		.forEach(u -> {
+//			Map<Integer, List<Integer>> trig = new HashMap<>();
+//			for(ChainAbility ca : u.getTriggeredAbilities()) {
+//				if(!trig.containsKey(ca.getOriginalId()))
+//					trig.put(ca.getOriginalId(), new LinkedList<>());
+//				trig.get(ca.getOriginalId()).add(ca.getSecondaryId());
+//			}
+//			
+//		});
+//	}
+	
+	private static void selphieCalculation() {
+		HashMap<Integer, List<String>> map = new HashMap<>();
+		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json")))
+				.map(u -> _Library.L.getUnit(u))
+				.map(u -> u.get(Region.JP))
+				.filter(u -> u != null)
+				.map(u -> u.getAbility(AttackName.EX).get(0))
+				.forEach(a -> {
+					ChargeRate b = ChargeRate.getBy(a.getChargeRate());
+					ChargeRate u = ChargeRate.getBy((int)(a.getChargeRate() * 0.8));
+					if(b != u)
+						System.out.println(a.getUnit().getCommon().getName() + "||" + b.getDescription().getBest() + " -> " + u.getDescription().getBest());
+				});
+		map.entrySet().stream().forEach(es -> {
+			System.out.println(es.getKey() + ": " + es.getValue().toString());
+		});
 	}
 }

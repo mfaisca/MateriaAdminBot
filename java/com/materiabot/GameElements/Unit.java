@@ -2,9 +2,11 @@ package com.materiabot.GameElements;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import com.materiabot.GameElements.Sphere.SphereType;
@@ -13,19 +15,19 @@ import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
 public class Unit {
 	private int id;
-	private Region region = Region.GL;
+	private Region region = Region.None;
 	private String name;
 	private Text fullName;
 	private int series = -1;
 	private Crystal crystal;
 	private Equipment.Type equipmentType;
+	private Unit GL, JP, common;
 	private Integer[] baseAbilities = new Integer[8];
 	private List<ChainAbility> triggeredAbilities = new LinkedList<>();
 	private List<ChainAbility> upgradedAbilities = new LinkedList<>();
 	private Ability call, callLd = null;
 	private HashMap<Integer, Ability> abilities = new HashMap<>();
-	private HashMap<Integer, Passive> jpPassives = new HashMap<>();
-	private HashMap<Integer, Passive> glPassives = new HashMap<>();
+	private HashMap<Integer, Passive> passives = new HashMap<>();
 	private List<Passive> charaBoards = new LinkedList<>();
 	private HashMap<Integer, Ailment> ailments = new HashMap<>();
 	private List<Equipment> equipment = new LinkedList<>();
@@ -33,23 +35,23 @@ public class Unit {
 	private SphereType[] sphereSlots = new SphereType[3];
 	private Sphere weaponSphere, basicSphere;
 
-	public Unit(String name, String... nicknames) {
-		if(name != null && name.endsWith("_JP")) {
-			region = Region.JP;
-			name = name.replace("_JP", "");
-		}
+	public Unit(String name) {
 		this.name = name;
 	}
-	public Unit(String name, Crystal color, Equipment.Type eqType, String... nicknames) {
-		this(name, nicknames);
-		this.crystal = color;
-		this.equipmentType = eqType;
-	}
 
-	public void loadFix() {}
+	//Profile Data
+	public Unit get(Region region) { return region.equals(Region.GL) ? getGL() : getJP(); }
+	public Unit getGL() { return GL; }
+	public void setGL(Unit gL) { GL = gL; }
+	public Unit getJP() { return JP; }
+	public void setJP(Unit jP) { JP = jP; }
+	public Unit getCommon() { return common == null ? this : common; }
+	public void setCommon(Unit common) { this.common = common; }
+	public Unit getOther() { return region.equals(Region.GL) ? common.getJP() : common.getGL(); }
 	public int getId() { return id; }
 	public void setId(int id) { this.id = id; }
 	public Region getRegion() { return region; }
+	public void setRegion(Region region) { this.region = region; }
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
 	public Text getFullName() { return fullName; }
@@ -63,10 +65,7 @@ public class Unit {
 	public List<ChainAbility> getUpgradedAbilities() { return upgradedAbilities; }
 	public List<ChainAbility> getTriggeredAbilities() { return triggeredAbilities; }
 	public HashMap<Integer, Ability> getAbilities() { return abilities; }
-	public HashMap<Integer, Passive> getJPPassives() { return jpPassives; }
-	public HashMap<Integer, Passive> getGLPassives() { return glPassives; }
-	public HashMap<Integer, Passive> getPassives() { return region.equals(Region.GL) ? getGLPassives() : getJPPassives(); }
-	public HashMap<Integer, Passive> getPassives(Region region) { return region.equals(Region.GL) ? getGLPassives() : getJPPassives(); }
+	public HashMap<Integer, Passive> getPassives() { return passives; }
 	public List<Passive> getCharaBoards() { return getCharaBoards(null); }
 	public List<Passive> getCharaBoards(AttackName attackName) {
 		if(attackName == null) return charaBoards;
@@ -96,69 +95,131 @@ public class Unit {
 		return null;
 	}
 	public List<Ability> getAbility(AttackName type) {
-		return getAbility(type, "GL");
+		return getAbility(type, this.getRegion());
 	}
-	public List<Ability> getAbility(AttackName type, String region) {
+
+	public List<Ability> getAbility(AttackName type, Region region) { //The 2 getAbility exist so that this one can be overwritten by the Unit class
 		if(type.equals(AttackName.CA))
 			return Arrays.asList(this.getCall());
 		else if(type.equals(AttackName.CALD))
 			return Arrays.asList(this.getCallLd());
-		Collection<Passive> passives = region != null && region.equals("JP") ? getJPPassives().values() : getGLPassives().values();
-		List<Integer> passivesIds = Streams.concat(	passives.stream(), 
+		Map<Integer, List<ChainAbility>> map = null;
+		List<Integer> passivesIds = Streams.concat(	passives.values().stream(), 
 													getEquipment().stream().flatMap(e -> e.getPassives().stream()),
 													getCharaBoards().stream()).map(p -> p.getId())
 											.collect(Collectors.toList());
-		List<Integer> ret = new LinkedList<>();
-		ret.add(this.getBaseAbility(type).get(0).getId());
+		try {
+			int baseId = this.getBaseAbility(type).get(0).getId();
+			map = this.getUpgradedAbilities().stream().filter(ca -> ca.getOriginalId() == baseId)
+													.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
+													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
+																										s.getReqWeaponPassives().stream())
+																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
+		} catch(Exception e) { return new LinkedList<>(); }
+		int max = map.keySet().stream().collect(Collectors.maxBy(Integer::compareTo)).orElse(0);
+		Comparator<ChainAbility> comp = (ca1, ca2) -> {
+			int ca1c = (int)ca1.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+			int ca2c = (int)ca2.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+			return Integer.compare(ca1c, ca2c);
+		};
+		comp = comp.thenComparing((ca1, ca2) -> {
+			int cc1 = ca1.getSecondaryId();
+			int cc2 = ca2.getSecondaryId();
+			return Integer.compare(cc2, cc1);
+		});
+		List<ChainAbility> abs = new LinkedList<>();
+		if(map.containsKey(max))
+			for(ChainAbility ca : map.get(max).stream().sorted(comp).collect(Collectors.toList())) {
+				long miscCount = ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+				if(miscCount == 0)
+					abs.clear(); //To only have the highest ID'd ability, probably the best one
+				abs.add(ca);
+			}
+		List<ChainAbility> abs2 = new LinkedList<>();
+		for(int abId : abs.stream().map(ca -> ca.getSecondaryId()).collect(Collectors.toList())) {
+			int recursiveId = abId;
+			while(true) {
+				int recursiveId2 = recursiveId;
+				ChainAbility ca = getTriggeredAbilities().stream().filter(aa -> aa.getOriginalId() == recursiveId2)
+						.filter(aa -> passivesIds.containsAll(aa.getReqExtendPassives()) && passivesIds.containsAll(aa.getReqWeaponPassives()))
+						.findFirst().orElse(null);
+				if(ca != null && ca.getOriginalId() == ca.getSecondaryId()) break;
+				if(ca != null && getSpecificAbility(ca.getSecondaryId()) != null) {
+					recursiveId = ca.getSecondaryId();
+					abs2.add(ca);
+				}
+				else
+					break;
+			}
+		}
+		List<Ability> ret = Streams.concat(abs.stream(), abs2.stream()).map(ca -> ca.getSecondaryId()).distinct()
+				.map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
+		try {
+			if(type.equals(AttackName.BT))
+				ret.add(0, this.getBaseAbility(AttackName.BT).get(0));
+		} catch(Exception e) {}
+		if(ret.isEmpty()) {
+			List<Ability> base = this.getBaseAbility(type);
+			if(base != null)
+				ret.addAll(base);
+		}
+		return ret;
+	}
+	public List<Ability> getAbility2(AttackName type, Region region) {
+		if(type.equals(AttackName.CA))
+			return Arrays.asList(this.getCall());
+		else if(type.equals(AttackName.CALD))
+			return Arrays.asList(this.getCallLd());
+		Collection<ChainAbility> ret = new LinkedList<>();
+//		ret.add(this.getBaseAbility(type).get(0).getId());
 		int passiveCount = 0;
-		int condiCount = 0;
 		for(ChainAbility ca : getUpgradedAbilities()) {
-			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;
-			if(!passivesIds.containsAll(ca.getReqExtendPassives())) continue;
-			
+			if(this.getSpecificAbility(ca.getOriginalId()).getAttackName() != type) continue;			
 			int reqCount = ca.getReqWeaponPassives().size() + ca.getReqExtendPassives().size();
 			if(reqCount == passiveCount) {
-				if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() >= condiCount) {
-					condiCount = (int)ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
-					ret.add(ca.getSecondaryId());
+				for(ChainAbility ca2 : ret) {
+					int cac = (int)ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+					int ca2c = (int)ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
+					if(ca2c >= cac || (ca.getReqMiscConditions().containsAll(ca2.getReqMiscConditions()) && ca2.getReqMiscConditions().containsAll(ca.getReqMiscConditions())))
+						if(ca.getSecondaryId() > ca2.getSecondaryId()) {
+							ret.remove(ca2);
+							ret.add(ca);
+							break;
+						}
 				}
+				ret.add(ca);
 			}
 			else if(reqCount > passiveCount) {
-				condiCount = 0;
 				passiveCount = reqCount;
 				ret.clear();
-				ret.add(ca.getSecondaryId());
+				ret.add(ca);
 			}
 		};
-		LinkedList<Integer> ret2 = new LinkedList<>();
-		if(condiCount == 0)
-			ret2.add(ret.stream().max(Integer::compareTo).orElse(-1));
-		else
-			ret2.addAll(ret);
+		LinkedList<ChainAbility> ret2 = new LinkedList<>();
+		ret2.addAll(ret);
 		ret.clear();
-		for(int abId : ret2) {
+		for(int abId : ret2.stream().map(ca -> ca.getSecondaryId()).collect(Collectors.toList())) {
 			int recursiveId = abId;
 			while(true) {
 				int recursiveId2 = recursiveId;
 				ChainAbility ca = getTriggeredAbilities().stream().filter(aa -> aa.getOriginalId() == recursiveId2).findFirst().orElse(null);
 				if(ca != null && ca.getOriginalId() == ca.getSecondaryId()) break;
 				if(ca != null && getSpecificAbility(ca.getSecondaryId()) != null) {
-					ret.add(ca.getSecondaryId());
+					ret.add(ca);
 					recursiveId = ca.getSecondaryId();
 				}
 				else
 					break;
 			}
 		}
+		LinkedList<Integer> rett = new LinkedList<>();
 		if(type.equals(AttackName.BT))
-			ret2.addFirst(this.getBaseAbility(AttackName.BT).get(0).getId());
-		return Streams.concat(ret2.stream(), ret.stream()).distinct().map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
+			rett.addFirst(this.getBaseAbility(AttackName.BT).get(0).getId());
+		return Streams.concat(rett.stream(), Streams.concat(ret2.stream(), ret.stream()).map(ca -> ca.getSecondaryId())).distinct()
+				.map(a -> this.getSpecificAbility(a)).collect(Collectors.toList());
 	}
 	public Passive getPassive(int level) {
-		return getPassive(level, null);
-	}
-	public Passive getPassive(int level, Region region) {
-		return ((region == null ? Region.GL : region).equals(Region.GL) ? getPassives() : getJPPassives())
+		return getPassives()
 				.entrySet().stream()
 				.filter(e -> e.getValue().getLevel() == level)
 				.map(e -> e.getValue())
@@ -182,11 +243,10 @@ public class Unit {
 	public Passive getSpecificPassive(Integer id) {
 		if(id == null) return null;
 		return Objects.requireNonNullElse(
-					getGLPassives().get(id), Objects.requireNonNullElse(
+					getPassives().get(id), Objects.requireNonNullElse(
 					getEquipment().stream().flatMap(e -> e.getPassives().stream()).filter(p -> p.getId() == id).findFirst().orElse(null), Objects.requireNonNullElse(
-					getCharaBoards().stream().filter(p -> p.getId() == id).findFirst().orElse(null), Objects.requireNonNullElse(
-					getJPPassives().get(id), 
-					Passive.NULL(id)))));
+					getCharaBoards().stream().filter(p -> p.getId() == id).findFirst().orElse(null), 
+					Passive.NULL(id))));
 	}
 	public Ailment getSpecificAilment(Integer id) {
 		if(id == null) return null;
@@ -202,15 +262,21 @@ public class Unit {
 	public void setCall(Ability call) { this.call = call; }
 	public Ability getCallLd() { return callLd; }
 	public void setCallLd(Ability callLd) { this.callLd = callLd; }
+	public void loadFixGL() {}
+	public void loadFixJP() {}
 		
 	public String toString() {
 		return this.getName();
 	}
 	public Unit copy() { //Generic copy so that I can create a constructor for the right class that has the overridden methods
 		try {
-			return (Unit)this.getClass().getConstructors()[0].newInstance();
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
-			return null;
+			return this.getClass().getConstructor(String.class).newInstance(this.getName());
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException e) {
+			try {
+				return this.getClass().getConstructor().newInstance();
+			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException | NoSuchMethodException e1) {
+				return null;
+			}
 		}
 	}
 	public int compareTo(Object o) {
