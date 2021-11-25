@@ -40,8 +40,8 @@ public class _Library {
 			if(unit != null && unit.getName() != null && !u.contains("_short"))
 				UNIT_CACHE.invalidate(u + "_short");
 		} catch (Exception e) {}
-		if(!(unit != null && unit.getName() != null))
-			System.out.println();
+//		if(!(unit != null && unit.getName() != null))
+//			System.out.println();
 		return unit != null && unit.getName() != null ? unit : null;
 	}
 	public Unit getQuickUnit(String u) {

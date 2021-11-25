@@ -349,16 +349,16 @@ public class SQLAccess {
 							e.getUnits().add(u);
 					e.setStartDate(r.getTimestamp("startDate"));
 					e.setEndDate(r.getTimestamp("endDate"));
-					ResultSet rr = SQLAccess.executeSelect("SELECT * FROM Event_Details WHERE eventId = ? ORDER BY type DESC, id ASC", e.getId());
-					while(rr.next()) {
-						EventLink ev = new EventLink();
-						ev.setEventId(rr.getInt("eventId"));
-						ev.setLinkId(rr.getLong("id"));
-						ev.setText(rr.getString("text"));
-						ev.setType(rr.getString("type"));
-						ev.setUrl(rr.getString("link"));
-						e.getLinks().add(ev);
-					}
+//					ResultSet rr = SQLAccess.executeSelect("SELECT * FROM Event_Details WHERE eventId = ? ORDER BY type DESC, id ASC", e.getId());
+//					while(rr.next()) {
+//						EventLink ev = new EventLink();
+//						ev.setEventId(rr.getInt("eventId"));
+//						ev.setLinkId(rr.getLong("id"));
+//						ev.setText(rr.getString("text"));
+//						ev.setType(rr.getString("type"));
+//						ev.setUrl(rr.getString("link"));
+//						e.getLinks().add(ev);
+//					}
 					list.add(e);
 				}
 				com.materiabot.GameElements.Event maintenance = list.stream().filter(e -> e.getName().contains("Maintenance")).findAny().orElse(null);

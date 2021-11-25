@@ -30,6 +30,7 @@ public class Unit {
 	private HashMap<Integer, Passive> passives = new HashMap<>();
 	private List<Passive> charaBoards = new LinkedList<>();
 	private HashMap<Integer, Ailment> ailments = new HashMap<>();
+	private HashMap<Integer, Ailment> defaultAilments = new HashMap<>();
 	private List<Equipment> equipment = new LinkedList<>();
 	private List<Passive> artifacts = new LinkedList<>();
 	private SphereType[] sphereSlots = new SphereType[3];
@@ -77,6 +78,7 @@ public class Unit {
 		default: return Arrays.asList();
 		}
 	}
+	public HashMap<Integer, Ailment> getDefaultAilments() { return defaultAilments; }
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
 	public List<Equipment> getEquipment() { return equipment; }
 	public List<Passive> getArtifacts() { return artifacts; }
@@ -90,8 +92,8 @@ public class Unit {
 	public void setBaseAbilities(Integer[] baseAbls) { baseAbilities = baseAbls; }
 
 	public List<Ability> getBaseAbility(AttackName type) {
-		if(type != null && type.ordinal() < baseAbilities.length)
-			return Arrays.asList(abilities.get(baseAbilities[type.ordinal()]));
+		if(type != null && type.ordinal() < getBaseAbilities().length)
+			return Arrays.asList(getAbilities().get(getBaseAbilities()[type.ordinal()]));
 		return null;
 	}
 	public List<Ability> getAbility(AttackName type) {
@@ -104,7 +106,7 @@ public class Unit {
 		else if(type.equals(AttackName.CALD))
 			return Arrays.asList(this.getCallLd());
 		Map<Integer, List<ChainAbility>> map = null;
-		List<Integer> passivesIds = Streams.concat(	passives.values().stream(), 
+		List<Integer> passivesIds = Streams.concat(	getPassives().values().stream(), 
 													getEquipment().stream().flatMap(e -> e.getPassives().stream()),
 													getCharaBoards().stream()).map(p -> p.getId())
 											.collect(Collectors.toList());
@@ -230,15 +232,15 @@ public class Unit {
 		return getEquipmentPassive(rarity, 0);
 	}
 	public Equipment getEquipment(Equipment.Rarity rarity) {
-		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).findFirst().orElse(null);
+		return getEquipment().stream().filter(e -> e.getRarity().equals(rarity)).findFirst().orElse(null);
 	}
 	public Passive getEquipmentPassive(Equipment.Rarity rarity, int idx) {
-		return equipment.stream().filter(e -> e.getRarity().equals(rarity)).map(e -> e.getPassives().get(idx)).findFirst().orElse(null);
+		return getEquipment().stream().filter(e -> e.getRarity().equals(rarity)).map(e -> e.getPassives().get(idx)).findFirst().orElse(null);
 	}
 	
 	public Ability getSpecificAbility(Integer id) {
 		if(id == null) return null;
-		return Objects.requireNonNullElse(abilities.get(id), Ability.NULL(this, id));
+		return Objects.requireNonNullElse(getAbilities().get(id), Ability.NULL(this, id));
 	}
 	public Passive getSpecificPassive(Integer id) {
 		if(id == null) return null;
@@ -250,7 +252,7 @@ public class Unit {
 	}
 	public Ailment getSpecificAilment(Integer id) {
 		if(id == null) return null;
-		return Objects.requireNonNullElse(ailments.get(id), Ailment.NULL(id));
+		return Objects.requireNonNullElse(getAilments().get(id), Objects.requireNonNullElse(getDefaultAilments().get(id), Ailment.NULL(id)));
 	}
 	public List<ChainAbility> getUpgradedAbilities(Integer id){
 		return this.getUpgradedAbilities().stream().filter(ta -> ta.getOriginalId() == id.intValue()).collect(Collectors.toList());
@@ -264,7 +266,8 @@ public class Unit {
 	public void setCallLd(Ability callLd) { this.callLd = callLd; }
 	public void loadFixGL() {}
 	public void loadFixJP() {}
-		
+
+	public String getPluginName() { return getName(); }
 	public String toString() {
 		return this.getName();
 	}

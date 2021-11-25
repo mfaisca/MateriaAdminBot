@@ -81,7 +81,7 @@ public class UpdateableSimpleCommand extends _BaseCommand{
 	}
 	
 	@Override
-	public CommandData getCommandData() {
+	public CommandData getAdminCommandData() {
 		CommandData cmd = new CommandData(super.getCommand(), help);
 		cmd.addOption(OptionType.STRING, "update", "Ignored if you don't have permissions");
 		return cmd;

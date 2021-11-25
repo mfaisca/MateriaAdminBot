@@ -4,11 +4,14 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.plugface.core.annotations.Plugin;
 import com.materiabot.GameElements.Event;
+import com.materiabot.GameElements.Region;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.ImageUtils;
@@ -53,12 +56,18 @@ public class ScheduleCommand extends _BaseCommand{
 					case "new": {
 						Event e = new Event();
 						e.setName(event.getOption("event").getAsString());
-						e.setStartDate(Timestamp.valueOf(ZonedDateTime.parse(event.getOption("startdate").getAsString().trim(), 
-															DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm z")).toLocalDateTime()));
+						e.setRegion(Region.GL.name());
+						try {
+							e.setStartDate(Timestamp.valueOf(ZonedDateTime.parse(event.getOption("startdate").getAsString().trim(), 
+																DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm z")).toLocalDateTime()));
+						} catch(DateTimeParseException ex) {
+							e.setStartDate(Timestamp.valueOf(ZonedDateTime.parse(event.getOption("startdate").getAsString().trim() + " 02:00 GMT", 
+									DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm z")).toLocalDateTime()));
+						}
 						e.setEndDate(Timestamp.valueOf((
 							event.getOption("enddate") != null ? 
 								ZonedDateTime.parse(event.getOption("enddate").getAsString().trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm z")) : 
-								ZonedDateTime.ofInstant(e.getStartDate().toInstant(), ZoneId.of("GMT"))
+								ZonedDateTime.ofInstant(e.getStartDate().toInstant().plus(14, ChronoUnit.DAYS), ZoneId.of("GMT"))
 							).toLocalDateTime()));
 						e.getUnits().addAll(Arrays.asList(event.getOption("unit1"), event.getOption("unit2"),
 															event.getOption("unit3"), event.getOption("unit4"),
@@ -99,7 +108,7 @@ public class ScheduleCommand extends _BaseCommand{
 			embed.addField(ImageUtils.getEmoteText("TonberryTroupe") + " Tonberry Troupe", 
 					"[Website](https://www.tonberrytroupe.com/home)" + System.lineSeparator() + 
 					"[Infographs by Time](https://www.tonberrytroupe.com/infographics/infographics-by-time)" + System.lineSeparator() + 
-					"[Timeline](https://www.tonberrytroupe.com/resources-hub/global-timeline-planner) ([FFOOTip](https://ffootip.com/))", true);
+					"[Timeline](https://www.tonberrytroupe.com/resources-hub/global-timeline-planner)", true);
 			embed.addField(ImageUtils.getEmoteText("DissidiaInfo") + " DissidiaInfo", 
 					"[Website](http://dissidiainfo.com/)" + System.lineSeparator() + 
 					"[Call to Arms](http://dissidiainfo.com/call-to-arms/c2a-list/) | " +
@@ -107,9 +116,11 @@ public class ScheduleCommand extends _BaseCommand{
 					"[Chocobo Panels](http://dissidiainfo.com/chocobo-panel-missions/)", true);
 			embed.addField("Other Contributors", 
 					ImageUtils.getEmoteText("ffootip") + "[FFOOTip](https://ffootip.com/)" + System.lineSeparator() + 
-					"[OOTracker](https://ootracker.com/)" + System.lineSeparator(), true);
+					//"[OOTracker](https://ootracker.com/)" + System.lineSeparator() + 
+					"[" + ImageUtils.getEmoteText("OOT1") + ImageUtils.getEmoteText("OOT2") + ImageUtils.getEmoteText("OOT3") + ImageUtils.getEmoteText("OOT4") + 
+					ImageUtils.getEmoteText("OOT5") + ImageUtils.getEmoteText("OOT6") + "](https://ootracker.com/)", true);
 		}
-		embed.setFooter("If you think you can contribute to this or you have other suggestions for the top, please DM Quetz" + System.lineSeparator() + 
+		embed.setFooter("If you have other suggestions for the top, please DM Quetz" + System.lineSeparator() + 
 						"Credits to all the Content Creators that do all this content for us all <3");
 		Timestamp now = Timestamp.from(Instant.now());
 		Timestamp streamBefore = Timestamp.from(Instant.ofEpochMilli(now.getTime() + (30 * 60 * 1000))); //30 minutes before stream
@@ -145,7 +156,7 @@ public class ScheduleCommand extends _BaseCommand{
 					title += ImageUtils.getEmoteText(u);
 					units += " | " + "[" + u + "](https://www.tonberrytroupe.com/infographics/" + Methods.urlizeTT(u) + ")";
 				}
-				embed.addField(title + " " + e.getName(), links + System.lineSeparator() + units.substring(3), true);
+				embed.addField(title + " " + e.getName(), links + System.lineSeparator() + (units.length() > 0 ? units.substring(3) : ""), true);
 			}
 		}
 		return embed;
@@ -161,12 +172,12 @@ public class ScheduleCommand extends _BaseCommand{
 	public CommandData getAdminCommandData() {
 		return super.getCommandData().addSubcommands(
 					new SubcommandData("list", "Show the schedule of the month")
-						.addOptions(new OptionData(OptionType.STRING, "full", "Show the entire schedule instead of just the 7 next days", true)),
+						.addOptions(new OptionData(OptionType.BOOLEAN, "full", "Show the entire schedule instead of just the 7 next days")),
 					new SubcommandData("delete", "Delete an event")
 						.addOptions(new OptionData(OptionType.STRING, "event", "Name of the Event", true)),
 					new SubcommandData("new", "Create a new event")
 						.addOptions(new OptionData(OptionType.STRING, "event", "Name of the Event", true))
-						.addOptions(new OptionData(OptionType.STRING, "startdate", "Start Date (DD/MM/YYYY hh:mm TZ)", true))
+						.addOptions(new OptionData(OptionType.STRING, "startdate", "Start Date (DD/MM/YYYY hh:mm TZ) (hh:mm TZ are default for event start)", true))
 						.addOptions(new OptionData(OptionType.STRING, "unit1", "Unit 1"))
 						.addOptions(new OptionData(OptionType.STRING, "unit2", "Unit 2"))
 						.addOptions(new OptionData(OptionType.STRING, "unit3", "Unit 3"))

@@ -305,8 +305,9 @@ public class Effect_Analyzer {
 	
 	private static void selphieCalculation() {
 		HashMap<Integer, List<String>> map = new HashMap<>();
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json")))
+		Streams.concat(	Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\gl").list()).stream(),
+						Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\jp").list()).stream())
+				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).distinct()
 				.map(u -> _Library.L.getUnit(u))
 				.map(u -> u.get(Region.JP))
 				.filter(u -> u != null)

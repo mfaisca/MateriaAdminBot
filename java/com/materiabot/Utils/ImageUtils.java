@@ -10,7 +10,7 @@ public abstract class ImageUtils {
 	public enum Emotes{
 		GTFO("gtfo"),
 		INVISIBLE("invisible"),
-		BASE_DESC("baseDesc"),
+		BASE_DESC("ingameDescription"),
 		UNKNOWN_EMOTE("unknownEmote"),
 		GEAR_NO_LB("iconnolb"),
 		GEAR_LB("iconlb"),
@@ -41,7 +41,7 @@ public abstract class ImageUtils {
 		public String get() { return text; }
 	}
 	
-	public static String getCharacterGearURL(Unit u, Equipment.Rarity equip) {
+	public static String getUnitGearURL(Unit u, Equipment.Rarity equip) {
 		return "https://dissidiadb.com/static/img/gear/" + u.getEquipment(equip).getId() + ".png";
 	}
 

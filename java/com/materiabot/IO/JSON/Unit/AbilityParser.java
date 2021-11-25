@@ -58,6 +58,7 @@ public class AbilityParser {
 			hd.setId(data.getInt("id"));
 			if(hd.getId() == 518) continue; //its that first useless hitframe
 			hd.setTypeId(data.getInt("type"));
+			if(hd.getEffectId() == 0 && hd.getTypeId() == -1) continue;
 			hd.setType(Type.get(hd.getTypeId()));
 			hd.setArguments(Arrays.asList(data.getIntArray("arguments")).stream().mapToInt(i -> i).toArray());
 			hd.setAttackTypeId(data.getInt("attack_type"));

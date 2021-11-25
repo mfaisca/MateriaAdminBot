@@ -2,9 +2,7 @@ package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import com.google.common.collect.Streams;
@@ -53,7 +51,7 @@ public class UnitParser {
 				u = u.copy();
 			else
 				u = new Unit(name);
-			String unitName = Methods.urlizeDB(u.getName()).toLowerCase();;
+			String unitName = Methods.urlizeDB(u.getPluginName()).toLowerCase();
 			File fGL = new File("./resources/units/gl/db_" + unitName + ".json");
 			File fJP = new File("./resources/units/jp/db_" + unitName + ".json");
 			if(!fGL.exists() && !fJP.exists())
@@ -155,6 +153,7 @@ public class UnitParser {
 			a.setUnit(u);
 			a.setDefault(true);
 			u.getAilments().put(a.getId(), a);
+			u.getDefaultAilments().put(a.getId(), a);
 		}
 	}
 	private static void parseOptionalAbilities(Unit u, MyJSONObject obj) {
@@ -258,7 +257,7 @@ public class UnitParser {
 	private static void parseGear(Unit u, MyJSONObject obj) {
 		PassiveParser pp = new PassiveParser();
 		for(String gearType : Arrays.asList("silverWeapon", "baseWeapon", 
-				"uniqueWeapon", "summonWeapon", "ntWeapon", "manikinWeapon", "exWeapon", "realizedWeapon", "limitedWeapon", "burstWeapon", "rzBurstWeapon", 
+				"uniqueWeapon", "summonWeapon", "ntWeapon", "manikinWeapon", "exWeapon", "realizedWeapon", "limitedWeapon", "forceWeapon", "burstWeapon", "rzBurstWeapon", 
 				"silverArmor", "uniqueArmor", "exArmor", "realizedArmor", "highArmor", "rzHighArmor")) {
 			MyJSONObject gear = obj.getObject("gearList").getObject(gearType);
 			if(gear.getInt("id") == null) continue;

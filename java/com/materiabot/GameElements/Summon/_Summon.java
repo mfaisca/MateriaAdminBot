@@ -53,6 +53,7 @@ public abstract class _Summon{
 		new Diabolos40();
 		new Odin30();
 		new Bahamut30();
+		new Bahamut40();
 		new Chocobo20();
 		new Sylph20();
 		new SpiritMoogle20();
