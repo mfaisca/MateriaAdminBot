@@ -127,7 +127,11 @@ public class UnitParser {
 	private static void parsePassives(Unit u, MyJSONObject obj) {
 		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
 			p.setUnit(u);
-			u.getPassives().put(p.getLevel(), p);
+			u.getPassives().put(p.getId(), p);
+		}
+		for(Passive p : new PassiveParser().parsePassives(obj, "embeddedPassives")) {
+			p.setUnit(u);
+			u.getPassives().put(p.getId(), p);
 		}
 	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {

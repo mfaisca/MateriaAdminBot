@@ -30,7 +30,7 @@ public abstract class _PassiveEffect implements _Plugin{
 	public String getDescription(PassiveEffect p) {
 		return applyReplaces(p, getBaseDescription());
 	}
-	protected String applyReplaces(PassiveEffect p, String description) {
+	protected final String applyReplaces(PassiveEffect p, String description) {
 		description = description
 				.replace("{t}", p.getTarget() == null ? "Unknown Target: " + p.getTargetId() : p.getTarget().getDescription())
 				.replace("{pt}", p.getPassive().getTarget() == null ? "Unknown Target: " + p.getPassive().getTargetId() : p.getPassive().getTarget().getDescription());
