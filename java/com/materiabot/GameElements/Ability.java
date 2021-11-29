@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.apache.commons.beanutils.BeanUtils;
+import java.util.stream.IntStream;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ability.AttackType;
@@ -23,26 +23,30 @@ import com.materiabot.Utils.ImageUtils;
 import Shared.Methods;
 
 public class Ability implements Comparable<Ability>{
-	public static class MultiAbility extends Ability{
+	public static class BestAbilities{
+		private Ability main = null;
 		private LinkedList<Ability> merged = new LinkedList<>();
-		
-		public MultiAbility(Ability... abilities) {
-			try {
-				BeanUtils.copyProperties(this, abilities[0]);
-			} catch (Exception e) {
-				this.setName(new Text("Error"));
-			}
-			merged.addAll(Arrays.asList(abilities));
+		private boolean override;
+
+		public BestAbilities(Unit u, Integer mainId) {
+			this.main = u.getSpecificAbility(mainId);
+			this.override = true;
+		}
+		public BestAbilities(Unit u, Integer mainId, int... abilityIds) {
+			if(mainId != null)
+				this.main = u.getSpecificAbility(mainId);
+			this.override = true;
+			merged.addAll(IntStream.of(abilityIds).boxed().sequential().map(i -> u.getSpecificAbility(i)).collect(Collectors.toList()));
+		}
+		public BestAbilities(List<Ability> abilities) {
+			if(abilities != null)
+				merged.addAll(abilities);
+			this.override = false;
 		}
 
-		@Override
-		public List<HitData> getHitData(){
-			return merged.stream().flatMap(a -> a.getHitData().stream()).collect(Collectors.toList());
-		}
-		@Override
-		public List<Ailment> getAilments(){
-			return merged.stream().flatMap(a -> a.getAilments().stream()).distinct().collect(Collectors.toList());
-		}
+		public Ability getMain(){ return main; }
+		public LinkedList<Ability> getAbilities(){ return merged; }
+		public boolean isOverride() { return override; }
 	}
 	
 	private int id = -1;
@@ -137,12 +141,16 @@ public class Ability implements Comparable<Ability>{
 	
 	public String getSelectionMenuText() {
 		if(AttackName.BT.equals(this.getAttackName())) {
-			if(this.getUnit().getBaseAbility(AttackName.BT).get(0).getId() == this.getId())
+			int baseId = this.getUnit().getBaseAbility(AttackName.BT).get(0).getId();
+			if(baseId == this.getId())
+				return getName().getBest() + " (BT Only)";
+			else if(this.getUnit().getUpgradedAbilities(baseId).stream() //For BT skills that upgrade with MiscConditions (Noctis tbh lol)
+						.filter(ua -> ua.getSecondaryId() == this.getId()).anyMatch(ua -> ua.getReqWeaponPassives().isEmpty()))
 				return getName().getBest() + " (BT Only)";
 			else
 				return getName().getBest() + " (BT+ 2/3)";
 		}else
-			return getName().getBest(); 
+			return getName().getBest();
 	}
 	public int getTotalUseCount() {
 		Ability base2 = null;

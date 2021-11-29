@@ -2,6 +2,7 @@ package com.materiabot.GameElements.Enumerators.Ailment;
 import java.util.Arrays;
 
 public enum TargetType{
+	Target2(-1, "Target"),
 	Target(1, "Target"),
 	Self(2, "Self"),
 	Allies(4, "Allies"),

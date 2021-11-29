@@ -225,11 +225,15 @@ public class Ailment {
 	}
 
 	public String generateTitle() {
+		return generateTitle(true);
+	}
+	
+	public String generateTitle(boolean showFrame) {
 		if(this.getFakeName() != null) return getFakeName().getBest();
 		if(this.getName().getBest().equals("Attack Change")) ;
 		else if(isDeadEffect()) return "";
 		String icon = ImageUtils.getAilmentEmote(this);
-		if(!(icon.startsWith("<:specialAilment") || icon.contains("Invisible")))
+		if(showFrame && !(icon.startsWith("<:specialAilment") || icon.contains("Invisible")))
 			icon = (this.isGolden() ? ImageUtils.getEmoteText("ailmentGolden") : (this.isFramed() ? ImageUtils.getEmoteText("ailmentSilver") : "")) + icon;
 		return icon + this.getName().getBest() + (this.getName().getBest() == null || Constants.DEBUG ? " (" + this.getId() + ")" : "") + System.lineSeparator() + (this.isStackable() ? "(" + this.getMaxStacks() + " max stacks)" + System.lineSeparator() : "");
 	}

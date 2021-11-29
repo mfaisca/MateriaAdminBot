@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import com.materiabot.GameElements.Ability.BestAbilities;
 import com.materiabot.GameElements.Sphere.SphereType;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
@@ -36,11 +37,8 @@ public class Unit {
 	private SphereType[] sphereSlots = new SphereType[3];
 	private Sphere weaponSphere, basicSphere;
 
-	public Unit(String name) {
-		this.name = name;
-	}
-
 	//Profile Data
+	public Unit(String name) { this.name = name; }
 	public Unit get(Region region) { return region.equals(Region.GL) ? getGL() : getJP(); }
 	public Unit getGL() { return GL; }
 	public void setGL(Unit gL) { GL = gL; }
@@ -97,14 +95,14 @@ public class Unit {
 		return null;
 	}
 	public List<Ability> getAbility(AttackName type) {
-		return getAbility(type, this.getRegion());
+		return getAbility(type, this.getRegion()).getAbilities();
 	}
 
-	public List<Ability> getAbility(AttackName type, Region region) { //The 2 getAbility exist so that this one can be overwritten by the Unit class
+	public BestAbilities getAbility(AttackName type, Region region) { //The 2 getAbility exist so that this one can be overwritten by the Unit class
 		if(type.equals(AttackName.CA))
-			return Arrays.asList(this.getCall());
+			return new BestAbilities(Arrays.asList(this.getCall()));
 		else if(type.equals(AttackName.CALD))
-			return Arrays.asList(this.getCallLd());
+			return new BestAbilities(Arrays.asList(this.getCallLd()));
 		Map<Integer, List<ChainAbility>> map = null;
 		List<Integer> passivesIds = Streams.concat(	getPassives().values().stream(), 
 													getEquipment().stream().flatMap(e -> e.getPassives().stream()),
@@ -117,7 +115,7 @@ public class Unit {
 													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
 																										s.getReqWeaponPassives().stream())
 																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
-		} catch(Exception e) { return new LinkedList<>(); }
+		} catch(Exception e) { return new BestAbilities(null); }
 		int max = map.keySet().stream().collect(Collectors.maxBy(Integer::compareTo)).orElse(0);
 		Comparator<ChainAbility> comp = (ca1, ca2) -> {
 			int ca1c = (int)ca1.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
@@ -165,7 +163,7 @@ public class Unit {
 			if(base != null)
 				ret.addAll(base);
 		}
-		return ret;
+		return new BestAbilities(ret);
 	}
 	public List<Ability> getAbility2(AttackName type, Region region) {
 		if(type.equals(AttackName.CA))
