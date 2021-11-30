@@ -126,11 +126,6 @@ public class Unit {
 			int ca2c = (int)ca2.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
 			return Integer.compare(ca2c, ca1c);
 		};
-//		comp = comp.thenComparing((ca1, ca2) -> {
-//			int cc1 = this.getSpecificAbility(ca1.getSecondaryId()).getRank();
-//			int cc2 = this.getSpecificAbility(ca2.getSecondaryId()).getRank();
-//			return Integer.compare(cc2, cc1);
-//		});
 		comp = comp.thenComparing((ca1, ca2) -> {
 			int cc1 = ca1.getSecondaryId();
 			int cc2 = ca2.getSecondaryId();
