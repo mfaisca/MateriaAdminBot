@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import com.materiabot.GameElements.Ability.BestAbilities;
 import com.materiabot.GameElements.Sphere.SphereType;
+import Shared.Methods;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 
@@ -110,18 +111,26 @@ public class Unit {
 											.collect(Collectors.toList());
 		try {
 			int baseId = this.getBaseAbility(type).get(0).getId();
+//			map = this.getUpgradedAbilities().stream().filter(ca -> ca.getOriginalId() == baseId)
+//													.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
+//													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
+//																										s.getReqWeaponPassives().stream())
+//																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
 			map = this.getUpgradedAbilities().stream().filter(ca -> ca.getOriginalId() == baseId)
-													.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
-													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
-																										s.getReqWeaponPassives().stream())
-																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
+					.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
+					.collect(Collectors.groupingBy(s -> s.getReqExtendPassives().size() + s.getReqWeaponPassives().size(), Collectors.toList()));
 		} catch(Exception e) { return new BestAbilities(null); }
 		int max = map.keySet().stream().collect(Collectors.maxBy(Integer::compareTo)).orElse(0);
 		Comparator<ChainAbility> comp = (ca1, ca2) -> {
 			int ca1c = (int)ca1.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
 			int ca2c = (int)ca2.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
-			return Integer.compare(ca1c, ca2c);
+			return Integer.compare(ca2c, ca1c);
 		};
+//		comp = comp.thenComparing((ca1, ca2) -> {
+//			int cc1 = this.getSpecificAbility(ca1.getSecondaryId()).getRank();
+//			int cc2 = this.getSpecificAbility(ca2.getSecondaryId()).getRank();
+//			return Integer.compare(cc2, cc1);
+//		});
 		comp = comp.thenComparing((ca1, ca2) -> {
 			int cc1 = ca1.getSecondaryId();
 			int cc2 = ca2.getSecondaryId();
@@ -129,7 +138,11 @@ public class Unit {
 		});
 		List<ChainAbility> abs = new LinkedList<>();
 		if(map.containsKey(max))
-			for(ChainAbility ca : map.get(max).stream().sorted(comp).collect(Collectors.toList())) {
+			for(ChainAbility ca : map.get(max).stream().sorted(comp).collect(Methods.maxAll((ca1, ca2) -> {
+				int cc1 = this.getSpecificAbility(ca1.getSecondaryId()).getRank();
+				int cc2 = this.getSpecificAbility(ca2.getSecondaryId()).getRank();
+				return cc1 - cc2;
+			}))) {
 				long miscCount = ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count();
 				if(miscCount == 0)
 					abs.clear(); //To only have the highest ID'd ability, probably the best one

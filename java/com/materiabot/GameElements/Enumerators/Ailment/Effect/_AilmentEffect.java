@@ -30,6 +30,7 @@ public abstract class _AilmentEffect implements _Plugin {
 	}
 	public static final String getDescriptionAsAura(Aura aura) {
 		Ailment a = new Ailment();
+		a.setId(aura.getId());
 		a.setName(aura.getAilment().getName());
 		a.setConditions(aura.getAilment().getConditions());
 		a.setEffects(new Integer[] {aura.getEffectId()});

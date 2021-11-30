@@ -20,6 +20,7 @@ import com.materiabot.GameElements.Text;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
 import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
+import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
 import com.materiabot.IO.JSON.Unit.AbilityParser;
 import com.materiabot.IO.JSON.Unit.AilmentParser;
@@ -28,7 +29,7 @@ import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import Shared.Methods;
 
-public class UnitParser {
+public abstract class UnitParser {
 	private UnitParser() {}
 	private static boolean debug = false; //Debug only for the Effect Analyzer for faster processing
 	
@@ -399,5 +400,15 @@ public class UnitParser {
 		a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
 		if(b.getChaseDmg() > a.getChaseDmg())
 			a.setChaseDmg(b.getChaseDmg());
+	}
+	public static final void fixBT(Unit u, int abilityId, Integer brvCap, Integer hpCap, Integer stPerc) {
+		u.getSpecificAbility(abilityId).getHitData().stream().filter(hd -> hd.getType().equals(Type.BRV)).forEach(hd -> {
+			if(stPerc != null)
+				hd.setSingleTargetBrvRate((int)(hd.getBrvRate() * (stPerc/100f)));
+			if(brvCap != null)
+				hd.setBrvDamageLimitUp(brvCap);
+			if(hpCap != null)
+				hd.setMaxBrvLimitUp(hpCap);
+		});
 	}
 }
