@@ -22,6 +22,7 @@ public abstract class ImageUtils {
 		GOLD_POP("gold_pop"),
 		BURST_ORB("burst_orb"),
 		BURST_POP("burst_pop"),
+		TONBERRY_TROUPE("tonberrytroupe"),
 		
 		;private String text;
 		

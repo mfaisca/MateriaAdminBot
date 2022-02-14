@@ -57,6 +57,8 @@ public class SpreadsheetLoader {
 	private static final String CREDENTIALS_FOLDER = "credentials";
 	private static final String CLIENT_SECRET = "client_secret.json";
 
+	//If a weird error happens, replace StoredCredentials (Run the bot locally, access browser to confirm and create new StoredCredentials and copy it over)
+	
 	private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
 		FileInputStream in = new FileInputStream(CREDENTIALS_FOLDER + "/" + CLIENT_SECRET);
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));

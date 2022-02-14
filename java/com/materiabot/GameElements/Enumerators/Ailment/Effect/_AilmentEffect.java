@@ -22,6 +22,7 @@ public abstract class _AilmentEffect implements _Plugin {
 	public final int getId() { return id; }
 	public final String getBaseDescription() { return baseDescription; }
 	public List<Integer> getTriggeredAbilities(Ailment a, int effectIndex, int rank, boolean isAuraEffect){ return Arrays.asList(); }
+	public List<Integer> getTriggeredAilments(Ailment a, int effectIndex, int rank, boolean isAuraEffect){ return Arrays.asList(); }
 
 	//@Override
 	public String getDescription(Ailment a, int effectIndex, int rank, boolean isAuraEffect) {
@@ -48,6 +49,24 @@ public abstract class _AilmentEffect implements _Plugin {
 		return ae.getDescription(a, 0, a.getRank(), true);
 	}
 	public static final List<Integer> getTriggeredAbilitiesFromAura(Aura aura) {
+		Ailment a = new Ailment();
+		a.setName(aura.getAilment().getName());
+		a.setConditions(aura.getAilment().getConditions());
+		a.setEffects(new Integer[] {aura.getEffectId()});
+		a.setValTypes(new Integer[] {aura.getValueType()});
+		a.setValEditTypes(new Integer[] {aura.getValueEditType()});
+		a.setRankTables(new Integer[] {123});
+		a.setArgs(aura.getAilment().getArgs());
+		a.setAuraRankData(aura.getRankData());
+		a.setRank(aura.getAilment().getRank());
+		a.setMaxStacks(aura.getAilment().getMaxStacks());
+		a.setUnit(aura.getAilment().getUnit());
+		_AilmentEffect ae = Constants.AILMENT_EFFECT.get(aura.getEffectId());
+		if(ae == null)
+			return Arrays.asList();
+		return ae.getTriggeredAbilities(a, 0, a.getRank(), true);
+	}
+	public static final List<Integer> getTriggeredAilmentsFromAura(Aura aura) {
 		Ailment a = new Ailment();
 		a.setName(aura.getAilment().getName());
 		a.setConditions(aura.getAilment().getConditions());

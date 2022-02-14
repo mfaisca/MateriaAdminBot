@@ -19,6 +19,8 @@ public class JobChangeStatus implements Job{
 		Activity a = null;
 		if(ScheduleCommand.isStreamTime())
 			a = Activity.streaming("Opera Omnia Monthly Stream", "https://www.twitch.tv/squareenix");
+		else if(ScheduleCommand.isMaintenanceTime())
+			a = Activity.watching("servers being down");
 		else
 			switch(counter++) {
 				case 0:
@@ -32,7 +34,7 @@ public class JobChangeStatus implements Job{
 					long pc = PatreonCommand.getPatreonCount();
 					if(pc == -1) { 
 						execute(context); return; }
-					a = Activity.of(ActivityType.DEFAULT, "Thanking " + pc + " patrons.");
+					a = Activity.of(ActivityType.DEFAULT, "with " + pc + " patrons.");
 					break;
 				default: 
 					counter = 0;

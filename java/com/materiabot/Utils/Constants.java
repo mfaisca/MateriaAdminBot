@@ -1,4 +1,6 @@
 package com.materiabot.Utils;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -19,8 +21,7 @@ public class Constants {
 	private static JDA client;
 	public static final HashMap<Long, String> PREFIX = new HashMap<>();
 	public static final long QUETZ_ID = 141599746987917312L;
-	public static final long INK_ID = 290867157435416577L;
-	public static final long DREAMY_ID = 194476008395505664L;
+	public static final long CEL_ID = 199361811965804544L;
 	public static final Long MATERIABOT_SERVER_ID = 544340710862618624L;
 	public static final Long MATERIABOT_ADMIN_SERVER_ID = 894309469670998026L;
 	public static final List<Unit> UNITS = new LinkedList<>();
@@ -58,8 +59,15 @@ public class Constants {
 	}
 	
 	static {
-		DEBUG = true;
+		DEBUG = isHeaven();
 	}
+	private static final boolean isHeaven() {
+		try {
+			return InetAddress.getLocalHost().getHostName().equalsIgnoreCase("REACTOR");
+		} catch (UnknownHostException e) {}
+		return false;
+	}
+	
 	private Constants() {}
 	
 	public static JDA getClient() { return client; }

@@ -4,13 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import com.google.common.collect.Streams;
 import com.materiabot.GameElements.Ability;
 import com.materiabot.GameElements.Ailment;
-import com.materiabot.GameElements.ChainAbility;
 import com.materiabot.GameElements.MiscCondition;
 import com.materiabot.GameElements.Region;
 import com.materiabot.GameElements.Unit;
@@ -23,13 +21,11 @@ import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
 import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
 import com.materiabot.IO.JSON.UnitParser;
 import com.materiabot.Utils.Constants;
-import Shared.Dual;
 
 public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		UnitParser.setDebug(true);
-		PluginManager.loadUnits();
-		PluginManager.loadEffects();
+		PluginManager.reset(false);
 		int key = 9;
 
 		if(key == 1)

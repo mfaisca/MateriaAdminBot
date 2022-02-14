@@ -21,22 +21,17 @@ public class Main {
 			return;
 		}
 		System.out.println("Connected to DB");
-		final List<GatewayIntent> gateways = Arrays.asList(GatewayIntent.DIRECT_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS);
+		final List<GatewayIntent> gateways = Arrays.asList(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, 
+															GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS);
 		JDA client = JDABuilder.createDefault(privateToken).setAutoReconnect(true)
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();
 		Constants.setClient(client);
 		client.awaitReady();
-		PluginManager.loadEffects();
-		PluginManager.loadUnits();
-		PluginManager.loadCommands();
+		PluginManager.reset(true);
 		_Scheduler.setup();
 		client.addEventListener(new _Listener());
 		_Scheduler.start();
 		System.out.println("Bot is ready!!");
 	}
-	
-	
-	//TODO Passive Effect 210 Missing
-	//210 - "Activate Passive {0}" - That thing that Rem explained about chained passives
 }

@@ -67,9 +67,9 @@ public abstract class UnitParser {
 				return u;
 			if(objGL != null) {
 				Unit u2 = u.copy();
-				u2.setRegion(Region.GL);;
+				u2.setRegion(Region.GL);
 				parseProfile(u2, objGL);
-				parseDefaultAilments(u2, objGL);
+				parseAilments(u2, objJP);
 				parseCompleteListAbilities(u2, objGL);
 				parseBaseAbilities(u2, objGL);
 				parseOptionalAbilities(u2, objGL);
@@ -89,7 +89,7 @@ public abstract class UnitParser {
 				Unit u2 = u.copy();
 				u2.setRegion(Region.JP);
 				parseProfile(u2, objJP);
-				parseDefaultAilments(u2, objJP);
+				parseAilments(u2, objJP);
 				parseCompleteListAbilities(u2, objJP);
 				parseBaseAbilities(u2, objJP);
 				parseOptionalAbilities(u2, objJP);
@@ -135,6 +135,22 @@ public abstract class UnitParser {
 			u.getPassives().put(p.getId(), p);
 		}
 	}
+	private static void parseAilments(Unit u, MyJSONObject obj) {
+		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments")) {
+			a.setUnit(u);
+			a.setDefault(true);
+			u.getAilments().put(a.getId(), a);
+			u.getDefaultAilments().put(a.getId(), a);
+		}
+		for(Ailment a : AilmentParser.parseAilments(obj, "assocAilments")) {
+			a.setUnit(u);
+			a.setTriggered(true);
+			if(a.getRank() < 0)
+				a.setRank(0);
+			u.getAilments().put(a.getId(), a);
+			u.getTriggeredAilments().put(a.getCastId(), a);
+		}
+	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
 		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
 			a.setUnit(u);
@@ -152,14 +168,6 @@ public abstract class UnitParser {
 		int typeIdx = 0;
 		for(int id : u.getBaseAbilities())
 			u.getSpecificAbility(id).setAttackName(AttackName.values()[typeIdx++]);
-	}
-	private static void parseDefaultAilments(Unit u, MyJSONObject obj) {
-		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments")) {
-			a.setUnit(u);
-			a.setDefault(true);
-			u.getAilments().put(a.getId(), a);
-			u.getDefaultAilments().put(a.getId(), a);
-		}
 	}
 	private static void parseOptionalAbilities(Unit u, MyJSONObject obj) {
 		int typeIdx = 0;
@@ -390,16 +398,29 @@ public abstract class UnitParser {
 	}
 	
 	public static final void merge(Unit u, Integer ai, Integer bi) {
+		merge(u, ai, bi, true);
+	}
+	public static final void merge(Unit u, Integer ai, Integer bi, boolean firstDestiny) {
 		Ability a = u.getSpecificAbility(ai);
 		Ability b = u.getSpecificAbility(bi);
-		a.getHitData().addAll(b.getHitData());
-		a.getAilments().addAll(b.getAilments());
-//		a.setAilments(a.getAilments().stream().distinct().collect(Collectors.toList()));
-		if(b.getMovementCost() > a.getMovementCost())
-			a.setMovementCost(b.getMovementCost());
-		a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
-		if(b.getChaseDmg() > a.getChaseDmg())
-			a.setChaseDmg(b.getChaseDmg());
+		if(firstDestiny) {
+			a.getHitData().addAll(b.getHitData());
+			a.getAilments().addAll(b.getAilments());
+	//		a.setAilments(a.getAilments().stream().distinct().collect(Collectors.toList()));
+			if(b.getMovementCost() > a.getMovementCost())
+				a.setMovementCost(b.getMovementCost());
+			a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
+			if(b.getChaseDmg() > a.getChaseDmg())
+				a.setChaseDmg(b.getChaseDmg());
+		} else {
+			b.getHitData().addAll(0, a.getHitData());
+			b.getAilments().addAll(0, a.getAilments());
+			if(a.getMovementCost() > b.getMovementCost())
+				b.setMovementCost(a.getMovementCost());
+			b.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
+			if(a.getChaseDmg() > b.getChaseDmg())
+				b.setChaseDmg(a.getChaseDmg());
+		}
 	}
 	public static final void fixBT(Unit u, int abilityId, Integer brvCap, Integer hpCap, Integer stPerc) {
 		u.getSpecificAbility(abilityId).getHitData().stream().filter(hd -> hd.getType().equals(Type.BRV)).forEach(hd -> {

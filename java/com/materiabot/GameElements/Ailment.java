@@ -23,7 +23,7 @@ public class Ailment {
 	private Integer[] args, effects, valTypes, valEditTypes, valSpecify, rankTables, groupId, auraRankData; //auraRankData is for Fake Ailments for Auras
 	private ConditionBlock[] conditions;
 	private TargetType target;
-	private boolean extendable, burstExtendable, framed, defaultAilment;
+	private boolean extendable, burstExtendable, framed, defaultAilment, triggeredAilment;
 	private Unit unit;
 	private Ability ability;
 	private HashMap<Integer, RankData> rankData = new HashMap<>();
@@ -137,12 +137,10 @@ public class Ailment {
 	public void setFramed(boolean framed) { this.framed = framed; }
 	public boolean isGolden() { return Arrays.asList(this.getEffects()).stream().anyMatch(i -> i.intValue() == 413); }
 
-	public boolean isDefault() {
-		return defaultAilment;
-	}
-	public void setDefault(boolean defaultAilment) {
-		this.defaultAilment = defaultAilment;
-	}
+	public boolean isDefault() { return defaultAilment; }
+	public void setDefault(boolean defaultAilment) { this.defaultAilment = defaultAilment; }
+	public boolean isTriggered() { return triggeredAilment; }
+	public void setTriggered(boolean triggeredAilment) { this.triggeredAilment = triggeredAilment; }
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
 
@@ -180,12 +178,27 @@ public class Ailment {
 				continue;
 			_AilmentEffect effect = Constants.AILMENT_EFFECT.get(this.getEffects()[i]);
 			if(effect != null)
-				ret.addAll(effect.getTriggeredAbilities(this, i, getRank(), false));;
+				ret.addAll(effect.getTriggeredAbilities(this, i, getRank(), false));
 		}
 		return Stream.concat(ret.stream(), 
 				this.getAuras().stream()
 					.filter(a -> a.getEffectId() != -1)
 					.flatMap(a -> _AilmentEffect.getTriggeredAbilitiesFromAura(a).stream())
+					.distinct()).collect(Collectors.toList());
+	}
+	public List<Integer> getTriggeredAilments() {
+		List<Integer> ret = new LinkedList<>();
+		for(int i = 0; i < this.getEffects().length; i++) {
+			if(this.getEffects()[i] == -1 || this.getEffects()[i] == 60) 
+				continue;
+			_AilmentEffect effect = Constants.AILMENT_EFFECT.get(this.getEffects()[i]);
+			if(effect != null)
+				ret.addAll(effect.getTriggeredAilments(this, i, getRank(), false));
+		}
+		return Stream.concat(ret.stream(), 
+				this.getAuras().stream()
+					.filter(a -> a.getEffectId() != -1)
+					.flatMap(a -> _AilmentEffect.getTriggeredAilmentsFromAura(a).stream())
 					.distinct()).collect(Collectors.toList());
 	}
 	
@@ -207,7 +220,7 @@ public class Ailment {
 	}
 
 	public boolean isDeadEffect() {
-		int effectCount = 0;
+		int effectCount = 0;;
 		if(this.getEffects() != null)
 			for(@SuppressWarnings("unused") int e : this.getEffects())
 				effectCount++;
@@ -292,7 +305,7 @@ public class Ailment {
 		if(isDeadEffect() && !this.getName().getBest().equals("Attack Change"))
 			return "";
 		if(!isAuraEffect) {
-			if(this.isStackable() && this.getArgs()[0] > 0)
+			if(this.isStackable() && this.getArgs().length > 0 && this.getArgs()[0] > 0)
 				ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");
 			if(this.getTarget() != null) 
 				ret += ret.length() == 0 ? this.getTarget().getDescription() : this.getTarget().getDescription().toLowerCase();
@@ -338,7 +351,7 @@ public class Ailment {
 				if(this.getEffects()[i] == -1 || this.getEffects()[i] == 69 || this.getEffects()[i] == 60) continue; //69 is a "meta" effect related to countering, other effects will use it.
 				String condi = "";
 				for(int ic = 0; ic < this.getConditions()[i].getConditions().size(); ic++) {
-					ConditionBlock cond = this.getConditions()[i].getConditions().get(ic);
+					ConditionBlock cond = this.getConditions()[i].getConditions().get(ic);;
 					if(cond.getCondition() != null)
 						condi += cond.getCondition().getDescription(cond) + System.lineSeparator();
 					else

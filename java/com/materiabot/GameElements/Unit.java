@@ -33,6 +33,7 @@ public class Unit {
 	private List<Passive> charaBoards = new LinkedList<>();
 	private HashMap<Integer, Ailment> ailments = new HashMap<>();
 	private HashMap<Integer, Ailment> defaultAilments = new HashMap<>();
+	private HashMap<Integer, Ailment> triggeredAilments = new HashMap<>();
 	private List<Equipment> equipment = new LinkedList<>();
 	private List<Passive> artifacts = new LinkedList<>();
 	private SphereType[] sphereSlots = new SphereType[3];
@@ -78,6 +79,7 @@ public class Unit {
 		}
 	}
 	public HashMap<Integer, Ailment> getDefaultAilments() { return defaultAilments; }
+	public HashMap<Integer, Ailment> getTriggeredAilments() { return triggeredAilments; }
 	public HashMap<Integer, Ailment> getAilments() { return ailments; }
 	public List<Equipment> getEquipment() { return equipment; }
 	public List<Passive> getArtifacts() { return artifacts; }

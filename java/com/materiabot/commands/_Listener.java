@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
-import com.materiabot.PluginManager;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.MessageUtils;
@@ -14,7 +13,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.entities.ChannelType;
 import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
-import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
 import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
@@ -27,7 +25,7 @@ public class _Listener extends ListenerAdapter{
 				SlashCommandEvent event = (SlashCommandEvent)e;
 				if(_BaseCommand.canPost(event)) {
 					for(_BaseCommand c : Constants.COMMANDS)
-						if(c.getCommand().equalsIgnoreCase(event.getName())) {
+						if(c.getCommand().equalsIgnoreCase(event.getName().contains("admin") && event.getName().length() > 5 ? event.getName().replace("admin", "") : event.getName())) {
 							event.deferReply(c.isEtherealReply(event)).queue();
 							c.doStuff(event);
 							return;
@@ -67,14 +65,11 @@ public class _Listener extends ListenerAdapter{
 						return;
 					}
 			}},
-			MESSAGE_RECEIVED{public void run(Event e) {
-				MessageReceivedEvent event = (MessageReceivedEvent)e;
-				if(!event.getMessage().getContentRaw().isEmpty())
-					if(event.isFromType(ChannelType.PRIVATE))
-						MessageUtils.sendWhisper(event.getAuthor().getIdLong(), "Using commands through DM's is no longer supported.");
-					if(_BaseCommand.CLEVERBOT != null)
-						_BaseCommand.CLEVERBOT.doStuff(event);
-			}};
+ 			MESSAGE_RECEIVED{public void run(Event e) {
+ 				MessageReceivedEvent event = (MessageReceivedEvent)e;
+ 				if(!event.getMessage().getContentRaw().isEmpty())
+ 					Constants.COMMANDS.stream().filter(c -> c.getCommand().equalsIgnoreCase("Direct")).forEach(c -> c.doStuff(event));
+ 			}};
 			public abstract void run(final Event event);
 		}
 		
@@ -117,12 +112,7 @@ public class _Listener extends ListenerAdapter{
 	@Override
 	public final void onGuildMemberJoin(GuildMemberJoinEvent event) {
 		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
-		if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID)
-			new Thread(() -> PatreonCommand.updateServerTonberryTroupe()).start();
-	}
-	@Override
-    public final void onGuildMemberRemove(GuildMemberRemoveEvent event) {
-		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
+		//TODO Make this work for my own patreons as well and ditch PatreonBot
 		if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID)
 			new Thread(() -> PatreonCommand.updateServerTonberryTroupe()).start();
 	}
@@ -140,17 +130,8 @@ public class _Listener extends ListenerAdapter{
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.SELECT_MENU, event));
 	}
 	@Override
-	public final void onMessageReceived(final MessageReceivedEvent event) {
-		if(event.getAuthor().isBot()) return;
-		if(Constants.COMMANDS.isEmpty()) {
-			try {
-				PluginManager.loadCommands();
-				PluginManager.loadUnits();
-			} catch(Exception e) {
-				MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error loading plugins.");
-				MessageUtils.sendWhisper(Constants.QUETZ_ID, e.getMessage());
-			}
-		}
-		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
+	public final void onMessageReceived(MessageReceivedEvent event) {
+		if(event.getMessage().getMentionedUsers().contains(event.getJDA().getSelfUser()))
+			THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 }

@@ -99,6 +99,17 @@ public class ScheduleCommand extends _BaseCommand{
 		return false;
 	}
 	
+	public static boolean isMaintenanceTime() {
+		List<Event> events = SQLAccess.Event.getCurrentAndFutureEvents("GL");
+		Timestamp now = Timestamp.from(Instant.now());
+		for(Event e : events) {
+			if(e.getName().toLowerCase().contains("maintenance"))
+				if(now.after(e.getStartDate()) && now.before(e.getEndDate()))
+					return true;
+		}
+		return false;
+	}
+	
 	public static Embed show(String region, boolean stream, boolean maintenance, boolean full) {
 		if(region == null)
 			region = "GL";
@@ -170,7 +181,8 @@ public class ScheduleCommand extends _BaseCommand{
 
 	@Override
 	public CommandData getAdminCommandData() {
-		return super.getCommandData().addSubcommands(
+		return new CommandData("admin" + getCommand(), help)
+				.addSubcommands(
 					new SubcommandData("list", "Show the schedule of the month")
 						.addOptions(new OptionData(OptionType.BOOLEAN, "full", "Show the entire schedule instead of just the 7 next days")),
 					new SubcommandData("delete", "Delete an event")

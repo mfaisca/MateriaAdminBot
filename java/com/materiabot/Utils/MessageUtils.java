@@ -107,7 +107,7 @@ public abstract class MessageUtils {
 	public static final CompletableFuture<Message> sendMessage(InteractionHook hook, String message){
 		return hook.sendMessage(message).submit();
 	}
-	public static final CompletableFuture<Message> sendMessageToChannel(MessageChannel channel, String message){
+	public static final CompletableFuture<Message> sendMessage(MessageChannel channel, String message){
 		return channel.sendMessage(message).submit();
 	}
 	public static final CompletableFuture<Message> sendImage(InteractionHook hook, String text, String imageURL){
@@ -115,6 +115,9 @@ public abstract class MessageUtils {
 	}
 	public static final CompletableFuture<Message> sendImage(InteractionHook hook, String imageURL){
 		return sendEmbed(hook, new EmbedBuilder().setImage(imageURL));
+	}
+	public static final CompletableFuture<Message> sendImage(MessageChannel channel, String imageURL){
+		return sendEmbed(channel, new EmbedBuilder().setImage(imageURL));
 	}
 	public static CompletableFuture<Message> sendGTFO(InteractionHook hook) {
 		return sendGTFO(hook, "You don't have permission to use this.");
@@ -126,6 +129,9 @@ public abstract class MessageUtils {
 	}
 	public static final CompletableFuture<Message> sendFile(InteractionHook hook, String name, byte[] f) {
 		return hook.sendFile(f, name).submit();
+	}
+	public static final CompletableFuture<Message> sendFile(MessageChannel channel, String name, byte[] f) {
+		return channel.sendFile(f, name).submit();
 	}
 	public static final CompletableFuture<Message> sendEmbed(InteractionHook hook, String message, String emote) {
 		EmbedBuilder builder = new EmbedBuilder();
@@ -157,6 +163,15 @@ public abstract class MessageUtils {
     	if(embed.getClass().equals(Embed.class))
     		ret.addActionRows(((Embed)embed).rows);
     	return ret.submit();
+	}
+	public static final CompletableFuture<Message> sendEmbed(MessageChannel channel, EmbedBuilder embed){
+		MessageEmbed eb = embed.build();
+    	if(eb.getFooter() == null) {
+    		String footer = "If you like the bot, consider becoming a Patron:" + System.lineSeparator() + "https://patreon.com/MateriaBot";
+    		embed.setFooter(footer, ImageUtils.getEmoteClassByName("patreon").getImageUrl());
+    		eb = embed.build();
+    	}
+    	return channel.sendMessageEmbeds(eb).submit();
 	}
 
 	public static final CompletableFuture<Message> editMessage(CompletableFuture<Message> message, String msg) {

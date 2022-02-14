@@ -1,4 +1,6 @@
 package com.materiabot;
+import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 import org.plugface.core.PluginRef;
@@ -10,13 +12,19 @@ import com.materiabot.commands._Listener;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import com.materiabot.GameElements.Unit;
 import com.materiabot.GameElements.Enumerators._Plugin;
+import com.materiabot.IO.SQL.SQLAccess;
 
 public class PluginManager {
 	private PluginManager() {}
 
-	public static void reset() throws Exception {
+	public static void reset(boolean fullLoad) throws Exception {
+		/* Version Setup:
+		 * Major: New Commands
+		 * Minor: Change in parameters  
+		 * Patch: Code changes (doesn't require UI change)
+		 */
+		
 		_Library.L.clearUnitCache();
-		Constants.COMMANDS.clear();
 		Constants.UNITS.clear();
 		Constants.ABILITY_EFFECT.clear();
 		Constants.AILMENT_EFFECT.clear();
@@ -24,9 +32,12 @@ public class PluginManager {
 		Constants.AURA_EFFECT.clear();
 		Constants.AURA_REQUIRED.clear();
 		Constants.LABELS.clear();
-		PluginManager.loadEffects();
 		PluginManager.loadUnits();
-		PluginManager.loadCommands();
+		PluginManager.loadEffects();
+		if(fullLoad) {
+			Constants.COMMANDS.clear();
+			PluginManager.loadCommands();
+		}
 	}
 	
 	private static boolean effectsFilter(PluginRef<?> p) {
@@ -38,7 +49,7 @@ public class PluginManager {
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void loadEffects() throws Exception {
+	private static void loadEffects() throws Exception {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(PluginManager::effectsFilter).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
@@ -73,7 +84,7 @@ public class PluginManager {
 	}
 	
 	@SuppressWarnings({ "rawtypes"})
-	public static void loadCommands() throws Exception {
+	private static void loadCommands() throws Exception {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Command.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());
@@ -86,28 +97,56 @@ public class PluginManager {
 //    		.forEach(c -> Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).deleteCommandById(c.getId()).queue());
 		manager.getAllPlugins().stream()
 			.filter(p -> p.getName().contains("Command."))
+			.filter(p -> !p.getName().contains("Disabled"))
 			.map(p -> (_BaseCommand)p.get())
 			.forEach(c -> Constants.COMMANDS.add(c));
-		CommandListUpdateAction commands = Constants.getClient().updateCommands();
-		for(_BaseCommand c : Constants.COMMANDS) {
-			if(c.getCommandData() == null)
-				;
-			else if(Constants.DEBUG) {
-				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).upsertCommand(c.getCommandData()).queue();
-				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getCommandData()).queue();
+		
+
+		File plugins = new File(new java.io.File("plugins").getAbsolutePath().replace("\\", "/"));
+		String newVersion = Arrays.asList(plugins.listFiles()).stream()
+								.filter(f -> f.getName().contains("Commands"))
+								.map(f -> f.getName())
+								.filter(f -> f.contains("-"))
+								.map(f -> f.split("-")[1])
+								.map(f -> f.substring(0, f.lastIndexOf(".")))
+								.map(f -> f.substring(0, f.lastIndexOf(".")))
+								.findFirst().orElse(null);
+		if(newVersion != null) {
+			String currentVersion = SQLAccess.getKeyValue("COMMAND_VERSION");
+			System.out.println("Checking command revision. Cur:" + currentVersion + " | New:" + newVersion);
+			if(!currentVersion.equals(newVersion)){
+				CommandListUpdateAction commands = Constants.getClient().updateCommands();
+				commands.queue();
+				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).retrieveCommands().complete().stream().forEach(c -> c.delete().queue());
+				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream().forEach(c -> c.delete().queue());
+				if(!Constants.DEBUG) {
+					for(_BaseCommand c : Constants.COMMANDS) {
+						if(c.getCommandData() == null)
+							;
+						else
+							commands.addCommands(c.getCommandData());
+					}
+			        commands.queue();
+					for(_BaseCommand c : Constants.COMMANDS) {
+						if(c.getAdminCommandData() != null)
+							Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
+					}
+				}
+				else {
+					for(_BaseCommand c : Constants.COMMANDS) {
+						if(c.getCommandData() != null)
+							Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).upsertCommand(c.getCommandData()).queue();
+						if(c.getAdminCommandData() != null)
+							Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
+					}
+				}
+				SQLAccess.setKeyValue("COMMAND_VERSION", newVersion);
 			}
-			else
-				commands.addCommands(c.getCommandData());
-		}
-//        commands.queue();
-		for(_BaseCommand c : Constants.COMMANDS) {
-			if(c.getAdminCommandData() != null)
-				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
 		}
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static void loadUnits() throws Exception {
+	private static void loadUnits() throws Exception {
 		org.plugface.core.PluginManager manager = PluginManagers.defaultPluginManager();
 		for(PluginRef p : manager.getAllPlugins().stream().filter(p -> p.getName().contains("Unit.")).collect(Collectors.toList()))
 			manager.removePlugin(p.getName());

@@ -22,7 +22,7 @@ import Shared.BotException;
 
 public class SQLAccess {
 	private static MysqlConnectionPoolDataSource dataSource;
-	public static final String BOT_TOKEN_KEY = "BOT_TOKEN_KEY_DEBUG";//!Constants.isHeaven() ? "BOT_TOKEN_KEY" : "BOT_TOKEN_KEY_DEBUG";
+	public static final String BOT_TOKEN_KEY = !Constants.DEBUG ? "BOT_TOKEN_KEY" : "BOT_TOKEN_KEY_DEBUG";
 	public static final String PATREON_ACCESS_TOKEN = "PATREON_ACCESS_TOKEN";
 	public static final String PATREON_TT_ACCESS_TOKEN = "PATREON_TT_ACCESS_TOKEN";
 	public static final String CLEVERBOT_TOKEN_KEY = "CLEVERBOT_TOKEN_KEY";
@@ -117,22 +117,8 @@ public class SQLAccess {
 		}
 	}
 	public static void setKeyValue(String key, String value) throws BotException{
-		SQLAccess.executeInsert("INSERT OR REPLACE INTO Configs VALUES(?, ?)", key, value);
+		SQLAccess.executeInsert("REPLACE INTO Configs VALUES(?, ?)", key, value);
 	}
-
-//	public static List<Dual<String, String>> getCommandValue(String command, Guild g) throws BotException{
-//		try(ResultSet result = SQLAccess.executeSelect("SELECT * FROM Commands WHERE commandName = ? ORDER BY guildId ASC", command)) {
-//			LinkedList<Dual<String, String>> res = new LinkedList<Dual<String, String>>(); //Returns global commands before server-specific ones.
-//			while(result.next())
-//				res.add(new Dual<String, String>(result.getString("message"), result.getString("help")));
-//			return res;
-//		} catch (SQLException e) {
-//			throw new BotException("Error communicating with the database!", e);
-//		}
-//	}
-//	public static void setCommandValue(String command, Long guildId, String message, String help) throws BotException{
-//		SQLAccess.executeInsert("INSERT OR REPLACE INTO Commands VALUES(?, ?, ?, ?)", command, guildId, message, help);
-//	}
 
 	public static class Friend{
 		public long userId;
