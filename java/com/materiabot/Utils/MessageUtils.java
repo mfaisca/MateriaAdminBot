@@ -50,11 +50,13 @@ public abstract class MessageUtils {
 			return SelectOption.of(label, value).withEmoji(emote);
 		}
 		public Embed createRow(ActionRow row) {
-			rows.add(row); 
+			if(row.getComponents().isEmpty())
+				rows.add(row); 
 			return this;
 		}
 		public Embed createRow(Button... buttons) {
-			rows.add(ActionRow.of(buttons)); 
+			if(buttons.length > 0)
+				rows.add(ActionRow.of(buttons)); 
 			return this;
 		}
 		public Embed createMenu(SelectOption... options) {
@@ -62,7 +64,8 @@ public abstract class MessageUtils {
 			return this;
 		}
 		public Embed createMenu(String id, SelectOption... options) {
-			rows.add(ActionRow.of(SelectionMenu.create(id).addOptions(options).build()));
+			if(options.length > 0)
+				rows.add(ActionRow.of(SelectionMenu.create(id).addOptions(options).build()));
 			return this;
 		}
 	}

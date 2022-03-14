@@ -69,7 +69,7 @@ public abstract class UnitParser {
 				Unit u2 = u.copy();
 				u2.setRegion(Region.GL);
 				parseProfile(u2, objGL);
-				parseAilments(u2, objJP);
+				parseAilments(u2, objGL);
 				parseCompleteListAbilities(u2, objGL);
 				parseBaseAbilities(u2, objGL);
 				parseOptionalAbilities(u2, objGL);
@@ -136,13 +136,13 @@ public abstract class UnitParser {
 		}
 	}
 	private static void parseAilments(Unit u, MyJSONObject obj) {
-		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments")) {
+		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments", null)) {
 			a.setUnit(u);
 			a.setDefault(true);
 			u.getAilments().put(a.getId(), a);
 			u.getDefaultAilments().put(a.getId(), a);
 		}
-		for(Ailment a : AilmentParser.parseAilments(obj, "assocAilments")) {
+		for(Ailment a : AilmentParser.parseAilments(obj, "assocAilments", null)) {
 			a.setUnit(u);
 			a.setTriggered(true);
 			if(a.getRank() < 0)
@@ -152,7 +152,7 @@ public abstract class UnitParser {
 		}
 	}
 	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
-		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities")) {
+		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities", obj.getObjectArray("frBonus"))) {
 			a.setUnit(u);
 			a.getAilments().stream()
 				.forEach(ail -> {

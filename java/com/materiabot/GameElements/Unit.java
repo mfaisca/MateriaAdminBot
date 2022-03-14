@@ -273,7 +273,7 @@ public class Unit {
 	public Ability getCallLd() { return callLd; }
 	public void setCallLd(Ability callLd) { this.callLd = callLd; }
 	public void loadFixGL() {}
-	public void loadFixJP() {}
+	public void loadFixJP() { loadFixGL(); }
 
 	public String getPluginName() { return getName(); }
 	public String toString() {

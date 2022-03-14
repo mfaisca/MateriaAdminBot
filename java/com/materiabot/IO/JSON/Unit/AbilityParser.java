@@ -17,12 +17,12 @@ import com.materiabot.Utils.Constants;
 public class AbilityParser {
 	private AbilityParser() {}
 	
-	public static List<Ability> parseAbilities(MyJSONObject obj, String abilityArray) {
+	public static List<Ability> parseAbilities(MyJSONObject obj, String abilityArray, MyJSONObject[] frBonus) {
 		List<Ability> abilities = new LinkedList<>();
 		for(MyJSONObject s : obj.getObjectArray(abilityArray)) {
 			if(s.getInt("error") != null) continue; //Some abilities have error
 			Ability a = parseAbility(s);
-			for(Ailment ail : AilmentParser.parseAilments(s, "ailments"))
+			for(Ailment ail : AilmentParser.parseAilments(s, "ailments", frBonus))
 				if(ail.isInvisibleSiphon()) {
 					HitData hd = new HitData(a);
 					hd.setManualDescription("Free ability use next turn(S1/S2/AA only)");

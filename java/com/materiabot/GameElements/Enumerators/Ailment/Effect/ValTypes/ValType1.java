@@ -21,7 +21,7 @@ public class ValType1 extends _ValType{
 				return new Integer[]{ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[ailment.getArgs()[0] - 1][1]};
 			case 4: //Rank Table Right Value
 				return new Integer[]{ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[ailment.getArgs()[0] - 1][2]};
-			case 5: //Rank Table Left Negative Value
+			case 5: //Rank Table Left Negativssssse Value
 				return new Integer[]{-ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[ailment.getArgs()[0] - 1][0]};
 			case 6: //Rank Table Mid Negative Value
 				return new Integer[]{-ailment.getRankData().get(ailment.getRankTables()[index]).getValues()[ailment.getArgs()[0] - 1][1]};

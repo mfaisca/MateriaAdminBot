@@ -2,6 +2,17 @@
     "id": 151,
     "uid": 759,
     "sid": 759,
+    "pid": -1,
+    "updates": {
+        "ldBoard": {
+            "gl": "2021-08-06 02:00:00",
+            "jp": ""
+        },
+        "synergy": {
+            "gl": "2022-01-17 15:00:00",
+            "jp": "2021-08-10 02:00:00"
+        }
+    },
     "profile": {
         "fullName": {
             "en": "Gladiolus Amicitia",
@@ -525,7 +536,8 @@
             "rank": 0,
             "group": [
                 245,
-                268
+                268,
+                290
             ],
             "motion": 40,
             "movement_cost": 30,
@@ -579,7 +591,7 @@
             "desc": {
                 "en": "",
                 "gl": "Increases BRV based on ATK\\nGroup melee BRV attack + group HP attack\\nDeals proportionate HP damage to each target\\nGrants party BRV based on HP damage dealt\\nSelf: 5 turns 1 level of King's Shield (limit 10)\\nAllies: 5 turns Royal Guard\\n\\nKing's Shield: Raises level by 1 when taking BRV attack or HP attack, takes damage for single-target attacks on ally with active Royal Guard",
-                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に5ACTION「王の盾」1段階付与（上限10）\\n自身以外の味方全員に5ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
+                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n与えるHPダメージは分配\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n自身に5ACTION「王の盾」1段階付与（上限10）\\n自身以外の味方全員に5ACTION「ロイヤルガード」付与"
             },
             "rank": 0,
             "group": [],
@@ -615,7 +627,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -719,7 +731,7 @@
                     "desc": {
                         "en": "",
                         "gl": "King's Shield: Raises own MAX BRV, ATK, DEF; reduces BRV damage, HP damage taken (DEF, BRV damage, HP damage effects do not increase based on level)",
-                        "jp": "王の盾：自身の最大BRV 攻撃力 防御力が上昇し 被BRVダメージ 被HPダメージを軽減（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n自身に以下の効果が発動\n・最大BRV 攻撃力 防御力が上昇する\n・被BRVダメージ 被HPダメージを軽減する\n（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -851,7 +863,7 @@
                     "desc": {
                         "en": "",
                         "gl": "Royal Guard: Reduces BRV damage, HP damage taken",
-                        "jp": "ロイヤルガード：被BRVダメージ 被HPダメージを軽減する"
+                        "jp": "自身への単体攻撃を 強化効果「ロイヤルガード」の付与者が受ける\n被BRVダメージ 被HPダメージを軽減する"
                     },
                     "group": [],
                     "meta_data": {
@@ -984,7 +996,7 @@
             "desc": {
                 "en": "",
                 "gl": "Increases BRV based on ATK\\nGroup melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nDeals proportionate HP damage to each target\\nGrants party BRV based on HP damage dealt\\nSelf: 10 turns 2 levels of King's Shield (limit 10)\\nAllies: 10 turns Royal Guard\\n\\nKing's Shield: Raises level by 1 when taking BRV attack or HP attack, takes damage for single-target attacks on ally with active Royal Guard",
-                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に10ACTION「王の盾」2段階付与（上限10）\\n自身以外の味方全員に10ACTION「ロイヤルガード」付与\\n\\n「王の盾」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ\\n「ロイヤルガード」を付与した味方への単体攻撃を自身が受ける"
+                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n与えるHPダメージは分配\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n自身に10ACTION「王の盾」2段階付与（上限10）\\n自身以外の味方全員に10ACTION「ロイヤルガード」付与"
             },
             "rank": 0,
             "group": [],
@@ -1020,7 +1032,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -1124,7 +1136,7 @@
                     "desc": {
                         "en": "",
                         "gl": "King's Shield: Raises own MAX BRV, ATK, DEF; reduces BRV damage, HP damage taken (DEF, BRV damage, HP damage effects do not increase based on level)",
-                        "jp": "王の盾：自身の最大BRV 攻撃力 防御力が上昇し 被BRVダメージ 被HPダメージを軽減（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n自身に以下の効果が発動\n・最大BRV 攻撃力 防御力が上昇する\n・被BRVダメージ 被HPダメージを軽減する\n（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -1256,7 +1268,7 @@
                     "desc": {
                         "en": "",
                         "gl": "Royal Guard: Reduces BRV damage, HP damage taken",
-                        "jp": "ロイヤルガード：被BRVダメージ 被HPダメージを軽減する"
+                        "jp": "自身への単体攻撃を 強化効果「ロイヤルガード」の付与者が受ける\n被BRVダメージ 被HPダメージを軽減する"
                     },
                     "group": [],
                     "meta_data": {
@@ -1425,7 +1437,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -1589,7 +1601,7 @@
                     "desc": {
                         "en": "",
                         "gl": "King's Shield: Raises own MAX BRV, ATK, DEF; reduces BRV damage, HP damage taken (DEF, BRV damage, HP damage effects do not increase based on level)",
-                        "jp": "王の盾：自身の最大BRV 攻撃力 防御力が上昇し 被BRVダメージ 被HPダメージを軽減（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n自身に以下の効果が発動\n・最大BRV 攻撃力 防御力が上昇する\n・被BRVダメージ 被HPダメージを軽減する\n（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -1721,7 +1733,7 @@
                     "desc": {
                         "en": "",
                         "gl": "Royal Guard: Reduces BRV damage, HP damage taken",
-                        "jp": "ロイヤルガード：被BRVダメージ 被HPダメージを軽減する"
+                        "jp": "自身への単体攻撃を 強化効果「ロイヤルガード」の付与者が受ける\n被BRVダメージ 被HPダメージを軽減する"
                     },
                     "group": [],
                     "meta_data": {
@@ -1890,7 +1902,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -2054,7 +2066,7 @@
                     "desc": {
                         "en": "",
                         "gl": "King's Shield: Raises own MAX BRV, ATK, DEF; reduces BRV damage, HP damage taken (DEF, BRV damage, HP damage effects do not increase based on level)",
-                        "jp": "王の盾：自身の最大BRV 攻撃力 防御力が上昇し 被BRVダメージ 被HPダメージを軽減（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n自身に以下の効果が発動\n・最大BRV 攻撃力 防御力が上昇する\n・被BRVダメージ 被HPダメージを軽減する\n（防御力 被BRVダメージ軽減 被HPダメージ軽減は段階に応じて効果は上昇しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -2186,7 +2198,7 @@
                     "desc": {
                         "en": "",
                         "gl": "Royal Guard: Reduces BRV damage, HP damage taken",
-                        "jp": "ロイヤルガード：被BRVダメージ 被HPダメージを軽減する"
+                        "jp": "自身への単体攻撃を 強化効果「ロイヤルガード」の付与者が受ける\n被BRVダメージ 被HPダメージを軽減する"
                     },
                     "group": [],
                     "meta_data": {
@@ -2355,7 +2367,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -2502,7 +2514,7 @@
                     },
                     "type_data": {
                         "buff_type": 0,
-                        "icon_type": 3,
+                        "icon_type": 122,
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
@@ -2595,7 +2607,7 @@
                             80,
                             100,
                             70,
-                            0
+                            35
                         ]
                     },
                     "auras": []
@@ -2780,7 +2792,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -2927,7 +2939,7 @@
                     },
                     "type_data": {
                         "buff_type": 0,
-                        "icon_type": 3,
+                        "icon_type": 122,
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
@@ -3020,7 +3032,7 @@
                             80,
                             100,
                             70,
-                            0
+                            35
                         ]
                     },
                     "auras": []
@@ -3205,7 +3217,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -3432,7 +3444,7 @@
                     },
                     "type_data": {
                         "buff_type": 0,
-                        "icon_type": 3,
+                        "icon_type": 122,
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
@@ -3525,7 +3537,7 @@
                             80,
                             100,
                             70,
-                            0
+                            35
                         ]
                     },
                     "auras": []
@@ -3710,7 +3722,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -3937,7 +3949,7 @@
                     },
                     "type_data": {
                         "buff_type": 0,
-                        "icon_type": 3,
+                        "icon_type": 122,
                         "disp_type": 0,
                         "stackable": -1,
                         "extendable": 1,
@@ -4030,7 +4042,7 @@
                             80,
                             100,
                             70,
-                            0
+                            35
                         ]
                     },
                     "auras": []
@@ -4179,7 +4191,7 @@
             "desc": {
                 "en": "",
                 "gl": "6-hit melee BRV attack + HP attack\\n6-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nGrants party BRV based on own ATK after last HP attack\\nSelf: 4 turns 2 levels of Warriors' Trial (limit 10)\\n\\nWarriors' Trial: Raises level by 1 when taking BRV attack or HP attack",
-                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に4ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
+                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に4ACTION「英霊の試練」2段階付与（上限10）"
             },
             "rank": 0,
             "group": [],
@@ -4560,8 +4572,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores a certain amount of party HP (does not stack)",
-                        "jp": "英霊の試練：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇し HPを一定量回復する（同名の強化効果は重複しない）"
+                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores certain amount of party HP (does not stack)",
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n味方全員に以下の効果が発動\n・攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇する\n・HPを一定量回復する\n（同名の強化効果は重複しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -4803,7 +4815,7 @@
             "desc": {
                 "en": "",
                 "gl": "6-hit melee BRV attack + HP attack\\n6-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nGrants party BRV based on own ATK after last HP attack\\nSelf: 8 turns 2 levels of Warriors' Trial (limit 10)\\n\\nWarriors' Trial: Raises level by 1 when taking BRV attack or HP attack",
-                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
+                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）"
             },
             "rank": 0,
             "group": [],
@@ -5184,8 +5196,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores a certain amount of party HP (does not stack)",
-                        "jp": "英霊の試練：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇し HPを一定量回復する（同名の強化効果は重複しない）"
+                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores certain amount of party HP (does not stack)",
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n味方全員に以下の効果が発動\n・攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇する\n・HPを一定量回復する\n（同名の強化効果は重複しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -5427,7 +5439,7 @@
             "desc": {
                 "en": "",
                 "gl": "6-hit melee BRV attack + HP attack\\n6-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 120%\\nDeals 20% of cumulative HP damage to non-targets on last HP attack\\nGrants party BRV based on own ATK\\nSelf: 8 turns 2 levels of Warriors' Trial (limit 10)\\n\\nWarriors' Trial: Raises level by 1 when taking BRV attack or HP attack",
-                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
+                "jp": "6HIT近距離物理BRV攻撃＋HP攻撃\\n＋6HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの120％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）"
             },
             "rank": 0,
             "group": [],
@@ -5830,8 +5842,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores a certain amount of party HP (does not stack)",
-                        "jp": "英霊の試練：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇し HPを一定量回復する（同名の強化効果は重複しない）"
+                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores certain amount of party HP (does not stack)",
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n味方全員に以下の効果が発動\n・攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇する\n・HPを一定量回復する\n（同名の強化効果は重複しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -6073,7 +6085,7 @@
             "desc": {
                 "en": "",
                 "gl": "4-hit melee BRV attack + HP attack\\nIncreases BRV by 20% of HP damage dealt\\n4-hit melee BRV attack + HP attack\\nIncreases BRV by 20% of cumulative HP damage dealt\\n4-hit melee BRV attack + HP attack\\nStolen BRV may exceed MAX BRV up to 150%\\nDeals 20% of cumulative HP damage to non-targets on last HP attack\\nGrants party BRV based on own ATK\\nSelf: 8 turns 2 levels of Warriors' Trial (limit 10)\\n\\nWarriors' Trial: Raises level by 1 when taking BRV attack or HP attack",
-                "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）\\n\\n「英霊の試練」は自身がBRV攻撃または\\nHP攻撃を受けた時も1段階アップ"
+                "jp": "4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えたHPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n＋与えた合計HPダメージの20％分自身のBRVをアップ\\n＋4HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する\\n上限は自身の最大BRVの150％分\\n最後のHP攻撃HIT時\\nターゲット以外にも与えた合計HPダメージの20％分のHPダメージ\\nその後 味方全員に自身の攻撃力に依存した量のBRVを加算\\n自身に8ACTION「英霊の試練」2段階付与（上限10）"
             },
             "rank": 0,
             "group": [],
@@ -6540,8 +6552,8 @@
                     },
                     "desc": {
                         "en": "",
-                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores a certain amount of party HP (does not stack)",
-                        "jp": "英霊の試練：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇し HPを一定量回復する（同名の強化効果は重複しない）"
+                        "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores certain amount of party HP (does not stack)",
+                        "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n味方全員に以下の効果が発動\n・攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇する\n・HPを一定量回復する\n（同名の強化効果は重複しない）"
                     },
                     "group": [],
                     "meta_data": {
@@ -6783,7 +6795,7 @@
             "desc": {
                 "en": "",
                 "gl": "Increases BRV based on ATK\\n8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nGrants party BRV based on HP damage dealt\\nSelf: 3 turns Blink\\n\\nWhile Blink active:\\n • Triggers following Counter when taking BRV attack, HP attack:\\n • Increases BRV based on ATK\\n • 3-hit melee BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 50% HP damage to non-targets\\n • Grants party BRV based on HP damage dealt\\n • Target: 4 turns Knockdown",
-                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与\\n「ジャストガード」付与中\\nBRV攻撃またはHP攻撃を受けた時 以下の「カウンター」が発動\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n攻撃をした対象以外にも50％分のHPダメージ\\n攻撃をした対象に与えたHPダメージに依存した量のBRVを味方全員に加算\\n攻撃をした対象に4ACTION「ノックダウン」付与"
+                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与"
             },
             "rank": 0,
             "group": [],
@@ -6819,7 +6831,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -7196,7 +7208,7 @@
             "desc": {
                 "en": "",
                 "gl": "Increases BRV based on ATK\\n8-hit group melee BRV attack + group HP attack\\nModerately increased BRV damage when attacking single target\\nStolen BRV may exceed MAX BRV up to 200%\\nDeals proportionate HP damage to each target\\nGrants party BRV based on HP damage dealt\\nSelf: 3 turns Blink\\n\\nWhile Blink active:\\n • Triggers following Counter when taking BRV attack, HP attack:\\n • Increases BRV based on ATK\\n • 3-hit melee BRV attack + HP attack\\n • Stolen BRV may exceed MAX BRV up to 150%\\n • Deals 50% HP damage to non-targets\\n • Grants party BRV based on HP damage dealt\\n • Target: 8 turns Knockdown",
-                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えたHPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与\\n「ジャストガード」付与中\\nBRV攻撃またはHP攻撃を受けた時 以下の「カウンター」が発動\\n自身に自身の攻撃力に依存した量のBRVを加算\\n＋3HIT近距離物理BRV攻撃＋HP攻撃\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの150％分\\n攻撃をした対象以外にも50％分のHPダメージ\\n攻撃をした対象に与えたHPダメージに依存した量のBRVを味方全員に加算\\n攻撃をした対象に8ACTION「ノックダウン」付与"
+                "jp": "自身に自身の攻撃力に依存した量のBRVを加算\\n＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n攻撃対象が単体の時 与えるBRVダメージ中アップ\\n奪ったBRVを最大BRVを超えて加算する 上限は自身の最大BRVの200％分\\n与えるHPダメージは分配\\n与えた合計HPダメージに依存した量のBRVを味方全員に加算\\n自身に3ACTION「ジャストガード」付与"
             },
             "rank": 0,
             "group": [],
@@ -7232,7 +7244,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -7645,7 +7657,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -7980,7 +7992,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -9743,7 +9755,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -10199,7 +10211,7 @@
                     "desc": {
                         "en": "",
                         "gl": "Royal Guard: Reduces BRV damage, HP damage taken",
-                        "jp": "ロイヤルガード：被BRVダメージ 被HPダメージを軽減する"
+                        "jp": "自身への単体攻撃を 強化効果「ロイヤルガード」の付与者が受ける\n被BRVダメージ 被HPダメージを軽減する"
                     },
                     "group": [],
                     "meta_data": {
@@ -10368,7 +10380,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -10949,7 +10961,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -11530,7 +11542,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -12118,7 +12130,7 @@
                         "brv_damage_limit_up_direct": 0,
                         "max_brv_limit_up_direct": 0
                     },
-                    "attack_type": 3,
+                    "attack_type": -1,
                     "element": [],
                     "target": 2,
                     "effect": 1,
@@ -12764,7 +12776,8 @@
                 "level": 5,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -12828,7 +12841,8 @@
                 "level": 10,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -12892,7 +12906,8 @@
                 "level": 15,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -12956,7 +12971,8 @@
                 "level": 25,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13020,7 +13036,8 @@
                 "level": 30,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13084,7 +13101,8 @@
                 "level": 35,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13148,7 +13166,8 @@
                 "level": 40,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13212,7 +13231,8 @@
                 "level": 45,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13276,7 +13296,8 @@
                 "level": 50,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13340,7 +13361,8 @@
                 "level": 54,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13413,7 +13435,8 @@
                 "level": 55,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13457,7 +13480,8 @@
                 "level": 58,
                 "target": 3,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13530,7 +13554,8 @@
                 "level": 60,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13574,7 +13599,8 @@
                 "level": 68,
                 "target": 3,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13647,7 +13673,8 @@
                 "level": 70,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13691,7 +13718,8 @@
                 "level": 78,
                 "target": 3,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13759,7 +13787,8 @@
                 "level": -1,
                 "target": 2,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -13853,7 +13882,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 1877,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -13925,7 +13955,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 1878,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -14000,7 +14031,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 1880,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -14055,7 +14087,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1881,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14119,7 +14152,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1882,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14163,7 +14197,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1883,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14256,7 +14291,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 1885,
-                    "required_passive": 1880
+                    "required_passive": 1880,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -14293,7 +14329,7 @@
                     "id": 1884,
                     "name": {
                         "en": "",
-                        "gl": "Maelstrom Force Spread Up",
+                        "gl": "Maelstrom Power Spread Up",
                         "jp": "アップヒーバルパワースプレッドアップ"
                     },
                     "desc": {
@@ -14303,7 +14339,7 @@
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "Maelstrom Force Spread Up: Boost to Maelstrom",
+                        "gl": "Maelstrom Power Spread Up: Boost to Maelstrom",
                         "jp": "アップヒーバルパワースプレッドアップ：「アップヒーバル」の性能アップ"
                     },
                     "meta_data": {
@@ -14311,7 +14347,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1884,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14355,7 +14392,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1886,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14428,7 +14466,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1887,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14454,7 +14493,7 @@
                     "id": 1888,
                     "name": {
                         "en": "",
-                        "gl": "Maelstrom BRV HP Hit Plus BRV Up Force Advance++",
+                        "gl": "Maelstrom BRV HP Hit Plus BRV Up Power Advance++",
                         "jp": "アップヒーバルBRVHPヒットプラスBRVアップパワーアドバンス＋＋"
                     },
                     "desc": {
@@ -14464,7 +14503,7 @@
                     },
                     "short_desc": {
                         "en": "",
-                        "gl": "Maelstrom BRV HP Hit Plus BRV Up Force Advance++: Boost to Maelstrom",
+                        "gl": "Maelstrom BRV HP Hit Plus BRV Up Power Advance++: Boost to Maelstrom",
                         "jp": "アップヒーバルBRVHPヒットプラスBRVアップパワーアドバンス＋＋：「アップヒーバル」の性能アップ"
                     },
                     "meta_data": {
@@ -14472,7 +14511,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1888,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14545,7 +14585,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 1890,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -14600,7 +14641,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1891,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14673,7 +14715,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1892,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14737,7 +14780,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 1893,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -14844,7 +14888,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 96,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 2,
@@ -14945,7 +14990,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 100,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 2,
@@ -15046,7 +15092,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 94,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 2,
@@ -15147,7 +15194,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 535,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -15248,7 +15296,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": 2649,
-                    "required_passive": 535
+                    "required_passive": 535,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -15303,7 +15352,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 2650,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -15357,7 +15407,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 2651,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -15411,7 +15462,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 2652,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -15465,7 +15517,8 @@
                         "level": -1,
                         "target": 2,
                         "is_weapon_passive": 2653,
-                        "required_passive": -1
+                        "required_passive": -1,
+                        "power_point": 0
                     },
                     "type_data": {
                         "type": 3,
@@ -15519,6 +15572,7 @@
                 "target": 2,
                 "rate": 100,
                 "rank": 1,
+                "rank_alt": -1,
                 "arguments": [
                     0,
                     0
@@ -15658,6 +15712,7 @@
                 "target": 2,
                 "rate": 100,
                 "rank": 1,
+                "rank_alt": -1,
                 "arguments": [
                     0,
                     0
@@ -15789,14 +15844,15 @@
             },
             "desc": {
                 "en": "",
-                "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores a certain amount of party HP (does not stack)",
-                "jp": "英霊の試練：味方全員の攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇し HPを一定量回復する（同名の強化効果は重複しない）"
+                "gl": "Warriors' Trial: Raises party's ATK, amount stolen BRV may exceed MAX BRV; restores certain amount of party HP (does not stack)",
+                "jp": "自身がBRV攻撃またはHP攻撃を受けた時も1段階アップ\n味方全員に以下の効果が発動\n・攻撃力 奪ったBRVを最大BRVを超えて加算する上限が上昇する\n・HPを一定量回復する\n（同名の強化効果は重複しない）"
             },
             "group": [],
             "meta_data": {
                 "target": 2,
                 "rate": 100,
                 "rank": 1,
+                "rank_alt": -1,
                 "arguments": [
                     2,
                     0
@@ -16045,6 +16101,7 @@
                 "target": 2,
                 "rate": 100,
                 "rank": 1,
+                "rank_alt": -1,
                 "arguments": [
                     0,
                     0
@@ -16193,7 +16250,8 @@
                 "level": -1,
                 "target": 3,
                 "is_weapon_passive": -1,
-                "required_passive": -1
+                "required_passive": -1,
+                "power_point": 0
             },
             "type_data": {
                 "type": 3,
@@ -16431,7 +16489,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16443,7 +16502,7 @@
                         "effect_id": 39,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -16527,7 +16586,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16539,7 +16599,7 @@
                         "effect_id": 170,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            20,
                             0,
                             0
                         ]
@@ -16623,7 +16683,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16635,7 +16696,7 @@
                         "effect_id": 28,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -16719,7 +16780,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16809,7 +16871,8 @@
                     "level": -1,
                     "target": 3,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16899,7 +16962,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -16989,7 +17053,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17001,7 +17066,7 @@
                         "effect_id": 39,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -17085,7 +17150,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17097,7 +17163,7 @@
                         "effect_id": 170,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            20,
                             0,
                             0
                         ]
@@ -17181,7 +17247,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17193,7 +17260,7 @@
                         "effect_id": 36,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -17277,7 +17344,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17367,7 +17435,8 @@
                     "level": -1,
                     "target": 3,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17457,7 +17526,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17547,7 +17617,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17559,7 +17630,7 @@
                         "effect_id": 39,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            20,
                             0,
                             0
                         ]
@@ -17643,7 +17714,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17655,7 +17727,7 @@
                         "effect_id": 170,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -17739,7 +17811,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17751,7 +17824,7 @@
                         "effect_id": 28,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -17835,7 +17908,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -17925,7 +17999,8 @@
                     "level": -1,
                     "target": 3,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18015,7 +18090,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18105,7 +18181,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18117,7 +18194,7 @@
                         "effect_id": 39,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -18201,7 +18278,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18213,7 +18291,7 @@
                         "effect_id": 170,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            20,
                             0,
                             0
                         ]
@@ -18297,7 +18375,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18309,7 +18388,7 @@
                         "effect_id": 39,
                         "effect_target": 2,
                         "effect_values": [
-                            0,
+                            10,
                             0,
                             0
                         ]
@@ -18393,7 +18472,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18483,7 +18563,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18573,7 +18654,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": -1
+                    "required_passive": -1,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18651,7 +18733,7 @@
                 "desc": {
                     "en": "",
                     "gl": "At start of quest:\\n • First turn rate becomes instantaneous\\n • First turn does not add to turn count; does consume turn during summoning, support\\n\\nWhen using Impulse:\\n • 8-hit group melee BRV attack + group HP attack becomes:\\n • 3-hit group melee BRV attack + group HP attack\\n • 8-hit group melee BRV attack + group HP attack\\n • Tremendously increased cumulative BRV damage\\n • Allies: 10 turns Royal Guard\\n\\nAdds following effects to Blink:\\n • Slightly increases own BRV damage dealt",
-                    "jp": "クエスト開始時 自身に\\n・最初の行動時 行動負荷がなくなる\\n・最初の行動時 総ACTION数に加算されない\\n　召喚中およびフレンドサポートの残りACTION数は消費される\\n\\n「ライジングインパルス」使用時\\n・8HIT全体近距離物理BRV攻撃＋全体HP攻撃が\\n　3HIT全体近距離物理BRV攻撃＋全体HP攻撃\\n　＋8HIT全体近距離物理BRV攻撃＋全体HP攻撃に変化し\\n　合計BRV威力も極大アップ\\n・自身以外の味方全員に10ACTION「ロイヤルガード」付与\\n\\n「ジャストガード」に以下の効果が追加\\n・自身の与えるBRVダメージ小アップ"
+                    "jp": "「ライジングインパルス」の使用回数＋1\\n\\nクエスト開始時 自身に\\n・最初の行動時 行動負荷がなくなる\\n・最初の行動時 総ACTION数に加算されない\\n　召喚中およびフレンドサポートの残りACTION数は消費される\\n・6ACTION「ジャストガード」付与\\n\\n「ライジングインパルス」使用時\\n・攻撃力に依存したBRV加算後に　追加全体HP攻撃が発動\\n・加算したBRVを最大BRVを超えて加算する\\n　上限はそれぞれの最大BRVの150％分\\n・8HIT全体近距離物理BRV攻撃＋全体HP攻撃が\\n　4HIT全体近距離物理BRV攻撃＋全体HP攻撃を4回行うに変化し\\n　合計BRV威力も極大アップ\\n・最後のHP攻撃を除く HP攻撃後\\n　与えた合計HPダメージの20％分自身のBRVをアップさせる\\n・自身以外の味方全員に10ACTION「ロイヤルガード」付与\\n・「ジャストガード」の5ACTION期間延長\\n\\n「ジャストガード」に以下の効果が追加\\n・自身の与えるBRVダメージ小アップ\\n\\n「カウンター」使用時\\n・攻撃力に依存したBRV加算後に\\n　追加HP攻撃が発動\\n・加算したBRVを最大BRVを超えて加算する\\n　上限はそれぞれの最大BRVの120％分\\n・BRV攻撃のHIT数が8HITに変化し\\n　合計BRV威力も極大アップ\\n・最初のHP攻撃後\\n　与えた合計HPダメージの50％分自身のBRVをアップさせる\\n・攻撃をした対象以外にも50％分のHPダメージが\\n　HP攻撃HIT時\\n　ターゲット以外にもターゲットに与えた合計HPダメージの50％分のHPダメージに変化"
                 },
                 "short_desc": {
                     "en": "",
@@ -18663,7 +18745,8 @@
                     "level": -1,
                     "target": 2,
                     "is_weapon_passive": -1,
-                    "required_passive": 1890
+                    "required_passive": 1890,
+                    "power_point": 0
                 },
                 "type_data": {
                     "type": 3,
@@ -18713,14 +18796,10 @@
             }
         ]
     },
-    "updates": {
-        "ldBoard": {
-            "gl": "2021-08-06 02:00:00",
-            "jp": ""
-        },
-        "synergy": {
-            "gl": "2020-12-08 15:00:00",
-            "jp": "2021-08-10 02:00:00"
-        }
+    "frEnhancement": [],
+    "frBonus": [],
+    "frLines": {
+        "own": [],
+        "partner": []
     }
 }

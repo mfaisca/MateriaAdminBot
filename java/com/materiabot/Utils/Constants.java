@@ -1,6 +1,5 @@
 package com.materiabot.Utils;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -59,13 +58,7 @@ public class Constants {
 	}
 	
 	static {
-		DEBUG = isHeaven();
-	}
-	private static final boolean isHeaven() {
-		try {
-			return InetAddress.getLocalHost().getHostName().equalsIgnoreCase("REACTOR");
-		} catch (UnknownHostException e) {}
-		return false;
+		DEBUG = new File("./resources/Debug.txt").exists();
 	}
 	
 	private Constants() {}

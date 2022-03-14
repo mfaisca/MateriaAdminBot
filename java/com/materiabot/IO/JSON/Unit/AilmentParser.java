@@ -2,6 +2,7 @@ package com.materiabot.IO.JSON.Unit;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 import com.materiabot.GameElements.Enumerators.Ailment.ConditionBlock;
 import com.materiabot.GameElements.Enumerators.Ailment.RankData;
 import com.materiabot.GameElements.Enumerators.Ailment.TargetType;
@@ -17,13 +18,14 @@ import Shared.Methods;
 public class AilmentParser {
 	private AilmentParser() {}
 	
-	public static List<Ailment> parseAilments(MyJSONObject obj, String ailmentArray) {
+	public static List<Ailment> parseAilments(MyJSONObject obj, String ailmentArray, MyJSONObject[] frBonus) {
 		List<Ailment> ret = new LinkedList<>();
 		for(MyJSONObject a : obj.getObjectArray(ailmentArray)) {
 			Ailment aa = parseAilment(a);
 			if(aa != null)
 				ret.add(aa);
 		}
+//		ret = mergeFRAilments(ret, frBonus);
 		return ret;
 	}
 	private static Ailment parseAilment(MyJSONObject ailment) {
@@ -162,6 +164,33 @@ public class AilmentParser {
 		conds.add(c);
 		return conds.toArray(new ConditionBlock[conds.size()]);
 	}
+//	public static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
+//		return parseConditionBlocks(a, root.getObjectArray(name));
+//	}
+//	private static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject[] root) {
+//		List<ConditionBlock> conds = new LinkedList<>();
+//		for(int i = 0; i < root.length; i++) {
+//			ConditionBlock c = new ConditionBlock(a);
+//			try {
+//				MyJSONObject cond = root[i];
+//				c.setId(cond.getInt("id"));
+//				for(MyJSONObject cond2 : cond.getObjectArray("conds")) {
+//					ConditionBlock c2 = new ConditionBlock(a);
+//					c2.setAilment(a);
+//					c2.setConditionId(cond2.getInt("id"));
+//					c2.setCondition(Constants.PASSIVE_REQUIRED.get(c2.getConditionId()));
+//					c2.setTargetId(cond2.getInt("target"));
+//					c2.setTarget(RequiredTarget.get(c2.getTargetId()));
+//					c2.setValues(cond2.getIntArray("values"));
+//					c.getConditions().add(c2);
+//				}
+//			} catch(Exception e) {
+//				//-1
+//			}
+//			conds.add(c);
+//		}
+//		return conds.toArray(new ConditionBlock[conds.size()]);
+//	}
 	public static ConditionBlock[] parseConditionBlocks(Ailment a, MyJSONObject root, String name) {
 		List<ConditionBlock> conds = new LinkedList<>();
 		for(int i = 0; i < root.getJSON().getJSONArray(name).length(); i++) {
@@ -186,4 +215,59 @@ public class AilmentParser {
 		}
 		return conds.toArray(new ConditionBlock[conds.size()]);
 	}
+	
+//	private static List<Ailment> mergeFRAilments(List<Ailment> ret, MyJSONObject[] frBonus){
+//		long frAilmentCount = ret.stream()
+//				.filter(a -> a.getAilmentConditionId() == 45)
+//				.count();
+//		if(frAilmentCount > 1) {
+//			Ailment frA = ret.stream()
+//							.filter(a -> a.getAilmentConditionId() == 45)
+//							.reduce((a1, a2) -> {
+//								Ailment mainA = a1.getDispType() == 133 ? a1 : a2;
+//								Ailment secA = mainA == a1 ? a2 : a1;
+//								mainA.getAuras().addAll(secA.getAuras());
+//								return mainA;
+//							}).orElse(null);
+//			ret = ret.stream().filter(a -> a.getAilmentConditionId() != 45).collect(Collectors.toList());
+//			ret.add(frA);
+//			int idC = 0;
+//			for(int ii = 0; ii < frBonus.length; ii++) {
+//				Aura a = new Aura();
+//				a.setAilment(frA);
+//				a.setId(--idC);
+//				
+//				if(frBonus[ii].getObjectArray("conds").length == 1)
+//						a.setRequiredConditionsIds(new Integer[] {1, 20, -1});
+//				else if(frBonus[ii].getObjectArray("conds").length == 2)
+//					a.setRequiredConditionsIds(new Integer[] {1, 20, 20});
+//				else
+//					throw new RuntimeException("Unknown number of conditions on frBonus");				
+//				_AuraRequired[] aurasConditions = new _AuraRequired[3];
+//				for(int i = 0; i < 3; i++) {
+//					if(a.getRequiredConditionsIds()[i].intValue() == -1){
+//						aurasConditions[i] = null; 
+//						continue;
+//					}
+//					_AuraRequired ar = Constants.AURA_REQUIRED.get(a.getRequiredConditionsIds()[i]);
+//					aurasConditions[i] = ar;
+//				}
+//				a.setRequiredConditions(aurasConditions);
+//				a.setRequiredValues(new Integer[] {idC, 0, 0, 0, 0, 0});
+//				a.setRequiredConditionObjectValues(parseConditionBlocks(frA, frBonus));
+//				//--
+//
+//				a.setEffectDataId(0);
+//				a.setEffectId(571);
+//				a.setEffect(Constants.AURA_EFFECT.get(a.getEffectId()));
+//				a.setTargetId(1);
+//				a.setTarget(AuraTarget.get(1));
+//				a.setValueType(1);
+//				a.setValueEditType(frBonus[ii].getInt("value_edit_type"));
+//				a.setTypeId(-1);
+//				a.setRankData(new Integer[] {frBonus[ii].getInt("value"), 0, 0, 0, 0, 0, 0, 0, 0, 0});
+//			}
+//		}
+//		return ret;
+//	}
 }

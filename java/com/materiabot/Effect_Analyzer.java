@@ -23,10 +23,13 @@ import com.materiabot.IO.JSON.UnitParser;
 import com.materiabot.Utils.Constants;
 
 public class Effect_Analyzer {
+	private static final String REGION = "JP";
+	private static final String unitPath = "E:\\WorkspaceV3\\_Launcher\\resources\\units\\" + REGION.toLowerCase();
+	
 	public static void main(String[] args) throws Exception {
 		UnitParser.setDebug(true);
 		PluginManager.reset(false);
-		int key = 9;
+		int key = 4;
 
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -72,7 +75,7 @@ public class Effect_Analyzer {
 	}
 	private static void printUnitSpecific(String unit, Integer... id) {
 		//Arrays.asList(
-		Arrays.asList(id).stream().map(i -> _Library.L.getUnit(unit).getSpecificAbility(i))
+		Arrays.asList(id).stream().map(i -> _Library.L.getUnit(unit).get(Region.valueOf(REGION)).getSpecificAbility(i))
 		//	.reduce((a1, a2) -> new Ability.MultiAbility(a1, a2)).orElse(null))
 		.forEach(p -> {
 			String text = p.generateDescription();
@@ -91,9 +94,9 @@ public class Effect_Analyzer {
 	
 	private static void findMissing() {
 		HashMap<Integer, List<String>> map = new HashMap<>();
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
+		Arrays.asList(new File(unitPath).list()).stream()
 				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json")))
-				.map(u -> _Library.L.getUnit(u))
+				.map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 				.flatMap(u -> u.getAbilities().values().stream())
 				.flatMap(a -> a.getAilments().stream())
 				.filter(a -> a.getAilmentConditionId() > 0)
@@ -113,8 +116,8 @@ public class Effect_Analyzer {
 	private static void printAllAbilityEffects() {
 		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> u.getAbilities().values().stream())
 			.flatMap(a -> a.getHitData().stream())
 			.distinct()
@@ -134,8 +137,8 @@ public class Effect_Analyzer {
 	
 	private static void printAllPassives() {
 		HashMap<Integer, List<Unit>> map = new HashMap<>();
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> u.getPassives().values().stream())
 			.flatMap(a -> a.getEffects().stream())
 			.distinct()
@@ -152,8 +155,8 @@ public class Effect_Analyzer {
 			System.out.println(k + " - " + map.get(k).toString());
 		});
 		HashMap<Integer, List<Unit>> map2 = new HashMap<>();
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> u.getPassives().values().stream())
 			.flatMap(a -> a.getConditions().stream())
 			.distinct()
@@ -181,8 +184,8 @@ public class Effect_Analyzer {
 	private static void printAllAilments() {
 		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> 
 				Streams.concat(
 						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getEffects()).stream().map(ae -> new IDUnitContainer(ae, u))),
@@ -207,8 +210,8 @@ public class Effect_Analyzer {
 		});
 		HashMap<Integer, List<Unit>> map2 = new HashMap<>();
 		
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> 
 				Streams.concat(
 						u.getAilments().values().stream().flatMap(a -> Arrays.asList(a.getConditions()).stream())
@@ -232,8 +235,8 @@ public class Effect_Analyzer {
 	private static void printAllAuras() {
 		HashMap<Integer, List<Unit>> map = new HashMap<>();
 		
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> 
 				Streams.concat(
 						u.getAilments().values().stream().flatMap(a -> a.getAuras().stream())
@@ -257,8 +260,8 @@ public class Effect_Analyzer {
 	
 	private static void findLabels() {
 		HashMap<Integer, List<String>> map = new HashMap<>();
-		Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units").list()).stream()
-			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u))
+		Arrays.asList(new File(unitPath).list()).stream()
+			.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 			.flatMap(u -> Streams.concat(u.getUpgradedAbilities().stream(), u.getTriggeredAbilities().stream()))
 			.forEach(hd -> {
 				Ability oga = hd.getUnit().getSpecificAbility(hd.getOriginalId());
@@ -286,7 +289,7 @@ public class Effect_Analyzer {
 //		Streams.concat(	Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\gl").list()).stream(),
 //						Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\jp").list()).stream())
 //		.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).distinct()
-//		.map(u -> _Library.L.getUnit(u))
+//		.map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 //		.filter(u -> u != null)
 //		.forEach(u -> {
 //			Map<Integer, List<Integer>> trig = new HashMap<>();
@@ -304,7 +307,7 @@ public class Effect_Analyzer {
 		Streams.concat(	Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\gl").list()).stream(),
 						Arrays.asList(new File("E:\\WorkspaceV3\\_Launcher\\resources\\units\\jp").list()).stream())
 				.map(u -> u.substring(u.indexOf("_")+1, u.indexOf(".json"))).distinct()
-				.map(u -> _Library.L.getUnit(u))
+				.map(u -> _Library.L.getUnit(u).get(Region.valueOf(REGION)))
 				.map(u -> u.get(Region.JP))
 				.filter(u -> u != null)
 				.map(u -> u.getAbility(AttackName.EX).get(0))
