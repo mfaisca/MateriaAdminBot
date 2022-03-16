@@ -29,7 +29,7 @@ public class Effect_Analyzer {
 	public static void main(String[] args) throws Exception {
 		UnitParser.setDebug(true);
 		PluginManager.reset(false);
-		int key = 4;
+		int key = 8;
 
 		if(key == 1)
 			printUnit("Ace", AttackName.LD);
@@ -45,7 +45,7 @@ public class Effect_Analyzer {
 			findLabels();
 		if(key == 7 || key == 99)
 			printAllAbilityEffects();
-		if(key == 8 || key == 99)
+		if(key == 8 || key == 99) //Missing
 			printAllPassives();
 		if(key == 9)
 			selphieCalculation();

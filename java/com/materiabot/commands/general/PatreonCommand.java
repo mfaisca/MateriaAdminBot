@@ -90,9 +90,15 @@ public class PatreonCommand extends _BaseCommand{
 			final List<Long> patreonDiscordIdsT2 = new LinkedList<>();
 			final List<Long> patreonDiscordIdsT3 = new LinkedList<>();
 			final List<String> patronsMissingDiscordTag = new LinkedList<>();
+			final List<Long> patreonDiscordLongSub = new LinkedList<>();
 			for(Pledge p : pledges)
 				if(p.getPatron().getSocialConnections() != null) {
 					if(p.getPatron().getSocialConnections().getDiscord() != null) {
+						long monthsPatron = ChronoUnit.MONTHS.between(LocalDate.parse(p.getCreatedAt().substring(0, 10), 
+																		DateTimeFormatter.ofPattern("yyyy-MM-dd")), LocalDate.now());
+						if(monthsPatron >= 6) {
+							patreonDiscordLongSub.add(Long.parseLong(p.getPatron().getSocialConnections().getDiscord().getUser_id()));
+						}
 						if(p.getReward().getTitle().equals("Tonberry Chef"))
 							patreonDiscordIdsT2.add(Long.parseLong(p.getPatron().getSocialConnections().getDiscord().getUser_id()));
 						else if(p.getReward().getTitle().equals("Tonberry King")) {
@@ -105,6 +111,7 @@ public class PatreonCommand extends _BaseCommand{
 				}
 			final Role tonberryChef = materiaServer.getRoleById(744314490946060320L);
 			final Role tonberryKing = materiaServer.getRoleById(744314477490470932L);
+			final Role tonberryLongSub = materiaServer.getRoleById(953392758763163750L);
 			materiaServer.findMembersWithRoles(tonberryKing).onSuccess(lm ->
 				lm.stream().filter(m -> !patreonDiscordIdsT3.contains(m.getIdLong())).forEach(m -> 
 					materiaServer.removeRoleFromMember(m, tonberryKing).submit()
@@ -127,6 +134,12 @@ public class PatreonCommand extends _BaseCommand{
 					.thenAccept(v -> materiaServer.addRoleToMember(m, tonberryKing).submit())
 					.thenAccept(v -> MessageUtils.sendMessage(ttPrivateChannel, m.getEffectiveName() + " is a new Tonberry King."))
 					.thenAccept(v -> MessageUtils.sendMessage(ttPatreonChannel, m.getEffectiveName() + " is a new Tonberry King."))
+			))).onSuccess(v1 -> 
+			materiaServer.retrieveMembersByIds(patreonDiscordLongSub).onSuccess(lm ->
+				lm.stream().filter(m -> !m.getRoles().contains(tonberryLongSub))
+				.forEach(m -> materiaServer.addRoleToMember(m, tonberryLongSub).submit()
+					.thenAccept(v -> MessageUtils.sendMessage(ttPrivateChannel, m.getEffectiveName() + " is now a Permanent Tonberry."))
+					.thenAccept(v -> MessageUtils.sendMessage(ttPatreonChannel, m.getEffectiveName() + " is now a Permanent Tonberry."))
 			))).onSuccess(v1 -> {
 				;//MessageUtils.sendMessageToChannel(troupeNotes, "TT Patreon successfully executed");
 			});
