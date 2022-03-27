@@ -15,11 +15,10 @@ public enum Type{
 
 	public static boolean isBRV(Type t) {
 		return t.equals(BRV) || t.equals(FixedBRV) || t.equals(BRVIgnoreDEF) || 
-				t.equals(RandomMagicBRV) || t.equals(BRVIgnoreDEF2) || t.equals(SketchSummon) || 
-				t.equals(NoBRVConsumption);
+				t.equals(RandomMagicBRV) || t.equals(BRVIgnoreDEF2) || t.equals(SketchSummon);
 	}
 	public static boolean isHP(Type t) {
-		return t.equals(HP) || t.equals(SplitSummonHP) || t.equals(DistributedSummonHP);
+		return t.equals(HP) || t.equals(SplitSummonHP) || t.equals(DistributedSummonHP) || t.equals(NoBRVConsumption);
 	}
 	
 	public static Type get(int id) {

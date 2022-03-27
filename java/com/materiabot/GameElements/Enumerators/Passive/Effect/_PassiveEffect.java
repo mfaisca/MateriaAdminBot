@@ -36,10 +36,10 @@ public abstract class _PassiveEffect implements _Plugin{
 				.replace("{pt}", p.getPassive().getTarget() == null ? "Unknown Target: " + p.getPassive().getTargetId() : p.getPassive().getTarget().getDescription());
 		for(int i = 0; i < p.getValues().length; i++) {
 			description = description.replace("{ail" + i + "}", ImageUtils.getAilmentEmote(p.getPassive().getUnit(), p.getValues()[i]) + Methods.enframe(p.getPassive().getUnit().getSpecificAilment(p.getValues()[i]).getName().getBest()));
-			description = description.replace("{ab" + i + "}", Methods.enframe(p.getPassive().getUnit().getSpecificAbility(p.getValues()[i]).getName().getBest() + "**」"));
-			description = description.replace("{p" + i + "}", Methods.enframe(p.getPassive().getUnit().getSpecificPassive(p.getValues()[i]).getName().getBest() + "**」"));
-			description = description.replace("{s1}", Methods.enframe(p.getPassive().getUnit().getAbility(AttackName.S1).get(0).getName().getBest() + "**」"));
-			description = description.replace("{s2}", Methods.enframe(p.getPassive().getUnit().getAbility(AttackName.S2).get(0).getName().getBest() + "**」"));
+			description = description.replace("{ab" + i + "}", Methods.enframe(p.getPassive().getUnit().getSpecificAbility(p.getValues()[i]).getName().getBest()));
+			description = description.replace("{p" + i + "}", Methods.enframe(p.getPassive().getUnit().getSpecificPassive(p.getValues()[i]).getName().getBest()));
+			description = description.replace("{s1}", Methods.enframe(p.getPassive().getUnit().getAbility(AttackName.S1).get(0).getName().getBest()));
+			description = description.replace("{s2}", Methods.enframe(p.getPassive().getUnit().getAbility(AttackName.S2).get(0).getName().getBest()));
 			description = description.replace("{" + i + "}", ""+p.getValues()[i]);
 		}
 		while(description.contains("{pl")) { //{pl1;debuff;debuffs}  |||  buff{pl2;;s}

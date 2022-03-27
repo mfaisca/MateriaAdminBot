@@ -18,7 +18,7 @@ public class HitData {
 		
 		public String getHitsDescription() {
 			if(t.effect.isHP() && Type.isHP(t.type))
-				return (t.target == Target.ST ? "ST HP" : "AoE HP");
+				return (t.target == Target.ST ? "ST HP" : "AoE HP") + (t.getType() == Type.NoBRVConsumption ? " (Doesn't consume BRV)" : "");
 			else if(Type.isBRV(t.type))
 				return (count > 0 ? count + "x " : "") + t.target.name() + 
 					(showType && t.attackType != null ? " " + t.attackType.getEmote() : "") + 

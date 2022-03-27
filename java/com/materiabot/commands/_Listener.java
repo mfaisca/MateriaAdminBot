@@ -67,8 +67,13 @@ public class _Listener extends ListenerAdapter{
 			}},
  			MESSAGE_RECEIVED{public void run(Event e) {
  				MessageReceivedEvent event = (MessageReceivedEvent)e;
- 				if(!event.getMessage().getContentRaw().isEmpty())
- 					Constants.COMMANDS.stream().filter(c -> c.getCommand().equalsIgnoreCase("Direct")).forEach(c -> c.doStuff(event));
+ 				if(event.getAuthor().getIdLong() != event.getJDA().getSelfUser().getIdLong() && 
+ 					event.getMessage().getContentRaw().startsWith("$") && 
+ 					event.getMessage().getContentRaw().length() > 1 && Character.isAlphabetic(event.getMessage().getContentRaw().charAt(1))) {
+ 						MessageUtils.sendMessage(event.getChannel(), "It seems you might be trying to use a MateriaBot command (sorry for the spam if you aren't)" + System.lineSeparator() + 
+ 																"Due to Discord changes, commands have been changed to use the new Slash Command system. Please read more on the links below: " + System.lineSeparator() + 
+ 																"<https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ>" + System.lineSeparator() + "<https://support-dev.discord.com/hc/en-us/articles/4404772028055>");
+ 				}
  			}};
 			public abstract void run(final Event event);
 		}
@@ -131,7 +136,7 @@ public class _Listener extends ListenerAdapter{
 	}
 	@Override
 	public final void onMessageReceived(MessageReceivedEvent event) {
-		if(event.getMessage().getMentionedUsers().contains(event.getJDA().getSelfUser()))
-			THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
+		//if(event.getMessage().getMentionedUsers().contains(event.getJDA().getSelfUser()))
+		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 }

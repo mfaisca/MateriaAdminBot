@@ -14,8 +14,9 @@ public enum Target{
 	Traps(18, "traps???"), //Emperor only(S2 / EX)
 	CalledUnit(29, "own"), //???
 	AOE(23, "traps???"), //Emperor only
+	Caller(27, "caller"),
 	SelfCall(28, "own"),
-	Caller(29, "caller"),
+	Caller2(29, "caller"),
 	
 	;private int id, id2;
 	private String desc, desc2;

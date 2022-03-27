@@ -36,6 +36,9 @@ public class JobChangeStatus implements Job{
 						execute(context); return; }
 					a = Activity.of(ActivityType.DEFAULT, "with " + pc + " patrons.");
 					break;
+				case 3:
+					a = Activity.of(ActivityType.WATCHING, "#StopTheCap");
+					break;
 				default: 
 					counter = 0;
 					execute(context); return;

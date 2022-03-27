@@ -22,6 +22,8 @@ public class AbilityParser {
 		for(MyJSONObject s : obj.getObjectArray(abilityArray)) {
 			if(s.getInt("error") != null) continue; //Some abilities have error
 			Ability a = parseAbility(s);
+			if(a.getId() == 5538)
+				System.out.println();
 			for(Ailment ail : AilmentParser.parseAilments(s, "ailments", frBonus))
 				if(ail.isInvisibleSiphon()) {
 					HitData hd = new HitData(a);

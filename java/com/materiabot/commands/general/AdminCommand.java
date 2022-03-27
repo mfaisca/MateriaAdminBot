@@ -50,10 +50,12 @@ public class AdminCommand extends _BaseCommand{
 						MessageUtils.sendStatusMessageError(event.getHook(), "Error updating Patreon API Key");
 				} else if(event.getOption("status") != null && event.getMember().getIdLong() == Constants.QUETZ_ID) {
 					Activity a = null;
+					Constants.getClient().getPresence().setStatus(OnlineStatus.ONLINE);
 					switch(event.getOption("status").getAsString()) {
 						case "playing": a = Activity.playing("Opera Omnia"); break;
 						case "servers": a = Activity.watching("Watching " + Constants.getClient().getGuilds().size() + " servers"); break;
 						case "stream": a = Activity.streaming("DFFOO Livestream", "https://www.twitch.tv/squareenix"); break;
+						case "offline": Constants.getClient().getPresence().setStatus(OnlineStatus.INVISIBLE); break;
 					}
 					if(a != null) {
 						Constants.getClient().getPresence().setPresence(OnlineStatus.ONLINE, a);
@@ -87,6 +89,7 @@ public class AdminCommand extends _BaseCommand{
 				od4.addChoices(new Command.Choice("playing", "playing"));
 				od4.addChoices(new Command.Choice("servers", "servers"));
 				od4.addChoices(new Command.Choice("stream", "stream"));
+				od4.addChoices(new Command.Choice("offline", "offline"));
 		cd.addOptions(od2);
 		cd.addOptions(od3);
 		cd.addOptions(od4);

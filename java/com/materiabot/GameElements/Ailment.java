@@ -216,7 +216,7 @@ public class Ailment {
 			if(getEffects()[i] != -1) effectCount++;
 			if(getEffects()[i] == 44) isSiphon = true;
 		}
-		return isSiphon && effectCount == 1 && !isVisible();
+		return isSiphon && effectCount == 1 && !isVisible() && this.getDuration() == 1;
 	}
 
 	public boolean isDeadEffect() {
@@ -303,7 +303,7 @@ public class Ailment {
 		List<AilmentBlock> finalDescription = new LinkedList<>();
 		String ret = "";
 		if(isDeadEffect() && !this.getName().getBest().equals("Attack Change"))
-			return "";
+			return "";;
 		if(!isAuraEffect) {
 			if(this.isStackable() && this.getArgs().length > 0 && this.getArgs()[0] > 0)
 				ret += "+" + this.getArgs()[0] + (this.getArgs()[0] == 1 ? " stack to " : " stacks to ");

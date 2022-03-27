@@ -15,6 +15,15 @@ public class Text {
 	public void setGl(String gl) { this.gl = gl; }
 	public String getJp() { return jp; }
 	public void setJp(String jp) { this.jp = jp; }
+	public String getBy(Region r) {
+		return getBy(r.name());
+	}
+	public String getBy(String r) {
+		if(r.equalsIgnoreCase("GL")) return getGl();
+		else if(r.equalsIgnoreCase("JP")) return getJp();
+		else
+			return getBest();
+	}
 	
 	public String getBest() {
 		if(gl != null && gl.length() > 0) return getGl();

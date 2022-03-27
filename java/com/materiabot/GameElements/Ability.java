@@ -91,6 +91,12 @@ public class Ability implements Comparable<Ability>{
 	public int getRank() { return rank; }
 	public void setRank(int rank) { this.rank = rank; }
 	public int getMovementCost() { return movementCost; }
+	public int getAlteredMovementCost() { return movementCost - 
+				this.getUnit().getPassives().values().stream()
+					.flatMap(e -> e.getEffects().stream())
+					.filter(e -> e.getEffectId().intValue() == 48)
+					.filter(e -> e.getValues()[0] == this.getUnit().getBaseAbility(this.getAttackName()).get(0).getId())
+					.map(e -> e.getValues()[1]).findFirst().orElse(0); }
 	public void setMovementCost(int movementCost) { this.movementCost = movementCost; }
 	public int getBaseUseCount() { return baseUseCount; }
 	public void setBaseUseCount(int useCount) { this.baseUseCount = useCount; }
@@ -187,11 +193,11 @@ public class Ability implements Comparable<Ability>{
 	}
 	
 	public String generateTitle() {
-		return getHitData().stream().map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> ImageUtils.getEmoteText(hd.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
+		return getHitData().stream().filter(hd -> hd.getEffect() != null).filter(hd -> hd.getEffect().isBRV()).map(hd -> hd.getAttackType()).filter(hd -> hd != null).map(hd -> ImageUtils.getEmoteText(hd.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getHitData().stream().flatMap(hd -> hd.getElements().stream()).map(e -> ImageUtils.getEmoteText(e.getEmote())).distinct().reduce("", (s1, s2) -> s1 + s2)
 				+ getName().getBest()
 				+ (getTotalUseCount() > 0 && !AttackName.EX.equals(this.getAttackName()) && !AttackName.BT.equals(this.getAttackName()) ? " (Uses: " + getTotalUseCount() + ")" : "")
-				+ (AttackName.EX.equals(this.getAttackName()) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBest() + " (" + getChargeRate() + "))" : "")
+				+ (AttackName.EX.equals(this.getAttackName()) ? " (Charge Rate: " + ChargeRate.getBy(getChargeRate()).getDescription().getBy(this.getUnit().getRegion()) + " (" + getChargeRate() + "))" : "")
 				+ (Constants.DEBUG ? " (ID: " + getId() + ")" : "");
 	}
 
@@ -269,18 +275,20 @@ public class Ability implements Comparable<Ability>{
 		int totalPotency = 0;
 		if(!currentChain.isEmpty())
 			effects.add(currentChain);
-		if(this.getMovementCost() == 0)
-			preEffects.add(0, "Instant Turn Rate (" + this.getMovementCost() + ")");
-		else if(this.getMovementCost() < 30)
-			preEffects.add(0, "High Turn Rate (" + this.getMovementCost() + ")");
-		else if(this.getMovementCost() > 30)
-			preEffects.add(0, "Low Turn Rate (" + this.getMovementCost() + ")");
+		if(this.getAlteredMovementCost() == 0)
+			preEffects.add(0, "Instant Turn Rate (" + this.getAlteredMovementCost() + ")");
+		else if(this.getAlteredMovementCost() < 30)
+			preEffects.add(0, "High Turn Rate (" + this.getAlteredMovementCost() + ")");
+		else if(this.getAlteredMovementCost() > 30)
+			preEffects.add(0, "Low Turn Rate (" + this.getAlteredMovementCost() + ")");
 		if(chaseDmg == 50)
 			postEffects.add("Initiates a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
 		else if(chaseDmg > 6)
 			postEffects.add("Easier to initiate a chase sequence (" + chaseDmg + " [CU](https://www.reddit.com/r/DissidiaFFOO/comments/7x7ffp/chase_mechanic/))");
 		else if(chaseDmg == 0)
 			preEffects.add("Cannot initiate a chase sequence");
+		if(effects.stream().flatMap(e -> e.stream()).anyMatch(hdd -> hdd.getType() == Type.BRVIgnoreDEF || hdd.getType() == Type.BRVIgnoreDEF2))
+			preEffects.add(0, "BRV Hits ignore defense");
 		if(stBrvIncrease > 0)
 			preEffects.add(0, "Raises BRV Damage by " + stBrvIncrease + "% against ST");
 		if(brvDamageLimit > 0)

@@ -113,14 +113,11 @@ public class Unit {
 											.collect(Collectors.toList());
 		try {
 			int baseId = this.getBaseAbility(type).get(0).getId();
-//			map = this.getUpgradedAbilities().stream().filter(ca -> ca.getOriginalId() == baseId)
-//													.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
-//													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
-//																										s.getReqWeaponPassives().stream())
-//																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
 			map = this.getUpgradedAbilities().stream().filter(ca -> ca.getOriginalId() == baseId)
-					.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
-					.collect(Collectors.groupingBy(s -> s.getReqExtendPassives().size() + s.getReqWeaponPassives().size(), Collectors.toList()));
+													.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
+													.collect(Collectors.groupingBy(s -> Streams.concat(s.getReqExtendPassives().stream(), 
+																										s.getReqWeaponPassives().stream())
+																						.reduce(Integer::sum).orElse(0), Collectors.toList()));
 		} catch(Exception e) { return new BestAbilities(null); }
 		int max = map.keySet().stream().collect(Collectors.maxBy(Integer::compareTo)).orElse(0);
 		Comparator<ChainAbility> comp = (ca1, ca2) -> {
