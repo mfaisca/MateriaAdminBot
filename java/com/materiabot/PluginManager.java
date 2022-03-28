@@ -117,8 +117,10 @@ public class PluginManager {
 			if(!currentVersion.equals(newVersion)){
 				CommandListUpdateAction commands = Constants.getClient().updateCommands();
 				commands.queue();
-				Constants.getClient().getGuildById(Constants.MATERIABOT_SERVER_ID).retrieveCommands().complete().stream().forEach(c -> c.delete().queue());
-				Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).retrieveCommands().complete().stream().forEach(c -> c.delete().queue());
+				for(_BaseCommand c : Constants.COMMANDS) {
+					if(c.getAdminCommandData() != null)
+						Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).queue();
+				}
 				if(!Constants.DEBUG) {
 					for(_BaseCommand c : Constants.COMMANDS) {
 						if(c.getCommandData() == null)
@@ -141,6 +143,11 @@ public class PluginManager {
 					}
 				}
 				SQLAccess.setKeyValue("COMMAND_VERSION", newVersion);
+//			} else {
+//				for(_BaseCommand c : Constants.COMMANDS) {
+//					if(c.getAdminCommandData() != null)
+//						Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).complete();
+//				}
 			}
 		}
 	}

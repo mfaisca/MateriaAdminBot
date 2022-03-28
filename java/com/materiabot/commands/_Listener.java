@@ -4,13 +4,16 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.function.Supplier;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands.general.*;
 import Shared.BotException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.ChannelType;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
@@ -65,12 +68,54 @@ public class _Listener extends ListenerAdapter{
 						return;
 					}
 			}},
- 			MESSAGE_RECEIVED{public void run(Event e) {
+ 			MESSAGE_RECEIVED{
+			public void run(Event e) {
  				MessageReceivedEvent event = (MessageReceivedEvent)e;
+ 				
+// 				try {
+//					if(!SQLAccess.isRegisteredServer(event.getGuild().getIdLong())){
+//						for(_BaseCommand c : Constants.COMMANDS) {
+//							if(c.getCommandData() != null)
+//								Constants.getClient().getGuildById(event.getGuild().getIdLong()).upsertCommand(c.getCommandData()).submit().exceptionally(ex -> {
+//									try {
+//										SQLAccess.registerServer(event.getGuild(), "Error");
+//									} catch (BotException e1) {
+//										// TODO Auto-generated catch block
+//										e1.printStackTrace();
+//									}
+//								    return null;
+//								}).thenApply(f -> {
+//									if(f != null)
+//										try {
+//											SQLAccess.registerServer(event.getGuild(), "OK");
+//										} catch (BotException e1) {
+//											// TODO Auto-generated catch block
+//											e1.printStackTrace();
+//										}
+//									return f;
+//								});
+//						}
+//						System.out.println("Commands given to " + event.getGuild().getName());
+//						SQLAccess.registerServer(event.getGuild(), "OK");
+//					}
+//				} catch (SQLException e1) {
+//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error assigning Commands to server " + event.getGuild().getName() + "(" + event.getGuild().getIdLong() + ")");
+//				} catch (BotException e1) {
+//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error assigning Commands to server " + event.getGuild().getName() + "(" + event.getGuild().getIdLong() + ")");
+//					Member m = event.getGuild().retrieveOwner().complete();
+//					String r = null;
+//					if(m != null)
+//						r = m.getUser().getName() + "#" + m.getUser().getDiscriminator();
+//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "The server owner is " + r);
+//				}
+ 				
  				if(event.getAuthor().getIdLong() != event.getJDA().getSelfUser().getIdLong() && 
  					event.getMessage().getContentRaw().startsWith("$") && 
  					event.getMessage().getContentRaw().length() > 1 && Character.isAlphabetic(event.getMessage().getContentRaw().charAt(1))) {
  						MessageUtils.sendMessage(event.getChannel(), "It seems you might be trying to use a MateriaBot command (sorry for the spam if you aren't)" + System.lineSeparator() + 
+ 																	"Please use the new commands by typing / and following the discord menu. If nothing shows up, please re-add the bot to this server(Admins/Mods) through the following link: " + System.lineSeparator() + 
+ 																	"https://discord.com/api/oauth2/authorize?client_id=531416878011383808&permissions=139653860416&scope=applications.commands%20bot" + System.lineSeparator() + 
+ 																	"If nothing shows up after a few minutes, please DM Quetzalma#9999, apologies for the issue!" + System.lineSeparator() + System.lineSeparator() + 
  																"Due to Discord changes, commands have been changed to use the new Slash Command system. Please read more on the links below: " + System.lineSeparator() + 
  																"<https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ>" + System.lineSeparator() + "<https://support-dev.discord.com/hc/en-us/articles/4404772028055>");
  				}
@@ -136,7 +181,6 @@ public class _Listener extends ListenerAdapter{
 	}
 	@Override
 	public final void onMessageReceived(MessageReceivedEvent event) {
-		//if(event.getMessage().getMentionedUsers().contains(event.getJDA().getSelfUser()))
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.MESSAGE_RECEIVED, event));
 	}
 }

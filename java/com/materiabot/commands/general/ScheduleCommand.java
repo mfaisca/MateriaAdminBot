@@ -33,13 +33,13 @@ public class ScheduleCommand extends _BaseCommand{
 	
 	@Override
 	public void doStuff(SlashCommandEvent event) {
-		if(Constants.userHasMateriaRole(event.getUser().getIdLong(), SCHEDULE_CREATOR_ROLE_ID))
-			try {
-				if(event.getSubcommandName() == null){
-					boolean full = event.getOption("full") != null ? event.getOption("full").getAsBoolean() : false;
-					MessageUtils.sendEmbed(event.getHook(), show("GL", false, false, full));
-				}
-				else switch(event.getSubcommandName()) {
+		try {
+			if(event.getSubcommandName() == null){
+				boolean full = event.getOption("full") != null ? event.getOption("full").getAsBoolean() : false;
+				MessageUtils.sendEmbed(event.getHook(), show("GL", false, false, full));
+			}
+			else if(Constants.userHasMateriaRole(event.getUser().getIdLong(), SCHEDULE_CREATOR_ROLE_ID)) {
+				switch(event.getSubcommandName()) {
 					case "list": {
 						boolean full = event.getOption("full") != null ? event.getOption("full").getAsBoolean() : false;
 						MessageUtils.sendEmbed(event.getHook(), show("GL", false, false, full));
@@ -80,11 +80,12 @@ public class ScheduleCommand extends _BaseCommand{
 						break;
 					}
 				}
-			} catch(Exception e) {
-				MessageUtils.sendMessage(event.getHook(), e.getMessage());
 			}
-		else
-			MessageUtils.sendGTFO(event.getHook(), "Only users with 'Manage Messages' can use this command");
+			else
+				MessageUtils.sendGTFO(event.getHook(), "Only users with 'Manage Messages' can use this command");
+		} catch(Exception e) {
+			MessageUtils.sendMessage(event.getHook(), e.getMessage());
+		}
 	}
 	
 	public static boolean isStreamTime() {

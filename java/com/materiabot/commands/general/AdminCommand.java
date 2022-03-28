@@ -23,7 +23,19 @@ public class AdminCommand extends _BaseCommand{
 	public void doStuff(final SlashCommandEvent event) {
 		if(event.getMember().getIdLong() == Constants.QUETZ_ID || event.getMember().getIdLong() == Constants.CEL_ID)
 			try {
-				if(event.getOption("op") != null) {
+				if(event.getOption("pushcommands") != null) {
+					try {
+						for(_BaseCommand c : Constants.COMMANDS) {
+							if(c.getCommandData() != null)
+								Constants.getClient().getGuildById(event.getOption("pushcommands").getAsLong()).upsertCommand(c.getCommandData()).queue();
+						}
+						MessageUtils.sendMessage(event.getHook(), "Commands given");
+					} catch(Exception e) {
+						MessageUtils.sendMessage(event.getHook(), "Error giving commands." + System.lineSeparator() + e.toString());
+						System.out.println(e.toString());
+					}
+				}
+				else if(event.getOption("op") != null) {
 					if(event.getOption("op").getAsString().equals("owners") && event.getMember().getIdLong() == Constants.QUETZ_ID) {
 						if(confirmSend) {
 							MessageUtils.sendMessage(event.getHook(), "Sending");
@@ -90,9 +102,11 @@ public class AdminCommand extends _BaseCommand{
 				od4.addChoices(new Command.Choice("servers", "servers"));
 				od4.addChoices(new Command.Choice("stream", "stream"));
 				od4.addChoices(new Command.Choice("offline", "offline"));
+			OptionData od5 = new OptionData(OptionType.STRING, "pushcommands", "Guild ID here");
 		cd.addOptions(od2);
 		cd.addOptions(od3);
 		cd.addOptions(od4);
+		cd.addOptions(od5);
 		return cd;
 	}
 	

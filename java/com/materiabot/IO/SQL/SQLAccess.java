@@ -19,6 +19,7 @@ import com.materiabot.Utils.Constants;
 import com.materiabot.Utils.MessageUtils;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import Shared.BotException;
+import net.dv8tion.jda.api.entities.Guild;
 
 public class SQLAccess {
 	private static MysqlConnectionPoolDataSource dataSource;
@@ -58,6 +59,14 @@ public class SQLAccess {
 			;
 		}
 		return null;
+	}
+	
+	public static boolean isRegisteredServer(long serverId) throws SQLException, BotException {
+		return executeSelect("SELECT * FROM Servers WHERE id = ?", serverId).last();
+	}
+	
+	public static boolean registerServer(Guild g, String note) throws BotException {
+		return executeInsert("INSERT INTO Servers VALUES(?, ?, ?)", g.getIdLong(), g.getName(), note) > 0;
 	}
 
 	private static PreparedStatement prepare(String query, Object...params) throws SQLException {
