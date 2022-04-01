@@ -95,7 +95,8 @@ public class Ability implements Comparable<Ability>{
 				this.getUnit().getPassives().values().stream()
 					.flatMap(e -> e.getEffects().stream())
 					.filter(e -> e.getEffectId().intValue() == 48)
-					.filter(e -> e.getValues()[0] == this.getUnit().getBaseAbility(this.getAttackName()).get(0).getId())
+					.filter(e -> this.getUnit().getBaseAbility(this.getAttackName()) != null)
+					.filter(e -> this.getUnit().getBaseAbility(this.getAttackName()).stream().anyMatch(ba -> ba.getId() == e.getValues()[0]))
 					.map(e -> e.getValues()[1]).findFirst().orElse(0); }
 	public void setMovementCost(int movementCost) { this.movementCost = movementCost; }
 	public int getBaseUseCount() { return baseUseCount; }

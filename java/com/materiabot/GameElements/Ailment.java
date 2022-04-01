@@ -343,7 +343,7 @@ public class Ailment {
 				.orElse("").replace(System.lineSeparator() + "{retline}", "");
 	}
 	private List<AilmentBlock> generateEffectDescription() {
-		if(this.getFakeDesc() != null) return null;
+		if(this.getFakeDesc() != null) return Arrays.asList(new AilmentBlock(null, this.getFakeDesc().getBest()));
 		List<AilmentBlock> finalDescription = new LinkedList<>();
 		boolean hasAuras = Arrays.asList(this.getEffects()).stream().anyMatch(i -> i == 60);
 		if(this.getRank() >= 0)

@@ -191,7 +191,7 @@ public class SQLAccess {
 				ret = SQLAccess.executeSelect("SELECT SUM(gemCount) gemTotal, SUM(ticketCount) ticketTotal FROM User_Banner_Costs WHERE userId = ?", f.userId);
 				if(ret.next()) {
 					f.totalGems = (int)ret.getLong("gemTotal");
-					f.totalTickets = (int)ret.getLong("ticketCount");
+					f.totalTickets = (int)ret.getLong("ticketTotal");
 				}
 				ret = SQLAccess.executeSelect("SELECT vote, COUNT(*) cc FROM (SELECT DISTINCT bannerHash, vote FROM Vote_User_Data WHERE userId = ?) a GROUP BY vote", f.userId);
 				while(ret.next()) {

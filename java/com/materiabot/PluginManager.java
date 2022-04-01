@@ -145,6 +145,8 @@ public class PluginManager {
 				SQLAccess.setKeyValue("COMMAND_VERSION", newVersion);
 //			} else {
 //				for(_BaseCommand c : Constants.COMMANDS) {
+//					if(c.getCommandData() != null)
+//						Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getCommandData()).complete();
 //					if(c.getAdminCommandData() != null)
 //						Constants.getClient().getGuildById(Constants.MATERIABOT_ADMIN_SERVER_ID).upsertCommand(c.getAdminCommandData()).complete();
 //				}

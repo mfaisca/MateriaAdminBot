@@ -4,16 +4,14 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.function.Supplier;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
+import com.materiabot.Utils.ImageUtils;
 import com.materiabot.Utils.MessageUtils;
 import com.materiabot.commands.general.*;
 import Shared.BotException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.ChannelType;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
@@ -72,42 +70,13 @@ public class _Listener extends ListenerAdapter{
 			public void run(Event e) {
  				MessageReceivedEvent event = (MessageReceivedEvent)e;
  				
-// 				try {
-//					if(!SQLAccess.isRegisteredServer(event.getGuild().getIdLong())){
-//						for(_BaseCommand c : Constants.COMMANDS) {
-//							if(c.getCommandData() != null)
-//								Constants.getClient().getGuildById(event.getGuild().getIdLong()).upsertCommand(c.getCommandData()).submit().exceptionally(ex -> {
-//									try {
-//										SQLAccess.registerServer(event.getGuild(), "Error");
-//									} catch (BotException e1) {
-//										// TODO Auto-generated catch block
-//										e1.printStackTrace();
-//									}
-//								    return null;
-//								}).thenApply(f -> {
-//									if(f != null)
-//										try {
-//											SQLAccess.registerServer(event.getGuild(), "OK");
-//										} catch (BotException e1) {
-//											// TODO Auto-generated catch block
-//											e1.printStackTrace();
-//										}
-//									return f;
-//								});
-//						}
-//						System.out.println("Commands given to " + event.getGuild().getName());
-//						SQLAccess.registerServer(event.getGuild(), "OK");
-//					}
-//				} catch (SQLException e1) {
-//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error assigning Commands to server " + event.getGuild().getName() + "(" + event.getGuild().getIdLong() + ")");
-//				} catch (BotException e1) {
-//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "Error assigning Commands to server " + event.getGuild().getName() + "(" + event.getGuild().getIdLong() + ")");
-//					Member m = event.getGuild().retrieveOwner().complete();
-//					String r = null;
-//					if(m != null)
-//						r = m.getUser().getName() + "#" + m.getUser().getDiscriminator();
-//					MessageUtils.sendWhisper(Constants.QUETZ_ID, "The server owner is " + r);
-//				}
+ 				if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID) {
+ 					if(event.getMessage().getContentRaw().toLowerCase().contains("quetz"))
+ 						MessageUtils.sendWhisper(Constants.QUETZ_ID, "Someone mentioned you" + System.lineSeparator() + event.getMessage().getContentRaw() + System.lineSeparator() + 
+ 							"https://discord.com/channels/" + event.getGuild().getId() + "/" + event.getChannel().getId() + "/" + event.getMessageId());
+ 				}
+ 				if(event.getMessage().getContentRaw().toLowerCase().contains("jecht") && event.getAuthor().getIdLong() == 201464904287256576L)
+ 					MessageUtils.sendMessage(event.getChannel(), "Seymour > Jecht " + ImageUtils.getEmoteText("caitKek"));
  				
  				if(event.getAuthor().getIdLong() != event.getJDA().getSelfUser().getIdLong() && 
  					event.getMessage().getContentRaw().startsWith("$") && 
