@@ -165,6 +165,7 @@ public abstract class _AilmentEffect implements _Plugin {
 		}
 		if(isSpecialValType) {
 			Ailment t = a.getUnit().getAilments().get(a.getValSpecify()[effectIndex]);
+			if(t != null && _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]).getSpecialText() != null)
 			description += " " + _ValType.VAL_TYPES.get(a.getValTypes()[effectIndex]).getSpecialText()
 										.replace("{0}", Methods.enframe(t != null ? t.getName().getBest() : "Unknown Ailment: " + a.getValSpecify()[effectIndex]));
 		}

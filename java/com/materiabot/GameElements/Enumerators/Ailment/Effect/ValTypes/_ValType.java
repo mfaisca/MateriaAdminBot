@@ -3,7 +3,7 @@ import java.util.HashMap;
 import com.materiabot.GameElements.Ailment;
 
 public abstract class _ValType {
-	public static final HashMap<Integer, _ValType> VAL_TYPES = new HashMap<Integer, _ValType>();
+	public static final HashMap<Integer, _ValType> VAL_TYPES = new HashMap<>();
 	
 	private int valType;
 	private boolean special = false;

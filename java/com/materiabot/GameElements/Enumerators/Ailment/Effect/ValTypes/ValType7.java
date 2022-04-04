@@ -3,7 +3,7 @@ import com.materiabot.GameElements.Ailment;
 
 public class ValType7 extends _ValType{
 	public ValType7() {
-		super(7);
+		super(7, true);
 	}
 
 	@Override
