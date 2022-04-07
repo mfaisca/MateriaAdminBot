@@ -19,6 +19,7 @@ public class Unit {
 	private int id;
 	private Region region = Region.None;
 	private String name;
+	private String pluginName;
 	private Text fullName;
 	private int series = -1;
 	private Crystal crystal;
@@ -40,7 +41,9 @@ public class Unit {
 	private Sphere weaponSphere, basicSphere;
 
 	//Profile Data
-	public Unit(String name) { this.name = name; }
+	public Unit() { }
+	public Unit(String name) { this.pluginName = this.name = name; }
+	public Unit(String name, String pluginName) { this.name = name; this.pluginName = pluginName; }
 	public Unit get(Region region) { return region.equals(Region.GL) ? getGL() : getJP(); }
 	public Unit getGL() { return GL; }
 	public void setGL(Unit gL) { GL = gL; }
@@ -272,7 +275,7 @@ public class Unit {
 	public void loadFixGL() {}
 	public void loadFixJP() { loadFixGL(); }
 
-	public String getPluginName() { return getName(); }
+	public String getPluginName() { return pluginName != null ? pluginName : getName(); }
 	public String toString() {
 		return this.getName();
 	}

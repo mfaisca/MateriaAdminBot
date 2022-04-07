@@ -51,7 +51,7 @@ public abstract class UnitParser {
 			if(u != null && u.getName() != null)
 				u = u.copy();
 			else
-				u = new Unit(name);
+				u = new Unit();
 			String unitName = Methods.urlizeDB(u.getPluginName()).toLowerCase();
 			File fGL = new File("./resources/units/gl/db_" + unitName + ".json");
 			File fJP = new File("./resources/units/jp/db_" + unitName + ".json");
@@ -116,7 +116,8 @@ public abstract class UnitParser {
 		Text name = obj.getObject("profile").getText("shortName");
 		if(name == null)
 			name = obj.getObject("profile").getText("fullName");
-		u.setName(name.getBest());
+		if(u.getName() == null)
+			u.setName(name.getBest());
 		u.setFullName(obj.getObject("profile").getText("fullName"));
 		u.setCrystal(Crystal.find(obj.getObject("profile").getInt("crystal")));
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
