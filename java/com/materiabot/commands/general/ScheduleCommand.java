@@ -128,9 +128,7 @@ public class ScheduleCommand extends _BaseCommand{
 					"[Chocobo Panels](http://dissidiainfo.com/chocobo-panel-missions/)", true);
 			embed.addField("Other Contributors", 
 					ImageUtils.getEmoteText("ffootip") + "[FFOOTip](https://ffootip.com/)" + System.lineSeparator() + 
-					//"[OOTracker](https://ootracker.com/)" + System.lineSeparator() + 
-					"[" + ImageUtils.getEmoteText("OOT1") + ImageUtils.getEmoteText("OOT2") + ImageUtils.getEmoteText("OOT3") + ImageUtils.getEmoteText("OOT4") + 
-					ImageUtils.getEmoteText("OOT5") + ImageUtils.getEmoteText("OOT6") + "](https://ootracker.com/)", true);
+					"[OOTracker](https://ootracker.com/)", true);
 		}
 		embed.setFooter("If you have other suggestions for the top, please DM Quetz" + System.lineSeparator() + 
 						"Credits to all the Content Creators that do all this content for us all <3");
