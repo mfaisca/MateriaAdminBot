@@ -12,6 +12,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.MessageReaction;
 import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.exceptions.InsufficientPermissionException;
 import net.dv8tion.jda.api.interactions.InteractionHook;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.Button;
@@ -111,7 +112,9 @@ public abstract class MessageUtils {
 		return hook.sendMessage(message).submit();
 	}
 	public static final CompletableFuture<Message> sendMessage(MessageChannel channel, String message){
-		return channel.sendMessage(message).submit();
+		try {
+			return channel.sendMessage(message).submit();
+		} catch(InsufficientPermissionException e) { return null; }
 	}
 	public static final CompletableFuture<Message> sendImage(InteractionHook hook, String text, String imageURL){
 		return sendEmbed(hook, new EmbedBuilder().setFooter("").setTitle(text).setImage(imageURL));
