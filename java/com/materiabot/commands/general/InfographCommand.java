@@ -165,9 +165,9 @@ public class InfographCommand extends _BaseCommand{
 					MessageUtils.sendMessage(event.getHook(), (oldIG != null ? "Old link for reference: <" + oldIG + ">" : "") 
 											+ System.lineSeparator() + "Infograph " + (url.equalsIgnoreCase("delete") ? "Deleted" : "Updated"));
 					if(u != null) //Unit IG
-						embed = build(u);
+						MessageUtils.sendEmbed(event.getChannel(), build(u));
 					else //Non-unit IG
-						embed = build(name);
+						MessageUtils.sendEmbed(event.getChannel(), build(name));
 					return;
 				} catch (BotException e) {
 					MessageUtils.sendStatusMessageError(event.getHook(), "Error saving IG");
