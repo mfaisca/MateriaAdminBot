@@ -1,6 +1,5 @@
 package com.materiabot;
 import com.materiabot.IO.SQL.SQLAccess;
-import com.materiabot.Scheduler._Scheduler;
 import com.materiabot.Utils.Constants;
 import com.materiabot.commands._Listener;
 import java.util.Arrays;
@@ -22,16 +21,14 @@ public class Main {
 		}
 		System.out.println("Connected to DB");
 		final List<GatewayIntent> gateways = Arrays.asList(GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES, 
-															GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS);
+															GatewayIntent.GUILD_EMOJIS);
 		JDA client = JDABuilder.createDefault(privateToken).setAutoReconnect(true)
 				.setEnabledIntents(gateways).setMemberCachePolicy(MemberCachePolicy.NONE).disableCache(CacheFlag.VOICE_STATE)
 				.setStatus(OnlineStatus.ONLINE).setActivity(Activity.playing("Opera Omnia")).build();
 		Constants.setClient(client);
 		client.awaitReady();
 		PluginManager.reset(true);
-		_Scheduler.setup();
 		client.addEventListener(new _Listener());
-		_Scheduler.start();
 		System.out.println("Bot is ready!!");
 	}
 }

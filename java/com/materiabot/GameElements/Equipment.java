@@ -1,8 +1,5 @@
 package com.materiabot.GameElements;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import com.materiabot.GameElements.Summon._Summon;
 import Shared.Methods;
 
 public class Equipment{	
@@ -68,7 +65,7 @@ public class Equipment{
 		public int getRarity() { return rarity; }
 		public String getName() { return name; }
 		public String getEmoteName() { return emoteName; }
-		public String getEmoteName(Unit u) { return this.equals(W_WoI) ? _Summon.getSummonFromWoIWeapon(u).getEmoteCrystal() : getEmoteName(); }
+		public String getEmoteName(Unit u) { return getEmoteName(); }
 
 		public static Rarity getByName(String s) {
 			for(Rarity r : values())
@@ -102,7 +99,6 @@ public class Equipment{
 	
 	private int id;
 	private Text name;
-	private List<Passive> passives = new ArrayList<>(1);
 	private Type type;
 	private Rarity rarity;
 	private Unit unit;
@@ -113,7 +109,6 @@ public class Equipment{
 	public void setName(Text name) { this.name = name; }
 	public Unit getUnit() { return unit; }
 	public void setUnit(Unit unit) { this.unit = unit; }
-	public List<Passive> getPassives() { return passives; }
 	public Type getType() { return type; }
 	public void setType(Type type) { this.type = type; }
 	public Rarity getRarity() { return rarity; }

@@ -1,30 +1,12 @@
 package com.materiabot.IO.JSON;
 import java.io.File;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import com.google.common.collect.Streams;
-import com.materiabot.GameElements.Ability;
-import com.materiabot.GameElements.Ailment;
-import com.materiabot.GameElements.ChainAbility;
 import com.materiabot.GameElements.Crystal;
-import com.materiabot.GameElements.Equipment;
-import com.materiabot.GameElements.MiscCondition;
-import com.materiabot.GameElements.Passive;
-import com.materiabot.GameElements.Region;
-import com.materiabot.GameElements.Sphere;
-import com.materiabot.GameElements.Sphere.SphereType;
 import com.materiabot.GameElements.Text;
 import com.materiabot.GameElements.Unit;
-import com.materiabot.GameElements.Enumerators.Ability.AttackName;
-import com.materiabot.GameElements.Enumerators.Ability.MiscConditionTarget;
-import com.materiabot.GameElements.Enumerators.Ability.HitData.Type;
+import com.materiabot.GameElements.Equipment;
 import com.materiabot.IO.JSON.JSONParser.MyJSONObject;
-import com.materiabot.IO.JSON.Unit.AbilityParser;
-import com.materiabot.IO.JSON.Unit.AilmentParser;
-import com.materiabot.IO.JSON.Unit.PassiveParser;
 import com.materiabot.IO.SQL.SQLAccess;
 import com.materiabot.Utils.Constants;
 import Shared.Methods;
@@ -52,7 +34,7 @@ public abstract class UnitParser {
 				u = u.copy();
 			else
 				u = new Unit();
-			String unitName = Methods.urlizeDB(u.getPluginName()).toLowerCase();
+			String unitName = Methods.urlizeDB(u.getPluginName() != null ? u.getPluginName() : name).toLowerCase();
 			File fGL = new File("./resources/units/gl/db_" + unitName + ".json");
 			File fJP = new File("./resources/units/jp/db_" + unitName + ".json");
 			if(!fGL.exists() && !fJP.exists())
@@ -67,43 +49,13 @@ public abstract class UnitParser {
 				return u;
 			if(objGL != null) {
 				Unit u2 = u.copy();
-				u2.setRegion(Region.GL);
-				parseProfile(u2, objGL);
-				parseAilments(u2, objGL);
-				parseCompleteListAbilities(u2, objGL);
-				parseBaseAbilities(u2, objGL);
-				parseOptionalAbilities(u2, objGL);
-				parseTriggeredAbilities(u2, objGL);
-				parseCalls(u2, objGL);
-				parsePassives(u2, objGL);
-				parseCharaBoards(u2, objGL);
-				parseArtifacts(u2, objGL);
-				parseSpheres(u2, objGL);
 				parseGear(u2, objGL);
-				u2.loadFixGL();
-				mergeFakeFollowups(u2);
 				u.setGL(u2);
-				u2.setCommon(u);
 			}
 			if(objJP != null) {
 				Unit u2 = u.copy();
-				u2.setRegion(Region.JP);
-				parseProfile(u2, objJP);
-				parseAilments(u2, objJP);
-				parseCompleteListAbilities(u2, objJP);
-				parseBaseAbilities(u2, objJP);
-				parseOptionalAbilities(u2, objJP);
-				parseTriggeredAbilities(u2, objJP);
-				parseCalls(u2, objJP);
-				parsePassives(u2, objJP);
-				parseCharaBoards(u2, objJP);
-				parseArtifacts(u2, objJP);
-				parseSpheres(u2, objJP);
 				parseGear(u2, objJP);
-				u2.loadFixJP();
-				mergeFakeFollowups(u2);
 				u.setJP(u2);
-				u2.setCommon(u);
 			}
 			return u;
 		} catch(Exception e) {
@@ -123,153 +75,10 @@ public abstract class UnitParser {
 		u.setEquipmentType(Equipment.Type.find(obj.getObject("profile").getInt("weaponType")));
 		u.setSeries(obj.getObject("profile").getInt("world"));
 		u.setId(obj.getInt("id"));
-		for(int i = 0; i < 3; i++)
-			u.getSphereSlots()[i] = SphereType.get(obj.getObject("profile").getObject("traits").getStringArray("spheres")[i]);
-	}
-	private static void parsePassives(Unit u, MyJSONObject obj) {
-		for(Passive p : new PassiveParser().parsePassives(obj, "awakeningPassives")) {
-			p.setUnit(u);
-			u.getPassives().put(p.getId(), p);
-		}
-		for(Passive p : new PassiveParser().parsePassives(obj, "embeddedPassives")) {
-			p.setUnit(u);
-			u.getPassives().put(p.getId(), p);
-		}
-	}
-	private static void parseAilments(Unit u, MyJSONObject obj) {
-		for(Ailment a : AilmentParser.parseAilments(obj, "defaultAilments", null)) {
-			a.setUnit(u);
-			a.setDefault(true);
-			u.getAilments().put(a.getId(), a);
-			u.getDefaultAilments().put(a.getId(), a);
-		}
-		for(Ailment a : AilmentParser.parseAilments(obj, "assocAilments", null)) {
-			a.setUnit(u);
-			a.setTriggered(true);
-			if(a.getRank() < 0)
-				a.setRank(0);
-			u.getAilments().put(a.getId(), a);
-			u.getTriggeredAilments().put(a.getCastId(), a);
-		}
-	}
-	private static void parseCompleteListAbilities(Unit u, MyJSONObject obj) {
-		for(Ability a : AbilityParser.parseAbilities(obj, "completeListOfAbilities", obj.getObjectArray("frBonus"))) {
-			a.setUnit(u);
-			a.getAilments().stream()
-				.forEach(ail -> {
-					ail.setAbility(a);
-					u.getAilments().put(ail.getId(), ail);
-					ail.setUnit(u);
-				});
-			u.getAbilities().put(a.getId(), a);
-		}
-	}
-	private static void parseBaseAbilities(Unit u, MyJSONObject obj) {
-		u.setBaseAbilities(obj.getIntArray("defaultAbilities"));
-		int typeIdx = 0;
-		for(int id : u.getBaseAbilities())
-			u.getSpecificAbility(id).setAttackName(AttackName.values()[typeIdx++]);
-	}
-	private static void parseOptionalAbilities(Unit u, MyJSONObject obj) {
-		int typeIdx = 0;
-		for(MyJSONObject[] skill : obj.getArrayArray("optionalAbilities")) {
-			for(MyJSONObject skillLevel : skill) {
-				ChainAbility ca = new ChainAbility();
-				ca.setUnit(u);
-				ca.setId(skillLevel.getInt("id"));
-				ca.setOriginalId(skillLevel.getInt("originalAbility"));
-				ca.setSecondaryId(skillLevel.getInt("upgradedAbility"));
-				ca.setUpgraded(true);
-				ca.setReqExtendPassives(Arrays.asList(skillLevel.getIntArray("reqExtendPassives")));
-				ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
-				for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
-					MiscCondition mc = new MiscCondition();
-					mc.setAb(ca);
-					mc.setLabelId(miscC.getInt("label"));
-					mc.setLabel(Constants.LABELS.get(mc.getLabelId()));
-					mc.setTargetId(miscC.getInt("target"));
-					mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
-					try {
-						mc.setValues(miscC.getIntArray("values"));
-					} catch(Exception e) {
-						mc.setCondition(AilmentParser.parseConditionBlocks(null, miscC, "values")[0]);
-					}
-					ca.getReqMiscConditions().add(mc);
-				}
-				if(u.getSpecificAbility(ca.getSecondaryId()) == null) 
-					continue;
-				u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
-				u.getUpgradedAbilities().add(ca);
-			}
-			if(skill.length > 0)
-				typeIdx++;
-		}
-	}
-	private static void parseTriggeredAbilities(Unit u, MyJSONObject obj) {
-		int typeIdx = 0;
-		for(MyJSONObject skillLevel : obj.getObjectArray("triggeredAbilities")) {
-			ChainAbility ca = new ChainAbility();
-			ca.setUnit(u);
-			ca.setId(skillLevel.getInt("id"));
-			ca.setOriginalId(skillLevel.getInt("originalAbility"));
-			ca.setSecondaryId(skillLevel.getInt("triggeredAbility"));
-			ca.setTriggered(true);
-			ca.setReqExtendPassives(Arrays.asList(skillLevel.getIntArray("reqExtendPassives")));
-			ca.setReqWeaponPassives(Arrays.asList(skillLevel.getIntArray("reqWeaponPassives")));
-			for(MyJSONObject miscC : skillLevel.getObjectArray("miscConditions")) {
-				MiscCondition mc = new MiscCondition();
-				mc.setAb(ca);
-				mc.setLabelId(miscC.getInt("label"));
-				mc.setLabel(Constants.LABELS.get(mc.getLabelId()));
-				mc.setTargetId(miscC.getInt("target"));
-				mc.setTarget(MiscConditionTarget.get(mc.getTargetId()));
-				mc.setValues(miscC.getIntArray("values"));
-				ca.getReqMiscConditions().add(mc);
-			}
-			if(u.getSpecificAbility(ca.getSecondaryId()) == null) 
-				continue;
-			u.getSpecificAbility(ca.getSecondaryId()).setAttackName(AttackName.values()[typeIdx]);
-			u.getTriggeredAbilities().add(ca);
-		}
-	}
-	private static void parseCalls(Unit u, MyJSONObject obj) {
-		{
-			if(obj.getObject("assistAbility").getInt("id") == null)
-				return;
-			Integer callId = obj.getObject("assistAbility").getObject("ability").getInt("rank_up");
-			if(callId == null)
-				return;
-			Ability a = u.getSpecificAbility(callId);
-			a.setAttackName(AttackName.CA);
-			u.setCall(a);
-		}{
-			if(obj.getObject("ldAssistAbility").getInt("id") == null)
-				return;
-			Integer callLdId = obj.getObject("ldAssistAbility").getObject("ability").getInt("rank_up");
-			if(callLdId == null)
-				return;
-			Ability a = u.getSpecificAbility(callLdId);
-			a.setAttackName(AttackName.CALD);
-			u.setCallLd(a);
-		}
-	}
-	private static void parseCharaBoards(Unit u, MyJSONObject obj) {
-		if(obj.getObject("enhancementBoard") == null)
-			return;
-		for(Passive p : new PassiveParser().parsePassives(obj.getObject("enhancementBoard"), "passives")) {
-			p.setUnit(u);
-			u.getCharaBoards().add(p);
-		}
-	}
-	private static void parseArtifacts(Unit u, MyJSONObject obj) {
-		u.getArtifacts().clear();
-		for(Passive p : new PassiveParser().parsePassives(obj, "artifactList")) {
-			p.setUnit(u);
-			u.getArtifacts().add(p);
-		}
+//		for(int i = 0; i < 3; i++)
+//			u.getSphereSlots()[i] = SphereType.get(obj.getObject("profile").getObject("traits").getStringArray("spheres")[i]);
 	}
 	private static void parseGear(Unit u, MyJSONObject obj) {
-		PassiveParser pp = new PassiveParser();
 		for(String gearType : Arrays.asList("silverWeapon", "baseWeapon", 
 				"uniqueWeapon", "summonWeapon", "ntWeapon", "manikinWeapon", "exWeapon", "realizedWeapon", "limitedWeapon", "forceWeapon", "burstWeapon", "rzBurstWeapon", 
 				"silverArmor", "uniqueArmor", "exArmor", "realizedArmor", "highArmor", "rzHighArmor")) {
@@ -281,16 +90,6 @@ public abstract class UnitParser {
 			equip.setType(gearType.contains("Armor") ? Equipment.Type.Armor : u.getEquipmentType());
 			equip.setRarity(Equipment.Rarity.getByName(gearType));
 			equip.setUnit(u);
-			Passive p = pp.parsePassive(gear.getObject("passive"));
-			if(p != null) {
-				p.setUnit(u);
-				equip.getPassives().add(p);
-			}
-			if(gear.getObjectArray("passives") != null)
-				for(Passive ppp : pp.parsePassives(gear, "passives")) {
-					ppp.setUnit(u);
-					equip.getPassives().add(ppp);
-				}
 			u.getEquipment().add(equip);
 		}
 		MyJSONObject gear = obj.getObject(Equipment.Rarity.BS.getName());
@@ -300,137 +99,6 @@ public abstract class UnitParser {
 		equip.setType(Equipment.Type.BloomStone);
 		equip.setRarity(Equipment.Rarity.BS);
 		equip.setUnit(u);
-		MyJSONObject gearPassive = gear.getObject("passive");
-		equip.getPassives().add(new PassiveParser().parsePassive(gearPassive));
 		u.getEquipment().add(equip);
-	}
-	private static void parseSpheres(Unit u, MyJSONObject obj) {
-		Sphere s1 = null, s2 = null;
-		for(String s : Arrays.asList("bonusSphere", "craftedSphere")) {
-			MyJSONObject gear = obj.getObject(s);
-			if(gear.getInt("id") == null) continue;
-			Sphere sphere = new Sphere();
-			sphere.setId(gear.getInt("id"));
-			sphere.setType(SphereType.valueOf(gear.getString("category")));
-			MyJSONObject gearPassive = gear.getObject("passive");
-			sphere.setPassive(new PassiveParser().parsePassive(gearPassive));
-			sphere.getPassive().setUnit(u);
-			s2 = s1 == null ? null : sphere;
-			s1 = s1 == null ? sphere : s1;
-		}
-		u.setSpheres(s1, s2);
-	}
-	private static void mergeFakeFollowups(Unit u) {
-		if(u.getId() == 130) return; //Emperor to avoid merging traps
-		List<ChainAbility> c = null;
-		HashMap<Integer, Integer> map = new HashMap<>();
-		HashMap<Integer, Integer> result = new HashMap<>();
-//		HashMap<Integer, List<Integer>> result = new HashMap<>();
-		List<Integer> passivesIds = Streams.concat(	u.getPassives().values().stream(), 
-													u.getEquipment().stream().flatMap(e -> e.getPassives().stream()),
-													u.getCharaBoards().stream()).map(p -> p.getId())
-											.collect(Collectors.toList());
-		c = u.getTriggeredAbilities().stream()
-				.filter(ca -> passivesIds.containsAll(ca.getReqExtendPassives()) && passivesIds.containsAll(ca.getReqWeaponPassives()))
-				.map(ca -> {
-							Ability a = null;
-							Ability b = null;
-							if(map.containsKey(ca.getOriginalId()) && ca.getReqMiscConditions().isEmpty()) {
-								a = u.getSpecificAbility(map.get(ca.getOriginalId()));
-								b = u.getSpecificAbility(ca.getSecondaryId());
-							}
-							else if(ca.getReqMiscConditions().stream().filter(mc -> !mc.getLabel().isInvisibleCondition(mc)).count() == 0) {
-								a = u.getSpecificAbility(ca.getOriginalId());
-								b = u.getSpecificAbility(ca.getSecondaryId());
-							}
-							if(a != null && b != null) {
-//								if(!result.containsKey(a.getId()))
-//									result.put(a.getId(), new LinkedList<>());
-//								result.get(a.getId()).add(b.getId());
-								result.put(a.getId(), b.getId());
-								map.put(b.getId(), a.getId());
-							}
-							return ca;
-						}).filter(ca -> !ca.getReqMiscConditions().isEmpty()).collect(Collectors.toList());
-		for(Integer k : result.keySet().stream().collect(Collectors.toList())) {
-			int v = result.get(k);
-			//for(int v : result.get(k).stream().distinct().collect(Collectors.toList())) 
-			{
-//				if(!result.containsKey(v))
-					merge(u, k, v);
-//				else {
-//					int k2 = v;
-//					for(int v2 : result.get(k2)) {
-//						if(!result.containsKey(v2)) {
-//							merge(u, k2, v2);
-//							merge(u, k, k2);
-//						}
-	//					else {
-	//						int k3 = v;
-	//						int v3 = result.get(k3);
-	//						if(!result.containsKey(v3)) {
-	//							merge(u, k3, v3);
-	//							merge(u, k2, k3);
-	//							merge(u, k, k2);
-	//							result.remove(k3);
-	//							result.remove(k2);
-	//						}
-	//						else {
-	//							int k4 = v;
-	//							int v4 = result.get(k4);
-	//							if(!result.containsKey(v4)) {
-	//								merge(u, k4, v4);
-	//								merge(u, k3, k4);
-	//								merge(u, k2, k3);
-	//								merge(u, k, k2);
-	//								result.remove(k4);
-	//								result.remove(k3);
-	//								result.remove(k2);
-	//							}
-	//						}
-	//					}
-//					}
-//					result.remove(k2);
-//				}
-			}
-		}
-		u.getTriggeredAbilities().clear();
-		u.getTriggeredAbilities().addAll(c);
-	}
-	
-	public static final void merge(Unit u, Integer ai, Integer bi) {
-		merge(u, ai, bi, true);
-	}
-	public static final void merge(Unit u, Integer ai, Integer bi, boolean firstDestiny) {
-		Ability a = u.getSpecificAbility(ai);
-		Ability b = u.getSpecificAbility(bi);
-		if(firstDestiny) {
-			a.getHitData().addAll(b.getHitData());
-			a.getAilments().addAll(b.getAilments());
-	//		a.setAilments(a.getAilments().stream().distinct().collect(Collectors.toList()));
-			if(b.getMovementCost() > a.getMovementCost())
-				a.setMovementCost(b.getMovementCost());
-			a.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
-			if(b.getChaseDmg() > a.getChaseDmg())
-				a.setChaseDmg(b.getChaseDmg());
-		} else {
-			b.getHitData().addAll(0, a.getHitData());
-			b.getAilments().addAll(0, a.getAilments());
-			if(a.getMovementCost() > b.getMovementCost())
-				b.setMovementCost(a.getMovementCost());
-			b.setCanLaunch(a.isCanLaunch() || b.isCanLaunch());
-			if(a.getChaseDmg() > b.getChaseDmg())
-				b.setChaseDmg(a.getChaseDmg());
-		}
-	}
-	public static final void fixBT(Unit u, int abilityId, Integer brvCap, Integer hpCap, Integer stPerc) {
-		u.getSpecificAbility(abilityId).getHitData().stream().filter(hd -> hd.getType().equals(Type.BRV)).forEach(hd -> {
-			if(stPerc != null)
-				hd.setSingleTargetBrvRate((int)(hd.getBrvRate() * (stPerc/100f)));
-			if(brvCap != null)
-				hd.setBrvDamageLimitUp(brvCap);
-			if(hpCap != null)
-				hd.setMaxBrvLimitUp(hpCap);
-		});
 	}
 }

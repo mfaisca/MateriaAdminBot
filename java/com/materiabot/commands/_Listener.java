@@ -13,9 +13,6 @@ import Shared.BotException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.entities.ChannelType;
 import net.dv8tion.jda.api.events.Event;
-import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
-import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
-import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -42,29 +39,6 @@ public class _Listener extends ListenerAdapter{
 					else
 						event.reply("Unable to post reply for some unexpected reason.").queue();
 				}
-			}},
-			BUTTON_CLICK{public void run(Event e) {
-				ButtonClickEvent event = (ButtonClickEvent)e;
-				String cmd = event.getButton().getId().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
-				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.getCommand().equalsIgnoreCase(cmd)) {
-						if(c.isEditButton(event))
-							event.deferEdit().queue();
-						else
-							event.deferReply(c.isEtherealReply(event)).queue();
-						c.doStuff(event);
-						return;
-					}
-			}},
-			SELECT_MENU{public void run(Event e) {
-				SelectionMenuEvent event = (SelectionMenuEvent)e;
-				String cmd = event.getSelectedOptions().get(0).getValue().split(MessageUtils.SEPARATOR)[0].trim().toLowerCase();
-				for(_BaseCommand c : Constants.COMMANDS)
-					if(c.getCommand().equals(cmd)) {
-						event.deferEdit().queue();
-						c.doStuff(event);
-						return;
-					}
 			}},
  			MESSAGE_RECEIVED{
 			public void run(Event e) {
@@ -110,10 +84,13 @@ public class _Listener extends ListenerAdapter{
 	public static void unloadPluginCommands() {
 		Constants.COMMANDS.clear();
 		Constants.COMMANDS.addAll(Arrays.asList(
-									new AboutCommand(),
-									new PatreonCommand(),
-									new AdminCommand(),
-									new ScheduleCommand()
+				new AdminCommand(),
+				new InfographCommand(),
+				new MonsterSearchCommand(),
+				new PatreonCommand(),
+				new ScheduleCommand(),
+				new TimelineCommand(),
+				new VoteCommand()
 									));
 		try {
 			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
@@ -129,24 +106,8 @@ public class _Listener extends ListenerAdapter{
 	}
 
 	@Override
-	public final void onGuildMemberJoin(GuildMemberJoinEvent event) {
-		//This method exists to update Tonberry Troupe Patreon roles on MateriaBot due to PatreonBot not working with multiple accounts
-		//TODO Make this work for my own patreons as well and ditch PatreonBot
-		if(event.getGuild().getIdLong() == Constants.MATERIABOT_SERVER_ID)
-			new Thread(() -> PatreonCommand.updateServerTonberryTroupe()).start();
-	}
-
-	@Override
 	public final void onSlashCommand(SlashCommandEvent event) {
 		THREAD_MANAGER.execute(new Analyze(Analyze.Action.SLASH_COMMANDS, event));
-	}
-	@Override
-	public final void onButtonClick(ButtonClickEvent event) {
-		THREAD_MANAGER.execute(new Analyze(Analyze.Action.BUTTON_CLICK, event));
-	}
-	@Override
-	public final void onSelectionMenu(SelectionMenuEvent event) {
-		THREAD_MANAGER.execute(new Analyze(Analyze.Action.SELECT_MENU, event));
 	}
 	@Override
 	public final void onMessageReceived(MessageReceivedEvent event) {

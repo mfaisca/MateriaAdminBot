@@ -18,6 +18,7 @@ public class Methods {
 	public static final Random RNG = new Random();
 
 	public static final String urlizeDB(String s) {
+		if(s.equals("leon")) s = "leonhart";
 		return s.substring(0, s.contains("(") ? s.indexOf("(") : s.length()).replace("'", "").trim().replace(" ", "_");
 	}
 	public static final String urlizeTT(String s) {

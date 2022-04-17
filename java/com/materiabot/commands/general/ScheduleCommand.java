@@ -120,7 +120,7 @@ public class ScheduleCommand extends _BaseCommand{
 			embed.addField(ImageUtils.getEmoteText("TonberryTroupe") + " Tonberry Troupe", 
 					"[Website](https://www.tonberrytroupe.com/home)" + System.lineSeparator() + 
 					"[Infographs by Time](https://www.tonberrytroupe.com/infographics/infographics-by-time)" + System.lineSeparator() + 
-					"[Timeline](https://www.tonberrytroupe.com/resources-hub/global-timeline-planner)", true);
+					"[Timeline](https://www.tonberrytroupe.com/timeline)", true);
 			embed.addField(ImageUtils.getEmoteText("DissidiaInfo") + " DissidiaInfo", 
 					"[Website](http://dissidiainfo.com/)" + System.lineSeparator() + 
 					"[Call to Arms](http://dissidiainfo.com/call-to-arms/c2a-list/) | " +

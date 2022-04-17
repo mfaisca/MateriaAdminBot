@@ -1,18 +1,9 @@
 package com.materiabot.Utils;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import com.materiabot.GameElements.Unit;
-import com.materiabot.GameElements.Enumerators.Ability.HitData.Effect._AbilityEffect;
-import com.materiabot.GameElements.Enumerators.Ability.MiscConditionLabel._MiscConditionLabel;
-import com.materiabot.GameElements.Enumerators.Ailment.Aura.Effect._AuraEffect;
-import com.materiabot.GameElements.Enumerators.Ailment.Aura.Required._AuraRequired;
-import com.materiabot.GameElements.Enumerators.Ailment.Effect._AilmentEffect;
-import com.materiabot.GameElements.Enumerators.Ailment.Required._AilmentRequired;
-import com.materiabot.GameElements.Enumerators.Passive.Effect._PassiveEffect;
-import com.materiabot.GameElements.Enumerators.Passive.Required._PassiveRequired;
 import com.materiabot.commands._BaseCommand;
 import net.dv8tion.jda.api.JDA;
 
@@ -25,41 +16,6 @@ public class Constants {
 	public static final Long MATERIABOT_ADMIN_SERVER_ID = 894309469670998026L;
 	public static final List<Unit> UNITS = new LinkedList<>();
 	public static final List<_BaseCommand> COMMANDS = new ArrayList<>();
-	public static final HashMap<Integer, _AbilityEffect> ABILITY_EFFECT = new HashMap<>();
-	public static final HashMap<Integer, _PassiveEffect> PASSIVE_EFFECT = new HashMap<>();
-	public static final HashMap<Integer, _PassiveRequired> PASSIVE_REQUIRED = new HashMap<>();
-	public static final HashMap<Integer, _AilmentEffect> AILMENT_EFFECT = new HashMap<>();
-	public static final HashMap<Integer, _AilmentRequired> AILMENT_REQUIRED = new HashMap<>();
-	public static final HashMap<Integer, _AuraEffect> AURA_EFFECT = new HashMap<>();
-	public static final HashMap<Integer, _AuraRequired> AURA_REQUIRED = new HashMap<>();
-	public static final HashMap<Integer, _MiscConditionLabel> LABELS = new HashMap<>();
-	public static final List<Integer> EFFECTS_THAT_CAN_REFUND = new LinkedList<>();
-	public static final boolean DEBUG;
-
-	public static final class DupeMerger {
-		public String text;
-		public int count = 1;
-		public DupeMerger real = this;
-		
-		public DupeMerger(String t) { text = t; }
-		
-		public void merge(DupeMerger other) {
-			if(this.real.text.equals(other.text)) {
-				this.real.count++; other.count--;
-				other.real = this.real;
-			}
-		}
-		@Override
-		public String toString() {
-			if(count < 1) return "";
-			if(count > 1) return text + " **__" + count + " times__**";
-			return text;
-		}
-	}
-	
-	static {
-		DEBUG = new File("./resources/Debug.txt").exists();
-	}
 	
 	private Constants() {}
 	
