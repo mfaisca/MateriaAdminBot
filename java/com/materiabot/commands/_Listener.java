@@ -24,7 +24,7 @@ public class _Listener extends ListenerAdapter{
 				if(_BaseCommand.canPost(event)) {
 					for(_BaseCommand c : Constants.COMMANDS)
 						if(c.getCommand().equalsIgnoreCase(event.getName().contains("admin") && event.getName().length() > 5 ? event.getName().replace("admin", "") : event.getName())) {
-							event.deferReply(c.isEtherealReply(event)).queue();
+							event.deferReply(false).queue();
 							c.doStuff(event);
 							return;
 						}
