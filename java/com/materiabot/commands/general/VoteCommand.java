@@ -59,7 +59,8 @@ public class VoteCommand extends _BaseCommand{
 						break;
 					}
 					case "close":
-						closeVoting(event.getOption("bannerid").getAsLong());
+						closeVoting(event.getOption("banner").getAsLong());
+						MessageUtils.sendMessage(event.getHook(), "Voting closed");
 						break;
 					case "new": 
 						if(Constants.userHasMateriaRole(event.getUser().getIdLong(), VOTE_CREATOR_ROLE_ID)) {
@@ -237,9 +238,9 @@ public class VoteCommand extends _BaseCommand{
 	}
 	
 	@Override
-	public boolean isEtherealReply(SlashCommandEvent event) { return true; }
+	public boolean isEtherealReply(SlashCommandEvent event) { return false; }
 	@Override
-	public boolean isEtherealReply(ButtonClickEvent event) { return true; }
+	public boolean isEtherealReply(ButtonClickEvent event) { return false; }
 	@Override
 	public boolean isEditButton(ButtonClickEvent event) { return false; }
 	
@@ -255,15 +256,6 @@ public class VoteCommand extends _BaseCommand{
 		} catch (BotException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public CommandData getCommandData() {
-		return super.getCommandData()
-					.addSubcommands(new SubcommandData("list", "List voting options"),
-									new SubcommandData("create", "Create a new voting")
-										.addOptions(new OptionData(OptionType.INTEGER, "bannerid", "Banner Code", true))
-										.addOptions(new OptionData(OptionType.CHANNEL, "channel", "Channel to create the voting on (Defaults to current)")));
 	}
 
 	@Override

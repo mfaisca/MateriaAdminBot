@@ -91,7 +91,7 @@ public class _Listener extends ListenerAdapter{
 				new ScheduleCommand(),
 				new TimelineCommand(),
 				new VoteCommand()
-									));
+			));
 		try {
 			ResultSet rs = SQLAccess.executeSelect("SELECT * FROM Commands");
 			while(rs.next())
