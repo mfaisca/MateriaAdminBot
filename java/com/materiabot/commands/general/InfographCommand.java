@@ -158,11 +158,16 @@ public class InfographCommand extends _BaseCommand{
 					return;
 				}
 				String name = event.getOption("name").getAsString();
+				Unit u = _Library.L.getQuickUnit(name);
 				String url = event.getOption("url").getAsString();
 				try {
-					String oldIG = saveInfograph(name, url);
+					String oldIG = saveInfograph(u == null ? name : u.getName(), url);
 					MessageUtils.sendMessage(event.getHook(), (oldIG != null ? "Old link for reference: <" + oldIG + ">" : "") 
 											+ System.lineSeparator() + "Infograph " + (url.equalsIgnoreCase("delete") ? "Deleted" : "Updated"));
+					if(u != null) //Unit IG
+						embed = build(u);
+					else //Non-unit IG
+						embed = build(name);
 					return;
 				} catch (BotException e) {
 					MessageUtils.sendStatusMessageError(event.getHook(), "Error saving IG");
