@@ -26,7 +26,7 @@ import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 @Plugin(name = "Command.Infograph")
 public class InfographCommand extends _BaseCommand{
 	public static final long TONBERRY_TROUPE_ROLE_ID = 894310411288064041L;
-	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
+	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	public static final class Infograph{
 		public int id;

@@ -28,6 +28,13 @@ public class Methods {
 		if(s.equalsIgnoreCase("lann&reynn")) s = "lann-reynn";
 		return s.substring(0, s.contains("(") ? s.indexOf("(") : s.length()).replace("'", "").trim().replace(" ", "-");
 	}
+//	public static final String urlizeDC(String s) {
+//		s = s.toLowerCase();
+//		if(s.equalsIgnoreCase("raines")) s = "cidraines";
+//		if(s.equalsIgnoreCase("raines")) s = "cidhighwind";
+//		if(s.equalsIgnoreCase("lann&reynn")) s = "lannreynn";
+//		return s.substring(0, s.contains("(") ? s.indexOf("(") : s.length()).replace("'", "").trim().replace(" ", "");
+//	}
 
 	public static final String enframe(String s) { return "「**" + s + "**」"; }
 	public static final String enframe(Integer i) { return enframe(""+i); }

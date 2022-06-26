@@ -19,7 +19,7 @@ public abstract class ImageUtils {
 		final String name2 = name.replace(" ", "").replace("'", "").replace("&", "").replace("(", "").replace(")", "");
 		if(Constants.getClient() == null) return null;
 		Emote emo = Constants.getClient().getGuilds().stream()
-				.filter(s -> s.getOwnerIdLong() == Constants.QUETZ_ID && s.getIdLong() != Constants.MATERIABOT_SERVER_ID && s.getIdLong() != Constants.MATERIABOT_ADMIN_SERVER_ID)
+				.filter(s -> s.getOwnerIdLong() == Constants.QUETZ2_ID && s.getIdLong() != Constants.MATERIABOT_SERVER_ID && s.getIdLong() != Constants.MATERIABOT_ADMIN_SERVER_ID)
 				.flatMap(g -> g.getEmotes().stream())
 				.filter(e -> e.getName().equalsIgnoreCase(name2))
 				.findFirst()
